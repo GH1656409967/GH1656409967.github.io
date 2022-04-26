@@ -31,8 +31,9 @@
 <meta property="og:image" content="https://gh1656409967.github.io/109c3806466b/安装NexT.png">
 <meta property="og:image" content="https://gh1656409967.github.io/109c3806466b/图片路径转换插件.png">
 <meta property="og:image" content="https://gh1656409967.github.io/109c3806466b/更换解析器.png">
+<meta property="og:image" content="https://gh1656409967.github.io/109c3806466b/Hexo统计插件.png">
 <meta property="article:published_time" content="2022-04-07T05:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-26T02:40:35.895Z">
+<meta property="article:modified_time" content="2022-04-26T03:18:49.845Z">
 <meta property="article:author" content="Lordash">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="NexT">
@@ -314,14 +315,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.7k</span>
+      <span>2.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>4 分钟</span>
     </span>
 </div>
 
@@ -471,18 +472,15 @@ F_x}{\partial y} \right) \mathbf{k}
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.json</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
 <h3 id="统计功能">3.4 统计功能</h3>
 <p>显示文章字数统计、阅读时长及总字数。首先安装插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save hexo-wordcount</span><br></pre></td></tr></table></figure>
-<p>打开 <code>themes/next/_config.yml</code> ，搜索关键字
-<code>post_wordcount</code>，将所需选项的 <code>false</code> 改为
-<code>true</code> 打开
-<code>themes/next/layout/_macro/post.swig</code>，搜索关键词
-<code>post.wordcount</code>，添加 <code>字</code> 到末尾</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">title</span>=<span class="string">&quot;&#123;&#123; __(&#x27;post.wordcount&#x27;) &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123; wordcount(post.content) &#125;&#125; 字</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>同理，搜索关键词 <code>post.min2read</code>，添加 <code>分钟</code>
-到末尾</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">title</span>=<span class="string">&quot;&#123;&#123; __(&#x27;post.min2read&#x27;) &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123; min2read(post.content) &#125;&#125; 分钟</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>字数统计</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_wordcount:</span></span><br><span class="line">  <span class="attr">item_text:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">wordcount:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">min2read:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">totalcount:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-word-counter --save</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="/109c3806466b/Hexo统计插件.png" alt="Hexo统计插件">
+<figcaption aria-hidden="true">Hexo统计插件</figcaption>
+</figure>
+<p>修改博客根目录<code>_config.yml</code>配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">exclude_codeblock:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">300</span></span><br><span class="line">  <span class="attr">suffix:</span> <span class="string">&quot;分钟&quot;</span></span><br></pre></td></tr></table></figure>
+<p>修改博客根目录<code>_config.next.yml</code>主题配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <h3 id="简易相册">3.5 简易相册</h3>
 <p>得益于Markdown和HTML混编可以被部分解析器解析的优势，可以使用HTML+CSS，添加一个简易相册。</p>
 <blockquote>
