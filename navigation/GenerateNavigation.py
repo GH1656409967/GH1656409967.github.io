@@ -11,7 +11,7 @@ def eachFile(filepath, i):
             ans[i][0] = allDir[:-3]
             readFile(child, i)
             i = i + 1
- 
+
 def readFile(filename, i):
     fopen = open(filename, 'r', encoding='utf-8') # r 代表read
     for eachLine in fopen:
@@ -29,11 +29,11 @@ def writeFile(filename):
     for aLine in ans:
         if aLine[0] == 0:
             break
-        str = '[' + aLine[0] + '](https://blog.lordash.cf/posts/' + aLine[1] + '.html)\n' 
+        str = '[' + aLine[0] + '](https://gh1656409967.github.io/posts/' + aLine[1] + '.html)\n'
         fopen.write(str)
     fopen.close()
- 
+
 if __name__ == '__main__':
-    eachFile("E:/Demo/blog/source/_posts", i)
+    eachFile("E:/work/blog/source/_posts", i)
     print(ans)
-    writeFile("E:/Demo/blog/source/navigation/index.md")
+    writeFile("E:/work/blog/source/navigation/index.md")
