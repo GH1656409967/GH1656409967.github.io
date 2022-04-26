@@ -2669,7 +2669,6 @@ mjx-container[display='true'] + br {
   position: sticky;
   top: 12px;
   width: 250px;
-  visibility: hidden;
 }
 @media (max-width: 991px) {
   .sidebar {
@@ -2914,18 +2913,6 @@ p code,
   background: #00c4b6;
   color: #f7f7f7;
 }
-.headband {
-  height: 3px;
-}
-.site-meta {
-  color: #93c9ff;
-  background: #434343;
-}
-.site-subtitle {
-  margin-top: 10px;
-  font-size: 13px;
-  color: #f1f3f4;
-}
 .btn {
   color: #1b87ec;
   background: #fff;
@@ -2936,7 +2923,7 @@ p code,
   color: #fff;
   background: #1b87ec;
 }
-.posts-expand .post-title-link::before {
+.post-header .post-title-link::before {
   content: '';
   position: absolute;
   width: 100%;
