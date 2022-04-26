@@ -28,7 +28,7 @@
 <meta property="og:description" content="HDU-1171 Big Event in HDU 类型 多重背包">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-03-26T03:54:36.000Z">
-<meta property="article:modified_time" content="2020-06-10T00:08:39.752Z">
+<meta property="article:modified_time" content="2022-04-26T08:06:58.161Z">
 <meta property="article:author" content="Lordash">
 <meta property="article:tag" content="HDU">
 <meta property="article:tag" content="DP">
@@ -350,12 +350,12 @@
 <blockquote>
 <p>Nowadays, we all know that Computer College is the biggest department
 in HDU. But, maybe you don't know that Computer College had ever been
-split into Computer College and Software College in 2002.<br>
-The splitting is absolutely a big event in HDU! At the same time, it is
-a trouble thing too. All facilities must go halves. First, all
-facilities are assessed, and two facilities are thought to be same if
-they have the same value. It is assumed that there is N (0&lt;N&lt;1000)
-kinds of facilities (different value, different kinds).</p>
+split into Computer College and Software College in 2002. The splitting
+is absolutely a big event in HDU! At the same time, it is a trouble
+thing too. All facilities must go halves. First, all facilities are
+assessed, and two facilities are thought to be same if they have the
+same value. It is assumed that there is N (0&lt;N&lt;1000) kinds of
+facilities (different value, different kinds).</p>
 </blockquote>
 <h2 id="输入">输入</h2>
 <blockquote>
@@ -363,8 +363,7 @@ kinds of facilities (different value, different kinds).</p>
 number N (0 &lt; N &lt;= 50 -- the total number of different
 facilities). The next N lines contain an integer V (0&lt;V&lt;=50
 --value of facility) and an integer M (0&lt;M&lt;=100 --corresponding
-number of the facilities) each. You can assume that all V are
-different.<br>
+number of the facilities) each. You can assume that all V are different.
 A test case starting with a negative integer terminates input and this
 test case is not to be processed.</p>
 </blockquote>
@@ -376,7 +375,7 @@ respectively. A and B should be as equal as possible. At the same time,
 you should guarantee that A is not less than B.</p>
 </blockquote>
 <h2 id="样例输入">样例输入</h2>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">10 1</span><br><span class="line">20 1</span><br><span class="line">3</span><br><span class="line">10 1 </span><br><span class="line">20 2</span><br><span class="line">30 1</span><br><span class="line"><span class="deletion">-1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">10 1</span><br><span class="line">20 1</span><br><span class="line">3</span><br><span class="line">10 1</span><br><span class="line">20 2</span><br><span class="line">30 1</span><br><span class="line"><span class="deletion">-1</span></span><br></pre></td></tr></table></figure>
 <h2 id="样例输出">样例输出</h2>
 <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">20 </span><span class="number">10</span></span><br><span class="line"><span class="symbol">40 </span><span class="number">40</span></span><br></pre></td></tr></table></figure>
 <h2 id="提示">提示</h2>

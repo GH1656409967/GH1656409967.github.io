@@ -2905,14 +2905,6 @@ p code,
   border-bottom: none;
   border-bottom: 1px solid #fc6423;
 }
-::selection {
-  background: #00c4b6;
-  color: #f7f7f7;
-}
-::-moz-selection {
-  background: #00c4b6;
-  color: #f7f7f7;
-}
 .btn {
   color: #1b87ec;
   background: #fff;
@@ -2923,13 +2915,22 @@ p code,
   color: #fff;
   background: #1b87ec;
 }
-.post-header .post-title-link::before {
+::selection {
+  background: #00a297;
+  color: #e9e9e9;
+}
+::-moz-selection {
+  background: #00a297;
+  color: #e9e9e9;
+}
+.post-header .post-title-link:hover ::before {
   content: '';
   position: absolute;
   width: 100%;
   height: 2px;
   bottom: 0;
   left: 0;
+  color: #1b87ec;
   background-color: #1b87ec;
   visibility: hidden;
   -webkit-transform: scaleX(0);
@@ -2937,7 +2938,7 @@ p code,
   -ms-transform: scaleX(0);
   -o-transform: scaleX(0);
   transform: scaleX(0);
-  transition-duration: 0.2s;
+  transition-duration: 0.15s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
 }

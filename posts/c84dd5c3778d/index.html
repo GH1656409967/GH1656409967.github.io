@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://vj.z180.cn/6a067d51d92b3f8822e1ce20cac5a5b2?v=1594266833">
 <meta property="article:published_time" content="2020-07-11T14:05:12.000Z">
-<meta property="article:modified_time" content="2020-07-14T09:08:52.225Z">
+<meta property="article:modified_time" content="2022-04-26T08:06:58.160Z">
 <meta property="article:author" content="Lordash">
 <meta property="article:tag" content="博弈论">
 <meta property="article:tag" content="Nim博弈">
@@ -338,12 +338,12 @@
         <h1 id="rabbit-and-grasshdu-1849">Rabbit and Grass(<a target="_blank" rel="noopener" href="https://vjudge.net/problem/HDU-1849">HDU-1849</a>)</h1>
 <h2 id="题面">题面</h2>
 <blockquote>
-<p>大学时光是浪漫的，女生是浪漫的，圣诞更是浪漫的，但是Rabbit和Grass这两个大学女生在今年的圣诞节却表现得一点都不浪漫：不去逛商场，不去逛公园，不去和AC男约会，两个人竟然猫在寝食下棋……<br>
-说是下棋，其实只是一个简单的小游戏而已，游戏的规则是这样的：<br>
-1、棋盘包含1*n个方格，方格从左到右分别编号为0，1，2，…，n-1；<br>
-2、m个棋子放在棋盘的方格上，方格可以为空，也可以放多于一个的棋子；<br>
-3、双方轮流走棋；<br>
-4、每一步可以选择任意一个棋子向左移动到任意的位置（可以多个棋子位于同一个方格），当然，任何棋子不能超出棋盘边界；<br>
+<p>大学时光是浪漫的，女生是浪漫的，圣诞更是浪漫的，但是Rabbit和Grass这两个大学女生在今年的圣诞节却表现得一点都不浪漫：不去逛商场，不去逛公园，不去和AC男约会，两个人竟然猫在寝食下棋……
+说是下棋，其实只是一个简单的小游戏而已，游戏的规则是这样的：
+1、棋盘包含1*n个方格，方格从左到右分别编号为0，1，2，…，n-1；
+2、m个棋子放在棋盘的方格上，方格可以为空，也可以放多于一个的棋子；
+3、双方轮流走棋；
+4、每一步可以选择任意一个棋子向左移动到任意的位置（可以多个棋子位于同一个方格），当然，任何棋子不能超出棋盘边界；
 5、如果所有的棋子都位于最左边（即编号为0的位置），则游戏结束，并且规定最后走棋的一方为胜者。</p>
 <p>对于本题，你不需要考虑n的大小（我们可以假设在初始状态，棋子总是位于棋盘的适当位置）。下面的示意图即为一个1*15的棋盘，共有6个棋子，其中，编号8的位置有两个棋子。</p>
 <figure>
@@ -363,7 +363,7 @@
 Win!”，每个实例的输出占一行。</p>
 </blockquote>
 <h2 id="样例输入">样例输入</h2>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">2 </span></span><br><span class="line"><span class="symbol">3 </span><span class="number">5</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">5</span> <span class="number">6</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">5</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">5</span> <span class="number">6</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
 <h2 id="样例输出">样例输出</h2>
 <figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Rabbit Win!</span><br><span class="line">Grass Win!</span><br></pre></td></tr></table></figure>
 <h2 id="提示">提示</h2>

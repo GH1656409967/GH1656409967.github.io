@@ -28,7 +28,7 @@
 <meta property="og:description" content="HDU-3294 Girls&#39; research 类型 Manacher">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-08T02:08:38.000Z">
-<meta property="article:modified_time" content="2020-08-08T02:14:29.220Z">
+<meta property="article:modified_time" content="2022-04-26T08:06:58.159Z">
 <meta property="article:author" content="Lordash">
 <meta property="article:tag" content="Manacher">
 <meta property="article:tag" content="kuangbin 专题十六">
@@ -341,33 +341,30 @@
 <h2 id="题面">题面</h2>
 <blockquote>
 <p>One day, sailormoon girls are so delighted that they intend to
-research about palindromic strings. Operation contains two steps:<br>
-First step: girls will write a long string (only contains lower case) on
-the paper. For example, "abcde", but 'a' inside is not the real 'a',
-that means if we define the 'b' is the real 'a', then we can infer that
-'c' is the real 'b', 'd' is the real 'c' ……, 'a' is the real 'z'.
-According to this, string "abcde" changes to "bcdef".<br>
-Second step: girls will find out the longest palindromic string in the
-given string, the length of palindromic string must be equal or more
-than 2.</p>
+research about palindromic strings. Operation contains two steps: First
+step: girls will write a long string (only contains lower case) on the
+paper. For example, "abcde", but 'a' inside is not the real 'a', that
+means if we define the 'b' is the real 'a', then we can infer that 'c'
+is the real 'b', 'd' is the real 'c' ……, 'a' is the real 'z'. According
+to this, string "abcde" changes to "bcdef". Second step: girls will find
+out the longest palindromic string in the given string, the length of
+palindromic string must be equal or more than 2.</p>
 </blockquote>
 <h2 id="输入">输入</h2>
 <blockquote>
-<p>Input contains multiple cases.<br>
-Each case contains two parts, a character and a string, they are
-separated by one space, the character representing the real 'a' is and
-the length of the string will not exceed 200000.All input must be
-lowercase.<br>
-If the length of string is len, it is marked from 0 to len-1.</p>
+<p>Input contains multiple cases. Each case contains two parts, a
+character and a string, they are separated by one space, the character
+representing the real 'a' is and the length of the string will not
+exceed 200000.All input must be lowercase. If the length of string is
+len, it is marked from 0 to len-1.</p>
 </blockquote>
 <h2 id="输出">输出</h2>
 <blockquote>
-<p>Please execute the operation following the two steps.<br>
-If you find one, output the start position and end position of
-palindromic string in a line, next line output the real palindromic
-string, or output "No solution!".<br>
-If there are several answers available, please choose the string which
-first appears.</p>
+<p>Please execute the operation following the two steps. If you find
+one, output the start position and end position of palindromic string in
+a line, next line output the real palindromic string, or output "No
+solution!". If there are several answers available, please choose the
+string which first appears.</p>
 </blockquote>
 <h2 id="样例输入">样例输入</h2>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">b</span> babd</span><br><span class="line"><span class="selector-tag">a</span> abcd</span><br></pre></td></tr></table></figure>

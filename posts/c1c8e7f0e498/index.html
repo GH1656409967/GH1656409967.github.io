@@ -28,7 +28,7 @@
 <meta property="og:description" content="HDU-2594 Simpsons’ Hidden Talents 类型 字符串 KMP next数组性质">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-31T04:34:38.000Z">
-<meta property="article:modified_time" content="2020-07-31T05:10:59.140Z">
+<meta property="article:modified_time" content="2022-04-26T08:06:58.160Z">
 <meta property="article:author" content="Lordash">
 <meta property="article:tag" content="KMP">
 <meta property="article:tag" content="kuangbin 专题十六">
@@ -345,29 +345,19 @@
 <h2 id="题面">题面</h2>
 <blockquote>
 <p>Homer: Marge, I just figured out a way to discover some of the
-talents we weren’t aware we had.<br>
-Marge: Yeah, what is it?<br>
-Homer: Take me for example. I want to find out if I have a talent in
-politics, OK?<br>
-Marge: OK.<br>
-Homer: So I take some politician’s name, say Clinton, and try to find
-the length of the longest prefix<br>
-in Clinton’s name that is a suffix in my name. That’s how close I am to
-being a politician like Clinton<br>
-Marge: Why on earth choose the longest prefix that is a suffix???<br>
-Homer: Well, our talents are deeply hidden within ourselves,
-Marge.<br>
-Marge: So how close are you?<br>
-Homer: 0!<br>
-Marge: I’m not surprised.<br>
+talents we weren’t aware we had. Marge: Yeah, what is it? Homer: Take me
+for example. I want to find out if I have a talent in politics, OK?
+Marge: OK. Homer: So I take some politician’s name, say Clinton, and try
+to find the length of the longest prefix in Clinton’s name that is a
+suffix in my name. That’s how close I am to being a politician like
+Clinton Marge: Why on earth choose the longest prefix that is a
+suffix??? Homer: Well, our talents are deeply hidden within ourselves,
+Marge. Marge: So how close are you? Homer: 0! Marge: I’m not surprised.
 Homer: But you know, you must have some real math talent hidden deep in
-you.<br>
-Marge: How come?<br>
-Homer: Riemann and Marjorie gives 3!!!<br>
-Marge: Who the heck is Riemann?<br>
-Homer: Never mind.<br>
-Write a program that, when given strings s1 and s2, finds the longest
-prefix of s1 that is a suffix of s2.</p>
+you. Marge: How come? Homer: Riemann and Marjorie gives 3!!! Marge: Who
+the heck is Riemann? Homer: Never mind. Write a program that, when given
+strings s1 and s2, finds the longest prefix of s1 that is a suffix of
+s2.</p>
 </blockquote>
 <h2 id="输入">输入</h2>
 <blockquote>
@@ -380,8 +370,7 @@ lowercase.</p>
 <p>Output consists of a single line that contains the longest string
 that is a prefix of s1 and a suffix of s2, followed by the length of
 that prefix. If the longest such string is the empty string, then the
-output should be 0.<br>
-The lengths of s1 and s2 will be at most 50000.</p>
+output should be 0. The lengths of s1 and s2 will be at most 50000.</p>
 </blockquote>
 <h2 id="样例输入">样例输入</h2>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">clinton</span></span><br><span class="line"><span class="attribute">homer</span></span><br><span class="line"><span class="attribute">riemann</span></span><br><span class="line"><span class="attribute">marjorie</span></span><br></pre></td></tr></table></figure>
@@ -396,7 +385,7 @@ The lengths of s1 and s2 will be at most 50000.</p>
 <h2 id="代码">代码</h2>
 <div><div class="fold_hider"><div class="close hider_title">查看代码<p></p>
 </div></div><div class="fold">
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> s[mxn], t[mxn];</span><br><span class="line"><span class="type">int</span> nxt[mxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">getnxt</span><span class="params">(<span class="type">char</span>* t, <span class="type">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>, j = <span class="number">-1</span>; nxt[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; m) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (j == <span class="number">-1</span> || t[i] == t[j]) &#123;</span><br><span class="line">            i++, j++;</span><br><span class="line">            <span class="comment">// if (t[i] == t[j])</span></span><br><span class="line">            <span class="comment">//     nxt[i] = nxt[j]; // next数组优化</span></span><br><span class="line">            <span class="comment">// else</span></span><br><span class="line">                nxt[i] = j;</span><br><span class="line">        &#125; <span class="keyword">else</span></span><br><span class="line">            j = nxt[j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">&quot;%s %s&quot;</span>, s, t))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> n = <span class="built_in">strlen</span>(s), m = <span class="built_in">strlen</span>(t);</span><br><span class="line">        <span class="built_in">strcpy</span>(s+n, t);</span><br><span class="line">        <span class="built_in">getnxt</span>(s, n+m);</span><br><span class="line">        <span class="type">int</span> ans = <span class="built_in">min</span>(nxt[n+m], <span class="built_in">min</span>(n, m));</span><br><span class="line">        <span class="keyword">if</span>(ans)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%s &quot;</span>, s+n+m-ans);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> s[mxn], t[mxn];</span><br><span class="line"><span class="type">int</span> nxt[mxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">getnxt</span><span class="params">(<span class="type">char</span>* t, <span class="type">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>, j = <span class="number">-1</span>; nxt[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; m)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (j == <span class="number">-1</span> || t[i] == t[j]) &#123;</span><br><span class="line">            i++, j++;</span><br><span class="line">            <span class="comment">// if (t[i] == t[j])</span></span><br><span class="line">            <span class="comment">//     nxt[i] = nxt[j]; // next数组优化</span></span><br><span class="line">            <span class="comment">// else</span></span><br><span class="line">                nxt[i] = j;</span><br><span class="line">        &#125; <span class="keyword">else</span></span><br><span class="line">            j = nxt[j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">&quot;%s %s&quot;</span>, s, t))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> n = <span class="built_in">strlen</span>(s), m = <span class="built_in">strlen</span>(t);</span><br><span class="line">        <span class="built_in">strcpy</span>(s+n, t);</span><br><span class="line">        <span class="built_in">getnxt</span>(s, n+m);</span><br><span class="line">        <span class="type">int</span> ans = <span class="built_in">min</span>(nxt[n+m], <span class="built_in">min</span>(n, m));</span><br><span class="line">        <span class="keyword">if</span>(ans)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%s &quot;</span>, s+n+m-ans);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </div></div>
 

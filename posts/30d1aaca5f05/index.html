@@ -28,7 +28,7 @@
 <meta property="og:description" content="HDU-1846 Brave Game 类型 博弈论 Bash博弈">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-11T16:35:12.000Z">
-<meta property="article:modified_time" content="2020-07-14T09:09:24.860Z">
+<meta property="article:modified_time" content="2022-04-26T08:06:58.160Z">
 <meta property="article:author" content="Lordash">
 <meta property="article:tag" content="博弈论">
 <meta property="article:tag" content="Bash博弈">
@@ -336,20 +336,17 @@
         <h1 id="brave-gamehdu-1846">Brave Game(<a target="_blank" rel="noopener" href="https://vjudge.net/problem/HDU-1846">HDU-1846</a>)</h1>
 <h2 id="题面">题面</h2>
 <blockquote>
-<p>十年前读大学的时候，中国每年都要从国外引进一些电影大片，其中有一部电影就叫《勇敢者的游戏》（英文名称：Zathura），一直到现在，我依然对于电影中的部分电脑特技印象深刻。<br>
-今天，大家选择上机考试，就是一种勇敢（brave）的选择；这个短学期，我们讲的是博弈（game）专题；所以，大家现在玩的也是“勇敢者的游戏”，这也是我命名这个题目的原因。<br>
+<p>十年前读大学的时候，中国每年都要从国外引进一些电影大片，其中有一部电影就叫《勇敢者的游戏》（英文名称：Zathura），一直到现在，我依然对于电影中的部分电脑特技印象深刻。
+今天，大家选择上机考试，就是一种勇敢（brave）的选择；这个短学期，我们讲的是博弈（game）专题；所以，大家现在玩的也是“勇敢者的游戏”，这也是我命名这个题目的原因。
 当然，除了“勇敢”，我还希望看到“诚信”，无论考试成绩如何，希望看到的都是一个真实的结果，我也相信大家一定能做到的~</p>
-<p>各位勇敢者要玩的第一个游戏是什么呢？很简单，它是这样定义的：<br>
-1、 本游戏是一个二人游戏;<br>
-2、 有一堆石子一共有n个；<br>
-3、 两人轮流进行;<br>
-4、 每走一步可以取走1…m个石子；<br>
-5、 最先取光石子的一方为胜；</p>
+<p>各位勇敢者要玩的第一个游戏是什么呢？很简单，它是这样定义的： 1、
+本游戏是一个二人游戏; 2、 有一堆石子一共有n个； 3、 两人轮流进行; 4、
+每走一步可以取走1…m个石子； 5、 最先取光石子的一方为胜；</p>
 <p>如果游戏的双方使用的都是最优策略，请输出哪个人能赢。</p>
 </blockquote>
 <h2 id="输入">输入</h2>
 <blockquote>
-<p>输入数据首先包含一个正整数C(C&lt;=100)，表示有C组测试数据。<br>
+<p>输入数据首先包含一个正整数C(C&lt;=100)，表示有C组测试数据。
 每组测试数据占一行，包含两个整数n和m（1&lt;=n,m&lt;=1000），n和m的含义见题目描述。</p>
 </blockquote>
 <h2 id="输出">输出</h2>
@@ -369,7 +366,7 @@
 <h2 id="代码">代码</h2>
 <div><div class="fold_hider"><div class="close hider_title">查看代码<p></p>
 </div></div><div class="fold">
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> T; <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> n, m; </span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(n%(m+<span class="number">1</span>)==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;second\n&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;first\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> T; <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> n, m;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(n%(m+<span class="number">1</span>)==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;second\n&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;first\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </div></div>
 

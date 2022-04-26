@@ -28,7 +28,7 @@
 <meta property="og:description" content="HDU-1827 Summer Holiday 类型 Tarjan">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-03T03:24:13.000Z">
-<meta property="article:modified_time" content="2020-06-10T00:08:39.768Z">
+<meta property="article:modified_time" content="2022-04-26T08:06:58.160Z">
 <meta property="article:author" content="Lordash">
 <meta property="article:tag" content="HDU">
 <meta property="article:tag" content="Tarjan">
@@ -347,28 +347,24 @@
         <h1 id="summer-holiday-hdu---1827">Summer Holiday (<a target="_blank" rel="noopener" href="https://vjudge.net/problem/HDU-1827">HDU - 1827</a>)</h1>
 <h2 id="题面">题面</h2>
 <blockquote>
-<p>To see a World in a Grain of Sand<br>
-And a Heaven in a Wild Flower,<br>
-Hold Infinity in the palm of your hand<br>
-And Eternity in an hour.<br>
-—— William Blake</p>
+<p>To see a World in a Grain of Sand And a Heaven in a Wild Flower, Hold
+Infinity in the palm of your hand And Eternity in an hour. —— William
+Blake</p>
 <p>听说lcy帮大家预定了新马泰7日游，Wiskey真是高兴的夜不能寐啊，他想着得快点把这消息告诉大家，虽然他手上有所有人的联系方式，但是一个一个联系过去实在太耗时间和电话费了。他知道其他人也有一些别人的联系方式，这样他可以通知其他人，再让其他人帮忙通知一下别人。你能帮Wiskey计算出至少要通知多少人，至少得花多少电话费就能让所有人都被通知到吗？</p>
 </blockquote>
 <h2 id="输入">输入</h2>
 <blockquote>
-<p>多组测试数组，以EOF结束。<br>
-第一行两个整数N和M（1&lt;=N&lt;=1000,
-1&lt;=M&lt;=2000），表示人数和联系对数。<br>
-接下一行有N个整数，表示Wiskey联系第i个人的电话费用。<br>
+<p>多组测试数组，以EOF结束。 第一行两个整数N和M（1&lt;=N&lt;=1000,
+1&lt;=M&lt;=2000），表示人数和联系对数。
+接下一行有N个整数，表示Wiskey联系第i个人的电话费用。
 接着有M行，每行有两个整数X，Y，表示X能联系到Y，但是不表示Y也能联系X。</p>
 </blockquote>
 <h2 id="输出">输出</h2>
 <blockquote>
-<p>输出最小联系人数和最小花费。<br>
-每个CASE输出答案一行。</p>
+<p>输出最小联系人数和最小花费。 每个CASE输出答案一行。</p>
 </blockquote>
 <h2 id="样例输入">样例输入</h2>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">12 </span><span class="number">16</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> </span><br><span class="line"><span class="symbol">1 </span><span class="number">3</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">2</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">1</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">4</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">4</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">5</span></span><br><span class="line"><span class="symbol">5 </span><span class="number">4</span></span><br><span class="line"><span class="symbol">4 </span><span class="number">6</span></span><br><span class="line"><span class="symbol">6 </span><span class="number">4</span></span><br><span class="line"><span class="symbol">7 </span><span class="number">4</span></span><br><span class="line"><span class="symbol">7 </span><span class="number">12</span></span><br><span class="line"><span class="symbol">7 </span><span class="number">8</span></span><br><span class="line"><span class="symbol">8 </span><span class="number">7</span></span><br><span class="line"><span class="symbol">8 </span><span class="number">9</span></span><br><span class="line"><span class="symbol">10 </span><span class="number">9</span></span><br><span class="line"><span class="symbol">11 </span><span class="number">10</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">12 </span><span class="number">16</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span></span><br><span class="line"><span class="symbol">1 </span><span class="number">3</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">2</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">1</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">4</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">4</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">5</span></span><br><span class="line"><span class="symbol">5 </span><span class="number">4</span></span><br><span class="line"><span class="symbol">4 </span><span class="number">6</span></span><br><span class="line"><span class="symbol">6 </span><span class="number">4</span></span><br><span class="line"><span class="symbol">7 </span><span class="number">4</span></span><br><span class="line"><span class="symbol">7 </span><span class="number">12</span></span><br><span class="line"><span class="symbol">7 </span><span class="number">8</span></span><br><span class="line"><span class="symbol">8 </span><span class="number">7</span></span><br><span class="line"><span class="symbol">8 </span><span class="number">9</span></span><br><span class="line"><span class="symbol">10 </span><span class="number">9</span></span><br><span class="line"><span class="symbol">11 </span><span class="number">10</span></span><br></pre></td></tr></table></figure>
 <h2 id="样例输出">样例输出</h2>
 <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">3 </span><span class="number">6</span></span><br></pre></td></tr></table></figure>
 <h2 id="提示">提示</h2>

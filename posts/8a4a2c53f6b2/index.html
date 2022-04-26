@@ -28,7 +28,7 @@
 <meta property="og:description" content="HDU-4388 Stone Game II 类型 博弈论">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-17T09:27:43.000Z">
-<meta property="article:modified_time" content="2020-07-17T09:33:58.925Z">
+<meta property="article:modified_time" content="2022-04-26T08:06:58.144Z">
 <meta property="article:author" content="Lordash">
 <meta property="article:tag" content="博弈论">
 <meta property="article:tag" content="HDU">
@@ -338,26 +338,23 @@
 <p>　　Stone Game II comes. It needs two players to play this game.
 There are some piles of stones on the desk at the beginning. Two players
 move the stones in turn. At each step of the game the player should do
-the following operations.<br>
-First, choose a pile of stones. (We assume that the number of stones in
-this pile is n)<br>
-Second, take some stones from this pile. Assume the number of stones
-left in this pile is k. The player must ensure that 0 &lt; k &lt; n and
-(k XOR n) &lt; n, otherwise he loses.<br>
-At last, add a new pile of size (k XOR n). Now the player can add a pile
-of size ((2*k) XOR n) instead of (k XOR n) (However, there is only one
-opportunity for each player in each game).<br>
-The first player who can't do these operations loses. Suppose two
-players will do their best in the game, you are asked to write a program
-to determine who will win the game.</p>
+the following operations. First, choose a pile of stones. (We assume
+that the number of stones in this pile is n) Second, take some stones
+from this pile. Assume the number of stones left in this pile is k. The
+player must ensure that 0 &lt; k &lt; n and (k XOR n) &lt; n, otherwise
+he loses. At last, add a new pile of size (k XOR n). Now the player can
+add a pile of size ((2*k) XOR n) instead of (k XOR n) (However, there is
+only one opportunity for each player in each game). The first player who
+can't do these operations loses. Suppose two players will do their best
+in the game, you are asked to write a program to determine who will win
+the game.</p>
 </blockquote>
 <h2 id="输入">输入</h2>
 <blockquote>
 <p>　　The first line contains the number T of test cases (T&lt;=150).
 The first line of each test cases contains an integer number n
 (n&lt;=50), denoting the number of piles. The following n integers
-describe the number of stones in each pile at the beginning of the
-game.<br>
+describe the number of stones in each pile at the beginning of the game.
 You can assume that all the number of stones in each pile will not
 exceed 100,000.</p>
 </blockquote>

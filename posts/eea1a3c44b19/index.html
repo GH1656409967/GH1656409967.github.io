@@ -28,7 +28,7 @@
 <meta property="og:description" content="POJ-2251 Dungeon Master 类型 BFS">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-03-23T00:48:45.000Z">
-<meta property="article:modified_time" content="2020-06-10T00:08:40.043Z">
+<meta property="article:modified_time" content="2022-04-26T08:06:58.104Z">
 <meta property="article:author" content="Lordash">
 <meta property="article:tag" content="BFS">
 <meta property="article:tag" content="kuangbin 专题一">
@@ -355,10 +355,8 @@ surrounded by solid rock on all sides.</p>
 <blockquote>
 <p>The input consists of a number of dungeons. Each dungeon description
 starts with a line containing three integers L, R and C (all limited to
-30 in size).<br>
-L is the number of levels making up the dungeon.<br>
-R and C are the number of rows and columns making up the plan of each
-level.<br>
+30 in size). L is the number of levels making up the dungeon. R and C
+are the number of rows and columns making up the plan of each level.
 Then there will follow L blocks of R lines each containing C characters.
 Each character describes one cell of the dungeon. A cell full of rock is
 indicated by a '#' and empty cells are represented by a '.'. Your
@@ -370,10 +368,10 @@ three zeroes for L, R and C.</p>
 <blockquote>
 <p>Each maze generates one line of output. If it is possible to reach
 the exit, print a line of the form</p>
-<pre><code>    Escaped in x minute(s).        </code></pre>
-<p>where x is replaced by the shortest time it takes to escape.<br>
-If it is not possible to escape, print the line</p>
-<pre><code>    Trapped!            </code></pre>
+<pre><code>    Escaped in x minute(s).</code></pre>
+<p>where x is replaced by the shortest time it takes to escape. If it is
+not possible to escape, print the line</p>
+<pre><code>    Trapped!</code></pre>
 </blockquote>
 <h2 id="样例输入">样例输入</h2>
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line">S....</span><br><span class="line">.###.</span><br><span class="line">.##..</span><br><span class="line">###.#</span><br><span class="line"></span><br><span class="line">#####</span><br><span class="line">#####</span><br><span class="line">##.##</span><br><span class="line">##...</span><br><span class="line"></span><br><span class="line">#####</span><br><span class="line">#####</span><br><span class="line">#.###</span><br><span class="line">####E</span><br><span class="line"></span><br><span class="line"><span class="number">1</span> <span class="number">3</span> <span class="number">3</span></span><br><span class="line">S##</span><br><span class="line">#E#</span><br><span class="line">###</span><br><span class="line"></span><br><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>

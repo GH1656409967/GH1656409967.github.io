@@ -28,7 +28,7 @@
 <meta property="og:description" content="POJ-1837 Balance 类型 01背包">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-22T02:51:52.000Z">
-<meta property="article:modified_time" content="2020-06-10T00:08:40.035Z">
+<meta property="article:modified_time" content="2022-04-26T08:06:58.104Z">
 <meta property="article:author" content="Lordash">
 <meta property="article:tag" content="DP">
 <meta property="article:tag" content="背包">
@@ -349,28 +349,25 @@
 <h2 id="题面">题面</h2>
 <blockquote>
 <p>Gigel has a strange "balance" and he wants to poise it. Actually, the
-device is different from any other ordinary balance.<br>
-It orders two arms of negligible weight and each arm's length is 15.
-Some hooks are attached to these arms and Gigel wants to hang up some
-weights from his collection of G weights (1 &lt;= G &lt;= 20) knowing
-that these weights have distinct values in the range 1..25. Gigel may
-droop any weight of any hook but he is forced to use all the
-weights.<br>
-Finally, Gigel managed to balance the device using the experience he
-gained at the National Olympiad in Informatics. Now he would like to
-know in how many ways the device can be balanced.</p>
+device is different from any other ordinary balance. It orders two arms
+of negligible weight and each arm's length is 15. Some hooks are
+attached to these arms and Gigel wants to hang up some weights from his
+collection of G weights (1 &lt;= G &lt;= 20) knowing that these weights
+have distinct values in the range 1..25. Gigel may droop any weight of
+any hook but he is forced to use all the weights. Finally, Gigel managed
+to balance the device using the experience he gained at the National
+Olympiad in Informatics. Now he would like to know in how many ways the
+device can be balanced.</p>
 <p>Knowing the repartition of the hooks and the set of the weights write
 a program that calculates the number of possibilities to balance the
-device.<br>
-It is guaranteed that will exist at least one solution for each test
-case at the evaluation.</p>
+device. It is guaranteed that will exist at least one solution for each
+test case at the evaluation.</p>
 </blockquote>
 <h2 id="输入">输入</h2>
 <blockquote>
-<p>The input has the following structure:<br>
-• the first line contains the number C (2 &lt;= C &lt;= 20) and the
-number G (2 &lt;= G &lt;= 20);<br>
-• the next line contains C integer numbers (these numbers are also
+<p>The input has the following structure: • the first line contains the
+number C (2 &lt;= C &lt;= 20) and the number G (2 &lt;= G &lt;= 20); •
+the next line contains C integer numbers (these numbers are also
 distinct and sorted in ascending order) in the range -15..15
 representing the repartition of the hooks; each number represents the
 position relative to the center of the balance on the X axis (when no
@@ -378,9 +375,9 @@ weights are attached the device is balanced and lined up to the X axis;
 the absolute value of the distances represents the distance between the
 hook and the balance center and the sign of the numbers determines the
 arm of the balance to which the hook is attached: '-' for the left arm
-and '+' for the right arm);<br>
-• on the next line there are G natural, distinct and sorted in ascending
-order numbers in the range 1..25 representing the weights' values.</p>
+and '+' for the right arm); • on the next line there are G natural,
+distinct and sorted in ascending order numbers in the range 1..25
+representing the weights' values.</p>
 </blockquote>
 <h2 id="输出">输出</h2>
 <blockquote>
@@ -388,7 +385,7 @@ order numbers in the range 1..25 representing the weights' values.</p>
 possibilities to poise the balance.</p>
 </blockquote>
 <h2 id="样例输入">样例输入</h2>
-<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2 4    </span><br><span class="line">-2<span class="number"> 3 </span></span><br><span class="line">3<span class="number"> 4 </span>5 8</span><br></pre></td></tr></table></figure>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2 4</span><br><span class="line"><span class="deletion">-2 3</span></span><br><span class="line">3 4 5 8</span><br></pre></td></tr></table></figure>
 <h2 id="样例输出">样例输出</h2>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
 <h2 id="提示">提示</h2>
