@@ -1,0 +1,558 @@
+
+[【专题】Bash博弈](/posts/2aa998f41b5e/)
+
+[【专题】Bellman-Ford](/posts/4ac49d8c480b/)
+
+[【专题】Dijkstra](/posts/93153274717c/)
+
+[【专题】Fibonacci博弈](/posts/1d0c427df80d/)
+
+[【专题】Floyd-Warshall](/posts/0674fe0a5181/)
+
+[【专题】Johnson](/posts/bfa1504b5592/)
+
+[【专题】KMP](/posts/d2228f16b800/)
+
+[【专题】Manacher](/posts/803eef95b1c7/)
+
+[【专题】Nim博弈](/posts/afc192ba36b3/)
+
+[【专题】SG函数](/posts/5b70567fcf8a/)
+
+[【专题】Wythoff博弈](/posts/12faf91f63b4/)
+
+[【专题】字典树](/posts/456ed8c8830f/)
+
+[【专题】快速排序](/posts/47f85537014b/)
+
+[【专题】扩展KMP](/posts/bbc0975609b0/)
+
+[【专题】最小表示法](/posts/92eb54a3d9d8/)
+
+[【分享】kuangbin带你飞专题目录链接](/posts/2f0cc301a076/)
+
+[【分享】增重方法推荐](/posts/3a75e6fd3f1f/)
+
+[【测试】nexT的markdown支持](/posts/72a466ab801b/)
+
+[【配置】CentOS7配置MySQL和JDBC](/posts/9cb798582827/)
+
+[【配置】Hexo以及NexT8主题的配置](/posts/109c3806466b/)
+
+[【配置】Windows10使用Hexo和Pages服务搭建个人博客](/posts/0eccf52f1ab7/)
+
+[【配置】Windows10配置Hadoop2.9.2单机版](/posts/3de008245018/)
+
+[【配置】Windows10配置MySQL和JDBC](/posts/d7bce4e60e61/)
+
+[【配置】Windows10配置Scala和Spark](/posts/12490dc714f5/)
+
+[【随笔】hexo文章操作](/posts/d618bf93096a/)
+
+[【随笔】使用Gpg4win加密邮件](/posts/403bd23fbd98/)
+
+[【随笔】凯撒密码的简单实现](/posts/47041405b5a5/)
+
+[【题解】FZU-1901 Period II](/posts/4255601bbae0/)
+
+[【题解】FZU-2150 Fire Game](/posts/21111ebde63c/)
+
+[【题解】HDU-1029 Ignatius and the Princess IV](/posts/3ede7e34e5d6/)
+
+[【题解】HDU-1043 Eight](/posts/98787438763b/)
+
+[【题解】HDU-1069 Monkey and Banana](/posts/3ded70211e3e/)
+
+[【题解】HDU-1160 FatMouse's Speed](/posts/1d4c8f1de1d1/)
+
+[【题解】HDU-1171 Big Event in HDU](/posts/0c20e7d2e2fe/)
+
+[【题解】HDU-1238 Substrings](/posts/ecc6d28a6a49/)
+
+[【题解】HDU-1241 Oil Deposits](/posts/83fa7f9f3eec/)
+
+[【题解】HDU-1269 迷宫城堡](/posts/2dbcea3e034f/)
+
+[【题解】HDU-1358 Period](/posts/feeee0b8cb98/)
+
+[【题解】HDU-1495 非常可乐](/posts/351c6dd2da8c/)
+
+[【题解】HDU-1527 取石子游戏](/posts/13ed36cc22da/)
+
+[【题解】HDU-1686 Oulipo](/posts/03bbef5f8ae9/)
+
+[【题解】HDU-1711 Number Sequence](/posts/ded53fa42fa0/)
+
+[【题解】HDU-1805 Being a Good Boy in Spring Festival](/posts/6b6d661ecdfd/)
+
+[【题解】HDU-1827 Summer Holiday](/posts/46baff952e75/)
+
+[【题解】HDU-1846 Brave Game](/posts/30d1aaca5f05/)
+
+[【题解】HDU-1847 Good Luck in CET-4 Everybody!](/posts/37aef950f67a/)
+
+[【题解】HDU-1848 Fibonacci again and again](/posts/a61e883d8dda/)
+
+[【题解】HDU-1849 Rabbit and Grass](/posts/c84dd5c3778d/)
+
+[【题解】HDU-2087 剪花布条](/posts/44e00b97fd7b/)
+
+[【题解】HDU-2147 kiki's game](/posts/a9f7009e4d7e/)
+
+[【题解】HDU-2149 Public Sale](/posts/0f61b64cc61c/)
+
+[【题解】HDU-2177 取(2堆)石子游戏](/posts/75dcbb1f4aea/)
+
+[【题解】HDU-2188 悼念512](/posts/d78a270edfad/)
+
+[【题解】HDU-2191 悼念512](/posts/aa63851632f3/)
+
+[【题解】HDU-2328 Corporate Identity](/posts/6ce964d883c8/)
+
+[【题解】HDU-2486 A simple stone game](/posts/2c16bdd47f7f/)
+
+[【题解】HDU-2509 Be the Winner](/posts/255d1bf70ca7/)
+
+[【题解】HDU-2516 取石子游戏](/posts/878f0d817263/)
+
+[【题解】HDU-2546 饭卡](/posts/841acc11cc1d/)
+
+[【题解】HDU-2594 Simpsons’ Hidden Talents](/posts/c1c8e7f0e498/)
+
+[【题解】HDU-2602 Bone Collector](/posts/db573e41033e/)
+
+[【题解】HDU-2609 How many](/posts/ef43da956d8c/)
+
+[【题解】HDU-2612 Find a way](/posts/ad09db05c3b4/)
+
+[【题解】HDU-2639 Bone Collector II](/posts/d3b9b44036fb/)
+
+[【题解】HDU-2767 Proving Equivalences](/posts/01c5797f7ffb/)
+
+[【题解】HDU-2897 邂逅明下](/posts/48891df016f1/)
+
+[【题解】HDU-2955 Robberies](/posts/4503bebc1914/)
+
+[【题解】HDU-3068 最长回文](/posts/e6d9f7032663/)
+
+[【题解】HDU-3294 Girls' research](/posts/a34d56f368cb/)
+
+[【题解】HDU-3336 Count the string](/posts/fb63501c50a0/)
+
+[【题解】HDU-3374 String Problem](/posts/135c64c10ced/)
+
+[【题解】HDU-3404 Switch lights](/posts/9f92e7832f0a/)
+
+[【题解】HDU-3567 Eight II](/posts/d5efcde603a6/)
+
+[【题解】HDU-3613 Best Reward](/posts/415af7303769/)
+
+[【题解】HDU-3639 Hawk-and-Chicken](/posts/b60f536afd10/)
+
+[【题解】HDU-3746 Cyclic Nacklace](/posts/44a9f55c231d/)
+
+[【题解】HDU-3980 Paint Chain](/posts/3eb80a4bb255/)
+
+[【题解】HDU-4300 Clairewd’s message](/posts/7350107e7c6b/)
+
+[【题解】HDU-4388 Stone Game II](/posts/8a4a2c53f6b2/)
+
+[【题解】HDU-4513 吉哥系列故事-完美队形II](/posts/b6cfdbeeded8/)
+
+[【题解】HDU-4763 Theme Section](/posts/43aded3cf2aa/)
+
+[【题解】HDU-4847 Wow! Such Doge!](/posts/46ecb7c0bfee/)
+
+[【题解】HDU-6699 Block Breaker](/posts/017d4f7724cc/)
+
+[【题解】LightOJ-1186 Incredible Chess](/posts/443957f30809/)
+
+[【题解】LightOJ-1192 Left Right](/posts/da2abace8802/)
+
+[【题解】LightOJ-1199 Partitioning Game](/posts/3550079e8199/)
+
+[【题解】LightOJ-1247 Matrix Game](/posts/d422f2a2c61f/)
+
+[【题解】LightOJ-1253 Misere Nim](/posts/0d46a8030dd4/)
+
+[【题解】LightOJ-1355 Game of CS](/posts/39cfd6ad02a7/)
+
+[【题解】LightOJ-1393 Crazy Calendar](/posts/affa847c4672/)
+
+[【题解】PATA-1001 A+B Format](/posts/9b565965a3cc/)
+
+[【题解】PATA-1002 A+B for Polynomials](/posts/834f4e4c463b/)
+
+[【题解】PATA-1003 Emergency](/posts/3577ebd2b362/)
+
+[【题解】PATA-1004 Counting Leaves](/posts/9536bf5f200b/)
+
+[【题解】PATA-1005 Spell It Right](/posts/12eaedd371cd/)
+
+[【题解】PATA-1006 Sign In and Sign Out](/posts/4cc268ad7921/)
+
+[【题解】PATA-1007 Maximum Subsequence Sum](/posts/721fab284252/)
+
+[【题解】PATA-1008 Elevator](/posts/c1f4d3aaeb91/)
+
+[【题解】PATA-1009 Product of Polynomials](/posts/992c8df9eeae/)
+
+[【题解】PATA-1010 Radix](/posts/1c2be2591568/)
+
+[【题解】PATB-1001 害死人不偿命的(3n+1)猜想](/posts/288837b7498f/)
+
+[【题解】PATB-1002 写出这个数](/posts/f816c9fed725/)
+
+[【题解】PATB-1003 我要通过！](/posts/b7eab02b1094/)
+
+[【题解】PATB-1004 成绩排名](/posts/a2d54db614d7/)
+
+[【题解】PATB-1005 继续(3n+1)猜想](/posts/72df80979101/)
+
+[【题解】PATB-1006 换个格式输出整数](/posts/bc920752ece8/)
+
+[【题解】PATB-1007 素数对猜想](/posts/1faa20dfdc1a/)
+
+[【题解】PATB-1008 数组元素循环右移问题](/posts/d2972aa68e91/)
+
+[【题解】PATB-1009 说反话](/posts/0e245dba8750/)
+
+[【题解】PATB-1010 一元多项式求导](/posts/06cb1186b8d1/)
+
+[【题解】PATB-1011 A+B 和 C](/posts/401f364721b3/)
+
+[【题解】PATB-1012 数字分类](/posts/ec509b04e4d8/)
+
+[【题解】PATB-1013 数素数](/posts/d5dff813a25c/)
+
+[【题解】PATB-1014 福尔摩斯的约会](/posts/c1e8d6ffb62b/)
+
+[【题解】PATB-1015 德才论](/posts/40014b0ebb6f/)
+
+[【题解】PATB-1016 部分A+B](/posts/d89d016a992e/)
+
+[【题解】PATB-1017 A除以B](/posts/847aea2544b2/)
+
+[【题解】PATB-1018 锤子剪刀布](/posts/4c8f6e8995c9/)
+
+[【题解】PATB-1019 数字黑洞](/posts/064971943a85/)
+
+[【题解】PATB-1020 月饼](/posts/45ef3fafe348/)
+
+[【题解】PATB-1021 个位数统计](/posts/be9038da19f7/)
+
+[【题解】PATB-1022 D进制的A+B](/posts/ffad4cecf17c/)
+
+[【题解】PATB-1023 组个最小数](/posts/ac69682425be/)
+
+[【题解】PATB-1024 科学计数法](/posts/06b42751e285/)
+
+[【题解】PATB-1025 反转链表](/posts/09d31bcbcd7d/)
+
+[【题解】PATB-1026 程序运行时间](/posts/6e87ceb83ac3/)
+
+[【题解】PATB-1027 打印沙漏](/posts/e50d3cd2f7af/)
+
+[【题解】PATB-1028 人口普查](/posts/2ae84b349694/)
+
+[【题解】PATB-1029 旧键盘](/posts/37f665948a0d/)
+
+[【题解】PATB-1030 完美数列](/posts/d12517c2e527/)
+
+[【题解】PATB-1031 查验身份证](/posts/b85cfe79eb70/)
+
+[【题解】PATB-1032 挖掘机技术哪家强](/posts/e3ff1191b8cd/)
+
+[【题解】PATB-1033 旧键盘打字](/posts/56737bc23764/)
+
+[【题解】PATB-1034 有理数四则运算](/posts/7733bf379abb/)
+
+[【题解】PATB-1035 插入与归并](/posts/cd808d1a134b/)
+
+[【题解】PATB-1036 跟奥巴马一起编程](/posts/8955adcb06e9/)
+
+[【题解】PATB-1037 在霍格沃茨找零钱](/posts/758d2b6f5b94/)
+
+[【题解】PATB-1038 统计同成绩学生](/posts/25b16be12aab/)
+
+[【题解】PATB-1039 到底买不买](/posts/a5133e69d673/)
+
+[【题解】PATB-1040 有几个PAT](/posts/9d15c951a36f/)
+
+[【题解】PATB-1041 考试座位号](/posts/bfb4761fddc2/)
+
+[【题解】PATB-1042 字符统计](/posts/e4db2a3b47f2/)
+
+[【题解】PATB-1043 输出PATest](/posts/18f1b64a06c8/)
+
+[【题解】PATB-1044 火星数字](/posts/cedb0afa5a3b/)
+
+[【题解】PATB-1045 快速排序](/posts/5aaa4427088f/)
+
+[【题解】PATB-1046 划拳](/posts/9091498d6542/)
+
+[【题解】PATB-1047 编程团体赛](/posts/ffce73a1be04/)
+
+[【题解】PATB-1048 数字加密](/posts/a34c978c9079/)
+
+[【题解】PATB-1049 数列的片段和](/posts/adf6083fc0a8/)
+
+[【题解】PATB-1050 螺旋矩阵](/posts/0f9ede2ad42d/)
+
+[【题解】PATB-1051 复数乘法](/posts/74e19ad1e3e4/)
+
+[【题解】PATB-1052 卖个萌](/posts/5e7c17af9e9b/)
+
+[【题解】PATB-1053 住房空置率](/posts/6a8f23ac2cc6/)
+
+[【题解】PATB-1054 求平均值](/posts/0232a7aabdd0/)
+
+[【题解】PATB-1055 集体照](/posts/0af802325078/)
+
+[【题解】PATB-1056 组合数的和](/posts/72e08416a044/)
+
+[【题解】PATB-1057 数零壹](/posts/ecf59fddebad/)
+
+[【题解】PATB-1058 选择题](/posts/1e2bc0bcb7fc/)
+
+[【题解】PATB-1059 C语言竞赛](/posts/c4a700eb5711/)
+
+[【题解】PATB-1060 爱丁顿数](/posts/2c7251627b2b/)
+
+[【题解】PATB-1061 判断题](/posts/3737b15b8b07/)
+
+[【题解】PATB-1062 最简分数](/posts/3fe6307d33b9/)
+
+[【题解】PATB-1063 计算谱半径](/posts/83ac6a348b86/)
+
+[【题解】PATB-1064 朋友数](/posts/3078ba61d6b1/)
+
+[【题解】PATB-1065 单身狗](/posts/9c5f3a14efef/)
+
+[【题解】PATB-1066 图像过滤](/posts/be1b7f643044/)
+
+[【题解】PATB-1067 试密码](/posts/d7ac9e757de5/)
+
+[【题解】PATB-1068 万绿丛中一点红](/posts/b3c7ed57b2c1/)
+
+[【题解】PATB-1069 微博转发抽奖](/posts/41d6521cac9b/)
+
+[【题解】PATB-1070 结绳](/posts/7a5920dcc119/)
+
+[【题解】PATB-1071 小赌怡情](/posts/978d03f15c59/)
+
+[【题解】PATB-1072 开学寄语](/posts/8ea5a47dc7a1/)
+
+[【题解】PATB-1073 多选题常见计分法](/posts/97cdb96b2a77/)
+
+[【题解】PATB-1074 宇宙无敌加法器](/posts/b9f64033bbf7/)
+
+[【题解】PATB-1075 链表元素分类](/posts/e7750b08e192/)
+
+[【题解】PATB-1076 Wifi密码](/posts/1003aae96914/)
+
+[【题解】PATB-1077 互评成绩计算](/posts/c075d606c920/)
+
+[【题解】PATB-1078 字符串压缩与解压](/posts/1a5f8d56f1ab/)
+
+[【题解】PATB-1079 延迟的回文数](/posts/30d4817fb146/)
+
+[【题解】PATB-1080 MOOC期终成绩](/posts/41a13bb63e38/)
+
+[【题解】PATB-1081 检查密码](/posts/ce21b3c63bb1/)
+
+[【题解】PATB-1082 射击比赛](/posts/d8c511d92fa0/)
+
+[【题解】PATB-1083 是否存在相等的差](/posts/d0416793b69d/)
+
+[【题解】PATB-1084 外观数列](/posts/d0d69ab37cef/)
+
+[【题解】PATB-1085 PAT单位排行](/posts/700d36952b54/)
+
+[【题解】PATB-1086 就不告诉你](/posts/981aad49f2ee/)
+
+[【题解】PATB-1087 有多少不同的值](/posts/a810fba71839/)
+
+[【题解】PATB-1088 三人行](/posts/fda89ca8658c/)
+
+[【题解】PATB-1089 狼人杀-简单版](/posts/a00626b077af/)
+
+[【题解】PATB-1090 危险品装箱](/posts/c2e679ce7f23/)
+
+[【题解】PATB-1091 N-自守数](/posts/b99d419a3a52/)
+
+[【题解】PATB-1092 最好吃的月饼](/posts/0381ba957514/)
+
+[【题解】PATB-1093 字符串A+B](/posts/32744af68fc1/)
+
+[【题解】PATB-1094 谷歌的招聘](/posts/b71bdd9ab45d/)
+
+[【题解】PATB-1095 解码PAT准考证](/posts/ca7f21b0d764/)
+
+[【题解】POJ-1050 To the Max](/posts/c8abe5de2df9/)
+
+[【题解】POJ-1067 取石子游戏](/posts/3bc7b30a5f08/)
+
+[【题解】POJ-1251 Jungle Roads](/posts/51e464777e51/)
+
+[【题解】POJ-1321 棋盘问题](/posts/a5ae20c1643b/)
+
+[【题解】POJ-1426 Find The Multiple](/posts/1c3149f256aa/)
+
+[【题解】POJ-1458 Common Subsequence](/posts/00123c81f3bd/)
+
+[【题解】POJ-1704 Georgia and Bob](/posts/bc9173c093e4/)
+
+[【题解】POJ-1740 A New Stone Game](/posts/b171733a95af/)
+
+[【题解】POJ-1836 Alignment](/posts/7a3ec81ebf54/)
+
+[【题解】POJ-1837 Balance](/posts/275d774778ed/)
+
+[【题解】POJ-2068 Nim](/posts/134592706dab/)
+
+[【题解】POJ-2234 Matches Game](/posts/178bf311af1e/)
+
+[【题解】POJ-2250 Compromise](/posts/fb4c2c1e2d3d/)
+
+[【题解】POJ-2251 Dungeon Master](/posts/eea1a3c44b19/)
+
+[【题解】POJ-2264 Advanced Fruits](/posts/9becd3102026/)
+
+[【题解】POJ-2311 Cutting Game](/posts/445d25d921e0/)
+
+[【题解】POJ-2348 Euclid's Game](/posts/094ec0efa41a/)
+
+[【题解】POJ-2406 Power Strings](/posts/fda8e5be09ea/)
+
+[【题解】POJ-2425 A Chess Game](/posts/614ee78fd6a1/)
+
+[【题解】POJ-2484 A Funny Game](/posts/7f0829c18db0/)
+
+[【题解】POJ-2505 A multiplication game](/posts/946a6afdf924/)
+
+[【题解】POJ-2533 Longest Ordered Subsequence](/posts/6238c2d581ce/)
+
+[【题解】POJ-2752 Seek the Name, Seek the Fame](/posts/91c4c13a03aa/)
+
+[【题解】POJ-2960 S-Nim](/posts/250fb2912c7a/)
+
+[【题解】POJ-2975 Nim](/posts/055ca4369f7f/)
+
+[【题解】POJ-3080 Blue Jeans](/posts/be5a0698dd0e/)
+
+[【题解】POJ-3087 Shuffle'm Up](/posts/fac561f86d25/)
+
+[【题解】POJ-3122 Pie](/posts/4f91f86386e2/)
+
+[【题解】POJ-3126 Prime Path](/posts/b755273f09ac/)
+
+[【题解】POJ-3273 Monthly Expense](/posts/9b90afda47f5/)
+
+[【题解】POJ-3278 Catch That Cow](/posts/f18615a90e7e/)
+
+[【题解】POJ-3279 Fliptile](/posts/c8ac65e150b4/)
+
+[【题解】POJ-3376 Finding Palindromes](/posts/33da743c9951/)
+
+[【题解】POJ-3414 Pots](/posts/4ac0303d78e8/)
+
+[【题解】POJ-3480 John](/posts/e28f21927357/)
+
+[【题解】POJ-3533 Light Switching Game](/posts/06fbc63b588b/)
+
+[【题解】POJ-3746 Teacher YYF](/posts/9210fa5d9dc9/)
+
+[【题解】POJ-3922 A simple stone game](/posts/3161fd3654f6/)
+
+[【题解】POJ-3974 Palindrome](/posts/5576f036d694/)
+
+[【题解】POJ-3984 迷宫问题](/posts/bdca762dd80b/)
+
+[【题解】UVA-11624 Fire!](/posts/870f2567a338/)
+
+[【题解】ZOJ-1164 Software CRC](/posts/c515e940c4f1/)
+
+[【题解】ZOJ-1168 Function Run Fun](/posts/e0107ccc549d/)
+
+[【题解】ZOJ-1195 Blowing Fuses](/posts/5570651f36c5/)
+
+[【题解】ZOJ-3057 Beans Game](/posts/067a741789f9/)
+
+[【题解】剑指Offer-03 数组中重复的数字](/posts/14e4df686ecd/)
+
+[【题解】剑指Offer-04 二维数组中的查找](/posts/8d0f3f190548/)
+
+[【题解】剑指Offer-05 替换空格](/posts/bf0bd5d7a689/)
+
+[【题解】剑指Offer-06 从尾到头打印链表](/posts/a0cd8710dd32/)
+
+[【题解】剑指Offer-07 重建二叉树](/posts/b2e0b507cd84/)
+
+[【题解】剑指Offer-09 用两个栈实现队列](/posts/a2f960ded293/)
+
+[【题解】剑指Offer-10.1 斐波那契数列](/posts/ee8f053ab16d/)
+
+[【题解】剑指Offer-10.2 青蛙跳台阶问题](/posts/16dfad34e03d/)
+
+[【题解】剑指Offer-11 旋转数组的最小数字](/posts/d102a3ce3097/)
+
+[【题解】剑指Offer-12 矩阵中的路径](/posts/eff071d1666b/)
+
+[【题解】剑指Offer-13 机器人的运动范围](/posts/b3bdf91709e8/)
+
+[【题解】剑指Offer-14.1 剪绳子](/posts/58aab5bb1039/)
+
+[【题解】剑指Offer-14.2 剪绳子II](/posts/ff7d2ee247f7/)
+
+[【题解】剑指Offer-15 二进制中1的个数](/posts/baf41c1eed4f/)
+
+[【题解】剑指Offer-16 数值的整数次方](/posts/4d501452fd9c/)
+
+[【题解】剑指Offer-17 打印从1到最大的n位数](/posts/21a644c8a439/)
+
+[【题解】剑指Offer-18 删除链表的节点](/posts/afaa3d991f03/)
+
+[【题解】剑指Offer-19 正则表达式匹配](/posts/c5a1001843b8/)
+
+[【题解】剑指Offer-20 表示数值的字符串](/posts/59caa4d64bb3/)
+
+[【题解】剑指Offer-21 调整数组顺序使奇数位于偶数前面](/posts/2e5e1bc60c3c/)
+
+[【题解】剑指Offer-22 链表中倒数第k个节点](/posts/573c4b4ca001/)
+
+[【题解】剑指Offer-24 反转链表](/posts/e40438a6df0d/)
+
+[【题解】剑指Offer-25 合并两个排序的链表](/posts/377c71888bab/)
+
+[【题解】剑指Offer-26 树的子结构](/posts/c0edb7edf13b/)
+
+[【题解】剑指Offer-27 二叉树的镜像](/posts/36531d7f47a5/)
+
+[【题解】剑指Offer-28 对称的二叉树](/posts/0e78a9655b07/)
+
+[【题解】剑指Offer-29 顺时针打印矩阵](/posts/86d85fe5eb1f/)
+
+[【题解】剑指Offer-30 包含min函数的栈](/posts/4a351a00783a/)
+
+[【题解】剑指Offer-31 栈的压入、弹出序列](/posts/646d434ccfb2/)
+
+[【题解】剑指Offer-32.1 从上到下打印二叉树](/posts/1f8ebe2e04f2/)
+
+[【题解】剑指Offer-32.2 从上到下打印二叉树II](/posts/0357b841b59b/)
+
+[【题解】剑指Offer-32.3 从上到下打印二叉树III](/posts/2c79b7b1f5e1/)
+
+[【题解】剑指Offer-33 二叉搜索树的后序遍历序列](/posts/9a30ac20d67a/)
+
+[【题解】剑指Offer-34 二叉树中和为某一值的路径](/posts/67c01c01367a/)
+
+[【题解】剑指Offer-34 复杂链表的复制](/posts/02d308a557ae/)
+
+[【题解】剑指Offer-36 二叉搜索树与双向链表](/posts/8227e733b259/)
+
+[【题解】剑指Offer-37 序列化二叉树](/posts/c09a9e6dceba/)
+
+[【题解】剑指Offer-38 字符串的排列](/posts/d4d4e347700f/)
+
+[【题解】剑指Offer-39 数组中出现次数超过一半的数字](/posts/9a685bcfa867/)
