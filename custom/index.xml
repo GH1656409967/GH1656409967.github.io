@@ -170,37 +170,23 @@ ARPG：<code>上古卷轴5：天际</code>、<code>塞尔达传说：旷野之�
 <li><a href="https://gh1656409967.github.io">gh1656409967.github.io</a></li>
 </ul>
 <div class="hugo-encryptor-container">
-  <div class="hugo-encryptor-prompt">
-    
-      <p>文章的部分内容被密码保护：</p>
-    
-  </div>
-  <div class="hugo-encryptor-form">
-    <input
-      class="hugo-encryptor-input"
-      placeholder='请输入密码'
-    />
-    <input
-      class="hugo-encryptor-button"
-      type="button"
-      value='点击验证'
-      onclick="_click_handler(this)"
-    />
-  </div>
-  <div
-    class="hugo-encryptor-cipher-text"
-    data-password="123qwe"
-    style="display: none;"
-  >
-    <span style="display: none;">--- DON'T MODIFY THIS LINE ---</span>
-    
+    <div class="hugo-encryptor-prompt">
+        <p>文章的部分内容被密码保护：</p>
+    </div>
+    <div class="hugo-encryptor-form">
+        <input class="hugo-encryptor-input" placeholder='请输入密码' />
+        <input class="hugo-encryptor-button" type="button" value='点击验证' onclick="_click_handler(this)" />
+    </div>
+    <div class="hugo-encryptor-cipher-text" data-password="123qwe" style="display: none;">
+        <span style="display: none;">--- DON'T MODIFY THIS LINE ---</span>
+        
 
 <div class="invisible">
 访问卡顿，推荐使用<a href="https://mxwljsq.top/auth/register?code=X0Ok">科学上网</a>
 </div>
 
 
-  </div>
+    </div>
 </div>
 
 <p> </p>]]></content:encoded>
