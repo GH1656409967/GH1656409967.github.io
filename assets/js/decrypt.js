@@ -32,12 +32,12 @@ const _click_handler = function (element) {
         decrypted = _do_decrypt(encrypted, password);
     } catch (err) {
         console.error(err);
-        alert("Failed to decrypt.");
+        console.alert("Failed to decrypt.");
         return;
     }
 
     if (!decrypted.includes("--- DON'T MODIFY THIS LINE ---")) {
-        alert("Incorrect password.");
+        console.alert("Incorrect password.");
         return;
     }
 
