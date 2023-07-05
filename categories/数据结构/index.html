@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>数据结构 | 似水</title>
+<meta content="" name="keywords"/>
+<meta content="Life is like a boat" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://blog.lordash.de/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="alternate" type="application/rss+xml"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="数据结构" property="og:title"/>
+<meta content="Life is like a boat" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://blog.lordash.de/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="数据结构" name="twitter:title"/>
+<meta content="Life is like a boat" name="twitter:description"/>
+</head>
+<body class="list dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://blog.lordash.de">主页</a> » <a href="https://blog.lordash.de/categories/">Categories</a></div>
+<h1>
+    数据结构
+  </h1>
+</header>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>剑指Offer-34 二叉树中和为某一值的路径
+    </h2>
+</header>
+<div class="entry-content">
+<p>二叉树中和为某一值的路径(剑指Offer-34) 题面 请实现两个函数，分别用来序列化和反序列化二叉树。 示例 给定如下二叉树，以及目标和 target = 22，...</p>
+</div>
+<footer class="entry-footer"><span title="2021-04-19 21:49:18 +0000 UTC">2021-04-19</span> · Lordash
+
+</footer>
+<a aria-label="post link to 剑指Offer-34 二叉树中和为某一值的路径" class="entry-link" href="https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-34-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>剑指Offer-37 序列化二叉树
+    </h2>
+</header>
+<div class="entry-content">
+<p>序列化二叉树(剑指Offer-37) 题面 请实现两个函数，分别用来序列化和反序列化二叉树。 示例 1你可以将以下二叉树： 2 3 1 4 / \ 5 2 3 6 / \ 7...</p>
+</div>
+<footer class="entry-footer"><span title="2021-04-12 19:01:18 +0000 UTC">2021-04-12</span> · Lordash
+
+</footer>
+<a aria-label="post link to 剑指Offer-37 序列化二叉树" class="entry-link" href="https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-37-%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>剑指Offer-36 二叉搜索树与双向链表
+    </h2>
+</header>
+<div class="entry-content">
+<p>二叉搜索树与双向链表(剑指Offer-36) 题面 输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的循环双向链表。要求不能创建任何新的节点，只...</p>
+</div>
+<footer class="entry-footer"><span title="2021-04-05 00:05:18 +0000 UTC">2021-04-05</span> · Lordash
+
+</footer>
+<a aria-label="post link to 剑指Offer-36 二叉搜索树与双向链表" class="entry-link" href="https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-36-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>剑指Offer-34 复杂链表的复制
+    </h2>
+</header>
+<div class="entry-content">
+<p>复杂链表的复制(剑指Offer-34) 题面 请实现 copyRandomList 函数，复制一个复杂链表。在复杂链表中，每个节点除了有一个 next 指针指向下一个节点，还有一个 random 指...</p>
+</div>
+<footer class="entry-footer"><span title="2021-04-04 22:24:18 +0000 UTC">2021-04-04</span> · Lordash
+
+</footer>
+<a aria-label="post link to 剑指Offer-34 复杂链表的复制" class="entry-link" href="https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-35-%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>剑指Offer-33 二叉搜索树的后序遍历序列
+    </h2>
+</header>
+<div class="entry-content">
+<p>二叉搜索树的后序遍历序列(剑指Offer-33) 题面 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历结果。如果是则返回 true，否则...</p>
+</div>
+<footer class="entry-footer"><span title="2021-04-04 20:16:18 +0000 UTC">2021-04-04</span> · Lordash
+
+</footer>
+<a aria-label="post link to 剑指Offer-33 二叉搜索树的后序遍历序列" class="entry-link" href="https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-33-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>剑指Offer-32.3 从上到下打印二叉树III
+    </h2>
+</header>
+<div class="entry-content">
+<p>从上到下打印二叉树III(剑指Offer-32.3) 题面 请实现一个函数按照之字形顺序打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从...</p>
+</div>
+<footer class="entry-footer"><span title="2021-04-04 17:45:18 +0000 UTC">2021-04-04</span> · Lordash
+
+</footer>
+<a aria-label="post link to 剑指Offer-32.3 从上到下打印二叉树III" class="entry-link" href="https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-32.3-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91iii/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>剑指Offer-32.2 从上到下打印二叉树II
+    </h2>
+</header>
+<div class="entry-content">
+<p>从上到下打印二叉树II(剑指Offer-32.2) 题面 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。 例如: 给定二叉树:...</p>
+</div>
+<footer class="entry-footer"><span title="2021-04-04 17:35:18 +0000 UTC">2021-04-04</span> · Lordash
+
+</footer>
+<a aria-label="post link to 剑指Offer-32.2 从上到下打印二叉树II" class="entry-link" href="https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-32.2-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91ii/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>剑指Offer-32.1 从上到下打印二叉树
+    </h2>
+</header>
+<div class="entry-content">
+<p>从上到下打印二叉树(剑指Offer-32.1) 题面 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。 例如: 给定二叉树: [3,9,20,null,null,15,7], 1...</p>
+</div>
+<footer class="entry-footer"><span title="2021-04-03 23:19:18 +0000 UTC">2021-04-03</span> · Lordash
+
+</footer>
+<a aria-label="post link to 剑指Offer-32.1 从上到下打印二叉树" class="entry-link" href="https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-32.1-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>剑指Offer-25 合并两个排序的链表
+    </h2>
+</header>
+<div class="entry-content">
+<p>合并两个排序的链表(剑指Offer-25) 题面 输入两个递增排序的链表，合并这两个链表并使新链表中的节点仍然是递增排序的。 示例 1输入：1-&amp;g...</p>
+</div>
+<footer class="entry-footer"><span title="2021-04-03 20:20:18 +0000 UTC">2021-04-03</span> · Lordash
+
+</footer>
+<a aria-label="post link to 剑指Offer-25 合并两个排序的链表" class="entry-link" href="https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-25-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>剑指Offer-24 反转链表
+    </h2>
+</header>
+<div class="entry-content">
+<p>反转链表(剑指Offer-24) 题面 定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。 示例 1输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL 2输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL 限制 10 &lt;=...</p>
+</div>
+<footer class="entry-footer"><span title="2021-04-03 19:43:18 +0000 UTC">2021-04-03</span> · Lordash
+
+</footer>
+<a aria-label="post link to 剑指Offer-24 反转链表" class="entry-link" href="https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-24-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"></a>
+</article>
+<footer class="page-footer">
+<nav class="pagination">
+<a class="next" href="https://blog.lordash.de/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/page/2/">下一页  »
+    </a>
+</nav>
+</footer>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

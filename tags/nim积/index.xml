@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nim积 on 似水</title>
+    <link>https://blog.lordash.de/tags/nim%E7%A7%AF/</link>
+    <description>Recent content in Nim积 on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 15 Jul 2020 11:58:12 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/nim%E7%A7%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>POJ-3533 Light Switching Game</title>
+      <link>https://blog.lordash.de/posts/solution/poj-3533-light-switching-game/</link>
+      <pubDate>Wed, 15 Jul 2020 11:58:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/poj-3533-light-switching-game/</guid>
+      <description>POJ-3533 Light Switching Game 类型 博弈论 Nim积</description>
+      <content:encoded><![CDATA[<h1 id="light-switching-gamepoj-3533httpsvjudgenetproblempoj-3533">Light Switching Game(<a href="https://vjudge.net/problem/POJ-3533">POJ-3533</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>The Light Switching Game is played  on a 1000 × 1000 × 1000 cube of cells with a light in each cell, as  Figure.1 shows. Initially, most of the lights are off while exactly <em>N</em> lights are on. Two players take moves alternately. A move consists of switching the lights at the corners of a cuboid, i.e. (<em>x</em>1,<em>y</em>1,<em>z</em>1), (<em>x</em>1,<em>y</em>1,<em>z</em>2), (<em>x</em>1,<em>y</em>2,<em>z</em>1), (<em>x</em>1,<em>y</em>2,<em>z</em>2), (<em>x</em>2,<em>y</em>1,<em>z</em>1), (<em>x</em>2,<em>y</em>1,<em>z</em>2), (<em>x</em>2,<em>y</em>2,<em>z</em>1), (<em>x</em>2,<em>y</em>2,<em>z</em>2) where 1 ≤ <em>x</em>1 ≤ <em>x</em>2 ≤ 1000, 1 ≤<em>y</em>1 ≤ <em>y</em>2 ≤ 1000, 1 ≤<em>z</em>1 ≤ <em>z</em>2 ≤ 1000 and the light at the corner (<em>x</em>2,<em>y</em>2,<em>z</em>2) must be on (and turned off after the move). Notice the cuboid is  possibly degenerated to a rectangle, a line or even a single cell so  that the player may also switching four, two or one besides eight lights in a move. The player loses the game when he can not take a move.</p>
+<p><img loading="lazy" src="https://vj.z180.cn/8f32686621aad732920aa976cfafe3cc?v=1594697219" alt="Figure.1"  />
+</p>
+<p>You will find out whether the second player can win if both players play optimally.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>There are multiple test cases.
+Every test case starts with one line containing a single number <em>N</em> indicating the number of lights which is initially on. (<em>N</em> ≤ 100)
+Each of the next <em>N</em> lines contains the coordinates (<em>x</em>, <em>y</em>, <em>z</em>) (1 ≤ <em>x</em>, <em>y</em>, <em>z</em> ≤ 1000) showing that the light at this position is on initially.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>One line for each test case which contains &ldquo;Yes&rdquo; or &ldquo;No&rdquo; indicating whether the second player can win the game.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>4
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>5 11 30
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>5 19 19
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>23 15 6
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>2 26 16
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>9 20 9
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>8 1 28
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>30 22 26
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Yes
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>No
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Nim积，见<a href="https://blog.lordash.cf/posts/55e38792.html">【题解】HDU-3404 Switch lights</a></p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#75715e">    Nim积 x @ y = mex{(a @ y) ^ (x @ b) ^ (a @ b)}, 0 &lt;= a &lt; x, 0 &lt;= b &lt; y
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#75715e">    1. X x 2^(2^a) = X * 2^(2^a)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#75715e">    2. X x Y &lt; 2^(2^a)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#75715e">    3. 2^(2^a) x 2^(2^a) = (3/2) * 2^(2^a)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#75715e">    调用 ans ^= f(x, y)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#66d9ef">int</span> SG[<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">f</span>(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">g</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)                         <span style="color:#75715e">// 计算2^x与2^y的nim积
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    <span style="color:#66d9ef">if</span>(SG[x][y] <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> SG[x][y];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>x) <span style="color:#66d9ef">return</span> SG[x][y] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>y;          <span style="color:#75715e">// x==0也就是1与2^y的nim积，等于2^y
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>y) <span style="color:#66d9ef">return</span> SG[x][y] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>x;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>    <span style="color:#66d9ef">int</span> ans<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, t;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>    <span style="color:#66d9ef">int</span> xx<span style="color:#f92672">=</span>x, yy<span style="color:#f92672">=</span>y, k<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    <span style="color:#66d9ef">while</span>(x <span style="color:#f92672">||</span> y)                           <span style="color:#75715e">// 再将x和y分为二进制，这里计算那些普通乘积的（即对应二进制位不同的）
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span><span style="color:#75715e"></span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>        t <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>k;                           <span style="color:#75715e">// 从此位得到的最终的数2^k
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>((x<span style="color:#f92672">^</span>y)<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span>)  ans <span style="color:#f92672">*=</span> t;              <span style="color:#75715e">// 该位不同
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span><span style="color:#75715e"></span>        x<span style="color:#f92672">&gt;&gt;=</span><span style="color:#ae81ff">1</span>; y<span style="color:#f92672">&gt;&gt;=</span><span style="color:#ae81ff">1</span>; k<span style="color:#f92672">&lt;&lt;=</span><span style="color:#ae81ff">1</span>;                <span style="color:#75715e">// 从此位得到的指数(本身也是2的幂)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>    x<span style="color:#f92672">=</span>xx; y<span style="color:#f92672">=</span>yy; k<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>    <span style="color:#66d9ef">while</span>(x <span style="color:#f92672">||</span> y)                           <span style="color:#75715e">// 计算那些相同的fermat 2-power 数，与已得出的数的nim积
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span><span style="color:#75715e"></span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>        t <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>k;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>        <span style="color:#66d9ef">if</span> ((x<span style="color:#f92672">&amp;</span>y)<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span>) ans <span style="color:#f92672">=</span> f(ans, t<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>);   <span style="color:#75715e">// 该位相同
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span><span style="color:#75715e"></span>        x<span style="color:#f92672">&gt;&gt;=</span><span style="color:#ae81ff">1</span>; y<span style="color:#f92672">&gt;&gt;=</span><span style="color:#ae81ff">1</span>; k<span style="color:#f92672">&lt;&lt;=</span><span style="color:#ae81ff">1</span>;                <span style="color:#75715e">// 从此位得到的指数(本身也是2的幂)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>    <span style="color:#66d9ef">return</span> SG[xx][yy] <span style="color:#f92672">=</span> ans;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">f</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)                         <span style="color:#75715e">//计算二位Nim积
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>x <span style="color:#f92672">||</span> <span style="color:#f92672">!</span>y) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span>    <span style="color:#66d9ef">if</span>(x <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> y;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>    <span style="color:#66d9ef">if</span>(y <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> x;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>    <span style="color:#66d9ef">int</span> ans<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>x, a<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i; i<span style="color:#f92672">&gt;&gt;=</span><span style="color:#ae81ff">1</span>, a<span style="color:#f92672">++</span>)       <span style="color:#75715e">//将x和二进制分解
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span><span style="color:#75715e"></span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span><span>        <span style="color:#66d9ef">if</span> ((i<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">continue</span>;             <span style="color:#75715e">//该位是1才计算
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span>y, b<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j; j<span style="color:#f92672">&gt;&gt;=</span><span style="color:#ae81ff">1</span>, b<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span><span>        {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span><span>            <span style="color:#66d9ef">if</span> ((j<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span><span>            ans <span style="color:#f92672">^=</span> g(a, b);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span><span>    <span style="color:#66d9ef">return</span> ans;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span><span>    memset(SG, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">sizeof</span>(SG));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span><span>    <span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n) <span style="color:#f92672">&amp;&amp;</span> n)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67</span><span>        <span style="color:#66d9ef">int</span> nim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69</span><span>            <span style="color:#66d9ef">int</span> x, y, z;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70</span><span>            scanf(<span style="color:#e6db74">&#34;%d %d %d&#34;</span>, <span style="color:#f92672">&amp;</span>x, <span style="color:#f92672">&amp;</span>y, <span style="color:#f92672">&amp;</span>z);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71</span><span>            nim <span style="color:#f92672">^=</span> f(x, f(y, z));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73</span><span>        <span style="color:#66d9ef">if</span>(nim){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74</span><span>            printf(<span style="color:#e6db74">&#34;No</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76</span><span>            printf(<span style="color:#e6db74">&#34;Yes</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>HDU-3404 Switch lights</title>
+      <link>https://blog.lordash.de/posts/solution/hdu-3404-switch-lights/</link>
+      <pubDate>Wed, 15 Jul 2020 11:38:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/hdu-3404-switch-lights/</guid>
+      <description>HDU-3404 Switch lights 类型 博弈论 Nim积</description>
+      <content:encoded><![CDATA[<h1 id="switch-lightshdu-3404httpsvjudgenetproblemhdu-3404">Switch lights(<a href="https://vjudge.net/problem/HDU-3404">HDU-3404</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>lxhgww is playing a game with his computer Deep Blue.
+The game is played on a matrix containing lights. At first, some  lights are on, while others are off. lxhgww and Deep Blue take turns to  switch the lights. For each step, the player should choose a rectangle  in the matrix: (x1 , y1) , (x1 , y2) , (x2 , y1) , (x2 , y2) ,  (x1&lt;=x2,y1&lt;=y2, the light at (x2, y2) should be on) and change the lights’ status on the four vertex of the rectangle, namely on to off,  and off to on. The player turns all the lights off wins the game. Notice the rectangle is possibly degenerated to line or even a single cell so  that the player may also switch two or one besides four lights in a  move.
+Deep Blue&rsquo;s strategy is perfect, if it has a chance to win, never  will it lose. Does lxhgww have a chance to win if he takes the first  step?</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>The first line is an integer T(T&lt;=100) indicating the case number.
+Each case has one integers n (n&lt;= 1000 ), the number of on-lights at the beginning of the game.
+Then come n lines, each line has two integers, xi , yi,  (1&lt;=xi&lt;=10000, 1&lt;=yi&lt;=10000) , so light at (xi, yi) is on at first. (No two lights at the same position)</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>If lxhgww still has a chance to win, output &ldquo;Have a try, lxhgww.&rdquo;, otherwise tell lxhgww &ldquo;Don&rsquo;t waste your time.&rdquo;</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>1 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>2 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>1 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>2 2
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Don&#39;t waste your time.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Have a try, lxhgww.
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>一个二维矩阵上，有若干个亮着的灯泡 。 每次选择一个矩阵（右上角的灯泡必须是亮的），改变四个角灯泡的状态，不能操作的选手判负。</p>
+<p>Nim积定义</p>
+<blockquote>
+<p>$ x \otimes y = sg(x, y) = mex{(a \otimes y) \oplus (x \otimes b) \oplus (a \otimes b), 0 \le a \lt x, 0 \le b \lt y} $</p>
+</blockquote>
+<p>以下是对于 x, y≤4 的一个小表。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">6</td>
+</tr>
+</tbody>
+</table>
+<p>定义费马数Fermat 2-power为$ 2^{2^{k}} $，对于$ x,y &lt; 2^{2^{k}} $有以下性质</p>
+<ul>
+<li>
+<p>一个 Fermat 2-power 与任意小于它的数的 Nim 积为一般意义下乘法的积，即$ x \otimes 2^{2^{k}} = x * 2^{2^{k}} $</p>
+</li>
+<li>
+<p>一个 Fermat 2-power 与自己的 Nim 积为自己的 $ \frac{3}{2} $ 倍，即 $ 2^{2^{k}} \otimes 2^{2^{k}} = \frac{3}{2} * 2^{2^{k}}$</p>
+</li>
+<li>
+<p>$ x \otimes y &lt; 2^{2^{k}} $</p>
+</li>
+</ul>
+<p>根据性质可以得出递归求Nim积的板子。</p>
+<p>详细参见论文<a href="http://www.doc88.com/p-5098170314707.html">《从“k倍动态减法游戏”出发探究一类组合游戏问题》</a>。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span><span><span style="color:#75715e">    Nim积 x @ y = mex{(a @ y) ^ (x @ b) ^ (a @ b)}, 0 &lt;= a &lt; x, 0 &lt;= b &lt; y
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span><span><span style="color:#75715e">    1. X x 2^(2^a) = X * 2^(2^a)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span><span><span style="color:#75715e">    2. X x Y &lt; 2^(2^a)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span><span><span style="color:#75715e">    3. 2^(2^a) x 2^(2^a) = (3/2) * 2^(2^a)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span><span><span style="color:#75715e">    模板一：调用 ans ^= f(x, y)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span><span><span style="color:#66d9ef">int</span> SG[<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">f</span>(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">g</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)                         <span style="color:#75715e">// 计算2^x与2^y的nim积
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span><span>    <span style="color:#66d9ef">if</span>(SG[x][y] <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> SG[x][y];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span><span>    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>x) <span style="color:#66d9ef">return</span> SG[x][y] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>y;          <span style="color:#75715e">// x==0也就是1与2^y的nim积，等于2^y
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>y) <span style="color:#66d9ef">return</span> SG[x][y] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>x;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span><span>    <span style="color:#66d9ef">int</span> ans<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, t;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span><span>    <span style="color:#66d9ef">int</span> xx<span style="color:#f92672">=</span>x, yy<span style="color:#f92672">=</span>y, k<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span><span>    <span style="color:#66d9ef">while</span>(x <span style="color:#f92672">||</span> y)                           <span style="color:#75715e">// 再将x和y分为二进制，这里计算那些普通乘积的（即对应二进制位不同的）
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span><span><span style="color:#75715e"></span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span><span>        t <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>k;                           <span style="color:#75715e">// 从此位得到的最终的数2^k
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>((x<span style="color:#f92672">^</span>y)<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span>)  ans <span style="color:#f92672">*=</span> t;              <span style="color:#75715e">// 该位不同
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span><span><span style="color:#75715e"></span>        x<span style="color:#f92672">&gt;&gt;=</span><span style="color:#ae81ff">1</span>; y<span style="color:#f92672">&gt;&gt;=</span><span style="color:#ae81ff">1</span>; k<span style="color:#f92672">&lt;&lt;=</span><span style="color:#ae81ff">1</span>;                <span style="color:#75715e">// 从此位得到的指数(本身也是2的幂)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span><span>    x<span style="color:#f92672">=</span>xx; y<span style="color:#f92672">=</span>yy; k<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span><span>    <span style="color:#66d9ef">while</span>(x <span style="color:#f92672">||</span> y)                           <span style="color:#75715e">// 计算那些相同的fermat 2-power 数，与已得出的数的nim积
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span><span><span style="color:#75715e"></span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span><span>        t <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>k;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span><span>        <span style="color:#66d9ef">if</span> ((x<span style="color:#f92672">&amp;</span>y)<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span>) ans <span style="color:#f92672">=</span> f(ans, t<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>);   <span style="color:#75715e">// 该位相同
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span><span><span style="color:#75715e"></span>        x<span style="color:#f92672">&gt;&gt;=</span><span style="color:#ae81ff">1</span>; y<span style="color:#f92672">&gt;&gt;=</span><span style="color:#ae81ff">1</span>; k<span style="color:#f92672">&lt;&lt;=</span><span style="color:#ae81ff">1</span>;                <span style="color:#75715e">// 从此位得到的指数(本身也是2的幂)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span><span>    <span style="color:#66d9ef">return</span> SG[xx][yy] <span style="color:#f92672">=</span> ans;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">f</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)                         <span style="color:#75715e">//计算二位Nim积
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span><span>    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>x <span style="color:#f92672">||</span> <span style="color:#f92672">!</span>y) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span><span>    <span style="color:#66d9ef">if</span>(x <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> y;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span><span>    <span style="color:#66d9ef">if</span>(y <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> x;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span><span>    <span style="color:#66d9ef">int</span> ans<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>x, a<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i; i<span style="color:#f92672">&gt;&gt;=</span><span style="color:#ae81ff">1</span>, a<span style="color:#f92672">++</span>)       <span style="color:#75715e">//将x和二进制分解
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span><span><span style="color:#75715e"></span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span><span>        <span style="color:#66d9ef">if</span> ((i<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">continue</span>;             <span style="color:#75715e">//该位是1才计算
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span>y, b<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j; j<span style="color:#f92672">&gt;&gt;=</span><span style="color:#ae81ff">1</span>, b<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span><span>        {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span><span>            <span style="color:#66d9ef">if</span> ((j<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span><span>            ans <span style="color:#f92672">^=</span> g(a, b);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span><span>    <span style="color:#66d9ef">return</span> ans;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span><span><span style="color:#75715e">    k为最大的整数满足 M = 2^(2^k) &lt;= x
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span><span><span style="color:#75715e"> x = p * M + q, y = s * M + t
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span><span><span style="color:#75715e"> x @ y = spMM + sqM + tpM + tq
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span><span><span style="color:#75715e">    = M(sp+sq+tp) + tq + (M/2 @ sp)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span><span><span style="color:#75715e">    模板二：调用 ans ^ Nim_Multi(x, y)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getSg</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span><span>    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>x <span style="color:#f92672">||</span> <span style="color:#f92672">!</span>y) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span><span>    <span style="color:#66d9ef">if</span>(SG[x][y]<span style="color:#f92672">!=-</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> SG[x][y];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span><span>    <span style="color:#66d9ef">bool</span> S[<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">8</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>};
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>x; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span><span>        S[getSg(i, y)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>y; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span><span>        S[getSg(x, i)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&lt;</span>x; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; j<span style="color:#f92672">&lt;</span>y; j<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span><span>            S[getSg(i,y) <span style="color:#f92672">^</span> getSg(x,j) <span style="color:#f92672">^</span> getSg(i,j)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span><span>    <span style="color:#66d9ef">int</span> mex <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span><span>    <span style="color:#66d9ef">while</span>(S[mex]) mex<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span><span>    <span style="color:#66d9ef">return</span> SG[x][y]<span style="color:#f92672">=</span>mex;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">Nim_Multi_Power</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span><span>    <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">16</span>) <span style="color:#66d9ef">return</span> getSg(x, y);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span><span>    <span style="color:#66d9ef">int</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, m;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span><span>    <span style="color:#66d9ef">for</span>(; (<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>a) <span style="color:#f92672">&lt;=</span> x; a<span style="color:#f92672">&lt;&lt;=</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span><span>    a <span style="color:#f92672">&gt;&gt;=</span> <span style="color:#ae81ff">1</span>; m <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>a;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span><span>    <span style="color:#66d9ef">int</span> p <span style="color:#f92672">=</span> x<span style="color:#f92672">/</span>m, s <span style="color:#f92672">=</span> y<span style="color:#f92672">/</span>m, t <span style="color:#f92672">=</span> y<span style="color:#f92672">&amp;</span>(m<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span><span>    <span style="color:#66d9ef">int</span> d1 <span style="color:#f92672">=</span> Nim_Multi_Power(p, s);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span><span>    <span style="color:#66d9ef">int</span> d2 <span style="color:#f92672">=</span> Nim_Multi_Power(p, t);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span><span>    <span style="color:#66d9ef">return</span> ((d1<span style="color:#f92672">^</span>d2) <span style="color:#f92672">&lt;&lt;</span> a) <span style="color:#f92672">^</span> Nim_Multi_Power(m<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>, d1);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">Nim_Multi</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104</span><span>    <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&lt;</span> y) swap(x, y);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105</span><span>    <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">16</span>) <span style="color:#66d9ef">return</span> getSg(x, y);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106</span><span>    <span style="color:#66d9ef">int</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, m;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107</span><span>    <span style="color:#66d9ef">for</span>(; (<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>a) <span style="color:#f92672">&lt;=</span> x; a<span style="color:#f92672">&lt;&lt;=</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108</span><span>    a <span style="color:#f92672">&gt;&gt;=</span> <span style="color:#ae81ff">1</span>; m <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>a;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109</span><span>    <span style="color:#66d9ef">int</span> p <span style="color:#f92672">=</span> x<span style="color:#f92672">/</span>m, q <span style="color:#f92672">=</span> x<span style="color:#f92672">&amp;</span>(m<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), s <span style="color:#f92672">=</span> y<span style="color:#f92672">/</span> m, t <span style="color:#f92672">=</span> y<span style="color:#f92672">&amp;</span>(m<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110</span><span>    <span style="color:#66d9ef">int</span> c1 <span style="color:#f92672">=</span> Nim_Multi(p, s);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111</span><span>    <span style="color:#66d9ef">int</span> c2 <span style="color:#f92672">=</span> Nim_Multi(p, t) <span style="color:#f92672">^</span> Nim_Multi(q, s);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112</span><span>    <span style="color:#66d9ef">int</span> c3 <span style="color:#f92672">=</span> Nim_Multi(q, t);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113</span><span>    <span style="color:#66d9ef">return</span> ((c1<span style="color:#f92672">^</span>c2) <span style="color:#f92672">&lt;&lt;</span> a) <span style="color:#f92672">^</span> c3 <span style="color:#f92672">^</span> Nim_Multi_Power(m<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>, c1);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119</span><span>    memset(SG, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">sizeof</span>(SG));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120</span><span>    <span style="color:#66d9ef">int</span> T; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>T);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121</span><span>    <span style="color:#66d9ef">while</span>(T<span style="color:#f92672">--</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123</span><span>        <span style="color:#66d9ef">int</span> n; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125</span><span>        <span style="color:#66d9ef">int</span> nim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127</span><span>            <span style="color:#66d9ef">int</span> x, y;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128</span><span>            scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>x, <span style="color:#f92672">&amp;</span>y);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129</span><span>            <span style="color:#75715e">//nim ^= f(x, y);
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130</span><span><span style="color:#75715e"></span>            nim <span style="color:#f92672">^=</span> Nim_Multi(x, y);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132</span><span>        <span style="color:#66d9ef">if</span>(nim){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133</span><span>            printf(<span style="color:#e6db74">&#34;Have a try, lxhgww.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135</span><span>            printf(<span style="color:#e6db74">&#34;Don&#39;t waste your time.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>MySQL on 似水</title>
+    <link>https://blog.lordash.de/tags/mysql/</link>
+    <description>Recent content in MySQL on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 23 Dec 2019 17:59:36 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win10配置MySQL和JDBC</title>
+      <link>https://blog.lordash.de/posts/configure/0da28f65294b5e79/</link>
+      <pubDate>Mon, 23 Dec 2019 17:59:36 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/configure/0da28f65294b5e79/</guid>
+      <description>Win10配置MySQL和JDBC</description>
+      <content:encoded><![CDATA[<h1 id="一准备">一、准备</h1>
+<p>于MySQL官网根据需要下载，参考链接：</p>
+<ul>
+<li><a href="https://dev.mysql.com/downloads/file/?id=490026">mysql-8.0.18-winx64.zip</a></li>
+<li><a href="https://dev.mysql.com/downloads/file/?id=490495">mysql-connector-java-8.0.18.zip</a></li>
+</ul>
+<h1 id="二mysql">二、MySQL</h1>
+<h2 id="配置">配置</h2>
+<p>配置系统环境变量，或者以管理员身份运行cmd，进入解压目录下的bin目录中运行命令，例如
+D:\Program Files (x86)\mysql-8.0.18-winx64\bin&gt;</p>
+<p>生成data目录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>&gt; mysqld --initialize-insecure --user=mysql
+</span></span></code></pre></div><p>安装MySQL</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>&gt; mysqld -install
+</span></span></code></pre></div><h2 id="测试">测试</h2>
+<p>启动MySQL服务</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>&gt; net start mysql
+</span></span></code></pre></div><p>登录MySQL（密码为空，直接回车即可）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>&gt; mysql -u root -p
+</span></span></code></pre></div><p>如果密码不为空，先关闭服务</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>&gt; net stop mysql
+</span></span></code></pre></div><p>执行以下命令后，再重启服务，然后重新登录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>&gt; mysqld -nt --skip-grant-tables
+</span></span></code></pre></div><p>（依然无效的，请<strong>删除目录下data文件夹，并重新配置</strong>）</p>
+<p>修改密码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>mysql&gt; ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;new password&#39;;
+</span></span></code></pre></div><h1 id="三jdbc">三、JDBC</h1>
+<h2 id="配置-1">配置</h2>
+<p>将 mysql-connector-java-8.0.18.zip 解压，找到 mysql-connector-java-8.0.18.jar，置于java jre的<code>lib/ext/</code>目录下。以本机为参考，目录是：
+C:\Program Files\Java\jdk1.8.0_201\jre\lib\ext\</p>
+<h2 id="测试-1">测试</h2>
+<p>写一个简单测试 test.java如下，编译运行查看结果即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#f92672">import</span> java.sql.*<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>            Class<span style="color:#f92672">.</span><span style="color:#a6e22e">forName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.mysql.cj.jdbc.Driver&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>            String url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;jdbc:mysql://localhost?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>            Connection con <span style="color:#f92672">=</span> DriverManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnection</span><span style="color:#f92672">(</span>url<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;root&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;123456&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>con <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;success...&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>                con<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;failure!!!&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>ClassNotFoundException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>            e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SQLException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>            e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>附：</p>
+<ol>
+<li>mysql-connector-java 5中使用<code>com.mysql.jdbc.Driver</code>，而mysql-connector-java 6中则使用<code>com.mysql.cj.jdbc.Driver</code></li>
+<li>连接字符串后加<code>?useUnicode=true&amp;characterEncoding=UTF-8</code>解决中文乱码问题</li>
+<li>连接字符串后加<code>?serverTimezone=UTC</code>解决时区问题</li>
+</ol>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>CentOS7配置MySQL和JDBC</title>
+      <link>https://blog.lordash.de/posts/configure/8f2d9aaab8294818/</link>
+      <pubDate>Wed, 06 Sep 2017 10:25:05 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/configure/8f2d9aaab8294818/</guid>
+      <description>CentOS7配置MySQL和JDBC</description>
+      <content:encoded><![CDATA[<h1 id="一准备">一、准备</h1>
+<p>卸载已存在的MySQL</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># rpm -qa | grep -i mysql
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># rpm -e --nodeps PackageName
+</span></span></code></pre></div><p>于MySQL官网根据需要下载，参考链接：</p>
+<ul>
+<li><a href="https://dev.mysql.com/downloads/file/?id=484922">mysql80-community-release-el7-3.noarch.rpm</a></li>
+<li><a href="https://dev.mysql.com/downloads/file/?id=485761">mysql-connector-java-8.0.16-1.el7.noarch.rpm</a></li>
+</ul>
+<h1 id="二mysql">二、MySQL</h1>
+<h2 id="配置">配置</h2>
+<p>更新MySQL的yum源</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># rpm -ivh mysql80-community-release-el7-3.noarch.rpm
+</span></span></code></pre></div><p>yum安装</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># yum install mysql-community-server
+</span></span></code></pre></div><h2 id="测试">测试</h2>
+<p>启动MySQL服务</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># systemctl start mysqld.service
+</span></span></code></pre></div><p>查看MySQL的初始密码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># grep &#39;password&#39; /var/log/mysqld.log
+</span></span></code></pre></div><p>登录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># mysql -uroot -p
+</span></span></code></pre></div><p>修改密码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>mysql&gt; ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;new password&#39;;
+</span></span></code></pre></div><p>使用简单密码则需要先执行以下两条</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>mysql&gt; set global validate_password_policy=0;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>mysql&gt; set global validate_password_length=1;
+</span></span></code></pre></div><p>exit退出后即可使用新密码重新登录</p>
+<p>附上:
+关闭MySQL服务</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># systemctl stop mysqld.service
+</span></span></code></pre></div><p>MySQL的yum源移除</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># yum remove mysql80-community-release-el7-3.noarch.rpm
+</span></span></code></pre></div><h1 id="三jdbc">三、JDBC</h1>
+<h2 id="配置-1">配置</h2>
+<p>将 mysql-connector-java-8.0.16-1.el7.noarch.rpm 解压，找到 mysql-connector-java.jar，将jar置于java的lib目录下/ext中。以本机为参考，目录是：/usr/lib/jvm/jre/lib/ext/</p>
+<h2 id="测试-1">测试</h2>
+<p>写一个简单测试 test.java如下，编译运行查看结果即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#f92672">import</span> java.sql.*<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>            <span style="color:#75715e">//Class.forName(&#34;com.mysql.jdbc.Driver&#34;);
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#75715e"></span>            String url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;jdbc:mysql://localhost&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>            Connection con <span style="color:#f92672">=</span> DriverManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnection</span><span style="color:#f92672">(</span>url<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;root&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>con <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;success...&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>                con<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;failure!!!&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>ClassNotFoundException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>            e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SQLException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>            e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

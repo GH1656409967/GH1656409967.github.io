@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>HDU-1043 Eight | 似水</title>
+<meta content="HDU, BFS, kuangbin 专题二" name="keywords"/>
+<meta content="HDU-1043 Eight 类型 逆向BFS打表 路径输出" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/posts/solution/hdu-1043-eight/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="HDU-1043 Eight" property="og:title"/>
+<meta content="HDU-1043 Eight 类型 逆向BFS打表 路径输出" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://blog.lordash.de/posts/solution/hdu-1043-eight/" property="og:url"/><meta content="posts" property="article:section"/>
+<meta content="2018-03-23T22:15:55+00:00" property="article:published_time"/>
+<meta content="2018-03-23T22:15:55+00:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="HDU-1043 Eight" name="twitter:title"/>
+<meta content="HDU-1043 Eight 类型 逆向BFS打表 路径输出" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "文章",
+      "item": "https://blog.lordash.de/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "题解",
+      "item": "https://blog.lordash.de/posts/solution/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "HDU-1043 Eight",
+      "item": "https://blog.lordash.de/posts/solution/hdu-1043-eight/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "HDU-1043 Eight",
+  "name": "HDU-1043 Eight",
+  "description": "HDU-1043 Eight 类型 逆向BFS打表 路径输出",
+  "keywords": [
+    "HDU", "BFS", "kuangbin 专题二"
+  ],
+  "articleBody": "Eight (HDU - 1043) 题面 The 15-puzzle has been around for over 100 years; even if you don’t know it by that name, you’ve seen it. It is constructed with 15 sliding tiles, each with a number from 1 to 15 on it, and all packed into a 4 by 4 frame with one tile missing. Let’s call the missing tile ‘x’; the object of the puzzle is to arrange the tiles so that they are ordered as:\n1 1 2 3 4 2 5 6 7 8 3 9 10 11 12 413 14 15 x where the only legal operation is to exchange ‘x’ with one of the tiles with which it shares an edge. As an example, the following sequence of moves solves a slightly scrambled puzzle:\n1 1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4 2 5 6 7 8 5 6 7 8 5 6 7 8 5 6 7 8 3 9 x 10 12 9 10 x 12 9 10 11 12 9 10 11 12 413 14 11 15 13 14 11 15 13 14 x 15 13 14 15 x 5 r-\u003e d-\u003e r-\u003e The letters in the previous row indicate which neighbor of the ‘x’ tile is swapped with the ‘x’ tile at each step; legal values are ‘r’,’l’,‘u’ and ’d’, for right, left, up, and down, respectively.\nNot all puzzles can be solved; in 1870, a man named Sam Loyd was famous for distributing an unsolvable version of the puzzle, and frustrating many people. In fact, all you have to do to make a regular puzzle into an unsolvable one is to swap two tiles (not counting the missing ‘x’ tile, of course).\nIn this problem, you will write a program for solving the less well-known 8-puzzle, composed of tiles on a three by three arrangement.\n输入 You will receive, several descriptions of configuration of the 8 puzzle. One description is just a list of the tiles in their initial positions, with the rows listed from top to bottom, and the tiles listed from left to right within a row, where the tiles are represented by numbers 1 to 8, plus ‘x’. For example, this puzzle\n1 2 3 x 4 6 7 5 8\nis described by this list:\n1 2 3 x 4 6 7 5 8\n输出 You will print to standard output either the word ``unsolvable’’, if the puzzle has no solution, or a string consisting entirely of the letters ‘r’, ’l’, ‘u’ and ’d’ that describes a series of moves that produce a solution. The string should include no spaces and start at the beginning of the line. Do not print a blank line between cases.\n样例输入 12 3 4 1 5 x 7 6 8 样例输出 1ullddrurdllurdruldr 提示 无\n思路 考虑多次bfs会TLE，而目标状态是确定的，且由此bfs出的所有状态也是有限的(9!)，所以这题不是bfs直接搜出来的，而是bfs打表。 暂时没用康拓展开，不过最好去看看，同时感兴趣的圣雄甘地可以了解一下八数码八境界…\n代码 1using namespace std; 2typedef long long ll; 3const int inf = 0x3f3f3f3f; 4const int N = 1e2+5; 5 6int n = 9; 7 8int dx[] = { 1, -1, 0, 0}; 9int dy[] = { 0, 0, 1, -1}; 10char dir[] = \"udlr\"; 11 12struct P { 13 string s, p; 14 int x; 15}; 16 17map\u003cint, string\u003e mp; 18 19void bfs() { 20 P sp; 21 sp.s = \"123456789\"; 22 sp.p = \"\"; 23 sp.x = n-1; 24 25 queue\u003cP\u003e q; 26 q.push(sp); 27 mp[123456789] = \"\"; 28 29 while(!q.empty()) { 30 P tp = q.front(); 31 q.pop(); 32 33 P np; 34 for(int i=0; i\u003c4; i++) { 35 int x = tp.x/3+dx[i]; 36 int y = tp.x%3+dy[i]; 37 if(x\u003c0 || x\u003e=3 || y\u003c0 || y\u003e=3) { 38 continue; 39 } 40 np = tp; 41 np.x = x*3+y; 42 swap(np.s[np.x], np.s[tp.x]); 43 44 int d=0; 45 for(int i=0; i\u003cn; i++) { 46 d = d*10+np.s[i]-'0'; 47 } 48 49 if(mp.find(d)==mp.end()) { 50 np.p += i+'0'; 51 q.push(np); 52 mp[d] = np.p; 53 }; 54 } 55 } 56} 57 58int main(void) { 59 bfs(); 60 61 char c; 62 while(scanf(\" %c\", \u0026c)==1) { 63 int d; 64 if(c=='x') { 65 d = 9; 66 } else { 67 d = c-'0'; 68 } 69 for(int i=1; i\u003cn; i++) { 70 scanf(\" %c\", \u0026c); 71 if(c=='x') { 72 d = d*10+9; 73 } else { 74 d = d*10+c-'0'; 75 } 76 } 77 if(mp.find(d)==mp.end()) { 78 printf(\"unsolvable\\n\"); 79 } else { 80 string p = mp[d]; 81 for(int i=p.length()-1; i\u003e=0; i--) 82 printf(\"%c\", dir[p[i]-'0']); 83 printf(\"\\n\"); 84 } 85 } 86 87 return 0; 88} ",
+  "wordCount" : "873",
+  "inLanguage": "zh",
+  "datePublished": "2018-03-23T22:15:55Z",
+  "dateModified": "2018-03-23T22:15:55Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lordash"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.lordash.de/posts/solution/hdu-1043-eight/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "似水",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.lordash.de/images/favicon-16x16-.png"
+    }
+  }
+}
+</script>
+</head>
+<body class="dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<article class="post-single">
+<header class="post-header">
+<div class="breadcrumbs"><a href="https://blog.lordash.de">主页</a> » <a href="https://blog.lordash.de/posts/">文章</a> » <a href="https://blog.lordash.de/posts/solution/">题解</a></div>
+<h1 class="post-title">
+      HDU-1043 Eight
+    </h1>
+<div class="post-description">
+      HDU-1043 Eight 类型 逆向BFS打表 路径输出
+    </div>
+<div class="post-meta"><span title="2018-03-23 22:15:55 +0000 UTC">2018-03-23</span> · Lordash
+
+
+
+</div>
+</header> <aside class="toc-container wide" id="toc-container">
+<div class="toc">
+<details open="">
+<summary accesskey="c" title="(Alt + C)">
+<span class="details">目录</span>
+</summary>
+<div class="inner"><ul>
+<li>
+<a aria-label="Eight (HDU - 1043)" href="#eight-hdu---1043httpsvjudgenetproblemhdu-1043">Eight (</a><a href="https://vjudge.net/problem/HDU-1043">HDU - 1043</a>)<ul>
+<li>
+<a aria-label="题面" href="#%e9%a2%98%e9%9d%a2">题面</a></li>
+<li>
+<a aria-label="输入" href="#%e8%be%93%e5%85%a5">输入</a></li>
+<li>
+<a aria-label="输出" href="#%e8%be%93%e5%87%ba">输出</a></li>
+<li>
+<a aria-label="样例输入" href="#%e6%a0%b7%e4%be%8b%e8%be%93%e5%85%a5">样例输入</a></li>
+<li>
+<a aria-label="样例输出" href="#%e6%a0%b7%e4%be%8b%e8%be%93%e5%87%ba">样例输出</a></li>
+<li>
+<a aria-label="提示" href="#%e6%8f%90%e7%a4%ba">提示</a></li>
+<li>
+<a aria-label="思路" href="#%e6%80%9d%e8%b7%af">思路</a></li>
+<li>
+<a aria-label="代码" href="#%e4%bb%a3%e7%a0%81">代码</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+</div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+<div class="post-content"><h1 id="eight-hdu---1043httpsvjudgenetproblemhdu-1043">Eight (<a href="https://vjudge.net/problem/HDU-1043">HDU - 1043</a>)<a aria-hidden="true" class="anchor" hidden="" href="#eight-hdu---1043httpsvjudgenetproblemhdu-1043">#</a></h1>
+<h2 id="题面">题面<a aria-hidden="true" class="anchor" hidden="" href="#题面">#</a></h2>
+<blockquote>
+<p>The 15-puzzle has been around for over 100 years; even if you don’t know it by that name, you’ve seen it. It is constructed with 15 sliding  tiles, each with a number from 1 to 15 on it, and all packed into a 4 by 4 frame with one tile missing. Let’s call the missing tile ‘x’; the  object of the puzzle is to arrange the tiles so that they are ordered  as:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span> 1  2  3  4
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span> 5  6  7  8
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span> 9 10 11 12
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>13 14 15  x
+</span></span></code></pre></div><p>where the only legal operation is to exchange ‘x’ with one of the  tiles with which it shares an edge. As an example, the following  sequence of moves solves a slightly scrambled puzzle:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span> 1  2  3  4     1  2  3  4     1  2  3  4     1  2  3  4
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span> 5  6  7  8     5  6  7  8     5  6  7  8     5  6  7  8
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span> 9  x 10 12     9 10  x 12     9 10 11 12     9 10 11 12
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>13 14 11 15    13 14 11 15    13 14  x 15    13 14 15  x
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>            r-&gt;            d-&gt;            r-&gt;
+</span></span></code></pre></div><p>The letters in the previous row indicate which neighbor of the ‘x’  tile is swapped with the ‘x’ tile at each step; legal values are  ‘r’,’l’,‘u’ and ’d’, for right, left, up, and down, respectively.</p>
+<p>Not all puzzles can be solved; in 1870, a man named Sam Loyd was  famous for distributing an unsolvable version of the puzzle, and
+frustrating many people. In fact, all you have to do to make a  regular puzzle into an unsolvable one is to swap two tiles (not counting the missing ‘x’ tile, of course).</p>
+<p>In this problem, you will write a program for solving the less well-known 8-puzzle, composed of tiles on a three by three
+arrangement.</p>
+</blockquote>
+<h2 id="输入">输入<a aria-hidden="true" class="anchor" hidden="" href="#输入">#</a></h2>
+<blockquote>
+<p>You will receive, several descriptions of configuration of the 8 puzzle. One description is just a list of the tiles in their initial positions, with the rows listed from top to bottom, and the tiles listed from left to right within a row, where the tiles are represented by numbers 1 to  8, plus ‘x’. For example, this puzzle</p>
+<p>1 2 3
+x 4 6
+7 5 8</p>
+<p>is described by this list:</p>
+<p>1 2 3 x 4 6 7 5 8</p>
+</blockquote>
+<h2 id="输出">输出<a aria-hidden="true" class="anchor" hidden="" href="#输出">#</a></h2>
+<blockquote>
+<p>You will print to standard output either the word ``unsolvable’’, if the puzzle has no solution, or a string consisting entirely of the letters  ‘r’, ’l’, ‘u’ and ’d’ that describes a series of moves that produce a  solution. The string should include no spaces and start at the beginning of the line. Do not print a blank line between cases.</p>
+</blockquote>
+<h2 id="样例输入">样例输入<a aria-hidden="true" class="anchor" hidden="" href="#样例输入">#</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2  3  4  1  5  x  7  6  8
+</span></span></code></pre></div><h2 id="样例输出">样例输出<a aria-hidden="true" class="anchor" hidden="" href="#样例输出">#</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>ullddrurdllurdruldr
+</span></span></code></pre></div><h2 id="提示">提示<a aria-hidden="true" class="anchor" hidden="" href="#提示">#</a></h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路<a aria-hidden="true" class="anchor" hidden="" href="#思路">#</a></h2>
+<p>考虑多次bfs会TLE，而目标状态是确定的，且由此bfs出的所有状态也是有限的(<strong>9!</strong>)，所以这题不是bfs直接搜出来的，而是bfs打表。
+暂时没用康拓展开，不过最好去看看，同时感兴趣的圣雄甘地可以了解一下八数码八境界…</p>
+<h2 id="代码">代码<a aria-hidden="true" class="anchor" hidden="" href="#代码">#</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> inf <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x3f3f3f3f</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#66d9ef">int</span> dx[] <span style="color:#f92672">=</span> { <span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,  <span style="color:#ae81ff">0</span>,  <span style="color:#ae81ff">0</span>};
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#66d9ef">int</span> dy[] <span style="color:#f92672">=</span> { <span style="color:#ae81ff">0</span>,  <span style="color:#ae81ff">0</span>,  <span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>};
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#66d9ef">char</span> dir[] <span style="color:#f92672">=</span> <span style="color:#e6db74">"udlr"</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">P</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    string s, p;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    <span style="color:#66d9ef">int</span> x;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>};
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, string<span style="color:#f92672">&gt;</span> mp;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">bfs</span>() {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>    P sp;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>    sp.s <span style="color:#f92672">=</span> <span style="color:#e6db74">"123456789"</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    sp.p <span style="color:#f92672">=</span> <span style="color:#e6db74">""</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>    sp.x <span style="color:#f92672">=</span> n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    queue<span style="color:#f92672">&lt;</span>P<span style="color:#f92672">&gt;</span> q;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>    q.push(sp);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>    mp[<span style="color:#ae81ff">123456789</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">""</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>q.empty()) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>        P tp <span style="color:#f92672">=</span> q.front();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>        q.pop();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>        P np;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">4</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>            <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> tp.x<span style="color:#f92672">/</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span>dx[i];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>            <span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> tp.x<span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span>dy[i];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>            <span style="color:#66d9ef">if</span>(x<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> x<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">3</span> <span style="color:#f92672">||</span> y<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> y<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">3</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>                <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>            np <span style="color:#f92672">=</span> tp;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>            np.x <span style="color:#f92672">=</span> x<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span>y;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span>            swap(np.s[np.x], np.s[tp.x]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>            <span style="color:#66d9ef">int</span> d<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>                d <span style="color:#f92672">=</span> d<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span><span style="color:#f92672">+</span>np.s[i]<span style="color:#f92672">-</span><span style="color:#e6db74">'0'</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>            <span style="color:#66d9ef">if</span>(mp.find(d)<span style="color:#f92672">==</span>mp.end()) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span>                np.p <span style="color:#f92672">+=</span> i<span style="color:#f92672">+</span><span style="color:#e6db74">'0'</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span><span>                q.push(np);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span><span>                mp[d] <span style="color:#f92672">=</span> np.p;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span><span>            };
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span><span>    bfs();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span><span>    <span style="color:#66d9ef">char</span> c;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span><span>    <span style="color:#66d9ef">while</span>(scanf(<span style="color:#e6db74">" %c"</span>, <span style="color:#f92672">&amp;</span>c)<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span><span>        <span style="color:#66d9ef">int</span> d;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span><span>        <span style="color:#66d9ef">if</span>(c<span style="color:#f92672">==</span><span style="color:#e6db74">'x'</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span><span>            d <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66</span><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67</span><span>            d <span style="color:#f92672">=</span> c<span style="color:#f92672">-</span><span style="color:#e6db74">'0'</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70</span><span>            scanf(<span style="color:#e6db74">" %c"</span>, <span style="color:#f92672">&amp;</span>c);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71</span><span>            <span style="color:#66d9ef">if</span>(c<span style="color:#f92672">==</span><span style="color:#e6db74">'x'</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72</span><span>                d <span style="color:#f92672">=</span> d<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span><span style="color:#f92672">+</span><span style="color:#ae81ff">9</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73</span><span>            } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74</span><span>                d <span style="color:#f92672">=</span> d<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span><span style="color:#f92672">+</span>c<span style="color:#f92672">-</span><span style="color:#e6db74">'0'</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77</span><span>        <span style="color:#66d9ef">if</span>(mp.find(d)<span style="color:#f92672">==</span>mp.end()) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78</span><span>            printf(<span style="color:#e6db74">"unsolvable</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">"</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79</span><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80</span><span>            string p <span style="color:#f92672">=</span> mp[d];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>p.length()<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">--</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82</span><span>                printf(<span style="color:#e6db74">"%c"</span>, dir[p[i]<span style="color:#f92672">-</span><span style="color:#e6db74">'0'</span>]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83</span><span>            printf(<span style="color:#e6db74">"</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">"</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88</span><span>}
+</span></span></code></pre></div>
+</div>
+<footer class="post-footer">
+<ul class="post-tags">
+<li><a href="https://blog.lordash.de/tags/hdu/">HDU</a></li>
+<li><a href="https://blog.lordash.de/tags/bfs/">BFS</a></li>
+<li><a href="https://blog.lordash.de/tags/kuangbin-%E4%B8%93%E9%A2%98%E4%BA%8C/">kuangbin 专题二</a></li>
+</ul>
+<nav class="paginav">
+<a class="prev" href="https://blog.lordash.de/posts/solution/hdu-3567-eight-ii/">
+<span class="title">« 上一页</span>
+<br/>
+<span>HDU-3567 Eight II</span>
+</a>
+<a class="next" href="https://blog.lordash.de/posts/share/ffceaab471b9abf4/">
+<span class="title">下一页 »</span>
+<br/>
+<span>kuangbin带你飞专题目录链接</span>
+</a>
+</nav>
+</footer><div>
+<div class="pagination__title">
+<span class="pagination__title-h" style="font-size: 20px;">💬评论</span>
+<hr/>
+</div>
+<div id="tcomment"></div>
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
+<script>
+        twikoo.init({
+            envId: "https://twikoo-api-dun-pi.vercel.app",
+            el: "#tcomment",
+            lang: 'zh-CN',
+            region: 'ap-zhengzhou',
+            path: window.TWIKOO_MAGIC_PATH || window.location.pathname,
+        });
+    </script>
+</div>
+</article>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                
+                let x = codeblock.getElementsByTagName("span");
+                let noLineNumContent = "";
+                for (i = 0; i < x.length; i++) {
+                    if (x[i].style.display || x[i].style.color);
+                    else noLineNumContent += x[i].textContent;
+                }
+                navigator.clipboard.writeText(noLineNumContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

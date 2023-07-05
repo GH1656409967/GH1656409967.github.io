@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>POJ-2975 Nim | 似水</title>
+<meta content="POJ, 博弈论, Nim博弈" name="keywords"/>
+<meta content="POJ-2975 Nim 类型 博弈论 Nim博弈" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/posts/solution/poj-2975-nim/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="POJ-2975 Nim" property="og:title"/>
+<meta content="POJ-2975 Nim 类型 博弈论 Nim博弈" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://blog.lordash.de/posts/solution/poj-2975-nim/" property="og:url"/><meta content="posts" property="article:section"/>
+<meta content="2020-07-14T17:31:12+00:00" property="article:published_time"/>
+<meta content="2020-07-14T17:31:12+00:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="POJ-2975 Nim" name="twitter:title"/>
+<meta content="POJ-2975 Nim 类型 博弈论 Nim博弈" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "文章",
+      "item": "https://blog.lordash.de/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "题解",
+      "item": "https://blog.lordash.de/posts/solution/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "POJ-2975 Nim",
+      "item": "https://blog.lordash.de/posts/solution/poj-2975-nim/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "POJ-2975 Nim",
+  "name": "POJ-2975 Nim",
+  "description": "POJ-2975 Nim 类型 博弈论 Nim博弈",
+  "keywords": [
+    "POJ", "博弈论", "Nim博弈"
+  ],
+  "articleBody": "Nim(POJ-2975) 题面 Nim is a 2-player game featuring several piles of stones. Players alternate turns, and on his/her turn, a player’s move consists of removing one or more stones from any single pile. Play ends when all the stones have been removed, at which point the last player to have moved is declared the winner. Given a position in Nim, your task is to determine how many winning moves there are in that position.A position in Nim is called “losing” if the first player to move from that position would lose if both sides played perfectly. A “winning move,” then, is a move that leaves the game in a losing position. There is a famous theorem that classifies all losing positions. Suppose a Nim position contains n piles having k1, k2, …, kn stones respectively; in such a position, there are k1 + k2 + … + kn possible moves. We write each ki in binary (base 2). Then, the Nim position is losing if and only if, among all the ki’s, there are an even number of 1’s in each digit position. In other words, the Nim position is losing if and only if the xor of the ki’s is 0.Consider the position with three piles given by k1 = 7, k2 = 11, and k3 = 13. In binary, these values are as follows:\n0111\n1011\n1101\nThere are an odd number of 1’s among the rightmost digits, so this position is not losing. However, suppose k3 were changed to be 12. Then, there would be exactly two 1’s in each digit position, and thus, the Nim position would become losing. Since a winning move is any move that leaves the game in a losing position, it follows that removing one stone from the third pile is a winning move when k1 = 7, k2 = 11, and k3 = 13. In fact, there are exactly three winning moves from this position: namely removing one stone from any of the three piles.\n输入 The input test file will contain multiple test cases, each of which begins with a line indicating the number of piles, 1 ≤ n ≤ 1000. On the next line, there are n positive integers, 1 ≤ ki ≤ 1, 000, 000, 000, indicating the number of stones in each pile. The end-of-file is marked by a test case with n = 0 and should not be processed.\n输出 For each test case, write a single line with an integer indicating the number of winning moves from the given Nim position.\n样例输入 13 27 11 13 32 41000000000 1000000000 50 样例输出 13 20 提示 无\n思路 Nim博弈。\n代码 1using namespace std; 2int f[1005]; 3 4 5int main() 6{ 7 int n; 8 while(~scanf(\"%d\", \u0026n) \u0026\u0026 n) 9 { 10 int nim=0; 11 for(int i=0; i\u003cn; i++){ 12 scanf(\"%d\", \u0026f[i]); 13 nim ^= f[i]; 14 } 15 16 int num = 0; 17 for(int i=0; i\u003cn; i++){ 18 if((nim^f[i]) \u003c f[i]) 19 num++; 20 } 21 printf(\"%d\\n\", num); 22 } 23 return 0; 24} ",
+  "wordCount" : "565",
+  "inLanguage": "zh",
+  "datePublished": "2020-07-14T17:31:12Z",
+  "dateModified": "2020-07-14T17:31:12Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lordash"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.lordash.de/posts/solution/poj-2975-nim/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "似水",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.lordash.de/images/favicon-16x16-.png"
+    }
+  }
+}
+</script>
+</head>
+<body class="dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<article class="post-single">
+<header class="post-header">
+<div class="breadcrumbs"><a href="https://blog.lordash.de">主页</a> » <a href="https://blog.lordash.de/posts/">文章</a> » <a href="https://blog.lordash.de/posts/solution/">题解</a></div>
+<h1 class="post-title">
+      POJ-2975 Nim
+    </h1>
+<div class="post-description">
+      POJ-2975 Nim 类型 博弈论 Nim博弈
+    </div>
+<div class="post-meta"><span title="2020-07-14 17:31:12 +0000 UTC">2020-07-14</span> · Lordash
+
+
+
+</div>
+</header> <aside class="toc-container wide" id="toc-container">
+<div class="toc">
+<details open="">
+<summary accesskey="c" title="(Alt + C)">
+<span class="details">目录</span>
+</summary>
+<div class="inner"><ul>
+<li>
+<a aria-label="Nim(POJ-2975)" href="#nimpoj-2975httpsvjudgenetproblempoj-2975">Nim(</a><a href="https://vjudge.net/problem/POJ-2975">POJ-2975</a>)<ul>
+<li>
+<a aria-label="题面" href="#%e9%a2%98%e9%9d%a2">题面</a></li>
+<li>
+<a aria-label="输入" href="#%e8%be%93%e5%85%a5">输入</a></li>
+<li>
+<a aria-label="输出" href="#%e8%be%93%e5%87%ba">输出</a></li>
+<li>
+<a aria-label="样例输入" href="#%e6%a0%b7%e4%be%8b%e8%be%93%e5%85%a5">样例输入</a></li>
+<li>
+<a aria-label="样例输出" href="#%e6%a0%b7%e4%be%8b%e8%be%93%e5%87%ba">样例输出</a></li>
+<li>
+<a aria-label="提示" href="#%e6%8f%90%e7%a4%ba">提示</a></li>
+<li>
+<a aria-label="思路" href="#%e6%80%9d%e8%b7%af">思路</a></li>
+<li>
+<a aria-label="代码" href="#%e4%bb%a3%e7%a0%81">代码</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+</div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+<div class="post-content"><h1 id="nimpoj-2975httpsvjudgenetproblempoj-2975">Nim(<a href="https://vjudge.net/problem/POJ-2975">POJ-2975</a>)<a aria-hidden="true" class="anchor" hidden="" href="#nimpoj-2975httpsvjudgenetproblempoj-2975">#</a></h1>
+<h2 id="题面">题面<a aria-hidden="true" class="anchor" hidden="" href="#题面">#</a></h2>
+<blockquote>
+<p>Nim is a  2-player game featuring several piles of stones. Players alternate  turns, and on his/her turn, a player’s move consists of removing <em>one or more stones</em> from any single pile. Play ends when all the stones have been removed,  at which point the last player to have moved is declared the winner.  Given a position in Nim, your task is to determine how many winning  moves there are in that position.A position in Nim is called  “losing” if the first player to move from that position would lose if  both sides played perfectly. A “winning move,” then, is a move that  leaves the game in a losing position. There is a famous theorem that  classifies all losing positions. Suppose a Nim position contains <em>n</em> piles having <em>k</em>1, <em>k</em>2, …, <em>kn</em> stones respectively; in such a position, there are <em>k</em>1 + <em>k</em>2 + … + <em>kn</em> possible moves. We write each <em>ki</em> in binary (base 2). Then, the Nim position is losing if and only if, among all the <em>ki</em>’s, there are an even number of 1’s in each digit position. In other words, the Nim position is losing if and only if the <em>xor</em> of the <em>ki</em>’s is 0.Consider the position with three piles given by <em>k</em>1 = 7, <em>k</em>2 = 11, and <em>k</em>3 = 13. In binary, these values are as follows:</p>
+<p>0111</p>
+<p>1011</p>
+<p>1101</p>
+<p>There are an odd number of 1’s among the rightmost digits, so this position is not losing. However, suppose <em>k</em>3 were changed to be 12. Then, there would be exactly two 1’s in each  digit position, and thus, the Nim position would become losing. Since a  winning move is any move that leaves the game in a losing position, it  follows that removing one stone from the third pile is a winning move  when <em>k</em>1 = 7, <em>k</em>2 = 11, and <em>k</em>3 = 13. In fact, there are exactly three winning moves from this position: namely removing one stone from any of the three piles.</p>
+</blockquote>
+<h2 id="输入">输入<a aria-hidden="true" class="anchor" hidden="" href="#输入">#</a></h2>
+<blockquote>
+<p>The input test file will contain multiple test cases, each of which begins with a line indicating the number of piles, 1 ≤ <em>n</em> ≤ 1000. On the next line, there are n positive integers, 1 ≤ <em>ki</em> ≤ 1, 000, 000, 000, indicating the number of stones in each pile. The end-of-file is marked by a test case with <em>n</em> = 0 and should not be processed.</p>
+</blockquote>
+<h2 id="输出">输出<a aria-hidden="true" class="anchor" hidden="" href="#输出">#</a></h2>
+<blockquote>
+<p>For each test case, write a single line with an integer indicating the number of winning moves from the given Nim position.</p>
+</blockquote>
+<h2 id="样例输入">样例输入<a aria-hidden="true" class="anchor" hidden="" href="#样例输入">#</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>7 11 13
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>1000000000 1000000000
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>0
+</span></span></code></pre></div><h2 id="样例输出">样例输出<a aria-hidden="true" class="anchor" hidden="" href="#样例输出">#</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>0
+</span></span></code></pre></div><h2 id="提示">提示<a aria-hidden="true" class="anchor" hidden="" href="#提示">#</a></h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路<a aria-hidden="true" class="anchor" hidden="" href="#思路">#</a></h2>
+<p>Nim博弈。</p>
+<h2 id="代码">代码<a aria-hidden="true" class="anchor" hidden="" href="#代码">#</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">int</span> f[<span style="color:#ae81ff">1005</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">"%d"</span>, <span style="color:#f92672">&amp;</span>n) <span style="color:#f92672">&amp;&amp;</span> n)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        <span style="color:#66d9ef">int</span> nim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            scanf(<span style="color:#e6db74">"%d"</span>, <span style="color:#f92672">&amp;</span>f[i]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            nim <span style="color:#f92672">^=</span> f[i];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        <span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>            <span style="color:#66d9ef">if</span>((nim<span style="color:#f92672">^</span>f[i]) <span style="color:#f92672">&lt;</span> f[i])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>                num<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        printf(<span style="color:#e6db74">"%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">"</span>, num);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>}
+</span></span></code></pre></div>
+</div>
+<footer class="post-footer">
+<ul class="post-tags">
+<li><a href="https://blog.lordash.de/tags/poj/">POJ</a></li>
+<li><a href="https://blog.lordash.de/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/">博弈论</a></li>
+<li><a href="https://blog.lordash.de/tags/nim%E5%8D%9A%E5%BC%88/">Nim博弈</a></li>
+</ul>
+<nav class="paginav">
+<a class="prev" href="https://blog.lordash.de/posts/solution/poj-3480-john/">
+<span class="title">« 上一页</span>
+<br/>
+<span>POJ-3480 John</span>
+</a>
+<a class="next" href="https://blog.lordash.de/posts/solution/poj-2960-s-nim/">
+<span class="title">下一页 »</span>
+<br/>
+<span>POJ-2960 S-Nim</span>
+</a>
+</nav>
+</footer><div>
+<div class="pagination__title">
+<span class="pagination__title-h" style="font-size: 20px;">💬评论</span>
+<hr/>
+</div>
+<div id="tcomment"></div>
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
+<script>
+        twikoo.init({
+            envId: "https://twikoo-api-dun-pi.vercel.app",
+            el: "#tcomment",
+            lang: 'zh-CN',
+            region: 'ap-zhengzhou',
+            path: window.TWIKOO_MAGIC_PATH || window.location.pathname,
+        });
+    </script>
+</div>
+</article>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                
+                let x = codeblock.getElementsByTagName("span");
+                let noLineNumContent = "";
+                for (i = 0; i < x.length; i++) {
+                    if (x[i].style.display || x[i].style.color);
+                    else noLineNumContent += x[i].textContent;
+                }
+                navigator.clipboard.writeText(noLineNumContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

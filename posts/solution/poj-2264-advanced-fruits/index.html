@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>POJ-2264 Advanced Fruits | 似水</title>
+<meta content="POJ, DP, LCS" name="keywords"/>
+<meta content="POJ-2264 Advanced Fruits 类型 LCS 路经输出" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/posts/solution/poj-2264-advanced-fruits/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="POJ-2264 Advanced Fruits" property="og:title"/>
+<meta content="POJ-2264 Advanced Fruits 类型 LCS 路经输出" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://blog.lordash.de/posts/solution/poj-2264-advanced-fruits/" property="og:url"/><meta content="posts" property="article:section"/>
+<meta content="2018-03-30T15:45:30+00:00" property="article:published_time"/>
+<meta content="2018-03-30T15:45:30+00:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="POJ-2264 Advanced Fruits" name="twitter:title"/>
+<meta content="POJ-2264 Advanced Fruits 类型 LCS 路经输出" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "文章",
+      "item": "https://blog.lordash.de/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "题解",
+      "item": "https://blog.lordash.de/posts/solution/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "POJ-2264 Advanced Fruits",
+      "item": "https://blog.lordash.de/posts/solution/poj-2264-advanced-fruits/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "POJ-2264 Advanced Fruits",
+  "name": "POJ-2264 Advanced Fruits",
+  "description": "POJ-2264 Advanced Fruits 类型 LCS 路经输出",
+  "keywords": [
+    "POJ", "DP", "LCS"
+  ],
+  "articleBody": "Advanced Fruits (POJ - 2264) 题面 The company “21st Century Fruits” has specialized in creating new sorts of fruits by transferring genes from one fruit into the genome of another one. Most times this method doesn’t work, but sometimes, in very rare cases, a new fruit emerges that tastes like a mixture between both of them.\nA big topic of discussion inside the company is “How should the new creations be called?” A mixture between an apple and a pear could be called an apple-pear, of course, but this doesn’t sound very interesting. The boss finally decides to use the shortest string that contains both names of the original fruits as sub-strings as the new name. For instance, “applear” contains “apple” and “pear” (APPLEar and apPlEAR), and there is no shorter string that has the same property. A combination of a cranberry and a boysenberry would therefore be called a “boysecranberry” or a “craboysenberry”, for example.\nYour job is to write a program that computes such a shortest name for a combination of two given fruits. Your algorithm should be efficient, otherwise it is unlikely that it will execute in the alloted time for long fruit names.\n输入 Each line of the input contains two strings that represent the names of the fruits that should be combined. All names have a maximum length of 100 and only consist of alphabetic characters. Input is terminated by end of file.\n输出 For each test case, output the shortest name of the resulting fruit on one line. If more than one shortest name is possible, any one is acceptable.\n样例输入 1apple peach 2ananas banana 3pear peach 样例输出 1appleach 2bananas 3pearch 提示 无\n思路 代码 1using namespace std; 2typedef long long ll; 3const int inf = 0x3f3f3f3f; 4const int N = 1e2+5; 5 6string s, t; 7int dp[N][N]; 8 9void print(int i, int j) { 10 stack\u003cchar\u003est; 11 while(i||j) { 12 if(i==0) { 13 st.push(t[j-1]), j--; 14 continue; 15 } 16 if(j==0) { 17 st.push(s[i-1]), i--; 18 continue; 19 } 20 if(s[i-1]==t[j-1]) { 21 st.push(s[i-1]); 22 i--, j--; 23 } else { 24 if(dp[i-1][j]\u003edp[i][j-1]) 25 st.push(s[i-1]), i--; 26 else 27 st.push(t[j-1]), j--; 28 } 29 } 30 while(st.size()) { 31 cout\u003c\u003cst.top(); 32 st.pop(); 33 } 34 cout\u003c\u003cendl; 35} 36 37int main(void) { 38 while(cin\u003e\u003es\u003e\u003et) { 39 int n = s.size(); 40 int m = t.size(); 41 memset(dp, 0, sizeof(dp)); 42 for(int i=1; i\u003c=n; i++) { 43 for(int j=1; j\u003c=m; j++) { 44 if(s[i-1]==t[j-1]) 45 dp[i][j] = dp[i-1][j-1]+1; 46 else 47 dp[i][j] = max(dp[i-1][j], dp[i][j-1]); 48 } 49 } 50 print(n, m); 51 } 52 return 0; 53} ",
+  "wordCount" : "445",
+  "inLanguage": "zh",
+  "datePublished": "2018-03-30T15:45:30Z",
+  "dateModified": "2018-03-30T15:45:30Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lordash"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.lordash.de/posts/solution/poj-2264-advanced-fruits/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "似水",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.lordash.de/images/favicon-16x16-.png"
+    }
+  }
+}
+</script>
+</head>
+<body class="dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<article class="post-single">
+<header class="post-header">
+<div class="breadcrumbs"><a href="https://blog.lordash.de">主页</a> » <a href="https://blog.lordash.de/posts/">文章</a> » <a href="https://blog.lordash.de/posts/solution/">题解</a></div>
+<h1 class="post-title">
+      POJ-2264 Advanced Fruits
+    </h1>
+<div class="post-description">
+      POJ-2264 Advanced Fruits 类型 LCS 路经输出
+    </div>
+<div class="post-meta"><span title="2018-03-30 15:45:30 +0000 UTC">2018-03-30</span> · Lordash
+
+
+
+</div>
+</header> <aside class="toc-container wide" id="toc-container">
+<div class="toc">
+<details open="">
+<summary accesskey="c" title="(Alt + C)">
+<span class="details">目录</span>
+</summary>
+<div class="inner"><ul>
+<li>
+<a aria-label="Advanced Fruits (POJ - 2264)" href="#advanced-fruits-poj---2264httpsvjudgenetproblempoj-2264">Advanced Fruits (</a><a href="https://vjudge.net/problem/POJ-2264">POJ - 2264</a>)<ul>
+<li>
+<a aria-label="题面" href="#%e9%a2%98%e9%9d%a2">题面</a></li>
+<li>
+<a aria-label="输入" href="#%e8%be%93%e5%85%a5">输入</a></li>
+<li>
+<a aria-label="输出" href="#%e8%be%93%e5%87%ba">输出</a></li>
+<li>
+<a aria-label="样例输入" href="#%e6%a0%b7%e4%be%8b%e8%be%93%e5%85%a5">样例输入</a></li>
+<li>
+<a aria-label="样例输出" href="#%e6%a0%b7%e4%be%8b%e8%be%93%e5%87%ba">样例输出</a></li>
+<li>
+<a aria-label="提示" href="#%e6%8f%90%e7%a4%ba">提示</a></li>
+<li>
+<a aria-label="思路" href="#%e6%80%9d%e8%b7%af">思路</a></li>
+<li>
+<a aria-label="代码" href="#%e4%bb%a3%e7%a0%81">代码</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+</div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+<div class="post-content"><h1 id="advanced-fruits-poj---2264httpsvjudgenetproblempoj-2264">Advanced Fruits (<a href="https://vjudge.net/problem/POJ-2264">POJ - 2264</a>)<a aria-hidden="true" class="anchor" hidden="" href="#advanced-fruits-poj---2264httpsvjudgenetproblempoj-2264">#</a></h1>
+<h2 id="题面">题面<a aria-hidden="true" class="anchor" hidden="" href="#题面">#</a></h2>
+<blockquote>
+<p>The company “21st Century Fruits” has specialized in creating new sorts  of fruits by transferring genes from one fruit into the genome of  another one. Most times this method doesn’t work, but sometimes, in very rare cases, a new fruit emerges that tastes like a mixture between both of them.</p>
+<p>A big topic of discussion inside the company is “How should  the new creations be called?” A mixture between an apple and a pear  could be called an apple-pear, of course, but this doesn’t sound very  interesting. The boss finally decides to use the shortest string that  contains both names of the original fruits as sub-strings as the new  name. For instance, “applear” contains “apple” and “pear” (APPLEar and  apPlEAR), and there is no shorter string that has the same property.
+A combination of a cranberry and a boysenberry would therefore be called a “boysecranberry” or a “craboysenberry”, for example.</p>
+<p>Your job is to write a program that computes such a shortest  name for a combination of two given fruits. Your algorithm should be  efficient, otherwise it is unlikely that it will execute in the alloted  time for long fruit names.</p>
+</blockquote>
+<h2 id="输入">输入<a aria-hidden="true" class="anchor" hidden="" href="#输入">#</a></h2>
+<blockquote>
+<p>Each line of the input contains two strings that represent the names of  the fruits that should be combined. All names have a maximum length of  100 and only consist of alphabetic characters.
+Input is terminated by end of file.</p>
+</blockquote>
+<h2 id="输出">输出<a aria-hidden="true" class="anchor" hidden="" href="#输出">#</a></h2>
+<blockquote>
+<p>For each test case, output the shortest name of the resulting fruit on  one line. If more than one shortest name is possible, any one is  acceptable.</p>
+</blockquote>
+<h2 id="样例输入">样例输入<a aria-hidden="true" class="anchor" hidden="" href="#样例输入">#</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>apple peach
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ananas banana
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>pear peach
+</span></span></code></pre></div><h2 id="样例输出">样例输出<a aria-hidden="true" class="anchor" hidden="" href="#样例输出">#</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>appleach
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>bananas
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>pearch
+</span></span></code></pre></div><h2 id="提示">提示<a aria-hidden="true" class="anchor" hidden="" href="#提示">#</a></h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路<a aria-hidden="true" class="anchor" hidden="" href="#思路">#</a></h2>
+<h2 id="代码">代码<a aria-hidden="true" class="anchor" hidden="" href="#代码">#</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> inf <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x3f3f3f3f</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>string s, t;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#66d9ef">int</span> dp[N][N];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">&gt;</span>st;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    <span style="color:#66d9ef">while</span>(i<span style="color:#f92672">||</span>j) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            st.push(t[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]), j<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        <span style="color:#66d9ef">if</span>(j<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>            st.push(s[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]), i<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>            <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        <span style="color:#66d9ef">if</span>(s[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span>t[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>            st.push(s[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>            i<span style="color:#f92672">--</span>, j<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>            <span style="color:#66d9ef">if</span>(dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j]<span style="color:#f92672">&gt;</span>dp[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>                st.push(s[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]), i<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>            <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>                st.push(t[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]), j<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>    <span style="color:#66d9ef">while</span>(st.size()) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>        cout<span style="color:#f92672">&lt;&lt;</span>st.top();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>        st.pop();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>    cout<span style="color:#f92672">&lt;&lt;</span>endl;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>    <span style="color:#66d9ef">while</span>(cin<span style="color:#f92672">&gt;&gt;</span>s<span style="color:#f92672">&gt;&gt;</span>t) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>        <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> s.size();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>        <span style="color:#66d9ef">int</span> m <span style="color:#f92672">=</span> t.size();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>        memset(dp, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(dp));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&lt;=</span>n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; j<span style="color:#f92672">&lt;=</span>m; j<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>                <span style="color:#66d9ef">if</span>(s[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span>t[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span>                    dp[i][j] <span style="color:#f92672">=</span> dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>                <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>                    dp[i][j] <span style="color:#f92672">=</span> max(dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j], dp[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span>        print(n, m);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span><span>}
+</span></span></code></pre></div>
+</div>
+<footer class="post-footer">
+<ul class="post-tags">
+<li><a href="https://blog.lordash.de/tags/poj/">POJ</a></li>
+<li><a href="https://blog.lordash.de/tags/dp/">DP</a></li>
+<li><a href="https://blog.lordash.de/tags/lcs/">LCS</a></li>
+</ul>
+<nav class="paginav">
+<a class="prev" href="https://blog.lordash.de/posts/solution/hdu-1160-fatmouses-speed/">
+<span class="title">« 上一页</span>
+<br/>
+<span>HDU-1160 FatMouse's Speed</span>
+</a>
+<a class="next" href="https://blog.lordash.de/posts/solution/poj-2250-compromise/">
+<span class="title">下一页 »</span>
+<br/>
+<span>POJ-2250 Compromise</span>
+</a>
+</nav>
+</footer><div>
+<div class="pagination__title">
+<span class="pagination__title-h" style="font-size: 20px;">💬评论</span>
+<hr/>
+</div>
+<div id="tcomment"></div>
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
+<script>
+        twikoo.init({
+            envId: "https://twikoo-api-dun-pi.vercel.app",
+            el: "#tcomment",
+            lang: 'zh-CN',
+            region: 'ap-zhengzhou',
+            path: window.TWIKOO_MAGIC_PATH || window.location.pathname,
+        });
+    </script>
+</div>
+</article>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                
+                let x = codeblock.getElementsByTagName("span");
+                let noLineNumContent = "";
+                for (i = 0; i < x.length; i++) {
+                    if (x[i].style.display || x[i].style.color);
+                    else noLineNumContent += x[i].textContent;
+                }
+                navigator.clipboard.writeText(noLineNumContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

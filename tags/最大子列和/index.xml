@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>最大子列和 on 似水</title>
+    <link>https://blog.lordash.de/tags/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/</link>
+    <description>Recent content in 最大子列和 on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 28 Aug 2020 13:59:18 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PATA-1007 Maximum Subsequence Sum</title>
+      <link>https://blog.lordash.de/posts/solution/pata-1007-maximum-subsequence-sum/</link>
+      <pubDate>Fri, 28 Aug 2020 13:59:18 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/pata-1007-maximum-subsequence-sum/</guid>
+      <description>PATA-1007 Maximum Subsequence Sum 类型 DP Kadane算法</description>
+      <content:encoded><![CDATA[<h1 id="maximum-subsequence-sumpata-1007httpspintiacnproblem-sets994805342720868352problems994805514284679168">Maximum Subsequence Sum(<a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805514284679168">PATA-1007</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>Given a sequence of K integers { N1, N2, &hellip;, NK }. A continuous subsequence is defined to be { Ni, Ni+1, &hellip;, Nj } where 1≤i≤j≤K. The Maximum Subsequence is the continuous subsequence which has the  largest sum of its elements. For example, given sequence { -2, 11, -4,  13, -5, -2 }, its maximum subsequence is { 11, -4, 13 } with the largest sum being 20.</p>
+<p>Now you are supposed to find the largest sum, together with the first and the last numbers of the maximum subsequence.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>Each input file contains one test case. Each case occupies two lines. The first line contains a positive integer K (≤10000). The second line contains K numbers, separated by a space.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each test case, output in one line the largest sum, together with  the first and the last numbers of the maximum subsequence. The numbers  must be separated by one space, but there must be no extra space at the  end of a line. In case that the maximum subsequence is not unique,  output the one with the smallest indices i and j (as shown by the sample case). If all the K numbers are negative, then its maximum sum is defined to be 0, and you  are supposed to output the first and the last numbers of the whole  sequence.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>10
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>-10 1 2 3 4 -5 -23 3 7 -21
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>10 1 4
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>基础DP，最大子列和。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> mxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e4</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">int</span> a[mxn];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">int</span> n; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#66d9ef">int</span> ans<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>, t<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, tl<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, l, r;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>a[i]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        t <span style="color:#f92672">+=</span> a[i];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#66d9ef">if</span>(t <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            t <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            tl <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(t <span style="color:#f92672">&gt;</span> ans){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>            ans <span style="color:#f92672">=</span> t;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>            l <span style="color:#f92672">=</span> tl;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>            r <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>    <span style="color:#66d9ef">if</span>(ans <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, l <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, r <span style="color:#f92672">=</span> n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>    printf(<span style="color:#e6db74">&#34;%d %d %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans, a[l], a[r]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

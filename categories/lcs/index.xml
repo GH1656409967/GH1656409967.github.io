@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>LCS on 似水</title>
+    <link>https://blog.lordash.de/categories/lcs/</link>
+    <description>Recent content in LCS on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 30 Mar 2018 15:45:30 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/lcs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>POJ-2264 Advanced Fruits</title>
+      <link>https://blog.lordash.de/posts/solution/poj-2264-advanced-fruits/</link>
+      <pubDate>Fri, 30 Mar 2018 15:45:30 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/poj-2264-advanced-fruits/</guid>
+      <description>POJ-2264 Advanced Fruits 类型 LCS 路经输出</description>
+      <content:encoded><![CDATA[<h1 id="advanced-fruits-poj---2264httpsvjudgenetproblempoj-2264">Advanced Fruits (<a href="https://vjudge.net/problem/POJ-2264">POJ - 2264</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>The company &ldquo;21st Century Fruits&rdquo; has specialized in creating new sorts  of fruits by transferring genes from one fruit into the genome of  another one. Most times this method doesn&rsquo;t work, but sometimes, in very rare cases, a new fruit emerges that tastes like a mixture between both of them.</p>
+<p>A big topic of discussion inside the company is &ldquo;How should  the new creations be called?&rdquo; A mixture between an apple and a pear  could be called an apple-pear, of course, but this doesn&rsquo;t sound very  interesting. The boss finally decides to use the shortest string that  contains both names of the original fruits as sub-strings as the new  name. For instance, &ldquo;applear&rdquo; contains &ldquo;apple&rdquo; and &ldquo;pear&rdquo; (APPLEar and  apPlEAR), and there is no shorter string that has the same property.
+A combination of a cranberry and a boysenberry would therefore be called a &ldquo;boysecranberry&rdquo; or a &ldquo;craboysenberry&rdquo;, for example.</p>
+<p>Your job is to write a program that computes such a shortest  name for a combination of two given fruits. Your algorithm should be  efficient, otherwise it is unlikely that it will execute in the alloted  time for long fruit names.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>Each line of the input contains two strings that represent the names of  the fruits that should be combined. All names have a maximum length of  100 and only consist of alphabetic characters.
+Input is terminated by end of file.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each test case, output the shortest name of the resulting fruit on  one line. If more than one shortest name is possible, any one is  acceptable.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>apple peach
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ananas banana
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>pear peach
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>appleach
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>bananas
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>pearch
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> inf <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x3f3f3f3f</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>string s, t;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#66d9ef">int</span> dp[N][N];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">&gt;</span>st;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    <span style="color:#66d9ef">while</span>(i<span style="color:#f92672">||</span>j) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            st.push(t[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]), j<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        <span style="color:#66d9ef">if</span>(j<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>            st.push(s[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]), i<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>            <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        <span style="color:#66d9ef">if</span>(s[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span>t[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>            st.push(s[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>            i<span style="color:#f92672">--</span>, j<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>            <span style="color:#66d9ef">if</span>(dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j]<span style="color:#f92672">&gt;</span>dp[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>                st.push(s[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]), i<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>            <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>                st.push(t[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]), j<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>    <span style="color:#66d9ef">while</span>(st.size()) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>        cout<span style="color:#f92672">&lt;&lt;</span>st.top();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>        st.pop();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>    cout<span style="color:#f92672">&lt;&lt;</span>endl;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>    <span style="color:#66d9ef">while</span>(cin<span style="color:#f92672">&gt;&gt;</span>s<span style="color:#f92672">&gt;&gt;</span>t) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>        <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> s.size();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>        <span style="color:#66d9ef">int</span> m <span style="color:#f92672">=</span> t.size();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>        memset(dp, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(dp));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&lt;=</span>n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; j<span style="color:#f92672">&lt;=</span>m; j<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>                <span style="color:#66d9ef">if</span>(s[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span>t[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span>                    dp[i][j] <span style="color:#f92672">=</span> dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>                <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>                    dp[i][j] <span style="color:#f92672">=</span> max(dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j], dp[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span>        print(n, m);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>POJ-2250 Compromise</title>
+      <link>https://blog.lordash.de/posts/solution/poj-2250-compromise/</link>
+      <pubDate>Fri, 30 Mar 2018 15:26:03 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/poj-2250-compromise/</guid>
+      <description>POJ-2250 Compromise 类型 LCS 路径输出</description>
+      <content:encoded><![CDATA[<h1 id="compromise-poj---2250httpsvjudgenetproblempoj-2250">Compromise (<a href="https://vjudge.net/problem/POJ-2250">POJ - 2250</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>In a few months the European Currency Union will become a reality.  However, to join the club, the Maastricht criteria must be fulfilled,  and this is not a trivial task for the countries (maybe except for  Luxembourg). To enforce that Germany will fulfill the criteria, our  government has so many wonderful options (raise taxes, sell stocks,  revalue the gold reserves,&hellip;) that it is really hard to choose what to  do.</p>
+<p>Therefore the German government requires a program for the following task:
+Two politicians each enter their proposal of what to do. The  computer then outputs the longest common subsequence of words that  occurs in both proposals. As you can see, this is a totally fair  compromise (after all, a common sequence of words is something what both people have in mind).</p>
+<p>Your country needs this program, so your job is to write it for us.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>The input will contain several test cases.
+Each test case consists of two texts. Each text is given as a sequence of lower-case words, separated by whitespace, but with no  punctuation. Words will be less than 30 characters long. Both texts will contain less than 100 words and will be terminated by a line containing a single &lsquo;#&rsquo;.
+Input is terminated by end of file.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each test case, print the longest common subsequence of words  occuring in the two texts. If there is more than one such sequence, any  one is acceptable. Separate the words by one blank. After the last word, output a newline character.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>die einkommen der landwirte
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>sind fuer die abgeordneten ein buch mit sieben siegeln
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>um dem abzuhelfen
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>muessen dringend alle subventionsgesetze verbessert werden
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>#
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>die steuern auf vermoegen und einkommen
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>sollten nach meinung der abgeordneten
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>nachdruecklich erhoben werden
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>dazu muessen die kontrollbefugnisse der finanzbehoerden
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>dringend verbessert werden
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>#
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>die einkommen der abgeordneten muessen dringend verbessert werden
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> inf <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x3f3f3f3f</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>string a[N], b[N], s;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#66d9ef">int</span> dp[N][N];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    stack<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span>st;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    <span style="color:#66d9ef">while</span>(i<span style="color:#f92672">&amp;&amp;</span>j) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#66d9ef">if</span>(a[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span>b[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            st.push(a[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            i<span style="color:#f92672">--</span>, j<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>            <span style="color:#66d9ef">if</span>(dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j]<span style="color:#f92672">&gt;</span>dp[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>                i<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>            <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>                j<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    <span style="color:#66d9ef">while</span>(st.size()) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>        cout<span style="color:#f92672">&lt;&lt;</span>st.top()<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>        st.pop();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>    cout<span style="color:#f92672">&lt;&lt;</span>endl;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>    <span style="color:#66d9ef">while</span>(cin<span style="color:#f92672">&gt;&gt;</span>s) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>        <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, m <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>        <span style="color:#66d9ef">while</span>(s<span style="color:#f92672">!=</span><span style="color:#e6db74">&#34;#&#34;</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>            a[n<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> s;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>            cin<span style="color:#f92672">&gt;&gt;</span>s;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>        cin<span style="color:#f92672">&gt;&gt;</span>s;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>        <span style="color:#66d9ef">while</span>(s<span style="color:#f92672">!=</span><span style="color:#e6db74">&#34;#&#34;</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>            b[m<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> s;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>            cin<span style="color:#f92672">&gt;&gt;</span>s;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>        memset(dp, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(dp));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&lt;=</span>n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; j<span style="color:#f92672">&lt;=</span>m; j<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>                <span style="color:#66d9ef">if</span>(a[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span>b[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span>                    dp[i][j] <span style="color:#f92672">=</span> dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>                <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>                    dp[i][j] <span style="color:#f92672">=</span> max(dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j], dp[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span>        print(n, m);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>POJ-1458 Common Subsequence</title>
+      <link>https://blog.lordash.de/posts/solution/poj-1458-common-subsequence/</link>
+      <pubDate>Fri, 30 Mar 2018 10:49:03 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/poj-1458-common-subsequence/</guid>
+      <description>POJ-1458 Common Subsequence 类型 LCS</description>
+      <content:encoded><![CDATA[<h1 id="common-subsequence-poj-1458httpsvjudgenetproblempoj-1458hdu---1159httpsvjudgenetproblemhdu-1159">Common Subsequence (<a href="https://vjudge.net/problem/POJ-1458">POJ-1458</a>、<a href="https://vjudge.net/problem/HDU-1159">HDU - 1159</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>A subsequence of a given sequence is the given sequence with some  elements (possible none) left out. Given a sequence X = &lt; x1, x2,  &hellip;, xm &gt; another sequence Z = &lt; z1, z2, &hellip;, zk &gt; is a  subsequence of X if there exists a strictly increasing sequence &lt; i1, i2, &hellip;, ik &gt; of indices of X such that for all j = 1,2,&hellip;,k, x       ij = zj. For example, Z = &lt; a, b, f, c  &gt; is a subsequence of X = &lt; a, b, c, f, b, c &gt; with index  sequence &lt; 1, 2, 4, 6 &gt;. Given two sequences X and Y the problem  is to find the length of the maximum-length common subsequence of X and  Y.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>The program input is from the std input. Each data set in the input  contains two strings representing the given sequences. The sequences are separated by any number of white spaces. The input data are correct.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each set of data the program prints on the standard output the  length of the maximum-length common subsequence from the beginning of a  separate line.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>abcfbc         abfcab
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>programming    contest
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>abcd           mnp
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>4
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>0
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> inf <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x3f3f3f3f</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#66d9ef">char</span> a[N], b[N];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#66d9ef">int</span> dp[N][N];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#66d9ef">while</span>(scanf(<span style="color:#e6db74">&#34;%s%s&#34;</span>, a, b)<span style="color:#f92672">==</span><span style="color:#ae81ff">2</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#66d9ef">int</span> la <span style="color:#f92672">=</span> strlen(a);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#66d9ef">int</span> lb <span style="color:#f92672">=</span> strlen(b);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&lt;=</span>la; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; j<span style="color:#f92672">&lt;=</span>lb; j<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>                <span style="color:#66d9ef">if</span>(a[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span>b[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>                    dp[i][j] <span style="color:#f92672">=</span> dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>                <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>                    dp[i][j] <span style="color:#f92672">=</span> max(dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j], dp[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, dp[la][lb]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>DFS on 似水</title>
+    <link>https://blog.lordash.de/categories/dfs/</link>
+    <description>Recent content in DFS on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 20 Apr 2021 20:55:18 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指Offer-38 字符串的排列</title>
+      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-38-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/</link>
+      <pubDate>Tue, 20 Apr 2021 20:55:18 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-38-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/</guid>
+      <description>剑指Offer-38 字符串的排列 类型 DFS</description>
+      <content:encoded><![CDATA[<h1 id="字符串的排列剑指offer-38httpsleetcode-cncomproblemszi-fu-chuan-de-pai-lie-lcof">字符串的排列(<a href="https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/">剑指Offer-38</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>输入一个字符串，打印出该字符串中字符的所有排列。</p>
+<p>你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。</p>
+</blockquote>
+<h2 id="示例">示例</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>输入：s = &#34;abc&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>输出：[&#34;abc&#34;,&#34;acb&#34;,&#34;bac&#34;,&#34;bca&#34;,&#34;cab&#34;,&#34;cba&#34;]
+</span></span></code></pre></div><h2 id="限制">限制</h2>
+<blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>1 &lt;= s 的长度 &lt;= 8
+</span></span></code></pre></div></blockquote>
+<h2 id="思路">思路</h2>
+<p>dfs遍历回溯。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> ans;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>(string s, string <span style="color:#f92672">&amp;</span>t, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>vis){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>        <span style="color:#66d9ef">if</span>(s.size() <span style="color:#f92672">==</span> t.size()){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>            ans.push_back(t);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>            <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>s.size(); i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>            <span style="color:#66d9ef">if</span>(vis[i]) <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&amp;&amp;</span> s[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span>s[i] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>vis[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            t.push_back(s[i]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            vis[i] <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            dfs(s, t, vis);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            vis[i] <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>            t.pop_back();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> permutation(string s) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        <span style="color:#66d9ef">if</span>(s.size() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> {};
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        string t <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        sort(s.begin(), s.end());
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>        vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;</span> vis(s.size());
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>        dfs(s, t, vis);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>        <span style="color:#66d9ef">return</span> ans;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>};
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>剑指Offer-12 矩阵中的路径</title>
+      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-12-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Wed, 24 Mar 2021 15:32:18 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-12-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</guid>
+      <description>剑指Offer-12 矩阵中的路径 类型 DFS</description>
+      <content:encoded><![CDATA[<h1 id="矩阵中的路径剑指offer-12httpsleetcode-cncomproblemsju-zhen-zhong-de-lu-jing-lcof">矩阵中的路径(<a href="https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/">剑指Offer-12</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。例如，在下面的3×4的矩阵中包含一条字符串“bfce”的路径（路径中的字母用加粗标出）。</p>
+<blockquote>
+<p>[[a,<strong>b</strong>,c,e],
+[s,<strong>f</strong>,<strong>c</strong>,s],
+[a,d,<strong>e</strong>,e]]</p>
+</blockquote>
+<p>但矩阵中不包含字符串“abfb”的路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入这个格子。</p>
+</blockquote>
+<h2 id="示例">示例</h2>
+<blockquote>
+<p>示例 1：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>输入：board = [[&#34;A&#34;,&#34;B&#34;,&#34;C&#34;,&#34;E&#34;],[&#34;S&#34;,&#34;F&#34;,&#34;C&#34;,&#34;S&#34;],[&#34;A&#34;,&#34;D&#34;,&#34;E&#34;,&#34;E&#34;]], word = &#34;ABCCED&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>输出：true
+</span></span></code></pre></div><p>示例 2：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>输入：board = [[&#34;a&#34;,&#34;b&#34;],[&#34;c&#34;,&#34;d&#34;]], word = &#34;abcd&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>输出：false
+</span></span></code></pre></div></blockquote>
+<h2 id="限制">限制</h2>
+<blockquote>
+<ul>
+<li><code>1 &lt;= board.length &lt;= 200</code></li>
+<li><code>1 &lt;= board[i].length &lt;= 200</code></li>
+</ul>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>dfs即可。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#66d9ef">bool</span> exist(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">&gt;&gt;&amp;</span> board, string word) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>        n <span style="color:#f92672">=</span> board.size();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>        <span style="color:#66d9ef">if</span>(n <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        m <span style="color:#f92672">=</span> board[<span style="color:#ae81ff">0</span>].size();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">if</span>(m <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>m; j<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>                <span style="color:#66d9ef">if</span>(dfs(board, word, i, j, <span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>                    <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    <span style="color:#66d9ef">int</span> n, m;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>    <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">dfs</span>(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">&gt;&gt;&amp;</span> board, string word, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j, <span style="color:#66d9ef">int</span> k){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> i<span style="color:#f92672">&gt;=</span>n <span style="color:#f92672">||</span> j<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> j<span style="color:#f92672">&gt;=</span>m <span style="color:#f92672">||</span> board[i][j]<span style="color:#f92672">!=</span>word[k])  <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        <span style="color:#66d9ef">if</span>(k <span style="color:#f92672">==</span> word.size()<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)  <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>        board[i][j] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;\0&#39;</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>        <span style="color:#66d9ef">bool</span> ans <span style="color:#f92672">=</span> dfs(board, word, i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, j, k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">||</span> dfs(board, word, i, j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">||</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>                   dfs(board, word, i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, j, k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">||</span> dfs(board, word, i, j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>        board[i][j] <span style="color:#f92672">=</span> word[k];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>        <span style="color:#66d9ef">return</span> ans;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>};
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>POJ-1321 棋盘问题</title>
+      <link>https://blog.lordash.de/posts/solution/poj-1321-%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 23 Mar 2018 08:46:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/poj-1321-%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98/</guid>
+      <description>POJ-1321 棋盘问题 类型 DFS</description>
+      <content:encoded><![CDATA[<h1 id="棋盘问题-poj---1321httpsvjudgenetproblempoj-1321">棋盘问题 (<a href="https://vjudge.net/problem/POJ-1321">POJ - 1321</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>在一个给定形状的棋盘（形状可能是不规则的）上面摆放棋子，棋子没有区别。要求摆放时任意的两个棋子不能放在棋盘中的同一行或者同一列，请编程求解对于给定形状和大小的棋盘，摆放k个棋子的所有可行的摆放方案C。</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>输入含有多组测试数据。
+每组数据的第一行是两个正整数，n k，用一个空格隔开，表示了将在一个n*n的矩阵内描述棋盘，以及摆放棋子的数目。 n &lt;= 8 , k &lt;= n
+当为-1 -1时表示输入结束。
+随后的n行描述了棋盘的形状：每行有n个字符，其中 # 表示棋盘区域， . 表示空白区域（数据保证不出现多余的空白行或者空白列）。</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>对于每一组数据，给出一行输出，输出摆放的方案数目C （数据保证C&lt;2^31）。</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>#.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>.#
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>4 4
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>...#
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>..#.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>.#..
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>#...
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>-1 -1
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>1
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>按行讨论，保存列的访问状态</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> inf <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x3f3f3f3f</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#66d9ef">char</span> b[N][N] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>};
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#66d9ef">bool</span> vis[N] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>};
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#66d9ef">int</span> n, k, ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> cnt) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    <span style="color:#66d9ef">if</span>(cnt<span style="color:#f92672">&gt;=</span>k) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        ans<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        <span style="color:#66d9ef">return</span> ;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>x; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>n; j<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>            <span style="color:#66d9ef">if</span>(b[i][j]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;#&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>vis[j]) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>                vis[j] <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>                dfs(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, cnt<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>                vis[j] <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>    <span style="color:#66d9ef">while</span>(scanf(<span style="color:#e6db74">&#34;%d%d&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>k)<span style="color:#f92672">==</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">&amp;&amp;</span> n<span style="color:#f92672">!=-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> k<span style="color:#f92672">!=-</span><span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>        ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>        memset(vis, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(vis));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>n; j<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>                scanf(<span style="color:#e6db74">&#34; %c&#34;</span>, <span style="color:#f92672">&amp;</span>b[i][j]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>        dfs(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>        printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

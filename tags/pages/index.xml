@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pages on 似水</title>
+    <link>https://blog.lordash.de/tags/pages/</link>
+    <description>Recent content in Pages on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 07 Apr 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win10使用Hexo和Pages服务搭建个人博客</title>
+      <link>https://blog.lordash.de/posts/configure/f6c59ae5f9b3dc94/</link>
+      <pubDate>Thu, 07 Apr 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/configure/f6c59ae5f9b3dc94/</guid>
+      <description>Win10使用Hexo和Pages服务搭建个人博客</description>
+      <content:encoded><![CDATA[<h2 id="1-博客">1 博客</h2>
+<p>博客（blog或weblog）正式名称是网络日志。一个典型的博客结合了文字、图像、链接以及其它主题相关的媒体，同时能够让读者以互动的方式留下建议和意见。博客的内容包括专注在特定课题上的评论或新闻，以及个人性的日记等。</p>
+<p>博客主要就是为了学习和记录。写作是一种产出，能够输出表达、巩固所学，同时满足分享欲和表达欲。</p>
+<blockquote>
+<p>喜欢写Blog的人，会经历三个阶段。
+第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。
+第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。
+第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
+</blockquote>
+<p>引自<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html">阮一峰</a></p>
+<h3 id="11-免费博客网站">1.1 免费博客网站</h3>
+<p>第一阶段是最常见的，也是入门需求最低的。选择一个可以免费发布博客的网站，注册登录后即可开始创作。早期的有<a href="https://bbs.tianya.cn/">天涯</a>、<a href="http://blog.sina.com.cn/">新浪</a>等，近期的有<a href="https://www.jianshu.com/">简书</a>、<a href="https://zhuanlan.zhihu.com/">知乎</a>、<a href="https://www.douban.com/channel/30168767/">豆瓣</a>等、面向开发者的有<a href="https://www.cnblogs.com/">博客园</a>、<a href="https://blog.csdn.net/">CSDN</a>、<a href="https://segmentfault.com/blogs">思否</a>、<a href="https://juejin.cn/">掘金</a>等。</p>
+<p>优点：</p>
+<ul>
+<li>免费</li>
+<li>开箱即用（Out of the box）</li>
+<li>不用考虑内容推广</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>依赖平台，审核机制、敏感词过滤、限制发布内容等</li>
+<li>个性化界面定制差（博客园除外）</li>
+<li>弹窗、广告</li>
+<li>需要登录</li>
+</ul>
+<h3 id="12-服务器上搭建独立博客">1.2 服务器上搭建独立博客</h3>
+<p>第二阶段，在个人服务器上搭建网站。如果是建站小白，或者懒得折腾，可以使用开源的博客系统简化步骤。目前主流的有<a href="https://cn.wordpress.org/">WordPress</a>、<a href="https://halo.run/">Halo</a>、<a href="http://typecho.org/">Typecho</a>等。</p>
+<p>以WordPress为例，这是当前应用最广泛的CMS（Content Management System，内容管理系统），它基于PHP和MySQL数据库，配置方便，作为开源项目，有着优质的社区和丰富的插件。</p>
+<p>优点：</p>
+<ul>
+<li>完全的可定制化</li>
+<li>内容和规模不受限制</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>需要购买服务器和域名</li>
+<li>需要考虑内容推广，网站备案、收录以及SEO优化等</li>
+<li>需要建站相关知识</li>
+<li>维护完全靠个人</li>
+</ul>
+<h3 id="13-免费静态网页托管服务">1.3 免费静态网页托管服务</h3>
+<p>第三阶段，使用<a href="https://pages.github.com/">GitHub</a>、<a href="https://gitee.com/help/articles/4136">Gitee</a>、<a href="https://help.coding.net/docs/pages/operating.html">CODING</a>等提供的Pages免费静态网页托管服务。</p>
+<p>GitHub Pages直接从GitHub上的代码仓库中获取HTML、CSS和JavaScript文件，可以选择通过构建过程运行这些文件，并发布网站。用户可以使用GitHub Pages来展示开源项目，搭建博客，或者分享简历等。</p>
+<p>你可以直接使用HTML+CSS+JS编写博客，但是这样做，排版费时费力，对前端技术也有一定要求。目前流行使用<a href="https://markdown.com.cn/intro.html">Markdown</a>来写文档，例如GitHub项目中的<code>README.md</code>。</p>
+<p>Markdown是一种轻量级标记语言，使用纯文本格式来编写文档，可与HTML混编，语法简洁，让创作者节约排版耗时，更多地关注内容本身。拓展的Markdown语法还支持代码高亮、<a href="https://www.mathjax.org/">MathJax</a>数学公式等。</p>
+<p>Markdown的使用，需要配合解析器。将Markdown转为HTML文件的最简单的方法，就是使用<a href="https://casual-effects.com/markdeep/">Markdeep</a>，它是一个纯JS项目，只需在将编写好的Markdown文件的<code>.md</code>后缀改成<code>.html</code>，并且在文章里引用<code>markdeep.min.js</code>，就可以在浏览器中访问了。</p>
+<p>但博客不只有一篇文章，想要分类、标签、评论之类的功能，更普遍的，可以选择使用开源博客框架，例如<a href="https://hexo.io/">Hexo</a>，<a href="https://ghost.org/">Ghost</a>，<a href="https://jekyllrb.com/">Jekyll</a>等。</p>
+<p>博客框架，也可以叫做静态网站生成器。框架处理博客文章，生成HTML、CSS、JS文件，配合Pages服务或者部署<a href="https://nginx.org/en/">nginx</a>服务器等，即可在浏览器中访问。静态网站没有服务端处理或者数据库交互，利于使用CDN（Content Delivery Network内容分发网络）进行扩展加速，缓存上比动态网页的效率高。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><a href="https://jekyllrb.com/">Jekyll</a></th>
+<th><a href="https://hexo.io/">Hexo</a></th>
+<th><a href="https://ghost.org/">Ghost</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>语言</td>
+<td>Ruby</td>
+<td>JS</td>
+<td>Go</td>
+</tr>
+<tr>
+<td>优势</td>
+<td>1.强大的GitHub Pages支持<br> 2.主题为gems方便分发</td>
+<td>1.相当快速<br> 2.在GitHub Pages部署简单<br> 3.中文支持、中文社区</td>
+<td>1.速度非常快，对构建速度做了优化<br> 2.预置Go模版和模式<br> 3.无需依赖（不用安装Go，因为它是编译好的二进制）<br> 4.功能强大的内容模型</td>
+</tr>
+<tr>
+<td>劣势</td>
+<td>1.当网站内容不断增加后，<br>构建速度会明显变慢。</td>
+<td>1.没有英文</td>
+<td>1.没有内置默认主题<br> 2.主题使用Go模版，所以需要熟悉Go<br> 3.缺少扩展性和插件（因为Go是编译型语言）</td>
+</tr>
+<tr>
+<td>功能</td>
+<td>1.Liquid模版引擎<br> 2.Sass预处理CSS<br></td>
+<td>1.EJS模版引擎<br> 2.对于HTML+CSS+JS非常友好</td>
+<td>1.国际化<br> 2.支持动态API</td>
+</tr>
+</tbody>
+</table>
+<p>优点：</p>
+<ul>
+<li>免费</li>
+<li>可定制程度高</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>只支持静态网页</li>
+<li>更新网页需要重新生成整个网站</li>
+<li>需要考虑内容推广，网站备案、收录以及SEO优化等</li>
+</ul>
+<h2 id="2-配置">2 配置</h2>
+<p>配置Hexo前需要自行安装的环境：</p>
+<ul>
+<li><a href="https://nodejs.org/en/download/">Node.js</a></li>
+<li><a href="https://git-scm.com/download/win">Git</a></li>
+</ul>
+<h3 id="21-github-pages配置">2.1 GitHub Pages配置</h3>
+<p>使用GitHub Pages服务搭建自己的静态博客前，首先需要GitHub账号，没有的话请先<a href="https://github.com/signup">注册</a>。登录之后，点击<code>New</code>，创建一个代码仓库（repository），除非是手头上正好有个闲置的域名，否则更推荐将仓库名设置为<code>username.github.io</code>，这样可以通过GitHub提供的<code>https://username.github.io</code>来访问。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Hexo%e5%92%8cPages%e6%9c%8d%e5%8a%a1%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2/%e5%88%9b%e5%bb%ba%e4%bb%93%e5%ba%93.png" alt="创建仓库"  />
+</p>
+<p>创建完成之后可以写一个HTML简单测试一下，点击<code>Add file</code>，选择<code>Create new file</code>，填写文件名和内容，然后点击<code>Commit new file</code>提交。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>&lt;<span style="color:#f92672">title</span>&gt;test&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    Hello World.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Hexo%e5%92%8cPages%e6%9c%8d%e5%8a%a1%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2/%e7%bc%96%e5%86%99html.png" alt="编写html"  />
+</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Hexo%e5%92%8cPages%e6%9c%8d%e5%8a%a1%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2/%e6%8f%90%e4%ba%a4html.png" alt="提交html"  />
+</p>
+<p>提交后稍等几分钟，待GitHub缓存更新后，就可以在浏览器中访问了。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Hexo%e5%92%8cPages%e6%9c%8d%e5%8a%a1%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2/%e6%9f%a5%e7%9c%8b%e6%b5%8b%e8%af%95%e7%bd%91%e9%a1%b5.png" alt="查看测试网页"  />
+</p>
+<h3 id="22-git和ssh配置">2.2 Git和SSH配置</h3>
+<p>参考<a href="/posts/4d2f4647a7cc/">【配置】Win10配置Git和SSH</a></p>
+<h3 id="23-hexo配置">2.3 Hexo配置</h3>
+<blockquote>
+<p>基本配置过程可以参考<a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a>。</p>
+</blockquote>
+<p><a href="https://docs.npmjs.com/about-npm">npm</a>是Node.js的包管理工具，用来安装、管理和分享JavaScript包，同时会自动处理多个包之间的依赖。打开命令行，执行<code>npm install -g npm</code>更新npm。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e"># 查看npm版本</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>npm -v
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#75715e"># 更新npm</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>npm install -g npm
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#75715e"># 更新npm至指定版本</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>npm install -g npm@8.7.0
+</span></span></code></pre></div><p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Hexo%e5%92%8cPages%e6%9c%8d%e5%8a%a1%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2/%e6%9b%b4%e6%96%b0npm.png" alt="更新npm"  />
+</p>
+<p>安装Hexo</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e"># 安装Hexo</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>npm install -g hexo-cli
+</span></span></code></pre></div><p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Hexo%e5%92%8cPages%e6%9c%8d%e5%8a%a1%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2/%e5%ae%89%e8%a3%85hexo.png" alt="安装Hexo"  />
+</p>
+<p>cd到想要创建的博客目录，初始化Hexo</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e"># 初始化Hexo</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>hexo init
+</span></span></code></pre></div><p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Hexo%e5%92%8cPages%e6%9c%8d%e5%8a%a1%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2/%e5%88%9d%e5%a7%8b%e5%8c%96hexo.png" alt="初始化Hexo"  />
+</p>
+<p>初始化之后，目录下会增加如下内容，详细解释可以参考<a href="https://hexo.io/zh-cn/docs/setup">Hexo文档</a>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>├─.github/                      <span style="color:#75715e"># GitHub配置</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>├─node_modules/                 <span style="color:#75715e"># 包管理目录</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>├─scaffolds/                    <span style="color:#75715e"># 模板目录</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>├─source/                       <span style="color:#75715e"># 文章目录</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>│  └─_posts/
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>│      hello-world.md
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>└─themes/                       <span style="color:#75715e"># 主题目录</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>  .gitignore                    <span style="color:#75715e"># 忽略文件</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>  _config.landscape.yml         <span style="color:#75715e"># 主题配置文件</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>  _config.yml                   <span style="color:#75715e"># 全局配置文件</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>  package.json                  <span style="color:#75715e"># 包配置文件</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>  package-lock.json
+</span></span></code></pre></div><p>将编写好的Markdown博客，放在<code>source/_posts/</code>目录下，Hexo默认有一篇欢迎博客<code>hello-world.md</code>，里面有简单介绍和快速入门。执行命令，测试Hexo本地配置。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e"># 生成博客</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>hexo generate
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#75715e"># 启动服务</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>hexo server
+</span></span></code></pre></div><p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Hexo%e5%92%8cPages%e6%9c%8d%e5%8a%a1%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2/hexo%e8%bf%90%e8%a1%8c.png" alt="hexo运行"  />
+</p>
+<p>打开链接<a href="http://localhost:4000/">http://localhost:4000/</a>，查看博客。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Hexo%e5%92%8cPages%e6%9c%8d%e5%8a%a1%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2/%e6%9c%ac%e5%9c%b0%e6%b5%8b%e8%af%95.png" alt="本地测试"  />
+</p>
+<p>在博客目录下运行命令行，安装<code>hexo-deployer-git</code>插件。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e"># 安装hexo-deployer-git插件</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>npm install hexo-deployer-git --save
+</span></span></code></pre></div><p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Hexo%e5%92%8cPages%e6%9c%8d%e5%8a%a1%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2/hexo_deployer_git.png" alt="hexo_deployer_git"  />
+</p>
+<p>看到提示有高危漏洞<font color=grey> <del>，我也不明白怎么处理</del> </font>，按照提示输入<code>npm audit fix --force</code>修复。</p>
+<p>回到GitHub博客项目，点击<code>Code</code>，选择<code>SSH</code>，点击链接右侧图标，将链接复制到剪贴板。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Hexo%e5%92%8cPages%e6%9c%8d%e5%8a%a1%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2/github%e8%b7%af%e5%be%84.png" alt="github路径"  />
+</p>
+<p>打开博客根目录下的<code>_config.yml</code>，在deploy下填写配置，将链接粘贴到<code>repository</code>字段。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f92672">deploy</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">git</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>  <span style="color:#f92672">repository</span>: <span style="color:#ae81ff">git@github.com:GH1656409967/GH1656409967.github.io.git</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>  <span style="color:#f92672">branch</span>: <span style="color:#ae81ff">main</span>
+</span></span></code></pre></div><blockquote>
+<p>注意，2020年10月1日起，在Github平台上所有新创建的源代码仓库的默认分支被命名为&quot;<font color=red>main</font>&quot;，不再是原先的&quot;master&quot;。</p>
+</blockquote>
+<p>测试Hexo远程部署。如果之前SSH设置了密码，则需要输入密码，看到<code>Deploy done</code>，说明部署成功。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e"># 远程部署（上传到GitHub）</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>hexo deploy
+</span></span></code></pre></div><p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Hexo%e5%92%8cPages%e6%9c%8d%e5%8a%a1%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2/hexo_deploy.png" alt="hexo_deploy"  />
+</p>
+<p>打开GitHub博客项目，可以看到代码文件已经更新了。再打开<code>https://username.github.io/</code>，博客内容也同步更新了，与本地<code>http://localhost:4000/</code>访问页面一样。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Hexo%e5%92%8cPages%e6%9c%8d%e5%8a%a1%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2/github%e9%a1%b9%e7%9b%ae%e6%9b%b4%e6%96%b0.png" alt="github项目更新"  />
+</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Hexo%e5%92%8cPages%e6%9c%8d%e5%8a%a1%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2/%e6%9f%a5%e7%9c%8b%e5%8d%9a%e5%ae%a2%e7%bd%91%e9%a1%b5.png" alt="查看博客网页"  />
+</p>
+<h2 id="3-总结">3 总结</h2>
+<p>至此，一个基础的独立博客已经搭建完成了, 在Linux和Mac上的配置，也应该类似。Hexo有丰富的插件和社区资源，能提供更多个性化定制，想要添加更多的功能可以参考我的文章<a href="Hexo%E5%8F%8ANexT%E4%B8%BB%E9%A2%98%E7%9A%84%E9%85%8D%E7%BD%AE.html">【配置】Hexo及NexT主题的配置</a>。</p>
+<p>由于博客源文件是Markdown格式，后续的博客的迁移也不麻烦。在购买了云服务器后，也可以使用nginx等服务替换GitHub Pages服务。</p>
+<blockquote>
+<p>最后，请保证将Pages服务仅用于博客/门户/开源项目网站/开源项目静态效果演示用途，请勿用于违规内容，包括但不仅限于：</p>
+<ul>
+<li>发布诱导分享/诱导关注/诱导下载/诱导跳转内容</li>
+<li>发布欺诈/谣言/骚扰信息/广告信息/垃圾信息/特殊识别码、口令类信息</li>
+<li>发布低俗内容/“宗教性捐献”及相关信息</li>
+<li>发布侵害他人权利/违法经营及可疑服务类内容</li>
+<li>发布其它违反国家法律法规的内容</li>
+</ul>
+</blockquote>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Win10配置Git和SSH</title>
+      <link>https://blog.lordash.de/posts/configure/bb23eaa4846998e0/</link>
+      <pubDate>Thu, 07 Apr 2022 11:00:00 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/configure/bb23eaa4846998e0/</guid>
+      <description>Win10配置Git和SSH</description>
+      <content:encoded><![CDATA[<h2 id="1-git配置">1 Git配置</h2>
+<p>打开Git Bash，配置用户信息,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e"># 配置用户名和邮箱</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>git config --global user.name <span style="color:#e6db74">&#34;github用户名&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>git config --global user.email <span style="color:#e6db74">&#34;github注册邮箱&#34;</span>
+</span></span></code></pre></div><p><img loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeGit%e5%92%8cSSH/git_config.png" alt="git_config"  />
+</p>
+<h2 id="2-ssh配置">2 SSH配置</h2>
+<p>Git和GitHub之间可以通过HTTPS、SSH、GitHub CLI等形式来连接，这里我们使用SSH方式连接。</p>
+<p>SSH登录安全性由非对称加密保证，产生密钥时，一次产生两个密钥，一个公钥，一个私钥，在Git中一般命名为id_rsa.pub, id_rsa。公钥放到远程主机，私钥保存在本地。</p>
+<p>当本地主机需要登录远程主机时，①本地主机向远程主机发送一个登录请求，②远程收到消息后，随机生成一个字符串并用公钥加密，发回给本地。③本地拿到该字符串，用存放在本地的私钥进行解密，再次发送到远程，④远程比对该解密后的字符串与源字符串是否等同，如果等同则认证成功。</p>
+<p>执行下面命令生成ssh密钥文件，会提示你指定保存路径（默认是<code>C:/Users/当前用户/.ssh/id_rsa</code>），然后确认密码。使用默认配置可以直接回车跳过，但是并不推荐，如果之前生成过密钥文件，会提示覆盖。这边指定了保存路径为<code>C:/Users/当前用户/.ssh/id_rsa.github</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e"># 生成 ssh 密钥</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ssh-keygen -t rsa -C <span style="color:#e6db74">&#34;github注册邮箱&#34;</span>
+</span></span></code></pre></div><p><img loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeGit%e5%92%8cSSH/ssh_git.png" alt="ssh_git"  />
+</p>
+<p>在<a href="https://github.com/settings/keys">GitHub设置</a>里点击<code>New SSH key</code>添加公钥，在<code>Title</code>中填写名称，方便区分，接着以文本方式打开之前生成的<code>.pub</code>公钥文件，<code>Ctrl + A</code>全选，然后复制内容并粘贴到<code>Key</code>中，点击<code>Add SSH key</code>，确认GitHub密码后，完成配置。</p>
+<p><img loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeGit%e5%92%8cSSH/ssh_github.png" alt="ssh_github"  />
+</p>
+<p>在默认保存路径<code>C:/Users/当前用户/.ssh/</code>下，创建一个名为<code>config</code>的文件，输入以下内容，<code>IdentityFile</code>后面是之前配置的密钥的路径。如果之前保存过其它SSH密钥，可以依照相同格式进行配置。然后回到Git Bash，执行<code>chmod 600 ~/.ssh/config</code>添加读写权限。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># github
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Host github.com
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>IdentityFile ~/.ssh/id_rsa.github
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>User git
+</span></span></code></pre></div><p>测试配置，出现<code>successfully authenticated</code>说明成功</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e"># 测试配置</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ssh -T git@github.com
+</span></span></code></pre></div><p><img loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeGit%e5%92%8cSSH/ssh_test.png" alt="ssh_test"  />
+</p>
+<p>如果提示<code>Could not resolve hostname github.com: No address associated with hostname</code>，使用<a href="https://ipaddress.com/website/github.com">IPAddress</a>查询GitHub真实IP地址，然后添加到<code>C:\Windows\System32\drivers\etc\hosts</code>文件中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>140.82.114.4 github.com
+</span></span></code></pre></div><p><img loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeGit%e5%92%8cSSH/hosts.png" alt="hosts"  />
+</p>
+<p>推荐使用<a href="https://www.114dns.com/">114DNS</a>，可以避免此情况，也无需改动hosts文件。</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

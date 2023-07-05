@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Win10配置Git和SSH | 似水</title>
+<meta content="Windows, Hexo, Pages" name="keywords"/>
+<meta content="Win10配置Git和SSH" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/posts/configure/bb23eaa4846998e0/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" rel="stylesheet"/>
+<script crossorigin="anonymous" defer="" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script crossorigin="anonymous" defer="" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+<meta content="Win10配置Git和SSH" property="og:title"/>
+<meta content="Win10配置Git和SSH" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://blog.lordash.de/posts/configure/bb23eaa4846998e0/" property="og:url"/><meta content="posts" property="article:section"/>
+<meta content="2022-04-07T11:00:00+00:00" property="article:published_time"/>
+<meta content="2022-04-07T11:00:00+00:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Win10配置Git和SSH" name="twitter:title"/>
+<meta content="Win10配置Git和SSH" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "文章",
+      "item": "https://blog.lordash.de/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "配置",
+      "item": "https://blog.lordash.de/posts/configure/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "Win10配置Git和SSH",
+      "item": "https://blog.lordash.de/posts/configure/bb23eaa4846998e0/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Win10配置Git和SSH",
+  "name": "Win10配置Git和SSH",
+  "description": "Win10配置Git和SSH",
+  "keywords": [
+    "Windows", "Hexo", "Pages"
+  ],
+  "articleBody": "1 Git配置 打开Git Bash，配置用户信息,\n1# 配置用户名和邮箱 2git config --global user.name \"github用户名\" 3git config --global user.email \"github注册邮箱\" 2 SSH配置 Git和GitHub之间可以通过HTTPS、SSH、GitHub CLI等形式来连接，这里我们使用SSH方式连接。\nSSH登录安全性由非对称加密保证，产生密钥时，一次产生两个密钥，一个公钥，一个私钥，在Git中一般命名为id_rsa.pub, id_rsa。公钥放到远程主机，私钥保存在本地。\n当本地主机需要登录远程主机时，①本地主机向远程主机发送一个登录请求，②远程收到消息后，随机生成一个字符串并用公钥加密，发回给本地。③本地拿到该字符串，用存放在本地的私钥进行解密，再次发送到远程，④远程比对该解密后的字符串与源字符串是否等同，如果等同则认证成功。\n执行下面命令生成ssh密钥文件，会提示你指定保存路径（默认是C:/Users/当前用户/.ssh/id_rsa），然后确认密码。使用默认配置可以直接回车跳过，但是并不推荐，如果之前生成过密钥文件，会提示覆盖。这边指定了保存路径为C:/Users/当前用户/.ssh/id_rsa.github。\n1# 生成 ssh 密钥 2ssh-keygen -t rsa -C \"github注册邮箱\" 在GitHub设置里点击New SSH key添加公钥，在Title中填写名称，方便区分，接着以文本方式打开之前生成的.pub公钥文件，Ctrl + A全选，然后复制内容并粘贴到Key中，点击Add SSH key，确认GitHub密码后，完成配置。\n在默认保存路径C:/Users/当前用户/.ssh/下，创建一个名为config的文件，输入以下内容，IdentityFile后面是之前配置的密钥的路径。如果之前保存过其它SSH密钥，可以依照相同格式进行配置。然后回到Git Bash，执行chmod 600 ~/.ssh/config添加读写权限。\n1# github 2Host github.com 3IdentityFile ~/.ssh/id_rsa.github 4User git 测试配置，出现successfully authenticated说明成功\n1# 测试配置 2ssh -T git@github.com 如果提示Could not resolve hostname github.com: No address associated with hostname，使用IPAddress查询GitHub真实IP地址，然后添加到C:\\Windows\\System32\\drivers\\etc\\hosts文件中。\n1140.82.114.4 github.com 推荐使用114DNS，可以避免此情况，也无需改动hosts文件。\n",
+  "wordCount" : "979",
+  "inLanguage": "zh",
+  "datePublished": "2022-04-07T11:00:00Z",
+  "dateModified": "2022-04-07T11:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lordash"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.lordash.de/posts/configure/bb23eaa4846998e0/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "似水",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.lordash.de/images/favicon-16x16-.png"
+    }
+  }
+}
+</script>
+</head>
+<body class="dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<article class="post-single">
+<header class="post-header">
+<div class="breadcrumbs"><a href="https://blog.lordash.de">主页</a> » <a href="https://blog.lordash.de/posts/">文章</a> » <a href="https://blog.lordash.de/posts/configure/">配置</a></div>
+<h1 class="post-title">
+      Win10配置Git和SSH
+    </h1>
+<div class="post-description">
+      Win10配置Git和SSH
+    </div>
+<div class="post-meta"><span title="2022-04-07 11:00:00 +0000 UTC">2022-04-07</span> · Lordash
+
+
+
+</div>
+</header> <aside class="toc-container wide" id="toc-container">
+<div class="toc">
+<details open="">
+<summary accesskey="c" title="(Alt + C)">
+<span class="details">目录</span>
+</summary>
+<div class="inner"><ul>
+<li>
+<a aria-label="1 Git配置" href="#1-git%e9%85%8d%e7%bd%ae">1 Git配置</a></li>
+<li>
+<a aria-label="2 SSH配置" href="#2-ssh%e9%85%8d%e7%bd%ae">2 SSH配置</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+<div class="post-content"><h2 id="1-git配置">1 Git配置<a aria-hidden="true" class="anchor" hidden="" href="#1-git配置">#</a></h2>
+<p>打开Git Bash，配置用户信息,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e"># 配置用户名和邮箱</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>git config --global user.name <span style="color:#e6db74">"github用户名"</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>git config --global user.email <span style="color:#e6db74">"github注册邮箱"</span>
+</span></span></code></pre></div><p><img alt="git_config" loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeGit%e5%92%8cSSH/git_config.png"/>
+</p>
+<h2 id="2-ssh配置">2 SSH配置<a aria-hidden="true" class="anchor" hidden="" href="#2-ssh配置">#</a></h2>
+<p>Git和GitHub之间可以通过HTTPS、SSH、GitHub CLI等形式来连接，这里我们使用SSH方式连接。</p>
+<p>SSH登录安全性由非对称加密保证，产生密钥时，一次产生两个密钥，一个公钥，一个私钥，在Git中一般命名为id_rsa.pub, id_rsa。公钥放到远程主机，私钥保存在本地。</p>
+<p>当本地主机需要登录远程主机时，①本地主机向远程主机发送一个登录请求，②远程收到消息后，随机生成一个字符串并用公钥加密，发回给本地。③本地拿到该字符串，用存放在本地的私钥进行解密，再次发送到远程，④远程比对该解密后的字符串与源字符串是否等同，如果等同则认证成功。</p>
+<p>执行下面命令生成ssh密钥文件，会提示你指定保存路径（默认是<code>C:/Users/当前用户/.ssh/id_rsa</code>），然后确认密码。使用默认配置可以直接回车跳过，但是并不推荐，如果之前生成过密钥文件，会提示覆盖。这边指定了保存路径为<code>C:/Users/当前用户/.ssh/id_rsa.github</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e"># 生成 ssh 密钥</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ssh-keygen -t rsa -C <span style="color:#e6db74">"github注册邮箱"</span>
+</span></span></code></pre></div><p><img alt="ssh_git" loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeGit%e5%92%8cSSH/ssh_git.png"/>
+</p>
+<p>在<a href="https://github.com/settings/keys">GitHub设置</a>里点击<code>New SSH key</code>添加公钥，在<code>Title</code>中填写名称，方便区分，接着以文本方式打开之前生成的<code>.pub</code>公钥文件，<code>Ctrl + A</code>全选，然后复制内容并粘贴到<code>Key</code>中，点击<code>Add SSH key</code>，确认GitHub密码后，完成配置。</p>
+<p><img alt="ssh_github" loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeGit%e5%92%8cSSH/ssh_github.png"/>
+</p>
+<p>在默认保存路径<code>C:/Users/当前用户/.ssh/</code>下，创建一个名为<code>config</code>的文件，输入以下内容，<code>IdentityFile</code>后面是之前配置的密钥的路径。如果之前保存过其它SSH密钥，可以依照相同格式进行配置。然后回到Git Bash，执行<code>chmod 600 ~/.ssh/config</code>添加读写权限。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-text" data-lang="text"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># github
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Host github.com
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>IdentityFile ~/.ssh/id_rsa.github
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>User git
+</span></span></code></pre></div><p>测试配置，出现<code>successfully authenticated</code>说明成功</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e"># 测试配置</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ssh -T git@github.com
+</span></span></code></pre></div><p><img alt="ssh_test" loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeGit%e5%92%8cSSH/ssh_test.png"/>
+</p>
+<p>如果提示<code>Could not resolve hostname github.com: No address associated with hostname</code>，使用<a href="https://ipaddress.com/website/github.com">IPAddress</a>查询GitHub真实IP地址，然后添加到<code>C:\Windows\System32\drivers\etc\hosts</code>文件中。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>140.82.114.4 github.com
+</span></span></code></pre></div><p><img alt="hosts" loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeGit%e5%92%8cSSH/hosts.png"/>
+</p>
+<p>推荐使用<a href="https://www.114dns.com/">114DNS</a>，可以避免此情况，也无需改动hosts文件。</p>
+</div>
+<footer class="post-footer">
+<ul class="post-tags">
+<li><a href="https://blog.lordash.de/tags/windows/">Windows</a></li>
+<li><a href="https://blog.lordash.de/tags/hexo/">Hexo</a></li>
+<li><a href="https://blog.lordash.de/tags/pages/">Pages</a></li>
+</ul>
+<nav class="paginav">
+<a class="prev" href="https://blog.lordash.de/posts/configure/f6c59ae5f9b3dc94/">
+<span class="title">« 上一页</span>
+<br/>
+<span>Win10使用Hexo和Pages服务搭建个人博客</span>
+</a>
+<a class="next" href="https://blog.lordash.de/posts/algorithm/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
+<span class="title">下一页 »</span>
+<br/>
+<span>快速排序</span>
+</a>
+</nav>
+</footer><div>
+<div class="pagination__title">
+<span class="pagination__title-h" style="font-size: 20px;">💬评论</span>
+<hr/>
+</div>
+<div id="tcomment"></div>
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
+<script>
+        twikoo.init({
+            envId: "https://twikoo-api-dun-pi.vercel.app",
+            el: "#tcomment",
+            lang: 'zh-CN',
+            region: 'ap-zhengzhou',
+            path: window.TWIKOO_MAGIC_PATH || window.location.pathname,
+        });
+    </script>
+</div>
+</article>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                
+                let x = codeblock.getElementsByTagName("span");
+                let noLineNumContent = "";
+                for (i = 0; i < x.length; i++) {
+                    if (x[i].style.display || x[i].style.color);
+                    else noLineNumContent += x[i].textContent;
+                }
+                navigator.clipboard.writeText(noLineNumContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

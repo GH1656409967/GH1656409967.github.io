@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Vercel on 似水</title>
+    <link>https://blog.lordash.de/tags/vercel/</link>
+    <description>Recent content in Vercel on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 07 Aug 2022 13:00:00 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/vercel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win10使用Vercel托管Hexo博客</title>
+      <link>https://blog.lordash.de/posts/configure/abf4cb68b4c20c52/</link>
+      <pubDate>Sun, 07 Aug 2022 13:00:00 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/configure/abf4cb68b4c20c52/</guid>
+      <description>Win10使用Vercel托管Hexo博客</description>
+      <content:encoded><![CDATA[<h2 id="1-vercel配置">1 Vercel配置</h2>
+<p>进入<a href="https://vercel.com/">Vercel官网</a>，点击右上角<code>Sign Up</code>注册，选择<code>Continue with GitHub</code>使用GitHub账号注册。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e6%b3%a8%e5%86%8cvercel.png" alt="注册vercel"  />
+</p>
+<p>注册完成后，会进入<a href="https://vercel.com/new">新建项目</a>页面。如果没有，点击页面左上角进入<a href="https://vercel.com/dashboard">控制面板</a>，点击<code>Overview</code>进入概览，点击<code>New Project</code>。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e6%96%b0%e5%bb%ba%e9%a1%b9%e7%9b%ae.png" alt="新建项目"  />
+</p>
+<p>在<code>Import Git Repository</code>下面的选择框中选择<code>Add GitHub Account</code>，在弹出来的页面中选择之前配置GitHub Pages用的仓库，然后点击<code>Import</code>。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e9%80%89%e6%8b%a9GitHub%e9%a1%b9%e7%9b%ae.png" alt="选择GitHub项目"  />
+</p>
+<p>导入完会自动进入部署页面，可以修改一下项目名，因为仓库中已经是Hexo生成的页面文件了，预设框架选择默认的<code>Other</code>即可。直接点击<code>Deploy</code>开始部署。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e9%83%a8%e7%bd%b2%e9%85%8d%e7%bd%ae.png" alt="部署配置"  />
+</p>
+<p>部署完成，Vercel会提供几个<code>.vercel.app</code>的默认域名进行访问。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e9%83%a8%e7%bd%b2%e5%ae%8c%e6%88%90.png" alt="部署完成"  />
+</p>
+<h2 id="2-使用自定义域名">2 使用自定义域名</h2>
+<p>因为我目前使用<a href="https://www.cloudflare.com/zh-cn/">Cloudflare</a>管理域名（参考<a href="/posts/68936ac90146/">【配置】Win10将域名NameServer从NameSilo替换到Cloudflare</a>），所以接下来将以Cloudflare作为例子。</p>
+<p>在Vercel中进入项目的<code>Setting</code>设置页，选择<code>Domains</code>域名管理，可以看到当前配置的自定义域名。其中包含了Vercel默认生成的二级域名，点击<code>Edit</code>可修改为其它无人占用的<code>.vercel.app</code>域名，详细信息可以查看<a href="https://vercel.com/docs/concepts/deployments/generated-urls">Vercel官方文档</a>。</p>
+<p>想要使用其它自定义域名，在输入框中输入，点击<code>Add</code>添加。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e6%b7%bb%e5%8a%a0%e5%9f%9f%e5%90%8d.png" alt="添加域名"  />
+</p>
+<p>添加完后，需要验证配置，这里选择CNAME方式。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e9%aa%8c%e8%af%81%e9%85%8d%e7%bd%ae.png" alt="验证配置"  />
+</p>
+<p><a href="https://dash.cloudflare.com/login/">登录Cloudflare</a>，在域名的<code>DNS</code>配置中，选择<code>添加记录</code>，填写之前Vercel要求的解析内容。按需选择是否开启Cloudflare CDN。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e6%b7%bb%e5%8a%a0DNS.png" alt="添加DNS"  />
+</p>
+<h3 id="关闭cloudflare-cdn">关闭Cloudflare CDN</h3>
+<p>Cloudflare提供的代理服务在大陆访问速度过慢，我们可以选择关闭Cloudflare的<del>反向</del>加速服务。在Cloudflare的<code>DNS</code>记录配置中，点击<code>编辑</code>，取消代理状态。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e5%85%b3%e9%97%ad%e4%bb%a3%e7%90%86.png" alt="关闭代理"  />
+</p>
+<h3 id="开启cloudflare-cdn">开启Cloudflare CDN</h3>
+<p>回到Vercel页面，如果之前配置了Cloudflare代理，会发现还是有问题，点击<code>Learn More</code>查看<a href="https://vercel.com/docs/concepts/projects/custom-domains#cloudflare">Vercel官方文档</a>给的提示。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e9%85%8d%e7%bd%ae%e5%a4%b1%e8%b4%a5.png" alt="配置失败"  />
+</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e4%ba%86%e8%a7%a3%e6%9b%b4%e5%a4%9a.png" alt="了解更多"  />
+</p>
+<p>Vercel构建项目时，使用<a href="https://letsencrypt.org/zh-cn/docs/challenge-types/">Let&rsquo;s Encrypt</a>颁发SSL证书，会向<code>域名/.well-known/acme-challenge</code>发出HTTP请求，如果此HTTP请求被Cloudflare重定向到HTTPS，则无法生成证书。</p>
+<p>打开CMD，输入以上curl命令测试，注意是HTTP请求。如果返回的是<code>404</code>说明成功，如果是<code>3XX</code>重定向，那么Cloudflare会阻止访问此路由，且Vercel会将域名标记为未配置。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>curl http://your.domain.com/.well-known/acme-challenge -I
+</span></span></code></pre></div><p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e6%b5%8b%e8%af%95.png" alt="测试"  />
+</p>
+<p>一般都是<code>3XX</code>重定向，需要添加例外配置。打开Cloudflare，在<code>规则 - 页面规则</code>中，点击<code>创建页面规则</code>，</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e5%88%9b%e5%bb%ba%e8%a7%84%e5%88%99.png" alt="创建规则"  />
+</p>
+<p>在<code>URL</code>输入框中输入<code>*your.domain/.well-known/*</code>，在<code>选取设置</code>的下拉列表中选择<code>SSL</code>，然后在<code>选择SSL设置</code>下拉列表中选择<code>关</code>，点击<code>保存和部署页面规则</code>。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e5%a1%ab%e5%86%99%e8%a7%84%e5%88%99.png" alt="填写规则"  />
+</p>
+<p>如果依旧是配置失败，请检查Cloudflare的配置，在<code>SSL/TLS - 边缘证书</code>中，是否开启了<code>始终使用HTTPS</code>，如果有，请关闭。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e5%85%b3%e9%97%ad%e5%a7%8b%e7%bb%88HTTPS.png" alt="关闭始终HTTPS"  />
+</p>
+<p>生成证书后，配置成功</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e7%94%9f%e6%88%90%e8%af%81%e4%b9%a6.png" alt="生成证书"  />
+</p>
+<h2 id="3-其它问题">3 其它问题</h2>
+<h3 id="err_too_many_redirects">ERR_TOO_MANY_REDIRECTS</h3>
+<p>打开页面时，提示<code>ERR_TOO_MANY_REDIRECTS</code>重定向次数过多，请尝试清除Cookie。但是清除Cookie无用，重新打开依旧是这个提示。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e9%87%8d%e5%ae%9a%e5%90%91.png" alt="重定向"  />
+</p>
+<p>在Cloudflare的<code>SSL/TLS - 概述</code>中，将模式改为<code>完全（严格）</code>模式。</p>
+<p><img loading="lazy" src="../Win10%e4%bd%bf%e7%94%a8Vercel%e6%89%98%e7%ae%a1Hexo%e5%8d%9a%e5%ae%a2/%e4%b8%a5%e6%a0%bc%e6%a8%a1%e5%bc%8f.png" alt="严格模式"  />
+</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Win10将域名NameServer从NameSilo替换到Cloudflare</title>
+      <link>https://blog.lordash.de/posts/configure/7f8636440ab49b65/</link>
+      <pubDate>Sun, 07 Aug 2022 11:00:00 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/configure/7f8636440ab49b65/</guid>
+      <description>使用Windows10 Edge访问NameSilo和Cloudflare，将域名NameServer从NameSilo替换到Cloudflare，使用Cloudflare管理域名。</description>
+      <content:encoded><![CDATA[<h2 id="1-配置">1 配置</h2>
+<p>首先，需要在<a href="https://www.namesilo.com/">NameSilo</a>上注册登录，购买心仪的域名，然后注册并登录<a href="https://dash.cloudflare.com/">Cloudflare</a>，</p>
+<p><img loading="lazy" src="../Win10%e5%b0%86%e5%9f%9f%e5%90%8dNameServer%e4%bb%8eNameSilo%e6%9b%bf%e6%8d%a2%e5%88%b0Cloudflare/%e5%bc%80%e5%a7%8b%e4%bd%bf%e7%94%a8.png" alt="开始使用"  />
+</p>
+<p>点击左侧<strong>网站</strong>，进入网站管理页面，点击<strong>添加站点</strong>，</p>
+<p><img loading="lazy" src="../Win10%e5%b0%86%e5%9f%9f%e5%90%8dNameServer%e4%bb%8eNameSilo%e6%9b%bf%e6%8d%a2%e5%88%b0Cloudflare/%e7%bd%91%e7%ab%99%e7%ae%a1%e7%90%86.png" alt="网站管理"  />
+</p>
+<p>在<strong>输入您的站点</strong>输入框内填写NameSilo上的域名，点击<strong>添加站点</strong>，</p>
+<p><img loading="lazy" src="../Win10%e5%b0%86%e5%9f%9f%e5%90%8dNameServer%e4%bb%8eNameSilo%e6%9b%bf%e6%8d%a2%e5%88%b0Cloudflare/%e6%b7%bb%e5%8a%a0%e7%ab%99%e7%82%b9.png" alt="添加站点"  />
+</p>
+<p><strong>选择您的计划</strong>，一般用户选最下面的<strong>Free</strong>免费版就行了。选中免费那一栏，然后点击<strong>继续</strong>按钮。</p>
+<p><img loading="lazy" src="../Win10%e5%b0%86%e5%9f%9f%e5%90%8dNameServer%e4%bb%8eNameSilo%e6%9b%bf%e6%8d%a2%e5%88%b0Cloudflare/%e9%80%89%e6%8b%a9%e8%ae%a1%e5%88%92.png" alt="选择计划"  />
+</p>
+<p><strong>查看DNS记录</strong>，我这个域名当前是没有DNS记录的。有需要添加记录的，可以在这添加，也可以先跳过，点击<strong>继续</strong>按钮。</p>
+<p><img loading="lazy" src="../Win10%e5%b0%86%e5%9f%9f%e5%90%8dNameServer%e4%bb%8eNameSilo%e6%9b%bf%e6%8d%a2%e5%88%b0Cloudflare/DNS%e8%ae%b0%e5%bd%95.png" alt="DNS记录"  />
+</p>
+<p><strong>更换名称服务器</strong>，这边需要复制下Cloudflare给出的NS记录</p>
+<p><img loading="lazy" src="../Win10%e5%b0%86%e5%9f%9f%e5%90%8dNameServer%e4%bb%8eNameSilo%e6%9b%bf%e6%8d%a2%e5%88%b0Cloudflare/NS.png" alt="NS"  />
+</p>
+<p>我们打开NameSilo，点击上面的<strong>Manage My Domains</strong>，进入域名管理页面，选中需要更换的域名，点击<strong>Change Nameservers</strong>按钮，</p>
+<p><img loading="lazy" src="../Win10%e5%b0%86%e5%9f%9f%e5%90%8dNameServer%e4%bb%8eNameSilo%e6%9b%bf%e6%8d%a2%e5%88%b0Cloudflare/%e6%9b%b4%e6%8d%a2NS.png" alt="更换NS"  />
+</p>
+<p>然后把NS替换为Cloudflare给出的NS，保存。这时候可以看到域名的<strong>Status</strong>显示<code>Processing NameServer Update</code>，稍等几分钟，就会变成<code>Active</code>。</p>
+<p><img loading="lazy" src="../Win10%e5%b0%86%e5%9f%9f%e5%90%8dNameServer%e4%bb%8eNameSilo%e6%9b%bf%e6%8d%a2%e5%88%b0Cloudflare/%e6%9b%b4%e6%8d%a2NS%e5%90%8e.png" alt="更换NS后"  />
+</p>
+<p>回到Cloudflare，点击<strong>完成，检查名称服务器</strong>，然后可以配置或者跳过<strong>快速入门指南</strong>。点击左侧<strong>概述</strong>，点击<strong>检查名称服务器</strong>，再次检测。</p>
+<p><img loading="lazy" src="../Win10%e5%b0%86%e5%9f%9f%e5%90%8dNameServer%e4%bb%8eNameSilo%e6%9b%bf%e6%8d%a2%e5%88%b0Cloudflare/%e6%a3%80%e6%9f%a5NS.png" alt="检查NS"  />
+</p>
+<p><img loading="lazy" src="../Win10%e5%b0%86%e5%9f%9f%e5%90%8dNameServer%e4%bb%8eNameSilo%e6%9b%bf%e6%8d%a2%e5%88%b0Cloudflare/%e6%a3%80%e6%9f%a5NS%e5%90%8e.png" alt="检查NS后"  />
+</p>
+<p>在确认更换成功后，会出现以下提示</p>
+<p><img loading="lazy" src="../Win10%e5%b0%86%e5%9f%9f%e5%90%8dNameServer%e4%bb%8eNameSilo%e6%9b%bf%e6%8d%a2%e5%88%b0Cloudflare/%e6%9b%b4%e6%8d%a2%e6%88%90%e5%8a%9f.png" alt="更换成功"  />
+</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

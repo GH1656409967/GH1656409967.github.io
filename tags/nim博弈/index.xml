@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nim博弈 on 似水</title>
+    <link>https://blog.lordash.de/tags/nim%E5%8D%9A%E5%BC%88/</link>
+    <description>Recent content in Nim博弈 on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 18 Jul 2020 09:53:12 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/nim%E5%8D%9A%E5%BC%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LightOJ-1393 Crazy Calendar</title>
+      <link>https://blog.lordash.de/posts/solution/lightoj-1393-crazy-calendar/</link>
+      <pubDate>Sat, 18 Jul 2020 09:53:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/lightoj-1393-crazy-calendar/</guid>
+      <description>LightOJ-1393 Crazy Calendar 类型 博弈论 Nim博弈</description>
+      <content:encoded><![CDATA[<h1 id="crazy-calendarlightoj-1393httpsvjudgenetproblemlightoj-1393">Crazy Calendar(<a href="https://vjudge.net/problem/LightOJ-1393">LightOJ-1393</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>2011 was a crazy year. Many people all over the  world proposed on 11-11-11, married on 11-11-11, some even went through  surgery only to have 11-11-11 as their child&rsquo;s birth date. How crazy  people can be! Don&rsquo;t they see there is a &ldquo;20&rdquo; hidden? Then what to do? A very elegant solution came from ARR, a very famous and funny character - why do we need to follow Christian (or some calls it Gregorian)  calendar? Why don&rsquo;t we start our own calendar on the day of marriage?  And those who like to celebrate their marriage ceremony too frequent,  why don&rsquo;t they declare only 1 day per year. In that fashion they can  celebrate their anniversary every day. And may be one minute a year or a second or &hellip; Uh.. getting complex. Let&rsquo;s back to the title. From now,  we start to have a new calendar system, &ldquo;Kisu Pari Na&rdquo;. And we hope to  update this calendar on every national contest.</p>
+<p>The purpose of this calendar is - we all will  try our best to learn something new in every year. For this first year  let&rsquo;s learn some combinatory. It reminds me of my first year in college. I faced this problem but could not solve this then. But see how easy it is:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">(1, 1)</td>
+<td style="text-align:center">(1, 2)</td>
+<td style="text-align:center">(1, 3)</td>
+<td style="text-align:center">(1, 4)</td>
+</tr>
+<tr>
+<td style="text-align:center">(2, 1)</td>
+<td style="text-align:center">(2, 2)</td>
+<td style="text-align:center">(2, 3)</td>
+<td style="text-align:center">(2, 4)</td>
+</tr>
+<tr>
+<td style="text-align:center">(3, 1)</td>
+<td style="text-align:center">(3, 2)</td>
+<td style="text-align:center">(3, 3)</td>
+<td style="text-align:center">(3, 4)</td>
+</tr>
+</tbody>
+</table>
+<p>Say you start from  upper left cell and want to go to lower right cell. The only restriction is you can only move downward or rightward. How many ways are there?  How to solve it? Not that difficult. You have to go two times Down and  three times Right (whichever way you try) to reach the goal from the  starting cell, right? So the answer is number of ways you can arrange  two <strong>D</strong> (represents Down) and three <strong>R</strong> (represent Right). 2 same characters and 3 same characters, total 5 characters. So it is:</p>
+<p>$ \frac{5!}{2!3!} $ Or = $ \frac{(D+R)!}{D!R!} $ <em>D+RCR</em>. Easy isn&rsquo;t it?</p>
+<p>Ok enough with learning. Now back to problem,  given a grid and at each cell there are some coins. Inky and Pinky are  playing a game getting inspiration from the above problem. At each turn, a player chooses a non empty cell and then removes one or more coins  from that cell and put them to the cell exactly right of it or exactly  beneath it. A player can&rsquo;t divide the coins and put one part to right  and others to down. Note that, for the cells at the right column the  player can&rsquo;t move it to more right, and same for the bottom-most row. So a player can&rsquo;t move coins from the lower right cell. The game will  finish when no moves are available and the player who moved last will  win. Now inky being very modest asked Pinky to move first. Can you say  if Pinky will win if both play perfectly?</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>Input starts with an integer <strong>T (≤ 100)</strong>, denoting the number of test cases.</p>
+<p>Each case starts with a line containing two integers <strong>R C (1 ≤ R * C ≤ 50000),</strong> where <strong>R</strong> denotes the number of rows and <strong>C</strong> denotes the number of columns of the grid respectively. Each of the next <strong>R</strong> lines contains <strong>C</strong> space separated integers denoting the grid. These integers lie in the range <strong>[0, 109]</strong>.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For every test case, output case number followed by <strong>&ldquo;win&rdquo;</strong> if Pinky can win or <strong>&ldquo;lose&rdquo;</strong>.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>2 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>1 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>1 1
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Case 1: lose
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>Dataset is huge, use faster I/O methods.</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>可以发现曼哈顿距离为偶数的，先手必胜；为奇数的，Nim一下。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">int</span> T; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>T);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> cs<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; cs<span style="color:#f92672">&lt;=</span>T; cs<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">int</span> n, m;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#66d9ef">int</span> nim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>m; j<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>                <span style="color:#66d9ef">int</span> x; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>x);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>                <span style="color:#66d9ef">if</span>((n<span style="color:#f92672">-</span>i<span style="color:#f92672">+</span>m<span style="color:#f92672">-</span>j) <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>                    nim <span style="color:#f92672">^=</span> x;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        printf(<span style="color:#e6db74">&#34;Case %d: &#34;</span>, cs);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        <span style="color:#66d9ef">if</span>(nim){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>            printf(<span style="color:#e6db74">&#34;win</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>            printf(<span style="color:#e6db74">&#34;lose</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>LightOJ-1247 Matrix Game</title>
+      <link>https://blog.lordash.de/posts/solution/lightoj-1247-matrix-game/</link>
+      <pubDate>Sat, 18 Jul 2020 09:24:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/lightoj-1247-matrix-game/</guid>
+      <description>LightOJ-1247 Matrix Game 类型 博弈论 Nim博弈</description>
+      <content:encoded><![CDATA[<h1 id="matrix-gamelightoj-1247httpsvjudgenetproblemlightoj-1247">Matrix Game(<a href="https://vjudge.net/problem/LightOJ-1247">LightOJ-1247</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>Given an <strong>m x n</strong> matrix, where <strong>m</strong> denotes the number of rows and <strong>n</strong> denotes the number of columns and in each cell a pile of stones is given. For example, let there be a <strong>2 x 3</strong> matrix, and the piles are</p>
+<p>2 3 8</p>
+<p>5 2 7</p>
+<p>That means that in cell(1, 1) there is a pile with 2 stones, in cell(1, 2) there is a pile with 3 stones and so on.</p>
+<p>Now Alice and Bob are playing a strange game  in this matrix. Alice starts first and they alternate turns. In each  turn a player selects a row, and can draw any number of stones from any  number of cells in that row. But he/she must draw at least one stone.  For example, if Alice chooses the 2nd row in the given  matrix, she can pick 2 stones from cell(2, 1), 0 stones from cell (2,  2), 7 stones from cell(2, 3). Or she can pick 5 stones from cell(2, 1), 1 stone from cell(2, 2), 4 stones from cell(2, 3). There are many other  ways but she must pick at least one stone from all piles. The player who can&rsquo;t take any stones loses.</p>
+<p>Now if both play optimally who will win?</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>Input starts with an integer <strong>T (≤ 100)</strong>, denoting the number of test cases.</p>
+<p>Each case starts with a line containing two integers: <strong>m</strong> and <strong>n (1 ≤ m, n ≤ 50)</strong>. Each of the next <strong>m</strong> lines contains <strong>n</strong> space separated integers that form the matrix. All the integers will be between <strong>0</strong> and <strong>10^9</strong> (inclusive).</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each case, print the case number and <strong>&lsquo;Alice&rsquo;</strong> if Alice wins, or <strong>&lsquo;Bob&rsquo;</strong> otherwise.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>2 3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>2 3 8
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>5 2 7
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>2 3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>1 2 3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>3 2 1
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Case 1: Alice
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Case 2: Bob
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Nim博弈，每行任意取，以每行总和为石子堆数做一个NIm博弈即可。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">int</span> T; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>T);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> cs<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; cs<span style="color:#f92672">&lt;=</span>T; cs<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">int</span> n, m;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#66d9ef">int</span> nim <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            <span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>m; j<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>                <span style="color:#66d9ef">int</span> x; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>x);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>                sum <span style="color:#f92672">+=</span> x;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>            nim <span style="color:#f92672">^=</span> sum;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        printf(<span style="color:#e6db74">&#34;Case %d: &#34;</span>, cs);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        <span style="color:#66d9ef">if</span>(nim){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>            printf(<span style="color:#e6db74">&#34;Alice</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>            printf(<span style="color:#e6db74">&#34;Bob</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>LightOJ-1192 Left Right</title>
+      <link>https://blog.lordash.de/posts/solution/lightoj-1192-left-right-/</link>
+      <pubDate>Fri, 17 Jul 2020 18:46:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/lightoj-1192-left-right-/</guid>
+      <description>LightOJ-1192 Left Right 类型 博弈论 Nim博弈</description>
+      <content:encoded><![CDATA[<h1 id="left-rightlightoj-1192httpsvjudgenetproblemlightoj-1192">Left Right(<a href="https://vjudge.net/problem/LightOJ-1192">LightOJ-1192</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>Two players, Alice and Bob are playing a strange game in a 1 x n board. The cells are numbered from 0 to n-1, where the left most cell is marked as cell 0. Each cell can contain at most one piece.</p>
+<p>There are two kinds of pieces, gray and white. Alice moves all the gray pieces, and bob moves all the white ones. The pieces alternate, that is, leftmost piece is gray, next is white, next to that is gray, then it&rsquo;s white again, and so on. There will always be equal number of black and gray pieces. Alice can only move pieces to the right. Bob can only move pieces to the left.</p>
+<p>In each move, a player selects one piece and moves that piece, either to its left (Bob) or to its right (Alice), any number of cells (at least 1) but, it can neither jump over other pieces, nor it can move outside of the board. The players alternate their turns.</p>
+<p>For example, if Alice decides to move the left most gray piece, these two moves are available to her.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Illustration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fig 1: Initial Position</td>
+<td><img loading="lazy" src="https://static.lightoj.com/images/problem-1192/left_right_1-1605694893056.png" alt=" "  />
+</td>
+</tr>
+<tr>
+<td>Fig 2: Alice moving the gray piece one cell to the right</td>
+<td><img loading="lazy" src="https://static.lightoj.com/images/problem-1192/left_right_2-1605694906003.png" alt=" "  />
+</td>
+</tr>
+<tr>
+<td>Fig 3: Alice moving the gray piece two cells to the right</td>
+<td><img loading="lazy" src="https://static.lightoj.com/images/problem-1192/left_right_3-1605694920245.png" alt=" "  />
+</td>
+</tr>
+<tr>
+<td>Alice moves first. The game ends, when someone is unable to make any move, and loses the game. You can assume that, both of them play optimally (that is, if it is possible to apply a strategy that will ensure someone&rsquo;s win, he/she will always use that strategy).</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Now you are given a configuration of a board, you have to find the winner.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>Input starts with an integer <strong>T (≤ 200)</strong>, denoting the number of test cases.</p>
+<p>Each case starts with a line containing an integer <strong>k (1 ≤ k ≤ 100)</strong> denoting the number of gray pieces in the board. The next line contains <strong>2k</strong> distinct integers (in ascending order) denoting the position of the  pieces. The first integer denotes a gray piece, the second integer  denotes a white piece, the next integer denotes a gray piece and so on.  All the integers will lie in the range <strong>[0, 10^9]</strong>.</p>
+<p>Assume that <strong>n</strong> is sufficiently large to contain all the pieces. And at least one move is remaining.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each case, print the case number and <strong>Alice</strong> or <strong>Bob</strong> depending on the winner of the game.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>0 3 7 9
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>1 3 7 9
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Case 1: Alice
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Case 2: Bob
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Nim博弈，以间距为石子堆数做一个Nim博弈即可。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">int</span> T; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>T);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> cs<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; cs<span style="color:#f92672">&lt;=</span>T; cs<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">int</span> n; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        <span style="color:#66d9ef">int</span> nim <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            <span style="color:#66d9ef">int</span> a, b;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>a, <span style="color:#f92672">&amp;</span>b);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            nim <span style="color:#f92672">^=</span> b<span style="color:#f92672">-</span>a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        printf(<span style="color:#e6db74">&#34;Case %d: &#34;</span>, cs);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>        <span style="color:#66d9ef">if</span>(nim){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>            printf(<span style="color:#e6db74">&#34;Alice</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>            printf(<span style="color:#e6db74">&#34;Bob</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>LightOJ-1186 Incredible Chess</title>
+      <link>https://blog.lordash.de/posts/solution/lightoj-1186-incredible-chess/</link>
+      <pubDate>Fri, 17 Jul 2020 18:38:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/lightoj-1186-incredible-chess/</guid>
+      <description>LightOJ-1186 Incredible Chess 类型 博弈论 Nim博弈</description>
+      <content:encoded><![CDATA[<h1 id="incredible-chesslightoj-1186httpsvjudgenetproblemlightoj-1186">Incredible Chess(<a href="https://vjudge.net/problem/LightOJ-1186">LightOJ-1186</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>You are given an <strong>n x n</strong> chess board. Only  pawn is used in the &lsquo;Incredible Chess&rsquo; and they can move forward or  backward. In each column there are two pawns, one white and one black.  White pawns are placed in the lower part of the board and the black  pawns are placed in the upper part of the board.</p>
+<p>The game is played by two players. Initially a board configuration is given. One player uses white pieces while the  other uses black. In each move, a player can move a pawn of his piece,  which can go forward or backward any positive integer steps, but it  cannot jump over any piece. White gives the first move.</p>
+<p>The game ends when there is no move for a  player and he will lose the game. Now you are given the initial  configuration of the board. You have to write a program to determine who will be the winner.</p>
+<p><img loading="lazy" src="https://vj.z180.cn/e013d8d58fc971cd42fd70fa43bbdee0?v=1594961486" alt="Example of a Board"  />
+</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>Input starts with an integer <strong>T (≤ 200)</strong>, denoting the number of test cases.</p>
+<p>Each case starts with an integer <strong>n (3 ≤ n ≤ 100)</strong> denoting the dimension of the board. The next line will contain <strong>n</strong> integers, <strong>W0, W1, &hellip;, Wn-1</strong> giving the position of the white pieces. The next line will also contain <strong>n</strong> integers, <strong>B0, B1, &hellip; Bn-1</strong> giving the position of the black pieces. <strong>Wi</strong> means the row position of the white piece of <strong>ith</strong> column. And <strong>Bi</strong> means the row position of the black piece of <strong>ith</strong> column. You can assume that <strong>(0 ≤ Wi &lt; Bi &lt; n)</strong> for <strong>(0 ≤ i &lt; n)</strong> and at least one move is remaining.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each case, print the case number and <strong>&lsquo;white wins&rsquo;</strong> or <strong>&lsquo;black wins&rsquo;</strong> depending on the result.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>6
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>1 3 2 2 0 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>5 5 5 3 1 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>7
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>1 3 2 2 0 4 0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>3 4 4 3 1 5 6
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Case 1: black wins
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Case 2: white wins
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Nim博弈，以黑白棋子间距为石子堆数做一个NIm博弈即可。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> mxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">int</span> a[mxn];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">int</span> T; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>T);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> cs<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; cs<span style="color:#f92672">&lt;=</span>T; cs<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        <span style="color:#66d9ef">int</span> n; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>a[i]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        <span style="color:#66d9ef">int</span> nim <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>            <span style="color:#66d9ef">int</span> x; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>x);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>            nim <span style="color:#f92672">^=</span> x<span style="color:#f92672">-</span>a[i]<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        printf(<span style="color:#e6db74">&#34;Case %d: &#34;</span>, cs);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        <span style="color:#66d9ef">if</span>(nim){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>            printf(<span style="color:#e6db74">&#34;white wins</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>            printf(<span style="color:#e6db74">&#34;black wins</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>POJ-2975 Nim</title>
+      <link>https://blog.lordash.de/posts/solution/poj-2975-nim/</link>
+      <pubDate>Tue, 14 Jul 2020 17:31:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/poj-2975-nim/</guid>
+      <description>POJ-2975 Nim 类型 博弈论 Nim博弈</description>
+      <content:encoded><![CDATA[<h1 id="nimpoj-2975httpsvjudgenetproblempoj-2975">Nim(<a href="https://vjudge.net/problem/POJ-2975">POJ-2975</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>Nim is a  2-player game featuring several piles of stones. Players alternate  turns, and on his/her turn, a player’s move consists of removing <em>one or more stones</em> from any single pile. Play ends when all the stones have been removed,  at which point the last player to have moved is declared the winner.  Given a position in Nim, your task is to determine how many winning  moves there are in that position.A position in Nim is called  “losing” if the first player to move from that position would lose if  both sides played perfectly. A “winning move,” then, is a move that  leaves the game in a losing position. There is a famous theorem that  classifies all losing positions. Suppose a Nim position contains <em>n</em> piles having <em>k</em>1, <em>k</em>2, …, <em>kn</em> stones respectively; in such a position, there are <em>k</em>1 + <em>k</em>2 + … + <em>kn</em> possible moves. We write each <em>ki</em> in binary (base 2). Then, the Nim position is losing if and only if, among all the <em>ki</em>’s, there are an even number of 1’s in each digit position. In other words, the Nim position is losing if and only if the <em>xor</em> of the <em>ki</em>’s is 0.Consider the position with three piles given by <em>k</em>1 = 7, <em>k</em>2 = 11, and <em>k</em>3 = 13. In binary, these values are as follows:</p>
+<p>0111</p>
+<p>1011</p>
+<p>1101</p>
+<p>There are an odd number of 1’s among the rightmost digits, so this position is not losing. However, suppose <em>k</em>3 were changed to be 12. Then, there would be exactly two 1’s in each  digit position, and thus, the Nim position would become losing. Since a  winning move is any move that leaves the game in a losing position, it  follows that removing one stone from the third pile is a winning move  when <em>k</em>1 = 7, <em>k</em>2 = 11, and <em>k</em>3 = 13. In fact, there are exactly three winning moves from this position: namely removing one stone from any of the three piles.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>The input test file will contain multiple test cases, each of which begins with a line indicating the number of piles, 1 ≤ <em>n</em> ≤ 1000. On the next line, there are n positive integers, 1 ≤ <em>ki</em> ≤ 1, 000, 000, 000, indicating the number of stones in each pile. The end-of-file is marked by a test case with <em>n</em> = 0 and should not be processed.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each test case, write a single line with an integer indicating the number of winning moves from the given Nim position.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>7 11 13
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>1000000000 1000000000
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>0
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>0
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Nim博弈。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">int</span> f[<span style="color:#ae81ff">1005</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n) <span style="color:#f92672">&amp;&amp;</span> n)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        <span style="color:#66d9ef">int</span> nim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>f[i]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            nim <span style="color:#f92672">^=</span> f[i];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        <span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>            <span style="color:#66d9ef">if</span>((nim<span style="color:#f92672">^</span>f[i]) <span style="color:#f92672">&lt;</span> f[i])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>                num<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, num);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>POJ-1704 Georgia and Bob</title>
+      <link>https://blog.lordash.de/posts/solution/poj-1704-georgia-and-bob/</link>
+      <pubDate>Sun, 12 Jul 2020 10:16:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/poj-1704-georgia-and-bob/</guid>
+      <description>POJ-1704 Georgia and Bob 类型 博弈论 Nim博弈</description>
+      <content:encoded><![CDATA[<h1 id="georgia-and-bobpoj-1704httpsvjudgenetproblempoj-1704">Georgia and Bob(<a href="https://vjudge.net/problem/POJ-1704">POJ-1704</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>Georgia and Bob decide to play a self-invented game. They draw a row of  grids on paper, number the grids from left to right by 1, 2, 3, &hellip;, and place N chessmen on different grids, as shown in the following figure  for example:
+<img loading="lazy" src="https://vj.z180.cn/c76b52797bb489f0387716c46010da41?v=1594466739" alt="img"  />
+
+Georgia and Bob move the chessmen in turn. Every time a player will  choose a chessman, and move it to the left without going over any other  chessmen or across the left edge. The player can freely choose number of steps the chessman moves, with the constraint that the chessman must be moved at least ONE step and one grid can at most contains ONE single  chessman. The player who cannot make a move loses the game.</p>
+<p>Georgia always plays first since &ldquo;Lady first&rdquo;. Suppose that Georgia  and Bob both do their best in the game, i.e., if one of them knows a way to win the game, he or she will be able to carry it out.</p>
+<p>Given the initial positions of the n chessmen, can you predict who will finally win the game?</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>The first line of the input contains a single integer T (1 &lt;= T &lt;= 20), the number of test cases. Then T cases follow. Each test case  contains two lines. The first line consists of one integer N (1 &lt;= N  &lt;= 1000), indicating the number of chessmen. The second line contains N different integers P1, P2 &hellip; Pn (1 &lt;= Pi &lt;= 10000), which are  the initial positions of the n chessmen.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each test case, prints a single line, &ldquo;Georgia will win&rdquo;, if Georgia will win the game; &ldquo;Bob will win&rdquo;, if Bob will win the game; otherwise  &lsquo;Not sure&rsquo;.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>1 2 3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>8
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>1 5 6 7 9 12 14 17
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Bob will win
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Georgia will win
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>当棋子两两一组位于同一格时，后手可以模仿先手操作获得胜利，此时为必败态。于是可以将棋子划分为两两一组（n为奇数时可以加上一个位置为0的棋子），每组内的距离当作石子数做一个Nim博弈。先手是最后移动完棋子使得局面为必败态的，和最后结果一样。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> mxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e5</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">int</span> a[mxn];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">int</span> T; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>T);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#66d9ef">while</span>(T<span style="color:#f92672">--</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        <span style="color:#66d9ef">int</span> n; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>a[i]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>            a[n<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        sort(a, a<span style="color:#f92672">+</span>n);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        <span style="color:#66d9ef">int</span> nim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">+=</span><span style="color:#ae81ff">2</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>            nim <span style="color:#f92672">^=</span> a[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span>a[i]<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>        <span style="color:#66d9ef">if</span>(nim){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>            printf(<span style="color:#e6db74">&#34;Georgia will win</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>            printf(<span style="color:#e6db74">&#34;Bob will win</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>HDU-1849 Rabbit and Grass</title>
+      <link>https://blog.lordash.de/posts/solution/hdu-1849-rabbit-and-grass/</link>
+      <pubDate>Sat, 11 Jul 2020 22:05:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/hdu-1849-rabbit-and-grass/</guid>
+      <description>HDU-1849 Rabbit and Grass 类型 博弈论 Nim博弈</description>
+      <content:encoded><![CDATA[<h1 id="rabbit-and-grasshdu-1849httpsvjudgenetproblemhdu-1849">Rabbit and Grass(<a href="https://vjudge.net/problem/HDU-1849">HDU-1849</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>大学时光是浪漫的，女生是浪漫的，圣诞更是浪漫的，但是Rabbit和Grass这两个大学女生在今年的圣诞节却表现得一点都不浪漫：不去逛商场，不去逛公园，不去和AC男约会，两个人竟然猫在寝食下棋……
+说是下棋，其实只是一个简单的小游戏而已，游戏的规则是这样的：
+1、棋盘包含1*n个方格，方格从左到右分别编号为0，1，2，…，n-1；
+2、m个棋子放在棋盘的方格上，方格可以为空，也可以放多于一个的棋子；
+3、双方轮流走棋；
+4、每一步可以选择任意一个棋子向左移动到任意的位置（可以多个棋子位于同一个方格），当然，任何棋子不能超出棋盘边界；
+5、如果所有的棋子都位于最左边（即编号为0的位置），则游戏结束，并且规定最后走棋的一方为胜者。</p>
+<p>对于本题，你不需要考虑n的大小（我们可以假设在初始状态，棋子总是位于棋盘的适当位置）。下面的示意图即为一个1*15的棋盘，共有6个棋子，其中，编号8的位置有两个棋子。</p>
+<p><img loading="lazy" src="https://vj.z180.cn/6a067d51d92b3f8822e1ce20cac5a5b2?v=1594266833" alt="img"  />
+</p>
+<p>大家知道，虽然偶尔不够浪漫，但是Rabbit和Grass都是冰雪聪明的女生，如果每次都是Rabbit先走棋，请输出最后的结果。</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>输入数据包含多组测试用例，每个测试用例占二行，首先一行包含一个整数m（0&lt;=m&lt;=1000），表示本测试用例的棋子数目，紧跟着的一行包含m个整数Ki(i=1…m; 0&lt;=Ki&lt;=1000)，分别表示m个棋子初始的位置，m=0则结束输入。</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>如果Rabbit能赢的话，请输出“Rabbit Win!”，否则请输出“Grass Win!”，每个实例的输出占一行。</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>3 5
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>3 5 6
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>0
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Rabbit Win!
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Grass Win!
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Nim博弈</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n) <span style="color:#f92672">&amp;&amp;</span> n)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">int</span> nim <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            <span style="color:#66d9ef">int</span> x; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>x);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            nim <span style="color:#f92672">^=</span> x;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        <span style="color:#66d9ef">if</span>(nim){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            printf(<span style="color:#e6db74">&#34;Rabbit Win!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>            printf(<span style="color:#e6db74">&#34;Grass Win!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>HDU-1805 Being a Good Boy in Spring Festival</title>
+      <link>https://blog.lordash.de/posts/solution/hdu-1805-being-a-good-boy-in-spring-festival/</link>
+      <pubDate>Sat, 11 Jul 2020 21:50:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/hdu-1805-being-a-good-boy-in-spring-festival/</guid>
+      <description>HDU-1805 Being a Good Boy in Spring Festival 类型 博弈论 Nim博弈</description>
+      <content:encoded><![CDATA[<h1 id="being-a-good-boy-in-spring-festivalhdu-1805httpsvjudgenetproblemhdu-1850">Being a Good Boy in Spring Festival(<a href="https://vjudge.net/problem/HDU-1850">HDU-1805</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>一年在外 父母时刻牵挂
+春节回家 你能做几天好孩子吗
+寒假里尝试做做下面的事情吧</p>
+<p>陪妈妈逛一次菜场
+悄悄给爸爸买个小礼物
+主动地 强烈地 要求洗一次碗
+某一天早起 给爸妈用心地做回早餐</p>
+<p>如果愿意 你还可以和爸妈说
+咱们玩个小游戏吧 ACM课上学的呢～</p>
+<p>下面是一个二人小游戏：桌子上有M堆扑克牌；每堆牌的数量分别为Ni(i=1…M)；两人轮流进行；每走一步可以任意选择一堆并取走其中的任意张牌；桌子上的扑克全部取光，则游戏结束；最后一次取牌的人为胜者。
+现在我们不想研究到底先手为胜还是为负，我只想问大家：
+——“先手的人如果想赢，第一步有几种选择呢？”</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>输入数据包含多个测试用例，每个测试用例占2行，首先一行包含一个整数M(1&lt;M&lt;=100)，表示扑克牌的堆数，紧接着一行包含M个整数Ni(1&lt;=Ni&lt;=1000000，i=1…M)，分别表示M堆扑克的数量。M为0则表示输入数据的结束。</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>如果先手的人能赢，请输出他第一步可行的方案数，否则请输出0，每个实例的输出占一行。</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>5 7 9
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>0
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>1
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Nim博弈</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> mxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e6</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">int</span> a[mxn];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n) <span style="color:#f92672">&amp;&amp;</span> n)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        <span style="color:#66d9ef">int</span> nim <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>a[i]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            nim <span style="color:#f92672">^=</span> a[i];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        <span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        <span style="color:#66d9ef">if</span>(nim){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>                <span style="color:#66d9ef">if</span>(a[i] <span style="color:#f92672">&gt;</span> (a[i]<span style="color:#f92672">^</span>nim))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>                    ans<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>POJ-2234 Matches Game</title>
+      <link>https://blog.lordash.de/posts/solution/poj-2234-matches-game/</link>
+      <pubDate>Thu, 09 Jul 2020 17:16:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/poj-2234-matches-game/</guid>
+      <description>POJ-2234 Matches Game 类型 博弈论 Nim博弈</description>
+      <content:encoded><![CDATA[<h1 id="matches-gamepoj-2234httpsvjudgenetproblempoj-2234">Matches Game(<a href="https://vjudge.net/problem/POJ-2234">POJ-2234</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>Here is a simple game. In this game, there are several piles of matches  and two players. The two player play in turn. In each turn, one can  choose a pile and take away arbitrary number of matches from the pile  (Of course the number of matches, which is taken away, cannot be zero  and cannot be larger than the number of matches in the chosen pile). If  after a player’s turn, there is no match left, the player is the winner. Suppose that the two players are all very clear. Your job is to tell  whether the player who plays first can win the game or not.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>The input consists of several lines, and in each line there is a test  case. At the beginning of a line, there is an integer M (1 &lt;= M  &lt;=20), which is the number of piles. Then comes M positive integers,  which are not larger than 10000000. These M integers represent the  number of matches in each pile.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each test case, output &ldquo;Yes&rdquo; in a single line, if the player who play first will win, otherwise output &ldquo;No&rdquo;.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2 45 45
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>3 3 6 9
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>No
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Yes
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Nim博弈</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">int</span> nim <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            <span style="color:#66d9ef">int</span> x; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>x);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            nim <span style="color:#f92672">^=</span> x;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        <span style="color:#66d9ef">if</span>(nim <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            printf(<span style="color:#e6db74">&#34;No</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>            printf(<span style="color:#e6db74">&#34;Yes</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Nim博弈</title>
+      <link>https://blog.lordash.de/posts/algorithm/nim%E5%8D%9A%E5%BC%88/</link>
+      <pubDate>Sun, 14 Jun 2020 17:40:11 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/algorithm/nim%E5%8D%9A%E5%BC%88/</guid>
+      <description>博弈论专题，介绍Nim博弈、 Bouton定理</description>
+      <content:encoded><![CDATA[<h1 id="nim博弈">Nim博弈</h1>
+<p>基本的尼姆博弈（Nim Game）描述如下：</p>
+<blockquote>
+<p>有若干堆各若干个物品，两个人轮流从某一堆取任意多的物品，每次至少取一个，多者不限，最后取光者得胜。</p>
+</blockquote>
+<p>博弈过程如下：</p>
+<ul>
+<li>对于局面 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n =  0 $，无论先手怎么取，必将导致异或和改变为 $ a&rsquo;_1 \oplus  a&rsquo;_2 \oplus \ldots \oplus a&rsquo;_n = k \neq 0 $ ，而此时必有 $ a_i $ 使得 $ a_i $ 二进制下第k位为1，后手只要将 $ a_i $ 取成 $ a_i \oplus k $ ，使得局面重新回到异或和为0，直至最后局面变成 $ (0, 0, \ldots, 0) $ ，此时异或和为0。先手必输。</li>
+<li>对于局面 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n \neq 0 $ ，反之，先手必胜。</li>
+</ul>
+<p>详细证明见下方<a href="#Bouton%E5%AE%9A%E7%90%86">Bouton定理</a>。</p>
+<hr>
+<h1 id="bouton定理">Bouton定理</h1>
+<p>Bouton定理：</p>
+<blockquote>
+<p>假设Nim博弈的石子有 $ n $ 堆，第 $ i $ 堆的石子个数我们用 $ a_i $ 表示，则我们可以使用 $ (a_1, a_2, \ldots, a_n) $ 表示一个Nim博弈的局面。对于 $ (a_1, a_2, \ldots, a_n) $ 的Nim博弈局面，当且仅当  $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n \neq 0 $ 时（其中 $  \oplus $ 是按位异或运算），先手必胜。</p>
+</blockquote>
+<p>简单证明如下：</p>
+<ol>
+<li>对于 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n \neq 0 $ 的Nim博弈局面 $ (a_1, a_2, \ldots, a_n)  $ ，我们设 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n = k $ 。则必存在 $ a_i $ ，其二进制表示在 $ k $ 的最高位上为1（异或运算的性质），且有 $ a_i \oplus k &lt; a_i $ 。则对于当前局面下的先手可以通过合法的移动将第堆石子取到只剩 $ a_i \oplus k $ 个，那么此时游戏局面变为 $ (a_1, a_2, \ldots, a_{i-1},a_i \oplus k, a_{i+1}, \ldots a_n ) $ 。
+而此时 $ a_1\oplus a_2 \oplus \ldots \oplus a_{i-1} \oplus (a_i \oplus k) \oplus a_{i+1} \oplus \dots \oplus a_n = k \oplus k = 0 $。得出<strong>异或和不为0的局面一定存在合法移动可以变为异或和为0的局面</strong>。</li>
+<li>对于 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n = 0 $ 的Nim博弈局面 $ (a_1, a_2, \ldots, a_n)  $ ，假设我们将第 $ i $ 堆石子由 $ a_i $ 个取到 $ a&rsquo;_i $ 个，则有 $ a_i \neq a&rsquo;<em>i $ ，则必有 $  a_1\oplus a_2 \oplus \ldots \oplus a</em>{i-1} \oplus a&rsquo;<em>i \oplus a</em>{i+1} \oplus \dots \oplus a_n \neq 0  $ （可用反证法证明）。即<strong>异或和为0的局面无论怎样合法地进行移动，都将转变为异或和不为0的局面</strong>。</li>
+<li>对于局面 $ (0, 0, \ldots, 0) $ ，其异或和为0，对于先手而言是必输的局面。</li>
+<li><strong>对于任何异或和不为0的局面，先手只需要按照策略将其转变为异或和为0的局面，就能保证后手永远只能拿到异或和为0的局面</strong>。又因为每一次合法的移动都将导致石子个数减少，故总的移动步数是有限的，最终后手将拿到的局面而无石子可拿，故后手必输，先手必胜。反过来即可证，对于任何异或和为0的局面，先手必输。</li>
+</ol>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

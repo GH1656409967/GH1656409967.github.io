@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>剑指Offer-38 字符串的排列 | 似水</title>
+<meta content="剑指Offer, 全排列" name="keywords"/>
+<meta content="剑指Offer-38 字符串的排列 类型 DFS" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-38-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="剑指Offer-38 字符串的排列" property="og:title"/>
+<meta content="剑指Offer-38 字符串的排列 类型 DFS" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-38-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/" property="og:url"/><meta content="posts" property="article:section"/>
+<meta content="2021-04-20T20:55:18+00:00" property="article:published_time"/>
+<meta content="2021-04-20T20:55:18+00:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="剑指Offer-38 字符串的排列" name="twitter:title"/>
+<meta content="剑指Offer-38 字符串的排列 类型 DFS" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "文章",
+      "item": "https://blog.lordash.de/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "题解",
+      "item": "https://blog.lordash.de/posts/solution/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "剑指Offer-38 字符串的排列",
+      "item": "https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-38-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "剑指Offer-38 字符串的排列",
+  "name": "剑指Offer-38 字符串的排列",
+  "description": "剑指Offer-38 字符串的排列 类型 DFS",
+  "keywords": [
+    "剑指Offer", "全排列"
+  ],
+  "articleBody": "字符串的排列(剑指Offer-38) 题面 输入一个字符串，打印出该字符串中字符的所有排列。\n你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。\n示例 1输入：s = \"abc\" 2输出：[\"abc\",\"acb\",\"bac\",\"bca\",\"cab\",\"cba\"] 限制 11 \u003c= s 的长度 \u003c= 8 思路 dfs遍历回溯。\n代码 1class Solution { 2 vector\u003cstring\u003e ans; 3 void dfs(string s, string \u0026t, vector\u003cbool\u003e \u0026vis){ 4 if(s.size() == t.size()){ 5 ans.push_back(t); 6 return; 7 } 8 for(int i=0; i\u003cs.size(); i++){ 9 if(vis[i]) continue; 10 if(i \u0026\u0026 s[i-1]==s[i] \u0026\u0026 !vis[i-1]) continue; 11 t.push_back(s[i]); 12 vis[i] = true; 13 dfs(s, t, vis); 14 vis[i] = false; 15 t.pop_back(); 16 } 17 } 18public: 19 vector\u003cstring\u003e permutation(string s) { 20 if(s.size() == 0) return {}; 21 string t = \"\"; 22 sort(s.begin(), s.end()); 23 vector\u003cbool\u003e vis(s.size()); 24 dfs(s, t, vis); 25 return ans; 26 } 27}; ",
+  "wordCount" : "285",
+  "inLanguage": "zh",
+  "datePublished": "2021-04-20T20:55:18Z",
+  "dateModified": "2021-04-20T20:55:18Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lordash"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-38-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "似水",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.lordash.de/images/favicon-16x16-.png"
+    }
+  }
+}
+</script>
+</head>
+<body class="dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<article class="post-single">
+<header class="post-header">
+<div class="breadcrumbs"><a href="https://blog.lordash.de">主页</a> » <a href="https://blog.lordash.de/posts/">文章</a> » <a href="https://blog.lordash.de/posts/solution/">题解</a></div>
+<h1 class="post-title">
+      剑指Offer-38 字符串的排列
+    </h1>
+<div class="post-description">
+      剑指Offer-38 字符串的排列 类型 DFS
+    </div>
+<div class="post-meta"><span title="2021-04-20 20:55:18 +0000 UTC">2021-04-20</span> · Lordash
+
+
+
+</div>
+</header> <aside class="toc-container wide" id="toc-container">
+<div class="toc">
+<details open="">
+<summary accesskey="c" title="(Alt + C)">
+<span class="details">目录</span>
+</summary>
+<div class="inner"><ul>
+<li>
+<a aria-label="字符串的排列(剑指Offer-38)" href="#%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%9a%84%e6%8e%92%e5%88%97%e5%89%91%e6%8c%87offer-38httpsleetcode-cncomproblemszi-fu-chuan-de-pai-lie-lcof">字符串的排列(</a><a href="https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/">剑指Offer-38</a>)<ul>
+<li>
+<a aria-label="题面" href="#%e9%a2%98%e9%9d%a2">题面</a></li>
+<li>
+<a aria-label="示例" href="#%e7%a4%ba%e4%be%8b">示例</a></li>
+<li>
+<a aria-label="限制" href="#%e9%99%90%e5%88%b6">限制</a></li>
+<li>
+<a aria-label="思路" href="#%e6%80%9d%e8%b7%af">思路</a></li>
+<li>
+<a aria-label="代码" href="#%e4%bb%a3%e7%a0%81">代码</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+</div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+<div class="post-content"><h1 id="字符串的排列剑指offer-38httpsleetcode-cncomproblemszi-fu-chuan-de-pai-lie-lcof">字符串的排列(<a href="https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/">剑指Offer-38</a>)<a aria-hidden="true" class="anchor" hidden="" href="#字符串的排列剑指offer-38httpsleetcode-cncomproblemszi-fu-chuan-de-pai-lie-lcof">#</a></h1>
+<h2 id="题面">题面<a aria-hidden="true" class="anchor" hidden="" href="#题面">#</a></h2>
+<blockquote>
+<p>输入一个字符串，打印出该字符串中字符的所有排列。</p>
+<p>你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。</p>
+</blockquote>
+<h2 id="示例">示例<a aria-hidden="true" class="anchor" hidden="" href="#示例">#</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>输入：s = "abc"
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>输出：["abc","acb","bac","bca","cab","cba"]
+</span></span></code></pre></div><h2 id="限制">限制<a aria-hidden="true" class="anchor" hidden="" href="#限制">#</a></h2>
+<blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>1 &lt;= s 的长度 &lt;= 8
+</span></span></code></pre></div></blockquote>
+<h2 id="思路">思路<a aria-hidden="true" class="anchor" hidden="" href="#思路">#</a></h2>
+<p>dfs遍历回溯。</p>
+<h2 id="代码">代码<a aria-hidden="true" class="anchor" hidden="" href="#代码">#</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> ans;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>(string s, string <span style="color:#f92672">&amp;</span>t, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>vis){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>        <span style="color:#66d9ef">if</span>(s.size() <span style="color:#f92672">==</span> t.size()){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>            ans.push_back(t);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>            <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>s.size(); i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>            <span style="color:#66d9ef">if</span>(vis[i]) <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&amp;&amp;</span> s[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span>s[i] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>vis[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            t.push_back(s[i]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            vis[i] <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            dfs(s, t, vis);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            vis[i] <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>            t.pop_back();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> permutation(string s) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        <span style="color:#66d9ef">if</span>(s.size() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> {};
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        string t <span style="color:#f92672">=</span> <span style="color:#e6db74">""</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        sort(s.begin(), s.end());
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>        vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;</span> vis(s.size());
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>        dfs(s, t, vis);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>        <span style="color:#66d9ef">return</span> ans;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>};
+</span></span></code></pre></div>
+</div>
+<footer class="post-footer">
+<ul class="post-tags">
+<li><a href="https://blog.lordash.de/tags/%E5%89%91%E6%8C%87offer/">剑指Offer</a></li>
+<li><a href="https://blog.lordash.de/tags/%E5%85%A8%E6%8E%92%E5%88%97/">全排列</a></li>
+</ul>
+<nav class="paginav">
+<a class="prev" href="https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-39-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/">
+<span class="title">« 上一页</span>
+<br/>
+<span>剑指Offer-39 数组中出现次数超过一半的数字</span>
+</a>
+<a class="next" href="https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-34-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/">
+<span class="title">下一页 »</span>
+<br/>
+<span>剑指Offer-34 二叉树中和为某一值的路径</span>
+</a>
+</nav>
+</footer><div>
+<div class="pagination__title">
+<span class="pagination__title-h" style="font-size: 20px;">💬评论</span>
+<hr/>
+</div>
+<div id="tcomment"></div>
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
+<script>
+        twikoo.init({
+            envId: "https://twikoo-api-dun-pi.vercel.app",
+            el: "#tcomment",
+            lang: 'zh-CN',
+            region: 'ap-zhengzhou',
+            path: window.TWIKOO_MAGIC_PATH || window.location.pathname,
+        });
+    </script>
+</div>
+</article>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                
+                let x = codeblock.getElementsByTagName("span");
+                let noLineNumContent = "";
+                for (i = 0; i < x.length; i++) {
+                    if (x[i].style.display || x[i].style.color);
+                    else noLineNumContent += x[i].textContent;
+                }
+                navigator.clipboard.writeText(noLineNumContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

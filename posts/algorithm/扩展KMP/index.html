@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>扩展KMP | 似水</title>
+<meta content="字符串, 扩展KMP" name="keywords"/>
+<meta content="字符串专题，介绍扩展KMP算法" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/posts/algorithm/%E6%89%A9%E5%B1%95kmp/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="扩展KMP" property="og:title"/>
+<meta content="字符串专题，介绍扩展KMP算法" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://blog.lordash.de/posts/algorithm/%E6%89%A9%E5%B1%95kmp/" property="og:url"/><meta content="posts" property="article:section"/>
+<meta content="2020-07-26T14:21:11+00:00" property="article:published_time"/>
+<meta content="2020-07-26T14:21:11+00:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="扩展KMP" name="twitter:title"/>
+<meta content="字符串专题，介绍扩展KMP算法" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "文章",
+      "item": "https://blog.lordash.de/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "算法",
+      "item": "https://blog.lordash.de/posts/algorithm/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "扩展KMP",
+      "item": "https://blog.lordash.de/posts/algorithm/%E6%89%A9%E5%B1%95kmp/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "扩展KMP",
+  "name": "扩展KMP",
+  "description": "字符串专题，介绍扩展KMP算法",
+  "keywords": [
+    "字符串", "扩展KMP"
+  ],
+  "articleBody": "简介 给定长度为n的文本串S和长度为m的模式串T，定义extend[i]为S[i…n-1]与T[0…m-1]的最长公共前缀长度，求extend[i]。当extend[x]==m时，则可知文本串S中包含模式串T，并且首位置为x，而这正是KMP算法处理的模式匹配问题。相较于KMP算法，扩展KMP算法能找到文本串S中所有模式串T的匹配，更一般地，可以知道文本串S中以每个字符开始的后缀与模式串T的最长公共前缀长度，时间复杂度O(n+m)。\n扩展KMP 假设遍历到i时，已经求出extend[0…i-1]的值。我们记录下遍历过程中匹配成功的字符的最远位置为p，并且这次匹配的起始位置为a。换句话说，计算到x时，匹配成功的最远位置是x+extend[x]-1，p就是x=0…i-1得到的最大值，a就是对应的x。\n设辅助数组next[i]表示T[i…m-1]和T[0…m-1]的最长公共前缀长度（注意这里与KMP算法中的next数组含义不同）。令len=next[i-a]，讨论以下两种情况：\n(1) i + len-1 \u003c p\n由next数组定义可知 T[0…len-1] == T[i-a…i-a+len-1]，并且由extend数组定义可知 S[a…p] == T[0…p-a]，得到 S[i…i+len-1] == T[i-a…i-a+len-1] ，所以 S[i…i+len-1] == T[0…len-1]。并且 S[i+len-1…p] != T[len-1…i-a]，不然违背了next数组最长公共前缀长度的定义。于是，无需任何比较就可以得出extend[i] = len。\n(2) i + len-1 \u003e= p\n我们可以看到，匹配最远的位置只到p，对于p之后的匹配结果是未知的，所以我们需要继续匹配S[p…n-1]和T[p-i…m-1]。匹配完之后，还需要更新a和p。\n以上就是扩展KMP的主要思想，遍历即可，下面给出字符串下标从0开始的一种exKMP的实现，注意为了实现方便，代码中的p是上面分析的p+1，所以判断的时候是i+next[i-a]。而且同时用了变量j跟踪p在文本串S与模式串T中的对应位置，注意遍历文本串S时，i在递增，j需要递减。\n1void exKMP(char* s, char* t, int n, int m) 2{ 3 int a, p; 4 for (int i=0, j=-1; i",
+  "wordCount" : "1401",
+  "inLanguage": "zh",
+  "datePublished": "2020-07-26T14:21:11Z",
+  "dateModified": "2020-07-26T14:21:11Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lordash"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.lordash.de/posts/algorithm/%E6%89%A9%E5%B1%95kmp/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "似水",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.lordash.de/images/favicon-16x16-.png"
+    }
+  }
+}
+</script>
+</head>
+<body class="dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<article class="post-single">
+<header class="post-header">
+<div class="breadcrumbs"><a href="https://blog.lordash.de">主页</a> » <a href="https://blog.lordash.de/posts/">文章</a> » <a href="https://blog.lordash.de/posts/algorithm/">算法</a></div>
+<h1 class="post-title">
+      扩展KMP
+    </h1>
+<div class="post-description">
+      字符串专题，介绍扩展KMP算法
+    </div>
+<div class="post-meta"><span title="2020-07-26 14:21:11 +0000 UTC">2020-07-26</span> · Lordash
+
+
+
+</div>
+</header> <aside class="toc-container wide" id="toc-container">
+<div class="toc">
+<details open="">
+<summary accesskey="c" title="(Alt + C)">
+<span class="details">目录</span>
+</summary>
+<div class="inner"><ul>
+<li>
+<a aria-label="简介" href="#%e7%ae%80%e4%bb%8b">简介</a></li>
+<li>
+<a aria-label="扩展KMP" href="#%e6%89%a9%e5%b1%95kmp">扩展KMP</a></li>
+<li>
+<a aria-label="next数组" href="#next%e6%95%b0%e7%bb%84">next数组</a></li>
+<li>
+<a aria-label="模板" href="#%e6%a8%a1%e6%9d%bf">模板</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+<div class="post-content"><h1 id="简介">简介<a aria-hidden="true" class="anchor" hidden="" href="#简介">#</a></h1>
+<p>给定长度为n的<code>文本串S</code>和长度为m的<code>模式串T</code>，定义extend[i]为S[i…n-1]与T[0…m-1]的<strong>最长公共前缀长度</strong>，求extend[i]。当extend[x]==m时，则可知<code>文本串S</code>中包含<code>模式串T</code>，并且首位置为x，而这正是KMP算法处理的模式匹配问题。相较于KMP算法，扩展KMP算法能找到<code>文本串S</code>中所有<code>模式串T</code>的匹配，更一般地，可以知道<code>文本串S</code>中以每个字符开始的后缀与<code>模式串T</code>的最长公共前缀长度，时间复杂度O(n+m)。</p>
+<h1 id="扩展kmp">扩展KMP<a aria-hidden="true" class="anchor" hidden="" href="#扩展kmp">#</a></h1>
+<p>假设遍历到i时，已经求出extend[0…i-1]的值。我们记录下遍历过程中匹配成功的字符的最远位置为p，并且这次匹配的起始位置为a。换句话说，计算到x时，匹配成功的最远位置是x+extend[x]-1，p就是x=0…i-1得到的最大值，a就是对应的x。</p>
+<p>设辅助数组next[i]表示<strong>T[i…m-1]和T[0…m-1]的最长公共前缀长度</strong>（注意这里与KMP算法中的next数组含义不同）。令len=next[i-a]，讨论以下两种情况：</p>
+<p>(1) i + len-1 &lt; p</p>
+<p><img alt="小于" loading="lazy" src="%e6%89%a9%e5%b1%95KMP/%e5%b0%8f%e4%ba%8e.png"/>
+</p>
+<p>由next数组定义可知 <font color="blue">T[0…len-1] == T[i-a…i-a+len-1]</font>，并且由extend数组定义可知 <font color="green">S[a…p] == T[0…p-a]</font>，得到<font color="blue"> S[i…i+len-1] == T[i-a…i-a+len-1] </font>，所以 <font color="blue">S[i…i+len-1] == T[0…len-1]</font>。并且 <font color="red">S[i+len-1…p]</font> !=  <font color="orange">T[len-1…i-a]</font>，不然违背了next数组最长公共前缀长度的定义。于是，无需任何比较就可以得出extend[i] = len。</p>
+<p>(2) i + len-1 &gt;= p</p>
+<p><img alt="大于" loading="lazy" src="%e6%89%a9%e5%b1%95KMP/%e5%a4%a7%e4%ba%8e.png"/>
+</p>
+<p>我们可以看到，匹配最远的位置只到p，对于p之后的匹配结果是未知的，所以我们需要继续匹配S[p…n-1]和T[p-i…m-1]。匹配完之后，还需要更新a和p。</p>
+<p>以上就是扩展KMP的主要思想，遍历即可，下面给出字符串下标从0开始的一种exKMP的实现，注意为了实现方便，代码中的p是上面分析的p+1，所以判断的时候是i+next[i-a]。而且同时用了变量j跟踪p在<code>文本串S</code>与<code>模式串T</code>中的对应位置，注意遍历<code>文本串S</code>时，i在递增，j需要递减。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>void exKMP(char* s, char* t, int n, int m)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    int a, p;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    for (int i=0, j=-1; i&lt;n; i++, j--)  //j即等于p与i的距离，其作用是判断i是否大于p（如果j&lt;0，则i大于p）
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>        if (j&lt;0 || i+nxt[i-a] &gt;= p)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>            if (j&lt;0) p = i, j = 0;      //如果i大于p
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>            while (p&lt;n &amp;&amp; j&lt;m &amp;&amp; s[p]==t[j]) p++, j++;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            extend[i] = j, a = i;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        } else
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            extend[i] = nxt[i-a];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>}
+</span></span></code></pre></div><h1 id="next数组">next数组<a aria-hidden="true" class="anchor" hidden="" href="#next数组">#</a></h1>
+<p>根据next数组定义，next[i]表示T[i…n]和T[0…n]的最长公共前缀的长度，其实就相当于<code>模式串T</code>与自身的匹配，不过这里next数组是从1开始的，next[0]匹配的肯定是整个串的长度m。有兴趣的可以试试写到一个函数中去，下面模板中给出分离的实现。再次强调C++中<code>next</code>是关键字（迭代器的一个函数），可以换个名字避免 <font color="orange"><code>CE</code></font>。</p>
+<h1 id="模板">模板<a aria-hidden="true" class="anchor" hidden="" href="#模板">#</a></h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">char</span> s[mxn], t[mxn];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">int</span> nxt[mxn], extend[mxn];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">getnxt</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> t, <span style="color:#66d9ef">int</span> m)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">int</span> a, p; nxt[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> m;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, j<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&lt;</span>m; i<span style="color:#f92672">++</span>, j<span style="color:#f92672">--</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#66d9ef">if</span> (j<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> i<span style="color:#f92672">+</span>nxt[i<span style="color:#f92672">-</span>a] <span style="color:#f92672">&gt;=</span> p)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            <span style="color:#66d9ef">if</span> (j<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span>) p <span style="color:#f92672">=</span> i, j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            <span style="color:#66d9ef">while</span> (p<span style="color:#f92672">&lt;</span>m <span style="color:#f92672">&amp;&amp;</span> t[p]<span style="color:#f92672">==</span>t[j]) p<span style="color:#f92672">++</span>, j<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            nxt[i] <span style="color:#f92672">=</span> j, a <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        } <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>            nxt[i] <span style="color:#f92672">=</span> nxt[i<span style="color:#f92672">-</span>a];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">exKMP</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> s, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> t, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> m)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>    <span style="color:#66d9ef">int</span> a, p;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, j<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>, j<span style="color:#f92672">--</span>)  <span style="color:#75715e">//j即等于p与i的距离，其作用是判断i是否大于p（如果j&lt;0，则i大于p）
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span><span style="color:#75715e"></span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>        <span style="color:#66d9ef">if</span> (j<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> i<span style="color:#f92672">+</span>nxt[i<span style="color:#f92672">-</span>a] <span style="color:#f92672">&gt;=</span> p)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>        {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>            <span style="color:#66d9ef">if</span> (j<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span>) p <span style="color:#f92672">=</span> i, j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;      <span style="color:#75715e">//如果i大于p
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">while</span> (p<span style="color:#f92672">&lt;</span>n <span style="color:#f92672">&amp;&amp;</span> j<span style="color:#f92672">&lt;</span>m <span style="color:#f92672">&amp;&amp;</span> s[p]<span style="color:#f92672">==</span>t[j]) p<span style="color:#f92672">++</span>, j<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>            extend[i] <span style="color:#f92672">=</span> j, a <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>        } <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>            extend[i] <span style="color:#f92672">=</span> nxt[i<span style="color:#f92672">-</span>a];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>    scanf(<span style="color:#e6db74">"%s%s"</span>, s, t);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>    getnxt(t, strlen(t));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>    exKMP(s, t, strlen(s), strlen(t));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>strlen(t); i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span>        printf(<span style="color:#e6db74">"%d "</span>, nxt[i]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span>    printf(<span style="color:#e6db74">"</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">"</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>strlen(s); i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>        printf(<span style="color:#e6db74">"%d "</span>, extend[i]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>    printf(<span style="color:#e6db74">"</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">"</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span>}
+</span></span></code></pre></div>
+</div>
+<footer class="post-footer">
+<ul class="post-tags">
+<li><a href="https://blog.lordash.de/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a></li>
+<li><a href="https://blog.lordash.de/tags/%E6%89%A9%E5%B1%95kmp/">扩展KMP</a></li>
+</ul>
+<nav class="paginav">
+<a class="prev" href="https://blog.lordash.de/posts/algorithm/manacher/">
+<span class="title">« 上一页</span>
+<br/>
+<span>Manacher</span>
+</a>
+<a class="next" href="https://blog.lordash.de/posts/algorithm/kmp/">
+<span class="title">下一页 »</span>
+<br/>
+<span>KMP</span>
+</a>
+</nav>
+</footer><div>
+<div class="pagination__title">
+<span class="pagination__title-h" style="font-size: 20px;">💬评论</span>
+<hr/>
+</div>
+<div id="tcomment"></div>
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
+<script>
+        twikoo.init({
+            envId: "https://twikoo-api-dun-pi.vercel.app",
+            el: "#tcomment",
+            lang: 'zh-CN',
+            region: 'ap-zhengzhou',
+            path: window.TWIKOO_MAGIC_PATH || window.location.pathname,
+        });
+    </script>
+</div>
+</article>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                
+                let x = codeblock.getElementsByTagName("span");
+                let noLineNumContent = "";
+                for (i = 0; i < x.length; i++) {
+                    if (x[i].style.display || x[i].style.color);
+                    else noLineNumContent += x[i].textContent;
+                }
+                navigator.clipboard.writeText(noLineNumContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

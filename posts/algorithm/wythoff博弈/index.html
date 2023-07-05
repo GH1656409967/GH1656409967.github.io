@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Wythoff博弈 | 似水</title>
+<meta content="博弈论, Wythoff博弈" name="keywords"/>
+<meta content="博弈论专题，介绍Wythoff博弈、Betty定理" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/posts/algorithm/wythoff%E5%8D%9A%E5%BC%88/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="Wythoff博弈" property="og:title"/>
+<meta content="博弈论专题，介绍Wythoff博弈、Betty定理" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://blog.lordash.de/posts/algorithm/wythoff%E5%8D%9A%E5%BC%88/" property="og:url"/><meta content="posts" property="article:section"/>
+<meta content="2020-06-17T17:40:11+00:00" property="article:published_time"/>
+<meta content="2020-06-17T17:40:11+00:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Wythoff博弈" name="twitter:title"/>
+<meta content="博弈论专题，介绍Wythoff博弈、Betty定理" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "文章",
+      "item": "https://blog.lordash.de/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "算法",
+      "item": "https://blog.lordash.de/posts/algorithm/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "Wythoff博弈",
+      "item": "https://blog.lordash.de/posts/algorithm/wythoff%E5%8D%9A%E5%BC%88/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Wythoff博弈",
+  "name": "Wythoff博弈",
+  "description": "博弈论专题，介绍Wythoff博弈、Betty定理",
+  "keywords": [
+    "博弈论", "Wythoff博弈"
+  ],
+  "articleBody": "Wythoff博弈 基本的威佐夫博弈（Wythoff Game）描述如下：\n有两堆各若干个物品，两个人轮流从某一堆或同时从两堆中取同样多的物品，每次至少取一个，多者不限，最后取光者得胜。\n我们使用(a, b)来描述一个局面，可以发现(a, b)和(b, a)其实是一样的，所以在此定义a $ \\le $ b。显然(0, 0)是第一个必败态（先手必败局面、奇异局面、P-position），使用P/N-状态或者SG函数可以更容易地分析局面，简单讲就是：“移动可以导致必败态的，此时先手必胜；移动只能导致必胜态的，此时先手必败”。打表可得必败态为(0, 0)、(1, 2)、(3, 5)、(4, 7)、(6, 10)、(8, 13)、(9, 15)、 $ \\cdots $ 仔细观察，大胆假设，自行求证，对于 $ (a_n, b_n) $ 有以下性质：\n$ a_n $ 是前面必败态中未出现过的最小自然数\n$ b_n = a_n + n $\n博弈过程如下：\n由 $ a_n $ 是未在前面出现过的最小自然数，所以 $ a_n \u003e a_{n-1} $ ，而 $ (b_n = a_n + n) \u003e (a_{n-1} + n) \u003e (a_{n-1} + n - 1 = b_{n-1}) \u003e a_{n-1} $ ，得出任何自然数都包含于有且仅有一个必败态中。 当局面处于必败态时，如果只改变其中一个分量，那么与另一个分量就不在同一个必败态中。如果使两个分量同时减少，那么由于a和b的差值不变，改变后也不会是其它的必败态。得出必败态只能转移到必胜态。 当局面处于必胜态(x, y)时，如果与x出现在必败态时的另一个分量 $ a_x $ 或者 $ b_x $ 小于y，那么将y取成 $ a_x $ 或者 $ b_x $ ，局面变为必败态 $ (a_x, x) $ 或者 $ (x, b_x) $ ；否则在两堆同时取走 $ x-a_{y-x} $ ，局面变为必败态 $ (a_{y-x}, b_{y-x}) $。得出必胜态可以转移到必败态。 SG函数打表找出规律，就可以开始推导了，实际上 $ a_n $ 和 $ b_n $ 是Betty序列并满足Betty定理，令 $ A = a_{n}, B = a_{n}+n $ 解方程 $ \\frac{1}{a} + \\frac{1}{a+1} = 1 $ 得 $ a = \\frac{\\sqrt{5} + 1}{2} $ 。即对于Wythoff博弈局面(a, b)，当 $ a == (int)((b-a) \\times \\frac{\\sqrt{5} + 1}{2}) $ 时先手必败，反之先手必胜。\nBetty定理 Betty定理：\n如果两个无理数满足 $ \\frac{1}{a} + \\frac{1}{b} = 1 $，那么对于两个集合 $ A = {[na]}, B = {[na]}, n \\in Z $ ，可得出 $ A \\cap B = \\varnothing, A \\cup B = N^{+} $ 。\n简单证明如下：\n$ A \\cap B = \\varnothing $\n由 $ \\frac{1}{a} + \\frac{1}{b} = 1 $，且a，b为正，可以得到a，b均大于1，所以[na]的跨度大于1，向下取整不会重复。取整数k使得 $ k \\in A, k \\in B $，那么 $ k \u003c ma \u003c k+1, k \u003c nb \u003c k+1 $ ，化简一下 $ \\frac{k}{m} \u003c a \u003c \\frac{k+1}{m} \\Longrightarrow \\frac{m}{k+1} \u003c \\frac{1}{a} \u003c \\frac{m}{k} $ ，同理 $ \\frac{n}{k+1} \u003c \\frac{1}{b} \u003c \\frac{n}{k} $ ，两式相加 $ \\frac{m+n}{k+1} \u003c \\frac{1}{a} + \\frac{1}{b} \u003c \\frac{m+n}{k} \\Longrightarrow \\frac{m+n}{k+1} \u003c 1 \u003c \\frac{m+n}{k} \\Longrightarrow k \u003c m + n \u003c k + 1 $ ，与m，n为整数矛盾。\n$ A \\cup B = N^{+} $\n取整数k满足 $ k \\in C_{N^{+}}A \\cup B $ ，此时必有整数m，n满足 $ [ma] \u003c k \u003c [(m+1)a], [nb] \u003c k \u003c [(n+1)b] $ ，化简一下 $ ma \u003c k \\le [(m+1)a] - 1 $ ，由于a为无理数，所以有 $ ma \u003c k \u003c (m+1)a - 1 \\Longrightarrow \\frac{m}{k} \u003c \\frac{1}{a} \u003c \\frac{m+1}{k+1} $ ，同理 $ \\frac{n}{k} \u003c \\frac{1}{b} \u003c \\frac{m+1}{k+1} $ ，两式相加 $ \\frac{m+n}{k} \u003c \\frac{1}{a} + \\frac{1}{b} \u003c \\frac{m+n+2}{k+1} \\Longrightarrow \\frac{m+n}{k} \u003c 1 \u003c \\frac{m+n+2}{k+1} \\Longrightarrow m + n \u003c k \u003c k + 1 \u003c m + n + 2 $ ，与m+n和m+n+2间只有一个整数矛盾。\n",
+  "wordCount" : "1150",
+  "inLanguage": "zh",
+  "datePublished": "2020-06-17T17:40:11Z",
+  "dateModified": "2020-06-17T17:40:11Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lordash"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.lordash.de/posts/algorithm/wythoff%E5%8D%9A%E5%BC%88/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "似水",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.lordash.de/images/favicon-16x16-.png"
+    }
+  }
+}
+</script>
+</head>
+<body class="dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<article class="post-single">
+<header class="post-header">
+<div class="breadcrumbs"><a href="https://blog.lordash.de">主页</a> » <a href="https://blog.lordash.de/posts/">文章</a> » <a href="https://blog.lordash.de/posts/algorithm/">算法</a></div>
+<h1 class="post-title">
+      Wythoff博弈
+    </h1>
+<div class="post-description">
+      博弈论专题，介绍Wythoff博弈、Betty定理
+    </div>
+<div class="post-meta"><span title="2020-06-17 17:40:11 +0000 UTC">2020-06-17</span> · Lordash
+
+
+
+</div>
+</header> <aside class="toc-container wide" id="toc-container">
+<div class="toc">
+<details open="">
+<summary accesskey="c" title="(Alt + C)">
+<span class="details">目录</span>
+</summary>
+<div class="inner"><ul>
+<li>
+<a aria-label="Wythoff博弈" href="#wythoff%e5%8d%9a%e5%bc%88">Wythoff博弈</a></li>
+<li>
+<a aria-label="Betty定理" href="#betty%e5%ae%9a%e7%90%86">Betty定理</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+<div class="post-content"><h2 id="wythoff博弈">Wythoff博弈<a aria-hidden="true" class="anchor" hidden="" href="#wythoff博弈">#</a></h2>
+<p>基本的威佐夫博弈（Wythoff Game）描述如下：</p>
+<blockquote>
+<p>有两堆各若干个物品，两个人轮流从某一堆或同时从两堆中取同样多的物品，每次至少取一个，多者不限，最后取光者得胜。</p>
+</blockquote>
+<p>我们使用(a, b)来描述一个局面，可以发现(a, b)和(b, a)其实是一样的，所以在此定义a $ \le $ b。显然(0, 0)是第一个必败态（先手必败局面、奇异局面、P-position），使用<a href="https://blog.lordash.cf/posts/266a09be.html#%E5%BF%85%E8%83%9C%E6%80%81%E5%92%8C%E5%BF%85%E8%B4%A5%E6%80%81">P/N-状态</a>或者<a href="https://blog.lordash.cf/posts/266a09be.html#SG%E5%87%BD%E6%95%B0">SG函数</a>可以更容易地分析局面，简单讲就是：“移动<strong>可以</strong>导致<code>必败态</code>的，此时先手必胜；移动<strong>只能</strong>导致<code>必胜态</code>的，此时先手必败”。打表可得必败态为(0, 0)、(1, 2)、(3, 5)、(4, 7)、(6, 10)、(8, 13)、(9, 15)、 $ \cdots $
+仔细观察，大胆假设，<del>自行求证</del>，对于 $ (a_n, b_n) $ 有以下性质：</p>
+<ol>
+<li>
+<p>$ a_n $ 是前面必败态中未出现过的最小自然数</p>
+</li>
+<li>
+<p>$ b_n = a_n + n $</p>
+</li>
+</ol>
+<hr/>
+<p>博弈过程如下：</p>
+<ul>
+<li>由 $ a_n $ 是未在前面出现过的最小自然数，所以  $ a_n &gt; a_{n-1} $ ，而 $ (b_n = a_n + n) &gt; (a_{n-1} + n) &gt; (a_{n-1} + n - 1 = b_{n-1}) &gt; a_{n-1} $ ，得出<strong>任何自然数都包含于有且仅有一个必败态中</strong>。</li>
+<li>当局面处于必败态时，如果只改变其中一个分量，那么与另一个分量就不在同一个必败态中。如果使两个分量同时减少，那么由于a和b的差值不变，改变后也不会是其它的必败态。得出<strong>必败态只能转移到必胜态</strong>。</li>
+<li>当局面处于必胜态(x, y)时，如果与x出现在必败态时的另一个分量 $ a_x $ 或者 $ b_x $ 小于y，那么将y取成 $ a_x $ 或者  $ b_x $ ，局面变为必败态 $ (a_x, x) $ 或者 $ (x, b_x) $ ；否则在两堆同时取走 $ x-a_{y-x} $ ，局面变为必败态 $ (a_{y-x}, b_{y-x}) $。得出<strong>必胜态可以转移到必败态</strong>。</li>
+</ul>
+<p>SG函数打表找出规律，就可以开始推导了，实际上 $ a_n $ 和 $ b_n $ 是Betty序列并满足<a href="#Betty%E5%AE%9A%E7%90%86">Betty定理</a>，令 $ A = a_{n}, B = a_{n}+n $ 解方程 $ \frac{1}{a} + \frac{1}{a+1} = 1 $ 得 $ a = \frac{\sqrt{5} + 1}{2} $ 。<strong>即对于Wythoff博弈局面(a, b)，当 $ a == (int)((b-a) \times \frac{\sqrt{5} + 1}{2}) $ 时先手必败，反之先手必胜。</strong></p>
+<hr/>
+<h2 id="betty定理">Betty定理<a aria-hidden="true" class="anchor" hidden="" href="#betty定理">#</a></h2>
+<p>Betty定理：</p>
+<blockquote>
+<p>如果两个无理数满足 $ \frac{1}{a} + \frac{1}{b} = 1 $，那么对于两个集合 $ A = {[na]}, B = {[na]}, n \in Z $ ，可得出 $ A \cap B = \varnothing, A \cup B = N^{+} $ 。</p>
+</blockquote>
+<p>简单证明如下：</p>
+<ul>
+<li>
+<p>$ A \cap B = \varnothing $</p>
+<p>由 $ \frac{1}{a} + \frac{1}{b} = 1 $，且a，b为正，可以得到a，b均大于1，所以[na]的跨度大于1，向下取整不会重复。取整数k使得 $ k \in A, k \in B $，那么 $ k &lt; ma &lt; k+1, k &lt; nb &lt; k+1 $ ，化简一下 $ \frac{k}{m} &lt; a &lt; \frac{k+1}{m} \Longrightarrow \frac{m}{k+1} &lt; \frac{1}{a} &lt; \frac{m}{k} $ ，同理 $ \frac{n}{k+1} &lt; \frac{1}{b} &lt; \frac{n}{k} $ ，两式相加 $ \frac{m+n}{k+1} &lt; \frac{1}{a} + \frac{1}{b} &lt; \frac{m+n}{k} \Longrightarrow \frac{m+n}{k+1} &lt; 1 &lt; \frac{m+n}{k} \Longrightarrow k &lt; m + n &lt; k + 1 $ ，与m，n为整数矛盾。</p>
+</li>
+<li>
+<p>$ A \cup B = N^{+} $</p>
+<p>取整数k满足 $ k \in C_{N^{+}}A \cup B $ ，此时必有整数m，n满足 $ [ma] &lt; k &lt; [(m+1)a], [nb] &lt; k &lt; [(n+1)b] $ ，化简一下 $ ma &lt; k \le [(m+1)a] - 1 $ ，由于a为无理数，所以有 $ ma &lt; k &lt; (m+1)a - 1 \Longrightarrow \frac{m}{k} &lt; \frac{1}{a} &lt; \frac{m+1}{k+1} $ ，同理 $ \frac{n}{k} &lt; \frac{1}{b} &lt; \frac{m+1}{k+1} $ ，两式相加 $ \frac{m+n}{k} &lt; \frac{1}{a} + \frac{1}{b} &lt; \frac{m+n+2}{k+1} \Longrightarrow \frac{m+n}{k} &lt; 1 &lt; \frac{m+n+2}{k+1} \Longrightarrow m + n &lt; k &lt; k + 1 &lt; m + n + 2 $ ，与m+n和m+n+2间只有一个整数矛盾。</p>
+</li>
+</ul>
+</div>
+<footer class="post-footer">
+<ul class="post-tags">
+<li><a href="https://blog.lordash.de/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/">博弈论</a></li>
+<li><a href="https://blog.lordash.de/tags/wythoff%E5%8D%9A%E5%BC%88/">Wythoff博弈</a></li>
+</ul>
+<nav class="paginav">
+<a class="prev" href="https://blog.lordash.de/posts/algorithm/fibonacci%E5%8D%9A%E5%BC%88/">
+<span class="title">« 上一页</span>
+<br/>
+<span>Fibonacci博弈</span>
+</a>
+<a class="next" href="https://blog.lordash.de/posts/algorithm/bash%E5%8D%9A%E5%BC%88/">
+<span class="title">下一页 »</span>
+<br/>
+<span>Bash博弈</span>
+</a>
+</nav>
+</footer><div>
+<div class="pagination__title">
+<span class="pagination__title-h" style="font-size: 20px;">💬评论</span>
+<hr/>
+</div>
+<div id="tcomment"></div>
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
+<script>
+        twikoo.init({
+            envId: "https://twikoo-api-dun-pi.vercel.app",
+            el: "#tcomment",
+            lang: 'zh-CN',
+            region: 'ap-zhengzhou',
+            path: window.TWIKOO_MAGIC_PATH || window.location.pathname,
+        });
+    </script>
+</div>
+</article>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                
+                let x = codeblock.getElementsByTagName("span");
+                let noLineNumContent = "";
+                for (i = 0; i < x.length; i++) {
+                    if (x[i].style.display || x[i].style.color);
+                    else noLineNumContent += x[i].textContent;
+                }
+                navigator.clipboard.writeText(noLineNumContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

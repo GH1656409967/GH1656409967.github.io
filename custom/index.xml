@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>自定义 on 似水</title>
+    <link>https://blog.lordash.de/custom/</link>
+    <description>Recent content in 自定义 on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 28 Mar 2021 14:10:51 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/custom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>菜谱</title>
+      <link>https://blog.lordash.de/custom/gallery/cookbook/</link>
+      <pubDate>Sun, 28 Mar 2021 14:10:51 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/custom/gallery/cookbook/</guid>
+      <description>手机先吃</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>手机先吃</p>
+</blockquote>
+<div class="img-list">
+<div class="img-item"><img data-src="cookbook/index/test.png" alt="test"></div>
+</div>
+<p> </p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>锻炼</title>
+      <link>https://blog.lordash.de/custom/gallery/build-up/</link>
+      <pubDate>Sun, 28 Mar 2021 14:10:51 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/custom/gallery/build-up/</guid>
+      <description>Be water, my friend.</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>Be water, my friend.</p>
+</blockquote>
+<div class="img-list">
+<div class="img-item"><img data-src="build-up/index/build-up.jpg" alt="build-up"></div>
+</div>
+<p> </p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>曲谱</title>
+      <link>https://blog.lordash.de/custom/gallery/score/</link>
+      <pubDate>Sun, 28 Mar 2021 14:10:51 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/custom/gallery/score/</guid>
+      <description>MuseScore 3已经下载好了，等我搬运好吧</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>MuseScore 3已经下载好了，等我搬运好吧</p>
+</blockquote>
+<div class="img-list">
+<div class="img-item"><img data-src="score/index/test.png" alt="test"></div>
+</div>
+<p> </p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>证书</title>
+      <link>https://blog.lordash.de/custom/gallery/certificates/</link>
+      <pubDate>Sun, 28 Mar 2021 14:10:51 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/custom/gallery/certificates/</guid>
+      <description>学如逆水行舟，不进则退</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>学如逆水行舟，不进则退</p>
+</blockquote>
+<div class="img-list">
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/otac4qbWnRHfBSx.jpg" alt="CCPC区域铜"></div>
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/ZmCTq9JxzgDsH7y.png" alt="CCPC省银"></div>
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/PxDewYdfSXBg4Ca.png" alt="ICPC省铜"></div>
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/ezou6Ui9GnSgcFp.png" alt="农大邀请赛第一"></div>
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/NjK84O1ae3PSVfM.jpg" alt="蓝桥杯省一"></div>
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/41ZOuL5tndcvDWr.png" alt="GPLT团队铜"></div>
+</div>
+<p> </p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>个人</title>
+      <link>https://blog.lordash.de/custom/personal/</link>
+      <pubDate>Wed, 29 Apr 2020 09:47:20 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/custom/personal/</guid>
+      <description>个人 普普通通工科男，本科毕业于河南某双非，软件工程专业。目前是某公司的Linux应用开发工程师。 或许，我们有些共同话题： 运动 热爱跑步，SB：</description>
+      <content:encoded><![CDATA[<h2 id="个人">个人</h2>
+<p>普普通通工科男，本科毕业于河南某双非，软件工程专业。目前是某公司的Linux应用开发工程师。</p>
+<p>或许，我们有些共同话题：</p>
+<details>
+    <summary>运动</summary>
+    <blockquote>
+<p>热爱跑步，SB：<code>2KM</code>7min、<code>5KM</code>20min、<code>10KM</code>43min。<del>待郑州4年没抽到郑开。</del><br>
+跆拳道品势黑带一段。<del>不会竞技，不会特技，也没参加过比赛。</del></p>
+</blockquote>
+
+</details>
+<details>
+    <summary>音乐</summary>
+    <blockquote>
+<p>真·五音不全。<br>
+喜欢电音，Avicii鸽迷。<br>
+自学半音阶口琴中……</p>
+</blockquote>
+
+</details>
+<details>
+    <summary>游戏</summary>
+    <blockquote>
+<p><del>3D眩晕</del><br>
+FPS：<code>CSGO</code>、<code>战地1</code><br>
+MOBA：<code>英雄联盟</code><br>
+MMO：<code>文明6</code><br>
+ARPG：<code>上古卷轴5：天际</code>、<code>塞尔达传说：旷野之息</code>、<code>鬼泣系列</code><br>
+其它联机：<code>Minecraft</code>、<code>饥荒</code>、<code>神界：原罪2</code>、<code>英雄连</code>、<code>散兵坑</code>、<del><code>原神</code></del></p>
+</blockquote>
+
+</details>
+<details>
+    <summary>厨艺</summary>
+    <blockquote>
+<p>会煮泡面和挂面。<del>还会做红烧排骨、可乐鸡翅、麻辣虾尾……</del></p>
+</blockquote>
+
+</details>
+<h2 id="其它">其它</h2>
+<details>
+    <summary>蒟蒻毕业时的<strong>真·简</strong>历</summary>
+    <img loading="lazy" src="https://s2.loli.net/2022/06/02/8bShtjPVOURonFm.png" alt="简历"  />
+</details>
+<p> </p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>https://blog.lordash.de/custom/about/</link>
+      <pubDate>Wed, 29 Apr 2020 09:47:20 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/custom/about/</guid>
+      <description>&lt;p&gt;最初是在校期间参加算法竞赛时，为了记录和分享解题过程而搭建的博客。但是现在毕业&lt;del&gt;沦为社畜&lt;/del&gt;了，于是打算加入一些非技术类的随笔和生活感悟之类的。&lt;/p&gt;
+&lt;p&gt;本博客使用&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;博客引擎和&lt;a href=&#34;https://theme-next.js.org/&#34;&gt;NexT&lt;/a&gt;主题搭建，具体版本如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;os: win32 10.0.19044
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span&gt;node: 16.14.2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;&lt;span&gt;v8: 9.4.146.24-node.20
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;&lt;span&gt;hexo: 6.1.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;&lt;span&gt;hexo-cli: 4.3.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&lt;/span&gt;&lt;span&gt;NexT version 8.11.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;基本的搭建和优化过程可以参考&lt;a href=&#34;https://blog.lordash.de/posts/0eccf52f1ab7/&#34;&gt;【配置】Windows10使用Hexo和Pages服务搭建个人博客&lt;/a&gt;和&lt;a href=&#34;https://blog.lordash.de/posts/109c3806466b/&#34;&gt;【配置】Hexo以及NexT8主题的配置&lt;/a&gt;这两篇文章。&lt;/p&gt;
+&lt;p&gt;目前部署在&lt;a href=&#34;https://vercel.com&#34;&gt;Vercel&lt;/a&gt;和&lt;a href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt;上，可以通过以下链接访问：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.lordash.de&#34;&gt;blog.lordash.de&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gh1656409967.github.io&#34;&gt;gh1656409967.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <content:encoded><![CDATA[<p>最初是在校期间参加算法竞赛时，为了记录和分享解题过程而搭建的博客。但是现在毕业<del>沦为社畜</del>了，于是打算加入一些非技术类的随笔和生活感悟之类的。</p>
+<p>本博客使用<a href="https://hexo.io/">Hexo</a>博客引擎和<a href="https://theme-next.js.org/">NexT</a>主题搭建，具体版本如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>os: win32 10.0.19044
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>node: 16.14.2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>v8: 9.4.146.24-node.20
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>hexo: 6.1.0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>hexo-cli: 4.3.0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>NexT version 8.11.1
+</span></span></code></pre></div><p>基本的搭建和优化过程可以参考<a href="/posts/0eccf52f1ab7/">【配置】Windows10使用Hexo和Pages服务搭建个人博客</a>和<a href="/posts/109c3806466b/">【配置】Hexo以及NexT8主题的配置</a>这两篇文章。</p>
+<p>目前部署在<a href="https://vercel.com">Vercel</a>和<a href="https://pages.github.com/">Github Pages</a>上，可以通过以下链接访问：</p>
+<ul>
+<li><a href="https://blog.lordash.de">blog.lordash.de</a></li>
+<li><a href="https://gh1656409967.github.io">gh1656409967.github.io</a></li>
+</ul>
+<div class="hugo-encryptor-container">
+  <div class="hugo-encryptor-prompt">
+    
+      <p>文章的部分内容被密码保护：</p>
+    
+  </div>
+  <div class="hugo-encryptor-form">
+    <input
+      class="hugo-encryptor-input"
+      placeholder='请输入密码'
+    />
+    <input
+      class="hugo-encryptor-button"
+      type="button"
+      value='点击验证'
+      onclick="_click_handler(this)"
+    />
+  </div>
+  <div
+    class="hugo-encryptor-cipher-text"
+    data-password="123qwe"
+    style="display: none;"
+  >
+    <span style="display: none;">--- DON'T MODIFY THIS LINE ---</span>
+    
+
+<div class="invisible">
+访问卡顿，推荐使用<a href="https://mxwljsq.top/auth/register?code=X0Ok">科学上网</a>
+</div>
+
+
+  </div>
+</div>
+
+<p> </p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>风景</title>
+      <link>https://blog.lordash.de/custom/gallery/scenery/</link>
+      <pubDate>Tue, 28 Apr 2020 15:00:51 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/custom/gallery/scenery/</guid>
+      <description>你若眉梢嘴角带着笑，何处不是风景</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>你若眉梢嘴角带着笑，何处不是风景</p>
+</blockquote>
+<div class="img-list">
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/pSEMLftJQVic4w1.jpg" alt="20160915-乡下老家-外婆家门口"></div>
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/HGbP6qg21TaFdKz.jpg" alt="20170908-大学校园-宿舍楼"></div>
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/bG3mFnYkfchT4Ag.jpg" alt="20171101-大学校园-莲湖"></div>
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/hoTnHcaW3xlyI2X.jpg" alt="20161004-乡下老家-田间"></div>
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/4Uk9rbCmR8gFvXL.jpg" alt="20170929-大学校园-图书馆"></div>
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/jZDi1cqLQOBWUYp.jpg" alt="20171209-大学校园-路边"></div>
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/GcbEIzuftJ3ed8W.jpg" alt="20170706-乡下老家-田间小路"></div>
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/wPIyZkTdOFgil42.jpg" alt="20171001-大学校园-图书馆"></div>
+<div class="img-item"><img data-src="https://s2.loli.net/2022/06/01/BKzHF8P1i7DVWYO.jpg" alt="20180119-大学校园-路边"></div>
+</div>
+<p> </p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>相册</title>
+      <link>https://blog.lordash.de/custom/gallery/</link>
+      <pubDate>Tue, 28 Apr 2020 15:00:51 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/custom/gallery/</guid>
+      <description>一星陨落，黯淡不了星空灿烂；一花凋零，荒芜不了整个春天。 -证书- -锻炼- -风景- -曲谱- -菜谱-</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>一星陨落，黯淡不了星空灿烂；一花凋零，荒芜不了整个春天。</p>
+</blockquote>
+<div class="gallery-list">
+<div class="gallery-item">
+<a href="certificates/"><img data-src="https://s2.loli.net/2022/06/01/mOu2kviE8cVolUA.jpg"></a>
+<p>-证书-</p>
+</div>
+<div class="gallery-item">
+<a href="build-up/"><img data-src="https://s2.loli.net/2022/06/01/IEXsouZ6bPxnWmT.png"></a>
+<p>-锻炼-</p>
+</div>
+<div class="gallery-item">
+<a href="scenery/"><img data-src="https://s2.loli.net/2022/06/01/4Uk9rbCmR8gFvXL.jpg"></a>
+<p>-风景-</p>
+</div>
+<div class="gallery-item">
+<a href="score/"><img data-src="https://s2.loli.net/2022/08/10/UznxKBWQ4gkOSo1.jpg"></a>
+<p>-曲谱-</p>
+</div>
+<div class="gallery-item">
+<a href="cookbook/"><img data-src="https://s2.loli.net/2022/08/10/Oyo4lepWAMJi2xQ.jpg"></a>
+<p>-菜谱-</p>
+</div>
+</div>
+<p> </p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>友情链接</title>
+      <link>https://blog.lordash.de/custom/links/</link>
+      <pubDate>Thu, 16 Apr 2020 09:50:24 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/custom/links/</guid>
+      <description>那些书写热爱的人 jaihk66215级校友 ACM 信仰.15级校友 ACM 上大 SSimpLe_Y15级校友 ACM liweihang17级校友 ACM 鹅厂 ironz</description>
+      <content:encoded><![CDATA[<h2 id="那些书写热爱的人">那些书写热爱的人</h2>
+<a class="friendurl" href=https://blog.csdn.net/jaihk662 title=jaihk662 target="_blank">
+    <div class="friend-item">
+        <div class="friend-left">
+            <img class="friend-logo" src=./links/jaihk662.jpg />
+        </div>
+        <div class="friend-right">
+            <div class="friend-name">jaihk662<span class="label-info">15级校友</span>
+            </div>
+            <div class="friend-info">ACM</div>
+        </div>
+    </div>
+</a>
+<a class="friendurl" href=https://blog.csdn.net/haut_ykc title=信仰. target="_blank">
+    <div class="friend-item">
+        <div class="friend-left">
+            <img class="friend-logo" src=./links/haut_ykc.jpg />
+        </div>
+        <div class="friend-right">
+            <div class="friend-name">信仰.<span class="label-info">15级校友</span>
+            </div>
+            <div class="friend-info">ACM 上大</div>
+        </div>
+    </div>
+</a>
+<a class="friendurl" href=https://blog.csdn.net/ssimple_y title=SSimpLe_Y target="_blank">
+    <div class="friend-item">
+        <div class="friend-left">
+            <img class="friend-logo" src=./links/SSimpLe_Y.jpg />
+        </div>
+        <div class="friend-right">
+            <div class="friend-name">SSimpLe_Y<span class="label-info">15级校友</span>
+            </div>
+            <div class="friend-info">ACM</div>
+        </div>
+    </div>
+</a>
+<a class="friendurl" href=https://www.cnblogs.com/liweihang/ title=liweihang target="_blank">
+    <div class="friend-item">
+        <div class="friend-left">
+            <img class="friend-logo" src=./links/liweihang.jpg />
+        </div>
+        <div class="friend-right">
+            <div class="friend-name">liweihang<span class="label-info">17级校友</span>
+            </div>
+            <div class="friend-info">ACM 鹅厂</div>
+        </div>
+    </div>
+</a>
+<a class="friendurl" href=https://ironz.cn/ title=ironz target="_blank">
+    <div class="friend-item">
+        <div class="friend-left">
+            <img class="friend-logo" src=./links/blank.png />
+        </div>
+        <div class="friend-right">
+            <div class="friend-name">ironz<span class="label-info">17级校友</span>
+            </div>
+            <div class="friend-info">西电</div>
+        </div>
+    </div>
+</a>
+<a class="friendurl" href=https://blog.csdn.net/qq_40526226?type&#61;blog title=irvix target="_blank">
+    <div class="friend-item">
+        <div class="friend-left">
+            <img class="friend-logo" src=./links/irvix.jpg />
+        </div>
+        <div class="friend-right">
+            <div class="friend-name">irvix<span class="label-info">17级校友</span>
+            </div>
+            <div class="friend-info">ACM</div>
+        </div>
+    </div>
+</a>
+<a class="friendurl" href=https://blog.csdn.net/qq_41731507?type&#61;blog title=iamstarlee target="_blank">
+    <div class="friend-item">
+        <div class="friend-left">
+            <img class="friend-logo" src=./links/iamstarlee.jpg />
+        </div>
+        <div class="friend-right">
+            <div class="friend-name">iamstarlee<span class="label-info">17级校友</span>
+            </div>
+            <div class="friend-info">ACM</div>
+        </div>
+    </div>
+</a>
+<a class="friendurl" href=https://blog.csdn.net/qq_41856950 title=haut_bao target="_blank">
+    <div class="friend-item">
+        <div class="friend-left">
+            <img class="friend-logo" src=./links/blank.png />
+        </div>
+        <div class="friend-right">
+            <div class="friend-name">haut_bao<span class="label-info">17级校友</span>
+            </div>
+            <div class="friend-info">ACM</div>
+        </div>
+    </div>
+</a>
+<a class="friendurl" href=https://blog.csdn.net/Long_hen title=Long_hen target="_blank">
+    <div class="friend-item">
+        <div class="friend-left">
+            <img class="friend-logo" src=./links/long_hen.jpg />
+        </div>
+        <div class="friend-right">
+            <div class="friend-name">Long_hen<span class="label-info">19级校友</span>
+            </div>
+            <div class="friend-info">ACM</div>
+        </div>
+    </div>
+</a>
+<a class="friendurl" href=https://ysx.cosine.ren/ title=cosine target="_blank">
+    <div class="friend-item">
+        <div class="friend-left">
+            <img class="friend-logo" src=./links/cosine.jpg />
+        </div>
+        <div class="friend-right">
+            <div class="friend-name">cosine<span class="label-info">19级校友</span>
+            </div>
+            <div class="friend-info">ACM</div>
+        </div>
+    </div>
+</a>
+<a class="friendurl" href=https://interviewguide.cn/notes/01-guide/web-guide-reading.html title=拓拔阿秀 target="_blank">
+    <div class="friend-item">
+        <div class="friend-left">
+            <img class="friend-logo" src=./links/forthespada.png />
+        </div>
+        <div class="friend-right">
+            <div class="friend-name">拓拔阿秀
+            </div>
+            <div class="friend-info">抖音全栈，面试笔记</div>
+        </div>
+    </div>
+</a>
+<a class="friendurl" href=https://www.liuchuo.net/ title=柳婼のblog target="_blank">
+    <div class="friend-item">
+        <div class="friend-left">
+            <img class="friend-logo" src=./links/liuchuo.jpg />
+        </div>
+        <div class="friend-right">
+            <div class="friend-name">柳婼のblog<span class="label-info">15级校友</span>
+            </div>
+            <div class="friend-info">PAT</div>
+        </div>
+    </div>
+</a>
+<a class="friendurl" href=https://aqingya.cn/ title=阿乐 target="_blank">
+    <div class="friend-item">
+        <div class="friend-left">
+            <img class="friend-logo" src=./links/aqingya.gif />
+        </div>
+        <div class="friend-right">
+            <div class="friend-name">阿乐
+            </div>
+            <div class="friend-info">牛客</div>
+        </div>
+    </div>
+</a>
+<h2 id="认识一下吧">认识一下吧</h2>
+<p><i class="fa fa-list-alt"></i><a href="https://wj.qq.com/s2/10288107/7979">申请收录</a></p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

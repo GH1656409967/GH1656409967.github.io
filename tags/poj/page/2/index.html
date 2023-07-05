@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>POJ | 似水</title>
+<meta content="" name="keywords"/>
+<meta content="Life is like a boat" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/tags/poj/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://blog.lordash.de/tags/poj/index.xml" rel="alternate" type="application/rss+xml"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="POJ" property="og:title"/>
+<meta content="Life is like a boat" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://blog.lordash.de/tags/poj/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="POJ" name="twitter:title"/>
+<meta content="Life is like a boat" name="twitter:description"/>
+</head>
+<body class="list dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://blog.lordash.de">主页</a> » <a href="https://blog.lordash.de/tags/">标签</a></div>
+<h1>
+    POJ
+  </h1>
+</header>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-2425 A Chess Game
+    </h2>
+</header>
+<div class="entry-content">
+<p>A Chess Game(POJ-2425) 题面 Let’s design a new chess game. There are N positions to hold M chesses in this game. Multiple chesses can be located in the same position. The positions are constituted as a topological graph, i.e. there are directed edges connecting some positions, and no cycle exists. Two players you and I move chesses alternately. In each turn the player should move only one chess from...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-14 12:16:12 +0000 UTC">2020-07-14</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-2425 A Chess Game" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-2425-a-chess-game/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-2348 Euclid's Game
+    </h2>
+</header>
+<div class="entry-content">
+<p>Euclid’s Game(POJ-2348) 题面 Two players, Stan and Ollie, play, starting with two natural numbers. Stan, the first player, subtracts any positive multiple of the lesser of the two numbers from the greater of the two numbers, provided that the resulting number must be nonnegative. Then Ollie, the second player, does the same with the two resulting numbers, then Stan, etc., alternately, until one player is able to subtract a...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-14 11:16:12 +0000 UTC">2020-07-14</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-2348 Euclid's Game" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-2348-euclids-game/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-2068 Nim
+    </h2>
+</header>
+<div class="entry-content">
+<p>Nim(POJ-2068) 题面 Let’s play a traditional game Nim. You and I are seated across a table and we have a hundred stones on the table (we know the number of stones exactly). We play in turn and at each turn, you or I can remove on to four stones from the heap. You play first and the one who removed the last stone loses. In this game, you have...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-13 10:46:12 +0000 UTC">2020-07-13</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-2068 Nim" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-2068-nim/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-2311 Cutting Game
+    </h2>
+</header>
+<div class="entry-content">
+<p>Cutting Game(POJ-2311) 题面 Urej loves to play various types of dull games. He usually asks other people to play with him. He says that playing those games can show his extraordinary wit. Recently Urej takes a great interest in a new game, and Erif Nezorf becomes the victim. To get away from suffering playing such a dull game, Erif Nezorf requests your help. The game uses a rectangular paper...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-13 09:46:12 +0000 UTC">2020-07-13</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-2311 Cutting Game" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-2311-cutting-game/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-1740 A New Stone Game
+    </h2>
+</header>
+<div class="entry-content">
+<p>A New Stone Game(POJ-1740) 题面 Alice and Bob decide to play a new stone game.At the beginning of the game they pick n(1&lt;=n&lt;=10) piles of stones in a line. Alice and Bob move the stones in turn. At each step of the game,the player choose a pile,remove at least one stones,then freely move stones from this pile to any other pile that still has stones. For example:n=4 and the...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-12 10:36:12 +0000 UTC">2020-07-12</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-1740 A New Stone Game" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-1740-a-new-stone-game/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-1704 Georgia and Bob
+    </h2>
+</header>
+<div class="entry-content">
+<p>Georgia and Bob(POJ-1704) 题面 Georgia and Bob decide to play a self-invented game. They draw a row of grids on paper, number the grids from left to right by 1, 2, 3, …, and place N chessmen on different grids, as shown in the following figure for example: Georgia and Bob move the chessmen in turn. Every time a player will choose a chessman, and move it to the...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-12 10:16:12 +0000 UTC">2020-07-12</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-1704 Georgia and Bob" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-1704-georgia-and-bob/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-2505 A multiplication game
+    </h2>
+</header>
+<div class="entry-content">
+<p>A multiplication game(POJ-2505) 题面 Stan and Ollie play the game of multiplication by multiplying an integer p by one of the numbers 2 to 9. Stan always starts with p = 1, does his multiplication, then Ollie multiplies the number, then Stan and so on. Before a game starts, they draw an integer 1 &lt; n &lt; 4294967295 and the winner is who first reaches p &gt;= n. 输...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-09 19:42:12 +0000 UTC">2020-07-09</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-2505 A multiplication game" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-2505-a-multiplication-game/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-2484 A Funny Game
+    </h2>
+</header>
+<div class="entry-content">
+<p>A Funny Game(POJ-2484) 题面 Alice and Bob decide to play a funny game. At the beginning of the game they pick n(1 &lt;= n &lt;= 106) coins in a circle, as Figure 1 shows. A move consists in removing one or two adjacent coins, leaving all other coins untouched. At least one coin must be removed. Players alternate moves with Alice starting. The player that removes the last coin...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-09 17:45:12 +0000 UTC">2020-07-09</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-2484 A Funny Game" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-2484-a-funny-game/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-2234 Matches Game
+    </h2>
+</header>
+<div class="entry-content">
+<p>Matches Game(POJ-2234) 题面 Here is a simple game. In this game, there are several piles of matches and two players. The two player play in turn. In each turn, one can choose a pile and take away arbitrary number of matches from the pile (Of course the number of matches, which is taken away, cannot be zero and cannot be larger than the number of matches in the chosen...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-09 17:16:12 +0000 UTC">2020-07-09</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-2234 Matches Game" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-2234-matches-game/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-1067 取石子游戏
+    </h2>
+</header>
+<div class="entry-content">
+<p>取石子游戏(POJ-1067) 题面 有两堆石子，数量任意，可以不同。游戏开始由两个人轮流取石子。游戏规定，每次有两种不同的取法，一是可以在任意...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-09 16:35:12 +0000 UTC">2020-07-09</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-1067 取石子游戏" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-1067-%E5%8F%96%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/"></a>
+</article>
+<footer class="page-footer">
+<nav class="pagination">
+<a class="prev" href="https://blog.lordash.de/tags/poj/">
+      « 上一页 
+    </a>
+<a class="next" href="https://blog.lordash.de/tags/poj/page/3/">下一页  »
+    </a>
+</nav>
+</footer>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

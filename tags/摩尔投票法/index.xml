@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>摩尔投票法 on 似水</title>
+    <link>https://blog.lordash.de/tags/%E6%91%A9%E5%B0%94%E6%8A%95%E7%A5%A8%E6%B3%95/</link>
+    <description>Recent content in 摩尔投票法 on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 20 Apr 2021 21:20:18 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/%E6%91%A9%E5%B0%94%E6%8A%95%E7%A5%A8%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指Offer-39 数组中出现次数超过一半的数字</title>
+      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-39-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Tue, 20 Apr 2021 21:20:18 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-39-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+      <description>剑指Offer-39 数组中出现次数超过一半的数字 类型 水题</description>
+      <content:encoded><![CDATA[<h1 id="数组中出现次数超过一半的数字剑指offer-39httpsleetcode-cncomproblemsshu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof">数组中出现次数超过一半的数字(<a href="https://leetcode-cn.com/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/">剑指Offer-39</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。</p>
+<p>你可以假设数组是非空的，并且给定的数组总是存在多数元素。</p>
+</blockquote>
+<h2 id="示例">示例</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>输入: [1, 2, 3, 2, 2, 2, 5, 4, 2]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>输出: 2
+</span></span></code></pre></div><h2 id="限制">限制</h2>
+<blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>1 &lt;= 数组长度 &lt;= 50000
+</span></span></code></pre></div></blockquote>
+<h2 id="思路">思路</h2>
+<p>摩尔投票法基于这样一个事实，<strong>当一个数的重复次数超过数组长度的一半，每次将两个不相同的数删除，最终剩下的就是要找的数。</strong></p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#66d9ef">int</span> majorityElement(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>        <span style="color:#66d9ef">int</span> num<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, ans<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x : nums){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>            <span style="color:#66d9ef">if</span>(num<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) ans <span style="color:#f92672">=</span> x;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>            <span style="color:#66d9ef">if</span>(ans <span style="color:#f92672">==</span> x) num<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>            <span style="color:#66d9ef">else</span> num<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        <span style="color:#66d9ef">return</span> ans;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>};
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>K倍动态减法博弈 on 似水</title>
+    <link>https://blog.lordash.de/tags/k%E5%80%8D%E5%8A%A8%E6%80%81%E5%87%8F%E6%B3%95%E5%8D%9A%E5%BC%88/</link>
+    <description>Recent content in K倍动态减法博弈 on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 17 Jul 2020 00:24:12 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/k%E5%80%8D%E5%8A%A8%E6%80%81%E5%87%8F%E6%B3%95%E5%8D%9A%E5%BC%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU-2486 A simple stone game</title>
+      <link>https://blog.lordash.de/posts/solution/hdu-2486-a-simple-stone-game/</link>
+      <pubDate>Fri, 17 Jul 2020 00:24:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/hdu-2486-a-simple-stone-game/</guid>
+      <description>HDU-2486 A Chess Game 类型 博弈论 K倍动态减法博弈</description>
+      <content:encoded><![CDATA[<h1 id="a-simple-stone-gamehdu-2486httpsvjudgenetproblemhdu-2486">A simple stone game(<a href="https://vjudge.net/problem/HDU-2486">HDU-2486</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>After he has learned how to play Nim game, Mike begins to try another stone game which seems much easier.</p>
+<p>The game goes like this: Two players start the game with a pile of n stones. They take stones from the pile in turn and every time they take at least one stone. The one who goes first can take at most n-1 stones  for his first move. From then on a player can take at most k times as  many stones as his opponent has taken last time. For example, if one  player take m stones in his turn, then the other player can take at most k * m stones next time. The player who takes the last stone wins the  game. Suppose that those two players always take the best moves and  never make mistakes, your job is to find out who will definitely win the game.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>The first line contains a integer t, indicating that there are t test cases following.(t&lt;=20).
+Each test case is a line consisting of two integer n and k.(2&lt;=n&lt;=10^8,1&lt;=k&lt;=10^5).</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each test case, output one line starting with “Case N: ”, N is the  case number. And then, if the first player can ensure a winning, print  the minimum number of stones he should take in his first turn.  Otherwise, print &ldquo;lose&rdquo;. Please note that there is a blank following the colon.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>5
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>16 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>11 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>32 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>34 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>19 3
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Case 1: lose
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Case 2: 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>Case 3: 3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>Case 4: lose
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>Case 5: 4
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>When k = 1, the first player will definitely lose if the initial amount  of stones is in the set {2, 4, 8, 16, 32, &hellip;}. Let&rsquo;s call this kind of  set “first-player-lose set”.</p>
+<p>When k = 2, the first-player-lose set is {2, 3, 5, 8, 13, 21, 34, 57 &hellip;} , which happens to be the Fibonacci sequence starting from 2.</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>K倍动态减法博弈，参照<a href="https://blog.lordash.cf/posts/466426a4.html#Fibonacci%E5%8D%9A%E5%BC%88">斐波那契博弈</a>和<a href="https://blog.lordash.cf/posts/466426a4.html#Zeckendorf%E5%AE%9A%E7%90%86">齐肯多夫定理</a>的证明过程，将 $ f_{i} = f_{i-1} + f_{i-2} $ 替换为 $ f_{i} = f_{i-1} + f_{k} \mid <em>{ K \times f</em>{k-1} \lt f_{i-1} \le K \times f_{k}} $ ，也就是将齐肯多夫定理表述中的 <code>若干不连续的项</code> 替换为 <code>若干两两之比大于K项</code>。预处理出类似斐波那契博弈中的斐波那契序列，面对局势为序列项的，先手必败。</p>
+<p>注意时间复杂度为 $ O(Tlog_{\frac{k+1}{k}}N) \approx 2 \times 10^{8} $，卡常。</p>
+<p>详细参考<a href="http://www.doc88.com/p-5098170314707.html">《从“k倍动态减法游戏”出发探究一类组合游戏问题》</a>、<a href="https://blog.csdn.net/ta201314/article/details/44892055">[POJ3922]Now解题报告</a>。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">int</span> f[<span style="color:#ae81ff">1000005</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>};
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">int</span> T; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>T);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> cs<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; cs<span style="color:#f92672">&lt;=</span>T; cs<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#66d9ef">int</span> n, k;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>k);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        <span style="color:#66d9ef">for</span>(; f[i] <span style="color:#f92672">&lt;=</span> n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            <span style="color:#66d9ef">for</span>(; <span style="color:#ae81ff">1LL</span> <span style="color:#f92672">*</span> k <span style="color:#f92672">*</span> f[j] <span style="color:#f92672">&lt;</span> f[i]; j<span style="color:#f92672">++</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>            f[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> f[i] <span style="color:#f92672">+</span> f[j];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        i<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        printf(<span style="color:#e6db74">&#34;Case %d: &#34;</span>, cs);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        <span style="color:#66d9ef">if</span>(f[i] <span style="color:#f92672">==</span> n){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>            printf(<span style="color:#e6db74">&#34;lose</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>            <span style="color:#66d9ef">while</span>(n <span style="color:#f92672">!=</span> f[i]){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>                <span style="color:#66d9ef">for</span>(n<span style="color:#f92672">-=</span>f[i]; n<span style="color:#f92672">&lt;</span>f[i]; i<span style="color:#f92672">--</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>            printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, n);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>POJ-3922 A simple stone game</title>
+      <link>https://blog.lordash.de/posts/solution/poj-3922-a-simple-stone-game/</link>
+      <pubDate>Thu, 16 Jul 2020 14:02:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/poj-3922-a-simple-stone-game/</guid>
+      <description>POJ-2425 A Chess Game 类型 博弈论 K倍动态减法博弈</description>
+      <content:encoded><![CDATA[<h1 id="a-simple-stone-gamepoj-3922httpsvjudgenetproblempoj-3922">A simple stone game(<a href="https://vjudge.net/problem/POJ-3922">POJ-3922</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>After he has learned how to play Nim game, Mike begins to try another stone game which seems much easier.</p>
+<p>The game goes like this: Two players start the game with a pile of n stones. They take stones from the pile in turn and every time they take at least one stone. The one who goes first can take at most n-1 stones  for his first move. From then on a player can take at most k times as  many stones as his opponent has taken last time. For example, if one  player take m stones in his turn, then the other player can take at most k * m stones next time. The player who takes the last stone wins the  game. Suppose that those two players always take the best moves and  never make mistakes, your job is to find out who will definitely win the game.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>The first line contains a integer t, indicating that there are t test cases following.(t&lt;=20).
+Each test case is a line consisting of two integer n and k.(2&lt;=n&lt;=10^8,1&lt;=k&lt;=10^5).</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each test case, output one line starting with “Case N: ”, N is the  case number. And then, if the first player can ensure a winning, print  the minimum number of stones he should take in his first turn.  Otherwise, print &ldquo;lose&rdquo;. Please note that there is a blank following the colon.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>5
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>16 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>11 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>32 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>34 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>19 3
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Case 1: lose
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Case 2: 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>Case 3: 3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>Case 4: lose
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>Case 5: 4
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>When k = 1, the first player will definitely lose if the initial amount  of stones is in the set {2, 4, 8, 16, 32, &hellip;}. Let&rsquo;s call this kind of  set “first-player-lose set”.</p>
+<p>When k = 2, the first-player-lose set is {2, 3, 5, 8, 13, 21, 34, 57 &hellip;} , which happens to be the Fibonacci sequence starting from 2.</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>K倍动态减法博弈，参照<a href="https://blog.lordash.cf/posts/466426a4.html#Fibonacci%E5%8D%9A%E5%BC%88">斐波那契博弈</a>和<a href="https://blog.lordash.cf/posts/466426a4.html#Zeckendorf%E5%AE%9A%E7%90%86">齐肯多夫定理</a>的证明过程，将 $ f_{i} = f_{i-1} + f_{i-2} $ 替换为 $ f_{i} = f_{i-1} + f_{k} \mid <em>{ K \times f</em>{k-1} \lt f_{i-1} \le K \times f_{k}} $ ，也就是将齐肯多夫定理表述中的 <code>若干不连续的项</code> 替换为 <code>若干两两之比大于K项</code>。预处理出类似斐波那契博弈中的斐波那契序列，面对局势为序列项的，先手必败。</p>
+<p>注意时间复杂度为 $ O(Tlog_{\frac{k+1}{k}}N) \approx 2 \times 10^{8} $，卡常。</p>
+<p>详细参考<a href="http://www.doc88.com/p-5098170314707.html">《从“k倍动态减法游戏”出发探究一类组合游戏问题》</a>、<a href="https://blog.csdn.net/ta201314/article/details/44892055">[POJ3922]Now解题报告</a>。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">int</span> f[<span style="color:#ae81ff">1000005</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>};
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">int</span> T; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>T);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> cs<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; cs<span style="color:#f92672">&lt;=</span>T; cs<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#66d9ef">int</span> n, k;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>k);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        <span style="color:#66d9ef">for</span>(; f[i] <span style="color:#f92672">&lt;=</span> n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            <span style="color:#66d9ef">for</span>(; <span style="color:#ae81ff">1LL</span> <span style="color:#f92672">*</span> k <span style="color:#f92672">*</span> f[j] <span style="color:#f92672">&lt;</span> f[i]; j<span style="color:#f92672">++</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>            f[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> f[i] <span style="color:#f92672">+</span> f[j];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        i<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        printf(<span style="color:#e6db74">&#34;Case %d: &#34;</span>, cs);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        <span style="color:#66d9ef">if</span>(f[i] <span style="color:#f92672">==</span> n){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>            printf(<span style="color:#e6db74">&#34;lose</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>            <span style="color:#66d9ef">while</span>(n <span style="color:#f92672">!=</span> f[i]){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>                <span style="color:#66d9ef">for</span>(n<span style="color:#f92672">-=</span>f[i]; n<span style="color:#f92672">&lt;</span>f[i]; i<span style="color:#f92672">--</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>            printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, n);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>专栏 on 似水</title>
+    <link>https://blog.lordash.de/series/</link>
+    <description>Recent content in 专栏 on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 21 Jun 2023 11:28:35 +0800</lastBuildDate><atom:link href="https://blog.lordash.de/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>博客</title>
+      <link>https://blog.lordash.de/series/%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 30 Jun 2023 11:25:26 +0800</pubDate>
+      
+      <guid>https://blog.lordash.de/series/%E5%8D%9A%E5%AE%A2/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

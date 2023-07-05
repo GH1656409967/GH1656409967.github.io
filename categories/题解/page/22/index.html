@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>题解 | 似水</title>
+<meta content="" name="keywords"/>
+<meta content="Life is like a boat" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/categories/%E9%A2%98%E8%A7%A3/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://blog.lordash.de/categories/%E9%A2%98%E8%A7%A3/index.xml" rel="alternate" type="application/rss+xml"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="题解" property="og:title"/>
+<meta content="Life is like a boat" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://blog.lordash.de/categories/%E9%A2%98%E8%A7%A3/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="题解" name="twitter:title"/>
+<meta content="Life is like a boat" name="twitter:description"/>
+</head>
+<body class="list dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://blog.lordash.de">主页</a> » <a href="https://blog.lordash.de/categories/">Categories</a></div>
+<h1>
+    题解
+  </h1>
+</header>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-1837 Balance
+    </h2>
+</header>
+<div class="entry-content">
+<p>Balance (POJ - 1837) 题面 Gigel has a strange “balance” and he wants to poise it. Actually, the device is different from any other ordinary balance. It orders two arms of negligible weight and each arm’s length is 15. Some hooks are attached to these arms and Gigel wants to hang up some weights from his collection of G weights (1 &lt;= G &lt;= 20) knowing that these weights...</p>
+</div>
+<footer class="entry-footer"><span title="2018-04-22 10:51:52 +0000 UTC">2018-04-22</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-1837 Balance" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-1837-balance/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-1050 To the Max
+    </h2>
+</header>
+<div class="entry-content">
+<p>To the Max (POJ - 1050) 题面 Given a two-dimensional array of positive and negative integers, a sub-rectangle is any contiguous sub-array of size 1*1 or greater located within the whole array. The sum of a rectangle is the sum of all the elements in that rectangle. In this problem the sub-rectangle with the largest sum is referred to as the maximal sub-rectangle. As an example, the maximal sub-rectangle...</p>
+</div>
+<footer class="entry-footer"><span title="2018-04-22 10:45:43 +0000 UTC">2018-04-22</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-1050 To the Max" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-1050-to-the-max/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>HDU-1069 Monkey and Banana
+    </h2>
+</header>
+<div class="entry-content">
+<p>Monkey and Banana (HDU - 1069) 题面 A group of researchers are designing an experiment to test the IQ of a monkey. They will hang a banana at the roof of a building, and at the mean time, provide the monkey with some blocks. If the monkey is clever enough, it shall be able to reach the banana by placing one block on the top another to build a...</p>
+</div>
+<footer class="entry-footer"><span title="2018-04-22 10:39:02 +0000 UTC">2018-04-22</span> · Lordash
+
+</footer>
+<a aria-label="post link to HDU-1069 Monkey and Banana" class="entry-link" href="https://blog.lordash.de/posts/solution/hdu-1069-monkey-and-banana/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>HDU-1029 Ignatius and the Princess IV
+    </h2>
+</header>
+<div class="entry-content">
+<p>Ignatius and the Princess IV (HDU - 1029) 题面 “OK, you are not too bad, em… But you can never pass the next test.” feng5166 says. “I will tell you an odd number N, and then N integers. There will be a special integer among them, you have to tell me which integer is the special one after I tell you all the integers.” feng5166 says. “But what is...</p>
+</div>
+<footer class="entry-footer"><span title="2018-04-22 10:24:06 +0000 UTC">2018-04-22</span> · Lordash
+
+</footer>
+<a aria-label="post link to HDU-1029 Ignatius and the Princess IV" class="entry-link" href="https://blog.lordash.de/posts/solution/hdu-1029-ignatius-and-the-princess-iv/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>ZOJ-1195 Blowing Fuses
+    </h2>
+</header>
+<div class="entry-content">
+<p>Blowing Fuses (ZOJ - 1195) 题面 Maybe you are familiar with the following situation. You have plugged in a lot of electrical devices, such as toasters, refrigerators, microwave ovens, computers, stereos, etc, and have them all running. But at the moment when you turn on the TV, the fuse blows, since the power drawn from all the machines is greater than the capacity of the fuse. Of course this...</p>
+</div>
+<footer class="entry-footer"><span title="2018-04-22 10:14:54 +0000 UTC">2018-04-22</span> · Lordash
+
+</footer>
+<a aria-label="post link to ZOJ-1195 Blowing Fuses" class="entry-link" href="https://blog.lordash.de/posts/solution/zoj-1195-blowing-fuses/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>ZOJ-1168 Function Run Fun
+    </h2>
+</header>
+<div class="entry-content">
+<p>Function Run Fun (ZOJ - 1168) 题面 We all love recursion! Don’t we? Consider a three-parameter recursive function w(a, b, c): if a &lt;= 0 or b &lt;= 0 or c &lt;= 0, then w(a, b, c) returns: 1 if a &gt; 20 or b &gt; 20 or c &gt; 20, then w(a, b, c) returns: w(20, 20, 20) if a &lt; b and b &lt; c, then w(a,...</p>
+</div>
+<footer class="entry-footer"><span title="2018-04-22 10:06:31 +0000 UTC">2018-04-22</span> · Lordash
+
+</footer>
+<a aria-label="post link to ZOJ-1168 Function Run Fun" class="entry-link" href="https://blog.lordash.de/posts/solution/zoj-1168-function-run-fun/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>ZOJ-1164 Software CRC
+    </h2>
+</header>
+<div class="entry-content">
+<p>Software CRC (ZOJ - 1164) 题面 You work for a company which uses lots of personal computers. Your boss, Dr Penny Pincher, has wanted to link the computers together for some time but has been unwilling to spend any money on the Ethernet boards you have recommended. You, unwittingly, have pointed out that each of the PCs has come from the vendor with an asynchronous serial port at no...</p>
+</div>
+<footer class="entry-footer"><span title="2018-04-22 09:56:43 +0000 UTC">2018-04-22</span> · Lordash
+
+</footer>
+<a aria-label="post link to ZOJ-1164 Software CRC" class="entry-link" href="https://blog.lordash.de/posts/solution/zoj-1164-software-crc/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>HDU-6699 Block Breaker
+    </h2>
+</header>
+<div class="entry-content">
+<p>Block Breaker (HDU - 6699) 题面 Given a rectangle frame of size n × m. Initially, the frame is strewn with n × m square blocks of size 1 × 1. Due to the friction with the frame and each other, the blocks are stable and will not drop. However, the blocks can be knocked down. When a block is knocked down, other remaining blocks may also drop since...</p>
+</div>
+<footer class="entry-footer"><span title="2018-04-22 09:30:56 +0000 UTC">2018-04-22</span> · Lordash
+
+</footer>
+<a aria-label="post link to HDU-6699 Block Breaker" class="entry-link" href="https://blog.lordash.de/posts/solution/hdu-6699-block-breaker/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>HDU-1686 Oulipo
+    </h2>
+</header>
+<div class="entry-content">
+<p>Oulipo (HDU - 1686) 题面 The French author Georges Perec (1936–1982) once wrote a book, La disparition, without the letter ’e’. He was a member of the Oulipo group. A quote from the book: Tout avait Pair normal, mais tout s’affirmait faux. Tout avait Fair normal, d’a...</p>
+</div>
+<footer class="entry-footer"><span title="2018-04-13 16:09:38 +0000 UTC">2018-04-13</span> · Lordash
+
+</footer>
+<a aria-label="post link to HDU-1686 Oulipo" class="entry-link" href="https://blog.lordash.de/posts/solution/hdu-1686-oulipo/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>HDU-3639 Hawk-and-Chicken
+    </h2>
+</header>
+<div class="entry-content">
+<p>Hawk-and-Chicken (HDU - 3639) 题面 Kids in kindergarten enjoy playing a game called Hawk-and-Chicken. But there always exists a big problem: every kid in this game want to play the role of Hawk. So the teacher came up with an idea: Vote. Every child have some nice handkerchiefs, and if he/she think someone is suitable for the role of Hawk, he/she gives a handkerchief to this kid, which means...</p>
+</div>
+<footer class="entry-footer"><span title="2018-04-07 10:37:26 +0000 UTC">2018-04-07</span> · Lordash
+
+</footer>
+<a aria-label="post link to HDU-3639 Hawk-and-Chicken" class="entry-link" href="https://blog.lordash.de/posts/solution/hdu-3639-hawk-and-chicken/"></a>
+</article>
+<footer class="page-footer">
+<nav class="pagination">
+<a class="prev" href="https://blog.lordash.de/categories/%E9%A2%98%E8%A7%A3/page/21/">
+      « 上一页 
+    </a>
+<a class="next" href="https://blog.lordash.de/categories/%E9%A2%98%E8%A7%A3/page/23/">下一页  »
+    </a>
+</nav>
+</footer>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

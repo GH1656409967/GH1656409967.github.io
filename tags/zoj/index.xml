@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ZOJ on 似水</title>
+    <link>https://blog.lordash.de/tags/zoj/</link>
+    <description>Recent content in ZOJ on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 16 Jul 2020 16:00:12 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/zoj/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ZOJ-3057 Beans Game</title>
+      <link>https://blog.lordash.de/posts/solution/zoj-3057-beans-game/</link>
+      <pubDate>Thu, 16 Jul 2020 16:00:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/zoj-3057-beans-game/</guid>
+      <description>ZOJ-3057 Beans Game 类型 博弈论 三维Wythoff博弈</description>
+      <content:encoded><![CDATA[<h1 id="beans-gamezoj-3057httpsvjudgenetproblemzoj-3057">Beans Game(<a href="https://vjudge.net/problem/ZOJ-3057">ZOJ-3057</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>There are three piles of beans. TT and DD pick any number of beans from  any pile or the same number from any two piles by turns. Who get the  last bean will win. TT and DD are very clever.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>Each test case contains of a single line containing 3 integers <em>a</em> <em>b</em> <em>c</em>, indicating the numbers of beans of these piles. It is assumed that 0 &lt;= <em>a</em>,<em>b</em>,<em>c</em> &lt;= 300 and <em>a</em> + <em>b</em> + <em>c</em> &gt; 0.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each test case, output 1 if TT will win, ouput 0 if DD will win.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>1 0 0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>1 1 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>2 3 6
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>0
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>对于先手来说，如果数量分别为(a, a, b)或(a, b, a)，或(b, a, a)的形式，那么先手必赢，因为先手可以使其成为(a, a, a)的形式，那么不论后手怎么拿，都是先手最后使其成为(a, a, a)的形式直至(0, 0, 0)；如果(a, b, c)是必败态，那么将其中某个数加k，或将其中某两个数同时加k，就是必胜态。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">bool</span> SG[<span style="color:#ae81ff">305</span>][<span style="color:#ae81ff">305</span>][<span style="color:#ae81ff">305</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">getSg</span>(){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; j<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> k<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; k<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; k<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">if</span>(SG[i][j][k] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; x<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; x<span style="color:#f92672">++</span>) SG[x][j][k] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span>j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; x<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; x<span style="color:#f92672">++</span>) SG[i][x][k] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span>k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; x<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; x<span style="color:#f92672">++</span>) SG[i][j][x] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; x<span style="color:#f92672">+</span>i<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span> <span style="color:#f92672">&amp;&amp;</span> x<span style="color:#f92672">+</span>j<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; x<span style="color:#f92672">++</span>) SG[x<span style="color:#f92672">+</span>i][x<span style="color:#f92672">+</span>j][k] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; x<span style="color:#f92672">+</span>j<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span> <span style="color:#f92672">&amp;&amp;</span> x<span style="color:#f92672">+</span>k<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; x<span style="color:#f92672">++</span>) SG[i][x<span style="color:#f92672">+</span>j][x<span style="color:#f92672">+</span>k] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; x<span style="color:#f92672">+</span>i<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span> <span style="color:#f92672">&amp;&amp;</span> x<span style="color:#f92672">+</span>k<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; x<span style="color:#f92672">++</span>) SG[x<span style="color:#f92672">+</span>i][j][x<span style="color:#f92672">+</span>k] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    getSg();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>    <span style="color:#66d9ef">int</span> a, b, c;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%d %d %d&#34;</span>, <span style="color:#f92672">&amp;</span>a, <span style="color:#f92672">&amp;</span>b, <span style="color:#f92672">&amp;</span>c))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>        printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, SG[a][b][c]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>ZOJ-1195 Blowing Fuses</title>
+      <link>https://blog.lordash.de/posts/solution/zoj-1195-blowing-fuses/</link>
+      <pubDate>Sun, 22 Apr 2018 10:14:54 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/zoj-1195-blowing-fuses/</guid>
+      <description>ZOJ-1195 Blowing Fuses 类型 水题</description>
+      <content:encoded><![CDATA[<h1 id="blowing-fuses-zoj---1195httpsvjudgenetproblemzoj-1195">Blowing Fuses (<a href="https://vjudge.net/problem/ZOJ-1195">ZOJ - 1195</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>Maybe you are familiar with the following situation. You have plugged in a lot of electrical devices, such as toasters, refrigerators, microwave ovens, computers, stereos, etc, and have them all running. But at the  moment when you turn on the TV, the fuse blows, since the power drawn  from all the machines is greater than the capacity of the fuse. Of  course this is a great safety feature, avoiding that houses burn down  too often due to fires ignited by overheating wires. But it is also  annoying to walk down to the basement (or some other inconvenient place) to replace to fuse or switch it back on.</p>
+<p>What one would like to have is a program that checks before turning  on an electrical device whether the combined power drawn by all running  devices exceeds the fuses capacity (and it blows), or whether it is safe to turn it on.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>The input consists of several test cases. Each test case describes a  set of electrical devices and gives a sequence of turn on/off operations for these devices.</p>
+<p>The first line of each test case contains three integers n, m and c, where n is the number of devices (n &lt;= 20), m the number of  operations performed on these devices and c is the capacity of the fuse  (in Amperes). The following n lines contain one positive integer ci  each, the consumption (in Amperes) of the i-th device.</p>
+<p>This is followed by m lines also containing one integer each, between 1 and n inclusive. They describe a sequence of turn on/turn off  operations performed on the devices. For every number, the state of that particular devices is toggled, i.e. if it is currently running, it is  turned off, and if it is currently turned off, it will by switched on.  At the beginning all devices are turned off.</p>
+<p>The input will be terminated by a test case starting with n = m = c = 0. This test case should not be processed.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each test case, first output the number of the test case. Then  output whether the fuse was blown during the operation sequence. The  fuse will be blown if the sum of the power consumptions ci of turned on  devices at some point exceeds the capacity of the fuse c.</p>
+<p>If the fuse is not blown, output the maximal power consumption by turned on devices that occurred during the sequence.</p>
+<p>Output a blank line after each test case.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>2 2 10
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>5
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>7
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>3 6 10
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>5
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>7
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>0 0 0
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Sequence 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Fuse was blown.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>Sequence 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>Fuse was not blown.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>Maximal power consumption was 9 amperes.
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">int</span> a[<span style="color:#ae81ff">30</span>][<span style="color:#ae81ff">2</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#66d9ef">int</span> n, m, c, num <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%d%d%d&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m, <span style="color:#f92672">&amp;</span>c) <span style="color:#f92672">&amp;&amp;</span> n <span style="color:#f92672">&amp;&amp;</span> m <span style="color:#f92672">&amp;&amp;</span> c) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        memset(a, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(a));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&lt;=</span>n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>a[i][<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        <span style="color:#66d9ef">int</span> mx <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, t;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&lt;=</span>m; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>            scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>t);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>            <span style="color:#66d9ef">if</span>(a[t][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>                a[t][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>                sum <span style="color:#f92672">+=</span> a[t][<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>            } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>                a[t][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>                sum <span style="color:#f92672">-=</span> a[t][<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>            mx <span style="color:#f92672">=</span> max(sum, mx);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>        printf(<span style="color:#e6db74">&#34;Sequence %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, num<span style="color:#f92672">++</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>        <span style="color:#66d9ef">if</span>(mx<span style="color:#f92672">&gt;</span>c) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>            printf(<span style="color:#e6db74">&#34;Fuse was blown.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>            printf(<span style="color:#e6db74">&#34;Fuse was not blown.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>            printf(<span style="color:#e6db74">&#34;Maximal power consumption was %d amperes.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, mx);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>        printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>ZOJ-1168 Function Run Fun</title>
+      <link>https://blog.lordash.de/posts/solution/zoj-1168-function-run-fun/</link>
+      <pubDate>Sun, 22 Apr 2018 10:06:31 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/zoj-1168-function-run-fun/</guid>
+      <description>ZOJ-1168 Function Run Fun 类型 水题</description>
+      <content:encoded><![CDATA[<h1 id="function-run-fun-zoj---1168httpsvjudgenetproblemzoj-1168">Function Run Fun (<a href="https://vjudge.net/problem/ZOJ-1168">ZOJ - 1168</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>We all love recursion! Don&rsquo;t we?</p>
+<p>Consider a three-parameter recursive function w(a, b, c):</p>
+<p>if a &lt;= 0 or b &lt;= 0 or c &lt;= 0, then w(a, b, c) returns:
+1</p>
+<p>if a &gt; 20 or b &gt; 20 or c &gt; 20, then w(a, b, c) returns:
+w(20, 20, 20)</p>
+<p>if a &lt; b and b &lt; c, then w(a, b, c) returns:
+w(a, b, c-1) + w(a, b-1, c-1) - w(a, b-1, c)</p>
+<p>otherwise it returns:
+w(a-1, b, c) + w(a-1, b-1, c) + w(a-1, b, c-1) - w(a-1, b-1, c-1)</p>
+<p>This is an easy function to implement. The problem is, if implemented  directly, for moderate values of a, b and c (for example, a = 15, b =  15, c = 15), the program takes hours to run because of the massive  recursion.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>The input for your program will be a series of integer triples, one per  line, until the end-of-file flag of -1 -1 -1. Using the above technique, you are to calculate w(a, b, c) efficiently and print the result.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>Print the value for w(a,b,c) for each triple.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>1 1 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>2 2 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>10 4 6
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>50 50 50
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>-1 7 18
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>-1 -1 -1
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>w(1, 1, 1) = 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>w(2, 2, 2) = 4
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>w(10, 4, 6) = 523
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>w(50, 50, 50) = 1048576
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>w(-1, 7, 18) = 1
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">int</span> ans[<span style="color:#ae81ff">21</span>][<span style="color:#ae81ff">21</span>][<span style="color:#ae81ff">21</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#66d9ef">int</span> a, b, c;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">w</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b, <span style="color:#66d9ef">int</span> c) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#66d9ef">if</span> (a<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> b<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> c<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    <span style="color:#66d9ef">if</span> (a<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span> <span style="color:#f92672">||</span> b<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span> <span style="color:#f92672">||</span> c<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#66d9ef">return</span> ans[<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    <span style="color:#66d9ef">if</span> (ans[a][b][c]<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        <span style="color:#66d9ef">return</span> ans[a][b][c];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>    <span style="color:#66d9ef">if</span> (a<span style="color:#f92672">&lt;</span>b <span style="color:#f92672">&amp;&amp;</span> b<span style="color:#f92672">&lt;</span>c)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>        <span style="color:#66d9ef">return</span> w(a, b, c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> w(a, b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">-</span> w(a, b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, c);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>    <span style="color:#66d9ef">return</span> w(a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, b, c) <span style="color:#f92672">+</span> w(a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, c) <span style="color:#f92672">+</span> w(a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, b, c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">-</span> w(a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">21</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">21</span>; j<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; k<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">21</span>; k<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>                ans[i][j][k] <span style="color:#f92672">=</span> w(i, j, k);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>    <span style="color:#66d9ef">while</span> (scanf(<span style="color:#e6db74">&#34;%d%d%d&#34;</span>, <span style="color:#f92672">&amp;</span>a, <span style="color:#f92672">&amp;</span>b, <span style="color:#f92672">&amp;</span>c)<span style="color:#f92672">==</span><span style="color:#ae81ff">3</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>        <span style="color:#66d9ef">if</span> (a<span style="color:#f92672">==-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> b<span style="color:#f92672">==-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> c<span style="color:#f92672">==-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>        printf(<span style="color:#e6db74">&#34;w(%d, %d, %d) = %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a, b, c, w(a, b, c));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>ZOJ-1164 Software CRC</title>
+      <link>https://blog.lordash.de/posts/solution/zoj-1164-software-crc/</link>
+      <pubDate>Sun, 22 Apr 2018 09:56:43 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/zoj-1164-software-crc/</guid>
+      <description>ZOJ-1164 Software CRC 类型 水题</description>
+      <content:encoded><![CDATA[<h1 id="software-crc-zoj---1164httpsvjudgenetproblemzoj-1164">Software CRC (<a href="https://vjudge.net/problem/ZOJ-1164">ZOJ - 1164</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>You work for a company which uses lots of personal computers. Your  boss, Dr Penny Pincher, has wanted to link the computers together for  some time but has been unwilling to spend any money on the Ethernet  boards you have recommended. You, unwittingly, have pointed out that  each of the PCs has come from the vendor with an asynchronous serial  port at no extra cost. Dr Pincher, of course, recognizes her opportunity and assigns you the task of writing the software necessary to allow  communication between PCs.</p>
+<p>You&rsquo;ve read a bit about communications and know that every  transmission is subject to error and that the typical solution to this  problem is to append some error checking information to the end of each  message. This information allows the receiving program to detect when a  transmission error has occurred (in most cases). So, off you go to the  library, borrow the biggest book on communications you can find and  spend your weekend (unpaid overtime) reading about error checking.</p>
+<p>Finally you decide that CRC (cyclic redundancy check) is the best  error checking for your situation and write a note to Dr Pincher  detailing the proposed error checking mechanism noted below.</p>
+<p>The message to be transmitted is viewed as a long positive binary  number. The first byte of the message is treated as the most significant byte of the binary number. The second byte is the next most  significant, etc. This binary number will be called &ldquo;m&rdquo; (for message).  Instead of transmitting &ldquo;m&rdquo; you will transmit a message, &ldquo;m2&rdquo;,  consisting of &ldquo;m&rdquo; followed by a two-byte CRC value.</p>
+<p>The CRC value is chosen so that &ldquo;m2&rdquo; when divided by a certain 16-bit value &ldquo;g&rdquo; leaves a remainder of 0. This makes it easy for the receiving program to determine whether the message has been corrupted by  transmission errors. It simply divides any message received by &ldquo;g&rdquo;. If  the remainder of the division is zero, it is assumed that no error has  occurred.</p>
+<p>You notice that most of the suggested values of &ldquo;g&rdquo; in the book are  odd, but don&rsquo;t see any other similarities, so you select the value 34943 for &ldquo;g&rdquo; (the generator value).</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>You are to devise an algorithm for calculating the CRC value  corresponding to any message that might be sent. To test this algorithm  you will write a program which reads lines (each line being all  characters up to, but not including the end of line character) as input, and for each line calculates the CRC value for the message contained in the line, and writes the numeric value of the CRC bytes (in hexadecimal notation) on an output line. Each input line will contain no more than  1024 ASCII characters. The input is terminated by a line that contains a # in column 1.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>CRC in hex format, one on each line. Note that each CRC printed should be in the range 0 to 34942 (decimal).</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>this is a test
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>A
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>#
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>77 FD
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>00 00
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>0C 86
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">union</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> L;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> b1, b2, b3, b4;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    } crc;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>} data;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> c, flag;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    <span style="color:#66d9ef">int</span> num, g<span style="color:#f92672">=</span><span style="color:#ae81ff">34943</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        num <span style="color:#f92672">=</span> data.L <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        <span style="color:#66d9ef">while</span>(scanf(<span style="color:#e6db74">&#34;%c&#34;</span>, <span style="color:#f92672">&amp;</span>c) <span style="color:#f92672">&amp;&amp;</span> c<span style="color:#f92672">!=</span><span style="color:#e6db74">&#39;\n&#39;</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>            num<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>            flag <span style="color:#f92672">=</span> c;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>            data.L <span style="color:#f92672">=</span> ((data.L<span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">8</span>) <span style="color:#f92672">+</span> c)<span style="color:#f92672">%</span>g;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        data.L <span style="color:#f92672">=</span> (data.L<span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">16</span>)<span style="color:#f92672">%</span>g;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        <span style="color:#66d9ef">if</span> (data.L)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>            data.L <span style="color:#f92672">=</span> g<span style="color:#f92672">-</span>data.L;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>        <span style="color:#66d9ef">if</span> (num<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> flag<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;#&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>        printf(<span style="color:#e6db74">&#34;%02X %02X</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, (<span style="color:#66d9ef">int</span>)data.crc.b2, (<span style="color:#66d9ef">int</span>)data.crc.b1);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GPG on 似水</title>
+    <link>https://blog.lordash.de/tags/gpg/</link>
+    <description>Recent content in GPG on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 25 Apr 2020 16:25:05 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Gpg4win加密邮件</title>
+      <link>https://blog.lordash.de/posts/essays/%E4%BD%BF%E7%94%A8gpg4win%E5%8A%A0%E5%AF%86%E9%82%AE%E4%BB%B6/</link>
+      <pubDate>Sat, 25 Apr 2020 16:25:05 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/essays/%E4%BD%BF%E7%94%A8gpg4win%E5%8A%A0%E5%AF%86%E9%82%AE%E4%BB%B6/</guid>
+      <description>使用Gpg4win加密邮件</description>
+      <content:encoded><![CDATA[<h1 id="一准备">一、准备</h1>
+<p>下载并安装以下两项:</p>
+<ul>
+<li>
+<p><a href="https://www.gpg4win.org/get-gpg4win.html">Gpg4win</a></p>
+</li>
+<li>
+<p><a href="https://www.thunderbird.net/zh-CN/">Thunderbird</a></p>
+</li>
+</ul>
+<h1 id="二配置gpg4win">二、配置Gpg4win</h1>
+<ol>
+<li>
+<p>一路next安装。</p>
+</li>
+<li>
+<p>新建密钥对，按提示进行。</p>
+</li>
+<li>
+<p>可以点击 <code>导出...</code> 导出 <code>.asc</code>文件。</p>
+</li>
+</ol>
+<h1 id="三配置thunderbird">三、配置Thunderbird</h1>
+<ol>
+<li>
+<p>一路next安装。</p>
+</li>
+<li>
+<p>开启邮箱的IMAP服务。以QQ邮箱为例，启动QQ邮箱网页版，打开 <code>设置 &gt; 账户</code> 下拉找到该项，并选择开启IMAP/SMTP服务。</p>
+<p><img loading="lazy" src="%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6%5c%e5%bc%80%e5%90%af%e6%9c%8d%e5%8a%a1.png" alt="开启服务"  />
+</p>
+<p>保存提示中的授权码</p>
+<p><img loading="lazy" src="%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6%5c%e6%8e%88%e6%9d%83%e7%a0%81.png" alt="授权码"  />
+</p>
+</li>
+<li>
+<p>在Thunderbird中配置邮箱，密码一栏中填写授权码即可。</p>
+</li>
+<li>
+<p>点开 <code>显示菜单</code> 找到 <code>附加组件</code> ，搜索并安装 <code>Enigmail</code> 插件。</p>
+<p><img loading="lazy" src="%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6%5c%e9%99%84%e5%8a%a0%e7%bb%84%e4%bb%b6.png" alt="附加组件"  />
+</p>
+<p><img loading="lazy" src="%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6%5cEnigmail.png" alt="Enigmail"  />
+</p>
+</li>
+<li>
+<p>重启应用后，在Thunderbird菜单栏中找到 <code>Enigmail &gt; 密钥管理</code> ，点击 <code>文件 &gt; 从文件导入密钥</code> 可以导入某个邮箱地址的公钥文件，或者在搜索框中通过输入邮箱地址或密钥ID在公钥服务器上搜索对应的公钥，也可以是邮件等方式传递的Gpg4win导出的 <code>.asc</code> 文件。</p>
+</li>
+</ol>
+<h1 id="四发送接收邮件">四、发送&amp;接收邮件</h1>
+<ul>
+<li>
+<p>发送邮件</p>
+<p>假设我们需要向XXX@XXX.XXX这个电子邮件地址发送GPG加密邮件，首先应该导入XXX@XXX.XXX对应的公钥文件（该文件将用于加密邮件），或者通过邮件地址XXX@XXX.XXX或对方的密钥ID在公钥服务器上搜索其公钥，搜索到的公钥需要进行指纹验证以确保该公钥不是伪造的。</p>
+<p>在新建邮件界面选中 <code>加密</code> 和 <code>签名邮件</code> 按钮即可。</p>
+<p><img loading="lazy" src="%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6%5c%e6%8c%89%e9%92%ae.png" alt="按钮"  />
+</p>
+</li>
+<li>
+<p>接收邮件</p>
+<p>打开接收到的加密邮件，会提示验证密码，验证完即可查看内容。</p>
+</li>
+</ul>
+<h1 id="附疑难解决">附、疑难解决</h1>
+<ul>
+<li>问: Thunderbird添加新邮箱时提示 <code>接受服务器已存在</code> 如何解决？</li>
+<li>答: 彻底退出Thunderbird ( 包括关闭后台进程 )，再重新打开即可。</li>
+</ul>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

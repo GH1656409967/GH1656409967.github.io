@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hadoop on 似水</title>
+    <link>https://blog.lordash.de/tags/hadoop/</link>
+    <description>Recent content in Hadoop on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 26 Apr 2020 10:25:05 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/hadoop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win10配置Hadoop2.9.2单机版</title>
+      <link>https://blog.lordash.de/posts/configure/4f05172528ab13b7/</link>
+      <pubDate>Sun, 26 Apr 2020 10:25:05 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/configure/4f05172528ab13b7/</guid>
+      <description>Win10配置Hadoop2.9.2单机版</description>
+      <content:encoded><![CDATA[<h1 id="一准备">一、准备</h1>
+<p>基本信息</p>
+<ul>
+<li>操作系统: Windows10</li>
+<li>jdk版本: 1.8</li>
+<li>Hadoop版本: 2.9.2</li>
+</ul>
+<p>下载并解压</p>
+<ul>
+<li>
+<p>Apache Hadoop: <a href="https://hadoop.apache.org/releases.html">官网</a> 或者 <a href="https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/">清华源</a></p>
+</li>
+<li>
+<p>winutils: <a href="https://github.com/cdarlint/winutils">github/cdarlint</a></p>
+</li>
+</ul>
+<h1 id="二配置">二、配置</h1>
+<h2 id="环境变量">环境变量</h2>
+<ul>
+<li>
+<p>新建系统变量 <code>HADOOP_HOME</code> 至所在目录，如 <code>D:\environment\hadoop-2.9.2</code></p>
+<p><img loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeHadoop2.9.2%e5%8d%95%e6%9c%ba%e7%89%88/HadoopHOME.png" alt="HadoopHOME"  />
+</p>
+</li>
+<li>
+<p>在 <code>path</code> 中添加 <code>%HADOOP_HOME%\bin</code> 及 <code>%HADOOP_HOME%\sbin</code> 并以 <code>;</code> (英文分号)与其他项隔开。</p>
+<p><img loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeHadoop2.9.2%e5%8d%95%e6%9c%ba%e7%89%88/path.png" alt="path"  />
+</p>
+</li>
+</ul>
+<h2 id="hadoop配置文件">Hadoop配置文件</h2>
+<p>均在 <code>%HADOOP_HOME%\etc\hadoop\</code> 下面:</p>
+<ol>
+<li>
+<p>修改 <code>hadoop-env.cmd</code> ，查找 <code>set JAVA_HOME</code> ，将后面内容改为JDK目录。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>@rem The java implementation to use.  Required.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>@rem set JAVA_HOME<span style="color:#f92672">=</span>%JAVA_HOME%
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>set JAVA_HOME<span style="color:#f92672">=</span>D:<span style="color:#ae81ff">\e</span>nvironment<span style="color:#ae81ff">\J</span>ava<span style="color:#ae81ff">\j</span>dk1.8.0_201
+</span></span></code></pre></div></li>
+<li>
+<p>修改 <code>core-site.xml</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#f92672">&lt;name&gt;</span>fs.defaultFS<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#f92672">&lt;value&gt;</span>hdfs://localhost:9000<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>  <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>修改 <code>hdfs-site.xml</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#f92672">&lt;name&gt;</span>dfs.replication<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#f92672">&lt;value&gt;</span>1<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>  <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>  <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.name.dir<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#f92672">&lt;value&gt;</span>/D:/environment/hadoop-2.9.2/data/namenode<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>  <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>  <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    <span style="color:#f92672">&lt;name&gt;</span>dfs.datanode.data.dir<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    <span style="color:#f92672">&lt;value&gt;</span>/D:/environment/hadoop-2.9.2/data/datanode<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>  <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>修改 <code>yarn-site.xml</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.nodemanager.aux-services<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#f92672">&lt;value&gt;</span>mapreduce_shuffle<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>  <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="winutils">winutils</h2>
+<p>把之前下载的 <code>winutils</code> 解压，找到对应版本，将内容覆盖到 <code>hadoop-2.9.2\bin</code> 中。</p>
+<h2 id="格式化namenode">格式化namenode</h2>
+<p>以<strong>管理员权限</strong>启动命令行，运行 <code>hdfs namenode -format</code> ，这项命令只用在第一次启动前执行。如果结果中看到有 <code>successfully</code> ，说明以上配置成功。</p>
+<p><img loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeHadoop2.9.2%e5%8d%95%e6%9c%ba%e7%89%88/format.png" alt="format"  />
+</p>
+<h1 id="三测试">三、测试</h1>
+<p>以<strong>管理员权限</strong>启动命令行，如果之前没有在 <code>path</code> 中配置 <code>sbin</code> ，那么 <code>cd</code> 至 <code>%HADOOP_HOME%\sbin</code> 中，运行 <code>start-all</code> 启动，出现以下四个窗口：</p>
+<p><img loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeHadoop2.9.2%e5%8d%95%e6%9c%ba%e7%89%88/start.png" alt="start"  />
+</p>
+<p>即对应运行 <code>jps</code> 显示以下五个进程名称：</p>
+<p><img loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeHadoop2.9.2%e5%8d%95%e6%9c%ba%e7%89%88/jps.png" alt="jps"  />
+</p>
+<p>访问 <a href="http://localhost:8088">http://localhost:8088</a> 查看集群状态：</p>
+<p><img loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeHadoop2.9.2%e5%8d%95%e6%9c%ba%e7%89%88/8088.png" alt="8088"  />
+</p>
+<p>访问 <a href="http://localhost:50070">http://localhost:50070</a> 查看Hadoop状态：</p>
+<p><img loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeHadoop2.9.2%e5%8d%95%e6%9c%ba%e7%89%88/50070.png" alt="50070"  />
+</p>
+<p>命令行运行 <code>stop-all</code> 关闭。</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

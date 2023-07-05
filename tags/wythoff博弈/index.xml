@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Wythoff博弈 on 似水</title>
+    <link>https://blog.lordash.de/tags/wythoff%E5%8D%9A%E5%BC%88/</link>
+    <description>Recent content in Wythoff博弈 on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 16 Jul 2020 19:48:12 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/wythoff%E5%8D%9A%E5%BC%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU-2177 取(2堆)石子游戏</title>
+      <link>https://blog.lordash.de/posts/solution/hdu-2177-%E5%8F%962%E5%A0%86%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Thu, 16 Jul 2020 19:48:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/hdu-2177-%E5%8F%962%E5%A0%86%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</guid>
+      <description>HDU-2177 取(2堆)石子游戏 类型 博弈论 Wythoff博弈</description>
+      <content:encoded><![CDATA[<h1 id="取2堆石子游戏hdu-2177httpsvjudgenetproblemhdu-2177">取(2堆)石子游戏(<a href="https://vjudge.net/problem/HDU-2177">HDU-2177</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>有两堆石子，数量任意，可以不同。游戏开始由两个人轮流取石子。游戏规定，每次有两种不同的取法，一是可以在任意的一堆中取走任意多的石子；二是可以在两堆中同时取走相同数量的石子。最后把石子全部取完者为胜者。现在给出初始的两堆石子的数目，如果轮到你先取，假设双方都采取最好的策略，问最后你是胜者还是败者。如果你胜，你第1次怎样取子?</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>输入包含若干行，表示若干种石子的初始情况，其中每一行包含两个非负整数a和b，表示两堆石子的数目，a和b都不大于1,000,000，且a&lt;=b。a=b=0退出。</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>输出也有若干行，如果最后你是败者，则为0，反之，输出1，并输出使你胜的你第1次取石子后剩下的两堆石子的数量x,y,x&lt;=y。如果在任意的一堆中取走石子能胜同时在两堆中同时取走相同数量的石子也能胜，先输出取走相同数量的石子的情况.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>1 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>5 8
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>4 7
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>2 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>0 0
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>4 7
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>3 5
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>0 0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>1 2
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Wythoff博弈，由b-a可以算出同时取的情况，然后暴力枚举一下单个取的情况，数据很水，自己找样例测测。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">typedef</span> pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> pii;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">double</span> t <span style="color:#f92672">=</span> (sqrt(<span style="color:#ae81ff">5</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">int</span> a, b;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>a, <span style="color:#f92672">&amp;</span>b) <span style="color:#f92672">&amp;&amp;</span> (a <span style="color:#f92672">||</span> b))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        <span style="color:#66d9ef">if</span>(a <span style="color:#f92672">&gt;</span> b) swap(a, b);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> t <span style="color:#f92672">*</span> (b<span style="color:#f92672">-</span>a);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        <span style="color:#66d9ef">if</span>(a <span style="color:#f92672">==</span> x){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            printf(<span style="color:#e6db74">&#34;0</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>            <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>        printf(<span style="color:#e6db74">&#34;1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        set<span style="color:#f92672">&lt;</span>pii <span style="color:#f92672">&gt;</span> s;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        <span style="color:#66d9ef">if</span>(a<span style="color:#f92672">&gt;</span>x){                        <span style="color:#75715e">// 同时取
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span><span style="color:#75715e"></span>            printf(<span style="color:#e6db74">&#34;%d %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, x, x<span style="color:#f92672">+</span>b<span style="color:#f92672">-</span>a);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>            s.insert(pii(x, x<span style="color:#f92672">+</span>b<span style="color:#f92672">-</span>a));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">--</span>){      <span style="color:#75715e">// 取a
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">==</span>(<span style="color:#66d9ef">int</span>)(t <span style="color:#f92672">*</span> (b<span style="color:#f92672">-</span>i)) <span style="color:#f92672">&amp;&amp;</span> s.find(pii(i, b))<span style="color:#f92672">==</span>s.end()){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>                printf(<span style="color:#e6db74">&#34;%d %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, i, b);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>                s.insert(pii(i, b));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">--</span>){      <span style="color:#75715e">// 取b
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">int</span> n<span style="color:#f92672">=</span>min(a, i), m<span style="color:#f92672">=</span>max(a, i);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>            <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">==</span>(<span style="color:#66d9ef">int</span>)(t <span style="color:#f92672">*</span> (m<span style="color:#f92672">-</span>n)) <span style="color:#f92672">&amp;&amp;</span> s.find(pii(n, m))<span style="color:#f92672">==</span>s.end()) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>                printf(<span style="color:#e6db74">&#34;%d %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, n, m);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>ZOJ-3057 Beans Game</title>
+      <link>https://blog.lordash.de/posts/solution/zoj-3057-beans-game/</link>
+      <pubDate>Thu, 16 Jul 2020 16:00:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/zoj-3057-beans-game/</guid>
+      <description>ZOJ-3057 Beans Game 类型 博弈论 三维Wythoff博弈</description>
+      <content:encoded><![CDATA[<h1 id="beans-gamezoj-3057httpsvjudgenetproblemzoj-3057">Beans Game(<a href="https://vjudge.net/problem/ZOJ-3057">ZOJ-3057</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>There are three piles of beans. TT and DD pick any number of beans from  any pile or the same number from any two piles by turns. Who get the  last bean will win. TT and DD are very clever.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>Each test case contains of a single line containing 3 integers <em>a</em> <em>b</em> <em>c</em>, indicating the numbers of beans of these piles. It is assumed that 0 &lt;= <em>a</em>,<em>b</em>,<em>c</em> &lt;= 300 and <em>a</em> + <em>b</em> + <em>c</em> &gt; 0.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>For each test case, output 1 if TT will win, ouput 0 if DD will win.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>1 0 0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>1 1 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>2 3 6
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>0
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>对于先手来说，如果数量分别为(a, a, b)或(a, b, a)，或(b, a, a)的形式，那么先手必赢，因为先手可以使其成为(a, a, a)的形式，那么不论后手怎么拿，都是先手最后使其成为(a, a, a)的形式直至(0, 0, 0)；如果(a, b, c)是必败态，那么将其中某个数加k，或将其中某两个数同时加k，就是必胜态。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">bool</span> SG[<span style="color:#ae81ff">305</span>][<span style="color:#ae81ff">305</span>][<span style="color:#ae81ff">305</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">getSg</span>(){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; j<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> k<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; k<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; k<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">if</span>(SG[i][j][k] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; x<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; x<span style="color:#f92672">++</span>) SG[x][j][k] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span>j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; x<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; x<span style="color:#f92672">++</span>) SG[i][x][k] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span>k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; x<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; x<span style="color:#f92672">++</span>) SG[i][j][x] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; x<span style="color:#f92672">+</span>i<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span> <span style="color:#f92672">&amp;&amp;</span> x<span style="color:#f92672">+</span>j<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; x<span style="color:#f92672">++</span>) SG[x<span style="color:#f92672">+</span>i][x<span style="color:#f92672">+</span>j][k] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; x<span style="color:#f92672">+</span>j<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span> <span style="color:#f92672">&amp;&amp;</span> x<span style="color:#f92672">+</span>k<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; x<span style="color:#f92672">++</span>) SG[i][x<span style="color:#f92672">+</span>j][x<span style="color:#f92672">+</span>k] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; x<span style="color:#f92672">+</span>i<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span> <span style="color:#f92672">&amp;&amp;</span> x<span style="color:#f92672">+</span>k<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">300</span>; x<span style="color:#f92672">++</span>) SG[x<span style="color:#f92672">+</span>i][j][x<span style="color:#f92672">+</span>k] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    getSg();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>    <span style="color:#66d9ef">int</span> a, b, c;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%d %d %d&#34;</span>, <span style="color:#f92672">&amp;</span>a, <span style="color:#f92672">&amp;</span>b, <span style="color:#f92672">&amp;</span>c))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>        printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, SG[a][b][c]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>HDU-1527 取石子游戏</title>
+      <link>https://blog.lordash.de/posts/solution/hdu-1527-%E5%8F%96%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Thu, 09 Jul 2020 16:35:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/hdu-1527-%E5%8F%96%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</guid>
+      <description>HDU-1527 取石子游戏 类型 博弈论 Wythoff博弈</description>
+      <content:encoded><![CDATA[<h1 id="取石子游戏hdu-1527httpsvjudgenetproblemhdu-1527">取石子游戏(<a href="https://vjudge.net/problem/HDU-1527">HDU-1527</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>有两堆石子，数量任意，可以不同。游戏开始由两个人轮流取石子。游戏规定，每次有两种不同的取法，一是可以在任意的一堆中取走任意多的石子；二是可以在两堆中同时取走相同数量的石子。最后把石子全部取完者为胜者。现在给出初始的两堆石子的数目，如果轮到你先取，假设双方都采取最好的策略，问最后你是胜者还是败者。</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>输入包含若干行，表示若干种石子的初始情况，其中每一行包含两个非负整数a和b，表示两堆石子的数目，a和b都不大于1,000,000,000。</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>输出对应也有若干行，每行包含一个数字1或0，如果最后你是胜者，则为1，反之，则为0。</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>8 4
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>4 7
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>0
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Wythoff博弈</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">int</span> a, b;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>a, <span style="color:#f92672">&amp;</span>b))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">if</span>(a <span style="color:#f92672">&gt;</span> b) swap(a, b);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#66d9ef">if</span>(a <span style="color:#f92672">==</span> (<span style="color:#66d9ef">int</span>)((sqrt(<span style="color:#ae81ff">5</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> (b<span style="color:#f92672">-</span>a))){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            printf(<span style="color:#e6db74">&#34;0</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            printf(<span style="color:#e6db74">&#34;1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>POJ-1067 取石子游戏</title>
+      <link>https://blog.lordash.de/posts/solution/poj-1067-%E5%8F%96%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Thu, 09 Jul 2020 16:35:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/poj-1067-%E5%8F%96%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</guid>
+      <description>POJ-1067 取石子游戏 类型 博弈论 Wythoff博弈</description>
+      <content:encoded><![CDATA[<h1 id="取石子游戏poj-1067httpsvjudgenetproblempoj-1067">取石子游戏(<a href="https://vjudge.net/problem/POJ-1067">POJ-1067</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>有两堆石子，数量任意，可以不同。游戏开始由两个人轮流取石子。游戏规定，每次有两种不同的取法，一是可以在任意的一堆中取走任意多的石子；二是可以在两堆中同时取走相同数量的石子。最后把石子全部取完者为胜者。现在给出初始的两堆石子的数目，如果轮到你先取，假设双方都采取最好的策略，问最后你是胜者还是败者。</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>输入包含若干行，表示若干种石子的初始情况，其中每一行包含两个非负整数a和b，表示两堆石子的数目，a和b都不大于1,000,000,000。</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>输出对应也有若干行，每行包含一个数字1或0，如果最后你是胜者，则为1，反之，则为0。</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>8 4
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>4 7
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>0
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Wythoff博弈</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">int</span> a, b;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>a, <span style="color:#f92672">&amp;</span>b))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">if</span>(a <span style="color:#f92672">&gt;</span> b) swap(a, b);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#66d9ef">if</span>(a <span style="color:#f92672">==</span> (<span style="color:#66d9ef">int</span>)((sqrt(<span style="color:#ae81ff">5</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> (b<span style="color:#f92672">-</span>a))){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            printf(<span style="color:#e6db74">&#34;0</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            printf(<span style="color:#e6db74">&#34;1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Wythoff博弈</title>
+      <link>https://blog.lordash.de/posts/algorithm/wythoff%E5%8D%9A%E5%BC%88/</link>
+      <pubDate>Wed, 17 Jun 2020 17:40:11 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/algorithm/wythoff%E5%8D%9A%E5%BC%88/</guid>
+      <description>博弈论专题，介绍Wythoff博弈、Betty定理</description>
+      <content:encoded><![CDATA[<h2 id="wythoff博弈">Wythoff博弈</h2>
+<p>基本的威佐夫博弈（Wythoff Game）描述如下：</p>
+<blockquote>
+<p>有两堆各若干个物品，两个人轮流从某一堆或同时从两堆中取同样多的物品，每次至少取一个，多者不限，最后取光者得胜。</p>
+</blockquote>
+<p>我们使用(a, b)来描述一个局面，可以发现(a, b)和(b, a)其实是一样的，所以在此定义a $ \le $ b。显然(0, 0)是第一个必败态（先手必败局面、奇异局面、P-position），使用<a href="https://blog.lordash.cf/posts/266a09be.html#%E5%BF%85%E8%83%9C%E6%80%81%E5%92%8C%E5%BF%85%E8%B4%A5%E6%80%81">P/N-状态</a>或者<a href="https://blog.lordash.cf/posts/266a09be.html#SG%E5%87%BD%E6%95%B0">SG函数</a>可以更容易地分析局面，简单讲就是：“移动<strong>可以</strong>导致<code>必败态</code>的，此时先手必胜；移动<strong>只能</strong>导致<code>必胜态</code>的，此时先手必败”。打表可得必败态为(0, 0)、(1, 2)、(3, 5)、(4, 7)、(6, 10)、(8, 13)、(9, 15)、 $ \cdots $
+仔细观察，大胆假设，<del>自行求证</del>，对于 $ (a_n, b_n) $ 有以下性质：</p>
+<ol>
+<li>
+<p>$ a_n $ 是前面必败态中未出现过的最小自然数</p>
+</li>
+<li>
+<p>$ b_n = a_n + n $</p>
+</li>
+</ol>
+<hr>
+<p>博弈过程如下：</p>
+<ul>
+<li>由 $ a_n $ 是未在前面出现过的最小自然数，所以  $ a_n &gt; a_{n-1} $ ，而 $ (b_n = a_n + n) &gt; (a_{n-1} + n) &gt; (a_{n-1} + n - 1 = b_{n-1}) &gt; a_{n-1} $ ，得出<strong>任何自然数都包含于有且仅有一个必败态中</strong>。</li>
+<li>当局面处于必败态时，如果只改变其中一个分量，那么与另一个分量就不在同一个必败态中。如果使两个分量同时减少，那么由于a和b的差值不变，改变后也不会是其它的必败态。得出<strong>必败态只能转移到必胜态</strong>。</li>
+<li>当局面处于必胜态(x, y)时，如果与x出现在必败态时的另一个分量 $ a_x $ 或者 $ b_x $ 小于y，那么将y取成 $ a_x $ 或者  $ b_x $ ，局面变为必败态 $ (a_x, x) $ 或者 $ (x, b_x) $ ；否则在两堆同时取走 $ x-a_{y-x} $ ，局面变为必败态 $ (a_{y-x}, b_{y-x}) $。得出<strong>必胜态可以转移到必败态</strong>。</li>
+</ul>
+<p>SG函数打表找出规律，就可以开始推导了，实际上 $ a_n $ 和 $ b_n $ 是Betty序列并满足<a href="#Betty%E5%AE%9A%E7%90%86">Betty定理</a>，令 $ A = a_{n}, B = a_{n}+n $ 解方程 $ \frac{1}{a} + \frac{1}{a+1} = 1 $ 得 $ a = \frac{\sqrt{5} + 1}{2} $ 。<strong>即对于Wythoff博弈局面(a, b)，当 $ a == (int)((b-a) \times \frac{\sqrt{5} + 1}{2}) $ 时先手必败，反之先手必胜。</strong></p>
+<hr>
+<h2 id="betty定理">Betty定理</h2>
+<p>Betty定理：</p>
+<blockquote>
+<p>如果两个无理数满足 $ \frac{1}{a} + \frac{1}{b} = 1 $，那么对于两个集合 $ A = {[na]}, B = {[na]}, n \in Z $ ，可得出 $ A \cap B = \varnothing, A \cup B = N^{+} $ 。</p>
+</blockquote>
+<p>简单证明如下：</p>
+<ul>
+<li>
+<p>$ A \cap B = \varnothing $</p>
+<p>由 $ \frac{1}{a} + \frac{1}{b} = 1 $，且a，b为正，可以得到a，b均大于1，所以[na]的跨度大于1，向下取整不会重复。取整数k使得 $ k \in A, k \in B $，那么 $ k &lt; ma &lt; k+1, k &lt; nb &lt; k+1 $ ，化简一下 $ \frac{k}{m} &lt; a &lt; \frac{k+1}{m} \Longrightarrow \frac{m}{k+1} &lt; \frac{1}{a} &lt; \frac{m}{k} $ ，同理 $ \frac{n}{k+1} &lt; \frac{1}{b} &lt; \frac{n}{k} $ ，两式相加 $ \frac{m+n}{k+1} &lt; \frac{1}{a} + \frac{1}{b} &lt; \frac{m+n}{k} \Longrightarrow \frac{m+n}{k+1} &lt; 1 &lt; \frac{m+n}{k} \Longrightarrow k &lt; m + n &lt; k + 1 $ ，与m，n为整数矛盾。</p>
+</li>
+<li>
+<p>$ A \cup B = N^{+} $</p>
+<p>取整数k满足 $ k \in C_{N^{+}}A \cup B $ ，此时必有整数m，n满足 $ [ma] &lt; k &lt; [(m+1)a], [nb] &lt; k &lt; [(n+1)b] $ ，化简一下 $ ma &lt; k \le [(m+1)a] - 1 $ ，由于a为无理数，所以有 $ ma &lt; k &lt; (m+1)a - 1 \Longrightarrow \frac{m}{k} &lt; \frac{1}{a} &lt; \frac{m+1}{k+1} $ ，同理 $ \frac{n}{k} &lt; \frac{1}{b} &lt; \frac{m+1}{k+1} $ ，两式相加 $ \frac{m+n}{k} &lt; \frac{1}{a} + \frac{1}{b} &lt; \frac{m+n+2}{k+1} \Longrightarrow \frac{m+n}{k} &lt; 1 &lt; \frac{m+n+2}{k+1} \Longrightarrow m + n &lt; k &lt; k + 1 &lt; m + n + 2 $ ，与m+n和m+n+2间只有一个整数矛盾。</p>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

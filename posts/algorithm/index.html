@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>算法 | 似水</title>
+<meta content="" name="keywords"/>
+<meta content="算法 - 似水" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/posts/algorithm/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://blog.lordash.de/posts/algorithm/index.xml" rel="alternate" type="application/rss+xml"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="算法" property="og:title"/>
+<meta content="Life is like a boat" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://blog.lordash.de/posts/algorithm/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="算法" name="twitter:title"/>
+<meta content="Life is like a boat" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "文章",
+      "item": "https://blog.lordash.de/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "算法",
+      "item": "https://blog.lordash.de/posts/algorithm/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://blog.lordash.de">主页</a> » <a href="https://blog.lordash.de/posts/">文章</a></div>
+<h1>
+    算法
+  </h1>
+</header>
+<article class="post-entry">
+<header class="entry-header">
+<h2>快速排序
+    </h2>
+</header>
+<div class="entry-content">
+<p>简介 快速排序算法是对冒泡排序算法的一种改进。平均时间复杂度$O(nlogn)$，最坏时间复杂度$O(n^2)$。 快速排序的基本思想：每趟排序...</p>
+</div>
+<footer class="entry-footer"><span title="2021-04-25 09:07:11 +0000 UTC">2021-04-25</span> · Lordash
+
+</footer>
+<a aria-label="post link to 快速排序" class="entry-link" href="https://blog.lordash.de/posts/algorithm/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"></a>
+</article>
+<article class="post-entry">
+<header class="entry-header">
+<h2>Johnson
+    </h2>
+</header>
+<div class="entry-content">
+<p>简介 Johnson算法是求解多源最短路的算法之一，核心操作是re-weight，适用于不包含负环（负权回路）的图。时间复杂度$O(nm+nm...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-12 11:03:11 +0000 UTC">2020-08-12</span> · Lordash
+
+</footer>
+<a aria-label="post link to Johnson" class="entry-link" href="https://blog.lordash.de/posts/algorithm/johnson/"></a>
+</article>
+<article class="post-entry">
+<header class="entry-header">
+<h2>Floyd-Warshall
+    </h2>
+</header>
+<div class="entry-content">
+<p>简介 Floyd-Warshall算法是求解多源最短路的算法之一，核心思想是动态规划，适用于不包含负环（负权回路）的图。时间复杂度$O(n^{...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-12 11:02:11 +0000 UTC">2020-08-12</span> · Lordash
+
+</footer>
+<a aria-label="post link to Floyd-Warshall" class="entry-link" href="https://blog.lordash.de/posts/algorithm/floyd/"></a>
+</article>
+<article class="post-entry">
+<header class="entry-header">
+<h2>Bellman-Ford
+    </h2>
+</header>
+<div class="entry-content">
+<p>简介 Bellman-Ford算法是求解单源最短路的算法之一，适用于可包含负边权的有向和无向图，可以判断是否包含负环（注意，如果是包含负权回路...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-12 10:58:11 +0000 UTC">2020-08-12</span> · Lordash
+
+</footer>
+<a aria-label="post link to Bellman-Ford" class="entry-link" href="https://blog.lordash.de/posts/algorithm/bellman-ford/"></a>
+</article>
+<article class="post-entry">
+<header class="entry-header">
+<h2>Dijkstra
+    </h2>
+</header>
+<div class="entry-content">
+<p>简介 Dijkstra算法是求解单源最短路的算法之一，核心思想是贪心，只适用于边权为正的无向和有向图。原复杂度$O(n^{2})$，优化后时间...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-12 10:57:11 +0000 UTC">2020-08-12</span> · Lordash
+
+</footer>
+<a aria-label="post link to Dijkstra" class="entry-link" href="https://blog.lordash.de/posts/algorithm/dijkstra/"></a>
+</article>
+<article class="post-entry">
+<header class="entry-header">
+<h2>字典树
+    </h2>
+</header>
+<div class="entry-content">
+<p>简介 字典树又称单词查找树，Trie树，是一种树形结构，是一种哈希树的变种。典型应用是用于统计，排序和保存大量的字符串（但不仅限于字符串）。优...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-06 22:34:11 +0000 UTC">2020-08-06</span> · Lordash
+
+</footer>
+<a aria-label="post link to 字典树" class="entry-link" href="https://blog.lordash.de/posts/algorithm/%E5%AD%97%E5%85%B8%E6%A0%91/"></a>
+</article>
+<article class="post-entry">
+<header class="entry-header">
+<h2>最小表示法
+    </h2>
+</header>
+<div class="entry-content">
+<p>简介 最小表示法，求所有与某个字符串循环同构的字符串中，字典序最小的那个。比如说一个字符串lordash，它长度为7，也就是说最多有七种循环同...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-04 17:39:11 +0000 UTC">2020-08-04</span> · Lordash
+
+</footer>
+<a aria-label="post link to 最小表示法" class="entry-link" href="https://blog.lordash.de/posts/algorithm/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/"></a>
+</article>
+<article class="post-entry">
+<header class="entry-header">
+<h2>Manacher
+    </h2>
+</header>
+<div class="entry-content">
+<p>简介 Manacher‘s Algorithm是用来查找一个字符串的最长回文子串的线性方法，由一个叫Manacher的人在1975年发明的。中文...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-26 14:22:11 +0000 UTC">2020-07-26</span> · Lordash
+
+</footer>
+<a aria-label="post link to Manacher" class="entry-link" href="https://blog.lordash.de/posts/algorithm/manacher/"></a>
+</article>
+<article class="post-entry">
+<header class="entry-header">
+<h2>扩展KMP
+    </h2>
+</header>
+<div class="entry-content">
+<p>简介 给定长度为n的文本串S和长度为m的模式串T，定义extend[i]为S[i…n-1]与T[0…m-1]的最长公共前缀长度，求extend...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-26 14:21:11 +0000 UTC">2020-07-26</span> · Lordash
+
+</footer>
+<a aria-label="post link to 扩展KMP" class="entry-link" href="https://blog.lordash.de/posts/algorithm/%E6%89%A9%E5%B1%95kmp/"></a>
+</article>
+<article class="post-entry">
+<header class="entry-header">
+<h2>KMP
+    </h2>
+</header>
+<div class="entry-content">
+<p>简介 Knuth-Morris-Pratt字符串查找算法，简称为“KMP算法”，常用于在一个文本串S内查找一个模式串T的出现位置。这个算法由D...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-26 14:20:11 +0000 UTC">2020-07-26</span> · Lordash
+
+</footer>
+<a aria-label="post link to KMP" class="entry-link" href="https://blog.lordash.de/posts/algorithm/kmp/"></a>
+</article>
+<footer class="page-footer">
+<nav class="pagination">
+<a class="next" href="https://blog.lordash.de/posts/algorithm/page/2/">下一页  »
+    </a>
+</nav>
+</footer>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

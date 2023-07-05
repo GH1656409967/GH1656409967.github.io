@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Fibonacci博弈 on 似水</title>
+    <link>https://blog.lordash.de/tags/fibonacci%E5%8D%9A%E5%BC%88/</link>
+    <description>Recent content in Fibonacci博弈 on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 17 Jul 2020 16:46:12 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/fibonacci%E5%8D%9A%E5%BC%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU-2516 取石子游戏</title>
+      <link>https://blog.lordash.de/posts/solution/hdu-2516-%E5%8F%96%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Fri, 17 Jul 2020 16:46:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/hdu-2516-%E5%8F%96%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</guid>
+      <description>HDU-2516 取石子游戏 类型 博弈论 Fibonacci博弈</description>
+      <content:encoded><![CDATA[<h1 id="取石子游戏hdu-2516httpsvjudgenetproblemhdu-2516">取石子游戏(<a href="https://vjudge.net/problem/HDU-2516">HDU-2516</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>1堆石子有n个,两人轮流取.先取者第1次可以取任意多个，但不能全部取完.以后每次取的石子数不能超过上次取子数的2倍。取完者胜.先取者负输出&quot;Second win&quot;.先取者胜输出&quot;First win&quot;.</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>输入有多组.每组第1行是2&lt;=n&lt;2^31. n=0退出.</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>先取者负输出&quot;Second win&quot;. 先取者胜输出&quot;First win&quot;.
+参看Sample Output.</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>13
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>10000
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>0
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Second win
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Second win
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>First win
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>单堆Fibonacci博弈，不用求SG函数。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">int</span> f[<span style="color:#ae81ff">50</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fib</span>(){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    f[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> f[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>; i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">47</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        f[i] <span style="color:#f92672">=</span> f[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> f[i<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    fib();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    <span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n) <span style="color:#f92672">&amp;&amp;</span> n)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        <span style="color:#66d9ef">int</span> flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">47</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>            <span style="color:#66d9ef">if</span>(f[i]<span style="color:#f92672">==</span>n){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>                printf(<span style="color:#e6db74">&#34;Second win</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>                flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>        <span style="color:#66d9ef">if</span>(flag){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>            printf(<span style="color:#e6db74">&#34;First win</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Fibonacci博弈</title>
+      <link>https://blog.lordash.de/posts/algorithm/fibonacci%E5%8D%9A%E5%BC%88/</link>
+      <pubDate>Thu, 18 Jun 2020 17:40:11 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/algorithm/fibonacci%E5%8D%9A%E5%BC%88/</guid>
+      <description>博弈论专题，介绍Fibonacci博弈、Zeckendorf定理</description>
+      <content:encoded><![CDATA[<h1 id="fibonacci博弈">Fibonacci博弈</h1>
+<p>基本的斐波那契博弈（Fibonacci Game）描述如下：</p>
+<blockquote>
+<p>有一堆数量多于一的物品，两人轮流取走物品，第一次至少取一个，但不能取完，从第二次开始每个人最少取一个，最多取对手上次取的两倍。</p>
+</blockquote>
+<p>博弈过程如下：</p>
+<ul>
+<li>
+<p>当n为斐波那契数时，令F[k]为斐波那契数第k项，那么当n=2=F[3]，n=3=F[4]显然先手必败，假设n=F[i]，i&lt;k时命题都成立，讨论n=F[k]时，此时n=F[k]=F[k-2]+F[k-1]，由于F[k-1]&lt;2$  \times $F[k-2]，所以先手必不能直接取走大于等于F[k-2]的物品，同理先手取走大于等于$ \frac{F[k-2]}{3} $的物品时，后手可以直接取完F[k-2]，且因 $F[k-1] \gt 2 \times \frac{2 \times F[k-2]}{3} $ 不会对F[k-1]造成影响，所以每个F[k]可以分解为F[k-2]，F[k-1]这样<strong>单独且互不影响的斐波那契局面</strong>（可以继续分解）此时先手必败。 得出<strong>当n为斐波那契数时先手必败</strong>。</p>
+</li>
+<li>
+<p>当n为非斐波那契数时，由<a href="#Zeckendorf%E5%AE%9A%E7%90%86">齐肯多夫定理</a>，可以将n分解为若干<strong>不相邻</strong>的斐波那契数之和，例如85=55+21+8+1。此时$ n =  F[x_{1}] + F[x_{2}] + \ldots + F[x_{k}], (x_{1} &gt; x_{2} &gt; \ldots &gt; x_{k})$，由于$ F[x_{k-1}] &gt; 2 \times F[x_{k}] $，取完$ F[x_{k}] $不会对$ F[x_{k-1}] $造成影响，即可以分解为若干个单独且互不影响的斐波那契数局面，但先手可以直接取走$ F[x_{k}] $，后手对于每个分解的若干<strong>单独且互不影响的斐波那契局面</strong>都是必败的。得出<strong>当n为非斐波那契数时先手必败</strong>。</p>
+</li>
+</ul>
+<h1 id="zeckendorf定理">Zeckendorf定理</h1>
+<p>Zeckendorf定理：</p>
+<blockquote>
+<p>任何正整数都可以表示成若干个不连续的斐波那契数（不包括第一个斐波那契数）之和。</p>
+</blockquote>
+<p>简单证明如下：</p>
+<ul>
+<li>令F[k]为斐波那契数第k项，那么当n=1=F[1]=F[2]，n=2=F[3]，n=3=F[4]命题成立。假设i&lt;n时命题都成立，讨论i=n时，当n为斐波那契数时，命题显然成立；当n为非斐波那契数时，令k为最大的整数使得F[k]&lt;n&lt;F[k+1]，设m=n-F[k]&lt;(F[k+1]-F[k]=F[k-1])，可得m&lt;F[k-1]&lt;n，由于$ m = F[x_{1}] + F[x_{2}] + \ldots + F[x_{k}], (F[x_{k}]最大) $，因为m&lt;F[k-1]，所以$ x_{k} &lt; k - 1$，所以$ n = F[x_{1}] + F[x_{2}] + \ldots + F[x_{k}] + F[k] $，仍然可以分解为若干个斐波那契数之和，且不是连续的$ (x_{k} &lt; k - 1) $。</li>
+</ul>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

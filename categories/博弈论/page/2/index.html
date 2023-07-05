@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>博弈论 | 似水</title>
+<meta content="" name="keywords"/>
+<meta content="Life is like a boat" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/categories/%E5%8D%9A%E5%BC%88%E8%AE%BA/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://blog.lordash.de/categories/%E5%8D%9A%E5%BC%88%E8%AE%BA/index.xml" rel="alternate" type="application/rss+xml"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="博弈论" property="og:title"/>
+<meta content="Life is like a boat" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://blog.lordash.de/categories/%E5%8D%9A%E5%BC%88%E8%AE%BA/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="博弈论" name="twitter:title"/>
+<meta content="Life is like a boat" name="twitter:description"/>
+</head>
+<body class="list dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://blog.lordash.de">主页</a> » <a href="https://blog.lordash.de/categories/">Categories</a></div>
+<h1>
+    博弈论
+  </h1>
+</header>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>HDU-2188 悼念512
+    </h2>
+</header>
+<div class="entry-content">
+<p>悼念512汶川大地震遇难同胞——选拔志愿者(HDU-2188) 题面 对于四川同胞遭受的灾难，全国人民纷纷伸出援助之手，几乎每个省市都派出了大量...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-17 17:11:12 +0000 UTC">2020-07-17</span> · Lordash
+
+</footer>
+<a aria-label="post link to HDU-2188 悼念512" class="entry-link" href="https://blog.lordash.de/posts/solution/hdu-2188-%E6%82%BC%E5%BF%B5512/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>HDU-2897 邂逅明下
+    </h2>
+</header>
+<div class="entry-content">
+<p>邂逅明下(HDU-2897) 题面 当日遇到月，于是有了明。当我遇到了你，便成了侣。 那天，日月相会，我见到了你。而且，大地失去了光辉，你我是否成...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-17 16:59:12 +0000 UTC">2020-07-17</span> · Lordash
+
+</footer>
+<a aria-label="post link to HDU-2897 邂逅明下" class="entry-link" href="https://blog.lordash.de/posts/solution/hdu-2897-%E9%82%82%E9%80%85%E6%98%8E%E4%B8%8B/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>HDU-2516 取石子游戏
+    </h2>
+</header>
+<div class="entry-content">
+<p>取石子游戏(HDU-2516) 题面 1堆石子有n个,两人轮流取.先取者第1次可以取任意多个，但不能全部取完.以后每次取的石子数不能超过上次取子...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-17 16:46:12 +0000 UTC">2020-07-17</span> · Lordash
+
+</footer>
+<a aria-label="post link to HDU-2516 取石子游戏" class="entry-link" href="https://blog.lordash.de/posts/solution/hdu-2516-%E5%8F%96%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>HDU-2486 A simple stone game
+    </h2>
+</header>
+<div class="entry-content">
+<p>A simple stone game(HDU-2486) 题面 After he has learned how to play Nim game, Mike begins to try another stone game which seems much easier. The game goes like this: Two players start the game with a pile of n stones. They take stones from the pile in turn and every time they take at least one stone. The one who goes first can take at most n-1 stones...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-17 00:24:12 +0000 UTC">2020-07-17</span> · Lordash
+
+</footer>
+<a aria-label="post link to HDU-2486 A simple stone game" class="entry-link" href="https://blog.lordash.de/posts/solution/hdu-2486-a-simple-stone-game/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>HDU-2177 取(2堆)石子游戏
+    </h2>
+</header>
+<div class="entry-content">
+<p>取(2堆)石子游戏(HDU-2177) 题面 有两堆石子，数量任意，可以不同。游戏开始由两个人轮流取石子。游戏规定，每次有两种不同的取法，一是可...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-16 19:48:12 +0000 UTC">2020-07-16</span> · Lordash
+
+</footer>
+<a aria-label="post link to HDU-2177 取(2堆)石子游戏" class="entry-link" href="https://blog.lordash.de/posts/solution/hdu-2177-%E5%8F%962%E5%A0%86%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>ZOJ-3057 Beans Game
+    </h2>
+</header>
+<div class="entry-content">
+<p>Beans Game(ZOJ-3057) 题面 There are three piles of beans. TT and DD pick any number of beans from any pile or the same number from any two piles by turns. Who get the last bean will win. TT and DD are very clever. 输入 Each test case contains of a single line containing 3 integers a b c, indicating the numbers of beans of these piles. It is...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-16 16:00:12 +0000 UTC">2020-07-16</span> · Lordash
+
+</footer>
+<a aria-label="post link to ZOJ-3057 Beans Game" class="entry-link" href="https://blog.lordash.de/posts/solution/zoj-3057-beans-game/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-3922 A simple stone game
+    </h2>
+</header>
+<div class="entry-content">
+<p>A simple stone game(POJ-3922) 题面 After he has learned how to play Nim game, Mike begins to try another stone game which seems much easier. The game goes like this: Two players start the game with a pile of n stones. They take stones from the pile in turn and every time they take at least one stone. The one who goes first can take at most n-1 stones...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-16 14:02:12 +0000 UTC">2020-07-16</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-3922 A simple stone game" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-3922-a-simple-stone-game/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-3533 Light Switching Game
+    </h2>
+</header>
+<div class="entry-content">
+<p>Light Switching Game(POJ-3533) 题面 The Light Switching Game is played on a 1000 × 1000 × 1000 cube of cells with a light in each cell, as Figure.1 shows. Initially, most of the lights are off while exactly N lights are on. Two players take moves alternately. A move consists of switching the lights at the corners of a cuboid, i.e. (x1,y1,z1), (x1,y1,z2), (x1,y2,z1), (x1,y2,z2), (x2,y1,z1), (x2,y1,z2), (x2,y2,z1), (x2,y2,z2)...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-15 11:58:12 +0000 UTC">2020-07-15</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-3533 Light Switching Game" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-3533-light-switching-game/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>HDU-3404 Switch lights
+    </h2>
+</header>
+<div class="entry-content">
+<p>Switch lights(HDU-3404) 题面 lxhgww is playing a game with his computer Deep Blue. The game is played on a matrix containing lights. At first, some lights are on, while others are off. lxhgww and Deep Blue take turns to switch the lights. For each step, the player should choose a rectangle in the matrix: (x1 , y1) , (x1 , y2) , (x2 , y1) , (x2 , y2)...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-15 11:38:12 +0000 UTC">2020-07-15</span> · Lordash
+
+</footer>
+<a aria-label="post link to HDU-3404 Switch lights" class="entry-link" href="https://blog.lordash.de/posts/solution/hdu-3404-switch-lights/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>POJ-3480 John
+    </h2>
+</header>
+<div class="entry-content">
+<p>John(POJ-3480) 题面 Little John is playing very funny game with his younger brother. There is one big box filled with M&amp;Ms of different colors. At first John has to eat several M&amp;Ms of the same color. Then his opponent has to make a turn. And so on. Please note that each player has to eat at least one M&amp;M during his turn. If John (or his brother) will eat...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-14 18:50:12 +0000 UTC">2020-07-14</span> · Lordash
+
+</footer>
+<a aria-label="post link to POJ-3480 John" class="entry-link" href="https://blog.lordash.de/posts/solution/poj-3480-john/"></a>
+</article>
+<footer class="page-footer">
+<nav class="pagination">
+<a class="prev" href="https://blog.lordash.de/categories/%E5%8D%9A%E5%BC%88%E8%AE%BA/">
+      « 上一页 
+    </a>
+<a class="next" href="https://blog.lordash.de/categories/%E5%8D%9A%E5%BC%88%E8%AE%BA/page/3/">下一页  »
+    </a>
+</nav>
+</footer>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

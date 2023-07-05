@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>博弈论 | 似水</title>
+<meta content="" name="keywords"/>
+<meta content="Life is like a boat" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/categories/%E5%8D%9A%E5%BC%88%E8%AE%BA/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://blog.lordash.de/categories/%E5%8D%9A%E5%BC%88%E8%AE%BA/index.xml" rel="alternate" type="application/rss+xml"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="博弈论" property="og:title"/>
+<meta content="Life is like a boat" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://blog.lordash.de/categories/%E5%8D%9A%E5%BC%88%E8%AE%BA/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="博弈论" name="twitter:title"/>
+<meta content="Life is like a boat" name="twitter:description"/>
+</head>
+<body class="list dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://blog.lordash.de">主页</a> » <a href="https://blog.lordash.de/categories/">Categories</a></div>
+<h1>
+    博弈论
+  </h1>
+</header>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>LightOJ-1355 Game of CS
+    </h2>
+</header>
+<div class="entry-content">
+<p>Game of CS(LightOJ-1355) 题面 Jolly and Emily are two bees studying in Computer Science. Unlike other bees they are fond of playing two-player games. They used to play Tic-tac-toe, Chess etc. But now since they are in CS they invented a new game that definitely requires some knowledge of computer science. Initially they draw a random rooted tree (a connected graph with no cycles) in a paper which consists...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-05 11:55:38 +0000 UTC">2020-08-05</span> · Lordash
+
+</footer>
+<a aria-label="post link to LightOJ-1355 Game of CS" class="entry-link" href="https://blog.lordash.de/posts/solution/lightoj-1355-game-of-cs/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>HDU-3980 Paint Chain
+    </h2>
+</header>
+<div class="entry-content">
+<p>Paint Chain(HDU-3980) 题面 Aekdycoin and abcdxyzk are playing a game. They get a circle chain with some beads. Initially none of the beads is painted. They take turns to paint the chain. In Each turn one player must paint a unpainted beads. Whoever is unable to paint in his turn lose the game. Aekdycoin will take the first move. Now, they thought this game is too simple, and they...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-18 11:07:12 +0000 UTC">2020-07-18</span> · Lordash
+
+</footer>
+<a aria-label="post link to HDU-3980 Paint Chain" class="entry-link" href="https://blog.lordash.de/posts/solution/hdu-3980-paint-chain/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>HDU-2509 Be the Winner
+    </h2>
+</header>
+<div class="entry-content">
+<p>Be the Winner(HDU-2509) 题面 Let’s consider m apples divided into n groups. Each group contains no more than 100 apples, arranged in a line. You can take any number of consecutive apples at one time. For example “@@@” can be turned into “@@” or “@” or “@ @"(two piles). two people get apples one after another and the one who takes the last is the loser. Fra wants to...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-18 10:46:12 +0000 UTC">2020-07-18</span> · Lordash
+
+</footer>
+<a aria-label="post link to HDU-2509 Be the Winner" class="entry-link" href="https://blog.lordash.de/posts/solution/hdu-2509-be-the-winner/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>LightOJ-1199 Partitioning Game
+    </h2>
+</header>
+<div class="entry-content">
+<p>Partitioning Game(LightOJ-1199) 题面 Alice and Bob are playing a strange game. The rules of the game are: Initially there are n piles. A pile is formed by some cells. Alice starts the game and they alternate turns. In each tern a player can pick any pile and divide it into two unequal piles. If a player cannot do so, he/she loses the game. Now you are given the number...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-18 10:32:12 +0000 UTC">2020-07-18</span> · Lordash
+
+</footer>
+<a aria-label="post link to LightOJ-1199 Partitioning Game" class="entry-link" href="https://blog.lordash.de/posts/solution/lightoj-1199-partitioning-game/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>LightOJ-1393 Crazy Calendar
+    </h2>
+</header>
+<div class="entry-content">
+<p>Crazy Calendar(LightOJ-1393) 题面 2011 was a crazy year. Many people all over the world proposed on 11-11-11, married on 11-11-11, some even went through surgery only to have 11-11-11 as their child’s birth date. How crazy people can be! Don’t they see there is a “20” hidden? Then what to do? A very elegant solution came from ARR, a very famous and funny character - why do we need...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-18 09:53:12 +0000 UTC">2020-07-18</span> · Lordash
+
+</footer>
+<a aria-label="post link to LightOJ-1393 Crazy Calendar" class="entry-link" href="https://blog.lordash.de/posts/solution/lightoj-1393-crazy-calendar/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>LightOJ-1253 Misere Nim
+    </h2>
+</header>
+<div class="entry-content">
+<p>Misere Nim(LightOJ-1253) 题面 Alice and Bob are playing game of Misère Nim. Misère Nim is a game playing on k piles of stones, each pile containing one or more stones. The players alternate turns and in each turn a player can select one of the piles and can remove as many stones from that pile unless the pile is...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-18 09:39:12 +0000 UTC">2020-07-18</span> · Lordash
+
+</footer>
+<a aria-label="post link to LightOJ-1253 Misere Nim" class="entry-link" href="https://blog.lordash.de/posts/solution/lightoj-1253-misere-nim/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>LightOJ-1247 Matrix Game
+    </h2>
+</header>
+<div class="entry-content">
+<p>Matrix Game(LightOJ-1247) 题面 Given an m x n matrix, where m denotes the number of rows and n denotes the number of columns and in each cell a pile of stones is given. For example, let there be a 2 x 3 matrix, and the piles are 2 3 8 5 2 7 That means that in cell(1, 1) there is a pile with 2 stones, in cell(1, 2)...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-18 09:24:12 +0000 UTC">2020-07-18</span> · Lordash
+
+</footer>
+<a aria-label="post link to LightOJ-1247 Matrix Game" class="entry-link" href="https://blog.lordash.de/posts/solution/lightoj-1247-matrix-game/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>LightOJ-1192 Left Right
+    </h2>
+</header>
+<div class="entry-content">
+<p>Left Right(LightOJ-1192) 题面 Two players, Alice and Bob are playing a strange game in a 1 x n board. The cells are numbered from 0 to n-1, where the left most cell is marked as cell 0. Each cell can contain at most one piece. There are two kinds of pieces, gray and white. Alice moves all the gray pieces, and bob moves all the white ones. The pieces...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-17 18:46:12 +0000 UTC">2020-07-17</span> · Lordash
+
+</footer>
+<a aria-label="post link to LightOJ-1192 Left Right" class="entry-link" href="https://blog.lordash.de/posts/solution/lightoj-1192-left-right-/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>LightOJ-1186 Incredible Chess
+    </h2>
+</header>
+<div class="entry-content">
+<p>Incredible Chess(LightOJ-1186) 题面 You are given an n x n chess board. Only pawn is used in the ‘Incredible Chess’ and they can move forward or backward. In each column there are two pawns, one white and one black. White pawns are placed in the lower part of the board and the black pawns are placed in the upper part of the board. The game is played by two...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-17 18:38:12 +0000 UTC">2020-07-17</span> · Lordash
+
+</footer>
+<a aria-label="post link to LightOJ-1186 Incredible Chess" class="entry-link" href="https://blog.lordash.de/posts/solution/lightoj-1186-incredible-chess/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>HDU-4388 Stone Game II
+    </h2>
+</header>
+<div class="entry-content">
+<p>Stone Game II (HDU-4388) 题面 Stone Game II comes. It needs two players to play this game. There are some piles of stones on the desk at the beginning. Two players move the stones in turn. At each step of the game the player should do the following operations. First, choose a pile of stones. (We assume that the number of stones in this pile is n) Second, take...</p>
+</div>
+<footer class="entry-footer"><span title="2020-07-17 17:27:43 +0000 UTC">2020-07-17</span> · Lordash
+
+</footer>
+<a aria-label="post link to HDU-4388 Stone Game II" class="entry-link" href="https://blog.lordash.de/posts/solution/hdu-4388-stone-game-ii/"></a>
+</article>
+<footer class="page-footer">
+<nav class="pagination">
+<a class="next" href="https://blog.lordash.de/categories/%E5%8D%9A%E5%BC%88%E8%AE%BA/page/2/">下一页  »
+    </a>
+</nav>
+</footer>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

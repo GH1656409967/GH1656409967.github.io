@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Win10配置Hadoop2.9.2单机版 | 似水</title>
+<meta content="Windows, Hadoop" name="keywords"/>
+<meta content="Win10配置Hadoop2.9.2单机版" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/posts/configure/4f05172528ab13b7/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" rel="stylesheet"/>
+<script crossorigin="anonymous" defer="" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script crossorigin="anonymous" defer="" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+<meta content="Win10配置Hadoop2.9.2单机版" property="og:title"/>
+<meta content="Win10配置Hadoop2.9.2单机版" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://blog.lordash.de/posts/configure/4f05172528ab13b7/" property="og:url"/><meta content="posts" property="article:section"/>
+<meta content="2020-04-26T10:25:05+00:00" property="article:published_time"/>
+<meta content="2020-04-26T10:25:05+00:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Win10配置Hadoop2.9.2单机版" name="twitter:title"/>
+<meta content="Win10配置Hadoop2.9.2单机版" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "文章",
+      "item": "https://blog.lordash.de/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "配置",
+      "item": "https://blog.lordash.de/posts/configure/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "Win10配置Hadoop2.9.2单机版",
+      "item": "https://blog.lordash.de/posts/configure/4f05172528ab13b7/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Win10配置Hadoop2.9.2单机版",
+  "name": "Win10配置Hadoop2.9.2单机版",
+  "description": "Win10配置Hadoop2.9.2单机版",
+  "keywords": [
+    "Windows", "Hadoop"
+  ],
+  "articleBody": "一、准备 基本信息\n操作系统: Windows10 jdk版本: 1.8 Hadoop版本: 2.9.2 下载并解压\nApache Hadoop: 官网 或者 清华源\nwinutils: github/cdarlint\n二、配置 环境变量 新建系统变量 HADOOP_HOME 至所在目录，如 D:\\environment\\hadoop-2.9.2\n在 path 中添加 %HADOOP_HOME%\\bin 及 %HADOOP_HOME%\\sbin 并以 ; (英文分号)与其他项隔开。\nHadoop配置文件 均在 %HADOOP_HOME%\\etc\\hadoop\\ 下面:\n修改 hadoop-env.cmd ，查找 set JAVA_HOME ，将后面内容改为JDK目录。\n1@rem The java implementation to use. Required. 2@rem set JAVA_HOME=%JAVA_HOME% 3set JAVA_HOME=D:\\environment\\Java\\jdk1.8.0_201 修改 core-site.xml\n1 2 3 fs.defaultFS 4 hdfs://localhost:9000 5 6 修改 hdfs-site.xml\n1 2 3 dfs.replication 4 1 5 6 7 dfs.namenode.name.dir 8 /D:/environment/hadoop-2.9.2/data/namenode 9 10 11 dfs.datanode.data.dir 12 /D:/environment/hadoop-2.9.2/data/datanode 13 14 修改 yarn-site.xml\n1 2 3 yarn.nodemanager.aux-services 4 mapreduce_shuffle 5 6 winutils 把之前下载的 winutils 解压，找到对应版本，将内容覆盖到 hadoop-2.9.2\\bin 中。\n格式化namenode 以管理员权限启动命令行，运行 hdfs namenode -format ，这项命令只用在第一次启动前执行。如果结果中看到有 successfully ，说明以上配置成功。\n三、测试 以管理员权限启动命令行，如果之前没有在 path 中配置 sbin ，那么 cd 至 %HADOOP_HOME%\\sbin 中，运行 start-all 启动，出现以下四个窗口：\n即对应运行 jps 显示以下五个进程名称：\n访问 http://localhost:8088 查看集群状态：\n访问 http://localhost:50070 查看Hadoop状态：\n命令行运行 stop-all 关闭。\n",
+  "wordCount" : "391",
+  "inLanguage": "zh",
+  "datePublished": "2020-04-26T10:25:05Z",
+  "dateModified": "2020-04-26T10:25:05Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lordash"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.lordash.de/posts/configure/4f05172528ab13b7/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "似水",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.lordash.de/images/favicon-16x16-.png"
+    }
+  }
+}
+</script>
+</head>
+<body class="dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<article class="post-single">
+<header class="post-header">
+<div class="breadcrumbs"><a href="https://blog.lordash.de">主页</a> » <a href="https://blog.lordash.de/posts/">文章</a> » <a href="https://blog.lordash.de/posts/configure/">配置</a></div>
+<h1 class="post-title">
+      Win10配置Hadoop2.9.2单机版
+    </h1>
+<div class="post-description">
+      Win10配置Hadoop2.9.2单机版
+    </div>
+<div class="post-meta"><span title="2020-04-26 10:25:05 +0000 UTC">2020-04-26</span> · Lordash
+
+
+
+</div>
+</header> <aside class="toc-container wide" id="toc-container">
+<div class="toc">
+<details open="">
+<summary accesskey="c" title="(Alt + C)">
+<span class="details">目录</span>
+</summary>
+<div class="inner"><ul>
+<li>
+<a aria-label="一、准备" href="#%e4%b8%80%e5%87%86%e5%a4%87">一、准备</a></li>
+<li>
+<a aria-label="二、配置" href="#%e4%ba%8c%e9%85%8d%e7%bd%ae">二、配置</a><ul>
+<li>
+<a aria-label="环境变量" href="#%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f">环境变量</a></li>
+<li>
+<a aria-label="Hadoop配置文件" href="#hadoop%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6">Hadoop配置文件</a></li>
+<li>
+<a aria-label="winutils" href="#winutils">winutils</a></li>
+<li>
+<a aria-label="格式化namenode" href="#%e6%a0%bc%e5%bc%8f%e5%8c%96namenode">格式化namenode</a></li></ul>
+</li>
+<li>
+<a aria-label="三、测试" href="#%e4%b8%89%e6%b5%8b%e8%af%95">三、测试</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+<div class="post-content"><h1 id="一准备">一、准备<a aria-hidden="true" class="anchor" hidden="" href="#一准备">#</a></h1>
+<p>基本信息</p>
+<ul>
+<li>操作系统: Windows10</li>
+<li>jdk版本: 1.8</li>
+<li>Hadoop版本: 2.9.2</li>
+</ul>
+<p>下载并解压</p>
+<ul>
+<li>
+<p>Apache Hadoop: <a href="https://hadoop.apache.org/releases.html">官网</a> 或者 <a href="https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/">清华源</a></p>
+</li>
+<li>
+<p>winutils: <a href="https://github.com/cdarlint/winutils">github/cdarlint</a></p>
+</li>
+</ul>
+<h1 id="二配置">二、配置<a aria-hidden="true" class="anchor" hidden="" href="#二配置">#</a></h1>
+<h2 id="环境变量">环境变量<a aria-hidden="true" class="anchor" hidden="" href="#环境变量">#</a></h2>
+<ul>
+<li>
+<p>新建系统变量 <code>HADOOP_HOME</code> 至所在目录，如 <code>D:\environment\hadoop-2.9.2</code></p>
+<p><img alt="HadoopHOME" loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeHadoop2.9.2%e5%8d%95%e6%9c%ba%e7%89%88/HadoopHOME.png"/>
+</p>
+</li>
+<li>
+<p>在 <code>path</code> 中添加 <code>%HADOOP_HOME%\bin</code> 及 <code>%HADOOP_HOME%\sbin</code> 并以 <code>;</code> (英文分号)与其他项隔开。</p>
+<p><img alt="path" loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeHadoop2.9.2%e5%8d%95%e6%9c%ba%e7%89%88/path.png"/>
+</p>
+</li>
+</ul>
+<h2 id="hadoop配置文件">Hadoop配置文件<a aria-hidden="true" class="anchor" hidden="" href="#hadoop配置文件">#</a></h2>
+<p>均在 <code>%HADOOP_HOME%\etc\hadoop\</code> 下面:</p>
+<ol>
+<li>
+<p>修改 <code>hadoop-env.cmd</code> ，查找 <code>set JAVA_HOME</code> ，将后面内容改为JDK目录。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>@rem The java implementation to use.  Required.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>@rem set JAVA_HOME<span style="color:#f92672">=</span>%JAVA_HOME%
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>set JAVA_HOME<span style="color:#f92672">=</span>D:<span style="color:#ae81ff">\e</span>nvironment<span style="color:#ae81ff">\J</span>ava<span style="color:#ae81ff">\j</span>dk1.8.0_201
+</span></span></code></pre></div></li>
+<li>
+<p>修改 <code>core-site.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#f92672">&lt;name&gt;</span>fs.defaultFS<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#f92672">&lt;value&gt;</span>hdfs://localhost:9000<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>  <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>修改 <code>hdfs-site.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#f92672">&lt;name&gt;</span>dfs.replication<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#f92672">&lt;value&gt;</span>1<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>  <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>  <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.name.dir<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#f92672">&lt;value&gt;</span>/D:/environment/hadoop-2.9.2/data/namenode<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>  <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>  <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    <span style="color:#f92672">&lt;name&gt;</span>dfs.datanode.data.dir<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    <span style="color:#f92672">&lt;value&gt;</span>/D:/environment/hadoop-2.9.2/data/datanode<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>  <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>修改 <code>yarn-site.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" tabindex="0"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.nodemanager.aux-services<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#f92672">&lt;value&gt;</span>mapreduce_shuffle<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>  <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="winutils">winutils<a aria-hidden="true" class="anchor" hidden="" href="#winutils">#</a></h2>
+<p>把之前下载的 <code>winutils</code> 解压，找到对应版本，将内容覆盖到 <code>hadoop-2.9.2\bin</code> 中。</p>
+<h2 id="格式化namenode">格式化namenode<a aria-hidden="true" class="anchor" hidden="" href="#格式化namenode">#</a></h2>
+<p>以<strong>管理员权限</strong>启动命令行，运行 <code>hdfs namenode -format</code> ，这项命令只用在第一次启动前执行。如果结果中看到有 <code>successfully</code> ，说明以上配置成功。</p>
+<p><img alt="format" loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeHadoop2.9.2%e5%8d%95%e6%9c%ba%e7%89%88/format.png"/>
+</p>
+<h1 id="三测试">三、测试<a aria-hidden="true" class="anchor" hidden="" href="#三测试">#</a></h1>
+<p>以<strong>管理员权限</strong>启动命令行，如果之前没有在 <code>path</code> 中配置 <code>sbin</code> ，那么 <code>cd</code> 至 <code>%HADOOP_HOME%\sbin</code> 中，运行 <code>start-all</code> 启动，出现以下四个窗口：</p>
+<p><img alt="start" loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeHadoop2.9.2%e5%8d%95%e6%9c%ba%e7%89%88/start.png"/>
+</p>
+<p>即对应运行 <code>jps</code> 显示以下五个进程名称：</p>
+<p><img alt="jps" loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeHadoop2.9.2%e5%8d%95%e6%9c%ba%e7%89%88/jps.png"/>
+</p>
+<p>访问 <a href="http://localhost:8088">http://localhost:8088</a> 查看集群状态：</p>
+<p><img alt="8088" loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeHadoop2.9.2%e5%8d%95%e6%9c%ba%e7%89%88/8088.png"/>
+</p>
+<p>访问 <a href="http://localhost:50070">http://localhost:50070</a> 查看Hadoop状态：</p>
+<p><img alt="50070" loading="lazy" src="../Win10%e9%85%8d%e7%bd%aeHadoop2.9.2%e5%8d%95%e6%9c%ba%e7%89%88/50070.png"/>
+</p>
+<p>命令行运行 <code>stop-all</code> 关闭。</p>
+</div>
+<footer class="post-footer">
+<ul class="post-tags">
+<li><a href="https://blog.lordash.de/tags/windows/">Windows</a></li>
+<li><a href="https://blog.lordash.de/tags/hadoop/">Hadoop</a></li>
+</ul>
+<nav class="paginav">
+<a class="prev" href="https://blog.lordash.de/posts/solution/patb-1001-%E5%AE%B3%E6%AD%BB%E4%BA%BA%E4%B8%8D%E5%81%BF%E5%91%BD%E7%9A%843n+1%E7%8C%9C%E6%83%B3/">
+<span class="title">« 上一页</span>
+<br/>
+<span>PATB-1001 害死人不偿命的(3n+1)猜想</span>
+</a>
+<a class="next" href="https://blog.lordash.de/posts/essays/%E4%BD%BF%E7%94%A8gpg4win%E5%8A%A0%E5%AF%86%E9%82%AE%E4%BB%B6/">
+<span class="title">下一页 »</span>
+<br/>
+<span>使用Gpg4win加密邮件</span>
+</a>
+</nav>
+</footer><div>
+<div class="pagination__title">
+<span class="pagination__title-h" style="font-size: 20px;">💬评论</span>
+<hr/>
+</div>
+<div id="tcomment"></div>
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
+<script>
+        twikoo.init({
+            envId: "https://twikoo-api-dun-pi.vercel.app",
+            el: "#tcomment",
+            lang: 'zh-CN',
+            region: 'ap-zhengzhou',
+            path: window.TWIKOO_MAGIC_PATH || window.location.pathname,
+        });
+    </script>
+</div>
+</article>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                
+                let x = codeblock.getElementsByTagName("span");
+                let noLineNumContent = "";
+                for (i = 0; i < x.length; i++) {
+                    if (x[i].style.display || x[i].style.color);
+                    else noLineNumContent += x[i].textContent;
+                }
+                navigator.clipboard.writeText(noLineNumContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head>
+<meta content="Hugo 0.114.0" name="generator"/><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>似水</title>
+<meta content="中文博客, ACM竞赛题解, 计算机代码编程, 免费技术分享学习" name="keywords"/>
+<meta content="Life is like a boat" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://blog.lordash.de/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://blog.lordash.de/index.json" rel="alternate" type="application/json"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="文章" property="og:title"/>
+<meta content="Life is like a boat" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://blog.lordash.de/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="文章" name="twitter:title"/>
+<meta content="Life is like a boat" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "似水",
+  "url": "https://blog.lordash.de",
+  "description": "Life is like a boat",
+  "thumbnailUrl": "https://blog.lordash.de/images/favicon-16x16-.png",
+  "sameAs": [
+      "https://github.com/GH1656409967", "http://wpa.qq.com/msgrd?v=3\u0026uin=1656409967\u0026site=qq\u0026menu=yes", "https://music.163.com/#/user/home?id=270121274", "https://www.douban.com/people/Lordash/", "mailto:1656409967@qq.com", "posts/index.xml"
+  ]
+}
+</script>
+</head>
+<body class="list dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/posts" title="文章">
+<span><i class="fa fa-list"></i>文章</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/custom/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main"><div class="profile">
+<div class="profile_inner">
+<img alt="profile image" draggable="false" height="172" src="https://s2.loli.net/2022/06/01/D6SzQ9Uc1dTFbKf.png" title="" width="125"/>
+<h1>似水</h1>
+<span>Life is like a boat</span><div class="social-icons">
+<a href="https://github.com/GH1656409967" rel="noopener noreferrer me" target="_blank" title="Github">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+</path>
+</svg>
+</a>
+<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1656409967&amp;site=qq&amp;menu=yes" rel="noopener noreferrer me" target="_blank" title="QQ">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z" stroke-width="50" transform="scale(0.04) translate(75 40)">
+</path>
+</svg>
+</a>
+<a href="https://music.163.com/#/user/home?id=270121274" rel="noopener noreferrer me" target="_blank" title="Neteasecloudmusic">
+<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.98,23.65c-2.69,0-5.26-1.05-7.24-2.95C1.59,18.63,.35,15.72,.35,12.73,.35,8.21,3.21,4.11,7.46,2.52c.15-.05,.3-.08,.45-.08,.42,0,.78,.21,.93,.55,.12,.26,.13,.51,.03,.75-.12,.28-.38,.52-.7,.64-3.48,1.3-5.82,4.66-5.82,8.36,0,2.46,1.02,4.84,2.79,6.54,1.6,1.54,3.68,2.39,5.85,2.39,.1,0,.2,0,.29,0,3.49-.12,6.22-1.91,7.47-4.89,.08-.2,2.01-4.93-2.59-7.9-.41-.27-.89-.46-1.42-.58l-.6-.14,.18,.58c.21,.68,.78,2.52,.84,2.93,.07,.46,.07,.51,.1,.92v.18c0,2.3-1.89,4.19-4.22,4.19-2.2,0-3.97-1.73-4.23-4.1-.25-2.35,.74-4.4,2.73-5.61,.53-.32,1.11-.57,1.73-.75l.33-.1-.48-1.74c-.16-.54-.53-2.38,1.5-3.72,.57-.38,1.22-.57,1.91-.57,1.38,0,2.62,.74,3.12,1.23,.22,.22,.36,.56,.36,.9,0,.26-.08,.48-.23,.63-.15,.15-.37,.23-.63,.23-.33,0-.67-.13-.89-.35-.06-.05-.85-.66-1.7-.66-.31,0-.59,.08-.82,.24-.04,.03-.08,.05-.12,.08-.23,.19-.71,.73-.47,1.82l.09,.34,.02,.07h0s.35,1.29,.35,1.29h.25c1.24,.08,2.39,.42,3.32,1.01l.05,.03c4.82,3.12,4.29,8.12,3.34,10.33-1.54,3.67-4.99,5.95-9.23,6.1-.12,0-.25,0-.37,0Zm.82-15.26c-.43,.13-.84,.31-1.2,.53-.94,.57-2.01,1.68-1.79,3.71,.12,1.12,.87,2.33,2.24,2.33,1.23,0,2.24-1,2.24-2.22h0s.03-.21-.05-.71c-.07-.46-.91-3.1-1-3.4l-.1-.33-.33,.1Z"></path>
+</svg>
+</a>
+<a href="https://www.douban.com/people/Lordash/" rel="noopener noreferrer me" target="_blank" title="Douban">
+<svg fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="m2.42288,2.08086l19.15349,0l0,2.15751l-19.15349,0l0,-2.15751z"></path>
+<path d="m19.88879,14.92347l0,-8.43444l-15.82351,0l0,8.43444l15.82351,0zm-13.52889,-6.27842l11.25739,0l0,4.1235l-11.25739,0l0,-4.1235z"></path>
+<path d="m16.48864,19.78508c0.6885,-1.05398 1.33827,-2.27636 1.94031,-3.66377l-2.30206,-0.83906c-0.59872,1.64418 -1.29579,3.14745 -2.08899,4.50283l-4.00578,0c-0.66389,-1.75663 -1.41312,-3.25884 -2.25363,-4.50283l-2.11727,0.83906c0.87327,1.30991 1.57742,2.52932 2.11727,3.66377l-5.89733,0l0,2.13406l20.23769,0l0,-2.13406l-5.63021,0z"></path>
+</svg>
+</a>
+<a href="mailto:1656409967@qq.com" rel="noopener noreferrer me" target="_blank" title="Email">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 21" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+<polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</a>
+<a href="posts/index.xml" rel="noopener noreferrer me" target="_blank" title="RSS">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</div>
+<div class="buttons">
+<a class="button" href="/posts/solution" rel="noopener" title="题解">
+<span class="button-inner">
+                    题解
+                </span>
+</a>
+<a class="button" href="/posts/algorithm" rel="noopener" title="算法">
+<span class="button-inner">
+                    算法
+                </span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

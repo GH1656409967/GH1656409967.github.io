@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bash博弈 on 似水</title>
+    <link>https://blog.lordash.de/tags/bash%E5%8D%9A%E5%BC%88/</link>
+    <description>Recent content in Bash博弈 on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 17 Jul 2020 17:11:12 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/bash%E5%8D%9A%E5%BC%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU-2188 悼念512</title>
+      <link>https://blog.lordash.de/posts/solution/hdu-2188-%E6%82%BC%E5%BF%B5512/</link>
+      <pubDate>Fri, 17 Jul 2020 17:11:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/hdu-2188-%E6%82%BC%E5%BF%B5512/</guid>
+      <description>HDU-2188 悼念512汶川大地震遇难同胞——选拔志愿者 类型 博弈论 Bash博弈</description>
+      <content:encoded><![CDATA[<h1 id="悼念512汶川大地震遇难同胞选拔志愿者hdu-2188httpsvjudgenetproblemhdu-2188">悼念512汶川大地震遇难同胞——选拔志愿者(<a href="https://vjudge.net/problem/HDU-2188">HDU-2188</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>对于四川同胞遭受的灾难，全国人民纷纷伸出援助之手，几乎每个省市都派出了大量的救援人员，这其中包括抢险救灾的武警部队，治疗和防疫的医护人员，以及进行心理疏导的心理学专家。根据要求，我校也有一个奔赴灾区救灾的名额，由于广大师生报名踊跃，学校不得不进行选拔来决定最后的人选。经过多轮的考核，形势逐渐明朗，最后的名额将在“林队”和“徐队”之间产生。但是很巧合，2个人的简历几乎一模一样，这让主持选拔的8600很是为难。无奈，他决定通过捐款来决定两人谁能入选。
+选拔规则如下：
+1、最初的捐款箱是空的；
+2、两人轮流捐款，每次捐款额必须为正整数，并且每人每次捐款最多不超过m元(1&lt;=m&lt;=10)。
+3、最先使得总捐款额达到或者超过n元（0&lt;n&lt;10000）的一方为胜者，则其可以亲赴灾区服务。
+我们知道，两人都很想入选志愿者名单，并且都是非常聪明的人，假设林队先捐，请你判断谁能入选最后的名单？</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>输入数据首先包含一个正整数C，表示包含C组测试用例，然后是C行数据，每行包含两个正整数n，m，n和m的含义参见上面提到的规则。</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>对于每组测试数据，如果林队能入选，请输出字符串&quot;Grass&quot;， 如果徐队能入选，请输出字符串&quot;Rabbit&quot;，每个实例的输出占一行。</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>8 10
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>11 10
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Grass
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Rabbit
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Bash博弈。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">int</span> T; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>T);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">while</span>(T<span style="color:#f92672">--</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">int</span> n, m;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">%</span>(m<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            printf(<span style="color:#e6db74">&#34;Rabbit</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            printf(<span style="color:#e6db74">&#34;Grass</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>HDU-2897 邂逅明下</title>
+      <link>https://blog.lordash.de/posts/solution/hdu-2897-%E9%82%82%E9%80%85%E6%98%8E%E4%B8%8B/</link>
+      <pubDate>Fri, 17 Jul 2020 16:59:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/hdu-2897-%E9%82%82%E9%80%85%E6%98%8E%E4%B8%8B/</guid>
+      <description>HDU-2897 邂逅明下 类型 博弈论 Bash博弈拓展</description>
+      <content:encoded><![CDATA[<h1 id="邂逅明下hdu-2897httpsvjudgenetproblemhdu-2897">邂逅明下(<a href="https://vjudge.net/problem/HDU-2897">HDU-2897</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>当日遇到月，于是有了明。当我遇到了你，便成了侣。
+那天，日月相会，我见到了你。而且，大地失去了光辉，你我是否成侣？这注定是个凄美的故事。（以上是废话）
+小t和所有世俗的人们一样，期待那百年难遇的日食。驻足街头看天，看日月渐渐走近，小t的脖子那个酸呀（他坚持这个姿势已经有半个多小时啦）。他低下仰起的头，环顾四周。忽然发现身边竟站着位漂亮的mm。天渐渐暗下，这mm在这街头竟然如此耀眼，她是天使吗？站着小t身边的天使。
+小t对mm惊呼：“缘分呐~~”。mm却毫不含糊：“是啊，500年一遇哦！”（此后省略5000字….）
+小t赶紧向mm要联系方式，可mm说：“我和你玩个游戏吧，赢了，我就把我的手机号告诉你。”小t，心想天下哪有题目能难倒我呢，便满口答应下来。mm开始说游戏规则：“我有一堆硬币，一共7枚，从这个硬币堆里取硬币，一次最少取2枚，最多4枚，如果剩下少于2枚就要一次取完。我和你轮流取，直到堆里的硬币取完，最后一次取硬币的算输。我玩过这个游戏好多次了，就让让你，让你先取吧~”
+小t掐指一算，不对呀，这是不可能的任务么。小t露出得意的笑：“还是mm优先啦，呵呵~”mm霎时愣住了，想是对小t的反应出乎意料吧。
+她却也不生气：“好小子，挺聪明呢，要不这样吧，你把我的邮箱给我，我给你发个文本，每行有三个数字n，p，q，表示一堆硬币一共有n枚，从这个硬币堆里取硬币，一次最少取p枚，最多q枚，如果剩下少于p枚就要一次取完。两人轮流取，直到堆里的硬币取完，最后一次取硬币的算输。对于每一行的三个数字，给出先取的人是否有必胜策略，如果有回答WIN，否则回答LOST。你把对应的答案发给我，如果你能在今天晚上8点以前发给我正确答案，或许我们明天下午可以再见。”
+小t二话没说，将自己的邮箱给了mm。当他兴冲冲得赶回家，上网看邮箱，哇！mm的邮件已经到了。他发现文本长达100000行，每行的三个数字都很大，但是都是不超过65536的整数。小t看表已经下午6点了，要想手工算出所有结果，看来是不可能了。你能帮帮他，让他再见到那个mm吗？</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>不超过100000行，每行三个正整数n，p，q。</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>对应每行输入，按前面介绍的游戏规则，判断先取者是否有必胜策略。输出WIN或者LOST。</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>7 2 4
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>6 2 4
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>LOST
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>WIN
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Bash博弈变形，Bash博弈可以参考<a href="https://blog.lordash.cf/posts/f0fbaf1d.html">【专题】Bash博弈</a>。</p>
+<p>若当前石子共有n =（p+q）* r个，则先手必胜，必胜策略为：先手第一次取q个，以后每次若后手取K个，先手取（p+q-k）个，如此下去最后必剩下p个给后手，所以先手必胜。</p>
+<p>若n =（p+q）* r + left个（1&lt; left &lt;= p）后手必胜，必胜策略为：每次取石子活动中，若先手取k个，则后手取（p+q-k）个，那么最后剩下left个给先手，此时left &lt;= p，所以先手只能一次取完，后手胜。</p>
+<p>若n =（p+q）* r + left个（p &lt; left &lt;= q），则先手必胜，必胜策略为：先手第一次取t（1&lt;left – t &lt;= p）个，以后每次后手取k个，则先手取（p+q-k）个，那么最后留下1&lt; left – t &lt;=p给后手，则先手胜。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">int</span> n, p, q;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%d %d %d&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>p, <span style="color:#f92672">&amp;</span>q))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">int</span> s <span style="color:#f92672">=</span> n <span style="color:#f92672">%</span> (p<span style="color:#f92672">+</span>q);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#66d9ef">if</span>(s<span style="color:#f92672">!=</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> s<span style="color:#f92672">&lt;=</span>p){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            printf(<span style="color:#e6db74">&#34;LOST</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            printf(<span style="color:#e6db74">&#34;WIN</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>HDU-1846 Brave Game</title>
+      <link>https://blog.lordash.de/posts/solution/hdu-1846-brave-game/</link>
+      <pubDate>Sun, 12 Jul 2020 00:35:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/hdu-1846-brave-game/</guid>
+      <description>HDU-1846 Brave Game 类型 博弈论 Bash博弈</description>
+      <content:encoded><![CDATA[<h1 id="brave-gamehdu-1846httpsvjudgenetproblemhdu-1846">Brave Game(<a href="https://vjudge.net/problem/HDU-1846">HDU-1846</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>十年前读大学的时候，中国每年都要从国外引进一些电影大片，其中有一部电影就叫《勇敢者的游戏》（英文名称：Zathura），一直到现在，我依然对于电影中的部分电脑特技印象深刻。
+今天，大家选择上机考试，就是一种勇敢（brave）的选择；这个短学期，我们讲的是博弈（game）专题；所以，大家现在玩的也是“勇敢者的游戏”，这也是我命名这个题目的原因。
+当然，除了“勇敢”，我还希望看到“诚信”，无论考试成绩如何，希望看到的都是一个真实的结果，我也相信大家一定能做到的~</p>
+<p>各位勇敢者要玩的第一个游戏是什么呢？很简单，它是这样定义的：
+1、 本游戏是一个二人游戏;
+2、 有一堆石子一共有n个；
+3、 两人轮流进行;
+4、 每走一步可以取走1…m个石子；
+5、 最先取光石子的一方为胜；</p>
+<p>如果游戏的双方使用的都是最优策略，请输出哪个人能赢。</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>输入数据首先包含一个正整数C(C&lt;=100)，表示有C组测试数据。
+每组测试数据占一行，包含两个整数n和m（1&lt;=n,m&lt;=1000），n和m的含义见题目描述。</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>如果先走的人能赢，请输出“first”，否则请输出“second”，每个实例的输出占一行。</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>23 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>4 3
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>first
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>second
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Bash博弈</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">int</span> T; scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>T);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">while</span>(T<span style="color:#f92672">--</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">int</span> n, m;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">%</span>(m<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            printf(<span style="color:#e6db74">&#34;second</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            printf(<span style="color:#e6db74">&#34;first</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>HDU-2149 Public Sale</title>
+      <link>https://blog.lordash.de/posts/solution/hdu-2149-public-sale/</link>
+      <pubDate>Sat, 11 Jul 2020 20:47:12 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/hdu-2149-public-sale/</guid>
+      <description>HDU-2149 Public Sale 类型 博弈论 Bash博弈</description>
+      <content:encoded><![CDATA[<h1 id="public-salehdu-2149httpsvjudgenetproblemhdu-2149">Public Sale(<a href="https://vjudge.net/problem/HDU-2149">HDU-2149</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>虽然不想，但是现实总归是现实，Lele始终没有逃过退学的命运，因为他没有拿到奖学金。现在等待他的，就是像FarmJohn一样的农田生涯。</p>
+<p>要种田得有田才行，Lele听说街上正在举行一场别开生面的拍卖会，拍卖的物品正好就是一块20亩的田地。于是，Lele带上他的全部积蓄，冲往拍卖会。</p>
+<p>后来发现，整个拍卖会只有Lele和他的死对头Yueyue。</p>
+<p>通过打听，Lele知道这场拍卖的规则是这样的：刚开始底价为0，两个人轮流开始加价，不过每次加价的幅度要在1～N之间，当价格大于或等于田地的成本价 M 时，主办方就把这块田地卖给这次叫价的人。</p>
+<p>Lele和Yueyue虽然考试不行，但是对拍卖却十分精通，而且他们两个人都十分想得到这块田地。所以他们每次都是选对自己最有利的方式进行加价。</p>
+<p>由于Lele字典序比Yueyue靠前，所以每次都是由Lele先开始加价，请问，第一次加价的时候，
+Lele要出多少才能保证自己买得到这块地呢？</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>本题目包含多组测试，请处理到文件结束(EOF)。每组测试占一行。
+每组测试包含两个整数M和N(含义见题目描述，0&lt;N，M&lt;1100)</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>对于每组数据，在一行里按递增的顺序输出Lele第一次可以加的价。两个数据之间用空格隔开。
+如果Lele在第一次无论如何出价都无法买到这块土地，就输出&quot;none&quot;。</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>4 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>3 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>3 5
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>none
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>3 4 5
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<p>Bash博弈</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">int</span> n, m;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>m, <span style="color:#f92672">&amp;</span>n))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">if</span>(m<span style="color:#f92672">%</span>(n<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>            printf(<span style="color:#e6db74">&#34;none</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        printf(<span style="color:#e6db74">&#34;%d&#34;</span>, m<span style="color:#f92672">%</span>(n<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        <span style="color:#66d9ef">if</span>(m<span style="color:#f92672">&lt;</span>n)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>m<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&lt;=</span>n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>                printf(<span style="color:#e6db74">&#34; %d&#34;</span>, i);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Bash博弈</title>
+      <link>https://blog.lordash.de/posts/algorithm/bash%E5%8D%9A%E5%BC%88/</link>
+      <pubDate>Mon, 15 Jun 2020 17:40:11 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/algorithm/bash%E5%8D%9A%E5%BC%88/</guid>
+      <description>博弈论专题，介绍Bash博弈</description>
+      <content:encoded><![CDATA[<h1 id="bash博奕">Bash博奕</h1>
+<p>基本的巴什博弈（Bash Game）描述如下：</p>
+<blockquote>
+<p>有一堆n个物品，两人轮流取走物品，每次至少取一个，最多取m个，最后取光者获胜。</p>
+</blockquote>
+<p>博弈过程如下：</p>
+<ul>
+<li>
+<p>如果n&lt;m，那么先手可以一次取完。先手必胜。</p>
+</li>
+<li>
+<p>如果n=m+1，那么由于一次最多取走m个，无论先手取走多少个，后手都能一次性取完。此时先手必败。
+<del>可以假设，游戏局面与m+1有关。</del></p>
+</li>
+<li>
+<p>如果n%(m+1)=0，那么无论先手取走多少个，假设此时为i个（操作合法时1 $ \le $ i $ \le $ m），后手都能取走m+1-i个，使得局面重新回到n%(m+1)=0。直至最后局面变成n=m+1。此时先手必败。</p>
+</li>
+<li>
+<p>如果n%(m+1)=k $ \neq $ 0，显然1 $ \le $ k $ \le $ m，那么先手取走k个，则将n%(m+1)=0的必输态（先手必败局面、奇异局面、P-position）留给对面了。此时先手必胜。</p>
+</li>
+</ul>
+<hr>
+<p>修改一下获胜条件：</p>
+<blockquote>
+<p>有一堆n个物品，两人轮流取走物品，每次至少取一个，最多取m个，最后取光者失败。</p>
+</blockquote>
+<p>可以转化为基本的巴什博弈，只不过此时需要给对手留下最后1个，考虑的 $ n&rsquo; $ 实际为n-1，即<code>(n-1)%(m+1) ? 先手胜 : 后手胜</code></p>
+<hr>
+<p>另一类的巴什博弈：</p>
+<blockquote>
+<p>有一堆n个物品，两人轮流取走物品，每次至少取p个，最多取q个，剩余不足p个时一次取完，最后取光者失败。</p>
+</blockquote>
+<p>可得 $ n = (p + q) \times r + s $ 时，<code>(s!=0 &amp;&amp; s&lt;=p) ? 后手胜 : 先手胜</code></p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
