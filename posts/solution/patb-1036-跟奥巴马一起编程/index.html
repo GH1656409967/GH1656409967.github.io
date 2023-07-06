@@ -9,7 +9,7 @@
 <meta content="PATB-1036 跟奥巴马一起编程 类型 水题" name="description"/>
 <meta content="Lordash" name="author"/>
 <link href="https://blog.lordash.de/posts/solution/patb-1036-%E8%B7%9F%E5%A5%A5%E5%B7%B4%E9%A9%AC%E4%B8%80%E8%B5%B7%E7%BC%96%E7%A8%8B/" rel="canonical"/>
-<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.a664add4ce1dec0cd7a1d4abdac042b8e56d1bc32046e8ba46a28719399a2dff.css" integrity="sha256-pmSt1M4d7AzXodSr2sBCuOVtG8MgRui6RqKHGTmaLf8=" rel="preload stylesheet"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.ef97ea2b842c9fc408820f1eb0b4b57550f27ebf890de8f6f8d5316e3525b1d8.css" integrity="sha256-75fqK4Qsn8QIgg8esLS1dVDyfr+JDej2+NUxbjUlsdg=" rel="preload stylesheet"/>
 <link href="https://blog.lordash.de/assets/images/favicon-16x16-.png" rel="icon"/>
 <link href="https://blog.lordash.de/assets/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
 <link href="https://blog.lordash.de/assets/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
@@ -470,5 +470,27 @@
         }
     });
 </script>
-</body>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const unfoldbtn = document.createElement('button');
+        unfoldbtn.classList.add('unfoldbtn');
+        unfoldbtn.innerHTML = '展开';
+
+        unfoldbtn.addEventListener('click', (cb) => {
+            if (container.firstChild.firstChild.classList.contains('unfold')) {
+                container.firstChild.firstChild.classList.remove('unfold');
+                unfoldbtn.innerHTML = '展开';
+            } else {
+                container.firstChild.firstChild.classList.add('unfold');
+                unfoldbtn.innerHTML = '折叠';
+            }
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(unfoldbtn);
+        }
+    });
+</script></body>
 </html>
