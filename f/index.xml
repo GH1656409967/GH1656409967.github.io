@@ -5660,7 +5660,7 @@ ARPG：<code>上古卷轴5：天际</code>、<code>塞尔达传说：旷野之�
             <img class="friend-logo" src=./links/liuchuo.jpg />
         </div>
         <div class="friend-right">
-            <div class="friend-name">柳婼のblog<span class="label-info">15级校友</span>
+            <div class="friend-name">柳婼のblog
             </div>
             <div class="friend-info">PAT</div>
         </div>
@@ -5702,7 +5702,7 @@ ARPG：<code>上古卷轴5：天际</code>、<code>塞尔达传说：旷野之�
 <div style="gird">
 <div style="display: flex; justify-content: center; align-items: center">
 <input id="dist" type="text" onkeydown="if(event.keyCode==13) {count(event)}" placeholder="输入距离"
-       style="border: 1px solid #d2d2d2; border-radius: 3px; margin-right: 3px">
+       style="border: 1px solid #d2d2d2; border-radius: 3px; width: 7rem; margin-right: 1rem">
 <button onclick="count(event)" >确定</button>
 </div>
 <div style="display: grid; justify-content: center; align-items: center;">
