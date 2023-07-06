@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>文章 on 似水</title>
+    <title>分类 on 似水</title>
     <link>https://blog.lordash.de/posts/</link>
-    <description>Recent content in 文章 on 似水</description>
+    <description>Recent content in 分类 on 似水</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Wed, 21 Jun 2023 13:45:46 +0800</lastBuildDate><atom:link href="https://blog.lordash.de/posts/index.xml" rel="self" type="application/rss+xml" />
