@@ -20,10 +20,10 @@
     <loc>https://blog.lordash.de/categories/%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2023-06-30T11:25:26+08:00</lastmod>
   </url><url>
-    <loc>https://blog.lordash.de/custom/test/</loc>
+    <loc>https://blog.lordash.de/f/test/</loc>
     <lastmod>2023-06-29T11:04:23+08:00</lastmod>
   </url><url>
-    <loc>https://blog.lordash.de/custom/</loc>
+    <loc>https://blog.lordash.de/f/</loc>
     <lastmod>2023-06-29T11:04:23+08:00</lastmod>
   </url><url>
     <loc>https://blog.lordash.de/posts/share/</loc>
@@ -224,16 +224,16 @@
     <loc>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-19-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/</loc>
     <lastmod>2021-04-03T16:37:18+00:00</lastmod>
   </url><url>
-    <loc>https://blog.lordash.de/custom/gallery/cookbook/</loc>
+    <loc>https://blog.lordash.de/f/gallery/cookbook/</loc>
     <lastmod>2021-03-28T14:10:51+00:00</lastmod>
   </url><url>
-    <loc>https://blog.lordash.de/custom/gallery/build-up/</loc>
+    <loc>https://blog.lordash.de/f/gallery/workout/</loc>
     <lastmod>2021-03-28T14:10:51+00:00</lastmod>
   </url><url>
-    <loc>https://blog.lordash.de/custom/gallery/score/</loc>
+    <loc>https://blog.lordash.de/f/gallery/score/</loc>
     <lastmod>2021-03-28T14:10:51+00:00</lastmod>
   </url><url>
-    <loc>https://blog.lordash.de/custom/gallery/certificates/</loc>
+    <loc>https://blog.lordash.de/f/gallery/award/</loc>
     <lastmod>2021-03-28T14:10:51+00:00</lastmod>
   </url><url>
     <loc>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-18-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9/</loc>
@@ -965,10 +965,10 @@
     <loc>https://blog.lordash.de/posts/solution/patb-1025-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</loc>
     <lastmod>2020-04-30T18:17:18+00:00</lastmod>
   </url><url>
-    <loc>https://blog.lordash.de/custom/personal/</loc>
+    <loc>https://blog.lordash.de/f/personal/</loc>
     <lastmod>2020-04-29T09:47:20+00:00</lastmod>
   </url><url>
-    <loc>https://blog.lordash.de/custom/about/</loc>
+    <loc>https://blog.lordash.de/f/about/</loc>
     <lastmod>2020-04-29T09:47:20+00:00</lastmod>
   </url><url>
     <loc>https://blog.lordash.de/posts/solution/patb-1024-%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95/</loc>
@@ -992,10 +992,10 @@
     <loc>https://blog.lordash.de/posts/solution/patb-1018-%E9%94%A4%E5%AD%90%E5%89%AA%E5%88%80%E5%B8%83/</loc>
     <lastmod>2020-04-29T09:02:18+00:00</lastmod>
   </url><url>
-    <loc>https://blog.lordash.de/custom/gallery/scenery/</loc>
+    <loc>https://blog.lordash.de/f/gallery/scenery/</loc>
     <lastmod>2020-04-28T15:00:51+00:00</lastmod>
   </url><url>
-    <loc>https://blog.lordash.de/custom/gallery/</loc>
+    <loc>https://blog.lordash.de/f/gallery/</loc>
     <lastmod>2020-04-28T15:00:51+00:00</lastmod>
   </url><url>
     <loc>https://blog.lordash.de/posts/solution/patb-1017-a%E9%99%A4%E4%BB%A5b/</loc>
@@ -1085,8 +1085,20 @@
     <loc>https://blog.lordash.de/posts/share/ed4db4b5d278abf7/</loc>
     <lastmod>2020-04-22T14:54:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.lordash.de/custom/links/</loc>
+    <loc>https://blog.lordash.de/f/share/</loc>
     <lastmod>2020-04-16T09:50:24+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.lordash.de/f/links/</loc>
+    <lastmod>2020-04-16T09:50:24+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.lordash.de/f/games/hell-let-loose-mil/</loc>
+    <lastmod>2020-04-16T09:44:35+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.lordash.de/f/games/</loc>
+    <lastmod>2020-04-16T09:44:35+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.lordash.de/f/games/catch-the-cat/</loc>
+    <lastmod>2020-04-16T09:44:35+00:00</lastmod>
   </url><url>
     <loc>https://blog.lordash.de/posts/essays/hexo%E6%96%87%E7%AB%A0%E6%93%8D%E4%BD%9C/</loc>
     <lastmod>2020-03-06T08:12:55+00:00</lastmod>
