@@ -271,10 +271,10 @@
     
     <item>
       <title>Wythoff博弈</title>
-      <link>https://blog.lordash.de/posts/algorithm/wythoff%E5%8D%9A%E5%BC%88/</link>
+      <link>https://blog.lordash.de/posts/algorithm/872bcae11a67f2fa/</link>
       <pubDate>Wed, 17 Jun 2020 17:40:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/wythoff%E5%8D%9A%E5%BC%88/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/872bcae11a67f2fa/</guid>
       <description>博弈论专题，介绍Wythoff博弈、Betty定理</description>
       <content:encoded><![CDATA[<h2 id="wythoff博弈">Wythoff博弈</h2>
 <p>基本的威佐夫博弈（Wythoff Game）描述如下：</p>

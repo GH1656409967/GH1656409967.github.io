@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>静态博客搭建 | 似水</title>
+<meta content="" name="keywords"/>
+<meta content="Life is like a boat" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/series/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.b3674ca2ebb4187479c59b26d47407f5a715249af58180cecd6170d48c088921.css" integrity="sha256-s2dMouu0GHR5xZsm1HQH9acVJJr1gYDOzWFw1IwIiSE=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/assets/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/assets/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/assets/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://blog.lordash.de/series/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.xml" rel="alternate" type="application/rss+xml"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="静态博客搭建" property="og:title"/>
+<meta content="Life is like a boat" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://blog.lordash.de/series/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="静态博客搭建" name="twitter:title"/>
+<meta content="Life is like a boat" name="twitter:description"/>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/archives" title="归档">
+<span><i class="fa fa-history"></i>归档</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/tags" title="标签">
+<span><i class="fa fa-tags"></i>标签</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/f/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/f/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header">
+<h1>
+    静态博客搭建
+  </h1>
+</header>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>Hugo以及PaperMod主题的配置
+    </h2>
+</header>
+<div class="entry-content">
+<p>起因 最近在用霞鹜文楷(LXGW WenKai)，配合上PaperMod这种强调文字的主题，在观感上很不错，于是决定转到Hugo。Hugo的文档...</p>
+</div>
+<footer class="entry-footer"><span title="2023-06-30 11:25:26.08 +0800 CST">2023-06-30</span> · Lordash
+
+</footer>
+<a aria-label="post link to Hugo以及PaperMod主题的配置" class="entry-link" href="https://blog.lordash.de/posts/configure/ff377f87efdbc8bc/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>Win10使用Vercel托管Hexo博客
+    </h2>
+</header>
+<div class="entry-content">
+<p>1 Vercel配置 进入Vercel官网，点击右上角Sign Up注册，选择Continue with GitHub使用GitHub账号注册。 注册完成后，...</p>
+</div>
+<footer class="entry-footer"><span title="2022-08-07 13:00:00 +0000 UTC">2022-08-07</span> · Lordash
+
+</footer>
+<a aria-label="post link to Win10使用Vercel托管Hexo博客" class="entry-link" href="https://blog.lordash.de/posts/configure/abf4cb68b4c20c52/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>Win10将域名NameServer从NameSilo替换到Cloudflare
+    </h2>
+</header>
+<div class="entry-content">
+<p>1 配置 首先，需要在NameSilo上注册登录，购买心仪的域名，然后注册并登录Cloudflare， 点击左侧网站，进入网站管理页面，点击添加站...</p>
+</div>
+<footer class="entry-footer"><span title="2022-08-07 11:00:00 +0000 UTC">2022-08-07</span> · Lordash
+
+</footer>
+<a aria-label="post link to Win10将域名NameServer从NameSilo替换到Cloudflare" class="entry-link" href="https://blog.lordash.de/posts/configure/7f8636440ab49b65/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>Hexo以及NexT8主题的配置
+    </h2>
+</header>
+<div class="entry-content">
+<p>1 安装NexT v8.0 打开命令行，进入博客根目录，使用git下载NexT主题 1# 下载NexT主题 2git clone https://github.com/next-theme/hexo-theme-next themes/next 然后修改博客根目录下的_config.yml...</p>
+</div>
+<footer class="entry-footer"><span title="2022-04-07 13:00:00 +0000 UTC">2022-04-07</span> · Lordash
+
+</footer>
+<a aria-label="post link to Hexo以及NexT8主题的配置" class="entry-link" href="https://blog.lordash.de/posts/configure/ad1c5aba78b0afc4/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>Win10使用Hexo和Pages服务搭建个人博客
+    </h2>
+</header>
+<div class="entry-content">
+<p>1 博客 博客（blog或weblog）正式名称是网络日志。一个典型的博客结合了文字、图像、链接以及其它主题相关的媒体，同时能够让读者以互动的方...</p>
+</div>
+<footer class="entry-footer"><span title="2022-04-07 12:00:00 +0000 UTC">2022-04-07</span> · Lordash
+
+</footer>
+<a aria-label="post link to Win10使用Hexo和Pages服务搭建个人博客" class="entry-link" href="https://blog.lordash.de/posts/configure/f6c59ae5f9b3dc94/"></a>
+</article>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const unfoldbtn = document.createElement('button');
+        unfoldbtn.classList.add('unfoldbtn');
+        unfoldbtn.innerHTML = '展开';
+
+        unfoldbtn.addEventListener('click', (cb) => {
+            if (container.firstChild.firstChild.classList.contains('unfold')) {
+                container.firstChild.firstChild.classList.remove('unfold');
+                unfoldbtn.innerHTML = '展开';
+            } else {
+                container.firstChild.firstChild.classList.add('unfold');
+                unfoldbtn.innerHTML = '折叠';
+            }
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(unfoldbtn);
+        }
+    });
+</script></body>
+</html>

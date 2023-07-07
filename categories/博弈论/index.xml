@@ -3268,10 +3268,10 @@ You are to write a program to determine who will finally win the game.</p>
     
     <item>
       <title>Fibonacci博弈</title>
-      <link>https://blog.lordash.de/posts/algorithm/fibonacci%E5%8D%9A%E5%BC%88/</link>
+      <link>https://blog.lordash.de/posts/algorithm/ee3ddd3d0d64d1e8/</link>
       <pubDate>Thu, 18 Jun 2020 17:40:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/fibonacci%E5%8D%9A%E5%BC%88/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/ee3ddd3d0d64d1e8/</guid>
       <description>博弈论专题，介绍Fibonacci博弈、Zeckendorf定理</description>
       <content:encoded><![CDATA[<h1 id="fibonacci博弈">Fibonacci博弈</h1>
 <p>基本的斐波那契博弈（Fibonacci Game）描述如下：</p>
@@ -3288,7 +3288,7 @@ You are to write a program to determine who will finally win the game.</p>
 </li>
 </ul>
 <h1 id="zeckendorf定理">Zeckendorf定理</h1>
-<p>Zeckendorf定理：</p>
+<p>Zeckendorf齐肯多夫定理：</p>
 <blockquote>
 <p>任何正整数都可以表示成若干个不连续的斐波那契数（不包括第一个斐波那契数）之和。</p>
 </blockquote>
@@ -3301,10 +3301,10 @@ You are to write a program to determine who will finally win the game.</p>
     
     <item>
       <title>Wythoff博弈</title>
-      <link>https://blog.lordash.de/posts/algorithm/wythoff%E5%8D%9A%E5%BC%88/</link>
+      <link>https://blog.lordash.de/posts/algorithm/872bcae11a67f2fa/</link>
       <pubDate>Wed, 17 Jun 2020 17:40:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/wythoff%E5%8D%9A%E5%BC%88/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/872bcae11a67f2fa/</guid>
       <description>博弈论专题，介绍Wythoff博弈、Betty定理</description>
       <content:encoded><![CDATA[<h2 id="wythoff博弈">Wythoff博弈</h2>
 <p>基本的威佐夫博弈（Wythoff Game）描述如下：</p>
@@ -3351,10 +3351,10 @@ You are to write a program to determine who will finally win the game.</p>
     
     <item>
       <title>Bash博弈</title>
-      <link>https://blog.lordash.de/posts/algorithm/bash%E5%8D%9A%E5%BC%88/</link>
+      <link>https://blog.lordash.de/posts/algorithm/3a30f522610343ae/</link>
       <pubDate>Mon, 15 Jun 2020 17:40:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/bash%E5%8D%9A%E5%BC%88/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/3a30f522610343ae/</guid>
       <description>博弈论专题，介绍Bash博弈</description>
       <content:encoded><![CDATA[<h1 id="bash博奕">Bash博奕</h1>
 <p>基本的巴什博弈（Bash Game）描述如下：</p>
@@ -3394,10 +3394,10 @@ You are to write a program to determine who will finally win the game.</p>
     
     <item>
       <title>Nim博弈</title>
-      <link>https://blog.lordash.de/posts/algorithm/nim%E5%8D%9A%E5%BC%88/</link>
+      <link>https://blog.lordash.de/posts/algorithm/b3f72d320d8d4e65/</link>
       <pubDate>Sun, 14 Jun 2020 17:40:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/nim%E5%8D%9A%E5%BC%88/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/b3f72d320d8d4e65/</guid>
       <description>博弈论专题，介绍Nim博弈、 Bouton定理</description>
       <content:encoded><![CDATA[<h1 id="nim博弈">Nim博弈</h1>
 <p>基本的尼姆博弈（Nim Game）描述如下：</p>
@@ -3429,10 +3429,10 @@ You are to write a program to determine who will finally win the game.</p>
     
     <item>
       <title>SG函数</title>
-      <link>https://blog.lordash.de/posts/algorithm/sg%E5%87%BD%E6%95%B0/</link>
+      <link>https://blog.lordash.de/posts/algorithm/671a581fd4a227f6/</link>
       <pubDate>Mon, 08 Jun 2020 22:00:54 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/sg%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/671a581fd4a227f6/</guid>
       <description>博弈论专题，介绍关于公平组合游戏、必胜态和必败态、SG函数、SG定理等</description>
       <content:encoded><![CDATA[<h1 id="公平组合游戏">公平组合游戏</h1>
 <p>公平组合游戏（Impartial Combinatorial Games）简称ICG，大致定义如下：</p>
@@ -3442,30 +3442,35 @@ You are to write a program to determine who will finally win the game.</p>
 <li>选手轮流操作（move），且只能在合法操作集合中选择</li>
 <li>在游戏出于某状态，当前选手合法操作集合为空时判负，游戏结束</li>
 </ol>
-<p>{% fold 查看解析 %}</p>
-<p>一个公平游戏可以抽象地用一个有向无环图来表示，这个图中每个点都对应一个状态，每条有向边代表从一个状态到另一个状态的合法操作。</p>
+<details>
+    <summary>查看解析</summary>
+    <p>一个公平游戏可以抽象地用一个有向无环图来表示，这个图中每个点都对应一个状态，每条有向边代表从一个状态到另一个状态的合法操作。</p>
 <p>我们可以想象一个硬币最初放在某个点上，然后两个玩家轮流将其从当前的点移动到它的后继点。当硬币移动到汇点（没有出度的点）时游戏结束，无法操作的玩家判负。</p>
-<p><img loading="lazy" src="SG%e5%87%bd%e6%95%b0/ICG.png" alt="ICG"  />
+<p><img loading="lazy" src="/posts/algorithm/SG%e5%87%bd%e6%95%b0/ICG.png" alt="ICG"  />
 </p>
-<p>{% endfold %}</p>
+
+</details>
 <hr>
 <h1 id="必胜态和必败态">必胜态和必败态</h1>
 <ul>
 <li>必败态（P-position）：上一个选手（previous player先前刚操作完的选手）处于必胜局面，即此时先手必败</li>
 <li>必胜态（N-position）：下一个选手（next player当前即将操作的选手）处于必胜局面，即此时先手必胜</li>
 </ul>
-<p>{% fold 查看解析 %}</p>
-<p>更加严谨的定义：1.无法进行任何移动的局面终结点（也就是terminal position）是P-position；2.可以移动到P-position的局面是N-position；3.所有移动都导致N-position的局面是P-position。</p>
-<p><img loading="lazy" src="SG%e5%87%bd%e6%95%b0/NP.png" alt="NP"  />
+<details>
+    <summary>查看解析</summary>
+    <p>更加严谨的定义：1.无法进行任何移动的局面终结点（也就是terminal position）是P-position；2.可以移动到P-position的局面是N-position；3.所有移动都导致N-position的局面是P-position。</p>
+<p><img loading="lazy" src="/posts/algorithm/SG%e5%87%bd%e6%95%b0/NP.png" alt="NP"  />
 </p>
 <p>P-position和N-position的局面信息提供了游戏的必胜策略。如果轮到我们操作且游戏处在一个N-position，我们应该移动到一个P-position。接着我们的对手就会被迫进入N-position，依次类推。我们最终会移入一个汇点并获得胜利。</p>
-<p>{% endfold %}</p>
+
+</details>
 <hr>
 <h1 id="sg函数">SG函数</h1>
 <p>先定义mex(minimal excludant)运算，这是施加于一个集合的运算，表示<strong>最小的不属于这个集合的非负整数</strong>。例如mex{2,3,5}=0、mex{0,1,2,4}=3、mex{}=0。
 对于任意状态x，定义SG(x)=mex(S)，其中S是x后继状态的SG函数值的集合。如x有三个后继状态分别为a、b、c，那么SG(x)=mex{SG(a), SG(b), SG(c)}。 这样，集合S的终态必然是空集，所以当且仅当x为必败点P时，SG函数的终态为SG(x)=0。</p>
-<p>{% fold 查看解析 %}</p>
-<p>通过SG函数，每个ICG都可以转换成<a href="https://blog.lordash.cf/posts/2aa44f65.html#Nim%E5%8D%9A%E5%BC%88">Nim博弈</a>。SG函数的定义域为ICG的决策树上的所有节点，此时具体定义为：SG(x)=mex{SG(y)|y是x的节点}。对于ICG的决策树上的节点u，我们可以把它想象成一个只有一堆石子，个数为SG(u)的Nim博弈。</p>
+<details>
+    <summary>查看解析</summary>
+    <p>通过SG函数，每个ICG都可以转换成<a href="https://blog.lordash.cf/posts/2aa44f65.html#Nim%E5%8D%9A%E5%BC%88">Nim博弈</a>。SG函数的定义域为ICG的决策树上的所有节点，此时具体定义为：SG(x)=mex{SG(y)|y是x的节点}。对于ICG的决策树上的节点u，我们可以把它想象成一个只有一堆石子，个数为SG(u)的Nim博弈。</p>
 <p>对于节点u的子节点v：</p>
 <ol>
 <li>根据SG函数的定义，必有SG(u) $  \neq $ SG(v) 。</li>
@@ -3473,9 +3478,10 @@ You are to write a program to determine who will finally win the game.</p>
 <li>对于全体SG(u)&gt;SG(v)的子节点v，其SG函数值将完整覆盖区间[0, SG(u)-1]上的所有整数。我们从局面u移动到局面v，其实相当于在一堆个数为SG(u)的石子上取走若干石子，使剩下一堆个数为SG(v)的石子。</li>
 </ol>
 <p>当ICG中存在n个互相不干扰的移动类型时，我们可以将这n种移动类型视为n堆石子，将该ICG视为n堆石子的Nim博弈，运用<a href="https://blog.lordash.cf/posts/2aa44f65.html#Bouton%E5%AE%9A%E7%90%86">Bouton定理</a>，该ICG的先手必胜与否的情况可以通过计算每个移动类型下的初始状态的SG函数，并计算这些SG函数值的异或和来得出。即下面的<a href="#SG%E5%AE%9A%E7%90%86">SG定理</a>。</p>
-<p><img loading="lazy" src="SG%e5%87%bd%e6%95%b0/SG.png" alt="SG"  />
+<p><img loading="lazy" src="/posts/algorithm/SG%e5%87%bd%e6%95%b0/SG.png" alt="SG"  />
 </p>
-<p>{% endfold %}</p>
+
+</details>
 <hr>
 <h1 id="sg定理">SG定理</h1>
 <p>Sprague-Grundy定理：</p>

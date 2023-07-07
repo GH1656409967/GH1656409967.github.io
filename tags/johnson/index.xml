@@ -9,26 +9,26 @@
     <lastBuildDate>Wed, 12 Aug 2020 11:03:11 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/johnson/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Johnson</title>
-      <link>https://blog.lordash.de/posts/algorithm/johnson/</link>
+      <link>https://blog.lordash.de/posts/algorithm/89112e2c641f5e5c/</link>
       <pubDate>Wed, 12 Aug 2020 11:03:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/johnson/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/89112e2c641f5e5c/</guid>
       <description>图论专题，介绍Johnson算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>Johnson算法是求解多源最短路的算法之一，核心操作是<code>re-weight</code>，适用于不包含负环（负权回路）的图。时间复杂度$O(nm+nmlogm)$。</p>
 <h1 id="johnson算法">Johnson算法</h1>
 <p>全源最短路常用方法是Floyd算法，时间复杂度$O(n^{3})$。当然我们也可以对每个顶点跑单源最短路。如果对每个顶点求一次Bellman-Ford算法，时间复杂度是$O(n^{2}m)$，似乎不如Floyd算法。如果是对每个顶点求一次Dijkstra算法，时间复杂度是$O(nm+nmlogm)$，看起来优于Floyd算法了。但是如何去除负边权的影响呢？</p>
 <p>考虑一下直接把所有边权加个正数，但是显然不满足原图性质了：</p>
-<p><img loading="lazy" src="Johnson/%e7%9b%b4%e6%8e%a5%e5%8a%a0.png" alt="直接加"  />
+<p><img loading="lazy" src="/posts/algorithm/Johnson/%e7%9b%b4%e6%8e%a5%e5%8a%a0.png" alt="直接加"  />
 </p>
 <p>这里提出一个<code>re-weight</code>操作，首先加上一个源点，并使其与所有顶点连通，新边权赋值为0，如下图：</p>
-<p><img loading="lazy" src="Johnson/%e5%8a%a0%e6%ba%90.png" alt="加源"  />
+<p><img loading="lazy" src="/posts/algorithm/Johnson/%e5%8a%a0%e6%ba%90.png" alt="加源"  />
 </p>
 <p>然后以新加顶点为源，跑Bellman-Ford算法，求出到其它顶点的最短路：</p>
-<p><img loading="lazy" src="Johnson/%e6%9c%80%e7%9f%ad%e8%b7%af.png" alt="最短路"  />
+<p><img loading="lazy" src="/posts/algorithm/Johnson/%e6%9c%80%e7%9f%ad%e8%b7%af.png" alt="最短路"  />
 </p>
 <p>记录下最短路径长度h[] = {0, -3, 0, 0}，删除刚刚新增加的结点。然后对原图边权进行处理，使用以下方法更新边权：$w&rsquo;(u, v) = w(u, v) + (h[u] - h[v])$。</p>
-<p><img loading="lazy" src="Johnson/%e5%a4%84%e7%90%86.png" alt="处理"  />
+<p><img loading="lazy" src="/posts/algorithm/Johnson/%e5%a4%84%e7%90%86.png" alt="处理"  />
 </p>
 <p>这时，负边权的影响就被消除了，可以愉快的使用Dijkstra算法了。（懒一下，正确性请自行证明）。</p>
 <h1 id="模板">模板</h1>

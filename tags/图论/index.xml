@@ -9,26 +9,26 @@
     <lastBuildDate>Wed, 12 Aug 2020 11:03:11 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Johnson</title>
-      <link>https://blog.lordash.de/posts/algorithm/johnson/</link>
+      <link>https://blog.lordash.de/posts/algorithm/89112e2c641f5e5c/</link>
       <pubDate>Wed, 12 Aug 2020 11:03:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/johnson/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/89112e2c641f5e5c/</guid>
       <description>图论专题，介绍Johnson算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>Johnson算法是求解多源最短路的算法之一，核心操作是<code>re-weight</code>，适用于不包含负环（负权回路）的图。时间复杂度$O(nm+nmlogm)$。</p>
 <h1 id="johnson算法">Johnson算法</h1>
 <p>全源最短路常用方法是Floyd算法，时间复杂度$O(n^{3})$。当然我们也可以对每个顶点跑单源最短路。如果对每个顶点求一次Bellman-Ford算法，时间复杂度是$O(n^{2}m)$，似乎不如Floyd算法。如果是对每个顶点求一次Dijkstra算法，时间复杂度是$O(nm+nmlogm)$，看起来优于Floyd算法了。但是如何去除负边权的影响呢？</p>
 <p>考虑一下直接把所有边权加个正数，但是显然不满足原图性质了：</p>
-<p><img loading="lazy" src="Johnson/%e7%9b%b4%e6%8e%a5%e5%8a%a0.png" alt="直接加"  />
+<p><img loading="lazy" src="/posts/algorithm/Johnson/%e7%9b%b4%e6%8e%a5%e5%8a%a0.png" alt="直接加"  />
 </p>
 <p>这里提出一个<code>re-weight</code>操作，首先加上一个源点，并使其与所有顶点连通，新边权赋值为0，如下图：</p>
-<p><img loading="lazy" src="Johnson/%e5%8a%a0%e6%ba%90.png" alt="加源"  />
+<p><img loading="lazy" src="/posts/algorithm/Johnson/%e5%8a%a0%e6%ba%90.png" alt="加源"  />
 </p>
 <p>然后以新加顶点为源，跑Bellman-Ford算法，求出到其它顶点的最短路：</p>
-<p><img loading="lazy" src="Johnson/%e6%9c%80%e7%9f%ad%e8%b7%af.png" alt="最短路"  />
+<p><img loading="lazy" src="/posts/algorithm/Johnson/%e6%9c%80%e7%9f%ad%e8%b7%af.png" alt="最短路"  />
 </p>
 <p>记录下最短路径长度h[] = {0, -3, 0, 0}，删除刚刚新增加的结点。然后对原图边权进行处理，使用以下方法更新边权：$w&rsquo;(u, v) = w(u, v) + (h[u] - h[v])$。</p>
-<p><img loading="lazy" src="Johnson/%e5%a4%84%e7%90%86.png" alt="处理"  />
+<p><img loading="lazy" src="/posts/algorithm/Johnson/%e5%a4%84%e7%90%86.png" alt="处理"  />
 </p>
 <p>这时，负边权的影响就被消除了，可以愉快的使用Dijkstra算法了。（懒一下，正确性请自行证明）。</p>
 <h1 id="模板">模板</h1>
@@ -184,10 +184,10 @@
     
     <item>
       <title>Floyd-Warshall</title>
-      <link>https://blog.lordash.de/posts/algorithm/floyd/</link>
+      <link>https://blog.lordash.de/posts/algorithm/628d2014b1e1c7d7/</link>
       <pubDate>Wed, 12 Aug 2020 11:02:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/floyd/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/628d2014b1e1c7d7/</guid>
       <description>图论专题，介绍Floyd-Warshall算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>Floyd-Warshall算法是求解多源最短路的算法之一，核心思想是动态规划，适用于不包含负环（负权回路）的图。时间复杂度$O(n^{3})$，空间复杂度$O(n^{2})$。</p>
@@ -305,10 +305,10 @@
     
     <item>
       <title>Bellman-Ford</title>
-      <link>https://blog.lordash.de/posts/algorithm/bellman-ford/</link>
+      <link>https://blog.lordash.de/posts/algorithm/86f4e99b0e080776/</link>
       <pubDate>Wed, 12 Aug 2020 10:58:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/bellman-ford/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/86f4e99b0e080776/</guid>
       <description>图论专题，介绍Bellman-Ford算法、SPFA</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>Bellman-Ford算法是求解单源最短路的算法之一，适用于<strong>可包含负边权</strong>的有向和无向图，可以判断是否包含负环（注意，如果是包含负权回路则不存在最短路问题）。时间复杂度$O(nm)$。</p>
@@ -564,10 +564,10 @@
     
     <item>
       <title>Dijkstra</title>
-      <link>https://blog.lordash.de/posts/algorithm/dijkstra/</link>
+      <link>https://blog.lordash.de/posts/algorithm/884a0d0dae24aa88/</link>
       <pubDate>Wed, 12 Aug 2020 10:57:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/dijkstra/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/884a0d0dae24aa88/</guid>
       <description>图论专题，介绍Dijkstra算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>Dijkstra算法是求解单源最短路的算法之一，核心思想是贪心，只适用于<strong>边权为正</strong>的无向和有向图。原复杂度$O(n^{2})$，优化后时间复杂度能到$O(mlog_{m})$。</p>
@@ -582,14 +582,14 @@
 <p>对于<code>起点u</code>的<code>最短邻接边uw</code>，从u到w不可能存在比$dis(u, w)$更短的路径。因为<code>uw</code>已经是最短的了，从其它路径走的话必然经过比<code>uw</code>更长的路径。</p>
 </blockquote>
 <p>而这也是Dijkstra不能处理负边权的原因，如果有负边权则无法满足前提。可以看下图自行理解：</p>
-<p><img loading="lazy" src="Dijkstra/%e6%9d%a1%e4%bb%b6.png" alt="条件"  />
+<p><img loading="lazy" src="/posts/algorithm/Dijkstra/%e6%9d%a1%e4%bb%b6.png" alt="条件"  />
 </p>
 <p>那么，依据这个贪心性质得到思路，我们可以从现知的最短路径开始，去更新起点到其它点的距离，再更新已知的最短路，重复这个过程，遍历完所有的点之后，就能得到起点到其它点的最短路径长度。详细过程如下：</p>
 <ol>
 <li>将起点加入<code>已经确定最短路的集合S</code>，其它点则属于<code>未确定的集合V-S=T</code>。</li>
 <li>更新到起点的最短距离dis[i]。</li>
-<li>选取未访问的最小的dis<input checked="" disabled="" type="checkbox"> ，标记并加入<code>已经确定最短路的集合S</code>，此时的dis<input checked="" disabled="" type="checkbox"> 就是x到起点的最短距离。</li>
-<li>再依据$ dis[y]=min(dis[y], dis<input checked="" disabled="" type="checkbox"> +{边权值}w<input checked="" disabled="" type="checkbox"> [y]) $，更新集合T中与x相邻的点y到起点的最短距离dis[y]。这个操作叫做<code>松弛操作（relax）</code>，更新过后当前的不等式约束$ dis[y] $相对于$ dis+w<input checked="" disabled="" type="checkbox"> [y] $已经不是最“紧”的约束了，下一次更新dis[y]时就不需要检查这个约束了，即原约束被“松弛”了。</li>
+<li>选取未访问的最小的$dis[x ]$，标记并加入<code>已经确定最短路的集合S</code>，此时的dis[x ]就是x到起点的最短距离。</li>
+<li>再依据$ dis[y]=min(dis[y], dis[x ]+{边权值}w[x ][y]) $，更新集合T中与x相邻的点y到起点的最短距离dis[y]。这个操作叫做<code>松弛操作（relax）</code>，更新过后当前的不等式约束$ dis[y] $相对于$ dis+w[x ][y] $已经不是最“紧”的约束了，下一次更新dis[y]时就不需要检查这个约束了，即原约束被“松弛”了。</li>
 <li>重复3，4步骤直到目标点加入集合，此时目标点对应的dis[v]就是最短路径长度。</li>
 </ol>
 <p>邻接矩阵存图，核心代码如下：</p>

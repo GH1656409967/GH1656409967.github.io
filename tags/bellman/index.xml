@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 12 Aug 2020 10:58:11 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/bellman/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bellman-Ford</title>
-      <link>https://blog.lordash.de/posts/algorithm/bellman-ford/</link>
+      <link>https://blog.lordash.de/posts/algorithm/86f4e99b0e080776/</link>
       <pubDate>Wed, 12 Aug 2020 10:58:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/bellman-ford/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/86f4e99b0e080776/</guid>
       <description>图论专题，介绍Bellman-Ford算法、SPFA</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>Bellman-Ford算法是求解单源最短路的算法之一，适用于<strong>可包含负边权</strong>的有向和无向图，可以判断是否包含负环（注意，如果是包含负权回路则不存在最短路问题）。时间复杂度$O(nm)$。</p>

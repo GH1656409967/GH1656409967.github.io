@@ -695,10 +695,10 @@ Georgia and Bob move the chessmen in turn. Every time a player will  choose a ch
     
     <item>
       <title>Nim博弈</title>
-      <link>https://blog.lordash.de/posts/algorithm/nim%E5%8D%9A%E5%BC%88/</link>
+      <link>https://blog.lordash.de/posts/algorithm/b3f72d320d8d4e65/</link>
       <pubDate>Sun, 14 Jun 2020 17:40:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/nim%E5%8D%9A%E5%BC%88/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/b3f72d320d8d4e65/</guid>
       <description>博弈论专题，介绍Nim博弈、 Bouton定理</description>
       <content:encoded><![CDATA[<h1 id="nim博弈">Nim博弈</h1>
 <p>基本的尼姆博弈（Nim Game）描述如下：</p>

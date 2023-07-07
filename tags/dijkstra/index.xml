@@ -132,10 +132,10 @@
     
     <item>
       <title>Dijkstra</title>
-      <link>https://blog.lordash.de/posts/algorithm/dijkstra/</link>
+      <link>https://blog.lordash.de/posts/algorithm/884a0d0dae24aa88/</link>
       <pubDate>Wed, 12 Aug 2020 10:57:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/dijkstra/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/884a0d0dae24aa88/</guid>
       <description>图论专题，介绍Dijkstra算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>Dijkstra算法是求解单源最短路的算法之一，核心思想是贪心，只适用于<strong>边权为正</strong>的无向和有向图。原复杂度$O(n^{2})$，优化后时间复杂度能到$O(mlog_{m})$。</p>
@@ -150,14 +150,14 @@
 <p>对于<code>起点u</code>的<code>最短邻接边uw</code>，从u到w不可能存在比$dis(u, w)$更短的路径。因为<code>uw</code>已经是最短的了，从其它路径走的话必然经过比<code>uw</code>更长的路径。</p>
 </blockquote>
 <p>而这也是Dijkstra不能处理负边权的原因，如果有负边权则无法满足前提。可以看下图自行理解：</p>
-<p><img loading="lazy" src="Dijkstra/%e6%9d%a1%e4%bb%b6.png" alt="条件"  />
+<p><img loading="lazy" src="/posts/algorithm/Dijkstra/%e6%9d%a1%e4%bb%b6.png" alt="条件"  />
 </p>
 <p>那么，依据这个贪心性质得到思路，我们可以从现知的最短路径开始，去更新起点到其它点的距离，再更新已知的最短路，重复这个过程，遍历完所有的点之后，就能得到起点到其它点的最短路径长度。详细过程如下：</p>
 <ol>
 <li>将起点加入<code>已经确定最短路的集合S</code>，其它点则属于<code>未确定的集合V-S=T</code>。</li>
 <li>更新到起点的最短距离dis[i]。</li>
-<li>选取未访问的最小的dis<input checked="" disabled="" type="checkbox"> ，标记并加入<code>已经确定最短路的集合S</code>，此时的dis<input checked="" disabled="" type="checkbox"> 就是x到起点的最短距离。</li>
-<li>再依据$ dis[y]=min(dis[y], dis<input checked="" disabled="" type="checkbox"> +{边权值}w<input checked="" disabled="" type="checkbox"> [y]) $，更新集合T中与x相邻的点y到起点的最短距离dis[y]。这个操作叫做<code>松弛操作（relax）</code>，更新过后当前的不等式约束$ dis[y] $相对于$ dis+w<input checked="" disabled="" type="checkbox"> [y] $已经不是最“紧”的约束了，下一次更新dis[y]时就不需要检查这个约束了，即原约束被“松弛”了。</li>
+<li>选取未访问的最小的$dis[x ]$，标记并加入<code>已经确定最短路的集合S</code>，此时的dis[x ]就是x到起点的最短距离。</li>
+<li>再依据$ dis[y]=min(dis[y], dis[x ]+{边权值}w[x ][y]) $，更新集合T中与x相邻的点y到起点的最短距离dis[y]。这个操作叫做<code>松弛操作（relax）</code>，更新过后当前的不等式约束$ dis[y] $相对于$ dis+w[x ][y] $已经不是最“紧”的约束了，下一次更新dis[y]时就不需要检查这个约束了，即原约束被“松弛”了。</li>
 <li>重复3，4步骤直到目标点加入集合，此时目标点对应的dis[v]就是最短路径长度。</li>
 </ol>
 <p>邻接矩阵存图，核心代码如下：</p>

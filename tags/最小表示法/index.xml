@@ -227,10 +227,10 @@ Your task is easy, calculate the lexicographically fisrt string’s Rank (if the
     
     <item>
       <title>最小表示法</title>
-      <link>https://blog.lordash.de/posts/algorithm/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/</link>
+      <link>https://blog.lordash.de/posts/algorithm/ea5cd5de805aae48/</link>
       <pubDate>Tue, 04 Aug 2020 17:39:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/ea5cd5de805aae48/</guid>
       <description>字符串专题，介绍最小表示法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>最小表示法，求所有与某个字符串循环同构的字符串中，字典序最小的那个。比如说一个字符串lordash，它长度为7，也就是说最多有七种循环同构的方法。</p>

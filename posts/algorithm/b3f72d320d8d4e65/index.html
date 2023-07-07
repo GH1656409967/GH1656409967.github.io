@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Nim博弈 | 似水</title>
+<meta content="博弈论, Nim博弈" name="keywords"/>
+<meta content="博弈论专题，介绍Nim博弈、 Bouton定理" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/posts/algorithm/b3f72d320d8d4e65/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.b3674ca2ebb4187479c59b26d47407f5a715249af58180cecd6170d48c088921.css" integrity="sha256-s2dMouu0GHR5xZsm1HQH9acVJJr1gYDOzWFw1IwIiSE=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/assets/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/assets/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/assets/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" rel="stylesheet"/>
+<script crossorigin="anonymous" defer="" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script crossorigin="anonymous" defer="" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+<meta content="Nim博弈" property="og:title"/>
+<meta content="博弈论专题，介绍Nim博弈、 Bouton定理" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://blog.lordash.de/posts/algorithm/b3f72d320d8d4e65/" property="og:url"/><meta content="posts" property="article:section"/>
+<meta content="2020-06-14T17:40:11+00:00" property="article:published_time"/>
+<meta content="2020-06-14T17:40:11+00:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Nim博弈" name="twitter:title"/>
+<meta content="博弈论专题，介绍Nim博弈、 Bouton定理" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "分类",
+      "item": "https://blog.lordash.de/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "算法",
+      "item": "https://blog.lordash.de/posts/algorithm/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "Nim博弈",
+      "item": "https://blog.lordash.de/posts/algorithm/b3f72d320d8d4e65/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Nim博弈",
+  "name": "Nim博弈",
+  "description": "博弈论专题，介绍Nim博弈、 Bouton定理",
+  "keywords": [
+    "博弈论", "Nim博弈"
+  ],
+  "articleBody": "Nim博弈 基本的尼姆博弈（Nim Game）描述如下：\n有若干堆各若干个物品，两个人轮流从某一堆取任意多的物品，每次至少取一个，多者不限，最后取光者得胜。\n博弈过程如下：\n对于局面 $ a_1 \\oplus a_2 \\oplus \\ldots \\oplus a_n = 0 $，无论先手怎么取，必将导致异或和改变为 $ a’_1 \\oplus a’_2 \\oplus \\ldots \\oplus a’_n = k \\neq 0 $ ，而此时必有 $ a_i $ 使得 $ a_i $ 二进制下第k位为1，后手只要将 $ a_i $ 取成 $ a_i \\oplus k $ ，使得局面重新回到异或和为0，直至最后局面变成 $ (0, 0, \\ldots, 0) $ ，此时异或和为0。先手必输。 对于局面 $ a_1 \\oplus a_2 \\oplus \\ldots \\oplus a_n \\neq 0 $ ，反之，先手必胜。 详细证明见下方Bouton定理。\nBouton定理 Bouton定理：\n假设Nim博弈的石子有 $ n $ 堆，第 $ i $ 堆的石子个数我们用 $ a_i $ 表示，则我们可以使用 $ (a_1, a_2, \\ldots, a_n) $ 表示一个Nim博弈的局面。对于 $ (a_1, a_2, \\ldots, a_n) $ 的Nim博弈局面，当且仅当 $ a_1 \\oplus a_2 \\oplus \\ldots \\oplus a_n \\neq 0 $ 时（其中 $ \\oplus $ 是按位异或运算），先手必胜。\n简单证明如下：\n对于 $ a_1 \\oplus a_2 \\oplus \\ldots \\oplus a_n \\neq 0 $ 的Nim博弈局面 $ (a_1, a_2, \\ldots, a_n) $ ，我们设 $ a_1 \\oplus a_2 \\oplus \\ldots \\oplus a_n = k $ 。则必存在 $ a_i $ ，其二进制表示在 $ k $ 的最高位上为1（异或运算的性质），且有 $ a_i \\oplus k \u003c a_i $ 。则对于当前局面下的先手可以通过合法的移动将第堆石子取到只剩 $ a_i \\oplus k $ 个，那么此时游戏局面变为 $ (a_1, a_2, \\ldots, a_{i-1},a_i \\oplus k, a_{i+1}, \\ldots a_n ) $ 。 而此时 $ a_1\\oplus a_2 \\oplus \\ldots \\oplus a_{i-1} \\oplus (a_i \\oplus k) \\oplus a_{i+1} \\oplus \\dots \\oplus a_n = k \\oplus k = 0 $。得出异或和不为0的局面一定存在合法移动可以变为异或和为0的局面。 对于 $ a_1 \\oplus a_2 \\oplus \\ldots \\oplus a_n = 0 $ 的Nim博弈局面 $ (a_1, a_2, \\ldots, a_n) $ ，假设我们将第 $ i $ 堆石子由 $ a_i $ 个取到 $ a’_i $ 个，则有 $ a_i \\neq a’i $ ，则必有 $ a_1\\oplus a_2 \\oplus \\ldots \\oplus a{i-1} \\oplus a’i \\oplus a{i+1} \\oplus \\dots \\oplus a_n \\neq 0 $ （可用反证法证明）。即异或和为0的局面无论怎样合法地进行移动，都将转变为异或和不为0的局面。 对于局面 $ (0, 0, \\ldots, 0) $ ，其异或和为0，对于先手而言是必输的局面。 对于任何异或和不为0的局面，先手只需要按照策略将其转变为异或和为0的局面，就能保证后手永远只能拿到异或和为0的局面。又因为每一次合法的移动都将导致石子个数减少，故总的移动步数是有限的，最终后手将拿到的局面而无石子可拿，故后手必输，先手必胜。反过来即可证，对于任何异或和为0的局面，先手必输。 ",
+  "wordCount" : "899",
+  "inLanguage": "zh",
+  "datePublished": "2020-06-14T17:40:11Z",
+  "dateModified": "2020-06-14T17:40:11Z",
+  "author":{
+    "@type": "Person",
+    "name": "Lordash"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.lordash.de/posts/algorithm/b3f72d320d8d4e65/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "似水",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.lordash.de/assets/images/favicon-16x16-.png"
+    }
+  }
+}
+</script>
+</head>
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/archives" title="归档">
+<span><i class="fa fa-history"></i>归档</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/tags" title="标签">
+<span><i class="fa fa-tags"></i>标签</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/f/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/f/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<article class="post-single">
+<header class="post-header">
+<h1 class="post-title">
+      Nim博弈
+    </h1>
+<div class="post-description">
+      博弈论专题，介绍Nim博弈、 Bouton定理
+    </div>
+<div class="post-meta"><span title="2020-06-14 17:40:11 +0000 UTC">2020-06-14</span> · Lordash
+
+
+
+</div>
+</header> <aside class="toc-container wide" id="toc-container">
+<div class="toc">
+<details open="">
+<summary accesskey="c" title="(Alt + C)">
+<span class="details">目录</span>
+</summary>
+<div class="inner"><ul>
+<li>
+<a aria-label="Nim博弈" href="#nim%e5%8d%9a%e5%bc%88">Nim博弈</a></li>
+<li>
+<a aria-label="Bouton定理" href="#bouton%e5%ae%9a%e7%90%86">Bouton定理</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+<div class="post-content"><h1 id="nim博弈">Nim博弈<a aria-hidden="true" class="anchor" hidden="" href="#nim博弈">#</a></h1>
+<p>基本的尼姆博弈（Nim Game）描述如下：</p>
+<blockquote>
+<p>有若干堆各若干个物品，两个人轮流从某一堆取任意多的物品，每次至少取一个，多者不限，最后取光者得胜。</p>
+</blockquote>
+<p>博弈过程如下：</p>
+<ul>
+<li>对于局面 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n =  0 $，无论先手怎么取，必将导致异或和改变为 $ a’_1 \oplus  a’_2 \oplus \ldots \oplus a’_n = k \neq 0 $ ，而此时必有 $ a_i $ 使得 $ a_i $ 二进制下第k位为1，后手只要将 $ a_i $ 取成 $ a_i \oplus k $ ，使得局面重新回到异或和为0，直至最后局面变成 $ (0, 0, \ldots, 0) $ ，此时异或和为0。先手必输。</li>
+<li>对于局面 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n \neq 0 $ ，反之，先手必胜。</li>
+</ul>
+<p>详细证明见下方<a href="#Bouton%E5%AE%9A%E7%90%86">Bouton定理</a>。</p>
+<hr/>
+<h1 id="bouton定理">Bouton定理<a aria-hidden="true" class="anchor" hidden="" href="#bouton定理">#</a></h1>
+<p>Bouton定理：</p>
+<blockquote>
+<p>假设Nim博弈的石子有 $ n $ 堆，第 $ i $ 堆的石子个数我们用 $ a_i $ 表示，则我们可以使用 $ (a_1, a_2, \ldots, a_n) $ 表示一个Nim博弈的局面。对于 $ (a_1, a_2, \ldots, a_n) $ 的Nim博弈局面，当且仅当  $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n \neq 0 $ 时（其中 $  \oplus $ 是按位异或运算），先手必胜。</p>
+</blockquote>
+<p>简单证明如下：</p>
+<ol>
+<li>对于 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n \neq 0 $ 的Nim博弈局面 $ (a_1, a_2, \ldots, a_n)  $ ，我们设 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n = k $ 。则必存在 $ a_i $ ，其二进制表示在 $ k $ 的最高位上为1（异或运算的性质），且有 $ a_i \oplus k &lt; a_i $ 。则对于当前局面下的先手可以通过合法的移动将第堆石子取到只剩 $ a_i \oplus k $ 个，那么此时游戏局面变为 $ (a_1, a_2, \ldots, a_{i-1},a_i \oplus k, a_{i+1}, \ldots a_n ) $ 。
+而此时 $ a_1\oplus a_2 \oplus \ldots \oplus a_{i-1} \oplus (a_i \oplus k) \oplus a_{i+1} \oplus \dots \oplus a_n = k \oplus k = 0 $。得出<strong>异或和不为0的局面一定存在合法移动可以变为异或和为0的局面</strong>。</li>
+<li>对于 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n = 0 $ 的Nim博弈局面 $ (a_1, a_2, \ldots, a_n)  $ ，假设我们将第 $ i $ 堆石子由 $ a_i $ 个取到 $ a’_i $ 个，则有 $ a_i \neq a’<em>i $ ，则必有 $  a_1\oplus a_2 \oplus \ldots \oplus a</em>{i-1} \oplus a’<em>i \oplus a</em>{i+1} \oplus \dots \oplus a_n \neq 0  $ （可用反证法证明）。即<strong>异或和为0的局面无论怎样合法地进行移动，都将转变为异或和不为0的局面</strong>。</li>
+<li>对于局面 $ (0, 0, \ldots, 0) $ ，其异或和为0，对于先手而言是必输的局面。</li>
+<li><strong>对于任何异或和不为0的局面，先手只需要按照策略将其转变为异或和为0的局面，就能保证后手永远只能拿到异或和为0的局面</strong>。又因为每一次合法的移动都将导致石子个数减少，故总的移动步数是有限的，最终后手将拿到的局面而无石子可拿，故后手必输，先手必胜。反过来即可证，对于任何异或和为0的局面，先手必输。</li>
+</ol>
+</div>
+<footer class="post-footer">
+<ul class="post-tags">
+<li><a href="https://blog.lordash.de/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/">博弈论</a></li>
+<li><a href="https://blog.lordash.de/tags/nim%E5%8D%9A%E5%BC%88/">Nim博弈</a></li>
+</ul>
+<nav class="paginav">
+<a class="prev" href="https://blog.lordash.de/posts/algorithm/3a30f522610343ae/">
+<span class="title">« 上一页</span>
+<br/>
+<span>Bash博弈</span>
+</a>
+<a class="next" href="https://blog.lordash.de/posts/algorithm/671a581fd4a227f6/">
+<span class="title">下一页 »</span>
+<br/>
+<span>SG函数</span>
+</a>
+</nav>
+</footer><div>
+<div class="pagination__title">
+<span class="pagination__title-h" style="font-size: 20px;">💬评论</span>
+<hr/>
+</div>
+<div id="tcomment"></div>
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
+<script>
+        twikoo.init({
+            envId: "https://twikoo-api-dun-pi.vercel.app",
+            el: "#tcomment",
+            lang: 'zh-CN',
+            region: 'ap-zhengzhou',
+            path: window.TWIKOO_MAGIC_PATH || window.location.pathname,
+        });
+    </script>
+</div>
+</article>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                
+                let x = codeblock.getElementsByTagName("span");
+                let noLineNumContent = "";
+                for (i = 0; i < x.length; i++) {
+                    if (x[i].style.display || x[i].style.color);
+                    else noLineNumContent += x[i].textContent;
+                }
+                navigator.clipboard.writeText(noLineNumContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const unfoldbtn = document.createElement('button');
+        unfoldbtn.classList.add('unfoldbtn');
+        unfoldbtn.innerHTML = '展开';
+
+        unfoldbtn.addEventListener('click', (cb) => {
+            if (container.firstChild.firstChild.classList.contains('unfold')) {
+                container.firstChild.firstChild.classList.remove('unfold');
+                unfoldbtn.innerHTML = '展开';
+            } else {
+                container.firstChild.firstChild.classList.add('unfold');
+                unfoldbtn.innerHTML = '折叠';
+            }
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(unfoldbtn);
+        }
+    });
+</script></body>
+</html>

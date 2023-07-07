@@ -9,16 +9,16 @@
     <lastBuildDate>Thu, 06 Aug 2020 22:34:11 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/%E5%AD%97%E5%85%B8%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>字典树</title>
-      <link>https://blog.lordash.de/posts/algorithm/%E5%AD%97%E5%85%B8%E6%A0%91/</link>
+      <link>https://blog.lordash.de/posts/algorithm/f59fc59ac118ba58/</link>
       <pubDate>Thu, 06 Aug 2020 22:34:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/%E5%AD%97%E5%85%B8%E6%A0%91/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/f59fc59ac118ba58/</guid>
       <description>字符串专题，介绍字典树</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>字典树又称单词查找树，Trie树，是一种树形结构，是一种哈希树的变种。典型应用是用于统计，排序和保存大量的字符串（但不仅限于字符串）。优点是利用字符串的公共前缀来减少查询时间，最大限度地减少无谓的字符串比较，查询效率比哈希树高。</p>
 <h1 id="trie">Trie</h1>
 <p>字典树的结构如下：</p>
-<p><img loading="lazy" src="%e5%ad%97%e5%85%b8%e6%a0%91/trie.png" alt="trie"  />
+<p><img loading="lazy" src="/posts/algorithm/%e5%ad%97%e5%85%b8%e6%a0%91/trie.png" alt="trie"  />
 </p>
 <p>字典树用边来代表字母，而从根结点到树上某一结点的路径就代表了一个字符串。这颗字典树包含的字符串有{&ldquo;in&rdquo;, &ldquo;inn&rdquo;, &ldquo;int&rdquo;, &ldquo;tea&rdquo;, &ldquo;ten&rdquo;, &ldquo;to&rdquo;}。</p>
 <p>Trie的结构非常好懂，我们用$\delta(u, c)$表示结点u的c字符指向的下一个结点，或着说是结点u代表的字符串后面添加一个字符c形成的字符串的结点。（c的取值范围和字符集大小有关，不一定是0~26）。有时需要标记插入进 trie 的是哪些字符串，每次插入完成时在这个字符串所代表的节点处打上标记即可。</p>

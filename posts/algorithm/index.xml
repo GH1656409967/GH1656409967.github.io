@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 21 Jun 2023 13:45:46 +0800</lastBuildDate><atom:link href="https://blog.lordash.de/posts/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>快速排序</title>
-      <link>https://blog.lordash.de/posts/algorithm/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</link>
+      <link>https://blog.lordash.de/posts/algorithm/925122f6aef374cf/</link>
       <pubDate>Sun, 25 Apr 2021 09:07:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/925122f6aef374cf/</guid>
       <description>排序专题，介绍快速排序</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>快速排序算法是对冒泡排序算法的一种改进。平均时间复杂度$O(nlogn)$，最坏时间复杂度$O(n^2)$。</p>
@@ -242,26 +242,26 @@
     
     <item>
       <title>Johnson</title>
-      <link>https://blog.lordash.de/posts/algorithm/johnson/</link>
+      <link>https://blog.lordash.de/posts/algorithm/89112e2c641f5e5c/</link>
       <pubDate>Wed, 12 Aug 2020 11:03:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/johnson/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/89112e2c641f5e5c/</guid>
       <description>图论专题，介绍Johnson算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>Johnson算法是求解多源最短路的算法之一，核心操作是<code>re-weight</code>，适用于不包含负环（负权回路）的图。时间复杂度$O(nm+nmlogm)$。</p>
 <h1 id="johnson算法">Johnson算法</h1>
 <p>全源最短路常用方法是Floyd算法，时间复杂度$O(n^{3})$。当然我们也可以对每个顶点跑单源最短路。如果对每个顶点求一次Bellman-Ford算法，时间复杂度是$O(n^{2}m)$，似乎不如Floyd算法。如果是对每个顶点求一次Dijkstra算法，时间复杂度是$O(nm+nmlogm)$，看起来优于Floyd算法了。但是如何去除负边权的影响呢？</p>
 <p>考虑一下直接把所有边权加个正数，但是显然不满足原图性质了：</p>
-<p><img loading="lazy" src="Johnson/%e7%9b%b4%e6%8e%a5%e5%8a%a0.png" alt="直接加"  />
+<p><img loading="lazy" src="/posts/algorithm/Johnson/%e7%9b%b4%e6%8e%a5%e5%8a%a0.png" alt="直接加"  />
 </p>
 <p>这里提出一个<code>re-weight</code>操作，首先加上一个源点，并使其与所有顶点连通，新边权赋值为0，如下图：</p>
-<p><img loading="lazy" src="Johnson/%e5%8a%a0%e6%ba%90.png" alt="加源"  />
+<p><img loading="lazy" src="/posts/algorithm/Johnson/%e5%8a%a0%e6%ba%90.png" alt="加源"  />
 </p>
 <p>然后以新加顶点为源，跑Bellman-Ford算法，求出到其它顶点的最短路：</p>
-<p><img loading="lazy" src="Johnson/%e6%9c%80%e7%9f%ad%e8%b7%af.png" alt="最短路"  />
+<p><img loading="lazy" src="/posts/algorithm/Johnson/%e6%9c%80%e7%9f%ad%e8%b7%af.png" alt="最短路"  />
 </p>
 <p>记录下最短路径长度h[] = {0, -3, 0, 0}，删除刚刚新增加的结点。然后对原图边权进行处理，使用以下方法更新边权：$w&rsquo;(u, v) = w(u, v) + (h[u] - h[v])$。</p>
-<p><img loading="lazy" src="Johnson/%e5%a4%84%e7%90%86.png" alt="处理"  />
+<p><img loading="lazy" src="/posts/algorithm/Johnson/%e5%a4%84%e7%90%86.png" alt="处理"  />
 </p>
 <p>这时，负边权的影响就被消除了，可以愉快的使用Dijkstra算法了。（懒一下，正确性请自行证明）。</p>
 <h1 id="模板">模板</h1>
@@ -417,10 +417,10 @@
     
     <item>
       <title>Floyd-Warshall</title>
-      <link>https://blog.lordash.de/posts/algorithm/floyd/</link>
+      <link>https://blog.lordash.de/posts/algorithm/628d2014b1e1c7d7/</link>
       <pubDate>Wed, 12 Aug 2020 11:02:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/floyd/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/628d2014b1e1c7d7/</guid>
       <description>图论专题，介绍Floyd-Warshall算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>Floyd-Warshall算法是求解多源最短路的算法之一，核心思想是动态规划，适用于不包含负环（负权回路）的图。时间复杂度$O(n^{3})$，空间复杂度$O(n^{2})$。</p>
@@ -538,10 +538,10 @@
     
     <item>
       <title>Bellman-Ford</title>
-      <link>https://blog.lordash.de/posts/algorithm/bellman-ford/</link>
+      <link>https://blog.lordash.de/posts/algorithm/86f4e99b0e080776/</link>
       <pubDate>Wed, 12 Aug 2020 10:58:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/bellman-ford/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/86f4e99b0e080776/</guid>
       <description>图论专题，介绍Bellman-Ford算法、SPFA</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>Bellman-Ford算法是求解单源最短路的算法之一，适用于<strong>可包含负边权</strong>的有向和无向图，可以判断是否包含负环（注意，如果是包含负权回路则不存在最短路问题）。时间复杂度$O(nm)$。</p>
@@ -797,10 +797,10 @@
     
     <item>
       <title>Dijkstra</title>
-      <link>https://blog.lordash.de/posts/algorithm/dijkstra/</link>
+      <link>https://blog.lordash.de/posts/algorithm/884a0d0dae24aa88/</link>
       <pubDate>Wed, 12 Aug 2020 10:57:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/dijkstra/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/884a0d0dae24aa88/</guid>
       <description>图论专题，介绍Dijkstra算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>Dijkstra算法是求解单源最短路的算法之一，核心思想是贪心，只适用于<strong>边权为正</strong>的无向和有向图。原复杂度$O(n^{2})$，优化后时间复杂度能到$O(mlog_{m})$。</p>
@@ -815,14 +815,14 @@
 <p>对于<code>起点u</code>的<code>最短邻接边uw</code>，从u到w不可能存在比$dis(u, w)$更短的路径。因为<code>uw</code>已经是最短的了，从其它路径走的话必然经过比<code>uw</code>更长的路径。</p>
 </blockquote>
 <p>而这也是Dijkstra不能处理负边权的原因，如果有负边权则无法满足前提。可以看下图自行理解：</p>
-<p><img loading="lazy" src="Dijkstra/%e6%9d%a1%e4%bb%b6.png" alt="条件"  />
+<p><img loading="lazy" src="/posts/algorithm/Dijkstra/%e6%9d%a1%e4%bb%b6.png" alt="条件"  />
 </p>
 <p>那么，依据这个贪心性质得到思路，我们可以从现知的最短路径开始，去更新起点到其它点的距离，再更新已知的最短路，重复这个过程，遍历完所有的点之后，就能得到起点到其它点的最短路径长度。详细过程如下：</p>
 <ol>
 <li>将起点加入<code>已经确定最短路的集合S</code>，其它点则属于<code>未确定的集合V-S=T</code>。</li>
 <li>更新到起点的最短距离dis[i]。</li>
-<li>选取未访问的最小的dis<input checked="" disabled="" type="checkbox"> ，标记并加入<code>已经确定最短路的集合S</code>，此时的dis<input checked="" disabled="" type="checkbox"> 就是x到起点的最短距离。</li>
-<li>再依据$ dis[y]=min(dis[y], dis<input checked="" disabled="" type="checkbox"> +{边权值}w<input checked="" disabled="" type="checkbox"> [y]) $，更新集合T中与x相邻的点y到起点的最短距离dis[y]。这个操作叫做<code>松弛操作（relax）</code>，更新过后当前的不等式约束$ dis[y] $相对于$ dis+w<input checked="" disabled="" type="checkbox"> [y] $已经不是最“紧”的约束了，下一次更新dis[y]时就不需要检查这个约束了，即原约束被“松弛”了。</li>
+<li>选取未访问的最小的$dis[x ]$，标记并加入<code>已经确定最短路的集合S</code>，此时的dis[x ]就是x到起点的最短距离。</li>
+<li>再依据$ dis[y]=min(dis[y], dis[x ]+{边权值}w[x ][y]) $，更新集合T中与x相邻的点y到起点的最短距离dis[y]。这个操作叫做<code>松弛操作（relax）</code>，更新过后当前的不等式约束$ dis[y] $相对于$ dis+w[x ][y] $已经不是最“紧”的约束了，下一次更新dis[y]时就不需要检查这个约束了，即原约束被“松弛”了。</li>
 <li>重复3，4步骤直到目标点加入集合，此时目标点对应的dis[v]就是最短路径长度。</li>
 </ol>
 <p>邻接矩阵存图，核心代码如下：</p>
@@ -1057,16 +1057,16 @@
     
     <item>
       <title>字典树</title>
-      <link>https://blog.lordash.de/posts/algorithm/%E5%AD%97%E5%85%B8%E6%A0%91/</link>
+      <link>https://blog.lordash.de/posts/algorithm/f59fc59ac118ba58/</link>
       <pubDate>Thu, 06 Aug 2020 22:34:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/%E5%AD%97%E5%85%B8%E6%A0%91/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/f59fc59ac118ba58/</guid>
       <description>字符串专题，介绍字典树</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>字典树又称单词查找树，Trie树，是一种树形结构，是一种哈希树的变种。典型应用是用于统计，排序和保存大量的字符串（但不仅限于字符串）。优点是利用字符串的公共前缀来减少查询时间，最大限度地减少无谓的字符串比较，查询效率比哈希树高。</p>
 <h1 id="trie">Trie</h1>
 <p>字典树的结构如下：</p>
-<p><img loading="lazy" src="%e5%ad%97%e5%85%b8%e6%a0%91/trie.png" alt="trie"  />
+<p><img loading="lazy" src="/posts/algorithm/%e5%ad%97%e5%85%b8%e6%a0%91/trie.png" alt="trie"  />
 </p>
 <p>字典树用边来代表字母，而从根结点到树上某一结点的路径就代表了一个字符串。这颗字典树包含的字符串有{&ldquo;in&rdquo;, &ldquo;inn&rdquo;, &ldquo;int&rdquo;, &ldquo;tea&rdquo;, &ldquo;ten&rdquo;, &ldquo;to&rdquo;}。</p>
 <p>Trie的结构非常好懂，我们用$\delta(u, c)$表示结点u的c字符指向的下一个结点，或着说是结点u代表的字符串后面添加一个字符c形成的字符串的结点。（c的取值范围和字符集大小有关，不一定是0~26）。有时需要标记插入进 trie 的是哪些字符串，每次插入完成时在这个字符串所代表的节点处打上标记即可。</p>
@@ -1145,10 +1145,10 @@
     
     <item>
       <title>最小表示法</title>
-      <link>https://blog.lordash.de/posts/algorithm/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/</link>
+      <link>https://blog.lordash.de/posts/algorithm/ea5cd5de805aae48/</link>
       <pubDate>Tue, 04 Aug 2020 17:39:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/ea5cd5de805aae48/</guid>
       <description>字符串专题，介绍最小表示法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>最小表示法，求所有与某个字符串循环同构的字符串中，字典序最小的那个。比如说一个字符串lordash，它长度为7，也就是说最多有七种循环同构的方法。</p>
@@ -1250,16 +1250,16 @@
     
     <item>
       <title>Manacher</title>
-      <link>https://blog.lordash.de/posts/algorithm/manacher/</link>
+      <link>https://blog.lordash.de/posts/algorithm/246358dd39e99944/</link>
       <pubDate>Sun, 26 Jul 2020 14:22:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/manacher/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/246358dd39e99944/</guid>
       <description>字符串专题，介绍Manacher算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
-<p>Manacher‘s Algorithm是用来查找一个字符串的最长回文子串的线性方法，由一个叫Manacher的人在1975年发明的。中文谐音“马拉车”算法。时间复杂度O(|S|)。</p>
+<p>Manacher&rsquo;s Algorithm是用来查找一个字符串的最长回文子串的线性方法，由一个叫Manacher的人在1975年发明的。中文谐音“马拉车”算法。时间复杂度O(|S|)。</p>
 <h1 id="朴素算法">朴素算法</h1>
 <p>给出一个朴素的中心扩展算法，寻找最长回文子串，枚举所有奇偶回文中心点（n+n-1个），然后向两端扩展，判断左右字符是否相等即可。时间复杂度$ O(|S|^{2}) $。</p>
-<p><img loading="lazy" src="Manacher/%e6%9a%b4%e5%8a%9b.png" alt="暴力"  />
+<p><img loading="lazy" src="/posts/algorithm/Manacher/%e6%9a%b4%e5%8a%9b.png" alt="暴力"  />
 </p>
 <p>实现代码如下：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">expand</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> s, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r)
@@ -1291,7 +1291,7 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>}
 </span></span></code></pre></div><h1 id="预处理">预处理</h1>
 <p>首先我们处理一下长度的奇偶，在每个字符间插入<code>'#'</code>，并且为使得扩展到边界能自动结束，在首尾分别插入<code>'^'</code>和<code>'$'</code>（不会在原串中出现的字符）。这样字符串的长度就被处理为奇数了。</p>
-<p><img loading="lazy" src="Manacher/init.png" alt="init"  />
+<p><img loading="lazy" src="/posts/algorithm/Manacher/init.png" alt="init"  />
 </p>
 <p>预处理代码如下：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">manacher_init</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>s, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>t, <span style="color:#66d9ef">int</span> n)
@@ -1309,11 +1309,11 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">idx</th>
-<th style="text-align:center">0</th>
-<th style="text-align:center">1</th>
-<th style="text-align:center">2</th>
-<th style="text-align:center">3</th>
+<th>idx</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
 <th>4</th>
 <th>5</th>
 <th>6</th>
@@ -1333,11 +1333,11 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">T</td>
-<td style="text-align:center">$</td>
-<td style="text-align:center">#</td>
-<td style="text-align:center">a</td>
-<td style="text-align:center">#</td>
+<td>T</td>
+<td>$</td>
+<td>#</td>
+<td>a</td>
+<td>#</td>
 <td>b</td>
 <td>#</td>
 <td>a</td>
@@ -1355,11 +1355,11 @@
 <td>\0</td>
 </tr>
 <tr>
-<td style="text-align:center">r</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">1</td>
+<td>r</td>
+<td></td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
 <td>4</td>
 <td>1</td>
 <td>6</td>
@@ -1377,11 +1377,11 @@
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">p</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
+<td>p</td>
+<td></td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
 <td>3</td>
 <td>0</td>
 <td>5</td>
@@ -1402,14 +1402,14 @@
 </table>
 <p>观察可得，最长回文子串p[i] = 最长回文半径r[i] - 1，p[i]所代表的子串在原串的起点为(i-p[i])/2。</p>
 <p>那么p[i]怎么求呢，令mx为当前已求出的<strong>最右的回文子串右边界</strong>，令id为这个回文子串的中心点，讨论以下3种情况：</p>
-<p>(1) 当i$&lt;$mx时，令j=2*id-1，即i关于id的对称点，如果i+p[j]$&lt;$mx，那么由回文串的性质可知p[i]=p[j]。</p>
-<p><img loading="lazy" src="Manacher/%e5%b0%8f%e4%ba%8e.png" alt="小于"  />
+<p>(1) 当i$&lt;$mx时，令j=2*id-i，即i关于id的对称点，如果i+p[j]$&lt;$mx，那么由回文串的性质可知p[i]=p[j]。</p>
+<p><img loading="lazy" src="/posts/algorithm/Manacher/%e5%b0%8f%e4%ba%8e.png" alt="小于"  />
 </p>
-<p>(2) 当i$&lt;$mx时，令j=2*id-1，即i关于id的对称点，如果i+p[j]$&gt;=$mx，那么可以确定的是p[i]=mx-i，然后超出部分就需要中心拓展比较了。</p>
-<p><img loading="lazy" src="Manacher/%e5%a4%a7%e4%ba%8e.png" alt="大于"  />
+<p>(2) 当i$&lt;$mx时，令j=2*id-i，即i关于id的对称点，如果i+p[j]$&gt;=$mx，那么可以确定的是p[i]=mx-i，然后超出部分就需要中心拓展比较了。</p>
+<p><img loading="lazy" src="/posts/algorithm/Manacher/%e5%a4%a7%e4%ba%8e.png" alt="大于"  />
 </p>
 <p>(3) 当i&gt;=mx时，无法根据已知条件判断，只能中心拓展比较了。</p>
-<p><img loading="lazy" src="Manacher/%e8%b6%85%e5%87%ba.png" alt="超出"  />
+<p><img loading="lazy" src="/posts/algorithm/Manacher/%e8%b6%85%e5%87%ba.png" alt="超出"  />
 </p>
 <p>按照以上思路，遍历一下即可，注意更新id和mx。此写法得出的p[i]是最长半径数组，并非最长回文子串长度，ans需要减1，若有需要，修改中心扩展代码即可。代码如下：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">manacher</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>t, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>p, <span style="color:#66d9ef">int</span> n)
@@ -1506,10 +1506,10 @@
     
     <item>
       <title>扩展KMP</title>
-      <link>https://blog.lordash.de/posts/algorithm/%E6%89%A9%E5%B1%95kmp/</link>
+      <link>https://blog.lordash.de/posts/algorithm/1d27104a4bfa80d2/</link>
       <pubDate>Sun, 26 Jul 2020 14:21:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/%E6%89%A9%E5%B1%95kmp/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/1d27104a4bfa80d2/</guid>
       <description>字符串专题，介绍扩展KMP算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>给定长度为n的<code>文本串S</code>和长度为m的<code>模式串T</code>，定义extend[i]为S[i…n-1]与T[0…m-1]的<strong>最长公共前缀长度</strong>，求extend[i]。当extend[x]==m时，则可知<code>文本串S</code>中包含<code>模式串T</code>，并且首位置为x，而这正是KMP算法处理的模式匹配问题。相较于KMP算法，扩展KMP算法能找到<code>文本串S</code>中所有<code>模式串T</code>的匹配，更一般地，可以知道<code>文本串S</code>中以每个字符开始的后缀与<code>模式串T</code>的最长公共前缀长度，时间复杂度O(n+m)。</p>
@@ -1517,11 +1517,11 @@
 <p>假设遍历到i时，已经求出extend[0…i-1]的值。我们记录下遍历过程中匹配成功的字符的最远位置为p，并且这次匹配的起始位置为a。换句话说，计算到x时，匹配成功的最远位置是x+extend[x]-1，p就是x=0…i-1得到的最大值，a就是对应的x。</p>
 <p>设辅助数组next[i]表示<strong>T[i…m-1]和T[0…m-1]的最长公共前缀长度</strong>（注意这里与KMP算法中的next数组含义不同）。令len=next[i-a]，讨论以下两种情况：</p>
 <p>(1) i + len-1 &lt; p</p>
-<p><img loading="lazy" src="%e6%89%a9%e5%b1%95KMP/%e5%b0%8f%e4%ba%8e.png" alt="小于"  />
+<p><img loading="lazy" src="/posts/algorithm/%e6%89%a9%e5%b1%95KMP/%e5%b0%8f%e4%ba%8e.png" alt="小于"  />
 </p>
 <p>由next数组定义可知 <font color=blue>T[0…len-1] == T[i-a…i-a+len-1]</font>，并且由extend数组定义可知 <font color=green>S[a…p] == T[0…p-a]</font>，得到<font color=blue> S[i…i+len-1] == T[i-a…i-a+len-1] </font>，所以 <font color=blue>S[i…i+len-1] == T[0…len-1]</font>。并且 <font color=red>S[i+len-1…p]</font> !=  <font color=orange>T[len-1…i-a]</font>，不然违背了next数组最长公共前缀长度的定义。于是，无需任何比较就可以得出extend[i] = len。</p>
 <p>(2) i + len-1 &gt;= p</p>
-<p><img loading="lazy" src="%e6%89%a9%e5%b1%95KMP/%e5%a4%a7%e4%ba%8e.png" alt="大于"  />
+<p><img loading="lazy" src="/posts/algorithm/%e6%89%a9%e5%b1%95KMP/%e5%a4%a7%e4%ba%8e.png" alt="大于"  />
 </p>
 <p>我们可以看到，匹配最远的位置只到p，对于p之后的匹配结果是未知的，所以我们需要继续匹配S[p…n-1]和T[p-i…m-1]。匹配完之后，还需要更新a和p。</p>
 <p>以上就是扩展KMP的主要思想，遍历即可，下面给出字符串下标从0开始的一种exKMP的实现，注意为了实现方便，代码中的p是上面分析的p+1，所以判断的时候是i+next[i-a]。而且同时用了变量j跟踪p在<code>文本串S</code>与<code>模式串T</code>中的对应位置，注意遍历<code>文本串S</code>时，i在递增，j需要递减。</p>
@@ -1597,10 +1597,10 @@
     
     <item>
       <title>KMP</title>
-      <link>https://blog.lordash.de/posts/algorithm/kmp/</link>
+      <link>https://blog.lordash.de/posts/algorithm/0f99d88b6c4a1cdd/</link>
       <pubDate>Sun, 26 Jul 2020 14:20:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/kmp/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/0f99d88b6c4a1cdd/</guid>
       <description>字符串专题，介绍KMP算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>Knuth-Morris-Pratt字符串查找算法，简称为“KMP算法”，常用于在一个<code>文本串S</code>内查找一个<code>模式串T</code>的出现位置。这个算法由Donald Knuth、Vaughan Pratt、James H.  Morris三人于1977年联合发表，故取这3人的姓氏命名此算法。时间复杂度O(|S|+|T|)。</p>
@@ -1624,50 +1624,50 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>}
 </span></span></code></pre></div><p>朴素算法的运行过程如下：</p>
-<p><img loading="lazy" src="KMP/%e6%9a%b4%e5%8a%9b%e5%8c%b9%e9%85%8d.gif" alt="暴力匹配"  />
+<p><img loading="lazy" src="/posts/algorithm/KMP/%e6%9a%b4%e5%8a%9b%e5%8c%b9%e9%85%8d.gif" alt="暴力匹配"  />
 </p>
 <p>注意到，如下图，枚举以S[1]为起点，匹配到最后一个字符，S[4]!=T[3]，失配之后朴素做法是指针回退，以S[2]为起点开始下一轮匹配，即i=i-j+1, j=0。</p>
-<p><img loading="lazy" src="KMP/%e5%86%97%e4%bd%99.png" alt="冗余"  />
+<p><img loading="lazy" src="/posts/algorithm/KMP/%e5%86%97%e4%bd%99.png" alt="冗余"  />
 </p>
 <p>毫无疑问，随着<code>文本串S</code>的长度增加，每一次回退重新匹配会花费大量的时间。那么有没有办法优化呢？</p>
 <h1 id="next数组">next数组</h1>
 <p>通过分析<code>模式串T</code>可以得到<code>next数组</code>，也可以当作fail数组理解。对于模式串<code>T=&quot;abac&quot;</code>，当匹配到<code>'c'</code>时失配了，那么说明前面的<code>&quot;aba&quot;</code>已经匹配成功，<code>&quot;aba&quot;</code>**最长的相等前缀后缀(不包括本身)**是<code>'a'</code>，那么失配<code>'c'</code>后，我们可以跳过<code>s[3]='a'</code>（文本串S<code>&quot;aba&quot;</code>的后缀）与<code>T[0]='a'</code>（模式串T<code>&quot;aba&quot;</code>的前缀），直接匹配<code>S[4]='b'</code>与<code>T[0]='b'</code>。</p>
-<p><img loading="lazy" src="KMP/next.png" alt="next"  />
+<p><img loading="lazy" src="/posts/algorithm/KMP/next.png" alt="next"  />
 </p>
 <p>为什么是最长的、相等的、不包括本身的前缀后缀呢？看下图自行理解。</p>
-<p><img loading="lazy" src="KMP/%e5%89%8d%e7%bc%80%e5%90%8e%e7%bc%80.png" alt="前缀后缀"  />
+<p><img loading="lazy" src="/posts/algorithm/KMP/%e5%89%8d%e7%bc%80%e5%90%8e%e7%bc%80.png" alt="前缀后缀"  />
 </p>
 <p>由下表可以看出最长相等前缀后缀整体右移，首位加上-1，即是next数组。</p>
 <table>
 <thead>
 <tr>
 <th style="text-align:center">模式串</th>
-<th style="text-align:center">a</th>
-<th style="text-align:center">b</th>
-<th style="text-align:center">a</th>
-<th style="text-align:center">c</th>
+<th>a</th>
+<th>b</th>
+<th>a</th>
+<th>c</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">最长相等前缀后缀</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
 </tr>
 <tr>
 <td style="text-align:center">next数组</td>
-<td style="text-align:center">-1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
+<td>-1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
 <h1 id="next数组优化">next数组优化</h1>
 <p>对于失配时<code>S[4]='c'</code>与<code>T[3]='b'</code>不相等，由<code>T[1]='b'</code>与<code>T[3]='b'</code>相等，得出<code>T[1]='b'</code>与<code>S[4]='c'</code>也不相等，我们可以跳过这一步匹配。</p>
-<p><img loading="lazy" src="KMP/next%e4%bc%98%e5%8c%96.png" alt="next优化"  />
+<p><img loading="lazy" src="/posts/algorithm/KMP/next%e4%bc%98%e5%8c%96.png" alt="next优化"  />
 </p>
 <p>注意C++中<code>next</code>是关键字（迭代器的一个函数），以及字符串下标<strong>从0开始</strong>和<strong>从1开始</strong>的代码稍有不同，注意必须求到<strong>next[|T|]</strong>，求字符串匹配数量以及最小循环节都需要用到。下面给出的是字符串下标从0开始的next数组的一种求法：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">int</span> nxt[mxn];
@@ -1705,14 +1705,14 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>}
 </span></span></code></pre></div><p>KMP算法的运行过程如下：</p>
-<p><img loading="lazy" src="KMP/KMP.gif" alt="KMP"  />
+<p><img loading="lazy" src="/posts/algorithm/KMP/KMP.gif" alt="KMP"  />
 </p>
 <h1 id="最小循环节">最小循环节</h1>
 <p>参考 <a href="https://www.cnblogs.com/chenxiwenruo/p/3546457.html">KMP模板，最小循环节</a>。</p>
 <p>定理：</p>
 <blockquote>
-<p>假设S的长度为len，则S存在最小循环节，循环节的长度L为len-next[len]，子串为S[0…len-next[len]-1]。
-（1）如果len可以被len-next[len]整除，则表明字符串S可以完全由循环节循环组成，循环周期T=len/L。
+<p>假设S的长度为len，则S存在最小循环节，循环节的长度L为len-next[len]，子串为S[0…len-next[len]-1]。<br>
+（1）如果len可以被len-next[len]整除，则表明字符串S可以完全由循环节循环组成，循环周期T=len/L。<br>
 （2）如果不能，说明还需要再添加几个字母才能补全。需要补的个数是循环个数L-len%L=L-(len-L)%L=L-next[len]%L，L=len-next[len]。</p>
 </blockquote>
 <table>
@@ -1830,10 +1830,10 @@ s0s1s2s3s4s5s6，next[7]=4
     
     <item>
       <title>Fibonacci博弈</title>
-      <link>https://blog.lordash.de/posts/algorithm/fibonacci%E5%8D%9A%E5%BC%88/</link>
+      <link>https://blog.lordash.de/posts/algorithm/ee3ddd3d0d64d1e8/</link>
       <pubDate>Thu, 18 Jun 2020 17:40:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/fibonacci%E5%8D%9A%E5%BC%88/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/ee3ddd3d0d64d1e8/</guid>
       <description>博弈论专题，介绍Fibonacci博弈、Zeckendorf定理</description>
       <content:encoded><![CDATA[<h1 id="fibonacci博弈">Fibonacci博弈</h1>
 <p>基本的斐波那契博弈（Fibonacci Game）描述如下：</p>
@@ -1850,7 +1850,7 @@ s0s1s2s3s4s5s6，next[7]=4
 </li>
 </ul>
 <h1 id="zeckendorf定理">Zeckendorf定理</h1>
-<p>Zeckendorf定理：</p>
+<p>Zeckendorf齐肯多夫定理：</p>
 <blockquote>
 <p>任何正整数都可以表示成若干个不连续的斐波那契数（不包括第一个斐波那契数）之和。</p>
 </blockquote>
@@ -1863,10 +1863,10 @@ s0s1s2s3s4s5s6，next[7]=4
     
     <item>
       <title>Wythoff博弈</title>
-      <link>https://blog.lordash.de/posts/algorithm/wythoff%E5%8D%9A%E5%BC%88/</link>
+      <link>https://blog.lordash.de/posts/algorithm/872bcae11a67f2fa/</link>
       <pubDate>Wed, 17 Jun 2020 17:40:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/wythoff%E5%8D%9A%E5%BC%88/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/872bcae11a67f2fa/</guid>
       <description>博弈论专题，介绍Wythoff博弈、Betty定理</description>
       <content:encoded><![CDATA[<h2 id="wythoff博弈">Wythoff博弈</h2>
 <p>基本的威佐夫博弈（Wythoff Game）描述如下：</p>
@@ -1913,10 +1913,10 @@ s0s1s2s3s4s5s6，next[7]=4
     
     <item>
       <title>Bash博弈</title>
-      <link>https://blog.lordash.de/posts/algorithm/bash%E5%8D%9A%E5%BC%88/</link>
+      <link>https://blog.lordash.de/posts/algorithm/3a30f522610343ae/</link>
       <pubDate>Mon, 15 Jun 2020 17:40:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/bash%E5%8D%9A%E5%BC%88/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/3a30f522610343ae/</guid>
       <description>博弈论专题，介绍Bash博弈</description>
       <content:encoded><![CDATA[<h1 id="bash博奕">Bash博奕</h1>
 <p>基本的巴什博弈（Bash Game）描述如下：</p>
@@ -1956,10 +1956,10 @@ s0s1s2s3s4s5s6，next[7]=4
     
     <item>
       <title>Nim博弈</title>
-      <link>https://blog.lordash.de/posts/algorithm/nim%E5%8D%9A%E5%BC%88/</link>
+      <link>https://blog.lordash.de/posts/algorithm/b3f72d320d8d4e65/</link>
       <pubDate>Sun, 14 Jun 2020 17:40:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/nim%E5%8D%9A%E5%BC%88/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/b3f72d320d8d4e65/</guid>
       <description>博弈论专题，介绍Nim博弈、 Bouton定理</description>
       <content:encoded><![CDATA[<h1 id="nim博弈">Nim博弈</h1>
 <p>基本的尼姆博弈（Nim Game）描述如下：</p>
@@ -1991,10 +1991,10 @@ s0s1s2s3s4s5s6，next[7]=4
     
     <item>
       <title>SG函数</title>
-      <link>https://blog.lordash.de/posts/algorithm/sg%E5%87%BD%E6%95%B0/</link>
+      <link>https://blog.lordash.de/posts/algorithm/671a581fd4a227f6/</link>
       <pubDate>Mon, 08 Jun 2020 22:00:54 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/sg%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/671a581fd4a227f6/</guid>
       <description>博弈论专题，介绍关于公平组合游戏、必胜态和必败态、SG函数、SG定理等</description>
       <content:encoded><![CDATA[<h1 id="公平组合游戏">公平组合游戏</h1>
 <p>公平组合游戏（Impartial Combinatorial Games）简称ICG，大致定义如下：</p>
@@ -2004,30 +2004,35 @@ s0s1s2s3s4s5s6，next[7]=4
 <li>选手轮流操作（move），且只能在合法操作集合中选择</li>
 <li>在游戏出于某状态，当前选手合法操作集合为空时判负，游戏结束</li>
 </ol>
-<p>{% fold 查看解析 %}</p>
-<p>一个公平游戏可以抽象地用一个有向无环图来表示，这个图中每个点都对应一个状态，每条有向边代表从一个状态到另一个状态的合法操作。</p>
+<details>
+    <summary>查看解析</summary>
+    <p>一个公平游戏可以抽象地用一个有向无环图来表示，这个图中每个点都对应一个状态，每条有向边代表从一个状态到另一个状态的合法操作。</p>
 <p>我们可以想象一个硬币最初放在某个点上，然后两个玩家轮流将其从当前的点移动到它的后继点。当硬币移动到汇点（没有出度的点）时游戏结束，无法操作的玩家判负。</p>
-<p><img loading="lazy" src="SG%e5%87%bd%e6%95%b0/ICG.png" alt="ICG"  />
+<p><img loading="lazy" src="/posts/algorithm/SG%e5%87%bd%e6%95%b0/ICG.png" alt="ICG"  />
 </p>
-<p>{% endfold %}</p>
+
+</details>
 <hr>
 <h1 id="必胜态和必败态">必胜态和必败态</h1>
 <ul>
 <li>必败态（P-position）：上一个选手（previous player先前刚操作完的选手）处于必胜局面，即此时先手必败</li>
 <li>必胜态（N-position）：下一个选手（next player当前即将操作的选手）处于必胜局面，即此时先手必胜</li>
 </ul>
-<p>{% fold 查看解析 %}</p>
-<p>更加严谨的定义：1.无法进行任何移动的局面终结点（也就是terminal position）是P-position；2.可以移动到P-position的局面是N-position；3.所有移动都导致N-position的局面是P-position。</p>
-<p><img loading="lazy" src="SG%e5%87%bd%e6%95%b0/NP.png" alt="NP"  />
+<details>
+    <summary>查看解析</summary>
+    <p>更加严谨的定义：1.无法进行任何移动的局面终结点（也就是terminal position）是P-position；2.可以移动到P-position的局面是N-position；3.所有移动都导致N-position的局面是P-position。</p>
+<p><img loading="lazy" src="/posts/algorithm/SG%e5%87%bd%e6%95%b0/NP.png" alt="NP"  />
 </p>
 <p>P-position和N-position的局面信息提供了游戏的必胜策略。如果轮到我们操作且游戏处在一个N-position，我们应该移动到一个P-position。接着我们的对手就会被迫进入N-position，依次类推。我们最终会移入一个汇点并获得胜利。</p>
-<p>{% endfold %}</p>
+
+</details>
 <hr>
 <h1 id="sg函数">SG函数</h1>
 <p>先定义mex(minimal excludant)运算，这是施加于一个集合的运算，表示<strong>最小的不属于这个集合的非负整数</strong>。例如mex{2,3,5}=0、mex{0,1,2,4}=3、mex{}=0。
 对于任意状态x，定义SG(x)=mex(S)，其中S是x后继状态的SG函数值的集合。如x有三个后继状态分别为a、b、c，那么SG(x)=mex{SG(a), SG(b), SG(c)}。 这样，集合S的终态必然是空集，所以当且仅当x为必败点P时，SG函数的终态为SG(x)=0。</p>
-<p>{% fold 查看解析 %}</p>
-<p>通过SG函数，每个ICG都可以转换成<a href="https://blog.lordash.cf/posts/2aa44f65.html#Nim%E5%8D%9A%E5%BC%88">Nim博弈</a>。SG函数的定义域为ICG的决策树上的所有节点，此时具体定义为：SG(x)=mex{SG(y)|y是x的节点}。对于ICG的决策树上的节点u，我们可以把它想象成一个只有一堆石子，个数为SG(u)的Nim博弈。</p>
+<details>
+    <summary>查看解析</summary>
+    <p>通过SG函数，每个ICG都可以转换成<a href="https://blog.lordash.cf/posts/2aa44f65.html#Nim%E5%8D%9A%E5%BC%88">Nim博弈</a>。SG函数的定义域为ICG的决策树上的所有节点，此时具体定义为：SG(x)=mex{SG(y)|y是x的节点}。对于ICG的决策树上的节点u，我们可以把它想象成一个只有一堆石子，个数为SG(u)的Nim博弈。</p>
 <p>对于节点u的子节点v：</p>
 <ol>
 <li>根据SG函数的定义，必有SG(u) $  \neq $ SG(v) 。</li>
@@ -2035,9 +2040,10 @@ s0s1s2s3s4s5s6，next[7]=4
 <li>对于全体SG(u)&gt;SG(v)的子节点v，其SG函数值将完整覆盖区间[0, SG(u)-1]上的所有整数。我们从局面u移动到局面v，其实相当于在一堆个数为SG(u)的石子上取走若干石子，使剩下一堆个数为SG(v)的石子。</li>
 </ol>
 <p>当ICG中存在n个互相不干扰的移动类型时，我们可以将这n种移动类型视为n堆石子，将该ICG视为n堆石子的Nim博弈，运用<a href="https://blog.lordash.cf/posts/2aa44f65.html#Bouton%E5%AE%9A%E7%90%86">Bouton定理</a>，该ICG的先手必胜与否的情况可以通过计算每个移动类型下的初始状态的SG函数，并计算这些SG函数值的异或和来得出。即下面的<a href="#SG%E5%AE%9A%E7%90%86">SG定理</a>。</p>
-<p><img loading="lazy" src="SG%e5%87%bd%e6%95%b0/SG.png" alt="SG"  />
+<p><img loading="lazy" src="/posts/algorithm/SG%e5%87%bd%e6%95%b0/SG.png" alt="SG"  />
 </p>
-<p>{% endfold %}</p>
+
+</details>
 <hr>
 <h1 id="sg定理">SG定理</h1>
 <p>Sprague-Grundy定理：</p>

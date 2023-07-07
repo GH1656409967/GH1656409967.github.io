@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 25 Apr 2020 16:25:05 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用Gpg4win加密邮件</title>
-      <link>https://blog.lordash.de/posts/essays/%E4%BD%BF%E7%94%A8gpg4win%E5%8A%A0%E5%AF%86%E9%82%AE%E4%BB%B6/</link>
+      <link>https://blog.lordash.de/posts/essays/938d24c2a3c10d0d/</link>
       <pubDate>Sat, 25 Apr 2020 16:25:05 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/essays/%E4%BD%BF%E7%94%A8gpg4win%E5%8A%A0%E5%AF%86%E9%82%AE%E4%BB%B6/</guid>
+      <guid>https://blog.lordash.de/posts/essays/938d24c2a3c10d0d/</guid>
       <description>使用Gpg4win加密邮件</description>
       <content:encoded><![CDATA[<h1 id="一准备">一、准备</h1>
 <p>下载并安装以下两项:</p>
@@ -43,10 +43,10 @@
 </li>
 <li>
 <p>开启邮箱的IMAP服务。以QQ邮箱为例，启动QQ邮箱网页版，打开 <code>设置 &gt; 账户</code> 下拉找到该项，并选择开启IMAP/SMTP服务。</p>
-<p><img loading="lazy" src="%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6%5c%e5%bc%80%e5%90%af%e6%9c%8d%e5%8a%a1.png" alt="开启服务"  />
+<p><img loading="lazy" src="/posts/essays/%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6/%e5%bc%80%e5%90%af%e6%9c%8d%e5%8a%a1.png" alt="开启服务"  />
 </p>
 <p>保存提示中的授权码</p>
-<p><img loading="lazy" src="%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6%5c%e6%8e%88%e6%9d%83%e7%a0%81.png" alt="授权码"  />
+<p><img loading="lazy" src="/posts/essays/%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6/%e6%8e%88%e6%9d%83%e7%a0%81.png" alt="授权码"  />
 </p>
 </li>
 <li>
@@ -54,9 +54,9 @@
 </li>
 <li>
 <p>点开 <code>显示菜单</code> 找到 <code>附加组件</code> ，搜索并安装 <code>Enigmail</code> 插件。</p>
-<p><img loading="lazy" src="%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6%5c%e9%99%84%e5%8a%a0%e7%bb%84%e4%bb%b6.png" alt="附加组件"  />
+<p><img loading="lazy" src="/posts/essays/%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6/%e9%99%84%e5%8a%a0%e7%bb%84%e4%bb%b6.png" alt="附加组件"  />
 </p>
-<p><img loading="lazy" src="%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6%5cEnigmail.png" alt="Enigmail"  />
+<p><img loading="lazy" src="/posts/essays/%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6/Enigmail.png" alt="Enigmail"  />
 </p>
 </li>
 <li>
@@ -69,7 +69,7 @@
 <p>发送邮件</p>
 <p>假设我们需要向XXX@XXX.XXX这个电子邮件地址发送GPG加密邮件，首先应该导入XXX@XXX.XXX对应的公钥文件（该文件将用于加密邮件），或者通过邮件地址XXX@XXX.XXX或对方的密钥ID在公钥服务器上搜索其公钥，搜索到的公钥需要进行指纹验证以确保该公钥不是伪造的。</p>
 <p>在新建邮件界面选中 <code>加密</code> 和 <code>签名邮件</code> 按钮即可。</p>
-<p><img loading="lazy" src="%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6%5c%e6%8c%89%e9%92%ae.png" alt="按钮"  />
+<p><img loading="lazy" src="/posts/essays/%e4%bd%bf%e7%94%a8Gpg4win%e5%8a%a0%e5%af%86%e9%82%ae%e4%bb%b6/%e6%8c%89%e9%92%ae.png" alt="按钮"  />
 </p>
 </li>
 <li>
@@ -87,10 +87,10 @@
     
     <item>
       <title>凯撒密码的简单实现</title>
-      <link>https://blog.lordash.de/posts/essays/%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</link>
+      <link>https://blog.lordash.de/posts/essays/610c1d2d8ba42f34/</link>
       <pubDate>Sat, 25 Apr 2020 14:12:43 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/essays/%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>https://blog.lordash.de/posts/essays/610c1d2d8ba42f34/</guid>
       <description>凯撒密码的简单实现</description>
       <content:encoded><![CDATA[<h1 id="一恺撒密码简介">一、恺撒密码简介</h1>
 <p>在密码学中，恺撒密码（英语：Caesar cipher），或称恺撒加密、恺撒变换、变换加密，是一种最简单且最广为人知的加密技术。它是一种替换加密的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。例如，当偏移量是3的时候，所有的字母A将被替换成D，B变成E，以此类推。这个加密方法是以罗马共和时期恺撒的名字命名的，当年恺撒曾用此方法与其将军们进行联系。</p>
@@ -155,10 +155,10 @@
     
     <item>
       <title>Hexo文章操作</title>
-      <link>https://blog.lordash.de/posts/essays/hexo%E6%96%87%E7%AB%A0%E6%93%8D%E4%BD%9C/</link>
+      <link>https://blog.lordash.de/posts/essays/b71402c4867572eb/</link>
       <pubDate>Fri, 06 Mar 2020 08:12:55 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/essays/hexo%E6%96%87%E7%AB%A0%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://blog.lordash.de/posts/essays/b71402c4867572eb/</guid>
       <description>Hexo文章操作</description>
       <content:encoded><![CDATA[<h1 id="一创建文章">一、创建文章</h1>
 <p>命令：</p>

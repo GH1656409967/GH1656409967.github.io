@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Categories on 似水</title>
+    <title>分类 on 似水</title>
     <link>https://blog.lordash.de/categories/</link>
-    <description>Recent content in Categories on 似水</description>
+    <description>Recent content in 分类 on 似水</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 30 Jun 2023 11:25:26 +0800</lastBuildDate><atom:link href="https://blog.lordash.de/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jun 2023 11:21:50 +0800</lastBuildDate><atom:link href="https://blog.lordash.de/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>配置</title>
       <link>https://blog.lordash.de/categories/%E9%85%8D%E7%BD%AE/</link>

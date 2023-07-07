@@ -144,10 +144,10 @@ a<strong>a</strong> a<strong>ba</strong> ab<strong>a</strong> ab<strong>ba</stro
     
     <item>
       <title>扩展KMP</title>
-      <link>https://blog.lordash.de/posts/algorithm/%E6%89%A9%E5%B1%95kmp/</link>
+      <link>https://blog.lordash.de/posts/algorithm/1d27104a4bfa80d2/</link>
       <pubDate>Sun, 26 Jul 2020 14:21:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/%E6%89%A9%E5%B1%95kmp/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/1d27104a4bfa80d2/</guid>
       <description>字符串专题，介绍扩展KMP算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>给定长度为n的<code>文本串S</code>和长度为m的<code>模式串T</code>，定义extend[i]为S[i…n-1]与T[0…m-1]的<strong>最长公共前缀长度</strong>，求extend[i]。当extend[x]==m时，则可知<code>文本串S</code>中包含<code>模式串T</code>，并且首位置为x，而这正是KMP算法处理的模式匹配问题。相较于KMP算法，扩展KMP算法能找到<code>文本串S</code>中所有<code>模式串T</code>的匹配，更一般地，可以知道<code>文本串S</code>中以每个字符开始的后缀与<code>模式串T</code>的最长公共前缀长度，时间复杂度O(n+m)。</p>
@@ -155,11 +155,11 @@ a<strong>a</strong> a<strong>ba</strong> ab<strong>a</strong> ab<strong>ba</stro
 <p>假设遍历到i时，已经求出extend[0…i-1]的值。我们记录下遍历过程中匹配成功的字符的最远位置为p，并且这次匹配的起始位置为a。换句话说，计算到x时，匹配成功的最远位置是x+extend[x]-1，p就是x=0…i-1得到的最大值，a就是对应的x。</p>
 <p>设辅助数组next[i]表示<strong>T[i…m-1]和T[0…m-1]的最长公共前缀长度</strong>（注意这里与KMP算法中的next数组含义不同）。令len=next[i-a]，讨论以下两种情况：</p>
 <p>(1) i + len-1 &lt; p</p>
-<p><img loading="lazy" src="%e6%89%a9%e5%b1%95KMP/%e5%b0%8f%e4%ba%8e.png" alt="小于"  />
+<p><img loading="lazy" src="/posts/algorithm/%e6%89%a9%e5%b1%95KMP/%e5%b0%8f%e4%ba%8e.png" alt="小于"  />
 </p>
 <p>由next数组定义可知 <font color=blue>T[0…len-1] == T[i-a…i-a+len-1]</font>，并且由extend数组定义可知 <font color=green>S[a…p] == T[0…p-a]</font>，得到<font color=blue> S[i…i+len-1] == T[i-a…i-a+len-1] </font>，所以 <font color=blue>S[i…i+len-1] == T[0…len-1]</font>。并且 <font color=red>S[i+len-1…p]</font> !=  <font color=orange>T[len-1…i-a]</font>，不然违背了next数组最长公共前缀长度的定义。于是，无需任何比较就可以得出extend[i] = len。</p>
 <p>(2) i + len-1 &gt;= p</p>
-<p><img loading="lazy" src="%e6%89%a9%e5%b1%95KMP/%e5%a4%a7%e4%ba%8e.png" alt="大于"  />
+<p><img loading="lazy" src="/posts/algorithm/%e6%89%a9%e5%b1%95KMP/%e5%a4%a7%e4%ba%8e.png" alt="大于"  />
 </p>
 <p>我们可以看到，匹配最远的位置只到p，对于p之后的匹配结果是未知的，所以我们需要继续匹配S[p…n-1]和T[p-i…m-1]。匹配完之后，还需要更新a和p。</p>
 <p>以上就是扩展KMP的主要思想，遍历即可，下面给出字符串下标从0开始的一种exKMP的实现，注意为了实现方便，代码中的p是上面分析的p+1，所以判断的时候是i+next[i-a]。而且同时用了变量j跟踪p在<code>文本串S</code>与<code>模式串T</code>中的对应位置，注意遍历<code>文本串S</code>时，i在递增，j需要递减。</p>

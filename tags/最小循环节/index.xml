@@ -250,10 +250,10 @@ Each test case contains only one line describe the original ordinary chain to be
     
     <item>
       <title>KMP</title>
-      <link>https://blog.lordash.de/posts/algorithm/kmp/</link>
+      <link>https://blog.lordash.de/posts/algorithm/0f99d88b6c4a1cdd/</link>
       <pubDate>Sun, 26 Jul 2020 14:20:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/kmp/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/0f99d88b6c4a1cdd/</guid>
       <description>字符串专题，介绍KMP算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>Knuth-Morris-Pratt字符串查找算法，简称为“KMP算法”，常用于在一个<code>文本串S</code>内查找一个<code>模式串T</code>的出现位置。这个算法由Donald Knuth、Vaughan Pratt、James H.  Morris三人于1977年联合发表，故取这3人的姓氏命名此算法。时间复杂度O(|S|+|T|)。</p>
@@ -277,50 +277,50 @@ Each test case contains only one line describe the original ordinary chain to be
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>}
 </span></span></code></pre></div><p>朴素算法的运行过程如下：</p>
-<p><img loading="lazy" src="KMP/%e6%9a%b4%e5%8a%9b%e5%8c%b9%e9%85%8d.gif" alt="暴力匹配"  />
+<p><img loading="lazy" src="/posts/algorithm/KMP/%e6%9a%b4%e5%8a%9b%e5%8c%b9%e9%85%8d.gif" alt="暴力匹配"  />
 </p>
 <p>注意到，如下图，枚举以S[1]为起点，匹配到最后一个字符，S[4]!=T[3]，失配之后朴素做法是指针回退，以S[2]为起点开始下一轮匹配，即i=i-j+1, j=0。</p>
-<p><img loading="lazy" src="KMP/%e5%86%97%e4%bd%99.png" alt="冗余"  />
+<p><img loading="lazy" src="/posts/algorithm/KMP/%e5%86%97%e4%bd%99.png" alt="冗余"  />
 </p>
 <p>毫无疑问，随着<code>文本串S</code>的长度增加，每一次回退重新匹配会花费大量的时间。那么有没有办法优化呢？</p>
 <h1 id="next数组">next数组</h1>
 <p>通过分析<code>模式串T</code>可以得到<code>next数组</code>，也可以当作fail数组理解。对于模式串<code>T=&quot;abac&quot;</code>，当匹配到<code>'c'</code>时失配了，那么说明前面的<code>&quot;aba&quot;</code>已经匹配成功，<code>&quot;aba&quot;</code>**最长的相等前缀后缀(不包括本身)**是<code>'a'</code>，那么失配<code>'c'</code>后，我们可以跳过<code>s[3]='a'</code>（文本串S<code>&quot;aba&quot;</code>的后缀）与<code>T[0]='a'</code>（模式串T<code>&quot;aba&quot;</code>的前缀），直接匹配<code>S[4]='b'</code>与<code>T[0]='b'</code>。</p>
-<p><img loading="lazy" src="KMP/next.png" alt="next"  />
+<p><img loading="lazy" src="/posts/algorithm/KMP/next.png" alt="next"  />
 </p>
 <p>为什么是最长的、相等的、不包括本身的前缀后缀呢？看下图自行理解。</p>
-<p><img loading="lazy" src="KMP/%e5%89%8d%e7%bc%80%e5%90%8e%e7%bc%80.png" alt="前缀后缀"  />
+<p><img loading="lazy" src="/posts/algorithm/KMP/%e5%89%8d%e7%bc%80%e5%90%8e%e7%bc%80.png" alt="前缀后缀"  />
 </p>
 <p>由下表可以看出最长相等前缀后缀整体右移，首位加上-1，即是next数组。</p>
 <table>
 <thead>
 <tr>
 <th style="text-align:center">模式串</th>
-<th style="text-align:center">a</th>
-<th style="text-align:center">b</th>
-<th style="text-align:center">a</th>
-<th style="text-align:center">c</th>
+<th>a</th>
+<th>b</th>
+<th>a</th>
+<th>c</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">最长相等前缀后缀</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
 </tr>
 <tr>
 <td style="text-align:center">next数组</td>
-<td style="text-align:center">-1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
+<td>-1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
 <h1 id="next数组优化">next数组优化</h1>
 <p>对于失配时<code>S[4]='c'</code>与<code>T[3]='b'</code>不相等，由<code>T[1]='b'</code>与<code>T[3]='b'</code>相等，得出<code>T[1]='b'</code>与<code>S[4]='c'</code>也不相等，我们可以跳过这一步匹配。</p>
-<p><img loading="lazy" src="KMP/next%e4%bc%98%e5%8c%96.png" alt="next优化"  />
+<p><img loading="lazy" src="/posts/algorithm/KMP/next%e4%bc%98%e5%8c%96.png" alt="next优化"  />
 </p>
 <p>注意C++中<code>next</code>是关键字（迭代器的一个函数），以及字符串下标<strong>从0开始</strong>和<strong>从1开始</strong>的代码稍有不同，注意必须求到<strong>next[|T|]</strong>，求字符串匹配数量以及最小循环节都需要用到。下面给出的是字符串下标从0开始的next数组的一种求法：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">int</span> nxt[mxn];
@@ -358,14 +358,14 @@ Each test case contains only one line describe the original ordinary chain to be
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>}
 </span></span></code></pre></div><p>KMP算法的运行过程如下：</p>
-<p><img loading="lazy" src="KMP/KMP.gif" alt="KMP"  />
+<p><img loading="lazy" src="/posts/algorithm/KMP/KMP.gif" alt="KMP"  />
 </p>
 <h1 id="最小循环节">最小循环节</h1>
 <p>参考 <a href="https://www.cnblogs.com/chenxiwenruo/p/3546457.html">KMP模板，最小循环节</a>。</p>
 <p>定理：</p>
 <blockquote>
-<p>假设S的长度为len，则S存在最小循环节，循环节的长度L为len-next[len]，子串为S[0…len-next[len]-1]。
-（1）如果len可以被len-next[len]整除，则表明字符串S可以完全由循环节循环组成，循环周期T=len/L。
+<p>假设S的长度为len，则S存在最小循环节，循环节的长度L为len-next[len]，子串为S[0…len-next[len]-1]。<br>
+（1）如果len可以被len-next[len]整除，则表明字符串S可以完全由循环节循环组成，循环周期T=len/L。<br>
 （2）如果不能，说明还需要再添加几个字母才能补全。需要补的个数是循环个数L-len%L=L-(len-L)%L=L-next[len]%L，L=len-next[len]。</p>
 </blockquote>
 <table>

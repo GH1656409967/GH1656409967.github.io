@@ -488,16 +488,16 @@ If there are several answers available, please choose the string which first app
     
     <item>
       <title>Manacher</title>
-      <link>https://blog.lordash.de/posts/algorithm/manacher/</link>
+      <link>https://blog.lordash.de/posts/algorithm/246358dd39e99944/</link>
       <pubDate>Sun, 26 Jul 2020 14:22:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/manacher/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/246358dd39e99944/</guid>
       <description>字符串专题，介绍Manacher算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
-<p>Manacher‘s Algorithm是用来查找一个字符串的最长回文子串的线性方法，由一个叫Manacher的人在1975年发明的。中文谐音“马拉车”算法。时间复杂度O(|S|)。</p>
+<p>Manacher&rsquo;s Algorithm是用来查找一个字符串的最长回文子串的线性方法，由一个叫Manacher的人在1975年发明的。中文谐音“马拉车”算法。时间复杂度O(|S|)。</p>
 <h1 id="朴素算法">朴素算法</h1>
 <p>给出一个朴素的中心扩展算法，寻找最长回文子串，枚举所有奇偶回文中心点（n+n-1个），然后向两端扩展，判断左右字符是否相等即可。时间复杂度$ O(|S|^{2}) $。</p>
-<p><img loading="lazy" src="Manacher/%e6%9a%b4%e5%8a%9b.png" alt="暴力"  />
+<p><img loading="lazy" src="/posts/algorithm/Manacher/%e6%9a%b4%e5%8a%9b.png" alt="暴力"  />
 </p>
 <p>实现代码如下：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">expand</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> s, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r)
@@ -529,7 +529,7 @@ If there are several answers available, please choose the string which first app
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>}
 </span></span></code></pre></div><h1 id="预处理">预处理</h1>
 <p>首先我们处理一下长度的奇偶，在每个字符间插入<code>'#'</code>，并且为使得扩展到边界能自动结束，在首尾分别插入<code>'^'</code>和<code>'$'</code>（不会在原串中出现的字符）。这样字符串的长度就被处理为奇数了。</p>
-<p><img loading="lazy" src="Manacher/init.png" alt="init"  />
+<p><img loading="lazy" src="/posts/algorithm/Manacher/init.png" alt="init"  />
 </p>
 <p>预处理代码如下：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">manacher_init</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>s, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>t, <span style="color:#66d9ef">int</span> n)
@@ -547,11 +547,11 @@ If there are several answers available, please choose the string which first app
 <table>
 <thead>
 <tr>
-<th style="text-align:center">idx</th>
-<th style="text-align:center">0</th>
-<th style="text-align:center">1</th>
-<th style="text-align:center">2</th>
-<th style="text-align:center">3</th>
+<th>idx</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
 <th>4</th>
 <th>5</th>
 <th>6</th>
@@ -571,11 +571,11 @@ If there are several answers available, please choose the string which first app
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">T</td>
-<td style="text-align:center">$</td>
-<td style="text-align:center">#</td>
-<td style="text-align:center">a</td>
-<td style="text-align:center">#</td>
+<td>T</td>
+<td>$</td>
+<td>#</td>
+<td>a</td>
+<td>#</td>
 <td>b</td>
 <td>#</td>
 <td>a</td>
@@ -593,11 +593,11 @@ If there are several answers available, please choose the string which first app
 <td>\0</td>
 </tr>
 <tr>
-<td style="text-align:center">r</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">1</td>
+<td>r</td>
+<td></td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
 <td>4</td>
 <td>1</td>
 <td>6</td>
@@ -615,11 +615,11 @@ If there are several answers available, please choose the string which first app
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">p</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
+<td>p</td>
+<td></td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
 <td>3</td>
 <td>0</td>
 <td>5</td>
@@ -640,14 +640,14 @@ If there are several answers available, please choose the string which first app
 </table>
 <p>观察可得，最长回文子串p[i] = 最长回文半径r[i] - 1，p[i]所代表的子串在原串的起点为(i-p[i])/2。</p>
 <p>那么p[i]怎么求呢，令mx为当前已求出的<strong>最右的回文子串右边界</strong>，令id为这个回文子串的中心点，讨论以下3种情况：</p>
-<p>(1) 当i$&lt;$mx时，令j=2*id-1，即i关于id的对称点，如果i+p[j]$&lt;$mx，那么由回文串的性质可知p[i]=p[j]。</p>
-<p><img loading="lazy" src="Manacher/%e5%b0%8f%e4%ba%8e.png" alt="小于"  />
+<p>(1) 当i$&lt;$mx时，令j=2*id-i，即i关于id的对称点，如果i+p[j]$&lt;$mx，那么由回文串的性质可知p[i]=p[j]。</p>
+<p><img loading="lazy" src="/posts/algorithm/Manacher/%e5%b0%8f%e4%ba%8e.png" alt="小于"  />
 </p>
-<p>(2) 当i$&lt;$mx时，令j=2*id-1，即i关于id的对称点，如果i+p[j]$&gt;=$mx，那么可以确定的是p[i]=mx-i，然后超出部分就需要中心拓展比较了。</p>
-<p><img loading="lazy" src="Manacher/%e5%a4%a7%e4%ba%8e.png" alt="大于"  />
+<p>(2) 当i$&lt;$mx时，令j=2*id-i，即i关于id的对称点，如果i+p[j]$&gt;=$mx，那么可以确定的是p[i]=mx-i，然后超出部分就需要中心拓展比较了。</p>
+<p><img loading="lazy" src="/posts/algorithm/Manacher/%e5%a4%a7%e4%ba%8e.png" alt="大于"  />
 </p>
 <p>(3) 当i&gt;=mx时，无法根据已知条件判断，只能中心拓展比较了。</p>
-<p><img loading="lazy" src="Manacher/%e8%b6%85%e5%87%ba.png" alt="超出"  />
+<p><img loading="lazy" src="/posts/algorithm/Manacher/%e8%b6%85%e5%87%ba.png" alt="超出"  />
 </p>
 <p>按照以上思路，遍历一下即可，注意更新id和mx。此写法得出的p[i]是最长半径数组，并非最长回文子串长度，ans需要减1，若有需要，修改中心扩展代码即可。代码如下：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">manacher</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>t, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>p, <span style="color:#66d9ef">int</span> n)

@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 12 Aug 2020 11:02:11 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/floyd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Floyd-Warshall</title>
-      <link>https://blog.lordash.de/posts/algorithm/floyd/</link>
+      <link>https://blog.lordash.de/posts/algorithm/628d2014b1e1c7d7/</link>
       <pubDate>Wed, 12 Aug 2020 11:02:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/algorithm/floyd/</guid>
+      <guid>https://blog.lordash.de/posts/algorithm/628d2014b1e1c7d7/</guid>
       <description>图论专题，介绍Floyd-Warshall算法</description>
       <content:encoded><![CDATA[<h1 id="简介">简介</h1>
 <p>Floyd-Warshall算法是求解多源最短路的算法之一，核心思想是动态规划，适用于不包含负环（负权回路）的图。时间复杂度$O(n^{3})$，空间复杂度$O(n^{2})$。</p>
