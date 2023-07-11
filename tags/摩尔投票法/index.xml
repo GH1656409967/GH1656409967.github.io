@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 20 Apr 2021 21:20:18 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/%E6%91%A9%E5%B0%94%E6%8A%95%E7%A5%A8%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>剑指Offer-39 数组中出现次数超过一半的数字</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-39-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+      <link>https://blog.lordash.de/posts/solution/3c921684ccd18169/</link>
       <pubDate>Tue, 20 Apr 2021 21:20:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-39-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+      <guid>https://blog.lordash.de/posts/solution/3c921684ccd18169/</guid>
       <description>剑指Offer-39 数组中出现次数超过一半的数字 类型 水题</description>
       <content:encoded><![CDATA[<h1 id="数组中出现次数超过一半的数字剑指offer-39httpsleetcode-cncomproblemsshu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof">数组中出现次数超过一半的数字(<a href="https://leetcode-cn.com/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/">剑指Offer-39</a>)</h1>
 <h2 id="题面">题面</h2>

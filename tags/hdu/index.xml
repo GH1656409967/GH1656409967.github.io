@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 08 Aug 2020 14:19:38 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/hdu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HDU-4763 Theme Section</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-4763-theme-section/</link>
+      <link>https://blog.lordash.de/posts/solution/a41b27c0b8567b41/</link>
       <pubDate>Sat, 08 Aug 2020 14:19:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-4763-theme-section/</guid>
+      <guid>https://blog.lordash.de/posts/solution/a41b27c0b8567b41/</guid>
       <description>HDU-4763 Theme Section 类型 KMP next数组性质</description>
       <content:encoded><![CDATA[<h1 id="theme-sectionhdu-4763httpsvjudgenetproblemhdu-hdu-4763">Theme Section(<a href="https://vjudge.net/problem/HDU-HDU-4763">HDU-4763</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -100,10 +100,10 @@
     
     <item>
       <title>HDU-4847 Wow! Such Doge!</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-4847-wow-such-doge/</link>
+      <link>https://blog.lordash.de/posts/solution/3098fa6499691f19/</link>
       <pubDate>Sat, 08 Aug 2020 10:33:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-4847-wow-such-doge/</guid>
+      <guid>https://blog.lordash.de/posts/solution/3098fa6499691f19/</guid>
       <description>HDU-4847 Wow! Such Doge! 类型 KMP</description>
       <content:encoded><![CDATA[<h1 id="wow-such-dogehdu-4847httpsvjudgenetproblemhdu-4847">Wow! Such Doge!(<a href="https://vjudge.net/problem/HDU-4847">HDU-4847</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -207,10 +207,10 @@ The size of the article does not exceed 64KB. The article contains only ASCII ch
     
     <item>
       <title>HDU-3068 最长回文</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3068-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87/</link>
+      <link>https://blog.lordash.de/posts/solution/152d84979dfa485b/</link>
       <pubDate>Sat, 08 Aug 2020 10:18:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3068-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87/</guid>
+      <guid>https://blog.lordash.de/posts/solution/152d84979dfa485b/</guid>
       <description>HDU-3068 最长回文 类型 Manacher</description>
       <content:encoded><![CDATA[<h1 id="最长回文hdu-3068httpsvjudgenetproblemhdu-3068">最长回文(<a href="https://vjudge.net/problem/HDU-3068">HDU-3068</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -289,10 +289,10 @@ The size of the article does not exceed 64KB. The article contains only ASCII ch
     
     <item>
       <title>HDU-3294 Girls&#39; research</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3294-girls-research/</link>
+      <link>https://blog.lordash.de/posts/solution/99d397601ec4e42f/</link>
       <pubDate>Sat, 08 Aug 2020 10:08:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3294-girls-research/</guid>
+      <guid>https://blog.lordash.de/posts/solution/99d397601ec4e42f/</guid>
       <description>HDU-3294 Girls&amp;#39; research 类型 Manacher</description>
       <content:encoded><![CDATA[<h1 id="girls-researchhdu-3294httpsvjudgenetproblemhdu-3294">Girls&rsquo; research(<a href="https://vjudge.net/problem/HDU-3294">HDU-3294</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -388,10 +388,10 @@ If there are several answers available, please choose the string which first app
     
     <item>
       <title>HDU-4513 吉哥系列故事-完美队形II</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-4513-%E5%90%89%E5%93%A5%E7%B3%BB%E5%88%97%E6%95%85%E4%BA%8B-%E5%AE%8C%E7%BE%8E%E9%98%9F%E5%BD%A2ii/</link>
+      <link>https://blog.lordash.de/posts/solution/972906195cf816b6/</link>
       <pubDate>Sat, 08 Aug 2020 09:46:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-4513-%E5%90%89%E5%93%A5%E7%B3%BB%E5%88%97%E6%95%85%E4%BA%8B-%E5%AE%8C%E7%BE%8E%E9%98%9F%E5%BD%A2ii/</guid>
+      <guid>https://blog.lordash.de/posts/solution/972906195cf816b6/</guid>
       <description>HDU-4513 吉哥系列故事-完美队形II 类型 Manacher</description>
       <content:encoded><![CDATA[<h1 id="吉哥系列故事-完美队形iihdu-4513httpsvjudgenetproblemhdu-4513">吉哥系列故事-完美队形II(<a href="https://vjudge.net/problem/HDU-4513">HDU-4513</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -482,10 +482,10 @@ If there are several answers available, please choose the string which first app
     
     <item>
       <title>HDU-3613 Best Reward</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3613-best-reward/</link>
+      <link>https://blog.lordash.de/posts/solution/6a2eaf463fb2967e/</link>
       <pubDate>Wed, 05 Aug 2020 19:41:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3613-best-reward/</guid>
+      <guid>https://blog.lordash.de/posts/solution/6a2eaf463fb2967e/</guid>
       <description>HDU-3613 Best Reward 类型 Manacher</description>
       <content:encoded><![CDATA[<h1 id="best-rewardhdu-3613httpsvjudgenetproblemhdu-3613">Best Reward(<a href="https://vjudge.net/problem/HDU-3613">HDU-3613</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -603,10 +603,10 @@ If there are several answers available, please choose the string which first app
     
     <item>
       <title>HDU-2609 How many</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2609-how-many/</link>
+      <link>https://blog.lordash.de/posts/solution/8e8c4a17274bbaf0/</link>
       <pubDate>Tue, 04 Aug 2020 22:47:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2609-how-many/</guid>
+      <guid>https://blog.lordash.de/posts/solution/8e8c4a17274bbaf0/</guid>
       <description>HDU-2609 How many 类型 字符串 最小表示法</description>
       <content:encoded><![CDATA[<h1 id="how-manyhdu-2609httpsvjudgenetproblemhdu-2609">How many(<a href="https://vjudge.net/problem/HDU-2609">HDU-2609</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -695,10 +695,10 @@ Next n lines follow. Each line has a equal length character string. (string only
     
     <item>
       <title>HDU-3374 String Problem</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3374-string-problem/</link>
+      <link>https://blog.lordash.de/posts/solution/86e3d7b59d954a3d/</link>
       <pubDate>Tue, 04 Aug 2020 22:04:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3374-string-problem/</guid>
+      <guid>https://blog.lordash.de/posts/solution/86e3d7b59d954a3d/</guid>
       <description>HDU-3374 String Problem 类型 字符串 最小表示法 KMP</description>
       <content:encoded><![CDATA[<h1 id="string-problemhdu-3374httpsvjudgenetproblemhdu-3374">String Problem(<a href="https://vjudge.net/problem/HDU-3374">HDU-3374</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -821,10 +821,10 @@ Your task is easy, calculate the lexicographically fisrt string’s Rank (if the
     
     <item>
       <title>HDU-2328 Corporate Identity</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2328-corporate-identity/</link>
+      <link>https://blog.lordash.de/posts/solution/44044fd8e23c0706/</link>
       <pubDate>Sun, 02 Aug 2020 23:11:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2328-corporate-identity/</guid>
+      <guid>https://blog.lordash.de/posts/solution/44044fd8e23c0706/</guid>
       <description>HDU-2328 Corporate Identity 类型 字符串 KMP</description>
       <content:encoded><![CDATA[<h1 id="corporate-identityhdu-2328httpsvjudgenetproblemhdu-2328">Corporate Identity(<a href="https://vjudge.net/problem/HDU-2328">HDU-2328</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -940,10 +940,10 @@ Your task is easy, calculate the lexicographically fisrt string’s Rank (if the
     
     <item>
       <title>HDU-1238 Substrings</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1238-substrings/</link>
+      <link>https://blog.lordash.de/posts/solution/5bd76b31bbe72978/</link>
       <pubDate>Sun, 02 Aug 2020 22:57:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1238-substrings/</guid>
+      <guid>https://blog.lordash.de/posts/solution/5bd76b31bbe72978/</guid>
       <description>HDU-1238 Substrings 类型 字符串 KMP</description>
       <content:encoded><![CDATA[<h1 id="substringshdu-1238httpsvjudgenetproblemhdu-1238">Substrings(<a href="https://vjudge.net/problem/HDU-1238">HDU-1238</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1052,10 +1052,10 @@ Your task is easy, calculate the lexicographically fisrt string’s Rank (if the
     
     <item>
       <title>HDU-4300 Clairewd’s message</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-4300-clairewds-message/</link>
+      <link>https://blog.lordash.de/posts/solution/0320222b3bd1c3fb/</link>
       <pubDate>Sun, 02 Aug 2020 21:33:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-4300-clairewds-message/</guid>
+      <guid>https://blog.lordash.de/posts/solution/0320222b3bd1c3fb/</guid>
       <description>HDU-4300 Clairewd’s message 类型 字符串 KMP next数组性质</description>
       <content:encoded><![CDATA[<h1 id="clairewds-messagehdu-4300httpsvjudgenetproblemhdu-4300">Clairewd’s message(<a href="https://vjudge.net/problem/HDU-4300">HDU-4300</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1152,10 +1152,10 @@ n&lt;= 100000;</p>
     
     <item>
       <title>HDU-3336 Count the string</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3336-count-the-string/</link>
+      <link>https://blog.lordash.de/posts/solution/67d004945c62a92c/</link>
       <pubDate>Fri, 31 Jul 2020 13:01:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3336-count-the-string/</guid>
+      <guid>https://blog.lordash.de/posts/solution/67d004945c62a92c/</guid>
       <description>HDU-3336 Count the string 类型 字符串 KMP next数组性质</description>
       <content:encoded><![CDATA[<h1 id="count-the-stringhdu-3336httpsvjudgenetproblemhdu-3336">Count the string(<a href="https://vjudge.net/problem/HDU-3336">HDU-3336</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1230,10 +1230,10 @@ For each case, the first line is an integer n (1 &lt;= n &lt;=  200000), which i
     
     <item>
       <title>HDU-2594 Simpsons’ Hidden Talents</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2594-simpsons-hidden-talents/</link>
+      <link>https://blog.lordash.de/posts/solution/ee73188e9cd45a40/</link>
       <pubDate>Fri, 31 Jul 2020 12:34:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2594-simpsons-hidden-talents/</guid>
+      <guid>https://blog.lordash.de/posts/solution/ee73188e9cd45a40/</guid>
       <description>HDU-2594 Simpsons’ Hidden Talents 类型 字符串 KMP next数组性质</description>
       <content:encoded><![CDATA[<h1 id="simpsons-hidden-talentshdu-2594httpsvjudgenetproblemhdu-2594">Simpsons’ Hidden Talents(<a href="https://vjudge.net/problem/HDU-2594">HDU-2594</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1318,10 +1318,10 @@ The lengths of s1 and s2 will be at most 50000.</p>
     
     <item>
       <title>HDU-1358 Period</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1358-period/</link>
+      <link>https://blog.lordash.de/posts/solution/5bd76b31bbe72978/</link>
       <pubDate>Fri, 31 Jul 2020 11:44:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1358-period/</guid>
+      <guid>https://blog.lordash.de/posts/solution/5bd76b31bbe72978/</guid>
       <description>HDU-1358 Period 类型 字符串 KMP 最小循环节</description>
       <content:encoded><![CDATA[<h1 id="period-hdu-1358httpsvjudgenetproblemhdu-1358">Period (<a href="https://vjudge.net/problem/HDU-1358">HDU-1358</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1403,10 +1403,10 @@ The lengths of s1 and s2 will be at most 50000.</p>
     
     <item>
       <title>HDU-3746 Cyclic Nacklace</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3746-cyclic-nacklace/</link>
+      <link>https://blog.lordash.de/posts/solution/342193647a6ddb9d/</link>
       <pubDate>Fri, 31 Jul 2020 11:28:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3746-cyclic-nacklace/</guid>
+      <guid>https://blog.lordash.de/posts/solution/342193647a6ddb9d/</guid>
       <description>HDU-3746 Cyclic Nacklace 类型 字符串 KMP 最小循环节</description>
       <content:encoded><![CDATA[<h1 id="cyclic-nacklace-hdu-3746httpsvjudgenetproblemhdu-3746">Cyclic Nacklace (<a href="https://vjudge.net/problem/HDU-3746">HDU-3746</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1489,10 +1489,10 @@ Each test case contains only one line describe the original ordinary chain to be
     
     <item>
       <title>HDU-2087 剪花布条</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2087-%E5%89%AA%E8%8A%B1%E5%B8%83%E6%9D%A1/</link>
+      <link>https://blog.lordash.de/posts/solution/98f4c587dff0af0e/</link>
       <pubDate>Fri, 31 Jul 2020 11:17:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2087-%E5%89%AA%E8%8A%B1%E5%B8%83%E6%9D%A1/</guid>
+      <guid>https://blog.lordash.de/posts/solution/98f4c587dff0af0e/</guid>
       <description>HDU-2087 剪花布条 类型 字符串 KMP</description>
       <content:encoded><![CDATA[<h1 id="剪花布条-hdu-2087httpsvjudgenetproblemhdu-2087">剪花布条 (<a href="https://vjudge.net/problem/HDU-2087">HDU-2087</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1575,10 +1575,10 @@ Each test case contains only one line describe the original ordinary chain to be
     
     <item>
       <title>HDU-1711 Number Sequence</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1711-number-sequence/</link>
+      <link>https://blog.lordash.de/posts/solution/ee6078a4e614433a/</link>
       <pubDate>Fri, 31 Jul 2020 11:03:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1711-number-sequence/</guid>
+      <guid>https://blog.lordash.de/posts/solution/ee6078a4e614433a/</guid>
       <description>HDU-1711 Number Sequence 类型 字符串 KMP</description>
       <content:encoded><![CDATA[<h1 id="number-sequence-hdu-1711httpsvjudgenetproblemhdu-1711">Number Sequence (<a href="https://vjudge.net/problem/HDU-1711">HDU-1711</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1669,10 +1669,10 @@ Each test case contains only one line describe the original ordinary chain to be
     
     <item>
       <title>HDU-3980 Paint Chain</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3980-paint-chain/</link>
+      <link>https://blog.lordash.de/posts/solution/69e1bd87f5e149bb/</link>
       <pubDate>Sat, 18 Jul 2020 11:07:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3980-paint-chain/</guid>
+      <guid>https://blog.lordash.de/posts/solution/69e1bd87f5e149bb/</guid>
       <description>HDU-3980 Paint Chain 类型 博弈论 SG函数</description>
       <content:encoded><![CDATA[<h1 id="paint-chainhdu-3980httpsvjudgenetproblemhdu-3980">Paint Chain(<a href="https://vjudge.net/problem/HDU-3980">HDU-3980</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1740,10 +1740,10 @@ Each test case contains only one line describe the original ordinary chain to be
     
     <item>
       <title>HDU-2509 Be the Winner</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2509-be-the-winner/</link>
+      <link>https://blog.lordash.de/posts/solution/e1f7bbd512788cbf/</link>
       <pubDate>Sat, 18 Jul 2020 10:46:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2509-be-the-winner/</guid>
+      <guid>https://blog.lordash.de/posts/solution/e1f7bbd512788cbf/</guid>
       <description>HDU-2509 Be the Winner 类型 博弈论 Anti-Nim博弈</description>
       <content:encoded><![CDATA[<h1 id="be-the-winnerhdu-2509httpsvjudgenetproblemhdu-2509">Be the Winner(<a href="https://vjudge.net/problem/HDU-2509">HDU-2509</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1801,10 +1801,10 @@ the loser. Fra wants to know in which situations he can win by  playing strategi
     
     <item>
       <title>HDU-4388 Stone Game II</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-4388-stone-game-ii/</link>
+      <link>https://blog.lordash.de/posts/solution/6dd2fa1e3acd2ab5/</link>
       <pubDate>Fri, 17 Jul 2020 17:27:43 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-4388-stone-game-ii/</guid>
+      <guid>https://blog.lordash.de/posts/solution/6dd2fa1e3acd2ab5/</guid>
       <description>HDU-4388 Stone Game II 类型 博弈论</description>
       <content:encoded><![CDATA[<h1 id="stone-game-ii-hdu-4388httpsvjudgenetproblemhdu-4388">Stone Game II (<a href="https://vjudge.net/problem/HDU-4388">HDU-4388</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1879,11 +1879,11 @@ You can assume that all the number of stones in each pile will not exceed 100,00
     </item>
     
     <item>
-      <title>HDU-2188 悼念512</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2188-%E6%82%BC%E5%BF%B5512/</link>
+      <title>HDU-2188 选拔志愿者</title>
+      <link>https://blog.lordash.de/posts/solution/b472f6f4d765900c/</link>
       <pubDate>Fri, 17 Jul 2020 17:11:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2188-%E6%82%BC%E5%BF%B5512/</guid>
+      <guid>https://blog.lordash.de/posts/solution/b472f6f4d765900c/</guid>
       <description>HDU-2188 悼念512汶川大地震遇难同胞——选拔志愿者 类型 博弈论 Bash博弈</description>
       <content:encoded><![CDATA[<h1 id="悼念512汶川大地震遇难同胞选拔志愿者hdu-2188httpsvjudgenetproblemhdu-2188">悼念512汶川大地震遇难同胞——选拔志愿者(<a href="https://vjudge.net/problem/HDU-2188">HDU-2188</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1940,10 +1940,10 @@ You can assume that all the number of stones in each pile will not exceed 100,00
     
     <item>
       <title>HDU-2897 邂逅明下</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2897-%E9%82%82%E9%80%85%E6%98%8E%E4%B8%8B/</link>
+      <link>https://blog.lordash.de/posts/solution/bf620dd875151538/</link>
       <pubDate>Fri, 17 Jul 2020 16:59:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2897-%E9%82%82%E9%80%85%E6%98%8E%E4%B8%8B/</guid>
+      <guid>https://blog.lordash.de/posts/solution/bf620dd875151538/</guid>
       <description>HDU-2897 邂逅明下 类型 博弈论 Bash博弈拓展</description>
       <content:encoded><![CDATA[<h1 id="邂逅明下hdu-2897httpsvjudgenetproblemhdu-2897">邂逅明下(<a href="https://vjudge.net/problem/HDU-2897">HDU-2897</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -2002,10 +2002,10 @@ You can assume that all the number of stones in each pile will not exceed 100,00
     
     <item>
       <title>HDU-2516 取石子游戏</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2516-%E5%8F%96%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</link>
+      <link>https://blog.lordash.de/posts/solution/a22a070129bb9e3e/</link>
       <pubDate>Fri, 17 Jul 2020 16:46:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2516-%E5%8F%96%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</guid>
+      <guid>https://blog.lordash.de/posts/solution/a22a070129bb9e3e/</guid>
       <description>HDU-2516 取石子游戏 类型 博弈论 Fibonacci博弈</description>
       <content:encoded><![CDATA[<h1 id="取石子游戏hdu-2516httpsvjudgenetproblemhdu-2516">取石子游戏(<a href="https://vjudge.net/problem/HDU-2516">HDU-2516</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -2072,10 +2072,10 @@ You can assume that all the number of stones in each pile will not exceed 100,00
     
     <item>
       <title>HDU-2486 A simple stone game</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2486-a-simple-stone-game/</link>
+      <link>https://blog.lordash.de/posts/solution/bdbb5938b9b09b74/</link>
       <pubDate>Fri, 17 Jul 2020 00:24:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2486-a-simple-stone-game/</guid>
+      <guid>https://blog.lordash.de/posts/solution/bdbb5938b9b09b74/</guid>
       <description>HDU-2486 A Chess Game 类型 博弈论 K倍动态减法博弈</description>
       <content:encoded><![CDATA[<h1 id="a-simple-stone-gamehdu-2486httpsvjudgenetproblemhdu-2486">A simple stone game(<a href="https://vjudge.net/problem/HDU-2486">HDU-2486</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -2150,10 +2150,10 @@ Each test case is a line consisting of two integer n and k.(2&lt;=n&lt;=10^8,1&l
     
     <item>
       <title>HDU-2177 取(2堆)石子游戏</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2177-%E5%8F%962%E5%A0%86%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</link>
+      <link>https://blog.lordash.de/posts/solution/8370fc6a49e88a13/</link>
       <pubDate>Thu, 16 Jul 2020 19:48:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2177-%E5%8F%962%E5%A0%86%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</guid>
+      <guid>https://blog.lordash.de/posts/solution/8370fc6a49e88a13/</guid>
       <description>HDU-2177 取(2堆)石子游戏 类型 博弈论 Wythoff博弈</description>
       <content:encoded><![CDATA[<h1 id="取2堆石子游戏hdu-2177httpsvjudgenetproblemhdu-2177">取(2堆)石子游戏(<a href="https://vjudge.net/problem/HDU-2177">HDU-2177</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -2237,10 +2237,10 @@ Each test case is a line consisting of two integer n and k.(2&lt;=n&lt;=10^8,1&l
     
     <item>
       <title>HDU-3404 Switch lights</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3404-switch-lights/</link>
+      <link>https://blog.lordash.de/posts/solution/30b31979099adc88/</link>
       <pubDate>Wed, 15 Jul 2020 11:38:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3404-switch-lights/</guid>
+      <guid>https://blog.lordash.de/posts/solution/30b31979099adc88/</guid>
       <description>HDU-3404 Switch lights 类型 博弈论 Nim积</description>
       <content:encoded><![CDATA[<h1 id="switch-lightshdu-3404httpsvjudgenetproblemhdu-3404">Switch lights(<a href="https://vjudge.net/problem/HDU-3404">HDU-3404</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -2494,10 +2494,10 @@ Then come n lines, each line has two integers, xi , yi,  (1&lt;=xi&lt;=10000, 1&
     
     <item>
       <title>HDU-1848 Fibonacci again and again</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1848-fibonacci-again-and-again/</link>
+      <link>https://blog.lordash.de/posts/solution/87fb0756021b4dda/</link>
       <pubDate>Mon, 13 Jul 2020 11:06:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1848-fibonacci-again-and-again/</guid>
+      <guid>https://blog.lordash.de/posts/solution/87fb0756021b4dda/</guid>
       <description>HDU-1848 Fibonacci again and again 类型 博弈论 SG函数</description>
       <content:encoded><![CDATA[<h1 id="fibonacci-again-and-againhdu-1848httpsvjudgenetproblemhdu-1848">Fibonacci again and again(<a href="https://vjudge.net/problem/HDU-1848">HDU-1848</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -2584,10 +2584,10 @@ m=n=p=0则表示输入结束。</p>
     
     <item>
       <title>HDU-1846 Brave Game</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1846-brave-game/</link>
+      <link>https://blog.lordash.de/posts/solution/401abd3132fbd91f/</link>
       <pubDate>Sun, 12 Jul 2020 00:35:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1846-brave-game/</guid>
+      <guid>https://blog.lordash.de/posts/solution/401abd3132fbd91f/</guid>
       <description>HDU-1846 Brave Game 类型 博弈论 Bash博弈</description>
       <content:encoded><![CDATA[<h1 id="brave-gamehdu-1846httpsvjudgenetproblemhdu-1846">Brave Game(<a href="https://vjudge.net/problem/HDU-1846">HDU-1846</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -2649,10 +2649,10 @@ m=n=p=0则表示输入结束。</p>
     
     <item>
       <title>HDU-1847 Good Luck in CET-4 Everybody!</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1847-good-luck-in-cet-4-everybody/</link>
+      <link>https://blog.lordash.de/posts/solution/1c76c0be3708c224/</link>
       <pubDate>Sun, 12 Jul 2020 00:28:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1847-good-luck-in-cet-4-everybody/</guid>
+      <guid>https://blog.lordash.de/posts/solution/1c76c0be3708c224/</guid>
       <description>HDU-1847 Good Luck in CET-4 Everybody! 类型 博弈论</description>
       <content:encoded><![CDATA[<h1 id="good-luck-in-cet-4-everybodyhdu-1847httpsvjudgenetproblemhdu-1847">Good Luck in CET-4 Everybody!(<a href="https://vjudge.net/problem/HDU-1847">HDU-1847</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -2710,10 +2710,10 @@ m=n=p=0则表示输入结束。</p>
     
     <item>
       <title>HDU-1849 Rabbit and Grass</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1849-rabbit-and-grass/</link>
+      <link>https://blog.lordash.de/posts/solution/149d1e8cf3491dc7/</link>
       <pubDate>Sat, 11 Jul 2020 22:05:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1849-rabbit-and-grass/</guid>
+      <guid>https://blog.lordash.de/posts/solution/149d1e8cf3491dc7/</guid>
       <description>HDU-1849 Rabbit and Grass 类型 博弈论 Nim博弈</description>
       <content:encoded><![CDATA[<h1 id="rabbit-and-grasshdu-1849httpsvjudgenetproblemhdu-1849">Rabbit and Grass(<a href="https://vjudge.net/problem/HDU-1849">HDU-1849</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -2779,10 +2779,10 @@ m=n=p=0则表示输入结束。</p>
     
     <item>
       <title>HDU-1805 Being a Good Boy in Spring Festival</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1805-being-a-good-boy-in-spring-festival/</link>
+      <link>https://blog.lordash.de/posts/solution/4749c95132726660/</link>
       <pubDate>Sat, 11 Jul 2020 21:50:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1805-being-a-good-boy-in-spring-festival/</guid>
+      <guid>https://blog.lordash.de/posts/solution/4749c95132726660/</guid>
       <description>HDU-1805 Being a Good Boy in Spring Festival 类型 博弈论 Nim博弈</description>
       <content:encoded><![CDATA[<h1 id="being-a-good-boy-in-spring-festivalhdu-1805httpsvjudgenetproblemhdu-1850">Being a Good Boy in Spring Festival(<a href="https://vjudge.net/problem/HDU-1850">HDU-1805</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -2850,10 +2850,10 @@ m=n=p=0则表示输入结束。</p>
     
     <item>
       <title>HDU-2147 kiki&#39;s game</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2147-kikis-game/</link>
+      <link>https://blog.lordash.de/posts/solution/7fbc7960878dc635/</link>
       <pubDate>Sat, 11 Jul 2020 21:02:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2147-kikis-game/</guid>
+      <guid>https://blog.lordash.de/posts/solution/7fbc7960878dc635/</guid>
       <description>HDU-2147 kiki&amp;#39;s game 类型 博弈论</description>
       <content:encoded><![CDATA[<h1 id="kikis-gamehdu-2147httpsvjudgenetproblemhdu-2147">kiki&rsquo;s game(<a href="https://vjudge.net/problem/HDU-2147">HDU-2147</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -2904,10 +2904,10 @@ m=n=p=0则表示输入结束。</p>
     
     <item>
       <title>HDU-2149 Public Sale</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2149-public-sale/</link>
+      <link>https://blog.lordash.de/posts/solution/07924860204bf24b/</link>
       <pubDate>Sat, 11 Jul 2020 20:47:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2149-public-sale/</guid>
+      <guid>https://blog.lordash.de/posts/solution/07924860204bf24b/</guid>
       <description>HDU-2149 Public Sale 类型 博弈论 Bash博弈</description>
       <content:encoded><![CDATA[<h1 id="public-salehdu-2149httpsvjudgenetproblemhdu-2149">Public Sale(<a href="https://vjudge.net/problem/HDU-2149">HDU-2149</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -2970,10 +2970,10 @@ Lele要出多少才能保证自己买得到这块地呢？</p>
     
     <item>
       <title>HDU-1527 取石子游戏</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1527-%E5%8F%96%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</link>
+      <link>https://blog.lordash.de/posts/solution/0096d7f5d39be617/</link>
       <pubDate>Thu, 09 Jul 2020 16:35:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1527-%E5%8F%96%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</guid>
+      <guid>https://blog.lordash.de/posts/solution/0096d7f5d39be617/</guid>
       <description>HDU-1527 取石子游戏 类型 博弈论 Wythoff博弈</description>
       <content:encoded><![CDATA[<h1 id="取石子游戏hdu-1527httpsvjudgenetproblemhdu-1527">取石子游戏(<a href="https://vjudge.net/problem/HDU-1527">HDU-1527</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -3024,10 +3024,10 @@ Lele要出多少才能保证自己买得到这块地呢？</p>
     
     <item>
       <title>HDU-1069 Monkey and Banana</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1069-monkey-and-banana/</link>
+      <link>https://blog.lordash.de/posts/solution/3e77307198edd961/</link>
       <pubDate>Sun, 22 Apr 2018 10:39:02 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1069-monkey-and-banana/</guid>
+      <guid>https://blog.lordash.de/posts/solution/3e77307198edd961/</guid>
       <description>HDU-1069 Monkey and Banana 类型 DP</description>
       <content:encoded><![CDATA[<h1 id="monkey-and-banana-hdu---1069httpsvjudgenetproblemhdu-1069">Monkey and Banana (<a href="https://vjudge.net/problem/HDU-1069">HDU - 1069</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -3131,10 +3131,10 @@ Input is terminated by a value of zero (0) for n.</p>
     
     <item>
       <title>HDU-1029 Ignatius and the Princess IV</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1029-ignatius-and-the-princess-iv/</link>
+      <link>https://blog.lordash.de/posts/solution/208fcd86a174a67a/</link>
       <pubDate>Sun, 22 Apr 2018 10:24:06 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1029-ignatius-and-the-princess-iv/</guid>
+      <guid>https://blog.lordash.de/posts/solution/208fcd86a174a67a/</guid>
       <description>HDU-1029 Ignatius and the Princess IV 类型 DP</description>
       <content:encoded><![CDATA[<h1 id="ignatius-and-the-princess-iv-hdu---1029httpsvjudgenetproblemhdu-1029">Ignatius and the Princess IV (<a href="https://vjudge.net/problem/HDU-1029">HDU - 1029</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -3202,10 +3202,10 @@ Input is terminated by a value of zero (0) for n.</p>
     
     <item>
       <title>HDU-6699 Block Breaker</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-6699-block-breaker/</link>
+      <link>https://blog.lordash.de/posts/solution/de6e623bbe0dd454/</link>
       <pubDate>Sun, 22 Apr 2018 09:30:56 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-6699-block-breaker/</guid>
+      <guid>https://blog.lordash.de/posts/solution/de6e623bbe0dd454/</guid>
       <description>HDU-6699 Block Breaker 类型 BFS</description>
       <content:encoded><![CDATA[<h1 id="block-breaker-hdu---6699httpsvjudgenetproblemhdu-6699">Block Breaker (<a href="https://vjudge.net/problem/HDU-6699">HDU - 6699</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -3339,10 +3339,10 @@ Input is terminated by a value of zero (0) for n.</p>
     
     <item>
       <title>HDU-1686 Oulipo</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1686-oulipo/</link>
+      <link>https://blog.lordash.de/posts/solution/af7ab7639114a9a5/</link>
       <pubDate>Fri, 13 Apr 2018 16:09:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1686-oulipo/</guid>
+      <guid>https://blog.lordash.de/posts/solution/af7ab7639114a9a5/</guid>
       <description>HDU-1686 Oulipo 类型 KMP</description>
       <content:encoded><![CDATA[<h1 id="oulipo-hdu---1686httpsvjudgenetproblemhdu-1686">Oulipo (<a href="https://vjudge.net/problem/HDU-1686">HDU - 1686</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -3436,10 +3436,10 @@ One line with the text T, a string over {&lsquo;A&rsquo;, &lsquo;B&rsquo;, &lsqu
     
     <item>
       <title>HDU-3639 Hawk-and-Chicken</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3639-hawk-and-chicken/</link>
+      <link>https://blog.lordash.de/posts/solution/836ecd220e828edf/</link>
       <pubDate>Sat, 07 Apr 2018 10:37:26 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3639-hawk-and-chicken/</guid>
+      <guid>https://blog.lordash.de/posts/solution/836ecd220e828edf/</guid>
       <description>HDU-3639 Hawk-and-Chicken 类型 Tarjan DFS</description>
       <content:encoded><![CDATA[<h1 id="hawk-and-chicken-hdu---3639httpsvjudgenetproblemhdu-3639">Hawk-and-Chicken (<a href="https://vjudge.net/problem/HDU-3639">HDU - 3639</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -3612,10 +3612,10 @@ Then follow a line contain all the Hawks&rsquo; number. The numbers must be list
     
     <item>
       <title>HDU-1827 Summer Holiday</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1827-summer-holiday/</link>
+      <link>https://blog.lordash.de/posts/solution/a118f4bf5f2702ca/</link>
       <pubDate>Tue, 03 Apr 2018 11:24:13 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1827-summer-holiday/</guid>
+      <guid>https://blog.lordash.de/posts/solution/a118f4bf5f2702ca/</guid>
       <description>HDU-1827 Summer Holiday 类型 Tarjan</description>
       <content:encoded><![CDATA[<h1 id="summer-holiday-hdu---1827httpsvjudgenetproblemhdu-1827">Summer Holiday (<a href="https://vjudge.net/problem/HDU-1827">HDU - 1827</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -3768,10 +3768,10 @@ And Eternity in an hour.
     
     <item>
       <title>HDU-2767 Proving Equivalences</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2767-proving-equivalences/</link>
+      <link>https://blog.lordash.de/posts/solution/dab1d4ab63bc8e70/</link>
       <pubDate>Mon, 02 Apr 2018 19:41:46 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2767-proving-equivalences/</guid>
+      <guid>https://blog.lordash.de/posts/solution/dab1d4ab63bc8e70/</guid>
       <description>HDU-2767 Proving Equivalences 类型 Tarjan</description>
       <content:encoded><![CDATA[<h1 id="proving-equivalences-hdu---2767httpsvjudgenetproblemhdu-2767">Proving Equivalences (<a href="https://vjudge.net/problem/HDU-2767">HDU - 2767</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -3913,10 +3913,10 @@ And Eternity in an hour.
     
     <item>
       <title>HDU-1269 迷宫城堡</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1269-%E8%BF%B7%E5%AE%AB%E5%9F%8E%E5%A0%A1/</link>
+      <link>https://blog.lordash.de/posts/solution/5a80e5c457a45bc6/</link>
       <pubDate>Sat, 31 Mar 2018 20:43:25 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1269-%E8%BF%B7%E5%AE%AB%E5%9F%8E%E5%A0%A1/</guid>
+      <guid>https://blog.lordash.de/posts/solution/5a80e5c457a45bc6/</guid>
       <description>HDU-1269 迷宫城堡 类型 Tarjan</description>
       <content:encoded><![CDATA[<h1 id="迷宫城堡-hdu---1269httpsvjudgenetproblemhdu-1269">迷宫城堡 (<a href="https://vjudge.net/problem/HDU-1269">HDU - 1269</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -4025,10 +4025,10 @@ And Eternity in an hour.
     
     <item>
       <title>HDU-1160 FatMouse&#39;s Speed</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1160-fatmouses-speed/</link>
+      <link>https://blog.lordash.de/posts/solution/3e77307198edd961/</link>
       <pubDate>Fri, 30 Mar 2018 19:28:50 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1160-fatmouses-speed/</guid>
+      <guid>https://blog.lordash.de/posts/solution/3e77307198edd961/</guid>
       <description>HDU-1160 FatMouse&amp;#39;s Speed 类型 LIS 路径输出</description>
       <content:encoded><![CDATA[<h1 id="fatmouses-speed-hdu---1160httpsvjudgenetproblemhdu-1160">FatMouse’s Speed (<a href="https://vjudge.net/problem/HDU-1160">HDU - 1160</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -4127,10 +4127,10 @@ All inequalities are strict: weights must be strictly increasing,  and speeds mu
     
     <item>
       <title>HDU-2639 Bone Collector II</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2639-bone-collector-ii/</link>
+      <link>https://blog.lordash.de/posts/solution/982145d223c0b506/</link>
       <pubDate>Fri, 30 Mar 2018 09:19:05 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2639-bone-collector-ii/</guid>
+      <guid>https://blog.lordash.de/posts/solution/982145d223c0b506/</guid>
       <description>HDU-2639 Bone Collector II 类型 01背包 第k优解</description>
       <content:encoded><![CDATA[<h1 id="bone-collector-ii-hdu---2639httpsvjudgenetproblemhdu-2639">Bone Collector II (<a href="https://vjudge.net/problem/HDU-2639">HDU - 2639</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -4218,10 +4218,10 @@ Followed by T cases , each case three lines , the first line contain two integer
     
     <item>
       <title>HDU-2602 Bone Collector</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2602-bone-collector/</link>
+      <link>https://blog.lordash.de/posts/solution/c23c5e71ca95182f/</link>
       <pubDate>Tue, 27 Mar 2018 18:38:09 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2602-bone-collector/</guid>
+      <guid>https://blog.lordash.de/posts/solution/c23c5e71ca95182f/</guid>
       <description>HDU-2602 Bone Collector 类型 01背包</description>
       <content:encoded><![CDATA[<h1 id="bone-collector-hdu---2602httpsvjudgenetproblemhdu-2602">Bone Collector (<a href="https://vjudge.net/problem/HDU-2602">HDU - 2602</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -4285,10 +4285,10 @@ Followed by T cases , each case three lines , the first line contain two integer
     
     <item>
       <title>HDU-2955 Robberies</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2955-robberies/</link>
+      <link>https://blog.lordash.de/posts/solution/4becc864832ef0cf/</link>
       <pubDate>Mon, 26 Mar 2018 18:03:14 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2955-robberies/</guid>
+      <guid>https://blog.lordash.de/posts/solution/4becc864832ef0cf/</guid>
       <description>HDU-2955 Robberies 类型 01背包</description>
       <content:encoded><![CDATA[<h1 id="robberies-hdu---2955httpsvjudgenetproblemhdu-2955">Robberies (<a href="https://vjudge.net/problem/HDU-2955">HDU - 2955</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -4373,12 +4373,12 @@ A bank goes bankrupt if it is robbed, and you may assume that all  probabilities
     </item>
     
     <item>
-      <title>HDU-2191 悼念512</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2191-%E6%82%BC%E5%BF%B5512/</link>
+      <title>HDU-2191 采购粮食</title>
+      <link>https://blog.lordash.de/posts/solution/63b9b5127d2992de/</link>
       <pubDate>Mon, 26 Mar 2018 17:19:43 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2191-%E6%82%BC%E5%BF%B5512/</guid>
-      <description>HDU-2191  悼念512汶川大地震遇难同胞——珍惜现在，感恩生活 类型 多重背包 单调队列优化</description>
+      <guid>https://blog.lordash.de/posts/solution/63b9b5127d2992de/</guid>
+      <description>HDU-2191 悼念512汶川大地震遇难同胞——珍惜现在，感恩生活 类型 多重背包 单调队列优化</description>
       <content:encoded><![CDATA[<h1 id="悼念512汶川大地震遇难同胞珍惜现在感恩生活-hdu---2191httpsvjudgenetproblemhdu-2191">悼念512汶川大地震遇难同胞——珍惜现在，感恩生活 (<a href="https://vjudge.net/problem/HDU-2191">HDU - 2191</a>)</h1>
 <h2 id="题面">题面</h2>
 <blockquote>
@@ -4452,10 +4452,10 @@ A bank goes bankrupt if it is robbed, and you may assume that all  probabilities
     
     <item>
       <title>HDU-1171 Big Event in HDU</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1171-big-event-in-hdu/</link>
+      <link>https://blog.lordash.de/posts/solution/62986ee569d6027a/</link>
       <pubDate>Mon, 26 Mar 2018 11:54:36 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1171-big-event-in-hdu/</guid>
+      <guid>https://blog.lordash.de/posts/solution/62986ee569d6027a/</guid>
       <description>HDU-1171 Big Event in HDU 类型 多重背包</description>
       <content:encoded><![CDATA[<h1 id="big-event-in-hdu-hdu---1171httpsvjudgenetproblemhdu-1171">Big Event in HDU (<a href="https://vjudge.net/problem/HDU-1171">HDU - 1171</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -4528,10 +4528,10 @@ A test case starting with a negative integer terminates input and this test case
     
     <item>
       <title>HDU-2546 饭卡</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2546-%E9%A5%AD%E5%8D%A1/</link>
+      <link>https://blog.lordash.de/posts/solution/4d48e38e85e8b673/</link>
       <pubDate>Sun, 25 Mar 2018 17:26:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2546-%E9%A5%AD%E5%8D%A1/</guid>
+      <guid>https://blog.lordash.de/posts/solution/4d48e38e85e8b673/</guid>
       <description>HDU-2546 饭卡 类型 01背包</description>
       <content:encoded><![CDATA[<h1 id="饭卡-hdu---2546httpsvjudgenetproblemhdu-2546">饭卡 (<a href="https://vjudge.net/problem/HDU-2546">HDU - 2546</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -4607,10 +4607,10 @@ A test case starting with a negative integer terminates input and this test case
     
     <item>
       <title>HDU-3567 Eight II</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3567-eight-ii/</link>
+      <link>https://blog.lordash.de/posts/solution/c4d35e7b9ca47ba7/</link>
       <pubDate>Sun, 25 Mar 2018 09:33:16 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3567-eight-ii/</guid>
+      <guid>https://blog.lordash.de/posts/solution/c4d35e7b9ca47ba7/</guid>
       <description>HDU-3567 Eight II 类型 BFS打表 康拓展开 路径输出</description>
       <content:encoded><![CDATA[<h1 id="eight-ii-hdu---3567httpsvjudgenetproblemhdu-3567">Eight II （<a href="https://vjudge.net/problem/HDU-3567">HDU - 3567</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -4804,10 +4804,10 @@ S is the operation list meeting the constraints and it should be showed on the s
     
     <item>
       <title>HDU-1043 Eight</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1043-eight/</link>
+      <link>https://blog.lordash.de/posts/solution/af2d8da09a188092/</link>
       <pubDate>Fri, 23 Mar 2018 22:15:55 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1043-eight/</guid>
+      <guid>https://blog.lordash.de/posts/solution/af2d8da09a188092/</guid>
       <description>HDU-1043 Eight 类型 逆向BFS打表 路径输出</description>
       <content:encoded><![CDATA[<h1 id="eight-hdu---1043httpsvjudgenetproblemhdu-1043">Eight (<a href="https://vjudge.net/problem/HDU-1043">HDU - 1043</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -4947,10 +4947,10 @@ x 4 6
     
     <item>
       <title>HDU-2612 Find a way</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2612-find-a-way/</link>
+      <link>https://blog.lordash.de/posts/solution/43d270fe5becb094/</link>
       <pubDate>Fri, 23 Mar 2018 09:00:28 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2612-find-a-way/</guid>
+      <guid>https://blog.lordash.de/posts/solution/43d270fe5becb094/</guid>
       <description>HDU-2612 Find a way 类型 BFS</description>
       <content:encoded><![CDATA[<h1 id="find-a-way-hdu---2612httpsvjudgenetproblemhdu-2612">Find a way (<a href="https://vjudge.net/problem/HDU-2612">HDU - 2612</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -5089,10 +5089,10 @@ Next n lines, each line included m character.
     
     <item>
       <title>HDU-1495 非常可乐</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1495-%E9%9D%9E%E5%B8%B8%E5%8F%AF%E4%B9%90/</link>
+      <link>https://blog.lordash.de/posts/solution/aa8e1d74e34a1c74/</link>
       <pubDate>Fri, 23 Mar 2018 08:59:41 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1495-%E9%9D%9E%E5%B8%B8%E5%8F%AF%E4%B9%90/</guid>
+      <guid>https://blog.lordash.de/posts/solution/aa8e1d74e34a1c74/</guid>
       <description>HDU-1495 非常可乐 类型 BFS</description>
       <content:encoded><![CDATA[<h1 id="非常可乐-hdu---1495httpsvjudgenetproblemhdu-1495">非常可乐 (<a href="https://vjudge.net/problem/HDU-1495">HDU - 1495</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -5274,10 +5274,10 @@ Next n lines, each line included m character.
     
     <item>
       <title>HDU-1241 Oil Deposits</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1241-oil-deposits/</link>
+      <link>https://blog.lordash.de/posts/solution/cf2c74fe2d4843bf/</link>
       <pubDate>Fri, 23 Mar 2018 08:58:46 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1241-oil-deposits/</guid>
+      <guid>https://blog.lordash.de/posts/solution/cf2c74fe2d4843bf/</guid>
       <description>HDU-1241 Oil Deposits 类型 BFS</description>
       <content:encoded><![CDATA[<h1 id="oil-deposits-hdu---1241httpsvjudgenetproblemhdu-1241">Oil Deposits (<a href="https://vjudge.net/problem/HDU-1241">HDU - 1241</a>)</h1>
 <h2 id="题面">题面</h2>

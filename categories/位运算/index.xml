@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 27 Mar 2021 12:51:18 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/%E4%BD%8D%E8%BF%90%E7%AE%97/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>剑指Offer-15 二进制中1的个数</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-15-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</link>
+      <link>https://blog.lordash.de/posts/solution/c40a03a8c31b21e2/</link>
       <pubDate>Sat, 27 Mar 2021 12:51:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-15-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</guid>
+      <guid>https://blog.lordash.de/posts/solution/c40a03a8c31b21e2/</guid>
       <description>剑指Offer-15 二进制中1的个数 类型 二进制 位运算</description>
       <content:encoded><![CDATA[<h1 id="二进制中1的个数剑指offer-15httpsleetcode-cncomproblemser-jin-zhi-zhong-1de-ge-shu-lcof">二进制中1的个数(<a href="https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/">剑指Offer-15</a>)</h1>
 <h2 id="题面">题面</h2>

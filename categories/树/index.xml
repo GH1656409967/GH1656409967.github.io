@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 23 Aug 2020 11:56:18 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PATA-1004 Counting Leaves</title>
-      <link>https://blog.lordash.de/posts/solution/pata-1004-counting-leaves/</link>
+      <link>https://blog.lordash.de/posts/solution/3e2d100446c3cd5b/</link>
       <pubDate>Sun, 23 Aug 2020 11:56:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/pata-1004-counting-leaves/</guid>
+      <guid>https://blog.lordash.de/posts/solution/3e2d100446c3cd5b/</guid>
       <description>PATA-1004 Counting Leaves 类型 图论 树 dfs</description>
       <content:encoded><![CDATA[<h1 id="counting-leavespata-1004httpspintiacnproblem-sets994805342720868352problems994805521431773184">Counting Leaves(<a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805521431773184">PATA-1004</a>)</h1>
 <h2 id="题面">题面</h2>

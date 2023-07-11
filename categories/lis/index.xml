@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 30 Mar 2018 19:28:50 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/lis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HDU-1160 FatMouse&#39;s Speed</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1160-fatmouses-speed/</link>
+      <link>https://blog.lordash.de/posts/solution/3e77307198edd961/</link>
       <pubDate>Fri, 30 Mar 2018 19:28:50 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1160-fatmouses-speed/</guid>
+      <guid>https://blog.lordash.de/posts/solution/3e77307198edd961/</guid>
       <description>HDU-1160 FatMouse&amp;#39;s Speed 类型 LIS 路径输出</description>
       <content:encoded><![CDATA[<h1 id="fatmouses-speed-hdu---1160httpsvjudgenetproblemhdu-1160">FatMouse’s Speed (<a href="https://vjudge.net/problem/HDU-1160">HDU - 1160</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -111,10 +111,10 @@ All inequalities are strict: weights must be strictly increasing,  and speeds mu
     
     <item>
       <title>POJ-2533 Longest Ordered Subsequence</title>
-      <link>https://blog.lordash.de/posts/solution/poj-2533-longest-ordered-subsequence/</link>
+      <link>https://blog.lordash.de/posts/solution/1f76fc9f9b518d48/</link>
       <pubDate>Fri, 30 Mar 2018 09:58:35 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-2533-longest-ordered-subsequence/</guid>
+      <guid>https://blog.lordash.de/posts/solution/1f76fc9f9b518d48/</guid>
       <description>POJ-2533 Longest Ordered Subsequence 类型 LIS nlogn</description>
       <content:encoded><![CDATA[<h1 id="longest-ordered-subsequence-poj---2533httpsvjudgenetproblempoj-2533">Longest Ordered Subsequence (<a href="https://vjudge.net/problem/POJ-2533">POJ - 2533</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -176,10 +176,10 @@ All inequalities are strict: weights must be strictly increasing,  and speeds mu
     
     <item>
       <title>POJ-1836 Alignment</title>
-      <link>https://blog.lordash.de/posts/solution/poj-1836-alignment/</link>
+      <link>https://blog.lordash.de/posts/solution/b5ba097124b287d9/</link>
       <pubDate>Fri, 30 Mar 2018 09:44:21 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-1836-alignment/</guid>
+      <guid>https://blog.lordash.de/posts/solution/b5ba097124b287d9/</guid>
       <description>POJ-1836 Alignment 类型 LIS</description>
       <content:encoded><![CDATA[<h1 id="alignment-poj---1836httpsvjudgenetproblempoj-1836">Alignment (<a href="https://vjudge.net/problem/POJ-1836">POJ - 1836</a>)</h1>
 <h2 id="题面">题面</h2>

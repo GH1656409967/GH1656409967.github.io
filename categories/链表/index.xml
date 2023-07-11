@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 05 Apr 2021 00:05:18 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/%E9%93%BE%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>剑指Offer-36 二叉搜索树与双向链表</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-36-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</link>
+      <link>https://blog.lordash.de/posts/solution/6dc6a766b0cdf147/</link>
       <pubDate>Mon, 05 Apr 2021 00:05:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-36-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</guid>
+      <guid>https://blog.lordash.de/posts/solution/6dc6a766b0cdf147/</guid>
       <description>剑指Offer-36 二叉搜索树与双向链表 类型 链表</description>
       <content:encoded><![CDATA[<h1 id="二叉搜索树与双向链表剑指offer-36httpsleetcode-cncomproblemser-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof">二叉搜索树与双向链表(<a href="https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/">剑指Offer-36</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -81,13 +81,13 @@
     </item>
     
     <item>
-      <title>剑指Offer-34 复杂链表的复制</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-35-%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/</link>
+      <title>剑指Offer-35 复杂链表的复制</title>
+      <link>https://blog.lordash.de/posts/solution/08dbec26ab83893a/</link>
       <pubDate>Sun, 04 Apr 2021 22:24:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-35-%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/</guid>
-      <description>剑指Offer-34 复杂链表的复制 类型 链表</description>
-      <content:encoded><![CDATA[<h1 id="复杂链表的复制剑指offer-34httpsleetcode-cncomproblemsfu-za-lian-biao-de-fu-zhi-lcof">复杂链表的复制(<a href="https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/">剑指Offer-34</a>)</h1>
+      <guid>https://blog.lordash.de/posts/solution/08dbec26ab83893a/</guid>
+      <description>剑指Offer-35 复杂链表的复制 类型 链表</description>
+      <content:encoded><![CDATA[<h1 id="复杂链表的复制剑指offer-35httpsleetcode-cncomproblemsfu-za-lian-biao-de-fu-zhi-lcof">复杂链表的复制(<a href="https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/">剑指Offer-35</a>)</h1>
 <h2 id="题面">题面</h2>
 <blockquote>
 <p>请实现 copyRandomList 函数，复制一个复杂链表。在复杂链表中，每个节点除了有一个 next 指针指向下一个节点，还有一个 random 指针指向链表中的任意节点或者 null。</p>
@@ -190,10 +190,10 @@
     
     <item>
       <title>剑指Offer-25 合并两个排序的链表</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-25-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</link>
+      <link>https://blog.lordash.de/posts/solution/d6cb399881110bfa/</link>
       <pubDate>Sat, 03 Apr 2021 20:20:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-25-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</guid>
+      <guid>https://blog.lordash.de/posts/solution/d6cb399881110bfa/</guid>
       <description>剑指Offer-25 合并两个排序的链表 类型 链表</description>
       <content:encoded><![CDATA[<h1 id="合并两个排序的链表剑指offer-25httpsleetcode-cncomproblemshe-bing-liang-ge-pai-xu-de-lian-biao-lcof">合并两个排序的链表(<a href="https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/">剑指Offer-25</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -242,10 +242,10 @@
     
     <item>
       <title>剑指Offer-24 反转链表</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-24-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</link>
+      <link>https://blog.lordash.de/posts/solution/892d4491d2e1f0bb/</link>
       <pubDate>Sat, 03 Apr 2021 19:43:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-24-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</guid>
+      <guid>https://blog.lordash.de/posts/solution/892d4491d2e1f0bb/</guid>
       <description>剑指Offer-24 反转链表 类型 链表</description>
       <content:encoded><![CDATA[<h1 id="反转链表剑指offer-24httpsleetcode-cncomproblemsfan-zhuan-lian-biao-lcof">反转链表(<a href="https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/">剑指Offer-24</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -288,10 +288,10 @@
     
     <item>
       <title>剑指Offer-22 链表中倒数第k个节点</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-22-%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/</link>
+      <link>https://blog.lordash.de/posts/solution/f3d2833f47315d9c/</link>
       <pubDate>Sat, 03 Apr 2021 19:13:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-22-%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/</guid>
+      <guid>https://blog.lordash.de/posts/solution/f3d2833f47315d9c/</guid>
       <description>剑指Offer-22 链表中倒数第k个节点 类型 链表</description>
       <content:encoded><![CDATA[<h1 id="链表中倒数第k个节点剑指offer-22httpsleetcode-cncomproblemslian-biao-zhong-dao-shu-di-kge-jie-dian-lcof">链表中倒数第k个节点(<a href="https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/">剑指Offer-22</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -334,10 +334,10 @@
     
     <item>
       <title>剑指Offer-18 删除链表的节点</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-18-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9/</link>
+      <link>https://blog.lordash.de/posts/solution/2d805122a280bfc8/</link>
       <pubDate>Sun, 28 Mar 2021 12:35:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-18-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9/</guid>
+      <guid>https://blog.lordash.de/posts/solution/2d805122a280bfc8/</guid>
       <description>剑指Offer-18 删除链表的节点 类型 链表</description>
       <content:encoded><![CDATA[<h1 id="删除链表的节点剑指offer-18httpsleetcode-cncomproblemsshan-chu-lian-biao-de-jie-dian-lcof">删除链表的节点(<a href="https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof/">剑指Offer-18</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -395,10 +395,10 @@
     
     <item>
       <title>剑指Offer-06 从尾到头打印链表</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-06-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</link>
+      <link>https://blog.lordash.de/posts/solution/6f02dd7947d64a2f/</link>
       <pubDate>Tue, 23 Mar 2021 17:13:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-06-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</guid>
+      <guid>https://blog.lordash.de/posts/solution/6f02dd7947d64a2f/</guid>
       <description>剑指Offer-06 从尾到头打印链表 类型 水题 链表</description>
       <content:encoded><![CDATA[<h1 id="从尾到头打印链表剑指offer-06httpsleetcode-cncomproblemscong-wei-dao-tou-da-yin-lian-biao-lcof">从尾到头打印链表(<a href="https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/">剑指Offer-06</a>)</h1>
 <h2 id="题面">题面</h2>

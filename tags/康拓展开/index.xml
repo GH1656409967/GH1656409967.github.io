@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 25 Mar 2018 09:33:16 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HDU-3567 Eight II</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3567-eight-ii/</link>
+      <link>https://blog.lordash.de/posts/solution/c4d35e7b9ca47ba7/</link>
       <pubDate>Sun, 25 Mar 2018 09:33:16 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3567-eight-ii/</guid>
+      <guid>https://blog.lordash.de/posts/solution/c4d35e7b9ca47ba7/</guid>
       <description>HDU-3567 Eight II 类型 BFS打表 康拓展开 路径输出</description>
       <content:encoded><![CDATA[<h1 id="eight-ii-hdu---3567httpsvjudgenetproblemhdu-3567">Eight II （<a href="https://vjudge.net/problem/HDU-3567">HDU - 3567</a>)</h1>
 <h2 id="题面">题面</h2>

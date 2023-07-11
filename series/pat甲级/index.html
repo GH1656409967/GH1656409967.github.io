@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html dir="auto" lang="zh">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>PAT甲级 | 似水</title>
+<meta content="" name="keywords"/>
+<meta content="Life is like a boat" name="description"/>
+<meta content="Lordash" name="author"/>
+<link href="https://blog.lordash.de/series/pat%E7%94%B2%E7%BA%A7/" rel="canonical"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.7a045c620a5efedc03925e12af29b9a42e2fcc405c634f3a92dd8a0f6994c469.css" integrity="sha256-egRcYgpe/twDkl4Srym5pC4vzEBcY086kt2KD2mUxGk=" rel="preload stylesheet"/>
+<link href="https://blog.lordash.de/assets/images/favicon-16x16-.png" rel="icon"/>
+<link href="https://blog.lordash.de/assets/images/favicon-16x16-.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://blog.lordash.de/assets/images/favicon-32x32-.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://blog.lordash.de/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://blog.lordash.de/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://blog.lordash.de/series/pat%E7%94%B2%E7%BA%A7/index.xml" rel="alternate" type="application/rss+xml"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<meta content="PAT甲级" property="og:title"/>
+<meta content="Life is like a boat" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://blog.lordash.de/series/pat%E7%94%B2%E7%BA%A7/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="PAT甲级" name="twitter:title"/>
+<meta content="Life is like a boat" name="twitter:description"/>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://blog.lordash.de" title="Lordash's blog (Alt + H)">Lordash's blog</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a accesskey="/" href="https://blog.lordash.de/search" title="搜索 (Alt + /)">
+<span><i class="fa fa-search"></i>搜索</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/archives" title="归档">
+<span><i class="fa fa-history"></i>归档</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/tags" title="标签">
+<span><i class="fa fa-tags"></i>标签</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/series" title="专栏">
+<span><i class="fa fa-book"></i>专栏</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/f/links" title="友链">
+<span><i class="fa fa-link"></i>友链</span>
+</a>
+</li>
+<li>
+<a href="https://blog.lordash.de/f/about" title="关于">
+<span><i class="fa fa-info-circle"></i>关于</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header">
+<h1>
+    PAT甲级
+  </h1>
+</header>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>PATA-1010 Radix
+    </h2>
+</header>
+<div class="entry-content">
+<p>Radix(PATA-1010) 题面 Given a pair of positive integers, for example, 6 and 110, can this equation 6 = 110 be true? The answer is yes, if 6 is a decimal number and 110 is a binary number. Now for any pair of positive integers N1 and N2, your task is to find the radix of one number while that of the other is given. 输入 Each input file...</p>
+</div>
+<footer class="entry-footer"><span title="2020-09-02 13:18:18 +0000 UTC">2020-09-02</span> · Lordash
+
+</footer>
+<a aria-label="post link to PATA-1010 Radix" class="entry-link" href="https://blog.lordash.de/posts/solution/da1cb8980e3ddb78/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>PATA-1008 Elevator
+    </h2>
+</header>
+<div class="entry-content">
+<p>Elevator(PATA-1008) 题面 The highest building in our city has only one elevator. A request list is made up with N positive numbers. The numbers denote at which floors the elevator will stop, in specified order. It costs 6 seconds to move the elevator up one floor, and 4 seconds to move down one floor. The elevator will stay for 5 seconds at each stop. For a given request list,...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-28 14:09:18 +0000 UTC">2020-08-28</span> · Lordash
+
+</footer>
+<a aria-label="post link to PATA-1008 Elevator" class="entry-link" href="https://blog.lordash.de/posts/solution/4baf24d574dd5402/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>PATA-1009 Product of Polynomials
+    </h2>
+</header>
+<div class="entry-content">
+<p>Product of Polynomials(PATA-1009) 题面 This time, you are supposed to find A×B where A and B are two polynomials. 输入 Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial: K N1 aN1 N2 aN2 … NK aNK where K is the number of nonzero terms in the polynomial, Ni and aNi (i=...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-28 14:09:18 +0000 UTC">2020-08-28</span> · Lordash
+
+</footer>
+<a aria-label="post link to PATA-1009 Product of Polynomials" class="entry-link" href="https://blog.lordash.de/posts/solution/abe20634b1461980/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>PATA-1007 Maximum Subsequence Sum
+    </h2>
+</header>
+<div class="entry-content">
+<p>Maximum Subsequence Sum(PATA-1007) 题面 Given a sequence of K integers { N1, N2, …, NK }. A continuous subsequence is defined to be { Ni, Ni+1, …, Nj } where 1≤i≤j≤K. The Maximum Subsequence is the continuous subsequence which has the largest sum of its elements. For example, given sequence { -2, 11, -4, 13, -5, -2 }, its maximum subsequence is...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-28 13:59:18 +0000 UTC">2020-08-28</span> · Lordash
+
+</footer>
+<a aria-label="post link to PATA-1007 Maximum Subsequence Sum" class="entry-link" href="https://blog.lordash.de/posts/solution/e552f8a8e1d42eba/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>PATA-1006 Sign In and Sign Out
+    </h2>
+</header>
+<div class="entry-content">
+<p>Sign In and Sign Out(PATA-1006) 题面 At the beginning of every day, the first person who signs in the computer room will unlock the door, and the last one who signs out will lock the door. Given the records of signing in’s and out’s, you are supposed to find the ones who have unlocked and locked the door on that day. 输入 Each input file contains one test...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-23 12:37:18 +0000 UTC">2020-08-23</span> · Lordash
+
+</footer>
+<a aria-label="post link to PATA-1006 Sign In and Sign Out" class="entry-link" href="https://blog.lordash.de/posts/solution/5cb03f4af7022436/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>PATA-1005 Spell It Right
+    </h2>
+</header>
+<div class="entry-content">
+<p>Spell It Right(PATA-1005) 题面 Given a non-negative integer N, your task is to compute the sum of all the digits of N, and output every digit of the sum in English. 输入 Each input file contains one test case. Each case occupies one line which contains an N (≤10^100). 输出 For each test case, output in one line...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-23 12:07:18 +0000 UTC">2020-08-23</span> · Lordash
+
+</footer>
+<a aria-label="post link to PATA-1005 Spell It Right" class="entry-link" href="https://blog.lordash.de/posts/solution/12eeb8e604fcba8b/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>PATA-1004 Counting Leaves
+    </h2>
+</header>
+<div class="entry-content">
+<p>Counting Leaves(PATA-1004) 题面 A family hierarchy is usually presented by a pedigree tree. Your job is to count those family members who have no child. 输入 Each input file contains one test case. Each case starts with a line containing 0&lt;N&lt;100, the number of nodes in a tree, and M (&lt;N), the number of non-leaf nodes. Then M lines follow, each in the format: 1ID K ID[1] ID[2]...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-23 11:56:18 +0000 UTC">2020-08-23</span> · Lordash
+
+</footer>
+<a aria-label="post link to PATA-1004 Counting Leaves" class="entry-link" href="https://blog.lordash.de/posts/solution/3e2d100446c3cd5b/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>PATA-1003 Emergency
+    </h2>
+</header>
+<div class="entry-content">
+<p>Emergency(PATA-1003) 题面 As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the length of each road between any pair of cities are marked on the map. When there is an emergency call to you from some other city, your job is to...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-22 17:03:18 +0000 UTC">2020-08-22</span> · Lordash
+
+</footer>
+<a aria-label="post link to PATA-1003 Emergency" class="entry-link" href="https://blog.lordash.de/posts/solution/dc27deb2d0593993/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>PATA-1002 A+B for Polynomials
+    </h2>
+</header>
+<div class="entry-content">
+<p>A+B for Polynomials(PATA-1002) 题面 This time, you are supposed to find A+B where A and B are two polynomials. 输入 Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial: K N1 aN1 N2 aN2 … NK aNK where K is the number of nonzero terms in the polynomial, Ni and aNi (i=1,...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-11 20:07:18 +0000 UTC">2020-08-11</span> · Lordash
+
+</footer>
+<a aria-label="post link to PATA-1002 A+B for Polynomials" class="entry-link" href="https://blog.lordash.de/posts/solution/6b22a0fe9ced95db/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2>PATA-1001 A+B Format
+    </h2>
+</header>
+<div class="entry-content">
+<p>A+B Format(PATA-1001) 题面 Calculate a+b and output the sum in standard format – that is, the digits must be separated into groups of three by commas (unless there are less than four digits). 输入 Each input file contains one test case. Each case contains a pair of integers a and b where −10^6≤a,b≤10^6. The...</p>
+</div>
+<footer class="entry-footer"><span title="2020-08-11 11:51:18 +0000 UTC">2020-08-11</span> · Lordash
+
+</footer>
+<a aria-label="post link to PATA-1001 A+B Format" class="entry-link" href="https://blog.lordash.de/posts/solution/b04a7230c381e789/"></a>
+</article>
+</main>
+<footer class="footer">
+<span>© 2023 <a href="https://blog.lordash.de">似水</a></span>
+<span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const unfoldbtn = document.createElement('button');
+        unfoldbtn.classList.add('unfoldbtn');
+        unfoldbtn.innerHTML = '展开';
+
+        unfoldbtn.addEventListener('click', (cb) => {
+            if (container.firstChild.firstChild.classList.contains('unfold')) {
+                container.firstChild.firstChild.classList.remove('unfold');
+                unfoldbtn.innerHTML = '展开';
+            } else {
+                container.firstChild.firstChild.classList.add('unfold');
+                unfoldbtn.innerHTML = '折叠';
+            }
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(unfoldbtn);
+        }
+    });
+</script></body>
+</html>

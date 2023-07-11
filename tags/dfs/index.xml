@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 24 Mar 2021 15:32:18 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>剑指Offer-12 矩阵中的路径</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-12-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</link>
+      <link>https://blog.lordash.de/posts/solution/bae5c0d732a7405b/</link>
       <pubDate>Wed, 24 Mar 2021 15:32:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-12-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</guid>
+      <guid>https://blog.lordash.de/posts/solution/bae5c0d732a7405b/</guid>
       <description>剑指Offer-12 矩阵中的路径 类型 DFS</description>
       <content:encoded><![CDATA[<h1 id="矩阵中的路径剑指offer-12httpsleetcode-cncomproblemsju-zhen-zhong-de-lu-jing-lcof">矩阵中的路径(<a href="https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/">剑指Offer-12</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -79,10 +79,10 @@
     
     <item>
       <title>PATA-1004 Counting Leaves</title>
-      <link>https://blog.lordash.de/posts/solution/pata-1004-counting-leaves/</link>
+      <link>https://blog.lordash.de/posts/solution/3e2d100446c3cd5b/</link>
       <pubDate>Sun, 23 Aug 2020 11:56:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/pata-1004-counting-leaves/</guid>
+      <guid>https://blog.lordash.de/posts/solution/3e2d100446c3cd5b/</guid>
       <description>PATA-1004 Counting Leaves 类型 图论 树 dfs</description>
       <content:encoded><![CDATA[<h1 id="counting-leavespata-1004httpspintiacnproblem-sets994805342720868352problems994805521431773184">Counting Leaves(<a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805521431773184">PATA-1004</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -159,10 +159,10 @@
     
     <item>
       <title>POJ-2068 Nim</title>
-      <link>https://blog.lordash.de/posts/solution/poj-2068-nim/</link>
+      <link>https://blog.lordash.de/posts/solution/567b57a74cf05d73/</link>
       <pubDate>Mon, 13 Jul 2020 10:46:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-2068-nim/</guid>
+      <guid>https://blog.lordash.de/posts/solution/567b57a74cf05d73/</guid>
       <description>POJ-2068 Nim 类型 博弈论 SG函数</description>
       <content:encoded><![CDATA[<h1 id="nimpoj-2068httpsvjudgenetproblempoj-2068">Nim(<a href="https://vjudge.net/problem/POJ-2068">POJ-2068</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -237,10 +237,10 @@ In this game, you have a winning strategy. To see this, you first  remove four s
     
     <item>
       <title>HDU-3639 Hawk-and-Chicken</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3639-hawk-and-chicken/</link>
+      <link>https://blog.lordash.de/posts/solution/836ecd220e828edf/</link>
       <pubDate>Sat, 07 Apr 2018 10:37:26 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3639-hawk-and-chicken/</guid>
+      <guid>https://blog.lordash.de/posts/solution/836ecd220e828edf/</guid>
       <description>HDU-3639 Hawk-and-Chicken 类型 Tarjan DFS</description>
       <content:encoded><![CDATA[<h1 id="hawk-and-chicken-hdu---3639httpsvjudgenetproblemhdu-3639">Hawk-and-Chicken (<a href="https://vjudge.net/problem/HDU-3639">HDU - 3639</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -413,10 +413,10 @@ Then follow a line contain all the Hawks&rsquo; number. The numbers must be list
     
     <item>
       <title>POJ-1321 棋盘问题</title>
-      <link>https://blog.lordash.de/posts/solution/poj-1321-%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98/</link>
+      <link>https://blog.lordash.de/posts/solution/263b1255bf508f9a/</link>
       <pubDate>Fri, 23 Mar 2018 08:46:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-1321-%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://blog.lordash.de/posts/solution/263b1255bf508f9a/</guid>
       <description>POJ-1321 棋盘问题 类型 DFS</description>
       <content:encoded><![CDATA[<h1 id="棋盘问题-poj---1321httpsvjudgenetproblempoj-1321">棋盘问题 (<a href="https://vjudge.net/problem/POJ-1321">POJ - 1321</a>)</h1>
 <h2 id="题面">题面</h2>

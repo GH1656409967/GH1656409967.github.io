@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 22 Apr 2018 10:51:52 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/01%E8%83%8C%E5%8C%85/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>POJ-1837 Balance</title>
-      <link>https://blog.lordash.de/posts/solution/poj-1837-balance/</link>
+      <link>https://blog.lordash.de/posts/solution/5bb493a6ba6550f7/</link>
       <pubDate>Sun, 22 Apr 2018 10:51:52 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-1837-balance/</guid>
+      <guid>https://blog.lordash.de/posts/solution/5bb493a6ba6550f7/</guid>
       <description>POJ-1837 Balance 类型 01背包</description>
       <content:encoded><![CDATA[<h1 id="balance-poj---1837httpsvjudgenetproblempoj-1837">Balance (<a href="https://vjudge.net/problem/POJ-1837">POJ - 1837</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -78,10 +78,10 @@ It is guaranteed that will exist at least one solution for each test case at the
     
     <item>
       <title>HDU-2639 Bone Collector II</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2639-bone-collector-ii/</link>
+      <link>https://blog.lordash.de/posts/solution/982145d223c0b506/</link>
       <pubDate>Fri, 30 Mar 2018 09:19:05 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2639-bone-collector-ii/</guid>
+      <guid>https://blog.lordash.de/posts/solution/982145d223c0b506/</guid>
       <description>HDU-2639 Bone Collector II 类型 01背包 第k优解</description>
       <content:encoded><![CDATA[<h1 id="bone-collector-ii-hdu---2639httpsvjudgenetproblemhdu-2639">Bone Collector II (<a href="https://vjudge.net/problem/HDU-2639">HDU - 2639</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -169,10 +169,10 @@ Followed by T cases , each case three lines , the first line contain two integer
     
     <item>
       <title>HDU-2602 Bone Collector</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2602-bone-collector/</link>
+      <link>https://blog.lordash.de/posts/solution/c23c5e71ca95182f/</link>
       <pubDate>Tue, 27 Mar 2018 18:38:09 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2602-bone-collector/</guid>
+      <guid>https://blog.lordash.de/posts/solution/c23c5e71ca95182f/</guid>
       <description>HDU-2602 Bone Collector 类型 01背包</description>
       <content:encoded><![CDATA[<h1 id="bone-collector-hdu---2602httpsvjudgenetproblemhdu-2602">Bone Collector (<a href="https://vjudge.net/problem/HDU-2602">HDU - 2602</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -236,10 +236,10 @@ Followed by T cases , each case three lines , the first line contain two integer
     
     <item>
       <title>HDU-2955 Robberies</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2955-robberies/</link>
+      <link>https://blog.lordash.de/posts/solution/4becc864832ef0cf/</link>
       <pubDate>Mon, 26 Mar 2018 18:03:14 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2955-robberies/</guid>
+      <guid>https://blog.lordash.de/posts/solution/4becc864832ef0cf/</guid>
       <description>HDU-2955 Robberies 类型 01背包</description>
       <content:encoded><![CDATA[<h1 id="robberies-hdu---2955httpsvjudgenetproblemhdu-2955">Robberies (<a href="https://vjudge.net/problem/HDU-2955">HDU - 2955</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -325,10 +325,10 @@ A bank goes bankrupt if it is robbed, and you may assume that all  probabilities
     
     <item>
       <title>HDU-2546 饭卡</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2546-%E9%A5%AD%E5%8D%A1/</link>
+      <link>https://blog.lordash.de/posts/solution/4d48e38e85e8b673/</link>
       <pubDate>Sun, 25 Mar 2018 17:26:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2546-%E9%A5%AD%E5%8D%A1/</guid>
+      <guid>https://blog.lordash.de/posts/solution/4d48e38e85e8b673/</guid>
       <description>HDU-2546 饭卡 类型 01背包</description>
       <content:encoded><![CDATA[<h1 id="饭卡-hdu---2546httpsvjudgenetproblemhdu-2546">饭卡 (<a href="https://vjudge.net/problem/HDU-2546">HDU - 2546</a>)</h1>
 <h2 id="题面">题面</h2>

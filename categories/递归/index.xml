@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 03 Apr 2021 21:48:18 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/%E9%80%92%E5%BD%92/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>剑指Offer-28 对称的二叉树</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-28-%E5%AF%B9%E7%A7%B0%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <link>https://blog.lordash.de/posts/solution/57680dc428165f01/</link>
       <pubDate>Sat, 03 Apr 2021 21:48:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-28-%E5%AF%B9%E7%A7%B0%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <guid>https://blog.lordash.de/posts/solution/57680dc428165f01/</guid>
       <description>剑指Offer-28 对称的二叉树 类型 树的遍历 递归</description>
       <content:encoded><![CDATA[<h1 id="对称的二叉树剑指offer-28httpsleetcode-cncomproblemsdui-cheng-de-er-cha-shu-lcof">对称的二叉树(<a href="https://leetcode-cn.com/problems/dui-cheng-de-er-cha-shu-lcof/">剑指Offer-28</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -69,10 +69,10 @@
     
     <item>
       <title>剑指Offer-27 二叉树的镜像</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-27-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/</link>
+      <link>https://blog.lordash.de/posts/solution/6e4ed21e4c3ce0df/</link>
       <pubDate>Sat, 03 Apr 2021 21:30:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-27-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/</guid>
+      <guid>https://blog.lordash.de/posts/solution/6e4ed21e4c3ce0df/</guid>
       <description>剑指Offer-27 二叉树的镜像 类型 树的遍历 递归</description>
       <content:encoded><![CDATA[<h1 id="二叉树的镜像剑指offer-27httpsleetcode-cncomproblemser-cha-shu-de-jing-xiang-lcof">二叉树的镜像(<a href="https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/">剑指Offer-27</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -123,10 +123,10 @@
     
     <item>
       <title>剑指Offer-26 树的子结构</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-26-%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</link>
+      <link>https://blog.lordash.de/posts/solution/998781cb0734db98/</link>
       <pubDate>Sat, 03 Apr 2021 20:59:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-26-%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</guid>
+      <guid>https://blog.lordash.de/posts/solution/998781cb0734db98/</guid>
       <description>剑指Offer-26 树的子结构 类型 树的遍历 递归</description>
       <content:encoded><![CDATA[<h1 id="树的子结构剑指offer-26httpsleetcode-cncomproblemsshu-de-zi-jie-gou-lcof">树的子结构(<a href="https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/">剑指Offer-26</a>)</h1>
 <h2 id="题面">题面</h2>

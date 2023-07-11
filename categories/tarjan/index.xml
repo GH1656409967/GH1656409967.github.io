@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 07 Apr 2018 10:37:26 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/tarjan/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HDU-3639 Hawk-and-Chicken</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3639-hawk-and-chicken/</link>
+      <link>https://blog.lordash.de/posts/solution/836ecd220e828edf/</link>
       <pubDate>Sat, 07 Apr 2018 10:37:26 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3639-hawk-and-chicken/</guid>
+      <guid>https://blog.lordash.de/posts/solution/836ecd220e828edf/</guid>
       <description>HDU-3639 Hawk-and-Chicken 类型 Tarjan DFS</description>
       <content:encoded><![CDATA[<h1 id="hawk-and-chicken-hdu---3639httpsvjudgenetproblemhdu-3639">Hawk-and-Chicken (<a href="https://vjudge.net/problem/HDU-3639">HDU - 3639</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -185,10 +185,10 @@ Then follow a line contain all the Hawks&rsquo; number. The numbers must be list
     
     <item>
       <title>HDU-1827 Summer Holiday</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1827-summer-holiday/</link>
+      <link>https://blog.lordash.de/posts/solution/a118f4bf5f2702ca/</link>
       <pubDate>Tue, 03 Apr 2018 11:24:13 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1827-summer-holiday/</guid>
+      <guid>https://blog.lordash.de/posts/solution/a118f4bf5f2702ca/</guid>
       <description>HDU-1827 Summer Holiday 类型 Tarjan</description>
       <content:encoded><![CDATA[<h1 id="summer-holiday-hdu---1827httpsvjudgenetproblemhdu-1827">Summer Holiday (<a href="https://vjudge.net/problem/HDU-1827">HDU - 1827</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -341,10 +341,10 @@ And Eternity in an hour.
     
     <item>
       <title>HDU-2767 Proving Equivalences</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2767-proving-equivalences/</link>
+      <link>https://blog.lordash.de/posts/solution/dab1d4ab63bc8e70/</link>
       <pubDate>Mon, 02 Apr 2018 19:41:46 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2767-proving-equivalences/</guid>
+      <guid>https://blog.lordash.de/posts/solution/dab1d4ab63bc8e70/</guid>
       <description>HDU-2767 Proving Equivalences 类型 Tarjan</description>
       <content:encoded><![CDATA[<h1 id="proving-equivalences-hdu---2767httpsvjudgenetproblemhdu-2767">Proving Equivalences (<a href="https://vjudge.net/problem/HDU-2767">HDU - 2767</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -486,10 +486,10 @@ And Eternity in an hour.
     
     <item>
       <title>HDU-1269 迷宫城堡</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1269-%E8%BF%B7%E5%AE%AB%E5%9F%8E%E5%A0%A1/</link>
+      <link>https://blog.lordash.de/posts/solution/5a80e5c457a45bc6/</link>
       <pubDate>Sat, 31 Mar 2018 20:43:25 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1269-%E8%BF%B7%E5%AE%AB%E5%9F%8E%E5%A0%A1/</guid>
+      <guid>https://blog.lordash.de/posts/solution/5a80e5c457a45bc6/</guid>
       <description>HDU-1269 迷宫城堡 类型 Tarjan</description>
       <content:encoded><![CDATA[<h1 id="迷宫城堡-hdu---1269httpsvjudgenetproblemhdu-1269">迷宫城堡 (<a href="https://vjudge.net/problem/HDU-1269">HDU - 1269</a>)</h1>
 <h2 id="题面">题面</h2>

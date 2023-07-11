@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>博弈论算法介绍 on 似水</title>
+    <link>https://blog.lordash.de/series/%E5%8D%9A%E5%BC%88%E8%AE%BA%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/</link>
+    <description>Recent content in 博弈论算法介绍 on 似水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 18 Jun 2020 17:40:11 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/series/%E5%8D%9A%E5%BC%88%E8%AE%BA%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fibonacci博弈</title>
+      <link>https://blog.lordash.de/posts/algorithm/ee3ddd3d0d64d1e8/</link>
+      <pubDate>Thu, 18 Jun 2020 17:40:11 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/algorithm/ee3ddd3d0d64d1e8/</guid>
+      <description>博弈论专题，介绍Fibonacci博弈、Zeckendorf定理</description>
+      <content:encoded><![CDATA[<h1 id="fibonacci博弈">Fibonacci博弈</h1>
+<p>基本的斐波那契博弈（Fibonacci Game）描述如下：</p>
+<blockquote>
+<p>有一堆数量多于一的物品，两人轮流取走物品，第一次至少取一个，但不能取完，从第二次开始每个人最少取一个，最多取对手上次取的两倍。</p>
+</blockquote>
+<p>博弈过程如下：</p>
+<ul>
+<li>
+<p>当n为斐波那契数时，令F[k]为斐波那契数第k项，那么当n=2=F[3]，n=3=F[4]显然先手必败，假设n=F[i]，i&lt;k时命题都成立，讨论n=F[k]时，此时n=F[k]=F[k-2]+F[k-1]，由于F[k-1]&lt;2$  \times $F[k-2]，所以先手必不能直接取走大于等于F[k-2]的物品，同理先手取走大于等于$ \frac{F[k-2]}{3} $的物品时，后手可以直接取完F[k-2]，且因 $F[k-1] \gt 2 \times \frac{2 \times F[k-2]}{3} $ 不会对F[k-1]造成影响，所以每个F[k]可以分解为F[k-2]，F[k-1]这样<strong>单独且互不影响的斐波那契局面</strong>（可以继续分解）此时先手必败。 得出<strong>当n为斐波那契数时先手必败</strong>。</p>
+</li>
+<li>
+<p>当n为非斐波那契数时，由<a href="#Zeckendorf%E5%AE%9A%E7%90%86">齐肯多夫定理</a>，可以将n分解为若干<strong>不相邻</strong>的斐波那契数之和，例如85=55+21+8+1。此时$ n =  F[x_{1}] + F[x_{2}] + \ldots + F[x_{k}], (x_{1} &gt; x_{2} &gt; \ldots &gt; x_{k})$，由于$ F[x_{k-1}] &gt; 2 \times F[x_{k}] $，取完$ F[x_{k}] $不会对$ F[x_{k-1}] $造成影响，即可以分解为若干个单独且互不影响的斐波那契数局面，但先手可以直接取走$ F[x_{k}] $，后手对于每个分解的若干<strong>单独且互不影响的斐波那契局面</strong>都是必败的。得出<strong>当n为非斐波那契数时先手必败</strong>。</p>
+</li>
+</ul>
+<h1 id="zeckendorf定理">Zeckendorf定理</h1>
+<p>Zeckendorf齐肯多夫定理：</p>
+<blockquote>
+<p>任何正整数都可以表示成若干个不连续的斐波那契数（不包括第一个斐波那契数）之和。</p>
+</blockquote>
+<p>简单证明如下：</p>
+<ul>
+<li>令F[k]为斐波那契数第k项，那么当n=1=F[1]=F[2]，n=2=F[3]，n=3=F[4]命题成立。假设i&lt;n时命题都成立，讨论i=n时，当n为斐波那契数时，命题显然成立；当n为非斐波那契数时，令k为最大的整数使得F[k]&lt;n&lt;F[k+1]，设m=n-F[k]&lt;(F[k+1]-F[k]=F[k-1])，可得m&lt;F[k-1]&lt;n，由于$ m = F[x_{1}] + F[x_{2}] + \ldots + F[x_{k}], (F[x_{k}]最大) $，因为m&lt;F[k-1]，所以$ x_{k} &lt; k - 1$，所以$ n = F[x_{1}] + F[x_{2}] + \ldots + F[x_{k}] + F[k] $，仍然可以分解为若干个斐波那契数之和，且不是连续的$ (x_{k} &lt; k - 1) $。</li>
+</ul>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Wythoff博弈</title>
+      <link>https://blog.lordash.de/posts/algorithm/872bcae11a67f2fa/</link>
+      <pubDate>Wed, 17 Jun 2020 17:40:11 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/algorithm/872bcae11a67f2fa/</guid>
+      <description>博弈论专题，介绍Wythoff博弈、Betty定理</description>
+      <content:encoded><![CDATA[<h2 id="wythoff博弈">Wythoff博弈</h2>
+<p>基本的威佐夫博弈（Wythoff Game）描述如下：</p>
+<blockquote>
+<p>有两堆各若干个物品，两个人轮流从某一堆或同时从两堆中取同样多的物品，每次至少取一个，多者不限，最后取光者得胜。</p>
+</blockquote>
+<p>我们使用(a, b)来描述一个局面，可以发现(a, b)和(b, a)其实是一样的，所以在此定义a $ \le $ b。显然(0, 0)是第一个必败态（先手必败局面、奇异局面、P-position），使用<a href="https://blog.lordash.cf/posts/266a09be.html#%E5%BF%85%E8%83%9C%E6%80%81%E5%92%8C%E5%BF%85%E8%B4%A5%E6%80%81">P/N-状态</a>或者<a href="https://blog.lordash.cf/posts/266a09be.html#SG%E5%87%BD%E6%95%B0">SG函数</a>可以更容易地分析局面，简单讲就是：“移动<strong>可以</strong>导致<code>必败态</code>的，此时先手必胜；移动<strong>只能</strong>导致<code>必胜态</code>的，此时先手必败”。打表可得必败态为(0, 0)、(1, 2)、(3, 5)、(4, 7)、(6, 10)、(8, 13)、(9, 15)、 $ \cdots $
+仔细观察，大胆假设，<del>自行求证</del>，对于 $ (a_n, b_n) $ 有以下性质：</p>
+<ol>
+<li>
+<p>$ a_n $ 是前面必败态中未出现过的最小自然数</p>
+</li>
+<li>
+<p>$ b_n = a_n + n $</p>
+</li>
+</ol>
+<hr>
+<p>博弈过程如下：</p>
+<ul>
+<li>由 $ a_n $ 是未在前面出现过的最小自然数，所以  $ a_n &gt; a_{n-1} $ ，而 $ (b_n = a_n + n) &gt; (a_{n-1} + n) &gt; (a_{n-1} + n - 1 = b_{n-1}) &gt; a_{n-1} $ ，得出<strong>任何自然数都包含于有且仅有一个必败态中</strong>。</li>
+<li>当局面处于必败态时，如果只改变其中一个分量，那么与另一个分量就不在同一个必败态中。如果使两个分量同时减少，那么由于a和b的差值不变，改变后也不会是其它的必败态。得出<strong>必败态只能转移到必胜态</strong>。</li>
+<li>当局面处于必胜态(x, y)时，如果与x出现在必败态时的另一个分量 $ a_x $ 或者 $ b_x $ 小于y，那么将y取成 $ a_x $ 或者  $ b_x $ ，局面变为必败态 $ (a_x, x) $ 或者 $ (x, b_x) $ ；否则在两堆同时取走 $ x-a_{y-x} $ ，局面变为必败态 $ (a_{y-x}, b_{y-x}) $。得出<strong>必胜态可以转移到必败态</strong>。</li>
+</ul>
+<p>SG函数打表找出规律，就可以开始推导了，实际上 $ a_n $ 和 $ b_n $ 是Betty序列并满足<a href="#Betty%E5%AE%9A%E7%90%86">Betty定理</a>，令 $ A = a_{n}, B = a_{n}+n $ 解方程 $ \frac{1}{a} + \frac{1}{a+1} = 1 $ 得 $ a = \frac{\sqrt{5} + 1}{2} $ 。<strong>即对于Wythoff博弈局面(a, b)，当 $ a == (int)((b-a) \times \frac{\sqrt{5} + 1}{2}) $ 时先手必败，反之先手必胜。</strong></p>
+<hr>
+<h2 id="betty定理">Betty定理</h2>
+<p>Betty定理：</p>
+<blockquote>
+<p>如果两个无理数满足 $ \frac{1}{a} + \frac{1}{b} = 1 $，那么对于两个集合 $ A = {[na]}, B = {[na]}, n \in Z $ ，可得出 $ A \cap B = \varnothing, A \cup B = N^{+} $ 。</p>
+</blockquote>
+<p>简单证明如下：</p>
+<ul>
+<li>
+<p>$ A \cap B = \varnothing $</p>
+<p>由 $ \frac{1}{a} + \frac{1}{b} = 1 $，且a，b为正，可以得到a，b均大于1，所以[na]的跨度大于1，向下取整不会重复。取整数k使得 $ k \in A, k \in B $，那么 $ k &lt; ma &lt; k+1, k &lt; nb &lt; k+1 $ ，化简一下 $ \frac{k}{m} &lt; a &lt; \frac{k+1}{m} \Longrightarrow \frac{m}{k+1} &lt; \frac{1}{a} &lt; \frac{m}{k} $ ，同理 $ \frac{n}{k+1} &lt; \frac{1}{b} &lt; \frac{n}{k} $ ，两式相加 $ \frac{m+n}{k+1} &lt; \frac{1}{a} + \frac{1}{b} &lt; \frac{m+n}{k} \Longrightarrow \frac{m+n}{k+1} &lt; 1 &lt; \frac{m+n}{k} \Longrightarrow k &lt; m + n &lt; k + 1 $ ，与m，n为整数矛盾。</p>
+</li>
+<li>
+<p>$ A \cup B = N^{+} $</p>
+<p>取整数k满足 $ k \in C_{N^{+}}A \cup B $ ，此时必有整数m，n满足 $ [ma] &lt; k &lt; [(m+1)a], [nb] &lt; k &lt; [(n+1)b] $ ，化简一下 $ ma &lt; k \le [(m+1)a] - 1 $ ，由于a为无理数，所以有 $ ma &lt; k &lt; (m+1)a - 1 \Longrightarrow \frac{m}{k} &lt; \frac{1}{a} &lt; \frac{m+1}{k+1} $ ，同理 $ \frac{n}{k} &lt; \frac{1}{b} &lt; \frac{m+1}{k+1} $ ，两式相加 $ \frac{m+n}{k} &lt; \frac{1}{a} + \frac{1}{b} &lt; \frac{m+n+2}{k+1} \Longrightarrow \frac{m+n}{k} &lt; 1 &lt; \frac{m+n+2}{k+1} \Longrightarrow m + n &lt; k &lt; k + 1 &lt; m + n + 2 $ ，与m+n和m+n+2间只有一个整数矛盾。</p>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Bash博弈</title>
+      <link>https://blog.lordash.de/posts/algorithm/3a30f522610343ae/</link>
+      <pubDate>Mon, 15 Jun 2020 17:40:11 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/algorithm/3a30f522610343ae/</guid>
+      <description>博弈论专题，介绍Bash博弈</description>
+      <content:encoded><![CDATA[<h1 id="bash博奕">Bash博奕</h1>
+<p>基本的巴什博弈（Bash Game）描述如下：</p>
+<blockquote>
+<p>有一堆n个物品，两人轮流取走物品，每次至少取一个，最多取m个，最后取光者获胜。</p>
+</blockquote>
+<p>博弈过程如下：</p>
+<ul>
+<li>
+<p>如果n&lt;m，那么先手可以一次取完。先手必胜。</p>
+</li>
+<li>
+<p>如果n=m+1，那么由于一次最多取走m个，无论先手取走多少个，后手都能一次性取完。此时先手必败。
+<del>可以假设，游戏局面与m+1有关。</del></p>
+</li>
+<li>
+<p>如果n%(m+1)=0，那么无论先手取走多少个，假设此时为i个（操作合法时1 $ \le $ i $ \le $ m），后手都能取走m+1-i个，使得局面重新回到n%(m+1)=0。直至最后局面变成n=m+1。此时先手必败。</p>
+</li>
+<li>
+<p>如果n%(m+1)=k $ \neq $ 0，显然1 $ \le $ k $ \le $ m，那么先手取走k个，则将n%(m+1)=0的必输态（先手必败局面、奇异局面、P-position）留给对面了。此时先手必胜。</p>
+</li>
+</ul>
+<hr>
+<p>修改一下获胜条件：</p>
+<blockquote>
+<p>有一堆n个物品，两人轮流取走物品，每次至少取一个，最多取m个，最后取光者失败。</p>
+</blockquote>
+<p>可以转化为基本的巴什博弈，只不过此时需要给对手留下最后1个，考虑的 $ n&rsquo; $ 实际为n-1，即<code>(n-1)%(m+1) ? 先手胜 : 后手胜</code></p>
+<hr>
+<p>另一类的巴什博弈：</p>
+<blockquote>
+<p>有一堆n个物品，两人轮流取走物品，每次至少取p个，最多取q个，剩余不足p个时一次取完，最后取光者失败。</p>
+</blockquote>
+<p>可得 $ n = (p + q) \times r + s $ 时，<code>(s!=0 &amp;&amp; s&lt;=p) ? 后手胜 : 先手胜</code></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Nim博弈</title>
+      <link>https://blog.lordash.de/posts/algorithm/b3f72d320d8d4e65/</link>
+      <pubDate>Sun, 14 Jun 2020 17:40:11 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/algorithm/b3f72d320d8d4e65/</guid>
+      <description>博弈论专题，介绍Nim博弈、 Bouton定理</description>
+      <content:encoded><![CDATA[<h1 id="nim博弈">Nim博弈</h1>
+<p>基本的尼姆博弈（Nim Game）描述如下：</p>
+<blockquote>
+<p>有若干堆各若干个物品，两个人轮流从某一堆取任意多的物品，每次至少取一个，多者不限，最后取光者得胜。</p>
+</blockquote>
+<p>博弈过程如下：</p>
+<ul>
+<li>对于局面 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n =  0 $，无论先手怎么取，必将导致异或和改变为 $ a&rsquo;_1 \oplus  a&rsquo;_2 \oplus \ldots \oplus a&rsquo;_n = k \neq 0 $ ，而此时必有 $ a_i $ 使得 $ a_i $ 二进制下第k位为1，后手只要将 $ a_i $ 取成 $ a_i \oplus k $ ，使得局面重新回到异或和为0，直至最后局面变成 $ (0, 0, \ldots, 0) $ ，此时异或和为0。先手必输。</li>
+<li>对于局面 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n \neq 0 $ ，反之，先手必胜。</li>
+</ul>
+<p>详细证明见下方<a href="#Bouton%E5%AE%9A%E7%90%86">Bouton定理</a>。</p>
+<hr>
+<h1 id="bouton定理">Bouton定理</h1>
+<p>Bouton定理：</p>
+<blockquote>
+<p>假设Nim博弈的石子有 $ n $ 堆，第 $ i $ 堆的石子个数我们用 $ a_i $ 表示，则我们可以使用 $ (a_1, a_2, \ldots, a_n) $ 表示一个Nim博弈的局面。对于 $ (a_1, a_2, \ldots, a_n) $ 的Nim博弈局面，当且仅当  $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n \neq 0 $ 时（其中 $  \oplus $ 是按位异或运算），先手必胜。</p>
+</blockquote>
+<p>简单证明如下：</p>
+<ol>
+<li>对于 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n \neq 0 $ 的Nim博弈局面 $ (a_1, a_2, \ldots, a_n)  $ ，我们设 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n = k $ 。则必存在 $ a_i $ ，其二进制表示在 $ k $ 的最高位上为1（异或运算的性质），且有 $ a_i \oplus k &lt; a_i $ 。则对于当前局面下的先手可以通过合法的移动将第堆石子取到只剩 $ a_i \oplus k $ 个，那么此时游戏局面变为 $ (a_1, a_2, \ldots, a_{i-1},a_i \oplus k, a_{i+1}, \ldots a_n ) $ 。
+而此时 $ a_1\oplus a_2 \oplus \ldots \oplus a_{i-1} \oplus (a_i \oplus k) \oplus a_{i+1} \oplus \dots \oplus a_n = k \oplus k = 0 $。得出<strong>异或和不为0的局面一定存在合法移动可以变为异或和为0的局面</strong>。</li>
+<li>对于 $ a_1 \oplus  a_2 \oplus \ldots \oplus a_n = 0 $ 的Nim博弈局面 $ (a_1, a_2, \ldots, a_n)  $ ，假设我们将第 $ i $ 堆石子由 $ a_i $ 个取到 $ a&rsquo;_i $ 个，则有 $ a_i \neq a&rsquo;<em>i $ ，则必有 $  a_1\oplus a_2 \oplus \ldots \oplus a</em>{i-1} \oplus a&rsquo;<em>i \oplus a</em>{i+1} \oplus \dots \oplus a_n \neq 0  $ （可用反证法证明）。即<strong>异或和为0的局面无论怎样合法地进行移动，都将转变为异或和不为0的局面</strong>。</li>
+<li>对于局面 $ (0, 0, \ldots, 0) $ ，其异或和为0，对于先手而言是必输的局面。</li>
+<li><strong>对于任何异或和不为0的局面，先手只需要按照策略将其转变为异或和为0的局面，就能保证后手永远只能拿到异或和为0的局面</strong>。又因为每一次合法的移动都将导致石子个数减少，故总的移动步数是有限的，最终后手将拿到的局面而无石子可拿，故后手必输，先手必胜。反过来即可证，对于任何异或和为0的局面，先手必输。</li>
+</ol>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>SG函数</title>
+      <link>https://blog.lordash.de/posts/algorithm/671a581fd4a227f6/</link>
+      <pubDate>Mon, 08 Jun 2020 22:00:54 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/algorithm/671a581fd4a227f6/</guid>
+      <description>博弈论专题，介绍关于公平组合游戏、必胜态和必败态、SG函数、SG定理等</description>
+      <content:encoded><![CDATA[<h1 id="公平组合游戏">公平组合游戏</h1>
+<p>公平组合游戏（Impartial Combinatorial Games）简称ICG，大致定义如下：</p>
+<ol>
+<li>游戏有2名选手</li>
+<li>对于游戏任何一种可能的局面（position），合法的操作集合只取决于这个局面本身</li>
+<li>选手轮流操作（move），且只能在合法操作集合中选择</li>
+<li>在游戏出于某状态，当前选手合法操作集合为空时判负，游戏结束</li>
+</ol>
+<details>
+    <summary>查看解析</summary>
+    <p>一个公平游戏可以抽象地用一个有向无环图来表示，这个图中每个点都对应一个状态，每条有向边代表从一个状态到另一个状态的合法操作。</p>
+<p>我们可以想象一个硬币最初放在某个点上，然后两个玩家轮流将其从当前的点移动到它的后继点。当硬币移动到汇点（没有出度的点）时游戏结束，无法操作的玩家判负。</p>
+<p><img loading="lazy" src="/posts/algorithm/SG%e5%87%bd%e6%95%b0/ICG.png" alt="ICG"  />
+</p>
+
+</details>
+<hr>
+<h1 id="必胜态和必败态">必胜态和必败态</h1>
+<ul>
+<li>必败态（P-position）：上一个选手（previous player先前刚操作完的选手）处于必胜局面，即此时先手必败</li>
+<li>必胜态（N-position）：下一个选手（next player当前即将操作的选手）处于必胜局面，即此时先手必胜</li>
+</ul>
+<details>
+    <summary>查看解析</summary>
+    <p>更加严谨的定义：1.无法进行任何移动的局面终结点（也就是terminal position）是P-position；2.可以移动到P-position的局面是N-position；3.所有移动都导致N-position的局面是P-position。</p>
+<p><img loading="lazy" src="/posts/algorithm/SG%e5%87%bd%e6%95%b0/NP.png" alt="NP"  />
+</p>
+<p>P-position和N-position的局面信息提供了游戏的必胜策略。如果轮到我们操作且游戏处在一个N-position，我们应该移动到一个P-position。接着我们的对手就会被迫进入N-position，依次类推。我们最终会移入一个汇点并获得胜利。</p>
+
+</details>
+<hr>
+<h1 id="sg函数">SG函数</h1>
+<p>先定义mex(minimal excludant)运算，这是施加于一个集合的运算，表示<strong>最小的不属于这个集合的非负整数</strong>。例如mex{2,3,5}=0、mex{0,1,2,4}=3、mex{}=0。
+对于任意状态x，定义SG(x)=mex(S)，其中S是x后继状态的SG函数值的集合。如x有三个后继状态分别为a、b、c，那么SG(x)=mex{SG(a), SG(b), SG(c)}。 这样，集合S的终态必然是空集，所以当且仅当x为必败点P时，SG函数的终态为SG(x)=0。</p>
+<details>
+    <summary>查看解析</summary>
+    <p>通过SG函数，每个ICG都可以转换成<a href="https://blog.lordash.cf/posts/2aa44f65.html#Nim%E5%8D%9A%E5%BC%88">Nim博弈</a>。SG函数的定义域为ICG的决策树上的所有节点，此时具体定义为：SG(x)=mex{SG(y)|y是x的节点}。对于ICG的决策树上的节点u，我们可以把它想象成一个只有一堆石子，个数为SG(u)的Nim博弈。</p>
+<p>对于节点u的子节点v：</p>
+<ol>
+<li>根据SG函数的定义，必有SG(u) $  \neq $ SG(v) 。</li>
+<li>若SG(u) $ &lt; $ SG(v)，则根据SG函数的定义，v节点必定存在子节点w使得SG(w)=SG(u)。倘若先手尝试使得局面的SG函数值变大，由局面u移动到局面v，则后手必定可以将局面由v转移到w，恢复SG函数值。故先手无有效的手段让局面的SG函数值增大，我们只需要考虑SG(u) $ &gt; $ SG(v)的情况。</li>
+<li>对于全体SG(u)&gt;SG(v)的子节点v，其SG函数值将完整覆盖区间[0, SG(u)-1]上的所有整数。我们从局面u移动到局面v，其实相当于在一堆个数为SG(u)的石子上取走若干石子，使剩下一堆个数为SG(v)的石子。</li>
+</ol>
+<p>当ICG中存在n个互相不干扰的移动类型时，我们可以将这n种移动类型视为n堆石子，将该ICG视为n堆石子的Nim博弈，运用<a href="https://blog.lordash.cf/posts/2aa44f65.html#Bouton%E5%AE%9A%E7%90%86">Bouton定理</a>，该ICG的先手必胜与否的情况可以通过计算每个移动类型下的初始状态的SG函数，并计算这些SG函数值的异或和来得出。即下面的<a href="#SG%E5%AE%9A%E7%90%86">SG定理</a>。</p>
+<p><img loading="lazy" src="/posts/algorithm/SG%e5%87%bd%e6%95%b0/SG.png" alt="SG"  />
+</p>
+
+</details>
+<hr>
+<h1 id="sg定理">SG定理</h1>
+<p>Sprague-Grundy定理：</p>
+<blockquote>
+<p>游戏和的SG函数等于各个游戏SG函数的Nim和（Nim和：各个数相异或的结果）。</p>
+</blockquote>
+<p>这样就可以将每一个子游戏分而治之，从而简化了问题。而<a href="https://blog.lordash.cf/posts/2aa44f65.html#Bouton%E5%AE%9A%E7%90%86">Bouton定理</a>就是Sprague-Grundy定理在<a href="https://blog.lordash.cf/posts/2aa44f65.html#Nim%E5%8D%9A%E5%BC%88">Nim博弈</a>中的直接应用。因为单堆Nim博弈（在一堆n个石子中可以取1~n个石子）的SG函数满足SG(n)=mex(n-1, n-2, n-3, &hellip;, n-n)=n，根据SG定理，每一堆石子总数相互异或即为答案。</p>
+<hr>
+<h1 id="模板">模板</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#75715e">// POJ 2311
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> SG[<span style="color:#ae81ff">205</span>][<span style="color:#ae81ff">205</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#75715e">// 递归
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getSg</span>(<span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> m){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">if</span>(SG[n][m]<span style="color:#f92672">!=-</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> SG[n][m];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">bool</span> S[<span style="color:#ae81ff">1005</span>]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">0</span>};
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>; i<span style="color:#f92672">&lt;=</span>n<span style="color:#f92672">-</span>i; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        S[getSg(i, m) <span style="color:#f92672">^</span> getSg(n<span style="color:#f92672">-</span>i, m)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>; i<span style="color:#f92672">&lt;=</span>m<span style="color:#f92672">-</span>i; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        S[getSg(n, i) <span style="color:#f92672">^</span> getSg(n, m<span style="color:#f92672">-</span>i)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    <span style="color:#66d9ef">int</span> mex <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    <span style="color:#66d9ef">while</span>(S[mex]) mex<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    <span style="color:#66d9ef">return</span> SG[n][m]<span style="color:#f92672">=</span>mex;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#75715e">// 递推
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">getSg</span>(<span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> m) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; i <span style="color:#f92672">&lt;=</span> n; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; j <span style="color:#f92672">&lt;=</span> m; j<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>            <span style="color:#66d9ef">bool</span> S[<span style="color:#ae81ff">1005</span>]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">0</span>};
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; i <span style="color:#f92672">-</span> k <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2</span>; k<span style="color:#f92672">++</span>) S[SG[k][j] <span style="color:#f92672">^</span> SG[i<span style="color:#f92672">-</span>k][j]] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; j <span style="color:#f92672">-</span> k <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2</span>; k<span style="color:#f92672">++</span>) S[SG[i][k] <span style="color:#f92672">^</span> SG[i][j<span style="color:#f92672">-</span>k]] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>            <span style="color:#66d9ef">int</span> mex <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>            <span style="color:#66d9ef">while</span>(S[mex]) mex<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>            SG[i][j] <span style="color:#f92672">=</span> mex;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

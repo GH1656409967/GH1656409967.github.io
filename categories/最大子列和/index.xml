@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 28 Aug 2020 13:59:18 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PATA-1007 Maximum Subsequence Sum</title>
-      <link>https://blog.lordash.de/posts/solution/pata-1007-maximum-subsequence-sum/</link>
+      <link>https://blog.lordash.de/posts/solution/e552f8a8e1d42eba/</link>
       <pubDate>Fri, 28 Aug 2020 13:59:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/pata-1007-maximum-subsequence-sum/</guid>
+      <guid>https://blog.lordash.de/posts/solution/e552f8a8e1d42eba/</guid>
       <description>PATA-1007 Maximum Subsequence Sum 类型 DP Kadane算法</description>
       <content:encoded><![CDATA[<h1 id="maximum-subsequence-sumpata-1007httpspintiacnproblem-sets994805342720868352problems994805514284679168">Maximum Subsequence Sum(<a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805514284679168">PATA-1007</a>)</h1>
 <h2 id="题面">题面</h2>

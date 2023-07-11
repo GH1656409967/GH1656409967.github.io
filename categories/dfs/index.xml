@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 20 Apr 2021 20:55:18 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/dfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>剑指Offer-38 字符串的排列</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-38-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/</link>
+      <link>https://blog.lordash.de/posts/solution/71018918df4803a1/</link>
       <pubDate>Tue, 20 Apr 2021 20:55:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-38-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/</guid>
+      <guid>https://blog.lordash.de/posts/solution/71018918df4803a1/</guid>
       <description>剑指Offer-38 字符串的排列 类型 DFS</description>
       <content:encoded><![CDATA[<h1 id="字符串的排列剑指offer-38httpsleetcode-cncomproblemszi-fu-chuan-de-pai-lie-lcof">字符串的排列(<a href="https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/">剑指Offer-38</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -62,10 +62,10 @@
     
     <item>
       <title>剑指Offer-12 矩阵中的路径</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-12-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</link>
+      <link>https://blog.lordash.de/posts/solution/bae5c0d732a7405b/</link>
       <pubDate>Wed, 24 Mar 2021 15:32:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-12-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</guid>
+      <guid>https://blog.lordash.de/posts/solution/bae5c0d732a7405b/</guid>
       <description>剑指Offer-12 矩阵中的路径 类型 DFS</description>
       <content:encoded><![CDATA[<h1 id="矩阵中的路径剑指offer-12httpsleetcode-cncomproblemsju-zhen-zhong-de-lu-jing-lcof">矩阵中的路径(<a href="https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/">剑指Offer-12</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -132,10 +132,10 @@
     
     <item>
       <title>POJ-1321 棋盘问题</title>
-      <link>https://blog.lordash.de/posts/solution/poj-1321-%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98/</link>
+      <link>https://blog.lordash.de/posts/solution/263b1255bf508f9a/</link>
       <pubDate>Fri, 23 Mar 2018 08:46:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-1321-%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://blog.lordash.de/posts/solution/263b1255bf508f9a/</guid>
       <description>POJ-1321 棋盘问题 类型 DFS</description>
       <content:encoded><![CDATA[<h1 id="棋盘问题-poj---1321httpsvjudgenetproblempoj-1321">棋盘问题 (<a href="https://vjudge.net/problem/POJ-1321">POJ - 1321</a>)</h1>
 <h2 id="题面">题面</h2>

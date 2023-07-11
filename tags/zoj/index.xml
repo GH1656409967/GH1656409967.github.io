@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 16 Jul 2020 16:00:12 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/zoj/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ZOJ-3057 Beans Game</title>
-      <link>https://blog.lordash.de/posts/solution/zoj-3057-beans-game/</link>
+      <link>https://blog.lordash.de/posts/solution/59becec5b38f9314/</link>
       <pubDate>Thu, 16 Jul 2020 16:00:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/zoj-3057-beans-game/</guid>
+      <guid>https://blog.lordash.de/posts/solution/59becec5b38f9314/</guid>
       <description>ZOJ-3057 Beans Game 类型 博弈论 三维Wythoff博弈</description>
       <content:encoded><![CDATA[<h1 id="beans-gamezoj-3057httpsvjudgenetproblemzoj-3057">Beans Game(<a href="https://vjudge.net/problem/ZOJ-3057">ZOJ-3057</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -76,10 +76,10 @@
     
     <item>
       <title>ZOJ-1195 Blowing Fuses</title>
-      <link>https://blog.lordash.de/posts/solution/zoj-1195-blowing-fuses/</link>
+      <link>https://blog.lordash.de/posts/solution/83396bcae8650f1c/</link>
       <pubDate>Sun, 22 Apr 2018 10:14:54 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/zoj-1195-blowing-fuses/</guid>
+      <guid>https://blog.lordash.de/posts/solution/83396bcae8650f1c/</guid>
       <description>ZOJ-1195 Blowing Fuses 类型 水题</description>
       <content:encoded><![CDATA[<h1 id="blowing-fuses-zoj---1195httpsvjudgenetproblemzoj-1195">Blowing Fuses (<a href="https://vjudge.net/problem/ZOJ-1195">ZOJ - 1195</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -171,10 +171,10 @@
     
     <item>
       <title>ZOJ-1168 Function Run Fun</title>
-      <link>https://blog.lordash.de/posts/solution/zoj-1168-function-run-fun/</link>
+      <link>https://blog.lordash.de/posts/solution/330e311cbbbe0b3b/</link>
       <pubDate>Sun, 22 Apr 2018 10:06:31 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/zoj-1168-function-run-fun/</guid>
+      <guid>https://blog.lordash.de/posts/solution/330e311cbbbe0b3b/</guid>
       <description>ZOJ-1168 Function Run Fun 类型 水题</description>
       <content:encoded><![CDATA[<h1 id="function-run-fun-zoj---1168httpsvjudgenetproblemzoj-1168">Function Run Fun (<a href="https://vjudge.net/problem/ZOJ-1168">ZOJ - 1168</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -258,10 +258,10 @@ w(a-1, b, c) + w(a-1, b-1, c) + w(a-1, b, c-1) - w(a-1, b-1, c-1)</p>
     
     <item>
       <title>ZOJ-1164 Software CRC</title>
-      <link>https://blog.lordash.de/posts/solution/zoj-1164-software-crc/</link>
+      <link>https://blog.lordash.de/posts/solution/e20129d6f8a0dcdf/</link>
       <pubDate>Sun, 22 Apr 2018 09:56:43 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/zoj-1164-software-crc/</guid>
+      <guid>https://blog.lordash.de/posts/solution/e20129d6f8a0dcdf/</guid>
       <description>ZOJ-1164 Software CRC 类型 水题</description>
       <content:encoded><![CDATA[<h1 id="software-crc-zoj---1164httpsvjudgenetproblemzoj-1164">Software CRC (<a href="https://vjudge.net/problem/ZOJ-1164">ZOJ - 1164</a>)</h1>
 <h2 id="题面">题面</h2>

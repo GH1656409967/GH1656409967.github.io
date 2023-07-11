@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 15 Jul 2020 11:58:12 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/nim%E7%A7%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>POJ-3533 Light Switching Game</title>
-      <link>https://blog.lordash.de/posts/solution/poj-3533-light-switching-game/</link>
+      <link>https://blog.lordash.de/posts/solution/3f8607271fa47184/</link>
       <pubDate>Wed, 15 Jul 2020 11:58:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-3533-light-switching-game/</guid>
+      <guid>https://blog.lordash.de/posts/solution/3f8607271fa47184/</guid>
       <description>POJ-3533 Light Switching Game 类型 博弈论 Nim积</description>
       <content:encoded><![CDATA[<h1 id="light-switching-gamepoj-3533httpsvjudgenetproblempoj-3533">Light Switching Game(<a href="https://vjudge.net/problem/POJ-3533">POJ-3533</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -137,10 +137,10 @@ Each of the next <em>N</em> lines contains the coordinates (<em>x</em>, <em>y</e
     
     <item>
       <title>HDU-3404 Switch lights</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3404-switch-lights/</link>
+      <link>https://blog.lordash.de/posts/solution/30b31979099adc88/</link>
       <pubDate>Wed, 15 Jul 2020 11:38:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3404-switch-lights/</guid>
+      <guid>https://blog.lordash.de/posts/solution/30b31979099adc88/</guid>
       <description>HDU-3404 Switch lights 类型 博弈论 Nim积</description>
       <content:encoded><![CDATA[<h1 id="switch-lightshdu-3404httpsvjudgenetproblemhdu-3404">Switch lights(<a href="https://vjudge.net/problem/HDU-3404">HDU-3404</a>)</h1>
 <h2 id="题面">题面</h2>

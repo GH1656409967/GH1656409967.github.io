@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 05 Aug 2020 12:29:38 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/fzu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FZU-1901 Period II</title>
-      <link>https://blog.lordash.de/posts/solution/fzu-1901-period-ii/</link>
+      <link>https://blog.lordash.de/posts/solution/7298e05265160d22/</link>
       <pubDate>Wed, 05 Aug 2020 12:29:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/fzu-1901-period-ii/</guid>
+      <guid>https://blog.lordash.de/posts/solution/7298e05265160d22/</guid>
       <description>FZU-1901 Period II 类型 字符串 KMP next数组性质</description>
       <content:encoded><![CDATA[<h1 id="period-iifzu-1901httpsvjudgenetproblemfzu-1901">Period II(<a href="https://vjudge.net/problem/FZU-1901">FZU-1901</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -99,10 +99,10 @@
     
     <item>
       <title>FZU-2150 Fire Game</title>
-      <link>https://blog.lordash.de/posts/solution/fzu-2150-fire-game/</link>
+      <link>https://blog.lordash.de/posts/solution/f4ebff0f4df6cb2d/</link>
       <pubDate>Fri, 23 Mar 2018 08:56:08 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/fzu-2150-fire-game/</guid>
+      <guid>https://blog.lordash.de/posts/solution/f4ebff0f4df6cb2d/</guid>
       <description>FZU-2150 Fire Game 类型 双起点BFS</description>
       <content:encoded><![CDATA[<h1 id="fire-game-fzu---2150httpsvjudgenetproblemfzu-2150">Fire Game (<a href="https://vjudge.net/problem/FZU-2150">FZU - 2150</a>)</h1>
 <h2 id="题面">题面</h2>

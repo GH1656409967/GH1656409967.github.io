@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 31 Jul 2020 11:52:38 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/%E6%9C%80%E5%B0%8F%E5%BE%AA%E7%8E%AF%E8%8A%82/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>POJ-2406 Power Strings</title>
-      <link>https://blog.lordash.de/posts/solution/poj-2406-power-strings/</link>
+      <link>https://blog.lordash.de/posts/solution/b41a0ed18394b935/</link>
       <pubDate>Fri, 31 Jul 2020 11:52:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-2406-power-strings/</guid>
+      <guid>https://blog.lordash.de/posts/solution/b41a0ed18394b935/</guid>
       <description>POJ-2406 Power Strings 类型 字符串 KMP 最小循环节</description>
       <content:encoded><![CDATA[<h1 id="power-strings-poj-2406httpsvjudgenetproblempoj-2406">Power Strings (<a href="https://vjudge.net/problem/POJ-2406">POJ-2406</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -79,10 +79,10 @@
     
     <item>
       <title>HDU-1358 Period</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1358-period/</link>
+      <link>https://blog.lordash.de/posts/solution/5bd76b31bbe72978/</link>
       <pubDate>Fri, 31 Jul 2020 11:44:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1358-period/</guid>
+      <guid>https://blog.lordash.de/posts/solution/5bd76b31bbe72978/</guid>
       <description>HDU-1358 Period 类型 字符串 KMP 最小循环节</description>
       <content:encoded><![CDATA[<h1 id="period-hdu-1358httpsvjudgenetproblemhdu-1358">Period (<a href="https://vjudge.net/problem/HDU-1358">HDU-1358</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -164,10 +164,10 @@
     
     <item>
       <title>HDU-3746 Cyclic Nacklace</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3746-cyclic-nacklace/</link>
+      <link>https://blog.lordash.de/posts/solution/342193647a6ddb9d/</link>
       <pubDate>Fri, 31 Jul 2020 11:28:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3746-cyclic-nacklace/</guid>
+      <guid>https://blog.lordash.de/posts/solution/342193647a6ddb9d/</guid>
       <description>HDU-3746 Cyclic Nacklace 类型 字符串 KMP 最小循环节</description>
       <content:encoded><![CDATA[<h1 id="cyclic-nacklace-hdu-3746httpsvjudgenetproblemhdu-3746">Cyclic Nacklace (<a href="https://vjudge.net/problem/HDU-3746">HDU-3746</a>)</h1>
 <h2 id="题面">题面</h2>

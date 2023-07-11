@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 31 Mar 2018 21:28:43 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/%E6%94%AF%E6%92%91%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>POJ-1251 Jungle Roads</title>
-      <link>https://blog.lordash.de/posts/solution/poj-1251-jungle-roads/</link>
+      <link>https://blog.lordash.de/posts/solution/6973629d80137b26/</link>
       <pubDate>Sat, 31 Mar 2018 21:28:43 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-1251-jungle-roads/</guid>
+      <guid>https://blog.lordash.de/posts/solution/6973629d80137b26/</guid>
       <description>POJ-1251 Jungle Roads 类型 并查集 Kruskal</description>
       <content:encoded><![CDATA[<h1 id="jungle-roads-poj---1251httpsvjudgenetproblempoj-1251">Jungle Roads (<a href="https://vjudge.net/problem/POJ-1251">POJ - 1251</a>)</h1>
 <h2 id="题面">题面</h2>

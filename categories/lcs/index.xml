@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 30 Mar 2018 15:45:30 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/lcs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>POJ-2264 Advanced Fruits</title>
-      <link>https://blog.lordash.de/posts/solution/poj-2264-advanced-fruits/</link>
+      <link>https://blog.lordash.de/posts/solution/63cc9007325a198e/</link>
       <pubDate>Fri, 30 Mar 2018 15:45:30 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-2264-advanced-fruits/</guid>
+      <guid>https://blog.lordash.de/posts/solution/63cc9007325a198e/</guid>
       <description>POJ-2264 Advanced Fruits 类型 LCS 路经输出</description>
       <content:encoded><![CDATA[<h1 id="advanced-fruits-poj---2264httpsvjudgenetproblempoj-2264">Advanced Fruits (<a href="https://vjudge.net/problem/POJ-2264">POJ - 2264</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -103,10 +103,10 @@ Input is terminated by end of file.</p>
     
     <item>
       <title>POJ-2250 Compromise</title>
-      <link>https://blog.lordash.de/posts/solution/poj-2250-compromise/</link>
+      <link>https://blog.lordash.de/posts/solution/ab322b6a0660015b/</link>
       <pubDate>Fri, 30 Mar 2018 15:26:03 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-2250-compromise/</guid>
+      <guid>https://blog.lordash.de/posts/solution/ab322b6a0660015b/</guid>
       <description>POJ-2250 Compromise 类型 LCS 路径输出</description>
       <content:encoded><![CDATA[<h1 id="compromise-poj---2250httpsvjudgenetproblempoj-2250">Compromise (<a href="https://vjudge.net/problem/POJ-2250">POJ - 2250</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -204,10 +204,10 @@ Input is terminated by end of file.</p>
     
     <item>
       <title>POJ-1458 Common Subsequence</title>
-      <link>https://blog.lordash.de/posts/solution/poj-1458-common-subsequence/</link>
+      <link>https://blog.lordash.de/posts/solution/d75915ae48ff6105/</link>
       <pubDate>Fri, 30 Mar 2018 10:49:03 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-1458-common-subsequence/</guid>
+      <guid>https://blog.lordash.de/posts/solution/d75915ae48ff6105/</guid>
       <description>POJ-1458 Common Subsequence 类型 LCS</description>
       <content:encoded><![CDATA[<h1 id="common-subsequence-poj-1458httpsvjudgenetproblempoj-1458hdu---1159httpsvjudgenetproblemhdu-1159">Common Subsequence (<a href="https://vjudge.net/problem/POJ-1458">POJ-1458</a>、<a href="https://vjudge.net/problem/HDU-1159">HDU - 1159</a>)</h1>
 <h2 id="题面">题面</h2>

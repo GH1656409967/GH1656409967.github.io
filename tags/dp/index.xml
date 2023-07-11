@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 03 Apr 2021 17:44:18 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>剑指Offer-20 表示数值的字符串</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-20-%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <link>https://blog.lordash.de/posts/solution/d903acfcaec856fe/</link>
       <pubDate>Sat, 03 Apr 2021 17:44:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-20-%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <guid>https://blog.lordash.de/posts/solution/d903acfcaec856fe/</guid>
       <description>剑指Offer-20 表示数值的字符串 类型 字符串 自动机</description>
       <content:encoded><![CDATA[<h1 id="表示数值的字符串剑指offer-20httpsleetcode-cncomproblemsbiao-shi-shu-zhi-de-zi-fu-chuan-lcof">表示数值的字符串(<a href="https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/">剑指Offer-20</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -57,10 +57,10 @@
     
     <item>
       <title>剑指Offer-19 正则表达式匹配</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-19-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/</link>
+      <link>https://blog.lordash.de/posts/solution/7e96f7d07418a4a2/</link>
       <pubDate>Sat, 03 Apr 2021 16:37:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-19-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/</guid>
+      <guid>https://blog.lordash.de/posts/solution/7e96f7d07418a4a2/</guid>
       <description>剑指Offer-19 正则表达式匹配 类型 DP</description>
       <content:encoded><![CDATA[<h1 id="正则表达式匹配剑指offer-19httpsleetcode-cncomproblemszheng-ze-biao-da-shi-pi-pei-lcof">正则表达式匹配(<a href="https://leetcode-cn.com/problems/zheng-ze-biao-da-shi-pi-pei-lcof/">剑指Offer-19</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -178,10 +178,10 @@
     
     <item>
       <title>PATA-1007 Maximum Subsequence Sum</title>
-      <link>https://blog.lordash.de/posts/solution/pata-1007-maximum-subsequence-sum/</link>
+      <link>https://blog.lordash.de/posts/solution/e552f8a8e1d42eba/</link>
       <pubDate>Fri, 28 Aug 2020 13:59:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/pata-1007-maximum-subsequence-sum/</guid>
+      <guid>https://blog.lordash.de/posts/solution/e552f8a8e1d42eba/</guid>
       <description>PATA-1007 Maximum Subsequence Sum 类型 DP Kadane算法</description>
       <content:encoded><![CDATA[<h1 id="maximum-subsequence-sumpata-1007httpspintiacnproblem-sets994805342720868352problems994805514284679168">Maximum Subsequence Sum(<a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805514284679168">PATA-1007</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -240,10 +240,10 @@
     
     <item>
       <title>POJ-1837 Balance</title>
-      <link>https://blog.lordash.de/posts/solution/poj-1837-balance/</link>
+      <link>https://blog.lordash.de/posts/solution/5bb493a6ba6550f7/</link>
       <pubDate>Sun, 22 Apr 2018 10:51:52 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-1837-balance/</guid>
+      <guid>https://blog.lordash.de/posts/solution/5bb493a6ba6550f7/</guid>
       <description>POJ-1837 Balance 类型 01背包</description>
       <content:encoded><![CDATA[<h1 id="balance-poj---1837httpsvjudgenetproblempoj-1837">Balance (<a href="https://vjudge.net/problem/POJ-1837">POJ - 1837</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -309,10 +309,10 @@ It is guaranteed that will exist at least one solution for each test case at the
     
     <item>
       <title>POJ-1050 To the Max</title>
-      <link>https://blog.lordash.de/posts/solution/poj-1050-to-the-max/</link>
+      <link>https://blog.lordash.de/posts/solution/90f2e79596fd0149/</link>
       <pubDate>Sun, 22 Apr 2018 10:45:43 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-1050-to-the-max/</guid>
+      <guid>https://blog.lordash.de/posts/solution/90f2e79596fd0149/</guid>
       <description>POJ-1050 To the Max 类型 DP</description>
       <content:encoded><![CDATA[<h1 id="to-the-max-poj---1050httpsvjudgenetproblempoj-1050">To the Max (<a href="https://vjudge.net/problem/POJ-1050">POJ - 1050</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -385,10 +385,10 @@ and has a sum of 15.</p>
     
     <item>
       <title>HDU-1069 Monkey and Banana</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1069-monkey-and-banana/</link>
+      <link>https://blog.lordash.de/posts/solution/3e77307198edd961/</link>
       <pubDate>Sun, 22 Apr 2018 10:39:02 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1069-monkey-and-banana/</guid>
+      <guid>https://blog.lordash.de/posts/solution/3e77307198edd961/</guid>
       <description>HDU-1069 Monkey and Banana 类型 DP</description>
       <content:encoded><![CDATA[<h1 id="monkey-and-banana-hdu---1069httpsvjudgenetproblemhdu-1069">Monkey and Banana (<a href="https://vjudge.net/problem/HDU-1069">HDU - 1069</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -492,10 +492,10 @@ Input is terminated by a value of zero (0) for n.</p>
     
     <item>
       <title>HDU-1029 Ignatius and the Princess IV</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1029-ignatius-and-the-princess-iv/</link>
+      <link>https://blog.lordash.de/posts/solution/208fcd86a174a67a/</link>
       <pubDate>Sun, 22 Apr 2018 10:24:06 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1029-ignatius-and-the-princess-iv/</guid>
+      <guid>https://blog.lordash.de/posts/solution/208fcd86a174a67a/</guid>
       <description>HDU-1029 Ignatius and the Princess IV 类型 DP</description>
       <content:encoded><![CDATA[<h1 id="ignatius-and-the-princess-iv-hdu---1029httpsvjudgenetproblemhdu-1029">Ignatius and the Princess IV (<a href="https://vjudge.net/problem/HDU-1029">HDU - 1029</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -563,10 +563,10 @@ Input is terminated by a value of zero (0) for n.</p>
     
     <item>
       <title>HDU-1160 FatMouse&#39;s Speed</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1160-fatmouses-speed/</link>
+      <link>https://blog.lordash.de/posts/solution/3e77307198edd961/</link>
       <pubDate>Fri, 30 Mar 2018 19:28:50 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1160-fatmouses-speed/</guid>
+      <guid>https://blog.lordash.de/posts/solution/3e77307198edd961/</guid>
       <description>HDU-1160 FatMouse&amp;#39;s Speed 类型 LIS 路径输出</description>
       <content:encoded><![CDATA[<h1 id="fatmouses-speed-hdu---1160httpsvjudgenetproblemhdu-1160">FatMouse’s Speed (<a href="https://vjudge.net/problem/HDU-1160">HDU - 1160</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -665,10 +665,10 @@ All inequalities are strict: weights must be strictly increasing,  and speeds mu
     
     <item>
       <title>POJ-2264 Advanced Fruits</title>
-      <link>https://blog.lordash.de/posts/solution/poj-2264-advanced-fruits/</link>
+      <link>https://blog.lordash.de/posts/solution/63cc9007325a198e/</link>
       <pubDate>Fri, 30 Mar 2018 15:45:30 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-2264-advanced-fruits/</guid>
+      <guid>https://blog.lordash.de/posts/solution/63cc9007325a198e/</guid>
       <description>POJ-2264 Advanced Fruits 类型 LCS 路经输出</description>
       <content:encoded><![CDATA[<h1 id="advanced-fruits-poj---2264httpsvjudgenetproblempoj-2264">Advanced Fruits (<a href="https://vjudge.net/problem/POJ-2264">POJ - 2264</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -759,10 +759,10 @@ Input is terminated by end of file.</p>
     
     <item>
       <title>POJ-2250 Compromise</title>
-      <link>https://blog.lordash.de/posts/solution/poj-2250-compromise/</link>
+      <link>https://blog.lordash.de/posts/solution/ab322b6a0660015b/</link>
       <pubDate>Fri, 30 Mar 2018 15:26:03 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-2250-compromise/</guid>
+      <guid>https://blog.lordash.de/posts/solution/ab322b6a0660015b/</guid>
       <description>POJ-2250 Compromise 类型 LCS 路径输出</description>
       <content:encoded><![CDATA[<h1 id="compromise-poj---2250httpsvjudgenetproblempoj-2250">Compromise (<a href="https://vjudge.net/problem/POJ-2250">POJ - 2250</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -860,10 +860,10 @@ Input is terminated by end of file.</p>
     
     <item>
       <title>POJ-1458 Common Subsequence</title>
-      <link>https://blog.lordash.de/posts/solution/poj-1458-common-subsequence/</link>
+      <link>https://blog.lordash.de/posts/solution/d75915ae48ff6105/</link>
       <pubDate>Fri, 30 Mar 2018 10:49:03 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-1458-common-subsequence/</guid>
+      <guid>https://blog.lordash.de/posts/solution/d75915ae48ff6105/</guid>
       <description>POJ-1458 Common Subsequence 类型 LCS</description>
       <content:encoded><![CDATA[<h1 id="common-subsequence-poj-1458httpsvjudgenetproblempoj-1458hdu---1159httpsvjudgenetproblemhdu-1159">Common Subsequence (<a href="https://vjudge.net/problem/POJ-1458">POJ-1458</a>、<a href="https://vjudge.net/problem/HDU-1159">HDU - 1159</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -921,10 +921,10 @@ Input is terminated by end of file.</p>
     
     <item>
       <title>POJ-2533 Longest Ordered Subsequence</title>
-      <link>https://blog.lordash.de/posts/solution/poj-2533-longest-ordered-subsequence/</link>
+      <link>https://blog.lordash.de/posts/solution/1f76fc9f9b518d48/</link>
       <pubDate>Fri, 30 Mar 2018 09:58:35 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-2533-longest-ordered-subsequence/</guid>
+      <guid>https://blog.lordash.de/posts/solution/1f76fc9f9b518d48/</guid>
       <description>POJ-2533 Longest Ordered Subsequence 类型 LIS nlogn</description>
       <content:encoded><![CDATA[<h1 id="longest-ordered-subsequence-poj---2533httpsvjudgenetproblempoj-2533">Longest Ordered Subsequence (<a href="https://vjudge.net/problem/POJ-2533">POJ - 2533</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -986,10 +986,10 @@ Input is terminated by end of file.</p>
     
     <item>
       <title>POJ-1836 Alignment</title>
-      <link>https://blog.lordash.de/posts/solution/poj-1836-alignment/</link>
+      <link>https://blog.lordash.de/posts/solution/b5ba097124b287d9/</link>
       <pubDate>Fri, 30 Mar 2018 09:44:21 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-1836-alignment/</guid>
+      <guid>https://blog.lordash.de/posts/solution/b5ba097124b287d9/</guid>
       <description>POJ-1836 Alignment 类型 LIS</description>
       <content:encoded><![CDATA[<h1 id="alignment-poj---1836httpsvjudgenetproblempoj-1836">Alignment (<a href="https://vjudge.net/problem/POJ-1836">POJ - 1836</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1062,10 +1062,10 @@ Input is terminated by end of file.</p>
     
     <item>
       <title>HDU-2639 Bone Collector II</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2639-bone-collector-ii/</link>
+      <link>https://blog.lordash.de/posts/solution/982145d223c0b506/</link>
       <pubDate>Fri, 30 Mar 2018 09:19:05 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2639-bone-collector-ii/</guid>
+      <guid>https://blog.lordash.de/posts/solution/982145d223c0b506/</guid>
       <description>HDU-2639 Bone Collector II 类型 01背包 第k优解</description>
       <content:encoded><![CDATA[<h1 id="bone-collector-ii-hdu---2639httpsvjudgenetproblemhdu-2639">Bone Collector II (<a href="https://vjudge.net/problem/HDU-2639">HDU - 2639</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1153,10 +1153,10 @@ Followed by T cases , each case three lines , the first line contain two integer
     
     <item>
       <title>HDU-2602 Bone Collector</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2602-bone-collector/</link>
+      <link>https://blog.lordash.de/posts/solution/c23c5e71ca95182f/</link>
       <pubDate>Tue, 27 Mar 2018 18:38:09 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2602-bone-collector/</guid>
+      <guid>https://blog.lordash.de/posts/solution/c23c5e71ca95182f/</guid>
       <description>HDU-2602 Bone Collector 类型 01背包</description>
       <content:encoded><![CDATA[<h1 id="bone-collector-hdu---2602httpsvjudgenetproblemhdu-2602">Bone Collector (<a href="https://vjudge.net/problem/HDU-2602">HDU - 2602</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1220,10 +1220,10 @@ Followed by T cases , each case three lines , the first line contain two integer
     
     <item>
       <title>HDU-2955 Robberies</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2955-robberies/</link>
+      <link>https://blog.lordash.de/posts/solution/4becc864832ef0cf/</link>
       <pubDate>Mon, 26 Mar 2018 18:03:14 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2955-robberies/</guid>
+      <guid>https://blog.lordash.de/posts/solution/4becc864832ef0cf/</guid>
       <description>HDU-2955 Robberies 类型 01背包</description>
       <content:encoded><![CDATA[<h1 id="robberies-hdu---2955httpsvjudgenetproblemhdu-2955">Robberies (<a href="https://vjudge.net/problem/HDU-2955">HDU - 2955</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1308,12 +1308,12 @@ A bank goes bankrupt if it is robbed, and you may assume that all  probabilities
     </item>
     
     <item>
-      <title>HDU-2191 悼念512</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2191-%E6%82%BC%E5%BF%B5512/</link>
+      <title>HDU-2191 采购粮食</title>
+      <link>https://blog.lordash.de/posts/solution/63b9b5127d2992de/</link>
       <pubDate>Mon, 26 Mar 2018 17:19:43 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2191-%E6%82%BC%E5%BF%B5512/</guid>
-      <description>HDU-2191  悼念512汶川大地震遇难同胞——珍惜现在，感恩生活 类型 多重背包 单调队列优化</description>
+      <guid>https://blog.lordash.de/posts/solution/63b9b5127d2992de/</guid>
+      <description>HDU-2191 悼念512汶川大地震遇难同胞——珍惜现在，感恩生活 类型 多重背包 单调队列优化</description>
       <content:encoded><![CDATA[<h1 id="悼念512汶川大地震遇难同胞珍惜现在感恩生活-hdu---2191httpsvjudgenetproblemhdu-2191">悼念512汶川大地震遇难同胞——珍惜现在，感恩生活 (<a href="https://vjudge.net/problem/HDU-2191">HDU - 2191</a>)</h1>
 <h2 id="题面">题面</h2>
 <blockquote>
@@ -1387,10 +1387,10 @@ A bank goes bankrupt if it is robbed, and you may assume that all  probabilities
     
     <item>
       <title>HDU-1171 Big Event in HDU</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1171-big-event-in-hdu/</link>
+      <link>https://blog.lordash.de/posts/solution/62986ee569d6027a/</link>
       <pubDate>Mon, 26 Mar 2018 11:54:36 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1171-big-event-in-hdu/</guid>
+      <guid>https://blog.lordash.de/posts/solution/62986ee569d6027a/</guid>
       <description>HDU-1171 Big Event in HDU 类型 多重背包</description>
       <content:encoded><![CDATA[<h1 id="big-event-in-hdu-hdu---1171httpsvjudgenetproblemhdu-1171">Big Event in HDU (<a href="https://vjudge.net/problem/HDU-1171">HDU - 1171</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1463,10 +1463,10 @@ A test case starting with a negative integer terminates input and this test case
     
     <item>
       <title>HDU-2546 饭卡</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2546-%E9%A5%AD%E5%8D%A1/</link>
+      <link>https://blog.lordash.de/posts/solution/4d48e38e85e8b673/</link>
       <pubDate>Sun, 25 Mar 2018 17:26:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2546-%E9%A5%AD%E5%8D%A1/</guid>
+      <guid>https://blog.lordash.de/posts/solution/4d48e38e85e8b673/</guid>
       <description>HDU-2546 饭卡 类型 01背包</description>
       <content:encoded><![CDATA[<h1 id="饭卡-hdu---2546httpsvjudgenetproblemhdu-2546">饭卡 (<a href="https://vjudge.net/problem/HDU-2546">HDU - 2546</a>)</h1>
 <h2 id="题面">题面</h2>

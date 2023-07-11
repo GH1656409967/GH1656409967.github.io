@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 22 Apr 2018 10:39:02 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/kuangbin-%E4%B8%93%E9%A2%98%E5%8D%81%E4%BA%8C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HDU-1069 Monkey and Banana</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1069-monkey-and-banana/</link>
+      <link>https://blog.lordash.de/posts/solution/3e77307198edd961/</link>
       <pubDate>Sun, 22 Apr 2018 10:39:02 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1069-monkey-and-banana/</guid>
+      <guid>https://blog.lordash.de/posts/solution/3e77307198edd961/</guid>
       <description>HDU-1069 Monkey and Banana 类型 DP</description>
       <content:encoded><![CDATA[<h1 id="monkey-and-banana-hdu---1069httpsvjudgenetproblemhdu-1069">Monkey and Banana (<a href="https://vjudge.net/problem/HDU-1069">HDU - 1069</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -116,10 +116,10 @@ Input is terminated by a value of zero (0) for n.</p>
     
     <item>
       <title>HDU-1029 Ignatius and the Princess IV</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1029-ignatius-and-the-princess-iv/</link>
+      <link>https://blog.lordash.de/posts/solution/208fcd86a174a67a/</link>
       <pubDate>Sun, 22 Apr 2018 10:24:06 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1029-ignatius-and-the-princess-iv/</guid>
+      <guid>https://blog.lordash.de/posts/solution/208fcd86a174a67a/</guid>
       <description>HDU-1029 Ignatius and the Princess IV 类型 DP</description>
       <content:encoded><![CDATA[<h1 id="ignatius-and-the-princess-iv-hdu---1029httpsvjudgenetproblemhdu-1029">Ignatius and the Princess IV (<a href="https://vjudge.net/problem/HDU-1029">HDU - 1029</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -187,10 +187,10 @@ Input is terminated by a value of zero (0) for n.</p>
     
     <item>
       <title>HDU-1160 FatMouse&#39;s Speed</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1160-fatmouses-speed/</link>
+      <link>https://blog.lordash.de/posts/solution/3e77307198edd961/</link>
       <pubDate>Fri, 30 Mar 2018 19:28:50 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1160-fatmouses-speed/</guid>
+      <guid>https://blog.lordash.de/posts/solution/3e77307198edd961/</guid>
       <description>HDU-1160 FatMouse&amp;#39;s Speed 类型 LIS 路径输出</description>
       <content:encoded><![CDATA[<h1 id="fatmouses-speed-hdu---1160httpsvjudgenetproblemhdu-1160">FatMouse’s Speed (<a href="https://vjudge.net/problem/HDU-1160">HDU - 1160</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -289,10 +289,10 @@ All inequalities are strict: weights must be strictly increasing,  and speeds mu
     
     <item>
       <title>POJ-1458 Common Subsequence</title>
-      <link>https://blog.lordash.de/posts/solution/poj-1458-common-subsequence/</link>
+      <link>https://blog.lordash.de/posts/solution/d75915ae48ff6105/</link>
       <pubDate>Fri, 30 Mar 2018 10:49:03 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-1458-common-subsequence/</guid>
+      <guid>https://blog.lordash.de/posts/solution/d75915ae48ff6105/</guid>
       <description>POJ-1458 Common Subsequence 类型 LCS</description>
       <content:encoded><![CDATA[<h1 id="common-subsequence-poj-1458httpsvjudgenetproblempoj-1458hdu---1159httpsvjudgenetproblemhdu-1159">Common Subsequence (<a href="https://vjudge.net/problem/POJ-1458">POJ-1458</a>、<a href="https://vjudge.net/problem/HDU-1159">HDU - 1159</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -350,10 +350,10 @@ All inequalities are strict: weights must be strictly increasing,  and speeds mu
     
     <item>
       <title>POJ-2533 Longest Ordered Subsequence</title>
-      <link>https://blog.lordash.de/posts/solution/poj-2533-longest-ordered-subsequence/</link>
+      <link>https://blog.lordash.de/posts/solution/1f76fc9f9b518d48/</link>
       <pubDate>Fri, 30 Mar 2018 09:58:35 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-2533-longest-ordered-subsequence/</guid>
+      <guid>https://blog.lordash.de/posts/solution/1f76fc9f9b518d48/</guid>
       <description>POJ-2533 Longest Ordered Subsequence 类型 LIS nlogn</description>
       <content:encoded><![CDATA[<h1 id="longest-ordered-subsequence-poj---2533httpsvjudgenetproblempoj-2533">Longest Ordered Subsequence (<a href="https://vjudge.net/problem/POJ-2533">POJ - 2533</a>)</h1>
 <h2 id="题面">题面</h2>

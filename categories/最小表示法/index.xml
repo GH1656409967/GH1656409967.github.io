@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 04 Aug 2020 22:47:38 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/categories/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HDU-2609 How many</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2609-how-many/</link>
+      <link>https://blog.lordash.de/posts/solution/8e8c4a17274bbaf0/</link>
       <pubDate>Tue, 04 Aug 2020 22:47:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2609-how-many/</guid>
+      <guid>https://blog.lordash.de/posts/solution/8e8c4a17274bbaf0/</guid>
       <description>HDU-2609 How many 类型 字符串 最小表示法</description>
       <content:encoded><![CDATA[<h1 id="how-manyhdu-2609httpsvjudgenetproblemhdu-2609">How many(<a href="https://vjudge.net/problem/HDU-2609">HDU-2609</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -101,10 +101,10 @@ Next n lines follow. Each line has a equal length character string. (string only
     
     <item>
       <title>HDU-3374 String Problem</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-3374-string-problem/</link>
+      <link>https://blog.lordash.de/posts/solution/86e3d7b59d954a3d/</link>
       <pubDate>Tue, 04 Aug 2020 22:04:38 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-3374-string-problem/</guid>
+      <guid>https://blog.lordash.de/posts/solution/86e3d7b59d954a3d/</guid>
       <description>HDU-3374 String Problem 类型 字符串 最小表示法 KMP</description>
       <content:encoded><![CDATA[<h1 id="string-problemhdu-3374httpsvjudgenetproblemhdu-3374">String Problem(<a href="https://vjudge.net/problem/HDU-3374">HDU-3374</a>)</h1>
 <h2 id="题面">题面</h2>

@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 05 Apr 2021 00:05:18 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/%E9%93%BE%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>剑指Offer-36 二叉搜索树与双向链表</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-36-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</link>
+      <link>https://blog.lordash.de/posts/solution/6dc6a766b0cdf147/</link>
       <pubDate>Mon, 05 Apr 2021 00:05:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-36-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</guid>
+      <guid>https://blog.lordash.de/posts/solution/6dc6a766b0cdf147/</guid>
       <description>剑指Offer-36 二叉搜索树与双向链表 类型 链表</description>
       <content:encoded><![CDATA[<h1 id="二叉搜索树与双向链表剑指offer-36httpsleetcode-cncomproblemser-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof">二叉搜索树与双向链表(<a href="https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/">剑指Offer-36</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -81,13 +81,13 @@
     </item>
     
     <item>
-      <title>剑指Offer-34 复杂链表的复制</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-35-%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/</link>
+      <title>剑指Offer-35 复杂链表的复制</title>
+      <link>https://blog.lordash.de/posts/solution/08dbec26ab83893a/</link>
       <pubDate>Sun, 04 Apr 2021 22:24:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-35-%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/</guid>
-      <description>剑指Offer-34 复杂链表的复制 类型 链表</description>
-      <content:encoded><![CDATA[<h1 id="复杂链表的复制剑指offer-34httpsleetcode-cncomproblemsfu-za-lian-biao-de-fu-zhi-lcof">复杂链表的复制(<a href="https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/">剑指Offer-34</a>)</h1>
+      <guid>https://blog.lordash.de/posts/solution/08dbec26ab83893a/</guid>
+      <description>剑指Offer-35 复杂链表的复制 类型 链表</description>
+      <content:encoded><![CDATA[<h1 id="复杂链表的复制剑指offer-35httpsleetcode-cncomproblemsfu-za-lian-biao-de-fu-zhi-lcof">复杂链表的复制(<a href="https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/">剑指Offer-35</a>)</h1>
 <h2 id="题面">题面</h2>
 <blockquote>
 <p>请实现 copyRandomList 函数，复制一个复杂链表。在复杂链表中，每个节点除了有一个 next 指针指向下一个节点，还有一个 random 指针指向链表中的任意节点或者 null。</p>
@@ -190,10 +190,10 @@
     
     <item>
       <title>剑指Offer-25 合并两个排序的链表</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-25-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</link>
+      <link>https://blog.lordash.de/posts/solution/d6cb399881110bfa/</link>
       <pubDate>Sat, 03 Apr 2021 20:20:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-25-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</guid>
+      <guid>https://blog.lordash.de/posts/solution/d6cb399881110bfa/</guid>
       <description>剑指Offer-25 合并两个排序的链表 类型 链表</description>
       <content:encoded><![CDATA[<h1 id="合并两个排序的链表剑指offer-25httpsleetcode-cncomproblemshe-bing-liang-ge-pai-xu-de-lian-biao-lcof">合并两个排序的链表(<a href="https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/">剑指Offer-25</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -242,10 +242,10 @@
     
     <item>
       <title>剑指Offer-24 反转链表</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-24-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</link>
+      <link>https://blog.lordash.de/posts/solution/892d4491d2e1f0bb/</link>
       <pubDate>Sat, 03 Apr 2021 19:43:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-24-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</guid>
+      <guid>https://blog.lordash.de/posts/solution/892d4491d2e1f0bb/</guid>
       <description>剑指Offer-24 反转链表 类型 链表</description>
       <content:encoded><![CDATA[<h1 id="反转链表剑指offer-24httpsleetcode-cncomproblemsfan-zhuan-lian-biao-lcof">反转链表(<a href="https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/">剑指Offer-24</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -288,10 +288,10 @@
     
     <item>
       <title>剑指Offer-22 链表中倒数第k个节点</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-22-%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/</link>
+      <link>https://blog.lordash.de/posts/solution/f3d2833f47315d9c/</link>
       <pubDate>Sat, 03 Apr 2021 19:13:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-22-%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/</guid>
+      <guid>https://blog.lordash.de/posts/solution/f3d2833f47315d9c/</guid>
       <description>剑指Offer-22 链表中倒数第k个节点 类型 链表</description>
       <content:encoded><![CDATA[<h1 id="链表中倒数第k个节点剑指offer-22httpsleetcode-cncomproblemslian-biao-zhong-dao-shu-di-kge-jie-dian-lcof">链表中倒数第k个节点(<a href="https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/">剑指Offer-22</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -334,10 +334,10 @@
     
     <item>
       <title>剑指Offer-18 删除链表的节点</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-18-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9/</link>
+      <link>https://blog.lordash.de/posts/solution/2d805122a280bfc8/</link>
       <pubDate>Sun, 28 Mar 2021 12:35:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-18-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9/</guid>
+      <guid>https://blog.lordash.de/posts/solution/2d805122a280bfc8/</guid>
       <description>剑指Offer-18 删除链表的节点 类型 链表</description>
       <content:encoded><![CDATA[<h1 id="删除链表的节点剑指offer-18httpsleetcode-cncomproblemsshan-chu-lian-biao-de-jie-dian-lcof">删除链表的节点(<a href="https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof/">剑指Offer-18</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -395,10 +395,10 @@
     
     <item>
       <title>剑指Offer-06 从尾到头打印链表</title>
-      <link>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-06-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</link>
+      <link>https://blog.lordash.de/posts/solution/6f02dd7947d64a2f/</link>
       <pubDate>Tue, 23 Mar 2021 17:13:18 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/%E5%89%91%E6%8C%87offer-06-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</guid>
+      <guid>https://blog.lordash.de/posts/solution/6f02dd7947d64a2f/</guid>
       <description>剑指Offer-06 从尾到头打印链表 类型 水题 链表</description>
       <content:encoded><![CDATA[<h1 id="从尾到头打印链表剑指offer-06httpsleetcode-cncomproblemscong-wei-dao-tou-da-yin-lian-biao-lcof">从尾到头打印链表(<a href="https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/">剑指Offer-06</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -440,6 +440,81 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        <span style="color:#66d9ef">return</span> v;
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    }
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>};
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>PATB-1025 反转链表</title>
+      <link>https://blog.lordash.de/posts/solution/babb82e31ec31d9d/</link>
+      <pubDate>Thu, 30 Apr 2020 18:17:18 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/posts/solution/babb82e31ec31d9d/</guid>
+      <description>PATB-1025 反转链表 类型 水题</description>
+      <content:encoded><![CDATA[<h1 id="反转链表-patb-1025httpspintiacnproblem-sets994805260223102976problems994805296180871168">反转链表 (<a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805296180871168">PATB-1025</a>)</h1>
+<h2 id="题面">题面</h2>
+<blockquote>
+<p>给定一个常数 K 以及一个单链表 L，请编写程序将 L 中每 K 个结点反转。例如：给定 L 为 1→2→3→4→5→6，K 为 3，则输出应该为 3→2→1→6→5→4；如果 K 为 4，则输出应该为 4→3→2→1→5→6，即最后不到 K 个元素不反转。</p>
+</blockquote>
+<h2 id="输入">输入</h2>
+<blockquote>
+<p>每个输入包含 1 个测试用例。每个测试用例第 1 行给出第 1 个结点的地址、结点总个数正整数 N (≤10^5)、以及正整数 K (≤N)，即要求反转的子链结点的个数。结点的地址是 5 位非负整数，NULL 地址用 −1 表示。</p>
+<p>接下来有 N 行，每行格式为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Address Data Next
+</span></span></code></pre></div><p>其中 <code>Address</code> 是结点地址，<code>Data</code> 是该结点保存的整数数据，<code>Next</code> 是下一结点的地址。</p>
+</blockquote>
+<h2 id="输出">输出</h2>
+<blockquote>
+<p>对每个测试用例，顺序输出反转后的链表，其上每个结点占一行，格式与输入相同。</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>00100 6 4
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>00000 4 99999
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>00100 1 12309
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>68237 6 -1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>33218 3 00000
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>99999 5 68237
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>12309 2 33218
+</span></span></code></pre></div><h2 id="样例输出">样例输出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>00000 4 33218
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>33218 3 12309
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>12309 2 00100
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>00100 1 99999
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>99999 5 68237
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>68237 6 -1
+</span></span></code></pre></div><h2 id="提示">提示</h2>
+<blockquote>
+<p>无</p>
+</blockquote>
+<h2 id="思路">思路</h2>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> mxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e5</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">int</span> val[mxn], nxt[mxn], ans[mxn];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">int</span> s, n, k, x;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    scanf(<span style="color:#e6db74">&#34;%d %d %d&#34;</span>, <span style="color:#f92672">&amp;</span>s, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>k);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>x);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>val[x], <span style="color:#f92672">&amp;</span>nxt[x]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    <span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> t<span style="color:#f92672">=</span>s; t<span style="color:#f92672">!=-</span><span style="color:#ae81ff">1</span>; t<span style="color:#f92672">=</span>nxt[t]) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        ans[num<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> t;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>(num<span style="color:#f92672">-</span>num<span style="color:#f92672">%</span>k); i<span style="color:#f92672">+=</span>k)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        reverse(begin(ans)<span style="color:#f92672">+</span>i, begin(ans)<span style="color:#f92672">+</span>i<span style="color:#f92672">+</span>k);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>num<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>        printf(<span style="color:#e6db74">&#34;%05d %d %05d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans[i], val[ans[i]], ans[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>    printf(<span style="color:#e6db74">&#34;%05d %d -1&#34;</span>, ans[num<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], val[ans[num<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>}
 </span></span></code></pre></div>]]></content:encoded>
     </item>
     

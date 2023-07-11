@@ -18,41 +18,111 @@
     </item>
     
     <item>
-      <title>排序算法专题</title>
-      <link>https://blog.lordash.de/series/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E4%B8%93%E9%A2%98/</link>
+      <title>排序算法介绍</title>
+      <link>https://blog.lordash.de/series/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Sun, 25 Apr 2021 09:07:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/series/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E4%B8%93%E9%A2%98/</guid>
+      <guid>https://blog.lordash.de/series/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
-      <title>图论算法专题</title>
-      <link>https://blog.lordash.de/series/%E5%9B%BE%E8%AE%BA%E7%AE%97%E6%B3%95%E4%B8%93%E9%A2%98/</link>
+      <title>剑指Offer</title>
+      <link>https://blog.lordash.de/series/%E5%89%91%E6%8C%87offer/</link>
+      <pubDate>Tue, 20 Apr 2021 21:20:18 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/series/%E5%89%91%E6%8C%87offer/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>PAT甲级</title>
+      <link>https://blog.lordash.de/series/pat%E7%94%B2%E7%BA%A7/</link>
+      <pubDate>Wed, 02 Sep 2020 13:18:18 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/series/pat%E7%94%B2%E7%BA%A7/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>图论算法介绍</title>
+      <link>https://blog.lordash.de/series/%E5%9B%BE%E8%AE%BA%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Wed, 12 Aug 2020 11:03:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/series/%E5%9B%BE%E8%AE%BA%E7%AE%97%E6%B3%95%E4%B8%93%E9%A2%98/</guid>
+      <guid>https://blog.lordash.de/series/%E5%9B%BE%E8%AE%BA%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
-      <title>字符串算法专题</title>
-      <link>https://blog.lordash.de/series/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E4%B8%93%E9%A2%98/</link>
+      <title>kuangbin带你飞专题十六</title>
+      <link>https://blog.lordash.de/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E5%8D%81%E5%85%AD/</link>
+      <pubDate>Sat, 08 Aug 2020 14:19:38 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E5%8D%81%E5%85%AD/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>字符串算法介绍</title>
+      <link>https://blog.lordash.de/series/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Thu, 06 Aug 2020 22:34:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/series/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E4%B8%93%E9%A2%98/</guid>
+      <guid>https://blog.lordash.de/series/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
-      <title>博弈论算法专题</title>
-      <link>https://blog.lordash.de/series/%E5%8D%9A%E5%BC%88%E8%AE%BA%E7%AE%97%E6%B3%95%E4%B8%93%E9%A2%98/</link>
+      <title>博弈论算法介绍</title>
+      <link>https://blog.lordash.de/series/%E5%8D%9A%E5%BC%88%E8%AE%BA%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Thu, 18 Jun 2020 17:40:11 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/series/%E5%8D%9A%E5%BC%88%E8%AE%BA%E7%AE%97%E6%B3%95%E4%B8%93%E9%A2%98/</guid>
+      <guid>https://blog.lordash.de/series/%E5%8D%9A%E5%BC%88%E8%AE%BA%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>PAT乙级</title>
+      <link>https://blog.lordash.de/series/pat%E4%B9%99%E7%BA%A7/</link>
+      <pubDate>Thu, 04 Jun 2020 18:32:18 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/series/pat%E4%B9%99%E7%BA%A7/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>kuangbin带你飞专题十二</title>
+      <link>https://blog.lordash.de/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E5%8D%81%E4%BA%8C/</link>
+      <pubDate>Sun, 22 Apr 2018 10:39:02 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E5%8D%81%E4%BA%8C/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>kuangbin带你飞专题二</title>
+      <link>https://blog.lordash.de/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E4%BA%8C/</link>
+      <pubDate>Sun, 25 Mar 2018 09:33:16 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E4%BA%8C/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>kuangbin带你飞专题一</title>
+      <link>https://blog.lordash.de/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E4%B8%80/</link>
+      <pubDate>Fri, 23 Mar 2018 09:00:28 +0000</pubDate>
+      
+      <guid>https://blog.lordash.de/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E4%B8%80/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>

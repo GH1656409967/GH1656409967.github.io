@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 23 Mar 2018 09:00:28 +0000</lastBuildDate><atom:link href="https://blog.lordash.de/tags/kuangbin-%E4%B8%93%E9%A2%98%E4%B8%80/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HDU-2612 Find a way</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-2612-find-a-way/</link>
+      <link>https://blog.lordash.de/posts/solution/43d270fe5becb094/</link>
       <pubDate>Fri, 23 Mar 2018 09:00:28 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-2612-find-a-way/</guid>
+      <guid>https://blog.lordash.de/posts/solution/43d270fe5becb094/</guid>
       <description>HDU-2612 Find a way 类型 BFS</description>
       <content:encoded><![CDATA[<h1 id="find-a-way-hdu---2612httpsvjudgenetproblemhdu-2612">Find a way (<a href="https://vjudge.net/problem/HDU-2612">HDU - 2612</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -151,10 +151,10 @@ Next n lines, each line included m character.
     
     <item>
       <title>HDU-1495 非常可乐</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1495-%E9%9D%9E%E5%B8%B8%E5%8F%AF%E4%B9%90/</link>
+      <link>https://blog.lordash.de/posts/solution/aa8e1d74e34a1c74/</link>
       <pubDate>Fri, 23 Mar 2018 08:59:41 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1495-%E9%9D%9E%E5%B8%B8%E5%8F%AF%E4%B9%90/</guid>
+      <guid>https://blog.lordash.de/posts/solution/aa8e1d74e34a1c74/</guid>
       <description>HDU-1495 非常可乐 类型 BFS</description>
       <content:encoded><![CDATA[<h1 id="非常可乐-hdu---1495httpsvjudgenetproblemhdu-1495">非常可乐 (<a href="https://vjudge.net/problem/HDU-1495">HDU - 1495</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -336,10 +336,10 @@ Next n lines, each line included m character.
     
     <item>
       <title>HDU-1241 Oil Deposits</title>
-      <link>https://blog.lordash.de/posts/solution/hdu-1241-oil-deposits/</link>
+      <link>https://blog.lordash.de/posts/solution/cf2c74fe2d4843bf/</link>
       <pubDate>Fri, 23 Mar 2018 08:58:46 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/hdu-1241-oil-deposits/</guid>
+      <guid>https://blog.lordash.de/posts/solution/cf2c74fe2d4843bf/</guid>
       <description>HDU-1241 Oil Deposits 类型 BFS</description>
       <content:encoded><![CDATA[<h1 id="oil-deposits-hdu---1241httpsvjudgenetproblemhdu-1241">Oil Deposits (<a href="https://vjudge.net/problem/HDU-1241">HDU - 1241</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -454,10 +454,10 @@ Next n lines, each line included m character.
     
     <item>
       <title>POJ-3984 迷宫问题</title>
-      <link>https://blog.lordash.de/posts/solution/poj-3984-%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98/</link>
+      <link>https://blog.lordash.de/posts/solution/bab74f0503fedf53/</link>
       <pubDate>Fri, 23 Mar 2018 08:57:56 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-3984-%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://blog.lordash.de/posts/solution/bab74f0503fedf53/</guid>
       <description>POJ-3984 迷宫问题 类型 BFS 路径输出</description>
       <content:encoded><![CDATA[<h1 id="迷宫问题-poj---3984httpsvjudgenetproblempoj-3984">迷宫问题 (<a href="https://vjudge.net/problem/POJ-3984">POJ - 3984</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -580,10 +580,10 @@ Next n lines, each line included m character.
     
     <item>
       <title>UVA-11624 Fire!</title>
-      <link>https://blog.lordash.de/posts/solution/uva-11624-fire/</link>
+      <link>https://blog.lordash.de/posts/solution/f334d0abcdfcc6e5/</link>
       <pubDate>Fri, 23 Mar 2018 08:57:08 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/uva-11624-fire/</guid>
+      <guid>https://blog.lordash.de/posts/solution/f334d0abcdfcc6e5/</guid>
       <description>UVA-11624 Fire! 类型 BFS</description>
       <content:encoded><![CDATA[<h1 id="fire-uva---11624httpsvjudgenetproblemuva-11624">Fire! (<a href="https://vjudge.net/problem/UVA-11624">UVA - 11624</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -714,10 +714,10 @@ Next n lines, each line included m character.
     
     <item>
       <title>FZU-2150 Fire Game</title>
-      <link>https://blog.lordash.de/posts/solution/fzu-2150-fire-game/</link>
+      <link>https://blog.lordash.de/posts/solution/f4ebff0f4df6cb2d/</link>
       <pubDate>Fri, 23 Mar 2018 08:56:08 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/fzu-2150-fire-game/</guid>
+      <guid>https://blog.lordash.de/posts/solution/f4ebff0f4df6cb2d/</guid>
       <description>FZU-2150 Fire Game 类型 双起点BFS</description>
       <content:encoded><![CDATA[<h1 id="fire-game-fzu---2150httpsvjudgenetproblemfzu-2150">Fire Game (<a href="https://vjudge.net/problem/FZU-2150">FZU - 2150</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -874,10 +874,10 @@ Next n lines, each line included m character.
     
     <item>
       <title>POJ-3414 Pots</title>
-      <link>https://blog.lordash.de/posts/solution/poj-3414-pots/</link>
+      <link>https://blog.lordash.de/posts/solution/57ad630fb71a8916/</link>
       <pubDate>Fri, 23 Mar 2018 08:55:02 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-3414-pots/</guid>
+      <guid>https://blog.lordash.de/posts/solution/57ad630fb71a8916/</guid>
       <description>POJ-3414 Pots 类型 BFS 路径输出</description>
       <content:encoded><![CDATA[<h1 id="pots-poj---3414httpsvjudgenetproblempoj-3414">Pots (<a href="https://vjudge.net/problem/POJ-3414">POJ - 3414</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1057,10 +1057,10 @@ Next n lines, each line included m character.
     
     <item>
       <title>POJ-3087 Shuffle&#39;m Up</title>
-      <link>https://blog.lordash.de/posts/solution/poj-3087-shufflem-up/</link>
+      <link>https://blog.lordash.de/posts/solution/0fde02c55862a345/</link>
       <pubDate>Fri, 23 Mar 2018 08:54:00 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-3087-shufflem-up/</guid>
+      <guid>https://blog.lordash.de/posts/solution/0fde02c55862a345/</guid>
       <description>POJ-3087 Shuffle&amp;#39;m Up 类型 模拟</description>
       <content:encoded><![CDATA[<h1 id="shufflem-up-poj---3087httpsvjudgenetproblempoj-3087">Shuffle’m Up (<a href="https://vjudge.net/problem/POJ-3087">POJ - 3087</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1145,10 +1145,10 @@ Next n lines, each line included m character.
     
     <item>
       <title>POJ-3126 Prime Path</title>
-      <link>https://blog.lordash.de/posts/solution/poj-3126-prime-path/</link>
+      <link>https://blog.lordash.de/posts/solution/d3a6e460bdc0741f/</link>
       <pubDate>Fri, 23 Mar 2018 08:52:59 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-3126-prime-path/</guid>
+      <guid>https://blog.lordash.de/posts/solution/d3a6e460bdc0741f/</guid>
       <description>POJ-3126 Prime Path 类型 BFS</description>
       <content:encoded><![CDATA[<h1 id="prime-path-poj---3126httpsvjudgenetproblempoj-3126">Prime Path (<a href="https://vjudge.net/problem/POJ-3126">POJ - 3126</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1293,10 +1293,10 @@ Next n lines, each line included m character.
     
     <item>
       <title>POJ-1426 Find The Multiple</title>
-      <link>https://blog.lordash.de/posts/solution/poj-1426-find-the-multiple/</link>
+      <link>https://blog.lordash.de/posts/solution/10b005aea9111764/</link>
       <pubDate>Fri, 23 Mar 2018 08:51:49 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-1426-find-the-multiple/</guid>
+      <guid>https://blog.lordash.de/posts/solution/10b005aea9111764/</guid>
       <description>POJ-1426 Find The Multiple 类型 BFS</description>
       <content:encoded><![CDATA[<h1 id="find-the-multiple-poj---1426httpsvjudgenetproblempoj-1426">Find The Multiple (<a href="https://vjudge.net/problem/POJ-1426">POJ - 1426</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1361,10 +1361,10 @@ Next n lines, each line included m character.
     
     <item>
       <title>POJ-3279 Fliptile</title>
-      <link>https://blog.lordash.de/posts/solution/poj-3279-fliptile/</link>
+      <link>https://blog.lordash.de/posts/solution/dcf6b703cda0cff6/</link>
       <pubDate>Fri, 23 Mar 2018 08:50:51 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-3279-fliptile/</guid>
+      <guid>https://blog.lordash.de/posts/solution/dcf6b703cda0cff6/</guid>
       <description>POJ-3279 Fliptile 类型 枚举</description>
       <content:encoded><![CDATA[<h1 id="fliptile-poj---3279httpsvjudgenetproblempoj-3279">Fliptile (<a href="https://vjudge.net/problem/POJ-3279">POJ - 3279</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1480,10 +1480,10 @@ Lines 2..       <em>M</em>+1: Line        <em>i</em>+1 describes the colors (lef
     
     <item>
       <title>POJ-3278 Catch That Cow</title>
-      <link>https://blog.lordash.de/posts/solution/poj-3278-catch-that-cow/</link>
+      <link>https://blog.lordash.de/posts/solution/c5f2d9a8d97f5352/</link>
       <pubDate>Fri, 23 Mar 2018 08:49:51 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-3278-catch-that-cow/</guid>
+      <guid>https://blog.lordash.de/posts/solution/c5f2d9a8d97f5352/</guid>
       <description>POJ-3278 Catch That Cow 类型 BFS</description>
       <content:encoded><![CDATA[<h1 id="catch-that-cow-poj---3278httpsvjudgenetproblempoj-3278">Catch That Cow (<a href="https://vjudge.net/problem/POJ-3278">POJ - 3278</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1586,10 +1586,10 @@ Lines 2..       <em>M</em>+1: Line        <em>i</em>+1 describes the colors (lef
     
     <item>
       <title>POJ-2251 Dungeon Master</title>
-      <link>https://blog.lordash.de/posts/solution/poj-2251-dungeon-master/</link>
+      <link>https://blog.lordash.de/posts/solution/1d3c4634508447e2/</link>
       <pubDate>Fri, 23 Mar 2018 08:48:45 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-2251-dungeon-master/</guid>
+      <guid>https://blog.lordash.de/posts/solution/1d3c4634508447e2/</guid>
       <description>POJ-2251 Dungeon Master 类型 BFS</description>
       <content:encoded><![CDATA[<h1 id="dungeon-master-poj---2251httpsvjudgenetproblempoj-2251">Dungeon Master (<a href="https://vjudge.net/problem/POJ-2251">POJ - 2251</a>)</h1>
 <h2 id="题面">题面</h2>
@@ -1734,10 +1734,10 @@ If it is not possible to escape, print the line</p>
     
     <item>
       <title>POJ-1321 棋盘问题</title>
-      <link>https://blog.lordash.de/posts/solution/poj-1321-%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98/</link>
+      <link>https://blog.lordash.de/posts/solution/263b1255bf508f9a/</link>
       <pubDate>Fri, 23 Mar 2018 08:46:12 +0000</pubDate>
       
-      <guid>https://blog.lordash.de/posts/solution/poj-1321-%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://blog.lordash.de/posts/solution/263b1255bf508f9a/</guid>
       <description>POJ-1321 棋盘问题 类型 DFS</description>
       <content:encoded><![CDATA[<h1 id="棋盘问题-poj---1321httpsvjudgenetproblempoj-1321">棋盘问题 (<a href="https://vjudge.net/problem/POJ-1321">POJ - 1321</a>)</h1>
 <h2 id="题面">题面</h2>
