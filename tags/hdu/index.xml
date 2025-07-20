@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HDU on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/hdu/</link>
+    <description>Recent content in HDU on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 08 Aug 2020 14:19:38 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hdu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU-4763 Theme Section</title>
+      <link>http://localhost:1313/z/solution/a41b27c0b8567b41/</link>
+      <pubDate>Sat, 08 Aug 2020 14:19:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/a41b27c0b8567b41/</guid>
+      <description>&lt;h1 id=&#34;theme-sectionhdu-4763&#34;&gt;Theme Section(&lt;a href=&#34;https://vjudge.net/problem/HDU-HDU-4763&#34;&gt;HDU-4763&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;It&amp;rsquo;s time for music! A lot of popular musicians are invited to join us  in the music festival. Each of them will play one of their  representative songs. To make the programs more interesting and  challenging, the hosts are going to add some constraints to the rhythm  of the songs, i.e., each song is required to have a &amp;rsquo;theme section&amp;rsquo;. The theme section shall be played at the beginning, the middle, and the end of each song. More specifically, given a theme section E, the song will be in the format of &amp;lsquo;EAEBE&amp;rsquo;, where section A and section B could have  arbitrary number of notes. Note that there are 26 types of notes,  denoted by lower case letters &amp;lsquo;a&amp;rsquo; - &amp;lsquo;z&amp;rsquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-4847 Wow! Such Doge!</title>
+      <link>http://localhost:1313/z/solution/3098fa6499691f19/</link>
+      <pubDate>Sat, 08 Aug 2020 10:33:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3098fa6499691f19/</guid>
+      <description>&lt;h1 id=&#34;wow-such-dogehdu-4847&#34;&gt;Wow! Such Doge!(&lt;a href=&#34;https://vjudge.net/problem/HDU-4847&#34;&gt;HDU-4847&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Chen, Adrian (November 7, 2013). “Doge Is An Ac- tually Good Internet Meme. Wow.”. Gawker. Retrieved November 22, 2013.&lt;/p&gt;&#xA;&lt;p&gt;Doge is an Internet meme that became popular in 2013. The meme  typically con- sists of a picture of a Shiba Inu dog ac- companied by  multicolored text in Comic Sans MS font in the foreground. The text,  representing a kind of internal monologue, is deliberately written in  broken English, and usually contains the word “wow” and the phrases  “such x”, “much x”, “many x”, “very x” and “so x”.&#xA;Kabosu, the Shiba Inu featured in the original meme, was first  pictured in a 2010 blog post by Atsuko Sato, a Japanese kindergarten  teacher. Afterwards, varia- tions of the pictures using overlaid Comic  Sans text were posted from a Tumblr blog, Shiba Confessions. However,  the use of the intentionally misspelled “doge” dates back to June 2005,  when it was mentioned in an episode of Homestar Runners puppet series.&#xA;In August 2013, images of the meme were spammed on Reddit’s  r/MURICA subreddit by 4chan’s random imageboard, /b/. A search of the  term doge on Google Trends shows an explosion of popularity occurring in October 2013, and more so in the following month. By November 2013, the meme had become widespread on the Internet. Google later created a Doge Easter egg: when doge meme was entered into the YouTube search bar, all of the site’s text would be displayed in colorful Comic Sans, similar  to the kind used by the meme.&#xA;The meme was ranked #12 on MTV’s list of “50 Things Pop Culture  Had Us Giving Thanks For” in 2013. Io9 compared the internal dialog of  the Shiba Inu dogs to lolcat-speak. The image most commonly associated  with the meme is of a female Shiba Inu named Kabosu, taken from a  Japanese blog documenting the dog’s daily activities. The spelling of  doge has several variants, leading to debate on its actual  pronunciation. On December 13, Doge was named the “top meme” of 2013 by  Know Your Meme.&#xA;In December 2013, the Dogecoin was introduced as a new  cryptocurrency, making it the first cryptocurrency to be based on an  Internet meme; the viral phenomenon, along with usage of the Comic Sans  MS typeface, gave it “the Internet density of a large star” according to Medium writer Quinn Norton.&#xA;In late December 2013, members of the U.S. Congress produced  material in the meme’s style. Huffington Post commented that Doge was  “killed” because of the Congress members’ usage of the meme.&#xA;By early 2014, Doge’s popularity was sustained by internet  communities on social media, accompanied by the rapid growth and  acceptance of Dogecoin. In April 2014, Doge experienced a second major  media resurgence due to revelations of the Dogecoin community’s intent  to sponsor Josh Wise in NASCAR and place a picture of the Shiba Inu on  his vehicle.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3068 最长回文</title>
+      <link>http://localhost:1313/z/solution/152d84979dfa485b/</link>
+      <pubDate>Sat, 08 Aug 2020 10:18:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/152d84979dfa485b/</guid>
+      <description>&lt;h1 id=&#34;最长回文hdu-3068&#34;&gt;最长回文(&lt;a href=&#34;https://vjudge.net/problem/HDU-3068&#34;&gt;HDU-3068&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;给出一个只由小写英文字符a,b,c&amp;hellip;y,z组成的字符串S,求S中最长回文串的长度.&#xA;回文就是正反读都是一样的字符串,如aba, abba等&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3294 Girls&#39; research</title>
+      <link>http://localhost:1313/z/solution/99d397601ec4e42f/</link>
+      <pubDate>Sat, 08 Aug 2020 10:08:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/99d397601ec4e42f/</guid>
+      <description>&lt;h1 id=&#34;girls-researchhdu-3294&#34;&gt;Girls&amp;rsquo; research(&lt;a href=&#34;https://vjudge.net/problem/HDU-3294&#34;&gt;HDU-3294&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;One day, sailormoon girls are so delighted that they intend to research  about palindromic strings. Operation contains two steps:&#xA;First step: girls will write a long string (only contains lower  case) on the paper. For example, &amp;ldquo;abcde&amp;rdquo;, but &amp;lsquo;a&amp;rsquo; inside is not the real &amp;lsquo;a&amp;rsquo;, that means if we define the &amp;lsquo;b&amp;rsquo; is the real &amp;lsquo;a&amp;rsquo;, then we can infer that &amp;lsquo;c&amp;rsquo; is the real &amp;lsquo;b&amp;rsquo;, &amp;rsquo;d&amp;rsquo; is the real &amp;lsquo;c&amp;rsquo; ……, &amp;lsquo;a&amp;rsquo; is the real &amp;lsquo;z&amp;rsquo;.  According to this, string &amp;ldquo;abcde&amp;rdquo; changes to &amp;ldquo;bcdef&amp;rdquo;.&#xA;Second step: girls will find out the longest palindromic string in  the given string, the length of palindromic string must be equal or more than 2.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-4513 吉哥系列故事-完美队形II</title>
+      <link>http://localhost:1313/z/solution/972906195cf816b6/</link>
+      <pubDate>Sat, 08 Aug 2020 09:46:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/972906195cf816b6/</guid>
+      <description>&lt;h1 id=&#34;吉哥系列故事-完美队形iihdu-4513&#34;&gt;吉哥系列故事-完美队形II(&lt;a href=&#34;https://vjudge.net/problem/HDU-4513&#34;&gt;HDU-4513&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;　吉哥又想出了一个新的完美队形游戏！&#xA;　假设有n个人按顺序站在他的面前，他们的身高分别是h[1], h[2] &amp;hellip; h[n]，吉哥希望从中挑出一些人，让这些人形成一个新的队形，新的队形若满足以下三点要求，则就是新的完美队形：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3613 Best Reward</title>
+      <link>http://localhost:1313/z/solution/6a2eaf463fb2967e/</link>
+      <pubDate>Wed, 05 Aug 2020 19:41:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/6a2eaf463fb2967e/</guid>
+      <description>&lt;h1 id=&#34;best-rewardhdu-3613&#34;&gt;Best Reward(&lt;a href=&#34;https://vjudge.net/problem/HDU-3613&#34;&gt;HDU-3613&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;After an uphill battle, General Li won a great victory. Now the head of  state decide to reward him with honor and treasures for his great  exploit.&lt;/p&gt;&#xA;&lt;p&gt;One of these treasures is a necklace made up of 26 different kinds  of gemstones, and the length of the necklace is n. (That is to say: n  gemstones are stringed together to constitute this necklace, and each of these gemstones belongs to only one of the 26 kinds.)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2609 How many</title>
+      <link>http://localhost:1313/z/solution/8e8c4a17274bbaf0/</link>
+      <pubDate>Tue, 04 Aug 2020 22:47:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/8e8c4a17274bbaf0/</guid>
+      <description>&lt;h1 id=&#34;how-manyhdu-2609&#34;&gt;How many(&lt;a href=&#34;https://vjudge.net/problem/HDU-2609&#34;&gt;HDU-2609&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Give you n ( n &amp;lt; 10000) necklaces ,the length of necklace will not large than 100,tell me&#xA;How many kinds of necklaces total have.(if two necklaces can equal by rotating ,we say the two necklaces are some).&#xA;For example 0110 express a necklace, you can rotate it. 0110 -&amp;gt; 1100 -&amp;gt; 1001 -&amp;gt; 0011-&amp;gt; 0110.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The input contains multiple test cases.&#xA;Each test case include: first one integers n. (2&amp;lt;=n&amp;lt;=10000)&#xA;Next n lines follow. Each line has a equal length character string. (string only include &amp;lsquo;0&amp;rsquo;,&amp;lsquo;1&amp;rsquo;).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3374 String Problem</title>
+      <link>http://localhost:1313/z/solution/86e3d7b59d954a3d/</link>
+      <pubDate>Tue, 04 Aug 2020 22:04:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/86e3d7b59d954a3d/</guid>
+      <description>&lt;h1 id=&#34;string-problemhdu-3374&#34;&gt;String Problem(&lt;a href=&#34;https://vjudge.net/problem/HDU-3374&#34;&gt;HDU-3374&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Give you a string with length N, you can generate N strings by left  shifts. For example let consider the string “SKYLONG”, we can generate  seven strings:&#xA;String Rank&#xA;SKYLONG 1&#xA;KYLONGS 2&#xA;YLONGSK 3&#xA;LONGSKY 4&#xA;ONGSKYL 5&#xA;NGSKYLO 6&#xA;GSKYLON 7&#xA;and lexicographically first of them is GSKYLON, lexicographically last is YLONGSK, both of them appear only once.&#xA;Your task is easy, calculate the lexicographically fisrt string’s Rank (if there are multiple answers, choose the smallest one), its  times, lexicographically last string’s Rank (if there are multiple  answers, choose the smallest one), and its times also.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2328 Corporate Identity</title>
+      <link>http://localhost:1313/z/solution/44044fd8e23c0706/</link>
+      <pubDate>Sun, 02 Aug 2020 23:11:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/44044fd8e23c0706/</guid>
+      <description>&lt;h1 id=&#34;corporate-identityhdu-2328&#34;&gt;Corporate Identity(&lt;a href=&#34;https://vjudge.net/problem/HDU-2328&#34;&gt;HDU-2328&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Beside other services, ACM helps companies to clearly state their  “corporate identity”, which includes company logo but also other signs,  like trademarks. One of such companies is Internet Building Masters  (IBM), which has recently asked ACM for a help with their new identity.  IBM do not want to change their existing logos and trademarks  completely, because their customers are used to the old ones. Therefore, ACM will only change existing trademarks instead of creating new ones.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1238 Substrings</title>
+      <link>http://localhost:1313/z/solution/5bd76b31bbe72978/</link>
+      <pubDate>Sun, 02 Aug 2020 22:57:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/5bd76b31bbe72978/</guid>
+      <description>&lt;h1 id=&#34;substringshdu-1238&#34;&gt;Substrings(&lt;a href=&#34;https://vjudge.net/problem/HDU-1238&#34;&gt;HDU-1238&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;You are given a number of case-sensitive strings of alphabetic  characters, find the largest string X, such that either X, or its  inverse can be found as a substring of any of the given strings.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The first line of the input file contains a single integer t (1 &amp;lt;= t  &amp;lt;= 10), the number of test cases, followed by the input data for each test case. The first line of each test case contains a single integer n (1 &amp;lt;= n &amp;lt;= 100), the number of given strings, followed by n  lines, each representing one string of minimum length 1 and maximum  length 100. There is no extra white space before and after a string.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-4300 Clairewd’s message</title>
+      <link>http://localhost:1313/z/solution/0320222b3bd1c3fb/</link>
+      <pubDate>Sun, 02 Aug 2020 21:33:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/0320222b3bd1c3fb/</guid>
+      <description>&lt;h1 id=&#34;clairewds-messagehdu-4300&#34;&gt;Clairewd’s message(&lt;a href=&#34;https://vjudge.net/problem/HDU-4300&#34;&gt;HDU-4300&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Clairewd is a member of FBI. After several years concealing in BUPT, she intercepted some important messages and she was preparing for sending  it to ykwd. They had agreed that each letter of these messages would be  transfered to another one according to a conversion table.&#xA;Unfortunately, GFW(someone&amp;rsquo;s name, not what you just think about)  has detected their action. He also got their conversion table by some  unknown methods before. Clairewd was so clever and vigilant that when  she realized that somebody was monitoring their action, she just stopped transmitting messages.&#xA;But GFW knows that Clairewd would always firstly send the  ciphertext and then plaintext(Note that they won&amp;rsquo;t overlap each other).  But he doesn&amp;rsquo;t know how to separate the text because he has no idea  about the whole message. However, he thinks that recovering the shortest possible text is not a hard task for you.&#xA;Now GFW will give you the intercepted text and the conversion table. You should help him work out this problem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3336 Count the string</title>
+      <link>http://localhost:1313/z/solution/67d004945c62a92c/</link>
+      <pubDate>Fri, 31 Jul 2020 13:01:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/67d004945c62a92c/</guid>
+      <description>&lt;h1 id=&#34;count-the-stringhdu-3336&#34;&gt;Count the string(&lt;a href=&#34;https://vjudge.net/problem/HDU-3336&#34;&gt;HDU-3336&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;It is well known that AekdyCoin is good at string problems as well as  number theory problems. When given a string s, we can write down all the non-empty prefixes of this string. For example:&#xA;s: &amp;ldquo;abab&amp;rdquo;&#xA;The prefixes are: &amp;ldquo;a&amp;rdquo;, &amp;ldquo;ab&amp;rdquo;, &amp;ldquo;aba&amp;rdquo;, &amp;ldquo;abab&amp;rdquo;&#xA;For each prefix, we can count the times it matches in s. So we can  see that prefix &amp;ldquo;a&amp;rdquo; matches twice, &amp;ldquo;ab&amp;rdquo; matches twice too, &amp;ldquo;aba&amp;rdquo; matches once, and &amp;ldquo;abab&amp;rdquo; matches once. Now you are asked to calculate the sum  of the match times for all the prefixes. For &amp;ldquo;abab&amp;rdquo;, it is 2 + 2 + 1 + 1 = 6.&#xA;The answer may be very large, so output the answer mod 10007.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2594 Simpsons’ Hidden Talents</title>
+      <link>http://localhost:1313/z/solution/ee73188e9cd45a40/</link>
+      <pubDate>Fri, 31 Jul 2020 12:34:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/ee73188e9cd45a40/</guid>
+      <description>&lt;h1 id=&#34;simpsons-hidden-talentshdu-2594&#34;&gt;Simpsons’ Hidden Talents(&lt;a href=&#34;https://vjudge.net/problem/HDU-2594&#34;&gt;HDU-2594&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Homer: Marge, I just figured out a way to discover some of the talents we weren’t aware we had.&#xA;Marge: Yeah, what is it?&#xA;Homer: Take me for example. I want to find out if I have a talent in politics, OK?&#xA;Marge: OK.&#xA;Homer: So I take some politician’s name, say Clinton, and try to find the length of the longest prefix&#xA;in Clinton’s name that is a suffix in my name. That’s how close I am to being a politician like Clinton&#xA;Marge: Why on earth choose the longest prefix that is a suffix???&#xA;Homer: Well, our talents are deeply hidden within ourselves, Marge.&#xA;Marge: So how close are you?&#xA;Homer: 0!&#xA;Marge: I’m not surprised.&#xA;Homer: But you know, you must have some real math talent hidden deep in you.&#xA;Marge: How come?&#xA;Homer: Riemann and Marjorie gives 3!!!&#xA;Marge: Who the heck is Riemann?&#xA;Homer: Never mind.&#xA;Write a program that, when given strings s1 and s2, finds the longest prefix of s1 that is a suffix of s2.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1358 Period</title>
+      <link>http://localhost:1313/z/solution/5bd76b31bbe72978/</link>
+      <pubDate>Fri, 31 Jul 2020 11:44:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/5bd76b31bbe72978/</guid>
+      <description>&lt;h1 id=&#34;period-hdu-1358&#34;&gt;Period (&lt;a href=&#34;https://vjudge.net/problem/HDU-1358&#34;&gt;HDU-1358&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;For each prefix of a given string S with N characters (each character  has an ASCII code between 97 and 126, inclusive), we want to know  whether the prefix is a periodic string. That is, for each i (2 &amp;lt;= i  &amp;lt;= N) we want to know the largest K &amp;gt; 1 (if there is one) such  that the prefix of S with length i can be written as AK , that is A concatenated K times, for some string A. Of course, we also want to know the period K.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3746 Cyclic Nacklace</title>
+      <link>http://localhost:1313/z/solution/342193647a6ddb9d/</link>
+      <pubDate>Fri, 31 Jul 2020 11:28:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/342193647a6ddb9d/</guid>
+      <description>&lt;h1 id=&#34;cyclic-nacklace-hdu-3746&#34;&gt;Cyclic Nacklace (&lt;a href=&#34;https://vjudge.net/problem/HDU-3746&#34;&gt;HDU-3746&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;CC always becomes very depressed at the end of this month, he has  checked his credit card yesterday, without any surprise, there are only  99.9 yuan left. he is too distressed and thinking about how to tide over the last days. Being inspired by the entrepreneurial spirit of &amp;ldquo;HDU  CakeMan&amp;rdquo;, he wants to sell some little things to make money. Of course,  this is not an easy task.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2087 剪花布条</title>
+      <link>http://localhost:1313/z/solution/98f4c587dff0af0e/</link>
+      <pubDate>Fri, 31 Jul 2020 11:17:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/98f4c587dff0af0e/</guid>
+      <description>&lt;h1 id=&#34;剪花布条-hdu-2087&#34;&gt;剪花布条 (&lt;a href=&#34;https://vjudge.net/problem/HDU-2087&#34;&gt;HDU-2087&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;一块花布条，里面有些图案，另有一块直接可用的小饰条，里面也有一些图案。对于给定的花布条和小饰条，计算一下能从花布条中尽可能剪出几块小饰条来呢？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1711 Number Sequence</title>
+      <link>http://localhost:1313/z/solution/ee6078a4e614433a/</link>
+      <pubDate>Fri, 31 Jul 2020 11:03:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/ee6078a4e614433a/</guid>
+      <description>&lt;h1 id=&#34;number-sequence-hdu-1711&#34;&gt;Number Sequence (&lt;a href=&#34;https://vjudge.net/problem/HDU-1711&#34;&gt;HDU-1711&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given two sequences of numbers : a[1], a[2], &amp;hellip;&amp;hellip; , a[N], and b[1],  b[2], &amp;hellip;&amp;hellip; , b[M] (1 &amp;lt;= M &amp;lt;= 10000, 1 &amp;lt;= N &amp;lt;= 1000000).  Your task is to find a number K which make a[K] = b[1], a[K + 1] = b[2], &amp;hellip;&amp;hellip; , a[K + M - 1] = b[M]. If there are more than one K exist,  output the smallest one.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3980 Paint Chain</title>
+      <link>http://localhost:1313/z/solution/69e1bd87f5e149bb/</link>
+      <pubDate>Sat, 18 Jul 2020 11:07:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/69e1bd87f5e149bb/</guid>
+      <description>&lt;h1 id=&#34;paint-chainhdu-3980&#34;&gt;Paint Chain(&lt;a href=&#34;https://vjudge.net/problem/HDU-3980&#34;&gt;HDU-3980&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Aekdycoin and abcdxyzk are playing a game. They get a circle chain with  some beads. Initially none of the beads is painted. They take turns to  paint the chain. In Each turn one player must paint a unpainted beads.  Whoever is unable to paint in his turn lose the game. Aekdycoin will  take the first move.&lt;/p&gt;&#xA;&lt;p&gt;Now, they thought this game is too simple, and they want to change  some rules. In each turn one player must select a certain number of  consecutive unpainted beads to paint. The other rules is The same as the original. Who will win under the rules ?You may assume that both of  them are so clever.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2509 Be the Winner</title>
+      <link>http://localhost:1313/z/solution/e1f7bbd512788cbf/</link>
+      <pubDate>Sat, 18 Jul 2020 10:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/e1f7bbd512788cbf/</guid>
+      <description>&lt;h1 id=&#34;be-the-winnerhdu-2509&#34;&gt;Be the Winner(&lt;a href=&#34;https://vjudge.net/problem/HDU-2509&#34;&gt;HDU-2509&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s consider m apples divided into n groups. Each group contains no  more than 100 apples, arranged in a line. You can take any number of  consecutive apples at one time.&#xA;For example &amp;ldquo;@@@&amp;rdquo; can be turned into &amp;ldquo;@@&amp;rdquo; or &amp;ldquo;@&amp;rdquo; or &amp;ldquo;@ @&amp;quot;(two  piles). two people get apples one after another and the one who takes  the last is&#xA;the loser. Fra wants to know in which situations he can win by  playing strategies (that is, no matter what action the rival takes, fra  will win).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-4388 Stone Game II</title>
+      <link>http://localhost:1313/z/solution/6dd2fa1e3acd2ab5/</link>
+      <pubDate>Fri, 17 Jul 2020 17:27:43 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/6dd2fa1e3acd2ab5/</guid>
+      <description>&lt;h1 id=&#34;stone-game-ii-hdu-4388&#34;&gt;Stone Game II (&lt;a href=&#34;https://vjudge.net/problem/HDU-4388&#34;&gt;HDU-4388&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;　Stone Game II comes. It needs two players to play this game. There are some piles of stones on the desk at the beginning. Two players move the stones in turn. At each step of the game the player should do the  following operations.&#xA;First, choose a pile of stones. (We assume that the number of stones in this pile is n)&#xA;Second, take some stones from this pile. Assume the number of  stones left in this pile is k. The player must ensure that 0 &amp;lt; k &amp;lt; n and (k XOR n) &amp;lt; n, otherwise he loses.&#xA;At last, add a new pile of size (k XOR n). Now the player can  add a pile of size ((2*k) XOR n) instead of (k XOR n) (However, there is only one opportunity for each player in each game).&#xA;The first player who can&amp;rsquo;t do these operations loses. Suppose two  players will do their best in the game, you are asked to write a program to determine who will win the game.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2188 选拔志愿者</title>
+      <link>http://localhost:1313/z/solution/b472f6f4d765900c/</link>
+      <pubDate>Fri, 17 Jul 2020 17:11:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/b472f6f4d765900c/</guid>
+      <description>&lt;h1 id=&#34;悼念512汶川大地震遇难同胞选拔志愿者hdu-2188&#34;&gt;悼念512汶川大地震遇难同胞——选拔志愿者(&lt;a href=&#34;https://vjudge.net/problem/HDU-2188&#34;&gt;HDU-2188&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;对于四川同胞遭受的灾难，全国人民纷纷伸出援助之手，几乎每个省市都派出了大量的救援人员，这其中包括抢险救灾的武警部队，治疗和防疫的医护人员，以及进行心理疏导的心理学专家。根据要求，我校也有一个奔赴灾区救灾的名额，由于广大师生报名踊跃，学校不得不进行选拔来决定最后的人选。经过多轮的考核，形势逐渐明朗，最后的名额将在“林队”和“徐队”之间产生。但是很巧合，2个人的简历几乎一模一样，这让主持选拔的8600很是为难。无奈，他决定通过捐款来决定两人谁能入选。&#xA;选拔规则如下：&#xA;1、最初的捐款箱是空的；&#xA;2、两人轮流捐款，每次捐款额必须为正整数，并且每人每次捐款最多不超过m元(1&amp;lt;=m&amp;lt;=10)。&#xA;3、最先使得总捐款额达到或者超过n元（0&amp;lt;n&amp;lt;10000）的一方为胜者，则其可以亲赴灾区服务。&#xA;我们知道，两人都很想入选志愿者名单，并且都是非常聪明的人，假设林队先捐，请你判断谁能入选最后的名单？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2897 邂逅明下</title>
+      <link>http://localhost:1313/z/solution/bf620dd875151538/</link>
+      <pubDate>Fri, 17 Jul 2020 16:59:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/bf620dd875151538/</guid>
+      <description>&lt;h1 id=&#34;邂逅明下hdu-2897&#34;&gt;邂逅明下(&lt;a href=&#34;https://vjudge.net/problem/HDU-2897&#34;&gt;HDU-2897&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;当日遇到月，于是有了明。当我遇到了你，便成了侣。&#xA;那天，日月相会，我见到了你。而且，大地失去了光辉，你我是否成侣？这注定是个凄美的故事。（以上是废话）&#xA;小t和所有世俗的人们一样，期待那百年难遇的日食。驻足街头看天，看日月渐渐走近，小t的脖子那个酸呀（他坚持这个姿势已经有半个多小时啦）。他低下仰起的头，环顾四周。忽然发现身边竟站着位漂亮的mm。天渐渐暗下，这mm在这街头竟然如此耀眼，她是天使吗？站着小t身边的天使。&#xA;小t对mm惊呼：“缘分呐~~”。mm却毫不含糊：“是啊，500年一遇哦！”（此后省略5000字….）&#xA;小t赶紧向mm要联系方式，可mm说：“我和你玩个游戏吧，赢了，我就把我的手机号告诉你。”小t，心想天下哪有题目能难倒我呢，便满口答应下来。mm开始说游戏规则：“我有一堆硬币，一共7枚，从这个硬币堆里取硬币，一次最少取2枚，最多4枚，如果剩下少于2枚就要一次取完。我和你轮流取，直到堆里的硬币取完，最后一次取硬币的算输。我玩过这个游戏好多次了，就让让你，让你先取吧~”&#xA;小t掐指一算，不对呀，这是不可能的任务么。小t露出得意的笑：“还是mm优先啦，呵呵~”mm霎时愣住了，想是对小t的反应出乎意料吧。&#xA;她却也不生气：“好小子，挺聪明呢，要不这样吧，你把我的邮箱给我，我给你发个文本，每行有三个数字n，p，q，表示一堆硬币一共有n枚，从这个硬币堆里取硬币，一次最少取p枚，最多q枚，如果剩下少于p枚就要一次取完。两人轮流取，直到堆里的硬币取完，最后一次取硬币的算输。对于每一行的三个数字，给出先取的人是否有必胜策略，如果有回答WIN，否则回答LOST。你把对应的答案发给我，如果你能在今天晚上8点以前发给我正确答案，或许我们明天下午可以再见。”&#xA;小t二话没说，将自己的邮箱给了mm。当他兴冲冲得赶回家，上网看邮箱，哇！mm的邮件已经到了。他发现文本长达100000行，每行的三个数字都很大，但是都是不超过65536的整数。小t看表已经下午6点了，要想手工算出所有结果，看来是不可能了。你能帮帮他，让他再见到那个mm吗？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2516 取石子游戏</title>
+      <link>http://localhost:1313/z/solution/a22a070129bb9e3e/</link>
+      <pubDate>Fri, 17 Jul 2020 16:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/a22a070129bb9e3e/</guid>
+      <description>&lt;h1 id=&#34;取石子游戏hdu-2516&#34;&gt;取石子游戏(&lt;a href=&#34;https://vjudge.net/problem/HDU-2516&#34;&gt;HDU-2516&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;1堆石子有n个,两人轮流取.先取者第1次可以取任意多个，但不能全部取完.以后每次取的石子数不能超过上次取子数的2倍。取完者胜.先取者负输出&amp;quot;Second win&amp;quot;.先取者胜输出&amp;quot;First win&amp;quot;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2486 A simple stone game</title>
+      <link>http://localhost:1313/z/solution/bdbb5938b9b09b74/</link>
+      <pubDate>Fri, 17 Jul 2020 00:24:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/bdbb5938b9b09b74/</guid>
+      <description>&lt;h1 id=&#34;a-simple-stone-gamehdu-2486&#34;&gt;A simple stone game(&lt;a href=&#34;https://vjudge.net/problem/HDU-2486&#34;&gt;HDU-2486&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;After he has learned how to play Nim game, Mike begins to try another stone game which seems much easier.&lt;/p&gt;&#xA;&lt;p&gt;The game goes like this: Two players start the game with a pile of n stones. They take stones from the pile in turn and every time they take at least one stone. The one who goes first can take at most n-1 stones  for his first move. From then on a player can take at most k times as  many stones as his opponent has taken last time. For example, if one  player take m stones in his turn, then the other player can take at most k * m stones next time. The player who takes the last stone wins the  game. Suppose that those two players always take the best moves and  never make mistakes, your job is to find out who will definitely win the game.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2177 取(2堆)石子游戏</title>
+      <link>http://localhost:1313/z/solution/8370fc6a49e88a13/</link>
+      <pubDate>Thu, 16 Jul 2020 19:48:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/8370fc6a49e88a13/</guid>
+      <description>&lt;h1 id=&#34;取2堆石子游戏hdu-2177&#34;&gt;取(2堆)石子游戏(&lt;a href=&#34;https://vjudge.net/problem/HDU-2177&#34;&gt;HDU-2177&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;有两堆石子，数量任意，可以不同。游戏开始由两个人轮流取石子。游戏规定，每次有两种不同的取法，一是可以在任意的一堆中取走任意多的石子；二是可以在两堆中同时取走相同数量的石子。最后把石子全部取完者为胜者。现在给出初始的两堆石子的数目，如果轮到你先取，假设双方都采取最好的策略，问最后你是胜者还是败者。如果你胜，你第1次怎样取子?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3404 Switch lights</title>
+      <link>http://localhost:1313/z/solution/30b31979099adc88/</link>
+      <pubDate>Wed, 15 Jul 2020 11:38:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/30b31979099adc88/</guid>
+      <description>&lt;h1 id=&#34;switch-lightshdu-3404&#34;&gt;Switch lights(&lt;a href=&#34;https://vjudge.net/problem/HDU-3404&#34;&gt;HDU-3404&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;lxhgww is playing a game with his computer Deep Blue.&#xA;The game is played on a matrix containing lights. At first, some  lights are on, while others are off. lxhgww and Deep Blue take turns to  switch the lights. For each step, the player should choose a rectangle  in the matrix: (x1 , y1) , (x1 , y2) , (x2 , y1) , (x2 , y2) ,  (x1&amp;lt;=x2,y1&amp;lt;=y2, the light at (x2, y2) should be on) and change the lights’ status on the four vertex of the rectangle, namely on to off,  and off to on. The player turns all the lights off wins the game. Notice the rectangle is possibly degenerated to line or even a single cell so  that the player may also switch two or one besides four lights in a  move.&#xA;Deep Blue&amp;rsquo;s strategy is perfect, if it has a chance to win, never  will it lose. Does lxhgww have a chance to win if he takes the first  step?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1848 Fibonacci again and again</title>
+      <link>http://localhost:1313/z/solution/87fb0756021b4dda/</link>
+      <pubDate>Mon, 13 Jul 2020 11:06:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/87fb0756021b4dda/</guid>
+      <description>&lt;h1 id=&#34;fibonacci-again-and-againhdu-1848&#34;&gt;Fibonacci again and again(&lt;a href=&#34;https://vjudge.net/problem/HDU-1848&#34;&gt;HDU-1848&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;任何一个大学生对菲波那契数列(Fibonacci numbers)应该都不会陌生，它是这样定义的：&#xA;F(1)=1;&#xA;F(2)=2;&#xA;F(n)=F(n-1)+F(n-2)(n&amp;gt;=3);&#xA;所以，1,2,3,5,8,13……就是菲波那契数列。&#xA;在HDOJ上有不少相关的题目，比如1005 Fibonacci again就是曾经的浙江省赛题。&#xA;今天，又一个关于Fibonacci的题目出现了，它是一个小游戏，定义如下：&#xA;1、 这是一个二人游戏;&#xA;2、 一共有3堆石子，数量分别是m, n, p个；&#xA;3、 两人轮流走;&#xA;4、 每走一步可以选择任意一堆石子，然后取走f个；&#xA;5、 f只能是菲波那契数列中的元素（即每次只能取1，2，3，5，8…等数量）；&#xA;6、 最先取光所有石子的人为胜者；&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1846 Brave Game</title>
+      <link>http://localhost:1313/z/solution/401abd3132fbd91f/</link>
+      <pubDate>Sun, 12 Jul 2020 00:35:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/401abd3132fbd91f/</guid>
+      <description>&lt;h1 id=&#34;brave-gamehdu-1846&#34;&gt;Brave Game(&lt;a href=&#34;https://vjudge.net/problem/HDU-1846&#34;&gt;HDU-1846&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;十年前读大学的时候，中国每年都要从国外引进一些电影大片，其中有一部电影就叫《勇敢者的游戏》（英文名称：Zathura），一直到现在，我依然对于电影中的部分电脑特技印象深刻。&#xA;今天，大家选择上机考试，就是一种勇敢（brave）的选择；这个短学期，我们讲的是博弈（game）专题；所以，大家现在玩的也是“勇敢者的游戏”，这也是我命名这个题目的原因。&#xA;当然，除了“勇敢”，我还希望看到“诚信”，无论考试成绩如何，希望看到的都是一个真实的结果，我也相信大家一定能做到的~&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1847 Good Luck in CET-4 Everybody!</title>
+      <link>http://localhost:1313/z/solution/1c76c0be3708c224/</link>
+      <pubDate>Sun, 12 Jul 2020 00:28:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/1c76c0be3708c224/</guid>
+      <description>&lt;h1 id=&#34;good-luck-in-cet-4-everybodyhdu-1847&#34;&gt;Good Luck in CET-4 Everybody!(&lt;a href=&#34;https://vjudge.net/problem/HDU-1847&#34;&gt;HDU-1847&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;大学英语四级考试就要来临了，你是不是在紧张的复习？也许紧张得连短学期的ACM都没工夫练习了，反正我知道的Kiki和Cici都是如此。当然，作为在考场浸润了十几载的当代大学生，Kiki和Cici更懂得考前的放松，所谓“张弛有道”就是这个意思。这不，Kiki和Cici在每天晚上休息之前都要玩一会儿扑克牌以放松神经。&#xA;“升级”？“双扣”？“红五”？还是“斗地主”？&#xA;当然都不是！那多俗啊~&#xA;作为计算机学院的学生，Kiki和Cici打牌的时候可没忘记专业，她们打牌的规则是这样的：&#xA;1、 总共n张牌;&#xA;2、 双方轮流抓牌；&#xA;3、 每人每次抓牌的个数只能是2的幂次（即：1，2，4，8，16…）&#xA;4、 抓完牌，胜负结果也出来了：最后抓完牌的人为胜者；&#xA;假设Kiki和Cici都是足够聪明（其实不用假设，哪有不聪明的学生~），并且每次都是Kiki先抓牌，请问谁能赢呢？&#xA;当然，打牌无论谁赢都问题不大，重要的是马上到来的CET-4能有好的状态。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1849 Rabbit and Grass</title>
+      <link>http://localhost:1313/z/solution/149d1e8cf3491dc7/</link>
+      <pubDate>Sat, 11 Jul 2020 22:05:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/149d1e8cf3491dc7/</guid>
+      <description>&lt;h1 id=&#34;rabbit-and-grasshdu-1849&#34;&gt;Rabbit and Grass(&lt;a href=&#34;https://vjudge.net/problem/HDU-1849&#34;&gt;HDU-1849&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;大学时光是浪漫的，女生是浪漫的，圣诞更是浪漫的，但是Rabbit和Grass这两个大学女生在今年的圣诞节却表现得一点都不浪漫：不去逛商场，不去逛公园，不去和AC男约会，两个人竟然猫在寝食下棋……&#xA;说是下棋，其实只是一个简单的小游戏而已，游戏的规则是这样的：&#xA;1、棋盘包含1*n个方格，方格从左到右分别编号为0，1，2，…，n-1；&#xA;2、m个棋子放在棋盘的方格上，方格可以为空，也可以放多于一个的棋子；&#xA;3、双方轮流走棋；&#xA;4、每一步可以选择任意一个棋子向左移动到任意的位置（可以多个棋子位于同一个方格），当然，任何棋子不能超出棋盘边界；&#xA;5、如果所有的棋子都位于最左边（即编号为0的位置），则游戏结束，并且规定最后走棋的一方为胜者。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1805 Being a Good Boy in Spring Festival</title>
+      <link>http://localhost:1313/z/solution/4749c95132726660/</link>
+      <pubDate>Sat, 11 Jul 2020 21:50:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/4749c95132726660/</guid>
+      <description>&lt;h1 id=&#34;being-a-good-boy-in-spring-festivalhdu-1805&#34;&gt;Being a Good Boy in Spring Festival(&lt;a href=&#34;https://vjudge.net/problem/HDU-1850&#34;&gt;HDU-1805&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;一年在外 父母时刻牵挂&#xA;春节回家 你能做几天好孩子吗&#xA;寒假里尝试做做下面的事情吧&lt;/p&gt;&#xA;&lt;p&gt;陪妈妈逛一次菜场&#xA;悄悄给爸爸买个小礼物&#xA;主动地 强烈地 要求洗一次碗&#xA;某一天早起 给爸妈用心地做回早餐&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2147 kiki&#39;s game</title>
+      <link>http://localhost:1313/z/solution/7fbc7960878dc635/</link>
+      <pubDate>Sat, 11 Jul 2020 21:02:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/7fbc7960878dc635/</guid>
+      <description>&lt;h1 id=&#34;kikis-gamehdu-2147&#34;&gt;kiki&amp;rsquo;s game(&lt;a href=&#34;https://vjudge.net/problem/HDU-2147&#34;&gt;HDU-2147&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Recently kiki has nothing to do. While she is bored, an idea appears in  his mind, she just playes the checkerboard game.The size of the  chesserboard is n*m.First of all, a coin is placed in the top right  corner(1,m). Each time one people can move the coin into the left, the  underneath or the left-underneath blank space.The person who can&amp;rsquo;t make a move will lose the game. kiki plays it with ZZ.The game always starts  with kiki. If both play perfectly, who will win the game?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2149 Public Sale</title>
+      <link>http://localhost:1313/z/solution/07924860204bf24b/</link>
+      <pubDate>Sat, 11 Jul 2020 20:47:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/07924860204bf24b/</guid>
+      <description>&lt;h1 id=&#34;public-salehdu-2149&#34;&gt;Public Sale(&lt;a href=&#34;https://vjudge.net/problem/HDU-2149&#34;&gt;HDU-2149&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;虽然不想，但是现实总归是现实，Lele始终没有逃过退学的命运，因为他没有拿到奖学金。现在等待他的，就是像FarmJohn一样的农田生涯。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1527 取石子游戏</title>
+      <link>http://localhost:1313/z/solution/0096d7f5d39be617/</link>
+      <pubDate>Thu, 09 Jul 2020 16:35:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/0096d7f5d39be617/</guid>
+      <description>&lt;h1 id=&#34;取石子游戏hdu-1527&#34;&gt;取石子游戏(&lt;a href=&#34;https://vjudge.net/problem/HDU-1527&#34;&gt;HDU-1527&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;有两堆石子，数量任意，可以不同。游戏开始由两个人轮流取石子。游戏规定，每次有两种不同的取法，一是可以在任意的一堆中取走任意多的石子；二是可以在两堆中同时取走相同数量的石子。最后把石子全部取完者为胜者。现在给出初始的两堆石子的数目，如果轮到你先取，假设双方都采取最好的策略，问最后你是胜者还是败者。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1069 Monkey and Banana</title>
+      <link>http://localhost:1313/z/solution/3e77307198edd961/</link>
+      <pubDate>Sun, 22 Apr 2018 10:39:02 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3e77307198edd961/</guid>
+      <description>&lt;h1 id=&#34;monkey-and-banana-hdu---1069&#34;&gt;Monkey and Banana (&lt;a href=&#34;https://vjudge.net/problem/HDU-1069&#34;&gt;HDU - 1069&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A group of researchers are designing an experiment to test the IQ of a  monkey. They will hang a banana at the roof of a building, and at the  mean time, provide the monkey with some blocks. If the monkey is clever  enough, it shall be able to reach the banana by placing one block on the top another to build a tower and climb up to get its favorite food.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1029 Ignatius and the Princess IV</title>
+      <link>http://localhost:1313/z/solution/208fcd86a174a67a/</link>
+      <pubDate>Sun, 22 Apr 2018 10:24:06 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/208fcd86a174a67a/</guid>
+      <description>&lt;h1 id=&#34;ignatius-and-the-princess-iv-hdu---1029&#34;&gt;Ignatius and the Princess IV (&lt;a href=&#34;https://vjudge.net/problem/HDU-1029&#34;&gt;HDU - 1029&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;OK, you are not too bad, em&amp;hellip; But you can never pass the next test.&amp;rdquo; feng5166 says.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;I will tell you an odd number N, and then N integers. There will  be a special integer among them, you have to tell me which integer is  the special one after I tell you all the integers.&amp;rdquo; feng5166 says.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;But what is the characteristic of the special integer?&amp;rdquo; Ignatius asks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-6699 Block Breaker</title>
+      <link>http://localhost:1313/z/solution/de6e623bbe0dd454/</link>
+      <pubDate>Sun, 22 Apr 2018 09:30:56 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/de6e623bbe0dd454/</guid>
+      <description>&lt;h1 id=&#34;block-breaker-hdu---6699&#34;&gt;Block Breaker (&lt;a href=&#34;https://vjudge.net/problem/HDU-6699&#34;&gt;HDU - 6699&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given a rectangle frame of size &lt;strong&gt;n × m.&lt;/strong&gt; Initially, the frame is strewn with &lt;strong&gt;n × m&lt;/strong&gt; square blocks of size &lt;strong&gt;1 × 1&lt;/strong&gt;. Due to the friction with the frame and each other, the blocks are stable and will not drop.&lt;/p&gt;&#xA;&lt;p&gt;However, the blocks can be knocked down. When a block is knocked  down, other remaining blocks may also drop since the friction provided  by other remaining blocks may not sustain them anymore. Formally, a  block will drop if it is knocked or not stable, which means that at  least one of the left block and the right block has been dropped and at  least one of the front block and the back block has been dropped.  Especially, the frame can be regarded as a huge stable block, which  means that if one block&amp;rsquo;s left is the frame, only when its right block  has been dropped and at least one of the front block and the back block  has been dropped can it drop. The rest situations are similar.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1686 Oulipo</title>
+      <link>http://localhost:1313/z/solution/af7ab7639114a9a5/</link>
+      <pubDate>Fri, 13 Apr 2018 16:09:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/af7ab7639114a9a5/</guid>
+      <description>&lt;h1 id=&#34;oulipo-hdu---1686&#34;&gt;Oulipo (&lt;a href=&#34;https://vjudge.net/problem/HDU-1686&#34;&gt;HDU - 1686&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The French author Georges Perec (1936–1982) once wrote a book, La  disparition, without the letter &amp;rsquo;e&amp;rsquo;. He was a member of the Oulipo  group. A quote from the book:&lt;/p&gt;&#xA;&lt;p&gt;Tout avait Pair normal, mais tout s’affirmait faux. Tout avait Fair normal, d’abord, puis surgissait l’inhumain, l’affolant. Il aurait  voulu savoir où s’articulait l’association qui l’unissait au roman :  stir son tapis, assaillant à tout instant son imagination, l’intuition  d’un tabou, la vision d’un mal obscur, d’un quoi vacant, d’un non-dit :  la vision, l’avision d’un oubli commandant tout, où s’abolissait la  raison : tout avait l’air normal mais…&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3639 Hawk-and-Chicken</title>
+      <link>http://localhost:1313/z/solution/836ecd220e828edf/</link>
+      <pubDate>Sat, 07 Apr 2018 10:37:26 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/836ecd220e828edf/</guid>
+      <description>&lt;h1 id=&#34;hawk-and-chicken-hdu---3639&#34;&gt;Hawk-and-Chicken (&lt;a href=&#34;https://vjudge.net/problem/HDU-3639&#34;&gt;HDU - 3639&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Kids in kindergarten enjoy playing a game called Hawk-and-Chicken. But  there always exists a big problem: every kid in this game want to play  the role of Hawk.&#xA;So the teacher came up with an idea: Vote. Every child have some  nice handkerchiefs, and if he/she think someone is suitable for the role of Hawk, he/she gives a handkerchief to this kid, which means this kid  who is given the handkerchief win the support. Note the support can be  transmitted. Kids who get the most supports win in the vote and able to  play the role of Hawk.(A note:if A can win&#xA;support from B(A != B) A can win only one support from B in any  case the number of the supports transmitted from B to A are many. And A  can&amp;rsquo;t win the support from himself in any case.&#xA;If two or more kids own the same number of support from others, we treat all of them as winner.&#xA;Here&amp;rsquo;s a sample: 3 kids A, B and C, A gives a handkerchief to B, B  gives a handkerchief to C, so C wins 2 supports and he is choosen to be  the Hawk.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1827 Summer Holiday</title>
+      <link>http://localhost:1313/z/solution/a118f4bf5f2702ca/</link>
+      <pubDate>Tue, 03 Apr 2018 11:24:13 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/a118f4bf5f2702ca/</guid>
+      <description>&lt;h1 id=&#34;summer-holiday-hdu---1827&#34;&gt;Summer Holiday (&lt;a href=&#34;https://vjudge.net/problem/HDU-1827&#34;&gt;HDU - 1827&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;To see a World in a Grain of Sand&#xA;And a Heaven in a Wild Flower,&#xA;Hold Infinity in the palm of your hand&#xA;And Eternity in an hour.&#xA;—— William Blake&lt;/p&gt;&#xA;&lt;p&gt;听说lcy帮大家预定了新马泰7日游，Wiskey真是高兴的夜不能寐啊，他想着得快点把这消息告诉大家，虽然他手上有所有人的联系方式，但是一个一个联系过去实在太耗时间和电话费了。他知道其他人也有一些别人的联系方式，这样他可以通知其他人，再让其他人帮忙通知一下别人。你能帮Wiskey计算出至少要通知多少人，至少得花多少电话费就能让所有人都被通知到吗？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2767 Proving Equivalences</title>
+      <link>http://localhost:1313/z/solution/dab1d4ab63bc8e70/</link>
+      <pubDate>Mon, 02 Apr 2018 19:41:46 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/dab1d4ab63bc8e70/</guid>
+      <description>&lt;h1 id=&#34;proving-equivalences-hdu---2767&#34;&gt;Proving Equivalences (&lt;a href=&#34;https://vjudge.net/problem/HDU-2767&#34;&gt;HDU - 2767&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Consider the following exercise, found in a generic linear algebra textbook.&lt;/p&gt;&#xA;&lt;p&gt;Let A be an n × n matrix. Prove that the following statements are equivalent:&lt;/p&gt;&#xA;&lt;p&gt;\1. A is invertible.&#xA;\2. Ax = b has exactly one solution for every n × 1 matrix b.&#xA;\3. Ax = b is consistent for every n × 1 matrix b.&#xA;\4. Ax = 0 has only the trivial solution x = 0.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1269 迷宫城堡</title>
+      <link>http://localhost:1313/z/solution/5a80e5c457a45bc6/</link>
+      <pubDate>Sat, 31 Mar 2018 20:43:25 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/5a80e5c457a45bc6/</guid>
+      <description>&lt;h1 id=&#34;迷宫城堡-hdu---1269&#34;&gt;迷宫城堡 (&lt;a href=&#34;https://vjudge.net/problem/HDU-1269&#34;&gt;HDU - 1269&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;为了训练小希的方向感，Gardon建立了一座大城堡，里面有N个房间(N&amp;lt;=10000)和M条通道(M&amp;lt;=100000)，每个通道都是单向的，就是说若称某通道连通了A房间和B房间，只说明可以通过这个通道由A房间到达B房间，但并不说明通过它可以由B房间到达A房间。Gardon需要请你写个程序确认一下是否任意两个房间都是相互连通的，即：对于任意的i和j，至少存在一条路径可以从房间i到房间j，也存在一条路径可以从房间j到房间i。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1160 FatMouse&#39;s Speed</title>
+      <link>http://localhost:1313/z/solution/3e77307198edd961/</link>
+      <pubDate>Fri, 30 Mar 2018 19:28:50 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3e77307198edd961/</guid>
+      <description>&lt;h1 id=&#34;fatmouses-speed-hdu---1160&#34;&gt;FatMouse’s Speed (&lt;a href=&#34;https://vjudge.net/problem/HDU-1160&#34;&gt;HDU - 1160&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;FatMouse believes that the fatter a mouse is, the faster it runs. To  disprove this, you want to take the data on a collection of mice and put as large a subset of this data as possible into a sequence so that the  weights are increasing, but the speeds are decreasing.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Input contains data for a bunch of mice, one mouse per line, terminated by end of file.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2639 Bone Collector II</title>
+      <link>http://localhost:1313/z/solution/982145d223c0b506/</link>
+      <pubDate>Fri, 30 Mar 2018 09:19:05 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/982145d223c0b506/</guid>
+      <description>&lt;h1 id=&#34;bone-collector-ii-hdu---2639&#34;&gt;Bone Collector II (&lt;a href=&#34;https://vjudge.net/problem/HDU-2639&#34;&gt;HDU - 2639&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The title of this problem is familiar,isn&amp;rsquo;t it?yeah,if you had took part in the &amp;ldquo;Rookie Cup&amp;rdquo; competition,you must have seem this title.If you  haven&amp;rsquo;t seen it before,it doesn&amp;rsquo;t matter,I will give you a link:&lt;/p&gt;&#xA;&lt;p&gt;Here is the link:  &lt;a href=&#34;http://acm.hdu.edu.cn/showproblem.php?pid=2602&#34;&gt;http://acm.hdu.edu.cn/showproblem.php?pid=2602&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Today we are not desiring the maximum value of bones,but the K-th  maximum value of the bones.NOTICE that,we considerate two ways that get  the same value of bones are the same.That means,it will be a strictly  decreasing sequence from the 1st maximum , 2nd maximum .. to the K-th  maximum.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2602 Bone Collector</title>
+      <link>http://localhost:1313/z/solution/c23c5e71ca95182f/</link>
+      <pubDate>Tue, 27 Mar 2018 18:38:09 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/c23c5e71ca95182f/</guid>
+      <description>&lt;h1 id=&#34;bone-collector-hdu---2602&#34;&gt;Bone Collector (&lt;a href=&#34;https://vjudge.net/problem/HDU-2602&#34;&gt;HDU - 2602&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Many years ago , in Teddy’s hometown there was a man who was called  “Bone Collector”. This man like to collect varies of bones , such as  dog’s , cow’s , also he went to the grave …&#xA;The bone collector had a big bag with a volume of V ,and along his  trip of collecting there are a lot of bones , obviously , different bone has different value and different volume, now given the each bone’s  value along his trip , can you calculate out the maximum of the total  value the bone collector can get ?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2955 Robberies</title>
+      <link>http://localhost:1313/z/solution/4becc864832ef0cf/</link>
+      <pubDate>Mon, 26 Mar 2018 18:03:14 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/4becc864832ef0cf/</guid>
+      <description>&lt;h1 id=&#34;robberies-hdu---2955&#34;&gt;Robberies (&lt;a href=&#34;https://vjudge.net/problem/HDU-2955&#34;&gt;HDU - 2955&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The aspiring Roy the Robber has seen a lot of American movies, and knows that the bad guys usually gets caught in the end, often because they  become too greedy. He has decided to work in the lucrative business of  bank robbery only for a short while, before retiring to a comfortable  job at a university.&lt;/p&gt;&#xA;&lt;p&gt;For a few months now, Roy has been assessing the security of various banks and the amount of cash they hold. He wants to make a calculated  risk, and grab as much money as possible.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2191 采购粮食</title>
+      <link>http://localhost:1313/z/solution/63b9b5127d2992de/</link>
+      <pubDate>Mon, 26 Mar 2018 17:19:43 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/63b9b5127d2992de/</guid>
+      <description>&lt;h1 id=&#34;悼念512汶川大地震遇难同胞珍惜现在感恩生活-hdu---2191&#34;&gt;悼念512汶川大地震遇难同胞——珍惜现在，感恩生活 (&lt;a href=&#34;https://vjudge.net/problem/HDU-2191&#34;&gt;HDU - 2191&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;急！灾区的食物依然短缺！&#xA;为了挽救灾区同胞的生命，心系灾区同胞的你准备自己采购一些粮食支援灾区，现在假设你一共有资金n元，而市场有m种大米，每种大米都是袋装产品，其价格不等，并且只能整袋购买。&#xA;请问：你用有限的资金最多能采购多少公斤粮食呢？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1171 Big Event in HDU</title>
+      <link>http://localhost:1313/z/solution/62986ee569d6027a/</link>
+      <pubDate>Mon, 26 Mar 2018 11:54:36 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/62986ee569d6027a/</guid>
+      <description>&lt;h1 id=&#34;big-event-in-hdu-hdu---1171&#34;&gt;Big Event in HDU (&lt;a href=&#34;https://vjudge.net/problem/HDU-1171&#34;&gt;HDU - 1171&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Nowadays, we all know that Computer College is the biggest department in HDU. But, maybe you don&amp;rsquo;t know that Computer College had ever been  split into Computer College and Software College in 2002.&#xA;The splitting is absolutely a big event in HDU! At the same time,  it is a trouble thing too. All facilities must go halves. First, all  facilities are assessed, and two facilities are thought to be same if  they have the same value. It is assumed that there is N (0&amp;lt;N&amp;lt;1000) kinds of facilities (different value, different kinds).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2546 饭卡</title>
+      <link>http://localhost:1313/z/solution/4d48e38e85e8b673/</link>
+      <pubDate>Sun, 25 Mar 2018 17:26:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/4d48e38e85e8b673/</guid>
+      <description>&lt;h1 id=&#34;饭卡-hdu---2546&#34;&gt;饭卡 (&lt;a href=&#34;https://vjudge.net/problem/HDU-2546&#34;&gt;HDU - 2546&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;电子科大本部食堂的饭卡有一种很诡异的设计，即在购买之前判断余额。如果购买一个商品之前，卡上的剩余金额大于或等于5元，就一定可以购买成功（即使购买后卡上余额为负），否则无法购买（即使金额足够）。所以大家都希望尽量使卡上的余额最少。&#xA;某天，食堂中有n种菜出售，每种菜可购买一次。已知每种菜的价格以及卡上的余额，问最少可使卡上的余额为多少。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3567 Eight II</title>
+      <link>http://localhost:1313/z/solution/c4d35e7b9ca47ba7/</link>
+      <pubDate>Sun, 25 Mar 2018 09:33:16 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/c4d35e7b9ca47ba7/</guid>
+      <description>&lt;h1 id=&#34;eight-ii-hdu---3567&#34;&gt;Eight II （&lt;a href=&#34;https://vjudge.net/problem/HDU-3567&#34;&gt;HDU - 3567&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Eight-puzzle, which is also called &amp;ldquo;Nine grids&amp;rdquo;, comes from an old game.&lt;/p&gt;&#xA;&lt;p&gt;In this game, you are given a 3 by 3 board and 8 tiles. The tiles  are numbered from 1 to 8 and each covers a grid. As you see, there is a  blank grid which can be represented as an &amp;lsquo;X&amp;rsquo;. Tiles in grids having a  common edge with the blank grid can be moved into that blank grid. This  operation leads to an exchange of &amp;lsquo;X&amp;rsquo; with one tile.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1043 Eight</title>
+      <link>http://localhost:1313/z/solution/af2d8da09a188092/</link>
+      <pubDate>Fri, 23 Mar 2018 22:15:55 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/af2d8da09a188092/</guid>
+      <description>&lt;h1 id=&#34;eight-hdu---1043&#34;&gt;Eight (&lt;a href=&#34;https://vjudge.net/problem/HDU-1043&#34;&gt;HDU - 1043&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The 15-puzzle has been around for over 100 years; even if you don&amp;rsquo;t know it by that name, you&amp;rsquo;ve seen it. It is constructed with 15 sliding  tiles, each with a number from 1 to 15 on it, and all packed into a 4 by 4 frame with one tile missing. Let&amp;rsquo;s call the missing tile &amp;lsquo;x&amp;rsquo;; the  object of the puzzle is to arrange the tiles so that they are ordered  as:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2612 Find a way</title>
+      <link>http://localhost:1313/z/solution/43d270fe5becb094/</link>
+      <pubDate>Fri, 23 Mar 2018 09:00:28 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/43d270fe5becb094/</guid>
+      <description>&lt;h1 id=&#34;find-a-way-hdu---2612&#34;&gt;Find a way (&lt;a href=&#34;https://vjudge.net/problem/HDU-2612&#34;&gt;HDU - 2612&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Pass a year learning in Hangzhou, yifenfei arrival hometown Ningbo at  finally. Leave Ningbo one year, yifenfei have many people to meet.  Especially a good friend Merceki.&#xA;Yifenfei’s home is at the countryside, but Merceki’s home is in the center of city. So yifenfei made arrangements with Merceki to meet at a KFC. There are many KFC in Ningbo, they want to choose one that let the total time to it be most smallest.&#xA;Now give you a Ningbo map, Both yifenfei and Merceki can move up, down ,left, right to the adjacent road by cost 11 minutes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1495 非常可乐</title>
+      <link>http://localhost:1313/z/solution/aa8e1d74e34a1c74/</link>
+      <pubDate>Fri, 23 Mar 2018 08:59:41 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/aa8e1d74e34a1c74/</guid>
+      <description>&lt;h1 id=&#34;非常可乐-hdu---1495&#34;&gt;非常可乐 (&lt;a href=&#34;https://vjudge.net/problem/HDU-1495&#34;&gt;HDU - 1495&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;大家一定觉的运动以后喝可乐是一件很惬意的事情，但是seeyou却不这么认为。因为每次当seeyou买了可乐以后，阿牛就要求和seeyou一起分享这一瓶可乐，而且一定要喝的和seeyou一样多。但seeyou的手中只有两个杯子，它们的容量分别是N 毫升和M 毫升 可乐的体积为S （S&amp;lt;101）毫升　(正好装满一瓶) ，它们三个之间可以相互倒可乐 (都是没有刻度的，且  S==N+M，101＞S＞0，N＞0，M＞0) 。聪明的ACMER你们说他们能平分吗？如果能请输出倒可乐的最少的次数，如果不能输出&amp;quot;NO&amp;quot;。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1241 Oil Deposits</title>
+      <link>http://localhost:1313/z/solution/cf2c74fe2d4843bf/</link>
+      <pubDate>Fri, 23 Mar 2018 08:58:46 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/cf2c74fe2d4843bf/</guid>
+      <description>&lt;h1 id=&#34;oil-deposits-hdu---1241&#34;&gt;Oil Deposits (&lt;a href=&#34;https://vjudge.net/problem/HDU-1241&#34;&gt;HDU - 1241&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The GeoSurvComp geologic survey company is responsible for detecting  underground oil deposits. GeoSurvComp works with one large rectangular  region of land at a time, and creates a grid that divides the land into  numerous square plots. It then analyzes each plot separately, using  sensing equipment to determine whether or not the plot contains oil. A  plot containing oil is called a pocket. If two pockets are adjacent,  then they are part of the same oil deposit. Oil deposits can be quite  large and may contain numerous pockets. Your job is to determine how  many different oil deposits are contained in a grid.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

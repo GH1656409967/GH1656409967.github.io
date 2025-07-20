@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LightOJ on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/lightoj/</link>
+    <description>Recent content in LightOJ on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 05 Aug 2020 11:55:38 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/lightoj/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LightOJ-1355 Game of CS</title>
+      <link>http://localhost:1313/z/solution/2edafbf1618e176b/</link>
+      <pubDate>Wed, 05 Aug 2020 11:55:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/2edafbf1618e176b/</guid>
+      <description>&lt;h1 id=&#34;game-of-cslightoj-1355&#34;&gt;Game of CS(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1355&#34;&gt;LightOJ-1355&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Jolly and Emily are two bees studying in Computer  Science. Unlike other bees they are fond of playing two-player games.  They used to play Tic-tac-toe, Chess etc. But now since they are in CS  they invented a new game that definitely requires some knowledge of  computer science.&lt;/p&gt;&#xA;&lt;p&gt;Initially they draw a random rooted tree (a connected graph with no cycles) in a paper which consists of &lt;strong&gt;n&lt;/strong&gt; nodes, where the nodes are numbered from &lt;strong&gt;0&lt;/strong&gt; to &lt;strong&gt;n-1&lt;/strong&gt; and &lt;strong&gt;0&lt;/strong&gt; is the root, and the edges are weighted. Initially all the edges are unmarked. And an edge weigh &lt;strong&gt;w&lt;/strong&gt;, has &lt;strong&gt;w&lt;/strong&gt; identical units.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1199 Partitioning Game</title>
+      <link>http://localhost:1313/z/solution/0af9c51d49f437d1/</link>
+      <pubDate>Sat, 18 Jul 2020 10:32:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/0af9c51d49f437d1/</guid>
+      <description>&lt;h1 id=&#34;partitioning-gamelightoj-1199&#34;&gt;Partitioning Game(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1199&#34;&gt;LightOJ-1199&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Alice and Bob are playing a strange game. The rules of the game are:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Initially there are &lt;strong&gt;n&lt;/strong&gt; piles.&lt;/li&gt;&#xA;&lt;li&gt;A pile is formed by some cells.&lt;/li&gt;&#xA;&lt;li&gt;Alice starts the game and they alternate turns.&lt;/li&gt;&#xA;&lt;li&gt;In each tern a player can pick any pile and divide it into two unequal piles.&lt;/li&gt;&#xA;&lt;li&gt;If a player cannot do so, he/she loses the game.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Now you are  given the number of cells in each of the piles, you have to find the  winner of the game if both of them play optimally.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1393 Crazy Calendar</title>
+      <link>http://localhost:1313/z/solution/ae287e704686433c/</link>
+      <pubDate>Sat, 18 Jul 2020 09:53:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/ae287e704686433c/</guid>
+      <description>&lt;h1 id=&#34;crazy-calendarlightoj-1393&#34;&gt;Crazy Calendar(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1393&#34;&gt;LightOJ-1393&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;2011 was a crazy year. Many people all over the  world proposed on 11-11-11, married on 11-11-11, some even went through  surgery only to have 11-11-11 as their child&amp;rsquo;s birth date. How crazy  people can be! Don&amp;rsquo;t they see there is a &amp;ldquo;20&amp;rdquo; hidden? Then what to do? A very elegant solution came from ARR, a very famous and funny character - why do we need to follow Christian (or some calls it Gregorian)  calendar? Why don&amp;rsquo;t we start our own calendar on the day of marriage?  And those who like to celebrate their marriage ceremony too frequent,  why don&amp;rsquo;t they declare only 1 day per year. In that fashion they can  celebrate their anniversary every day. And may be one minute a year or a second or &amp;hellip; Uh.. getting complex. Let&amp;rsquo;s back to the title. From now,  we start to have a new calendar system, &amp;ldquo;Kisu Pari Na&amp;rdquo;. And we hope to  update this calendar on every national contest.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1253 Misere Nim</title>
+      <link>http://localhost:1313/z/solution/14e7debc3ca6959a/</link>
+      <pubDate>Sat, 18 Jul 2020 09:39:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/14e7debc3ca6959a/</guid>
+      <description>&lt;h1 id=&#34;misere-nimlightoj-1253&#34;&gt;Misere Nim(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1253&#34;&gt;LightOJ-1253&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Alice and Bob are playing game of &lt;strong&gt;Misère Nim&lt;/strong&gt;. Misère Nim is a game playing on &lt;strong&gt;k&lt;/strong&gt; piles of stones, each pile containing one or more stones. The players  alternate turns and in each turn a player can select one of the piles  and can remove as many stones from that pile unless the pile is empty.  In each turn a player must remove at least one stone from any pile.  Alice starts first. The player who removes the last stone &lt;strong&gt;loses&lt;/strong&gt; the game.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1247 Matrix Game</title>
+      <link>http://localhost:1313/z/solution/cd78223e3f4a75fb/</link>
+      <pubDate>Sat, 18 Jul 2020 09:24:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/cd78223e3f4a75fb/</guid>
+      <description>&lt;h1 id=&#34;matrix-gamelightoj-1247&#34;&gt;Matrix Game(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1247&#34;&gt;LightOJ-1247&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given an &lt;strong&gt;m x n&lt;/strong&gt; matrix, where &lt;strong&gt;m&lt;/strong&gt; denotes the number of rows and &lt;strong&gt;n&lt;/strong&gt; denotes the number of columns and in each cell a pile of stones is given. For example, let there be a &lt;strong&gt;2 x 3&lt;/strong&gt; matrix, and the piles are&lt;/p&gt;&#xA;&lt;p&gt;2 3 8&lt;/p&gt;&#xA;&lt;p&gt;5 2 7&lt;/p&gt;&#xA;&lt;p&gt;That means that in cell(1, 1) there is a pile with 2 stones, in cell(1, 2) there is a pile with 3 stones and so on.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1192 Left Right</title>
+      <link>http://localhost:1313/z/solution/98dd99a0f235d0ac/</link>
+      <pubDate>Fri, 17 Jul 2020 18:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/98dd99a0f235d0ac/</guid>
+      <description>&lt;h1 id=&#34;left-rightlightoj-1192&#34;&gt;Left Right(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1192&#34;&gt;LightOJ-1192&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Two players, Alice and Bob are playing a strange game in a 1 x n board. The cells are numbered from 0 to n-1, where the left most cell is marked as cell 0. Each cell can contain at most one piece.&lt;/p&gt;&#xA;&lt;p&gt;There are two kinds of pieces, gray and white. Alice moves all the gray pieces, and bob moves all the white ones. The pieces alternate, that is, leftmost piece is gray, next is white, next to that is gray, then it&amp;rsquo;s white again, and so on. There will always be equal number of black and gray pieces. Alice can only move pieces to the right. Bob can only move pieces to the left.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1186 Incredible Chess</title>
+      <link>http://localhost:1313/z/solution/298cea19fed8781d/</link>
+      <pubDate>Fri, 17 Jul 2020 18:38:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/298cea19fed8781d/</guid>
+      <description>&lt;h1 id=&#34;incredible-chesslightoj-1186&#34;&gt;Incredible Chess(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1186&#34;&gt;LightOJ-1186&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;You are given an &lt;strong&gt;n x n&lt;/strong&gt; chess board. Only  pawn is used in the &amp;lsquo;Incredible Chess&amp;rsquo; and they can move forward or  backward. In each column there are two pawns, one white and one black.  White pawns are placed in the lower part of the board and the black  pawns are placed in the upper part of the board.&lt;/p&gt;&#xA;&lt;p&gt;The game is played by two players. Initially a board configuration is given. One player uses white pieces while the  other uses black. In each move, a player can move a pawn of his piece,  which can go forward or backward any positive integer steps, but it  cannot jump over any piece. White gives the first move.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

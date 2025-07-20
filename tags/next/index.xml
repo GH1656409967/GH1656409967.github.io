@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NexT on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/next/</link>
+    <description>Recent content in NexT on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 07 Apr 2022 13:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/next/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hexo以及NexT8主题的配置</title>
+      <link>http://localhost:1313/y/blog/ad1c5aba78b0afc4/</link>
+      <pubDate>Thu, 07 Apr 2022 13:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/blog/ad1c5aba78b0afc4/</guid>
+      <description>&lt;h2 id=&#34;1-安装next-v80&#34;&gt;1 安装NexT v8.0&lt;/h2&gt;&#xA;&lt;p&gt;打开命令行，进入博客根目录，使用git下载&lt;a href=&#34;https://theme-next.js.org/&#34;&gt;NexT&lt;/a&gt;主题&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 下载NexT主题&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span&gt;git clone https://github.com/next-theme/hexo-theme-next themes/next&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后修改博客根目录下的&lt;code&gt;_config.yml&lt;/code&gt;配置文件，将主题设置为NexT&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

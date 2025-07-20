@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nim博弈 on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/nim%E5%8D%9A%E5%BC%88/</link>
+    <description>Recent content in Nim博弈 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 18 Jul 2020 09:53:12 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nim%E5%8D%9A%E5%BC%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LightOJ-1393 Crazy Calendar</title>
+      <link>http://localhost:1313/z/solution/ae287e704686433c/</link>
+      <pubDate>Sat, 18 Jul 2020 09:53:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/ae287e704686433c/</guid>
+      <description>&lt;h1 id=&#34;crazy-calendarlightoj-1393&#34;&gt;Crazy Calendar(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1393&#34;&gt;LightOJ-1393&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;2011 was a crazy year. Many people all over the  world proposed on 11-11-11, married on 11-11-11, some even went through  surgery only to have 11-11-11 as their child&amp;rsquo;s birth date. How crazy  people can be! Don&amp;rsquo;t they see there is a &amp;ldquo;20&amp;rdquo; hidden? Then what to do? A very elegant solution came from ARR, a very famous and funny character - why do we need to follow Christian (or some calls it Gregorian)  calendar? Why don&amp;rsquo;t we start our own calendar on the day of marriage?  And those who like to celebrate their marriage ceremony too frequent,  why don&amp;rsquo;t they declare only 1 day per year. In that fashion they can  celebrate their anniversary every day. And may be one minute a year or a second or &amp;hellip; Uh.. getting complex. Let&amp;rsquo;s back to the title. From now,  we start to have a new calendar system, &amp;ldquo;Kisu Pari Na&amp;rdquo;. And we hope to  update this calendar on every national contest.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1247 Matrix Game</title>
+      <link>http://localhost:1313/z/solution/cd78223e3f4a75fb/</link>
+      <pubDate>Sat, 18 Jul 2020 09:24:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/cd78223e3f4a75fb/</guid>
+      <description>&lt;h1 id=&#34;matrix-gamelightoj-1247&#34;&gt;Matrix Game(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1247&#34;&gt;LightOJ-1247&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given an &lt;strong&gt;m x n&lt;/strong&gt; matrix, where &lt;strong&gt;m&lt;/strong&gt; denotes the number of rows and &lt;strong&gt;n&lt;/strong&gt; denotes the number of columns and in each cell a pile of stones is given. For example, let there be a &lt;strong&gt;2 x 3&lt;/strong&gt; matrix, and the piles are&lt;/p&gt;&#xA;&lt;p&gt;2 3 8&lt;/p&gt;&#xA;&lt;p&gt;5 2 7&lt;/p&gt;&#xA;&lt;p&gt;That means that in cell(1, 1) there is a pile with 2 stones, in cell(1, 2) there is a pile with 3 stones and so on.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1192 Left Right</title>
+      <link>http://localhost:1313/z/solution/98dd99a0f235d0ac/</link>
+      <pubDate>Fri, 17 Jul 2020 18:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/98dd99a0f235d0ac/</guid>
+      <description>&lt;h1 id=&#34;left-rightlightoj-1192&#34;&gt;Left Right(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1192&#34;&gt;LightOJ-1192&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Two players, Alice and Bob are playing a strange game in a 1 x n board. The cells are numbered from 0 to n-1, where the left most cell is marked as cell 0. Each cell can contain at most one piece.&lt;/p&gt;&#xA;&lt;p&gt;There are two kinds of pieces, gray and white. Alice moves all the gray pieces, and bob moves all the white ones. The pieces alternate, that is, leftmost piece is gray, next is white, next to that is gray, then it&amp;rsquo;s white again, and so on. There will always be equal number of black and gray pieces. Alice can only move pieces to the right. Bob can only move pieces to the left.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1186 Incredible Chess</title>
+      <link>http://localhost:1313/z/solution/298cea19fed8781d/</link>
+      <pubDate>Fri, 17 Jul 2020 18:38:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/298cea19fed8781d/</guid>
+      <description>&lt;h1 id=&#34;incredible-chesslightoj-1186&#34;&gt;Incredible Chess(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1186&#34;&gt;LightOJ-1186&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;You are given an &lt;strong&gt;n x n&lt;/strong&gt; chess board. Only  pawn is used in the &amp;lsquo;Incredible Chess&amp;rsquo; and they can move forward or  backward. In each column there are two pawns, one white and one black.  White pawns are placed in the lower part of the board and the black  pawns are placed in the upper part of the board.&lt;/p&gt;&#xA;&lt;p&gt;The game is played by two players. Initially a board configuration is given. One player uses white pieces while the  other uses black. In each move, a player can move a pawn of his piece,  which can go forward or backward any positive integer steps, but it  cannot jump over any piece. White gives the first move.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2975 Nim</title>
+      <link>http://localhost:1313/z/solution/d3025254d8b6e1cb/</link>
+      <pubDate>Tue, 14 Jul 2020 17:31:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/d3025254d8b6e1cb/</guid>
+      <description>&lt;h1 id=&#34;nimpoj-2975&#34;&gt;Nim(&lt;a href=&#34;https://vjudge.net/problem/POJ-2975&#34;&gt;POJ-2975&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Nim is a  2-player game featuring several piles of stones. Players alternate  turns, and on his/her turn, a player’s move consists of removing &lt;em&gt;one or more stones&lt;/em&gt; from any single pile. Play ends when all the stones have been removed,  at which point the last player to have moved is declared the winner.  Given a position in Nim, your task is to determine how many winning  moves there are in that position.A position in Nim is called  “losing” if the first player to move from that position would lose if  both sides played perfectly. A “winning move,” then, is a move that  leaves the game in a losing position. There is a famous theorem that  classifies all losing positions. Suppose a Nim position contains &lt;em&gt;n&lt;/em&gt; piles having &lt;em&gt;k&lt;/em&gt;1, &lt;em&gt;k&lt;/em&gt;2, …, &lt;em&gt;kn&lt;/em&gt; stones respectively; in such a position, there are &lt;em&gt;k&lt;/em&gt;1 + &lt;em&gt;k&lt;/em&gt;2 + … + &lt;em&gt;kn&lt;/em&gt; possible moves. We write each &lt;em&gt;ki&lt;/em&gt; in binary (base 2). Then, the Nim position is losing if and only if, among all the &lt;em&gt;ki&lt;/em&gt;’s, there are an even number of 1’s in each digit position. In other words, the Nim position is losing if and only if the &lt;em&gt;xor&lt;/em&gt; of the &lt;em&gt;ki&lt;/em&gt;’s is 0.Consider the position with three piles given by &lt;em&gt;k&lt;/em&gt;1 = 7, &lt;em&gt;k&lt;/em&gt;2 = 11, and &lt;em&gt;k&lt;/em&gt;3 = 13. In binary, these values are as follows:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1704 Georgia and Bob</title>
+      <link>http://localhost:1313/z/solution/e05dbb0999e38849/</link>
+      <pubDate>Sun, 12 Jul 2020 10:16:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/e05dbb0999e38849/</guid>
+      <description>&lt;h1 id=&#34;georgia-and-bobpoj-1704&#34;&gt;Georgia and Bob(&lt;a href=&#34;https://vjudge.net/problem/POJ-1704&#34;&gt;POJ-1704&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Georgia and Bob decide to play a self-invented game. They draw a row of  grids on paper, number the grids from left to right by 1, 2, 3, &amp;hellip;, and place N chessmen on different grids, as shown in the following figure  for example:&#xA;&lt;img src=&#34;https://vj.z180.cn/c76b52797bb489f0387716c46010da41?v=1594466739&#34; alt=&#34;img&#34;&gt;&#xA;Georgia and Bob move the chessmen in turn. Every time a player will  choose a chessman, and move it to the left without going over any other  chessmen or across the left edge. The player can freely choose number of steps the chessman moves, with the constraint that the chessman must be moved at least ONE step and one grid can at most contains ONE single  chessman. The player who cannot make a move loses the game.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1849 Rabbit and Grass</title>
+      <link>http://localhost:1313/z/solution/149d1e8cf3491dc7/</link>
+      <pubDate>Sat, 11 Jul 2020 22:05:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/149d1e8cf3491dc7/</guid>
+      <description>&lt;h1 id=&#34;rabbit-and-grasshdu-1849&#34;&gt;Rabbit and Grass(&lt;a href=&#34;https://vjudge.net/problem/HDU-1849&#34;&gt;HDU-1849&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;大学时光是浪漫的，女生是浪漫的，圣诞更是浪漫的，但是Rabbit和Grass这两个大学女生在今年的圣诞节却表现得一点都不浪漫：不去逛商场，不去逛公园，不去和AC男约会，两个人竟然猫在寝食下棋……&#xA;说是下棋，其实只是一个简单的小游戏而已，游戏的规则是这样的：&#xA;1、棋盘包含1*n个方格，方格从左到右分别编号为0，1，2，…，n-1；&#xA;2、m个棋子放在棋盘的方格上，方格可以为空，也可以放多于一个的棋子；&#xA;3、双方轮流走棋；&#xA;4、每一步可以选择任意一个棋子向左移动到任意的位置（可以多个棋子位于同一个方格），当然，任何棋子不能超出棋盘边界；&#xA;5、如果所有的棋子都位于最左边（即编号为0的位置），则游戏结束，并且规定最后走棋的一方为胜者。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1805 Being a Good Boy in Spring Festival</title>
+      <link>http://localhost:1313/z/solution/4749c95132726660/</link>
+      <pubDate>Sat, 11 Jul 2020 21:50:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/4749c95132726660/</guid>
+      <description>&lt;h1 id=&#34;being-a-good-boy-in-spring-festivalhdu-1805&#34;&gt;Being a Good Boy in Spring Festival(&lt;a href=&#34;https://vjudge.net/problem/HDU-1850&#34;&gt;HDU-1805&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;一年在外 父母时刻牵挂&#xA;春节回家 你能做几天好孩子吗&#xA;寒假里尝试做做下面的事情吧&lt;/p&gt;&#xA;&lt;p&gt;陪妈妈逛一次菜场&#xA;悄悄给爸爸买个小礼物&#xA;主动地 强烈地 要求洗一次碗&#xA;某一天早起 给爸妈用心地做回早餐&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2234 Matches Game</title>
+      <link>http://localhost:1313/z/solution/0751a29a685c5459/</link>
+      <pubDate>Thu, 09 Jul 2020 17:16:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/0751a29a685c5459/</guid>
+      <description>&lt;h1 id=&#34;matches-gamepoj-2234&#34;&gt;Matches Game(&lt;a href=&#34;https://vjudge.net/problem/POJ-2234&#34;&gt;POJ-2234&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Here is a simple game. In this game, there are several piles of matches  and two players. The two player play in turn. In each turn, one can  choose a pile and take away arbitrary number of matches from the pile  (Of course the number of matches, which is taken away, cannot be zero  and cannot be larger than the number of matches in the chosen pile). If  after a player’s turn, there is no match left, the player is the winner. Suppose that the two players are all very clear. Your job is to tell  whether the player who plays first can win the game or not.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nim博弈</title>
+      <link>http://localhost:1313/z/algo/game/b3f72d320d8d4e65/</link>
+      <pubDate>Sun, 14 Jun 2020 17:40:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/game/b3f72d320d8d4e65/</guid>
+      <description>&lt;h1 id=&#34;nim博弈&#34;&gt;Nim博弈&lt;/h1&gt;&#xA;&lt;p&gt;基本的尼姆博弈（Nim Game）描述如下：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;有若干堆各若干个物品，两个人轮流从某一堆取任意多的物品，每次至少取一个，多者不限，最后取光者得胜。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;博弈过程如下：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

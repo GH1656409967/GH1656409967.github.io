@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>书签 on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/%E4%B9%A6%E7%AD%BE/</link>
+    <description>Recent content in 书签 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 18 Jan 2025 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E4%B9%A6%E7%AD%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>书签整理</title>
+      <link>http://localhost:1313/y/organize/%E6%95%B4%E7%90%86%E4%B9%A6%E7%AD%BE/</link>
+      <pubDate>Sat, 18 Jan 2025 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/organize/%E6%95%B4%E7%90%86%E4%B9%A6%E7%AD%BE/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.runningcheese.com/bm&#34;&gt;高效书签管理，我是如何管理 5000 条书签的 - 奔跑中的奶酪 (runningcheese.com)&lt;/a&gt;&#xA;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/38929212&#34;&gt;打造一个设计师的书签管理系统 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;不要幻想着一次性建立一个可以永远不变的完美的分类，这样会让你一开始就陷入一个很难的处境，并且这也不是打造一个系统应该做的事情，要带着迭代升级的思维去做。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

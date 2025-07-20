@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DFS on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/dfs/</link>
+    <description>Recent content in DFS on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 24 Mar 2021 15:32:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指Offer-12 矩阵中的路径</title>
+      <link>http://localhost:1313/z/solution/bae5c0d732a7405b/</link>
+      <pubDate>Wed, 24 Mar 2021 15:32:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/bae5c0d732a7405b/</guid>
+      <description>&lt;h1 id=&#34;矩阵中的路径剑指offer-12&#34;&gt;矩阵中的路径(&lt;a href=&#34;https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/&#34;&gt;剑指Offer-12&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。例如，在下面的3×4的矩阵中包含一条字符串“bfce”的路径（路径中的字母用加粗标出）。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PATA-1004 Counting Leaves</title>
+      <link>http://localhost:1313/z/solution/3e2d100446c3cd5b/</link>
+      <pubDate>Sun, 23 Aug 2020 11:56:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3e2d100446c3cd5b/</guid>
+      <description>&lt;h1 id=&#34;counting-leavespata-1004&#34;&gt;Counting Leaves(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805521431773184&#34;&gt;PATA-1004&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A family hierarchy is usually presented by a pedigree tree.  Your job is to count those family members who have no child.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each input file contains one test case. Each case starts with a line  containing 0&amp;lt;N&amp;lt;100, the number of nodes in a tree, and M (&amp;lt;N), the number of non-leaf nodes.  Then M lines follow, each in the format:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;ID K ID[1] ID[2] ... ID[K]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;where &lt;code&gt;ID&lt;/code&gt; is a two-digit number representing a given non-leaf node, &lt;code&gt;K&lt;/code&gt; is the number of its children, followed by a sequence of two-digit &lt;code&gt;ID&lt;/code&gt;&amp;rsquo;s of its children.  For the sake of simplicity, let us fix the root ID to be &lt;code&gt;01&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2068 Nim</title>
+      <link>http://localhost:1313/z/solution/567b57a74cf05d73/</link>
+      <pubDate>Mon, 13 Jul 2020 10:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/567b57a74cf05d73/</guid>
+      <description>&lt;h1 id=&#34;nimpoj-2068&#34;&gt;Nim(&lt;a href=&#34;https://vjudge.net/problem/POJ-2068&#34;&gt;POJ-2068&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s play a traditional game Nim. You and I are seated across a table  and we have a hundred stones on the table (we know the number of stones  exactly). We play in turn and at each turn, you or I can remove on to  four stones from the heap. You play first and the one who removed the  last stone loses.&#xA;In this game, you have a winning strategy. To see this, you first  remove four stones and leave 96 stones. No matter how I play, I will end up with leaving 92 - 95 stones. Then you will in turn leave 91 stones  for me (verify this is always possible). This way, you can always leave  5k+1 stones for me and finally I get the last stone, sigh. If we  initially had 101 stones, on the other hand, I have a winning strategy  and you are doomed to lose.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3639 Hawk-and-Chicken</title>
+      <link>http://localhost:1313/z/solution/836ecd220e828edf/</link>
+      <pubDate>Sat, 07 Apr 2018 10:37:26 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/836ecd220e828edf/</guid>
+      <description>&lt;h1 id=&#34;hawk-and-chicken-hdu---3639&#34;&gt;Hawk-and-Chicken (&lt;a href=&#34;https://vjudge.net/problem/HDU-3639&#34;&gt;HDU - 3639&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Kids in kindergarten enjoy playing a game called Hawk-and-Chicken. But  there always exists a big problem: every kid in this game want to play  the role of Hawk.&#xA;So the teacher came up with an idea: Vote. Every child have some  nice handkerchiefs, and if he/she think someone is suitable for the role of Hawk, he/she gives a handkerchief to this kid, which means this kid  who is given the handkerchief win the support. Note the support can be  transmitted. Kids who get the most supports win in the vote and able to  play the role of Hawk.(A note:if A can win&#xA;support from B(A != B) A can win only one support from B in any  case the number of the supports transmitted from B to A are many. And A  can&amp;rsquo;t win the support from himself in any case.&#xA;If two or more kids own the same number of support from others, we treat all of them as winner.&#xA;Here&amp;rsquo;s a sample: 3 kids A, B and C, A gives a handkerchief to B, B  gives a handkerchief to C, so C wins 2 supports and he is choosen to be  the Hawk.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1321 棋盘问题</title>
+      <link>http://localhost:1313/z/solution/263b1255bf508f9a/</link>
+      <pubDate>Fri, 23 Mar 2018 08:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/263b1255bf508f9a/</guid>
+      <description>&lt;h1 id=&#34;棋盘问题-poj---1321&#34;&gt;棋盘问题 (&lt;a href=&#34;https://vjudge.net/problem/POJ-1321&#34;&gt;POJ - 1321&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;在一个给定形状的棋盘（形状可能是不规则的）上面摆放棋子，棋子没有区别。要求摆放时任意的两个棋子不能放在棋盘中的同一行或者同一列，请编程求解对于给定形状和大小的棋盘，摆放k个棋子的所有可行的摆放方案C。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

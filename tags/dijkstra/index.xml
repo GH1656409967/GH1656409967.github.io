@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dijkstra on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/dijkstra/</link>
+    <description>Recent content in Dijkstra on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 22 Aug 2020 17:03:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/dijkstra/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PATA-1003 Emergency</title>
+      <link>http://localhost:1313/z/solution/dc27deb2d0593993/</link>
+      <pubDate>Sat, 22 Aug 2020 17:03:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/dc27deb2d0593993/</guid>
+      <description>&lt;h1 id=&#34;emergencypata-1003&#34;&gt;Emergency(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805523835109376&#34;&gt;PATA-1003&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;As an emergency rescue team leader of a city, you are given a special  map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the length of each  road between any pair of cities are marked on the map. When there is an  emergency call to you from some other city, your job is to lead your men to the place as quickly as possible, and at the mean time, call up as  many hands on the way as possible.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dijkstra</title>
+      <link>http://localhost:1313/z/algo/graph/884a0d0dae24aa88/</link>
+      <pubDate>Wed, 12 Aug 2020 10:57:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/graph/884a0d0dae24aa88/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Dijkstra算法是求解单源最短路的算法之一，核心思想是贪心，只适用于&lt;strong&gt;边权为正&lt;/strong&gt;的无向和有向图。原复杂度$O(n^{2})$，优化后时间复杂度能到$O(mlog_{m})$。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

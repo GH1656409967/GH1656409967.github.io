@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>笔记 - 疑难杂症 on 夜雨微澜</title>
+    <link>http://localhost:1313/categories/%E7%AC%94%E8%AE%B0---%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/</link>
+    <description>Recent content in 笔记 - 疑难杂症 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 18 Jan 2025 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E7%AC%94%E8%AE%B0---%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>疑难杂症</title>
+      <link>http://localhost:1313/y/%E6%9D%82%E9%A1%B9/</link>
+      <pubDate>Sat, 18 Jan 2025 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/%E6%9D%82%E9%A1%B9/</guid>
+      <description>&lt;h1 id=&#34;win10断开第二显示屏之后程序窗口不显示&#34;&gt;Win10断开第二显示屏之后程序窗口不显示&lt;/h1&gt;&#xA;&lt;p&gt;Win10操作系统断开第二显示屏后，部分程序窗口不能正常显示。程序正常打开了，只是仍然显示在那个已经不存在的显示器上。我遇到的程序有Notepad++，还有Typora。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

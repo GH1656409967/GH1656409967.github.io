@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>天文 on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/%E5%A4%A9%E6%96%87/</link>
+    <description>Recent content in 天文 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 05 Jan 2025 17:26:10 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%A4%A9%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>公历农历相关问题记录</title>
+      <link>http://localhost:1313/y/25010501/</link>
+      <pubDate>Sun, 05 Jan 2025 17:26:10 +0800</pubDate>
+      <guid>http://localhost:1313/y/25010501/</guid>
+      <description>&lt;p&gt;公历在生活中最为常见，我们也会称其为“阳历”，那么农历就是“阴历”吗？具体是如何计算的？公历的闰年和农历的闰月又是什么？农历的节气和节日是怎么确定的？&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

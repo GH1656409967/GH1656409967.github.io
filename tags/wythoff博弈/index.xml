@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wythoff博弈 on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/wythoff%E5%8D%9A%E5%BC%88/</link>
+    <description>Recent content in Wythoff博弈 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 16 Jul 2020 19:48:12 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/wythoff%E5%8D%9A%E5%BC%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU-2177 取(2堆)石子游戏</title>
+      <link>http://localhost:1313/z/solution/8370fc6a49e88a13/</link>
+      <pubDate>Thu, 16 Jul 2020 19:48:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/8370fc6a49e88a13/</guid>
+      <description>&lt;h1 id=&#34;取2堆石子游戏hdu-2177&#34;&gt;取(2堆)石子游戏(&lt;a href=&#34;https://vjudge.net/problem/HDU-2177&#34;&gt;HDU-2177&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;有两堆石子，数量任意，可以不同。游戏开始由两个人轮流取石子。游戏规定，每次有两种不同的取法，一是可以在任意的一堆中取走任意多的石子；二是可以在两堆中同时取走相同数量的石子。最后把石子全部取完者为胜者。现在给出初始的两堆石子的数目，如果轮到你先取，假设双方都采取最好的策略，问最后你是胜者还是败者。如果你胜，你第1次怎样取子?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ZOJ-3057 Beans Game</title>
+      <link>http://localhost:1313/z/solution/59becec5b38f9314/</link>
+      <pubDate>Thu, 16 Jul 2020 16:00:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/59becec5b38f9314/</guid>
+      <description>&lt;h1 id=&#34;beans-gamezoj-3057&#34;&gt;Beans Game(&lt;a href=&#34;https://vjudge.net/problem/ZOJ-3057&#34;&gt;ZOJ-3057&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;There are three piles of beans. TT and DD pick any number of beans from  any pile or the same number from any two piles by turns. Who get the  last bean will win. TT and DD are very clever.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each test case contains of a single line containing 3 integers &lt;em&gt;a&lt;/em&gt; &lt;em&gt;b&lt;/em&gt; &lt;em&gt;c&lt;/em&gt;, indicating the numbers of beans of these piles. It is assumed that 0 &amp;lt;= &lt;em&gt;a&lt;/em&gt;,&lt;em&gt;b&lt;/em&gt;,&lt;em&gt;c&lt;/em&gt; &amp;lt;= 300 and &lt;em&gt;a&lt;/em&gt; + &lt;em&gt;b&lt;/em&gt; + &lt;em&gt;c&lt;/em&gt; &amp;gt; 0.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1527 取石子游戏</title>
+      <link>http://localhost:1313/z/solution/0096d7f5d39be617/</link>
+      <pubDate>Thu, 09 Jul 2020 16:35:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/0096d7f5d39be617/</guid>
+      <description>&lt;h1 id=&#34;取石子游戏hdu-1527&#34;&gt;取石子游戏(&lt;a href=&#34;https://vjudge.net/problem/HDU-1527&#34;&gt;HDU-1527&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;有两堆石子，数量任意，可以不同。游戏开始由两个人轮流取石子。游戏规定，每次有两种不同的取法，一是可以在任意的一堆中取走任意多的石子；二是可以在两堆中同时取走相同数量的石子。最后把石子全部取完者为胜者。现在给出初始的两堆石子的数目，如果轮到你先取，假设双方都采取最好的策略，问最后你是胜者还是败者。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1067 取石子游戏</title>
+      <link>http://localhost:1313/z/solution/bb500cf1542b2b06/</link>
+      <pubDate>Thu, 09 Jul 2020 16:35:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/bb500cf1542b2b06/</guid>
+      <description>&lt;h1 id=&#34;取石子游戏poj-1067&#34;&gt;取石子游戏(&lt;a href=&#34;https://vjudge.net/problem/POJ-1067&#34;&gt;POJ-1067&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;有两堆石子，数量任意，可以不同。游戏开始由两个人轮流取石子。游戏规定，每次有两种不同的取法，一是可以在任意的一堆中取走任意多的石子；二是可以在两堆中同时取走相同数量的石子。最后把石子全部取完者为胜者。现在给出初始的两堆石子的数目，如果轮到你先取，假设双方都采取最好的策略，问最后你是胜者还是败者。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wythoff博弈</title>
+      <link>http://localhost:1313/z/algo/game/872bcae11a67f2fa/</link>
+      <pubDate>Wed, 17 Jun 2020 17:40:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/game/872bcae11a67f2fa/</guid>
+      <description>&lt;h2 id=&#34;wythoff博弈&#34;&gt;Wythoff博弈&lt;/h2&gt;&#xA;&lt;p&gt;基本的威佐夫博弈（Wythoff Game）描述如下：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;有两堆各若干个物品，两个人轮流从某一堆或同时从两堆中取同样多的物品，每次至少取一个，多者不限，最后取光者得胜。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

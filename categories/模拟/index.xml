@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>模拟 on 夜雨微澜</title>
+    <link>http://localhost:1313/categories/%E6%A8%A1%E6%8B%9F/</link>
+    <description>Recent content in 模拟 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 23 Mar 2018 08:54:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E6%A8%A1%E6%8B%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>POJ-3087 Shuffle&#39;m Up</title>
+      <link>http://localhost:1313/z/solution/0fde02c55862a345/</link>
+      <pubDate>Fri, 23 Mar 2018 08:54:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/0fde02c55862a345/</guid>
+      <description>&lt;h1 id=&#34;shufflem-up-poj---3087&#34;&gt;Shuffle’m Up (&lt;a href=&#34;https://vjudge.net/problem/POJ-3087&#34;&gt;POJ - 3087&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A common pastime for poker players at a poker table is to  shuffle stacks of chips. Shuffling chips is performed by starting with  two stacks of poker chips, &lt;strong&gt;S1&lt;/strong&gt; and &lt;strong&gt;S2&lt;/strong&gt;, each stack containing &lt;em&gt;&lt;strong&gt;C&lt;/strong&gt;&lt;/em&gt; chips. Each stack may contain chips of several different colors.&lt;/p&gt;&#xA;&lt;p&gt;The actual shuffle operation is performed by interleaving a chip from &lt;strong&gt;S1&lt;/strong&gt; with a chip from &lt;strong&gt;S2&lt;/strong&gt; as shown below for &lt;em&gt;&lt;strong&gt;C&lt;/strong&gt;&lt;/em&gt; = 5:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

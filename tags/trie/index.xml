@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Trie on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/trie/</link>
+    <description>Recent content in Trie on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 08 Aug 2020 09:15:38 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/trie/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>POJ-3376 Finding Palindromes</title>
+      <link>http://localhost:1313/z/solution/b28828b1524bfc46/</link>
+      <pubDate>Sat, 08 Aug 2020 09:15:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/b28828b1524bfc46/</guid>
+      <description>&lt;h1 id=&#34;finding-palindromespoj-3376&#34;&gt;Finding Palindromes(&lt;a href=&#34;https://vjudge.net/problem/POJ-3376&#34;&gt;POJ-3376&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A word is called a palindrome if we read from right to left is as same as we read from left to right. For  example, &amp;ldquo;dad&amp;rdquo;, &amp;ldquo;eye&amp;rdquo; and &amp;ldquo;racecar&amp;rdquo; are all palindromes, but &amp;ldquo;odd&amp;rdquo;,  &amp;ldquo;see&amp;rdquo; and &amp;ldquo;orange&amp;rdquo; are not palindromes.&lt;/p&gt;&#xA;&lt;p&gt;Given &lt;em&gt;n&lt;/em&gt; strings, you can generate &lt;em&gt;n&lt;/em&gt; × &lt;em&gt;n&lt;/em&gt; pairs of them and concatenate the pairs into single words. The task is  to count how many of the so generated words are palindromes.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

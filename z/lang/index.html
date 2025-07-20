@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" data-theme="light">
+<head>
+    <script>
+        (function () {
+            const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = localStorage.getItem('theme') || (prefers ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>编程语言 | 夜雨微澜</title>
+<link rel="stylesheet" href="/css/index.min.00d6b29c7f5fae6e56c20770edf340de3075bfdb64c6256587a0c2a553642e0e.css" integrity="sha256-ANaynH9frm5Wwgdw7fNA3jB1v9tkxiVlh6DCpVNkLg4=" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/z/"></a></div>
+        </div>
+
+        <div class="header-middle">
+            编程语言My New Hugo Site
+        </div>
+
+        <div class="header-right">
+            <button id="theme-toggle" class="theme-toggle" type="button">🌙</button>
+        </div>
+    </header>
+    <div class="main-container">
+        <aside id="sidebarL" class="sidebar left">
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+                    <li>
+                        <a href="/categories/">分类</a>
+                    </li>
+                    <li>
+                        <a href="/tags/">标签</a>
+                    </li>
+                    <li>
+                        <a href="/x/about/">关于</a>
+                    </li>
+                    <li>
+                        <a href="/x/">个性化</a>
+                    </li>
+                    <li>
+                        <a aria-current="true" class="ancestor" href="/z/">博客</a>
+                    </li>
+                    <li>
+                        <a href="/y/">笔记</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div id="resizerL" class="resizer left">
+            <div class="toggle-btn" data-target="sidebarL">←</div>
+        </div>
+        <main class="main-content">
+<article class="main" id="top">
+  <h1>编程语言</h1>
+  <ol>
+<li>C语言: 毫不客气的说，咱们现在的几乎所有计算机技术，都和C语言有关系；只要你写C程序，就会逼着你代码不能写的太差，只要代码写差了，崩溃问题、越界问题、<a href="https://www.zhihu.com/search?q=%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2453831084%7D">内存泄漏</a>、性能问题还有各种代码Review意见跑过来。C在我这里主要作用有两个：a) 提升代码功底，逼着你怎么写高质量代码、逼着你认认真真打日志、逼着你怎么代码Review；b) 定位分析各种诡异问题，比如操作系统、开源组件非预期现象。</li>
+<li>java/go：每个人都是要吃饭的，项目当中可能会要求java或者go，所以得会；</li>
+<li>shell：很多人瞧不起shell，但实际上，工作中使用的非常广的是shell，写一个程序启动、停止、编译、打包、测试脚本是非常常见的事情，不会真心说不过去，不仅仅运维要会，研发本身也要会。</li>
+<li>python: shell写一些复杂的东西，就力不从心了，如果你用python都写不出来的，那么说明你没找对库</li>
+<li>rust，无论是C/C++也好，java/go也罢，只要你写服务端程序都躲不过一个坎，就是程序的稳定性，这些问题是非常非常难定位的，如果你想少加点班解决线上问题，个人建议还是学学rust，至少rust有这个潜力的。</li>
+<li>C++：我本人是将C++排到最后，不是因为C++不好，是因为写C++的人水平残次不起；曾有个大佬戏称，C++写代码的人很爽，看代码的人特抓狂，线上出问题了，就更抓狂了。C++比C多出来的东西，像STL、面向对象、新标准的特性，类似的东西，我觉得可以参考java可能会更好点。</li>
+</ol>
+<p><strong>前浪：C/CPP</strong> <strong>+ Java 老牌搭档</strong></p>
+<p><strong>底层实力</strong></p>
+<p>C语言作为高级语言之母，很多语言底层实现都是C语言来接管，比如CPython，CGO，<a href="https://www.zhihu.com/search?q=libc&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2804520282%7D">libc</a>等，同时也是很多底层核心组件的开发语言，比如很多神级开源项目：Linux内核，redis，nginx，<a href="https://www.zhihu.com/search?q=ffmpeg&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2804520282%7D">ffmpeg</a>，QEMU，SQLite等等，毫无疑问，当前还没有绝对其他语言类似能打项目来PK。在一些超高性能、极致优化、超低延时的cpu密集型业务开发，还是会用C++，C++性能优化工具链比较丰富，没有GC或者字节码这种影响性能的特性，C++ 具有利用模板实现通用编程以及丰富标准库容器等优势，同时适合大型软件开发，比如Chrome，微信，mysql，levelDB，QT，汽车软件，高频交易等等，在高性能和大型软件开发上面，依然是强有力的竞争者。</p>
+<p><strong>快速业务开发</strong></p>
+<p>业务开发更多关注的是业务模型的抽象和业务逻辑，对代码的可读性和维护性要求比较高。Java似乎更适合写业务，生态也很强大，Java具有跨平台，较好的安全性和健壮性，纯面向对象编程，Java生态非常完善，Spring /SprintBoot框架等开发框架与时俱进，完善程度不是其他语言可以相比的，熟悉Java程序员可以快速开发业务，Java依然是后台开发的王者，Java 编程语言已经存在了将近30 年，这使得在市场上寻找 Java 开发人员变得相对容易。企业级应用（主要指复杂的大企业的软件系统），各种类型的网站业务，大数据领域，Android应用开发等都是Java主战场。</p>
+<p><strong>后浪：Rust</strong> <strong>+ Go 新秀组合</strong></p>
+<p><strong>底层实力</strong></p>
+<p>C/C++语言固然有自己优势，但内存安全问题和大型项目抽象能力却是C语言的弊端，没有丰富标准库，很多东西可能都需要自己实现，如果找开源实现，你会发现各种依赖库版本问题，编译器版本问题，环境依赖问题等等，这些琐碎细节让开发起来非常费劲，其次内存安全问题在业界已经是出了名，70%以上安全漏洞都是C语言开发的软件导致的，风险非常大。</p>
+<p>所以此时，Rust登场了，拳打C/C++语言内存安全问题，通过所有权系统解决，同时支持高性能，高抽象，无GC，静态强类型系统编程语言，完美兼容C++优点和解决了C/C++缺点，看起来很厉害，如果没点真本事，不敢挑战王者的地位呢。</p>
+<p>缺点而开发一门新语言，目标就是替换C++市场，对于 Rust 而言，其得以迅速崛起，一方面，离不开诸多大厂的投入使用。譬如，微软在 VS Code、Visual Studio 等工具都已经提供了对 Rust 的良好支持；Google 于去年也宣布 Android 支持 Rust 语言来开发操作系统，并支持 Linux 内核引入 Rust 代码；亚马逊为此更早之前还聘用了 Rust 编译器团队负责人之一的 Felix Klock，以及 AWS 从很早开始并宣布赞助 Rust 开源项目等等。另一方面，基于 Rust 语言自身虽然并没有绝对的“杀手级应用”诞生，但是不乏顶级的项目引入。在 2022 Linux 内核维护者峰会上，Linus 提议将 Rust 支持合并到 Linux 6.1 中。随后，微软 Azure CTO Mark Russinovich 在 Twitter 上公开呼吁，「现在是时候停止在 C/C++ 中启动任何新的项目了，一切需要无垃圾回收语言的场景都该使用 Rust。出于安全性和可靠性的考虑，业界应该宣布这些语言已经被弃用。」</p>
+<p>看起来Rust形势被大家看好，是替换C/C++的好选择。</p>
+<p><strong>快速业务开发</strong></p>
+<p>Java虽然生态强大，但有时候优点也是缺点（阻碍你发展），这句话大家好好理解一下，但是想要用好的话，虚拟机，Spring的生态框架学习成本会非常高。</p>
+<p>为服务而生的 Golang 未来能超越 Java吗？这个是很多人疑问，Go语言以其简单、迅速、高效，占领了云原生开发领域，各大厂都在积极转向Go开发，Go在字节属于一号位，在鹅厂也是二号位了。Go相比C++ 或者 Java开发门槛低，降低了开发的心智负担，工具链丰富，提高了开发效率高。</p>
+<p>go语言代表的是云原生时代，每个时代都有属于自己主打语言。go替代java的最主要原因是轻量，不论是运行时还是代码上都轻量，这就意味着达到相同的目的成本更低，这就是云原生时代的本质。go用runtime代替了虚拟机，磁盘空间和内存都比java低太多，规模效应上就是成本的降低。go的语法比传统面向对象语言的语法简洁很多，代码量低很多，可读性和维护性自然是更好的。cpu性能上go和java是一个量级的，这块打平手，所以说相比于go，c++还有性能优势但java已经没有核心优势。</p>
+<p>java之所以能代替c++成为一个时代霸主。主要原因是通过虚拟机做到了标准化，把平台差异性屏蔽掉了，解放了生产力。但是进入云原生时代，平台差异性问题本身已经解决，更上层的标准化是符合生产力发展的，而go恰好是这个时代诞生的产物，和云原生标准契合。java和go以后可能会正面pk。</p>
+<p><strong>后浪也不是完美的</strong></p>
+<p>Rust 对安全、人体工程学和性能的关注则可以制造更好的产品并提高生产力。然而相对而言 Rust 学习难度和成本都太高，本来C++学习门槛已经很高了，Rust又拔高一下，直接把大部分人拒之门外，严格编译检查，需要花费大量时间才能写好看似简单代码，也降低了Rust的开发效率。程序真正面向的是人，而不是机器。语法简单、易于理解、减少程序员的心智负担才应该是编程语言未来的发展方向。Rust有点悬，可能一直属于小众语言，所以现在排名不高，没有Go普及快。</p>
+<p>Go的语法设施过于简化, 不利于大工程的抽象, 虽然可以手动造一些抽象模型/设计模式, 但不同的人容易产生不兼容的设计方向. 因此给人的印象是Go只是C的改进, 对OOP和函数式支持的并不好, 对错误处理，泛型的支持也极差, 用过Java的人都觉得捉襟见肘, 更不用提C++/C#/Kotlin/Scala用户了. Go很偏静态, 对动态支持较差, 如很难动态编译运行链接代码, 很难热更新函数实现, 这些在Java都很容易做到. 作为一门年轻的语言，它生态已经很好了，但比起Java、Python，它还是只是小儿科。使用Java、Python你基本不需要考虑轮子质量问题，你要的东西都有质量不错的，但Go不行，你需要小心轮子不足、质量不好的情况，这些都是Go需要改进的地方。</p>
+<p>看一看当前最新排名</p>
+<p><img src="https://picx.zhimg.com/80/v2-fb84c1206c2a6a798832ab24a558c537_720w.webp?source=1def8aca" alt=""></p>
+<p>C /C++ + JAVA依然前四名，Go一直在段上升，Rust排名靠后。</p>
+<p><strong>每种语言都有自己合适的场景</strong></p>
+<p>• <strong>超高性能、极致优化、超低延时的cpu密集型业务</strong>，还是会用C/C++，C++性能优化工具链比较丰富，没有GC或者字节码这种影响性能的特性。</p>
+<p>• <strong>业务对内存安全特别看重，一些核心组件场景</strong>可能会用Rust，Rust不但提供超高性能，还提供更安全内存管理机制，对C/C++领域发起了挑战。</p>
+<p>• **快捷开发，AI，脚本类用途，**还是Python， Python非常容易上手，不需要编译，Python里面数据结构丰富，可以实现复杂脚本处理。</p>
+<p>• **常规业务，高并发业务，云原生业务类，**Go兼顾易用性和性能，Go 不仅仅是一个语言，还有一整套完善的工具链， 特别是分布式系统下，无论是速度，质量都比C++容易，性能也不错，而且现在常规业务类型系统都是堆算力，云原生下算力很容易，反而保证质量比较难，Go有各种现成的高质量的开源组件和库。</p>
+<p>• <strong>企业级应用（主要指复杂的大企业的软件系统），各种类型的网站业务，大数据领域，Android应用开发等都是Java主战场</strong>，Java具有跨平台，较好的安全性和健壮性，纯面向对象编程，Java生态完善，让Java依然是后台开发的王者，Java 编程语言已经存在了将近30 年，这使得在市场上寻找 Java 开发人员变得相对容易。</p>
+<p><strong>作为未来优秀程序员，如何构建自己的编程语言栈</strong></p>
+<p>• <strong>努力精通一门后台业务语言</strong>，也要熟悉其他主流后台语言适用场景，能够帮忙我们更好帮助我们理解自己的主打语言，同时做好可以随时切换的准备。</p>
+<p>• <strong>必须掌握底层开发语言C</strong>，C是所有高级语言的母语，也是很多底层核心组件开发语言(包括很多语言底层实现），方便我们更好理解底层的实现。Rust 由于安全稳定性和高性能，未来在底层基础软件也有一定的位置，如果有时间，且喜欢底层，可以学习了解一下。</p>
+<p>• <strong>熟练一门脚本语言</strong>，程序员不光要写业务逻辑代码，还需要写一些构建脚本，搭建编译系统，现网问题定位，log分析，文本处理，<a href="https://www.zhihu.com/search?q=%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2804520282%7D">自动化脚本</a>等工作，这些工作也能体现程序员的技术功底，也能提高自己或者团队的工作效率，优秀程序员本身就是效率的追求者。</p>
+<p>• <strong>熟悉Python辅助性编程语言</strong>，Python目前来看是提升效率主打编程语言，能够快速demo验证，非常适合短小精悍的工具类开发，自动化测试框架等，对shell针对复杂流程场景是一个有力补充。</p>
+<p>**最后，**程序员核心是解决问题，编程语言只是工具箱中的工具，理解好手中的工具，才能更好为我所用，对于开发人员而言，更重要的是如何选择合适的工具去完成工作。语言发展都是相互借鉴的，C++的静态GC(智能指针,RAII, move语义) 也可以类别Rust的所有权系统 。我们学习新语言，主要是学习其思想和优秀的编程理念，如果你已经维护了大量的 C++代码，那么还是检查下，这些代码是否遵循了最佳实践，并借助代码检查工具检测安全问题。这很难，但显然比用另一种语言重写要容易得多！</p>
+<p><strong>最后彩蛋</strong></p>
+<p>当java程序员写完一个方法名，php程序员已经写完了一个电商站点，python程序员写完一个后台管理，go程序员写完一个socket即时通讯系统，rust程序员写完一个分布式数据库，lua程序员写完一个插件，yaml程序员已经完成了一套四个9的集群部署，ppt程序员已经完成了一轮融资，lisp程序员完成了一次上市，而c++程序员还在找缺失的头文件，node程序员还在更新node_moudles并郁闷的说到”之前还行的啊，怎么重新安装下依赖就跑不起来了“，产品经理已经把需求改了。</p>
+
+  
+    <h2><a href="/z/lang/golang/gin-gorm-oj/">bilibili后端</a></h2>
+  
+    <h2><a href="/z/lang/cpp/boost/">boost</a></h2>
+  
+    <h2><a href="/z/lang/shell/cmd/">cmd</a></h2>
+  
+    <h2><a href="/z/lang/cpp/cpp/">cpp</a></h2>
+  
+    <h2><a href="/z/lang/cpp/ffmpeg/">FFmpeg</a></h2>
+  
+    <h2><a href="/z/lang/flutter/flutter/">flutter</a></h2>
+  
+    <h2><a href="/z/lang/golang/fmt/">fmt</a></h2>
+  
+    <h2><a href="/z/lang/golang/golang/">golang</a></h2>
+  
+    <h2><a href="/z/lang/cpp/json/">json</a></h2>
+  
+    <h2><a href="/z/lang/cpp/linux/">Linux</a></h2>
+  
+    <h2><a href="/z/lang/shell/powershell/">powershell</a></h2>
+  
+    <h2><a href="/z/lang/cpp/qt/">Qt</a></h2>
+  
+    <h2><a href="/z/lang/cpp/redis/">Redis</a></h2>
+  
+    <h2><a href="/z/lang/rust/rust/">rust</a></h2>
+  
+    <h2><a href="/z/lang/shell/shell/">shell</a></h2>
+  
+    <h2><a href="/z/lang/cpp/stl/">STL</a></h2>
+  
+    <h2><a href="/z/lang/golang/utf8/">utf8</a></h2>
+  
+</article>
+
+        </main>
+        <div id="resizerR" class="resizer right">
+            <div class="toggle-btn" data-target="sidebarR">→</div>
+        </div>
+        <aside id="sidebarR" class="sidebar right">
+
+
+        </aside>
+    </div>
+    <button id="toggleL" class="mobile-toggle left" type="button">L</button>
+    <button id="toggleR" class="mobile-toggle right" type="button">R</button>
+    <footer class="footer">
+    <div class="footer-left">
+        
+<a class="item" href="https://github.com/GH1656409967" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a class="item" href="https://music.163.com/#/user/home?id=270121274" target="_blank" rel="noopener noreferrer me"
+    title="Neteasecloudmusic">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path
+        d="M10.98,23.65c-2.69,0-5.26-1.05-7.24-2.95C1.59,18.63,.35,15.72,.35,12.73,.35,8.21,3.21,4.11,7.46,2.52c.15-.05,.3-.08,.45-.08,.42,0,.78,.21,.93,.55,.12,.26,.13,.51,.03,.75-.12,.28-.38,.52-.7,.64-3.48,1.3-5.82,4.66-5.82,8.36,0,2.46,1.02,4.84,2.79,6.54,1.6,1.54,3.68,2.39,5.85,2.39,.1,0,.2,0,.29,0,3.49-.12,6.22-1.91,7.47-4.89,.08-.2,2.01-4.93-2.59-7.9-.41-.27-.89-.46-1.42-.58l-.6-.14,.18,.58c.21,.68,.78,2.52,.84,2.93,.07,.46,.07,.51,.1,.92v.18c0,2.3-1.89,4.19-4.22,4.19-2.2,0-3.97-1.73-4.23-4.1-.25-2.35,.74-4.4,2.73-5.61,.53-.32,1.11-.57,1.73-.75l.33-.1-.48-1.74c-.16-.54-.53-2.38,1.5-3.72,.57-.38,1.22-.57,1.91-.57,1.38,0,2.62,.74,3.12,1.23,.22,.22,.36,.56,.36,.9,0,.26-.08,.48-.23,.63-.15,.15-.37,.23-.63,.23-.33,0-.67-.13-.89-.35-.06-.05-.85-.66-1.7-.66-.31,0-.59,.08-.82,.24-.04,.03-.08,.05-.12,.08-.23,.19-.71,.73-.47,1.82l.09,.34,.02,.07h0s.35,1.29,.35,1.29h.25c1.24,.08,2.39,.42,3.32,1.01l.05,.03c4.82,3.12,4.29,8.12,3.34,10.33-1.54,3.67-4.99,5.95-9.23,6.1-.12,0-.25,0-.37,0Zm.82-15.26c-.43,.13-.84,.31-1.2,.53-.94,.57-2.01,1.68-1.79,3.71,.12,1.12,.87,2.33,2.24,2.33,1.23,0,2.24-1,2.24-2.22h0s.03-.21-.05-.71c-.07-.46-.91-3.1-1-3.4l-.1-.33-.33,.1Z" />
+</svg>
+</a>
+<a class="item" href="https://www.douban.com/people/Lordash/" target="_blank" rel="noopener noreferrer me"
+    title="Douban">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="m2.42288,2.08086l19.15349,0l0,2.15751l-19.15349,0l0,-2.15751z" />
+    <path
+        d="m19.88879,14.92347l0,-8.43444l-15.82351,0l0,8.43444l15.82351,0zm-13.52889,-6.27842l11.25739,0l0,4.1235l-11.25739,0l0,-4.1235z" />
+    <path
+        d="m16.48864,19.78508c0.6885,-1.05398 1.33827,-2.27636 1.94031,-3.66377l-2.30206,-0.83906c-0.59872,1.64418 -1.29579,3.14745 -2.08899,4.50283l-4.00578,0c-0.66389,-1.75663 -1.41312,-3.25884 -2.25363,-4.50283l-2.11727,0.83906c0.87327,1.30991 1.57742,2.52932 2.11727,3.66377l-5.89733,0l0,2.13406l20.23769,0l0,-2.13406l-5.63021,0z" />
+</svg>
+</a>
+<a class="item" href="https://steamcommunity.com/id/1656409967/" target="_blank" rel="noopener noreferrer me"
+    title="Steam">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path
+        d="M-24.6 20.8c-1.4-.8-2.7-1.5-4.1-2.3-2.4-1.5-3.6-3.6-3.3-6.5.3-3 2.8-5.2 5.8-5.3h11c2.6 0 4.6 2.2 4.7 4.7 0 2.6-2 4.8-4.6 4.9h-2.8v.2c.2.2.5.3.7.5 1.2.7 2.4 1.3 3.6 2 2.5 1.5 3.7 4.5 2.9 7.2-.8 2.7-3.1 4.3-6.1 4.4h-10.6c-2.4 0-4.3-1.9-4.6-4.3-.3-2.3 1.2-4.5 3.5-5.1.6-.1 1.2-.1 1.7-.2h2.1c.1 0 .1-.1.1-.2zm4.3-3.8c-.1.3-.2.3-.2.4v3.9c0 1.1-.1 1.2-1.2 1.2h-5.1c-.4 0-.9 0-1.3.1-1.6.4-2.5 1.9-2.4 3.6.2 1.6 1.6 2.9 3.3 2.9h10.5c2.1 0 3.8-1.2 4.5-3.1.7-1.8.2-4.1-1.5-5.3-2.1-1.3-4.3-2.4-6.6-3.7zm-1.7 3.4v-4c0-1.4.1-1.5 1.4-1.5h5.3c1.5 0 2.7-1 3.1-2.4.6-2.2-1-4.2-3.4-4.3h-10.1c-2.4 0-4.3 1.3-4.9 3.4-.6 2.1.4 4.4 2.5 5.5 1.7 1 3.5 1.9 5.2 2.9.4.2.6.3.9.4z" />
+    <path
+        d="M53.3 6.9c-.2-1-1-1.7-1.9-2-1.7-.4-8.6-.4-8.6-.4s-6.9 0-8.6.5c-1 .3-1.7 1-1.9 2-.3 1.7-.5 3.5-.5 5.3 0 1.8.1 3.6.5 5.3.3.9 1 1.7 1.9 1.9 1.7.5 8.6.5 8.6.5s6.9 0 8.6-.5c1-.3 1.7-1 1.9-2 .3-1.7.5-3.5.5-5.3 0-1.8-.1-3.6-.5-5.3z" />
+    <path d="m40.6 15.5 5.7-3.3-5.7-3.3z" />
+    <path
+        d="M72.4-9.9c5.5 0 10 4 10 8.9 0 1.8-.8 3.8-2.1 5.4-.9 1-1.5 2.3-1.6 3.7 0-.1-.1-.1-.2-.2-.4-.4-1.1-.7-1.7-.7-.3 0-.5 0-.8.1-1.2.5-2.5.7-3.6.7-5.5 0-10-4-10-8.9s4.5-9 10-9m0-2c-6.6 0-12 4.9-12 10.9s5.4 11 12 11c1.4 0 2.8-.2 4.2-.7h.1c.1 0 .2 0 .3.1 1 1.3 2.5 2.3 4.2 2.7l.2-.1v-.3c-.7-.9-1-1.9-1-3s.4-2.1 1.2-2.9c1.5-1.8 2.6-4.2 2.6-6.7.1-6.1-5.3-11-11.8-11z" />
+    <path
+        d="M72.3-6.5c.1 0 .3.1.3.2l1.2 3.4 3.7.1c.1 0 .3.1.3.2s0 .3-.1.4l-3 2.2 1.1 3.5c0 .1 0 .3-.1.4h-.4l-3-2.1-3 2.1h-.4c-.1-.1-.2-.2-.1-.4L69.9 0l-3-2.2c-.1-.1-.2-.2-.1-.4 0-.1.2-.2.3-.2l3.7-.1L72-6.3c0-.1.2-.2.3-.2zM46.8-20.8c2 0 4 .6 5.6 1.6-.5-.1-1.1-.2-1.6-.2-3.2 0-5.8 2.5-6 5.6l-2.2 3.2c-.5.1-.9.2-1.4.4l-4.7-1.9c.8-5 5.2-8.7 10.3-8.7m9.9 7.2c.3 1 .5 2.1.5 3.3C57.2-4.5 52.5.2 46.7.2c-1.8 0-3.6-.5-5.1-1.3.5.2 1 .2 1.5.2 2.5 0 4.5-1.9 4.8-4.3L51-7.4c3.1-.2 5.6-2.8 5.6-6 .1-.1.1-.1.1-.2M38.3-4.2l.3.2c.1.2.2.5.3.7l-.6-.9m8.5-18.1c-6.3 0-11.5 4.9-12 11l6.4 2.7c.5-.4 1.2-.6 1.9-.6h.2l2.9-4.1v-.1c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5h-.1L46.5-6v.2c0 1.9-1.5 3.4-3.4 3.4-1.6 0-3-1.2-3.3-2.7L35.2-7c1.4 5 6 8.7 11.5 8.7 6.6 0 12-5.4 12-12s-5.3-12-11.9-12z" />
+    <path
+        d="M42.6-4.6 41.5-5c.2.4.5.7 1 .9 1 .4 2.1-.1 2.5-1 .2-.5.2-1 0-1.4-.2-.5-.6-.8-1-1-.5-.2-1-.2-1.4 0l1.1.5c.7.3 1 1.1.7 1.8-.3.6-1.1.9-1.8.6zm8.1-11.5c-1.5 0-2.7 1.2-2.7 2.7 0 1.5 1.2 2.7 2.7 2.7 1.5 0 2.7-1.2 2.7-2.7 0-1.5-1.2-2.7-2.7-2.7zm0 4.7c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c.1 1.1-.9 2-2 2zM12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22c-4.3 0-8-2.7-9.4-6.5L6.2 17c.3 1.3 1.5 2.4 2.9 2.4 1.6 0 2.9-1.3 2.9-2.9v-.1l3.5-2.5h.1c2.1 0 3.9-1.8 3.9-3.9 0-2.1-1.8-3.9-3.9-3.9-2.2 0-3.9 1.8-3.9 3.9v.1l-2.5 3.6H9c-.6 0-1.2.2-1.7.5L2 11.7C2.2 6.3 6.6 2 12 2c5.5 0 10 4.5 10 10s-4.5 10-10 10zm-2.4-7.1-1.3-.5c.5-.2 1.1-.2 1.6 0s1 .7 1.2 1.2c.2.5.2 1.1 0 1.7-.5 1.1-1.8 1.7-2.9 1.2-.5-.2-.9-.6-1.1-1.1l1.3.5c.2 0 .4.1.6.1.6 0 1.2-.4 1.5-1 .4-.9 0-1.8-.9-2.1zM13 9.8c0-1.5 1.2-2.6 2.6-2.6 1.5 0 2.6 1.2 2.6 2.6 0 1.5-1.2 2.6-2.6 2.6-1.4 0-2.6-1.2-2.6-2.6z" />
+    <path d="M13.7 9.8c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2c-1.1-.1-2-.9-2-2z" />
+</svg>
+</a>
+<a class="item" href="mailto:1656409967@qq.com" target="_blank" rel="noopener noreferrer me"
+    title="Email">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</a>
+<a class="item" href="posts/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="RSS">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+    </div>
+
+    <div class="footer-middle">
+        
+            
+        
+    </div>
+
+    <div class="footer-right">
+
+        
+            <span class="item">
+                
+                    17(pages)
+                
+            </span>
+        
+
+        <a class="item" accesskey="g" href="#top" id="top-link" title="Go to Top (Alt + G)">⬆</a>
+    </div>
+</footer>
+    
+<script type="text/javascript" src="/js/index.min.391531b7f49c15fb614e2e31fda52e79c6a37ec0e983448affe9d8c5c902611a.js" integrity="sha256-ORUxt/ScFfthTi4x/aUuecajfsDpg0SK/&#43;nYxckCYRo="></script>
+</body>
+
+</html>

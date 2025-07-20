@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PaperMod on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/papermod/</link>
+    <description>Recent content in PaperMod on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 30 Jun 2023 11:25:26 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/papermod/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo以及PaperMod主题的配置</title>
+      <link>http://localhost:1313/y/blog/ff377f87efdbc8bc/</link>
+      <pubDate>Fri, 30 Jun 2023 11:25:26 +0800</pubDate>
+      <guid>http://localhost:1313/y/blog/ff377f87efdbc8bc/</guid>
+      <description>&lt;h2 id=&#34;起因&#34;&gt;起因&lt;/h2&gt;&#xA;&lt;p&gt;最近在用&lt;a href=&#34;https://github.com/lxgw/LxgwWenKai&#34;&gt;霞鹜文楷(LXGW WenKai)&lt;/a&gt;，配合上&lt;a href=&#34;https://github.com/adityatelange/hugo-PaperMod&#34;&gt;PaperMod&lt;/a&gt;这种强调文字的主题，在观感上很不错，于是决定转到&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;。Hugo的文档和资料不太容易找，中文支持也少，中间遇到不少麻烦，记录下解决过程，给遇到同样问题的人一些参考。&lt;/p&gt;&#xA;&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;GO：&lt;a href=&#34;https://go.dev/dl/&#34;&gt;官网&lt;/a&gt;下载，一键安装。&lt;/li&gt;&#xA;&lt;li&gt;Hugo：&lt;a href=&#34;https://github.com/gohugoio/hugo/releases/latest&#34;&gt;GitHub&lt;/a&gt;下载，添加环境变量。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;&amp;gt; hugo version&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span&gt;hugo v0.114.0-9df2ec7988e5a217a14901cc76c0b7e76b2e9f02+extended windows/amd64 BuildDate=2023-06-19T17:01:43Z VendorInfo=gohugoio&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;主题-papermod&#34;&gt;主题 PaperMod&lt;/h2&gt;&#xA;&lt;p&gt;执行&lt;code&gt;hugo new site &amp;lt;blog&amp;gt;&lt;/code&gt;创建博客目录，目录结构如下：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

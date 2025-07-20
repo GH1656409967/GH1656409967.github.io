@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>扩展KMP on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/%E6%89%A9%E5%B1%95kmp/</link>
+    <description>Recent content in 扩展KMP on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 08 Aug 2020 09:15:38 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E6%89%A9%E5%B1%95kmp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>POJ-3376 Finding Palindromes</title>
+      <link>http://localhost:1313/z/solution/b28828b1524bfc46/</link>
+      <pubDate>Sat, 08 Aug 2020 09:15:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/b28828b1524bfc46/</guid>
+      <description>&lt;h1 id=&#34;finding-palindromespoj-3376&#34;&gt;Finding Palindromes(&lt;a href=&#34;https://vjudge.net/problem/POJ-3376&#34;&gt;POJ-3376&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A word is called a palindrome if we read from right to left is as same as we read from left to right. For  example, &amp;ldquo;dad&amp;rdquo;, &amp;ldquo;eye&amp;rdquo; and &amp;ldquo;racecar&amp;rdquo; are all palindromes, but &amp;ldquo;odd&amp;rdquo;,  &amp;ldquo;see&amp;rdquo; and &amp;ldquo;orange&amp;rdquo; are not palindromes.&lt;/p&gt;&#xA;&lt;p&gt;Given &lt;em&gt;n&lt;/em&gt; strings, you can generate &lt;em&gt;n&lt;/em&gt; × &lt;em&gt;n&lt;/em&gt; pairs of them and concatenate the pairs into single words. The task is  to count how many of the so generated words are palindromes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>扩展KMP</title>
+      <link>http://localhost:1313/z/algo/struct/string/1d27104a4bfa80d2/</link>
+      <pubDate>Sun, 26 Jul 2020 14:21:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/struct/string/1d27104a4bfa80d2/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;给定长度为n的&lt;code&gt;文本串S&lt;/code&gt;和长度为m的&lt;code&gt;模式串T&lt;/code&gt;，定义extend[i]为S[i…n-1]与T[0…m-1]的&lt;strong&gt;最长公共前缀长度&lt;/strong&gt;，求extend[i]。当extend[x]==m时，则可知&lt;code&gt;文本串S&lt;/code&gt;中包含&lt;code&gt;模式串T&lt;/code&gt;，并且首位置为x，而这正是KMP算法处理的模式匹配问题。相较于KMP算法，扩展KMP算法能找到&lt;code&gt;文本串S&lt;/code&gt;中所有&lt;code&gt;模式串T&lt;/code&gt;的匹配，更一般地，可以知道&lt;code&gt;文本串S&lt;/code&gt;中以每个字符开始的后缀与&lt;code&gt;模式串T&lt;/code&gt;的最长公共前缀长度，时间复杂度O(n+m)。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

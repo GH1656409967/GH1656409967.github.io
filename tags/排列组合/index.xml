@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>排列组合 on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/</link>
+    <description>Recent content in 排列组合 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 20 Apr 2021 20:55:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指Offer-38 字符串的排列</title>
+      <link>http://localhost:1313/z/solution/71018918df4803a1/</link>
+      <pubDate>Tue, 20 Apr 2021 20:55:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/71018918df4803a1/</guid>
+      <description>&lt;h1 id=&#34;字符串的排列剑指offer-38&#34;&gt;字符串的排列(&lt;a href=&#34;https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/&#34;&gt;剑指Offer-38&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;输入一个字符串，打印出该字符串中字符的所有排列。&lt;/p&gt;&#xA;&lt;p&gt;你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;示例&#34;&gt;示例&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;输入：s = &amp;#34;abc&amp;#34;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span&gt;输出：[&amp;#34;abc&amp;#34;,&amp;#34;acb&amp;#34;,&amp;#34;bac&amp;#34;,&amp;#34;bca&amp;#34;,&amp;#34;cab&amp;#34;,&amp;#34;cba&amp;#34;]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;限制&#34;&gt;限制&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;1 &amp;lt;= s 的长度 &amp;lt;= 8&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;思路&#34;&gt;思路&lt;/h2&gt;&#xA;&lt;p&gt;dfs遍历回溯。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

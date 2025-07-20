@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>动态规划 on 夜雨微澜</title>
+    <link>http://localhost:1313/series/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+    <description>Recent content in 动态规划 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 02 Jul 2025 18:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/series/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>动态规划入门</title>
+      <link>http://localhost:1313/z/algo/dp/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Wed, 02 Jul 2025 18:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/dp/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/</guid>
+      <description>&lt;h2 id=&#34;动态规划入门&#34;&gt;动态规划入门&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;动态规划&lt;/strong&gt;是编程解题的一种重要手段。1951年美国数学家R.Bellman等人，根据一类多阶段问题的特点，把多阶段决策问题变换为一系列互相联系的单阶段问题，然后逐个加以解决。与此同时，他提出了解决这类问题的“最优化原理”，从而创建了解决最优化问题的一种新方法：动态规划。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>01背包</title>
+      <link>http://localhost:1313/z/algo/dp/01%E8%83%8C%E5%8C%85/</link>
+      <pubDate>Sun, 25 Apr 2021 09:07:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/dp/01%E8%83%8C%E5%8C%85/</guid>
+      <description>&lt;h2 id=&#34;背包问题&#34;&gt;背包问题&lt;/h2&gt;&#xA;&lt;p&gt;给定一组物品，每种物品都有自己的重量（体积）和价值，现有一个背包，在受限制的重量（或者容积）下，取若干物品，使得总价值最大。这一类问题，被称为背包问题。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>背包问题</title>
+      <link>http://localhost:1313/z/algo/dp/knapsack/</link>
+      <pubDate>Sun, 25 Apr 2021 09:07:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/dp/knapsack/</guid>
+      <description>&lt;h1 id=&#34;01背包&#34;&gt;01背包&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题目描述&#34;&gt;题目描述&lt;/h2&gt;&#xA;&lt;p&gt;有 N 件物品，放入第 i 件物品的耗费是 w[i]，得到的价值是 v[i]，现给出一个容量为 C 的背包，&lt;strong&gt;每种物品只能选一次（选或者不选）&lt;/strong&gt;，如何选取物品，使得在不超过背包容量C的前提下，让装进去的物品总价值最大。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

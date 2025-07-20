@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Johnson on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/johnson/</link>
+    <description>Recent content in Johnson on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 12 Aug 2020 11:03:11 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/johnson/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Johnson</title>
+      <link>http://localhost:1313/z/algo/graph/89112e2c641f5e5c/</link>
+      <pubDate>Wed, 12 Aug 2020 11:03:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/graph/89112e2c641f5e5c/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Johnson算法是求解多源最短路的算法之一，核心操作是&lt;code&gt;re-weight&lt;/code&gt;，适用于不包含负环（负权回路）的图。时间复杂度$O(nm+nmlogm)$。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" data-theme="light">
+<head>
+    <script>
+        (function () {
+            const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = localStorage.getItem('theme') || (prefers ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Win11使用KeePass管理密码 | 夜雨微澜</title>
+<link rel="stylesheet" href="/css/index.min.00d6b29c7f5fae6e56c20770edf340de3075bfdb64c6256587a0c2a553642e0e.css" integrity="sha256-ANaynH9frm5Wwgdw7fNA3jB1v9tkxiVlh6DCpVNkLg4=" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/y/">自定义</a></div>
+        </div>
+
+        <div class="header-middle">
+            Win11使用KeePass管理密码My New Hugo Site
+        </div>
+
+        <div class="header-right">
+            <button id="theme-toggle" class="theme-toggle" type="button">🌙</button>
+        </div>
+    </header>
+    <div class="main-container">
+        <aside id="sidebarL" class="sidebar left">
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+                    <li>
+                        <a href="/categories/">分类</a>
+                    </li>
+                    <li>
+                        <a href="/tags/">标签</a>
+                    </li>
+                    <li>
+                        <a href="/x/about/">关于</a>
+                    </li>
+                    <li>
+                        <a href="/x/">个性化</a>
+                    </li>
+                    <li>
+                        <a href="/z/">博客</a>
+                    </li>
+                    <li>
+                        <a aria-current="true" class="ancestor" href="/y/">笔记</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div id="resizerL" class="resizer left">
+            <div class="toggle-btn" data-target="sidebarL">←</div>
+        </div>
+        <main class="main-content">
+<article class="main" id="top">
+    <h1>Win11使用KeePass管理密码</h1>
+
+    
+    
+    <time datetime="2024-12-28T12:39:47&#43;08:00">December 28, 2024</time>
+
+    <h1 id="密码管理工具">密码管理工具</h1>
+<p>常见的包括但不限于以下几种：</p>
+<table>
+  <thead>
+      <tr>
+          <th>工具</th>
+          <th>付费</th>
+          <th>开源</th>
+          <th>云同步</th>
+          <th>跨平台</th>
+          <th>团队共享</th>
+          <th>自托管</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="https://1password.com/pricing">1Password</a></td>
+          <td>付费</td>
+          <td>闭源</td>
+          <td>官方云同步</td>
+          <td>支持</td>
+          <td>支持</td>
+          <td>无自托管</td>
+      </tr>
+      <tr>
+          <td><a href="https://www.lastpass.com/pricing">LastPass</a></td>
+          <td>免费功能有限</td>
+          <td>闭源</td>
+          <td>官方云同步</td>
+          <td>支持</td>
+          <td>支持</td>
+          <td>无自托管</td>
+      </tr>
+      <tr>
+          <td><a href="https://keepass.info/help/base/security.html">KeePass</a></td>
+          <td>免费</td>
+          <td>开源</td>
+          <td>第三方</td>
+          <td>第三方</td>
+          <td>第三方</td>
+          <td>本地数据库，手动同步</td>
+      </tr>
+      <tr>
+          <td><a href="https://bitwarden.com/pricing/business/">Bitwarden</a></td>
+          <td>免费</td>
+          <td>开源</td>
+          <td>支持</td>
+          <td>支持</td>
+          <td>付费版</td>
+          <td><a href="https://bitwarden.com/self-hosted-password-manager-on-premises/">自托管</a>版本，数据库存储</td>
+      </tr>
+  </tbody>
+</table>
+<p>简述一下原理，KeePass会把密码存在一个加密的<code>.kdbx</code>数据库中，通过坚果云进行云备份，坚果云WebDAV可以分配第三方应用的账号密码，让多端的KeePass类应用进行访问。</p>
+<p>配置完全后，仅需要记忆数据库的主密码，但如果要在没有本地备份数据库的设备上运行，还需要知道坚果云WebDAV分配的第三方应用密码，可以通过登录网页版坚果云查看。</p>
+<h1 id="坚果云webdav">坚果云WebDAV</h1>
+<p>WebDAV 的全称是 Web-based Distributed Authoring and Versioning，即基于 Web 的分布式创作和版本控制。WebDAV 是一种基于 HTTP 协议的扩展，允许用户通过互联网或局域网与远程服务器上的文件进行管理、编辑和版本控制。</p>
+<p>可用的WebDAV服务包括但不限于<a href="https://www.jianguoyun.com/s/pricing">坚果云</a>、<a href="https://www.ctfile.com/">城通网盘</a>、<a href="https://www.dropbox.com/install">Dropbox</a>、<a href="https://infini-cloud.net/en/index.html">InfiniCLOUD</a>、<a href="https://360.yandex.com/disk/">Yandex</a>、<a href="https://www.pcloud.com/zh/">pCloud</a>、<a href="https://nextcloud.com/">Nextcloud（自建）</a>。这里我们使用坚果云提供的WebDAV服务。</p>
+<h2 id="创建第三方应用授权">创建第三方应用授权</h2>
+<p>在坚果云的<a href="https://www.jianguoyun.com/#/">网页端</a>和安卓端均可进行。</p>
+<p><a href="https://www.jianguoyun.com/#/">网页端</a>注册登录后点击头像，点击<code>账户信息</code>，选择<code>安全选项</code>，下拉到底部，可以看到<code>第三方应用管理</code>，点击<code>添加应用</code>，填入名称（方便区分）之后，记下<code>应用密码</code>。</p>
+<p><img src="/y/tool/24122801/%E7%BD%91%E9%A1%B5%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%94%E7%94%A8.jpg" alt="网页第三方应用"></p>
+<p>在手机官方应用商店下载坚果云app，注册登录，点击左上角汉堡菜单按钮 ☰ ，打开<code>设置</code>，选择<code>第三方应用管理</code>，点击<code>添加应用密码</code>，填入名称之后，记下应用<code>密码</code>。</p>
+<p><img src="/y/tool/24122801/%E5%AE%89%E5%8D%93%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%94%E7%94%A8.jpg" alt="安卓第三方应用"></p>
+<h2 id="创建同步文件夹">创建同步文件夹</h2>
+<p>在坚果云的<a href="https://www.jianguoyun.com/#/">网页端</a>、桌面端和移动端均可进行。但是同步Windows下的文件，需要下载<a href="https://www.jianguoyun.com/s/downloads">桌面端应用</a>。</p>
+<p><a href="https://www.jianguoyun.com/#/">网页端</a>登录后点击<code>创建</code>按钮，根据需求选择创建<code>个人同步文件夹</code>或者<code>多人同步文件夹</code>，填入文件夹名称即可，建议使用<strong>全英文</strong>。</p>
+<p><img src="/y/tool/24122801/%E7%BD%91%E9%A1%B5%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9.jpg" alt="网页创建文件夹"></p>
+<p>在官网下载坚果云<a href="https://www.jianguoyun.com/s/downloads">桌面端应用</a>，点击<code>新建同步文件夹</code>，按照提示进行。</p>
+<p><img src="/y/tool/24122801/%E6%A1%8C%E9%9D%A2%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9.jpg" alt="桌面创建文件夹"></p>
+<p>在坚果云app中，点击<code>+</code>图标，选择<code>新建个人同步文件夹</code>，输入<code>文件夹名称</code>，点击右上角<code>完成</code>按钮即可。</p>
+<p><img src="/y/tool/24122801/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9.jpg" alt="移动端创建文件夹"></p>
+<h1 id="keepass2android">KeePass2Android</h1>
+<p>在<a href="https://play.google.com/store/apps/details?id=keepass2android.keepass2android">谷歌商店</a>或是<a href="https://github.com/PhilippC/keepass2android/releases">GitHub</a>下载KeePass2Android并安装。</p>
+<h2 id="创建数据库">创建数据库</h2>
+<p>安装应用后点击<code>创建新的数据库</code>，选择<code>更改位置</code>，使用<code>HTTPS(WebDav)</code>类型，然后输入坚果云的网址、账号和第三方应用密码，</p>
+<p><img src="/y/tool/24122801/%E5%AE%89%E5%8D%93%E6%AD%A5%E9%AA%A4%E4%B8%80.jpg" alt="安卓步骤一"></p>
+<p>登录成功后，可以选择保存的文件夹，推荐全英文路径。然后设定安全且好记的<strong>数据库的主密码</strong>（示例图片中的密码长度过短，这是错误的），手机支持指纹传感器的话，KeePass2Android会进行提示是否使用指纹解锁，建议开启，十分方便。</p>
+<p><img src="/y/tool/24122801/%E5%AE%89%E5%8D%93%E6%AD%A5%E9%AA%A4%E4%BA%8C.jpg" alt="安卓步骤二"></p>
+<p>安卓端操作也还算方便，但是仍然建议在桌面端KeePass中再次整理。</p>
+<h1 id="keepass">KeePass</h1>
+<p>注意：<strong>请不要下载和使用任何非官方来源的不受信任的KeePass应用程序及第三方插件，包括但不限于各种精简版、增强版、一键安装版等。官网有简体中文翻译。</strong></p>
+<p>除了KeePass之外，<a href="https://keepass.info/download.html">官网</a>还有列出其他第三方兼容版本，常用的还有<a href="https://keepassxc.org/">KeePassXC</a>。KeePass和KeePassXC基本上互相切换很好切换。个人倾向于使用 KeePass，可以用插件，自定义内容多。以下是KeePass 与 KeePassXC 的对比：</p>
+<table>
+  <thead>
+      <tr>
+          <th>特性</th>
+          <th>KeePass</th>
+          <th>KeePassXC</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>跨平台</td>
+          <td>原生Windows，端口或非官方支持</td>
+          <td>完全跨平台Windows、macOS、Linux</td>
+      </tr>
+      <tr>
+          <td>界面</td>
+          <td>UI 风格较为老旧</td>
+          <td>现代化，友好的用户界面</td>
+      </tr>
+      <tr>
+          <td>加密算法</td>
+          <td>AES-256 和 Twofish</td>
+          <td>AES-256</td>
+      </tr>
+      <tr>
+          <td>浏览器集成</td>
+          <td>KeePassNatMsg + Keepassxc-browser</td>
+          <td>支持 KeePassXC-Browser 插件</td>
+      </tr>
+      <tr>
+          <td>多重身份验证</td>
+          <td>支持 YubiKey（通过插件）</td>
+          <td>原生支持硬件密钥（如 YubiKey）</td>
+      </tr>
+      <tr>
+          <td>密码共享</td>
+          <td>通过插件和外部工具支持</td>
+          <td>本地共享密码数据库功能</td>
+      </tr>
+      <tr>
+          <td>插件支持</td>
+          <td>丰富的插件支持</td>
+          <td>插件较少，但集成度更高</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="汉化">汉化</h2>
+<p><a href="https://keepass.info/download.html">官网</a>下载安装KeePass，过程不再赘述。在官方提供的<a href="https://keepass.info/translations.html">翻译页面</a>中下载语言包，把解压后的<code>Chinese_Simplified.lngx</code>放入KeePass的language文件夹，在切换语言页面有文件夹跳转按钮。</p>
+<p><img src="/y/tool/24122801/%E6%9B%B4%E6%94%B9%E8%AF%AD%E8%A8%80.png" alt="更改语言"></p>
+<p><img src="/y/tool/24122801/%E8%AF%AD%E8%A8%80%E5%8C%85%E6%96%87%E4%BB%B6%E5%A4%B9.png" alt="语言包文件夹"></p>
+<p>重新选择语言后，按照提示点击重启，重启后的界面就是中文了。</p>
+<h2 id="创建数据库-1">创建数据库</h2>
+<p>点击菜单栏<code>文件</code>，选择<code>新建</code>，保存到<a href="#%E5%9D%9A%E6%9E%9C%E4%BA%91webdav">坚果云WebDAV</a>的同步文件夹，然后输入安全且好记的<strong>数据库管理密码</strong>，此处还可以点开<code>显示高级选项</code>，选择多种组合加密方式，可以提高安全性但是相应的解锁时步骤就会相对麻烦。需要注意的是，如果使用了<code>密钥文件</code>，需要保证密钥文件不被修改，并且保留安全的备份，不然会导致无法打开数据库。</p>
+<p>后续数据库配置默认即可，值得一提的是<code>迭代次数</code>和模板，<a href="#kpentrytemplates">模板</a>后续再说。软件也给出了提示，<code>迭代次数越多，字典和猜解攻击难度就越大，但数据库加载/保存也越费时</code>。底下有<code>测试按钮</code>，可以试一个相对平衡的值出来，或者直接试试<code>1秒延迟</code>的选项，和当前的设备性能有关。</p>
+<p><img src="/y/tool/24122801/%E8%BF%AD%E4%BB%A3%E6%AC%A1%E6%95%B0.jpg" alt="迭代次数"></p>
+<h2 id="打开数据库">打开数据库</h2>
+<p>如果已经使用移动端创建过数据库，或者不想使用本地的备份，可以选择打开远程数据库。点击<code>文件</code>，选择<code>打开</code>，<code>打开网址(URL)...</code>，然后填入网址、用户名和密码。网址是<code>.kdbx</code>文件在云端的完整路径，例如<code>https://dav.jianguoyun.com/dav/test/password.kdbx</code>，账号是坚果云账号邮箱，密码则是在坚果云创建的第三方应用密码。</p>
+<p><img src="/y/tool/24122801/%E6%89%93%E5%BC%80%E6%95%B0%E6%8D%AE%E5%BA%93.jpg" alt="打开数据库"></p>
+<p><img src="/y/tool/24122801/%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81.jpg" alt="用户名密码"></p>
+<h2 id="设置">设置</h2>
+<p>根据现实的使用情况，开启自动锁定的功能。并且养成离开电脑时，<code>WIN</code>+<code>L</code>锁定电脑，或者<code>ESC</code>、<code>CTRL</code>+<code>L</code>锁定KeePass数据库的习惯。</p>
+<p><img src="/y/tool/24122801/%E6%A1%8C%E9%9D%A2%E7%AB%AF%E8%AE%BE%E7%BD%AE.jpg" alt="桌面端设置"></p>
+<h2 id="插件">插件</h2>
+<h3 id="webautotype">WebAutoType</h3>
+<p><a href="https://keepass.info/plugins.html#webautotype">官网</a>
+<a href="https://sourceforge.net/projects/webautotype/">下载</a></p>
+<p>可以全局根据URL而不是浏览器窗口标题匹配记录，同时提供创建记录时，自动输入标题和URL的功能。</p>
+<p>点击菜单栏<code>工具</code>，选择<code>WebAutoType Options...</code>，在<code>Global hot key</code>一栏设定自动填写功能的快捷键，还可以修改自动创建记录的默认所属群组。</p>
+<p><img src="/y/tool/24122801/%E6%8F%92%E4%BB%B6%E8%AE%BE%E7%BD%AE.jpg" alt="插件设置"></p>
+<p><img src="/y/tool/24122801/%E5%BF%AB%E6%8D%B7%E9%94%AE.jpg" alt="快捷键"></p>
+<h3 id="yet-another-favicon-downloader">Yet Another Favicon Downloader</h3>
+<p><a href="https://keepass.info/plugins.html#yafd">官网</a>
+<a href="https://github.com/navossoc/KeePass-Yet-Another-Favicon-Downloader/releases">下载</a></p>
+<p>根据网址为数据库中的记录下载网页图标，可以一次选择多条下载。</p>
+<p>选中一条或多条记录右键，选择<code>Download Favicons</code>，</p>
+<p><img src="/y/tool/24122801/%E5%9B%BE%E6%A0%87%E4%B8%8B%E8%BD%BD.jpg" alt="图标下载"></p>
+<p>通常只要网址正确，且网址包含可用的图标，就能下载成功，如果失败就修改网址进行尝试。下载成功后记得保存数据库。</p>
+<p><img src="/y/tool/24122801/%E5%9B%BE%E6%A0%87%E4%B8%8B%E8%BD%BD%E7%BB%93%E6%9E%9C.jpg" alt="图标下载结果"></p>
+<h3 id="kpenhancedentryview">KPEnhancedEntryView</h3>
+<p><a href="https://keepass.info/plugins.html#kpenhentryview">官网</a>
+<a href="https://sourceforge.net/projects/kpenhentryview/">下载</a></p>
+<p>增强记录视图：提供颜值更高的查看视图，支持一键查看/隐藏所有加密字段（F9），安装后可在keepass主界面直接添加备注和附件。</p>
+<p>把布局改为平铺，</p>
+<p><img src="/y/tool/24122801/%E5%B8%83%E5%B1%80.jpg" alt="布局"></p>
+<p>然后右键列名，在设置中隐藏其他列，用户名也可以去掉，</p>
+<p><img src="/y/tool/24122801/%E5%88%97%E8%AE%BE%E7%BD%AE.jpg" alt="列设置"></p>
+<p>这样结果会相对直观，右半边可以作为预览和编辑使用。</p>
+<p><img src="/y/tool/24122801/%E9%A2%84%E8%A7%88.jpg" alt="预览"></p>
+<h3 id="checkpasswordbox">CheckPasswordBox</h3>
+<p><a href="https://keepass.info/plugins.html#chkpwbox">官网</a>
+<a href="https://sourceforge.net/projects/checkpasswordbox/">下载</a></p>
+<p>提供了新的自动输入占位符<code>{PASSWORDBOX}</code>，用来定位属性为密码的页面输入框，防止输错位置。</p>
+<p>输入用户名和密码时，中文输入法会导致输入中断或者异常，需要先切换到英文输入法。为了跳过这一步骤，我们首先打开Windows的<code>设置</code>&gt;<code>时间和语言</code>&gt;<code>输入</code>&gt;<code>高级键盘设置</code>，点击<code>输入语言热键</code>，选择要切换的输入法，点击<code>更改按键顺序</code>设置想要的快捷键。</p>
+<p><img src="/y/tool/24122801/%E8%BE%93%E5%85%A5%E6%B3%95.jpg" alt="输入法"></p>
+<p>然后右键想要设置自动输入的群组，选择<code>编辑群组</code>，然后点击<code>自动输入</code>，选择<code>替代默认序列为</code>，然后可以填写自己的自动输入序列，点击魔法棒图标可以查看每个字段的详细设定，例如我设置的是：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>^+9{CLEARFIELD}{UserName}{TAB}{PASSWORDBOX}{Password}^+0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>^+9            // Ctrl + Shift + 9 切换到英文输入法
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>{CLEARFIELD}   // 清空输入框
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>{UserName}     // 输入用户名
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>{TAB}          // 切换到下一个输入框
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>{PASSWORDBOX}  // 检查是否为密码框
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>{Password}     // 输入密码
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>^+0            // Ctrl + Shift + 0 切换到搜狗输入法
+</span></span></code></pre></div><p><img src="/y/tool/24122801/%E7%BC%96%E8%BE%91%E7%BE%A4%E7%BB%84.jpg" alt="编辑群组"></p>
+<p><img src="/y/tool/24122801/%E8%87%AA%E5%8A%A8%E8%BE%93%E5%85%A5%E5%BA%8F%E5%88%97.jpg" alt="自动输入序列"></p>
+<h3 id="keetraytotp">KeeTrayTOTP</h3>
+<p><a href="https://keepass.info/plugins.html#keetraytotp">官网</a>
+<a href="https://github.com/KeeTrayTOTP/KeeTrayTOTP/releases">下载</a></p>
+<p>提供两步验证功能。</p>
+<p>虽然KeePass有自带的两步验证功能，但是默认保存的TOTP数据字段，与KeePass2Android不通用（<a href="https://github.com/1688aa/KeePass-Instructions-for-use/blob/master/TOTP%E8%AF%B4%E6%98%8E.md">兼容性说明</a>），KeeTrayTOTP插件则支持自定义保存的字段名，而且支持生成Steam的5位带字符的验证码。</p>
+<p><img src="/y/tool/24122801/TOTP.jpg" alt="TOTP"></p>
+<h4 id="steam令牌totp">Steam令牌TOTP</h4>
+<p>此处简述一下获取Steam令牌密钥，并设置到KeeTrayTOTP插件的过程。首先需要一部已经root的安卓手机。此处推荐使用<a href="https://www.coolapk.com/apk/com.byyoung.setting">爱玩机工具箱</a>管理模块，选择<code>XPOSED专区</code>，点击<code>Xposed模块仓库</code>，在<code>云端模块</code>一栏搜索&quot;steam&quot;，可以看到<code>SteamGuardDump</code>，点击<code>下载</code>，下载完成后<code>安装</code>。</p>
+<p><img src="/y/tool/24122801/%E5%AE%89%E8%A3%85SGD%E6%A8%A1%E5%9D%97.jpg" alt="安装SGD模块"></p>
+<p>安装成功后，在<code>LSPosed</code>中选中<code>Steam</code>作为作用域，然后<code>启用模块</code>，然后打开Steam应用，可以看到一个复制成功的弹窗，不生效就重启一下手机。</p>
+<p><img src="/y/tool/24122801/%E5%90%AF%E7%94%A8SGD%E6%A8%A1%E5%9D%97.jpg" alt="启用SGD模块"></p>
+<p>打开QQ或者微信之类的软件，粘贴刚刚自动复制的JSON信息，下面是格式化后的结果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    <span style="color:#f92672">&#34;accounts&#34;</span>: {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>        <span style="color:#f92672">&#34;71356789234567893&#34;</span>: {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>            <span style="color:#f92672">&#34;shared_secret&#34;</span>: <span style="color:#e6db74">&#34;XaIj3kfxaI3P5DS+H15JXhRO61I=&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>            <span style="color:#f92672">&#34;identity_secret&#34;</span>: <span style="color:#e6db74">&#34;zYq1AJQJeYItz2SXukgH5YACfH9=&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>            <span style="color:#f92672">&#34;secret_1&#34;</span>: <span style="color:#e6db74">&#34;r53UGQwAXV5UD7DVpHQL/On1x3x=&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>            <span style="color:#f92672">&#34;serial_number&#34;</span>: <span style="color:#e6db74">&#34;1919235565391891356&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>            <span style="color:#f92672">&#34;revocation_code&#34;</span>: <span style="color:#e6db74">&#34;R34567&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>            <span style="color:#f92672">&#34;account_name&#34;</span>: <span style="color:#e6db74">&#34;asdfasdfasd&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            <span style="color:#f92672">&#34;token_gid&#34;</span>: <span style="color:#e6db74">&#34;1b35c1a45ac1v6x&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            <span style="color:#f92672">&#34;steamguard_scheme&#34;</span>: <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            <span style="color:#f92672">&#34;steamid&#34;</span>: <span style="color:#e6db74">&#34;71356789234567893&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            <span style="color:#f92672">&#34;uri&#34;</span>: <span style="color:#e6db74">&#34;otpauth://totp/Steam:asdfasdfasd?secret=XFGARHAS1QTI2D7MOU7B62ASDUKE522S&amp;issuer=Steam&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    },
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    <span style="color:#f92672">&#34;uuid_key&#34;</span>: <span style="color:#e6db74">&#34;android:1f23562a-d42a-1345-cad1-4adf134c1456&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>}
+</span></span></code></pre></div><p>uri后的secret=<code>XFGARHAS1QTI2D7MOU7B62ASDUKE522S</code>字段就是我们需要的密钥，在KeePass中选中Steam密码条目，<code>Ctrl + Shift + I</code>或者右键菜单中打开<code>Tray TOTP Plugin</code>，选择<code>Setup TOTP</code>，填入密钥，然后选择<code>TOTP Format</code>为<code>Steam</code>，点击<code>Finish</code>后<code>Ctrl + S</code>保存数据库，就大功告成了。</p>
+<p><img src="/y/tool/24122801/%E8%AE%BE%E7%BD%AETOTP.jpg" alt="设置TOTP"></p>
+<h3 id="kpentrytemplates">KPEntryTemplates</h3>
+<p><a href="https://keepass.info/plugins.html#kpentrytemplates">官网</a>
+<a href="https://github.com/mitchcapper/KPEntryTemplates/releases">下载</a></p>
+<p>更美观，更简洁，更高效，可全面定制的模板编辑器。</p>
+<p>如果<a href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93">使用KeePass2Android创建数据库</a>，会发现多了一个<code>模板</code>群组，点击菜单栏<code>文件</code>，查看<code>数据库设置</code>，<code>高级</code>，会发现启用了模板功能，<code>模板记录组</code>中选中的就是这个<code>模板</code>群组。</p>
+<p><img src="/y/tool/24122801/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E7%BD%AE.jpg" alt="数据库设置"></p>
+<p><img src="/y/tool/24122801/%E6%A8%A1%E6%9D%BF%E8%AE%B0%E5%BD%95%E7%BB%84.jpg" alt="模板记录组"></p>
+<p>在没有安装KPEntryTemplates插件的情况下，查看模板中的记录，插入新的记录时，显示以下结果：</p>
+<p><img src="/y/tool/24122801/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%A8%A1%E6%9D%BF.jpg" alt="移动端模板"></p>
+<p><img src="/y/tool/24122801/%E6%97%A0%E6%8F%92%E4%BB%B6%E6%9F%A5%E7%9C%8B%E6%A8%A1%E6%9D%BF.jpg" alt="无插件查看模板"></p>
+<p><img src="/y/tool/24122801/%E6%97%A0%E6%8F%92%E4%BB%B6%E5%88%9B%E5%BB%BA%E8%AE%B0%E5%BD%95.jpg" alt="无插件创建记录"></p>
+<p>那么安装插件之后，查看模板中的记录，插入新的记录时，显示以下结果：</p>
+<p><img src="/y/tool/24122801/%E6%9C%89%E6%8F%92%E4%BB%B6%E6%9F%A5%E7%9C%8B%E6%A8%A1%E6%9D%BF.jpg" alt="有插件查看模板"></p>
+<p><img src="/y/tool/24122801/%E6%9C%89%E6%8F%92%E4%BB%B6%E5%88%9B%E5%BB%BA%E8%AE%B0%E5%BD%95.jpg" alt="有插件创建记录"></p>
+<h1 id="相关文章">相关文章</h1>
+<ol>
+<li><a href="https://github.com/1688aa/KeePass-Instructions-for-use/tree/master">KeePass-Instructions-for-use</a></li>
+<li><a href="https://www.cnblogs.com/Magiclala/p/18153065">Keepass安装使用方法（包含浏览器插件使用方法）</a></li>
+<li><a href="https://www.cnblogs.com/Magiclala/p/17012691.html">Keepass调用Xshell、SecureCRT、RDP、Putty的方法（一劳永逸版）</a></li>
+<li><a href="https://post.smzdm.com/p/713042/">从入门到熟练：KeePass全网最详使用指南</a></li>
+<li><a href="https://post.smzdm.com/p/735073/">一劳永逸：KeePass全网最详使用指南 DLC1</a></li>
+</ol>
+
+</article>
+
+        </main>
+        <div id="resizerR" class="resizer right">
+            <div class="toggle-btn" data-target="sidebarR">→</div>
+        </div>
+        <aside id="sidebarR" class="sidebar right"><nav class="toc">
+    <details open>
+        <summary>
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="toc-inner"><ul><li>
+                            <a href="#%e5%af%86%e7%a0%81%e7%ae%a1%e7%90%86%e5%b7%a5%e5%85%b7" aria-label="密码管理工具">密码管理工具</a></li><li>
+                            <a href="#%e5%9d%9a%e6%9e%9c%e4%ba%91webdav" aria-label="坚果云WebDAV">坚果云WebDAV</a></li><ul><li>
+                            <a href="#%e5%88%9b%e5%bb%ba%e7%ac%ac%e4%b8%89%e6%96%b9%e5%ba%94%e7%94%a8%e6%8e%88%e6%9d%83" aria-label="创建第三方应用授权">创建第三方应用授权</a></li><li>
+                            <a href="#%e5%88%9b%e5%bb%ba%e5%90%8c%e6%ad%a5%e6%96%87%e4%bb%b6%e5%a4%b9" aria-label="创建同步文件夹">创建同步文件夹</a></li></ul><li>
+                            <a href="#keepass2android" aria-label="KeePass2Android">KeePass2Android</a></li><ul><li>
+                            <a href="#%e5%88%9b%e5%bb%ba%e6%95%b0%e6%8d%ae%e5%ba%93" aria-label="创建数据库">创建数据库</a></li></ul><li>
+                            <a href="#keepass" aria-label="KeePass">KeePass</a></li><ul><li>
+                            <a href="#%e6%b1%89%e5%8c%96" aria-label="汉化">汉化</a></li><li>
+                            <a href="#%e5%88%9b%e5%bb%ba%e6%95%b0%e6%8d%ae%e5%ba%93-1" aria-label="创建数据库">创建数据库</a></li><li>
+                            <a href="#%e6%89%93%e5%bc%80%e6%95%b0%e6%8d%ae%e5%ba%93" aria-label="打开数据库">打开数据库</a></li><li>
+                            <a href="#%e8%ae%be%e7%bd%ae" aria-label="设置">设置</a></li><li>
+                            <a href="#%e6%8f%92%e4%bb%b6" aria-label="插件">插件</a></li><ul><li>
+                            <a href="#webautotype" aria-label="WebAutoType">WebAutoType</a></li><li>
+                            <a href="#yet-another-favicon-downloader" aria-label="Yet Another Favicon Downloader">Yet Another Favicon Downloader</a></li><li>
+                            <a href="#kpenhancedentryview" aria-label="KPEnhancedEntryView">KPEnhancedEntryView</a></li><li>
+                            <a href="#checkpasswordbox" aria-label="CheckPasswordBox">CheckPasswordBox</a></li><li>
+                            <a href="#keetraytotp" aria-label="KeeTrayTOTP">KeeTrayTOTP</a></li><ul><li>
+                            <a href="#steam%e4%bb%a4%e7%89%8ctotp" aria-label="Steam令牌TOTP">Steam令牌TOTP</a></li></ul><li>
+                            <a href="#kpentrytemplates" aria-label="KPEntryTemplates">KPEntryTemplates</a></li></ul></ul><li>
+                            <a href="#%e7%9b%b8%e5%85%b3%e6%96%87%e7%ab%a0" aria-label="相关文章">相关文章</a></ul></ul></ul>
+        </div>
+    </details>
+</nav>
+
+
+        </aside>
+    </div>
+    <button id="toggleL" class="mobile-toggle left" type="button">L</button>
+    <button id="toggleR" class="mobile-toggle right" type="button">R</button>
+    <footer class="footer">
+    <div class="footer-left">
+        
+<a class="item" href="https://github.com/GH1656409967" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a class="item" href="https://music.163.com/#/user/home?id=270121274" target="_blank" rel="noopener noreferrer me"
+    title="Neteasecloudmusic">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path
+        d="M10.98,23.65c-2.69,0-5.26-1.05-7.24-2.95C1.59,18.63,.35,15.72,.35,12.73,.35,8.21,3.21,4.11,7.46,2.52c.15-.05,.3-.08,.45-.08,.42,0,.78,.21,.93,.55,.12,.26,.13,.51,.03,.75-.12,.28-.38,.52-.7,.64-3.48,1.3-5.82,4.66-5.82,8.36,0,2.46,1.02,4.84,2.79,6.54,1.6,1.54,3.68,2.39,5.85,2.39,.1,0,.2,0,.29,0,3.49-.12,6.22-1.91,7.47-4.89,.08-.2,2.01-4.93-2.59-7.9-.41-.27-.89-.46-1.42-.58l-.6-.14,.18,.58c.21,.68,.78,2.52,.84,2.93,.07,.46,.07,.51,.1,.92v.18c0,2.3-1.89,4.19-4.22,4.19-2.2,0-3.97-1.73-4.23-4.1-.25-2.35,.74-4.4,2.73-5.61,.53-.32,1.11-.57,1.73-.75l.33-.1-.48-1.74c-.16-.54-.53-2.38,1.5-3.72,.57-.38,1.22-.57,1.91-.57,1.38,0,2.62,.74,3.12,1.23,.22,.22,.36,.56,.36,.9,0,.26-.08,.48-.23,.63-.15,.15-.37,.23-.63,.23-.33,0-.67-.13-.89-.35-.06-.05-.85-.66-1.7-.66-.31,0-.59,.08-.82,.24-.04,.03-.08,.05-.12,.08-.23,.19-.71,.73-.47,1.82l.09,.34,.02,.07h0s.35,1.29,.35,1.29h.25c1.24,.08,2.39,.42,3.32,1.01l.05,.03c4.82,3.12,4.29,8.12,3.34,10.33-1.54,3.67-4.99,5.95-9.23,6.1-.12,0-.25,0-.37,0Zm.82-15.26c-.43,.13-.84,.31-1.2,.53-.94,.57-2.01,1.68-1.79,3.71,.12,1.12,.87,2.33,2.24,2.33,1.23,0,2.24-1,2.24-2.22h0s.03-.21-.05-.71c-.07-.46-.91-3.1-1-3.4l-.1-.33-.33,.1Z" />
+</svg>
+</a>
+<a class="item" href="https://www.douban.com/people/Lordash/" target="_blank" rel="noopener noreferrer me"
+    title="Douban">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="m2.42288,2.08086l19.15349,0l0,2.15751l-19.15349,0l0,-2.15751z" />
+    <path
+        d="m19.88879,14.92347l0,-8.43444l-15.82351,0l0,8.43444l15.82351,0zm-13.52889,-6.27842l11.25739,0l0,4.1235l-11.25739,0l0,-4.1235z" />
+    <path
+        d="m16.48864,19.78508c0.6885,-1.05398 1.33827,-2.27636 1.94031,-3.66377l-2.30206,-0.83906c-0.59872,1.64418 -1.29579,3.14745 -2.08899,4.50283l-4.00578,0c-0.66389,-1.75663 -1.41312,-3.25884 -2.25363,-4.50283l-2.11727,0.83906c0.87327,1.30991 1.57742,2.52932 2.11727,3.66377l-5.89733,0l0,2.13406l20.23769,0l0,-2.13406l-5.63021,0z" />
+</svg>
+</a>
+<a class="item" href="https://steamcommunity.com/id/1656409967/" target="_blank" rel="noopener noreferrer me"
+    title="Steam">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path
+        d="M-24.6 20.8c-1.4-.8-2.7-1.5-4.1-2.3-2.4-1.5-3.6-3.6-3.3-6.5.3-3 2.8-5.2 5.8-5.3h11c2.6 0 4.6 2.2 4.7 4.7 0 2.6-2 4.8-4.6 4.9h-2.8v.2c.2.2.5.3.7.5 1.2.7 2.4 1.3 3.6 2 2.5 1.5 3.7 4.5 2.9 7.2-.8 2.7-3.1 4.3-6.1 4.4h-10.6c-2.4 0-4.3-1.9-4.6-4.3-.3-2.3 1.2-4.5 3.5-5.1.6-.1 1.2-.1 1.7-.2h2.1c.1 0 .1-.1.1-.2zm4.3-3.8c-.1.3-.2.3-.2.4v3.9c0 1.1-.1 1.2-1.2 1.2h-5.1c-.4 0-.9 0-1.3.1-1.6.4-2.5 1.9-2.4 3.6.2 1.6 1.6 2.9 3.3 2.9h10.5c2.1 0 3.8-1.2 4.5-3.1.7-1.8.2-4.1-1.5-5.3-2.1-1.3-4.3-2.4-6.6-3.7zm-1.7 3.4v-4c0-1.4.1-1.5 1.4-1.5h5.3c1.5 0 2.7-1 3.1-2.4.6-2.2-1-4.2-3.4-4.3h-10.1c-2.4 0-4.3 1.3-4.9 3.4-.6 2.1.4 4.4 2.5 5.5 1.7 1 3.5 1.9 5.2 2.9.4.2.6.3.9.4z" />
+    <path
+        d="M53.3 6.9c-.2-1-1-1.7-1.9-2-1.7-.4-8.6-.4-8.6-.4s-6.9 0-8.6.5c-1 .3-1.7 1-1.9 2-.3 1.7-.5 3.5-.5 5.3 0 1.8.1 3.6.5 5.3.3.9 1 1.7 1.9 1.9 1.7.5 8.6.5 8.6.5s6.9 0 8.6-.5c1-.3 1.7-1 1.9-2 .3-1.7.5-3.5.5-5.3 0-1.8-.1-3.6-.5-5.3z" />
+    <path d="m40.6 15.5 5.7-3.3-5.7-3.3z" />
+    <path
+        d="M72.4-9.9c5.5 0 10 4 10 8.9 0 1.8-.8 3.8-2.1 5.4-.9 1-1.5 2.3-1.6 3.7 0-.1-.1-.1-.2-.2-.4-.4-1.1-.7-1.7-.7-.3 0-.5 0-.8.1-1.2.5-2.5.7-3.6.7-5.5 0-10-4-10-8.9s4.5-9 10-9m0-2c-6.6 0-12 4.9-12 10.9s5.4 11 12 11c1.4 0 2.8-.2 4.2-.7h.1c.1 0 .2 0 .3.1 1 1.3 2.5 2.3 4.2 2.7l.2-.1v-.3c-.7-.9-1-1.9-1-3s.4-2.1 1.2-2.9c1.5-1.8 2.6-4.2 2.6-6.7.1-6.1-5.3-11-11.8-11z" />
+    <path
+        d="M72.3-6.5c.1 0 .3.1.3.2l1.2 3.4 3.7.1c.1 0 .3.1.3.2s0 .3-.1.4l-3 2.2 1.1 3.5c0 .1 0 .3-.1.4h-.4l-3-2.1-3 2.1h-.4c-.1-.1-.2-.2-.1-.4L69.9 0l-3-2.2c-.1-.1-.2-.2-.1-.4 0-.1.2-.2.3-.2l3.7-.1L72-6.3c0-.1.2-.2.3-.2zM46.8-20.8c2 0 4 .6 5.6 1.6-.5-.1-1.1-.2-1.6-.2-3.2 0-5.8 2.5-6 5.6l-2.2 3.2c-.5.1-.9.2-1.4.4l-4.7-1.9c.8-5 5.2-8.7 10.3-8.7m9.9 7.2c.3 1 .5 2.1.5 3.3C57.2-4.5 52.5.2 46.7.2c-1.8 0-3.6-.5-5.1-1.3.5.2 1 .2 1.5.2 2.5 0 4.5-1.9 4.8-4.3L51-7.4c3.1-.2 5.6-2.8 5.6-6 .1-.1.1-.1.1-.2M38.3-4.2l.3.2c.1.2.2.5.3.7l-.6-.9m8.5-18.1c-6.3 0-11.5 4.9-12 11l6.4 2.7c.5-.4 1.2-.6 1.9-.6h.2l2.9-4.1v-.1c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5h-.1L46.5-6v.2c0 1.9-1.5 3.4-3.4 3.4-1.6 0-3-1.2-3.3-2.7L35.2-7c1.4 5 6 8.7 11.5 8.7 6.6 0 12-5.4 12-12s-5.3-12-11.9-12z" />
+    <path
+        d="M42.6-4.6 41.5-5c.2.4.5.7 1 .9 1 .4 2.1-.1 2.5-1 .2-.5.2-1 0-1.4-.2-.5-.6-.8-1-1-.5-.2-1-.2-1.4 0l1.1.5c.7.3 1 1.1.7 1.8-.3.6-1.1.9-1.8.6zm8.1-11.5c-1.5 0-2.7 1.2-2.7 2.7 0 1.5 1.2 2.7 2.7 2.7 1.5 0 2.7-1.2 2.7-2.7 0-1.5-1.2-2.7-2.7-2.7zm0 4.7c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c.1 1.1-.9 2-2 2zM12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22c-4.3 0-8-2.7-9.4-6.5L6.2 17c.3 1.3 1.5 2.4 2.9 2.4 1.6 0 2.9-1.3 2.9-2.9v-.1l3.5-2.5h.1c2.1 0 3.9-1.8 3.9-3.9 0-2.1-1.8-3.9-3.9-3.9-2.2 0-3.9 1.8-3.9 3.9v.1l-2.5 3.6H9c-.6 0-1.2.2-1.7.5L2 11.7C2.2 6.3 6.6 2 12 2c5.5 0 10 4.5 10 10s-4.5 10-10 10zm-2.4-7.1-1.3-.5c.5-.2 1.1-.2 1.6 0s1 .7 1.2 1.2c.2.5.2 1.1 0 1.7-.5 1.1-1.8 1.7-2.9 1.2-.5-.2-.9-.6-1.1-1.1l1.3.5c.2 0 .4.1.6.1.6 0 1.2-.4 1.5-1 .4-.9 0-1.8-.9-2.1zM13 9.8c0-1.5 1.2-2.6 2.6-2.6 1.5 0 2.6 1.2 2.6 2.6 0 1.5-1.2 2.6-2.6 2.6-1.4 0-2.6-1.2-2.6-2.6z" />
+    <path d="M13.7 9.8c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2c-1.1-.1-2-.9-2-2z" />
+</svg>
+</a>
+<a class="item" href="mailto:1656409967@qq.com" target="_blank" rel="noopener noreferrer me"
+    title="Email">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</a>
+<a class="item" href="posts/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="RSS">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+    </div>
+
+    <div class="footer-middle">
+        
+            
+    <a href="/tags/windows/" class="item">#Windows</a>
+    <a href="/tags/keepass/" class="item">#KeePass</a>
+    <a href="/tags/webdav/" class="item">#WebDav</a>
+        
+    </div>
+
+    <div class="footer-right">
+
+        
+            <span class="item">
+                
+                    3800(words)
+                
+            </span>
+        
+
+        <a class="item" accesskey="g" href="#top" id="top-link" title="Go to Top (Alt + G)">⬆</a>
+    </div>
+</footer>
+    
+<script type="text/javascript" src="/js/index.min.391531b7f49c15fb614e2e31fda52e79c6a37ec0e983448affe9d8c5c902611a.js" integrity="sha256-ORUxt/ScFfthTi4x/aUuecajfsDpg0SK/&#43;nYxckCYRo="></script>
+</body>
+
+</html>

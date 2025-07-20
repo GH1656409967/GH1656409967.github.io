@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>图论 on 夜雨微澜</title>
+    <link>http://localhost:1313/categories/%E5%9B%BE%E8%AE%BA/</link>
+    <description>Recent content in 图论 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 23 Aug 2020 11:56:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PATA-1004 Counting Leaves</title>
+      <link>http://localhost:1313/z/solution/3e2d100446c3cd5b/</link>
+      <pubDate>Sun, 23 Aug 2020 11:56:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3e2d100446c3cd5b/</guid>
+      <description>&lt;h1 id=&#34;counting-leavespata-1004&#34;&gt;Counting Leaves(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805521431773184&#34;&gt;PATA-1004&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A family hierarchy is usually presented by a pedigree tree.  Your job is to count those family members who have no child.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each input file contains one test case. Each case starts with a line  containing 0&amp;lt;N&amp;lt;100, the number of nodes in a tree, and M (&amp;lt;N), the number of non-leaf nodes.  Then M lines follow, each in the format:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;ID K ID[1] ID[2] ... ID[K]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;where &lt;code&gt;ID&lt;/code&gt; is a two-digit number representing a given non-leaf node, &lt;code&gt;K&lt;/code&gt; is the number of its children, followed by a sequence of two-digit &lt;code&gt;ID&lt;/code&gt;&amp;rsquo;s of its children.  For the sake of simplicity, let us fix the root ID to be &lt;code&gt;01&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PATA-1003 Emergency</title>
+      <link>http://localhost:1313/z/solution/dc27deb2d0593993/</link>
+      <pubDate>Sat, 22 Aug 2020 17:03:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/dc27deb2d0593993/</guid>
+      <description>&lt;h1 id=&#34;emergencypata-1003&#34;&gt;Emergency(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805523835109376&#34;&gt;PATA-1003&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;As an emergency rescue team leader of a city, you are given a special  map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the length of each  road between any pair of cities are marked on the map. When there is an  emergency call to you from some other city, your job is to lead your men to the place as quickly as possible, and at the mean time, call up as  many hands on the way as possible.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Johnson</title>
+      <link>http://localhost:1313/z/algo/graph/89112e2c641f5e5c/</link>
+      <pubDate>Wed, 12 Aug 2020 11:03:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/graph/89112e2c641f5e5c/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Johnson算法是求解多源最短路的算法之一，核心操作是&lt;code&gt;re-weight&lt;/code&gt;，适用于不包含负环（负权回路）的图。时间复杂度$O(nm+nmlogm)$。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Floyd-Warshall</title>
+      <link>http://localhost:1313/z/algo/graph/628d2014b1e1c7d7/</link>
+      <pubDate>Wed, 12 Aug 2020 11:02:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/graph/628d2014b1e1c7d7/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Floyd-Warshall算法是求解多源最短路的算法之一，核心思想是动态规划，适用于不包含负环（负权回路）的图。时间复杂度$O(n^{3})$，空间复杂度$O(n^{2})$。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bellman-Ford</title>
+      <link>http://localhost:1313/z/algo/graph/86f4e99b0e080776/</link>
+      <pubDate>Wed, 12 Aug 2020 10:58:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/graph/86f4e99b0e080776/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Bellman-Ford算法是求解单源最短路的算法之一，适用于&lt;strong&gt;可包含负边权&lt;/strong&gt;的有向和无向图，可以判断是否包含负环（注意，如果是包含负权回路则不存在最短路问题）。时间复杂度$O(nm)$。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dijkstra</title>
+      <link>http://localhost:1313/z/algo/graph/884a0d0dae24aa88/</link>
+      <pubDate>Wed, 12 Aug 2020 10:57:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/graph/884a0d0dae24aa88/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Dijkstra算法是求解单源最短路的算法之一，核心思想是贪心，只适用于&lt;strong&gt;边权为正&lt;/strong&gt;的无向和有向图。原复杂度$O(n^{2})$，优化后时间复杂度能到$O(mlog_{m})$。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3639 Hawk-and-Chicken</title>
+      <link>http://localhost:1313/z/solution/836ecd220e828edf/</link>
+      <pubDate>Sat, 07 Apr 2018 10:37:26 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/836ecd220e828edf/</guid>
+      <description>&lt;h1 id=&#34;hawk-and-chicken-hdu---3639&#34;&gt;Hawk-and-Chicken (&lt;a href=&#34;https://vjudge.net/problem/HDU-3639&#34;&gt;HDU - 3639&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Kids in kindergarten enjoy playing a game called Hawk-and-Chicken. But  there always exists a big problem: every kid in this game want to play  the role of Hawk.&#xA;So the teacher came up with an idea: Vote. Every child have some  nice handkerchiefs, and if he/she think someone is suitable for the role of Hawk, he/she gives a handkerchief to this kid, which means this kid  who is given the handkerchief win the support. Note the support can be  transmitted. Kids who get the most supports win in the vote and able to  play the role of Hawk.(A note:if A can win&#xA;support from B(A != B) A can win only one support from B in any  case the number of the supports transmitted from B to A are many. And A  can&amp;rsquo;t win the support from himself in any case.&#xA;If two or more kids own the same number of support from others, we treat all of them as winner.&#xA;Here&amp;rsquo;s a sample: 3 kids A, B and C, A gives a handkerchief to B, B  gives a handkerchief to C, so C wins 2 supports and he is choosen to be  the Hawk.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1827 Summer Holiday</title>
+      <link>http://localhost:1313/z/solution/a118f4bf5f2702ca/</link>
+      <pubDate>Tue, 03 Apr 2018 11:24:13 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/a118f4bf5f2702ca/</guid>
+      <description>&lt;h1 id=&#34;summer-holiday-hdu---1827&#34;&gt;Summer Holiday (&lt;a href=&#34;https://vjudge.net/problem/HDU-1827&#34;&gt;HDU - 1827&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;To see a World in a Grain of Sand&#xA;And a Heaven in a Wild Flower,&#xA;Hold Infinity in the palm of your hand&#xA;And Eternity in an hour.&#xA;—— William Blake&lt;/p&gt;&#xA;&lt;p&gt;听说lcy帮大家预定了新马泰7日游，Wiskey真是高兴的夜不能寐啊，他想着得快点把这消息告诉大家，虽然他手上有所有人的联系方式，但是一个一个联系过去实在太耗时间和电话费了。他知道其他人也有一些别人的联系方式，这样他可以通知其他人，再让其他人帮忙通知一下别人。你能帮Wiskey计算出至少要通知多少人，至少得花多少电话费就能让所有人都被通知到吗？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2767 Proving Equivalences</title>
+      <link>http://localhost:1313/z/solution/dab1d4ab63bc8e70/</link>
+      <pubDate>Mon, 02 Apr 2018 19:41:46 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/dab1d4ab63bc8e70/</guid>
+      <description>&lt;h1 id=&#34;proving-equivalences-hdu---2767&#34;&gt;Proving Equivalences (&lt;a href=&#34;https://vjudge.net/problem/HDU-2767&#34;&gt;HDU - 2767&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Consider the following exercise, found in a generic linear algebra textbook.&lt;/p&gt;&#xA;&lt;p&gt;Let A be an n × n matrix. Prove that the following statements are equivalent:&lt;/p&gt;&#xA;&lt;p&gt;\1. A is invertible.&#xA;\2. Ax = b has exactly one solution for every n × 1 matrix b.&#xA;\3. Ax = b is consistent for every n × 1 matrix b.&#xA;\4. Ax = 0 has only the trivial solution x = 0.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1251 Jungle Roads</title>
+      <link>http://localhost:1313/z/solution/6973629d80137b26/</link>
+      <pubDate>Sat, 31 Mar 2018 21:28:43 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/6973629d80137b26/</guid>
+      <description>&lt;h1 id=&#34;jungle-roads-poj---1251&#34;&gt;Jungle Roads (&lt;a href=&#34;https://vjudge.net/problem/POJ-1251&#34;&gt;POJ - 1251&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/z/solution/6973629d80137b26/POJ1251.png&#34; alt=&#34;img&#34;&gt;&#xA;The Head Elder of the tropical island of Lagrishan has a  problem. A burst of foreign aid money was spent on extra roads between  villages some years ago. But the jungle overtakes roads relentlessly, so the large road network is too expensive to maintain. The Council of  Elders must choose to stop maintaining some roads. The map above on the  left shows all the roads in use now and the cost in aacms per month to  maintain them. Of course there needs to be some way to get between all  the villages on maintained roads, even if the route is not as short as  before. The Chief Elder would like to tell the Council of Elders what  would be the smallest amount they could spend in aacms per month to  maintain roads that would connect all the villages. The villages are  labeled A through I in the maps above. The map on the right shows the  roads that could be maintained most cheaply, for 216 aacms per month.  Your task is to write a program that will solve such problems.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1269 迷宫城堡</title>
+      <link>http://localhost:1313/z/solution/5a80e5c457a45bc6/</link>
+      <pubDate>Sat, 31 Mar 2018 20:43:25 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/5a80e5c457a45bc6/</guid>
+      <description>&lt;h1 id=&#34;迷宫城堡-hdu---1269&#34;&gt;迷宫城堡 (&lt;a href=&#34;https://vjudge.net/problem/HDU-1269&#34;&gt;HDU - 1269&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;为了训练小希的方向感，Gardon建立了一座大城堡，里面有N个房间(N&amp;lt;=10000)和M条通道(M&amp;lt;=100000)，每个通道都是单向的，就是说若称某通道连通了A房间和B房间，只说明可以通过这个通道由A房间到达B房间，但并不说明通过它可以由B房间到达A房间。Gardon需要请你写个程序确认一下是否任意两个房间都是相互连通的，即：对于任意的i和j，至少存在一条路径可以从房间i到房间j，也存在一条路径可以从房间j到房间i。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

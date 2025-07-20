@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Net on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/net/</link>
+    <description>Recent content in Net on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>net</title>
+      <link>http://localhost:1313/z/net/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/net/</guid>
+      <description>&lt;h1 id=&#34;分层模型&#34;&gt;分层模型&lt;/h1&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;目的&lt;/th&gt;&#xA;          &lt;th&gt;说明&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;降低复杂性&lt;/td&gt;&#xA;          &lt;td&gt;分层处理，使每一层更易理解与设计&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;提高模块化与可维护性&lt;/td&gt;&#xA;          &lt;td&gt;每层独立实现，可替换、可扩展&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;促进标准化与兼容性&lt;/td&gt;&#xA;          &lt;td&gt;不同厂商和系统间可互通&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;支持技术演进&lt;/td&gt;&#xA;          &lt;td&gt;替换升级单层技术无须重构整个系统&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;简化开发与调试&lt;/td&gt;&#xA;          &lt;td&gt;开发只需关注部分层；调试能快速定位具体层的问题&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;osi参考模型&#34;&gt;OSI参考模型&lt;/h2&gt;&#xA;&lt;p&gt;OSI(Open System Interconnection Model) 是国际标准化组织（ISO）提出的参考模型，它将计算机网络通信划分为 7 层，自上而下依次为：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

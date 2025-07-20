@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/windows/</link>
+    <description>Recent content in Windows on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 28 Dec 2024 12:39:47 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win11使用KeePass管理密码</title>
+      <link>http://localhost:1313/y/tool/24122801/</link>
+      <pubDate>Sat, 28 Dec 2024 12:39:47 +0800</pubDate>
+      <guid>http://localhost:1313/y/tool/24122801/</guid>
+      <description>&lt;h1 id=&#34;密码管理工具&#34;&gt;密码管理工具&lt;/h1&gt;&#xA;&lt;p&gt;常见的包括但不限于以下几种：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;工具&lt;/th&gt;&#xA;          &lt;th&gt;付费&lt;/th&gt;&#xA;          &lt;th&gt;开源&lt;/th&gt;&#xA;          &lt;th&gt;云同步&lt;/th&gt;&#xA;          &lt;th&gt;跨平台&lt;/th&gt;&#xA;          &lt;th&gt;团队共享&lt;/th&gt;&#xA;          &lt;th&gt;自托管&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://1password.com/pricing&#34;&gt;1Password&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;付费&lt;/td&gt;&#xA;          &lt;td&gt;闭源&lt;/td&gt;&#xA;          &lt;td&gt;官方云同步&lt;/td&gt;&#xA;          &lt;td&gt;支持&lt;/td&gt;&#xA;          &lt;td&gt;支持&lt;/td&gt;&#xA;          &lt;td&gt;无自托管&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://www.lastpass.com/pricing&#34;&gt;LastPass&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;免费功能有限&lt;/td&gt;&#xA;          &lt;td&gt;闭源&lt;/td&gt;&#xA;          &lt;td&gt;官方云同步&lt;/td&gt;&#xA;          &lt;td&gt;支持&lt;/td&gt;&#xA;          &lt;td&gt;支持&lt;/td&gt;&#xA;          &lt;td&gt;无自托管&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://keepass.info/help/base/security.html&#34;&gt;KeePass&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;免费&lt;/td&gt;&#xA;          &lt;td&gt;开源&lt;/td&gt;&#xA;          &lt;td&gt;第三方&lt;/td&gt;&#xA;          &lt;td&gt;第三方&lt;/td&gt;&#xA;          &lt;td&gt;第三方&lt;/td&gt;&#xA;          &lt;td&gt;本地数据库，手动同步&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://bitwarden.com/pricing/business/&#34;&gt;Bitwarden&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;免费&lt;/td&gt;&#xA;          &lt;td&gt;开源&lt;/td&gt;&#xA;          &lt;td&gt;支持&lt;/td&gt;&#xA;          &lt;td&gt;支持&lt;/td&gt;&#xA;          &lt;td&gt;付费版&lt;/td&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://bitwarden.com/self-hosted-password-manager-on-premises/&#34;&gt;自托管&lt;/a&gt;版本，数据库存储&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;简述一下原理，KeePass会把密码存在一个加密的&lt;code&gt;.kdbx&lt;/code&gt;数据库中，通过坚果云进行云备份，坚果云WebDAV可以分配第三方应用的账号密码，让多端的KeePass类应用进行访问。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vercel托管Hexo博客</title>
+      <link>http://localhost:1313/y/blog/abf4cb68b4c20c52/</link>
+      <pubDate>Sun, 07 Aug 2022 13:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/blog/abf4cb68b4c20c52/</guid>
+      <description>&lt;h2 id=&#34;1-vercel配置&#34;&gt;1 Vercel配置&lt;/h2&gt;&#xA;&lt;p&gt;进入&lt;a href=&#34;https://vercel.com/&#34;&gt;Vercel官网&lt;/a&gt;，点击右上角&lt;code&gt;Sign Up&lt;/code&gt;注册，选择&lt;code&gt;Continue with GitHub&lt;/code&gt;使用GitHub账号注册。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/abf4cb68b4c20c52/%E6%B3%A8%E5%86%8Cvercel.png&#34; alt=&#34;注册vercel&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;注册完成后，会进入&lt;a href=&#34;https://vercel.com/new&#34;&gt;新建项目&lt;/a&gt;页面。如果没有，点击页面左上角进入&lt;a href=&#34;https://vercel.com/dashboard&#34;&gt;控制面板&lt;/a&gt;，点击&lt;code&gt;Overview&lt;/code&gt;进入概览，点击&lt;code&gt;New Project&lt;/code&gt;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/abf4cb68b4c20c52/%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE.png&#34; alt=&#34;新建项目&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;在&lt;code&gt;Import Git Repository&lt;/code&gt;下面的选择框中选择&lt;code&gt;Add GitHub Account&lt;/code&gt;，在弹出来的页面中选择之前配置GitHub Pages用的仓库，然后点击&lt;code&gt;Import&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NameSilo切换域名NS到Cloudflare</title>
+      <link>http://localhost:1313/y/blog/7f8636440ab49b65/</link>
+      <pubDate>Sun, 07 Aug 2022 11:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/blog/7f8636440ab49b65/</guid>
+      <description>&lt;h2 id=&#34;1-配置&#34;&gt;1 配置&lt;/h2&gt;&#xA;&lt;p&gt;首先，需要在&lt;a href=&#34;https://www.namesilo.com/&#34;&gt;NameSilo&lt;/a&gt;上注册登录，购买心仪的域名，然后注册并登录&lt;a href=&#34;https://dash.cloudflare.com/&#34;&gt;Cloudflare&lt;/a&gt;，&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/7f8636440ab49b65/%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8.png&#34; alt=&#34;开始使用&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;点击左侧&lt;strong&gt;网站&lt;/strong&gt;，进入网站管理页面，点击&lt;strong&gt;添加站点&lt;/strong&gt;，&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/7f8636440ab49b65/%E7%BD%91%E7%AB%99%E7%AE%A1%E7%90%86.png&#34; alt=&#34;网站管理&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;在&lt;strong&gt;输入您的站点&lt;/strong&gt;输入框内填写NameSilo上的域名，点击&lt;strong&gt;添加站点&lt;/strong&gt;，&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/7f8636440ab49b65/%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9.png&#34; alt=&#34;添加站点&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;选择您的计划&lt;/strong&gt;，一般用户选最下面的&lt;strong&gt;Free&lt;/strong&gt;免费版就行了。选中免费那一栏，然后点击&lt;strong&gt;继续&lt;/strong&gt;按钮。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Win10使用Hexo和Pages服务搭建个人博客</title>
+      <link>http://localhost:1313/y/blog/f6c59ae5f9b3dc94/</link>
+      <pubDate>Thu, 07 Apr 2022 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/blog/f6c59ae5f9b3dc94/</guid>
+      <description>&lt;h2 id=&#34;1-博客&#34;&gt;1 博客&lt;/h2&gt;&#xA;&lt;p&gt;博客（blog或weblog）正式名称是网络日志。一个典型的博客结合了文字、图像、链接以及其它主题相关的媒体，同时能够让读者以互动的方式留下建议和意见。博客的内容包括专注在特定课题上的评论或新闻，以及个人性的日记等。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Win10配置Git和SSH</title>
+      <link>http://localhost:1313/z/tool/bb23eaa4846998e0/</link>
+      <pubDate>Thu, 07 Apr 2022 11:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/tool/bb23eaa4846998e0/</guid>
+      <description>&lt;h2 id=&#34;1-git配置&#34;&gt;1 Git配置&lt;/h2&gt;&#xA;&lt;p&gt;打开Git Bash，配置用户信息,&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 配置用户名和邮箱&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span&gt;git config --global user.name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;github用户名&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;&lt;span&gt;git config --global user.email &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;github注册邮箱&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/z/tool/bb23eaa4846998e0/git_config.png&#34; alt=&#34;git_config&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-ssh配置&#34;&gt;2 SSH配置&lt;/h2&gt;&#xA;&lt;p&gt;Git和GitHub之间可以通过HTTPS、SSH、GitHub CLI等形式来连接，这里我们使用SSH方式连接。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Win10配置Scala和Spark</title>
+      <link>http://localhost:1313/z/tool/949fb3f2e5a83ea5/</link>
+      <pubDate>Mon, 25 May 2020 14:56:05 +0000</pubDate>
+      <guid>http://localhost:1313/z/tool/949fb3f2e5a83ea5/</guid>
+      <description>&lt;h1 id=&#34;一准备&#34;&gt;一、准备&lt;/h1&gt;&#xA;&lt;p&gt;基本信息&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;操作系统: Windows10&lt;/li&gt;&#xA;&lt;li&gt;jdk版本: 1.8&lt;/li&gt;&#xA;&lt;li&gt;Hadoop版本: 2.9.2&lt;img src=&#34;http://localhost:1313/z/tool/949fb3f2e5a83ea5/java.png&#34; alt=&#34;java&#34;&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;下载并解压&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Scala： &lt;a href=&#34;https://www.scala-lang.org/download/&#34;&gt;官网&lt;/a&gt; 或者 &lt;a href=&#34;https://downloads.lightbend.com/scala/2.13.2/scala-2.13.2.zip&#34;&gt;scala-2.13.2.zip&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Spark：&lt;a href=&#34;http://spark.apache.org/downloads.html&#34;&gt;官网&lt;/a&gt; 或者 &lt;a href=&#34;https://mirror.bit.edu.cn/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz&#34;&gt;spark-3.0.0-preview2-bin-hadoop2.7.tgz&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;二scala&#34;&gt;二、Scala&lt;/h1&gt;&#xA;&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;新建系统变量 &lt;code&gt;SCALA_HOME&lt;/code&gt; 至所在目录，如 &lt;code&gt;D:\environment\scala-2.13.2&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/z/tool/949fb3f2e5a83ea5/scala_home.png&#34; alt=&#34;scala_home&#34;&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;在 &lt;code&gt;path&lt;/code&gt; 中添加 &lt;code&gt;%SCALA_HOME%\bin&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Win10配置Hadoop2.9.2单机版</title>
+      <link>http://localhost:1313/z/tool/4f05172528ab13b7/</link>
+      <pubDate>Sun, 26 Apr 2020 10:25:05 +0000</pubDate>
+      <guid>http://localhost:1313/z/tool/4f05172528ab13b7/</guid>
+      <description>&lt;h1 id=&#34;一准备&#34;&gt;一、准备&lt;/h1&gt;&#xA;&lt;p&gt;基本信息&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;操作系统: Windows10&lt;/li&gt;&#xA;&lt;li&gt;jdk版本: 1.8&lt;/li&gt;&#xA;&lt;li&gt;Hadoop版本: 2.9.2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;下载并解压&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Apache Hadoop: &lt;a href=&#34;https://hadoop.apache.org/releases.html&#34;&gt;官网&lt;/a&gt; 或者 &lt;a href=&#34;https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/&#34;&gt;清华源&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;winutils: &lt;a href=&#34;https://github.com/cdarlint/winutils&#34;&gt;github/cdarlint&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;二配置&#34;&gt;二、配置&lt;/h1&gt;&#xA;&lt;h2 id=&#34;环境变量&#34;&gt;环境变量&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;新建系统变量 &lt;code&gt;HADOOP_HOME&lt;/code&gt; 至所在目录，如 &lt;code&gt;D:\environment\hadoop-2.9.2&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/z/tool/4f05172528ab13b7/HadoopHOME.png&#34; alt=&#34;HadoopHOME&#34;&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;在 &lt;code&gt;path&lt;/code&gt; 中添加 &lt;code&gt;%HADOOP_HOME%\bin&lt;/code&gt; 及 &lt;code&gt;%HADOOP_HOME%\sbin&lt;/code&gt; 并以 &lt;code&gt;;&lt;/code&gt; (英文分号)与其他项隔开。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Win10配置MySQL和JDBC</title>
+      <link>http://localhost:1313/z/tool/0da28f65294b5e79/</link>
+      <pubDate>Mon, 23 Dec 2019 17:59:36 +0000</pubDate>
+      <guid>http://localhost:1313/z/tool/0da28f65294b5e79/</guid>
+      <description>&lt;h1 id=&#34;一准备&#34;&gt;一、准备&lt;/h1&gt;&#xA;&lt;p&gt;于MySQL官网根据需要下载，参考链接：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://dev.mysql.com/downloads/file/?id=490026&#34;&gt;mysql-8.0.18-winx64.zip&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://dev.mysql.com/downloads/file/?id=490495&#34;&gt;mysql-connector-java-8.0.18.zip&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;二mysql&#34;&gt;二、MySQL&lt;/h1&gt;&#xA;&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;&#xA;&lt;p&gt;配置系统环境变量，或者以管理员身份运行cmd，进入解压目录下的bin目录中运行命令，例如&#xA;D:\Program Files (x86)\mysql-8.0.18-winx64\bin&amp;gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

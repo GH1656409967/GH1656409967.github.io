@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PATA on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/pata/</link>
+    <description>Recent content in PATA on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 02 Sep 2020 13:18:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/pata/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PATA-1010 Radix</title>
+      <link>http://localhost:1313/z/solution/da1cb8980e3ddb78/</link>
+      <pubDate>Wed, 02 Sep 2020 13:18:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/da1cb8980e3ddb78/</guid>
+      <description>&lt;h1 id=&#34;radixpata-1010&#34;&gt;Radix(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805507225665536&#34;&gt;PATA-1010&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given a pair of positive integers, for example, 6 and 110, can this equation 6 = 110 be true?  The answer is &lt;code&gt;yes&lt;/code&gt;, if 6 is a decimal number and 110 is a binary number.&lt;/p&gt;&#xA;&lt;p&gt;Now for any pair of positive integers N1 and N2, your task is to find the radix of one number while that of the other is given.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each input file contains one test case. Each case occupies a line which contains 4 positive integers:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PATA-1008 Elevator</title>
+      <link>http://localhost:1313/z/solution/4baf24d574dd5402/</link>
+      <pubDate>Fri, 28 Aug 2020 14:09:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/4baf24d574dd5402/</guid>
+      <description>&lt;h1 id=&#34;elevatorpata-1008&#34;&gt;Elevator(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805511923286016&#34;&gt;PATA-1008&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The highest building in our city has only one elevator. A request list is made up with N positive numbers. The numbers denote at which floors the elevator will  stop, in specified order. It costs 6 seconds to move the elevator up one floor, and 4 seconds to move down one floor. The elevator will stay for 5 seconds at each stop.&lt;/p&gt;&#xA;&lt;p&gt;For a given request list, you are to compute the total time spent to  fulfill the requests on the list. The elevator is on the 0th floor at  the beginning and does not have to return to the ground floor when the  requests are fulfilled.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PATA-1009 Product of Polynomials</title>
+      <link>http://localhost:1313/z/solution/abe20634b1461980/</link>
+      <pubDate>Fri, 28 Aug 2020 14:09:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/abe20634b1461980/</guid>
+      <description>&lt;h1 id=&#34;product-of-polynomialspata-1009&#34;&gt;Product of Polynomials(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805509540921344&#34;&gt;PATA-1009&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This time, you are supposed to find A×B where A and B are two polynomials.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial:&lt;/p&gt;&#xA;&lt;p&gt;K N1 aN1 N2 aN2 &amp;hellip; NK aNK&lt;/p&gt;&#xA;&lt;p&gt;where K is the number of nonzero terms in the polynomial, Ni and aNi (i=1,2,⋯,K) are the exponents and coefficients, respectively.  It is given that 1≤K≤10, 0≤NK&amp;lt;⋯&amp;lt;N2&amp;lt;N1≤1000.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PATA-1007 Maximum Subsequence Sum</title>
+      <link>http://localhost:1313/z/solution/e552f8a8e1d42eba/</link>
+      <pubDate>Fri, 28 Aug 2020 13:59:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/e552f8a8e1d42eba/</guid>
+      <description>&lt;h1 id=&#34;maximum-subsequence-sumpata-1007&#34;&gt;Maximum Subsequence Sum(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805514284679168&#34;&gt;PATA-1007&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given a sequence of K integers { N1, N2, &amp;hellip;, NK }. A continuous subsequence is defined to be { Ni, Ni+1, &amp;hellip;, Nj } where 1≤i≤j≤K. The Maximum Subsequence is the continuous subsequence which has the  largest sum of its elements. For example, given sequence { -2, 11, -4,  13, -5, -2 }, its maximum subsequence is { 11, -4, 13 } with the largest sum being 20.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PATA-1006 Sign In and Sign Out</title>
+      <link>http://localhost:1313/z/solution/5cb03f4af7022436/</link>
+      <pubDate>Sun, 23 Aug 2020 12:37:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/5cb03f4af7022436/</guid>
+      <description>&lt;h1 id=&#34;sign-in-and-sign-outpata-1006&#34;&gt;Sign In and Sign Out(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805516654460928&#34;&gt;PATA-1006&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;At the beginning of every day, the first person who signs in the  computer room will unlock the door, and the last one who signs out will  lock the door.  Given the records of signing in&amp;rsquo;s and out&amp;rsquo;s, you are  supposed to find the ones who have unlocked and locked the door on that  day.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each input file contains one test case. Each case contains the records for one day.  The case starts with a positive integer M, which is the total number of records, followed by M lines, each in the format:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PATA-1005 Spell It Right</title>
+      <link>http://localhost:1313/z/solution/12eeb8e604fcba8b/</link>
+      <pubDate>Sun, 23 Aug 2020 12:07:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/12eeb8e604fcba8b/</guid>
+      <description>&lt;h1 id=&#34;spell-it-rightpata-1005&#34;&gt;Spell It Right(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805519074574336&#34;&gt;PATA-1005&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given a non-negative integer N, your task is to compute the sum of all the digits of N, and output every digit of the sum in English.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each input file contains one test case. Each case occupies one line which contains an N (≤10^100).&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输出&#34;&gt;输出&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;For each test case, output in one line the digits of the sum in English  words. There must be one space between two consecutive words, but no  extra space at the end of a line.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PATA-1004 Counting Leaves</title>
+      <link>http://localhost:1313/z/solution/3e2d100446c3cd5b/</link>
+      <pubDate>Sun, 23 Aug 2020 11:56:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3e2d100446c3cd5b/</guid>
+      <description>&lt;h1 id=&#34;counting-leavespata-1004&#34;&gt;Counting Leaves(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805521431773184&#34;&gt;PATA-1004&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A family hierarchy is usually presented by a pedigree tree.  Your job is to count those family members who have no child.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each input file contains one test case. Each case starts with a line  containing 0&amp;lt;N&amp;lt;100, the number of nodes in a tree, and M (&amp;lt;N), the number of non-leaf nodes.  Then M lines follow, each in the format:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;ID K ID[1] ID[2] ... ID[K]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;where &lt;code&gt;ID&lt;/code&gt; is a two-digit number representing a given non-leaf node, &lt;code&gt;K&lt;/code&gt; is the number of its children, followed by a sequence of two-digit &lt;code&gt;ID&lt;/code&gt;&amp;rsquo;s of its children.  For the sake of simplicity, let us fix the root ID to be &lt;code&gt;01&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PATA-1003 Emergency</title>
+      <link>http://localhost:1313/z/solution/dc27deb2d0593993/</link>
+      <pubDate>Sat, 22 Aug 2020 17:03:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/dc27deb2d0593993/</guid>
+      <description>&lt;h1 id=&#34;emergencypata-1003&#34;&gt;Emergency(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805523835109376&#34;&gt;PATA-1003&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;As an emergency rescue team leader of a city, you are given a special  map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the length of each  road between any pair of cities are marked on the map. When there is an  emergency call to you from some other city, your job is to lead your men to the place as quickly as possible, and at the mean time, call up as  many hands on the way as possible.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PATA-1002 A&#43;B for Polynomials</title>
+      <link>http://localhost:1313/z/solution/6b22a0fe9ced95db/</link>
+      <pubDate>Tue, 11 Aug 2020 20:07:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/6b22a0fe9ced95db/</guid>
+      <description>&lt;h1 id=&#34;ab-for-polynomialspata-1002&#34;&gt;A+B for Polynomials(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805526272000000&#34;&gt;PATA-1002&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This time, you are supposed to find A+B where A and B are two polynomials.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial:&lt;/p&gt;&#xA;&lt;p&gt;K N1 aN1 N2 aN2 &amp;hellip; NK aNK&lt;/p&gt;&#xA;&lt;p&gt;where K is the number of nonzero terms in the polynomial, Ni and aNi (i=1,2,⋯,K) are the exponents and coefficients, respectively. It is given that 1≤K≤10，0≤NK&amp;lt;⋯&amp;lt;N2&amp;lt;N1≤1000.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PATA-1001 A&#43;B Format</title>
+      <link>http://localhost:1313/z/solution/b04a7230c381e789/</link>
+      <pubDate>Tue, 11 Aug 2020 11:51:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/b04a7230c381e789/</guid>
+      <description>&lt;h1 id=&#34;ab-formatpata-1001&#34;&gt;A+B Format(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805528788582400&#34;&gt;PATA-1001&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Calculate a+b and output the sum in standard format &amp;ndash; that is, the digits must be  separated into groups of three by commas (unless there are less than  four digits).&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each input file contains one test case. Each case contains a pair of integers a and b where −10^6≤a,b≤10^6. The numbers are separated by a space.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

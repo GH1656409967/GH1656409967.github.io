@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>信息安全 on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/</link>
+    <description>Recent content in 信息安全 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 25 Apr 2020 16:25:05 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win10使用Gpg4win加密邮件</title>
+      <link>http://localhost:1313/y/tool/938d24c2a3c10d0d/</link>
+      <pubDate>Sat, 25 Apr 2020 16:25:05 +0000</pubDate>
+      <guid>http://localhost:1313/y/tool/938d24c2a3c10d0d/</guid>
+      <description>&lt;h1 id=&#34;一准备&#34;&gt;一、准备&lt;/h1&gt;&#xA;&lt;p&gt;下载并安装以下两项:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.gpg4win.org/get-gpg4win.html&#34;&gt;Gpg4win&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.thunderbird.net/zh-CN/&#34;&gt;Thunderbird&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;二配置gpg4win&#34;&gt;二、配置Gpg4win&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;一路next安装。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;新建密钥对，按提示进行。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;可以点击 &lt;code&gt;导出...&lt;/code&gt; 导出 &lt;code&gt;.asc&lt;/code&gt;文件。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;三配置thunderbird&#34;&gt;三、配置Thunderbird&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;一路next安装。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;开启邮箱的IMAP服务。以QQ邮箱为例，启动QQ邮箱网页版，打开 &lt;code&gt;设置 &amp;gt; 账户&lt;/code&gt; 下拉找到该项，并选择开启IMAP/SMTP服务。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>凯撒密码的简单实现</title>
+      <link>http://localhost:1313/y/610c1d2d8ba42f34/</link>
+      <pubDate>Sat, 25 Apr 2020 14:12:43 +0000</pubDate>
+      <guid>http://localhost:1313/y/610c1d2d8ba42f34/</guid>
+      <description>&lt;h1 id=&#34;一恺撒密码简介&#34;&gt;一、恺撒密码简介&lt;/h1&gt;&#xA;&lt;p&gt;在密码学中，恺撒密码（英语：Caesar cipher），或称恺撒加密、恺撒变换、变换加密，是一种最简单且最广为人知的加密技术。它是一种替换加密的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。例如，当偏移量是3的时候，所有的字母A将被替换成D，B变成E，以此类推。这个加密方法是以罗马共和时期恺撒的名字命名的，当年恺撒曾用此方法与其将军们进行联系。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>贪心 on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/%E8%B4%AA%E5%BF%83/</link>
+    <description>Recent content in 贪心 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 27 Mar 2021 12:42:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E8%B4%AA%E5%BF%83/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指Offer-14.2 剪绳子II</title>
+      <link>http://localhost:1313/z/solution/d9a07c5ba4c843bf/</link>
+      <pubDate>Sat, 27 Mar 2021 12:42:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/d9a07c5ba4c843bf/</guid>
+      <description>&lt;h1 id=&#34;剪绳子ii剑指offer-142&#34;&gt;剪绳子II(&lt;a href=&#34;https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof/&#34;&gt;剑指Offer-14.2&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n&amp;gt;1并且m&amp;gt;1），每段绳子的长度记为 &lt;code&gt;k[0],k[1]...k[m-1]&lt;/code&gt; 。请问 &lt;code&gt;k[0]*k[1]*...*k[m-1]&lt;/code&gt; 可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>剑指Offer-14.1 剪绳子</title>
+      <link>http://localhost:1313/z/solution/f9e17b3c55b14bd3/</link>
+      <pubDate>Sat, 27 Mar 2021 12:31:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/f9e17b3c55b14bd3/</guid>
+      <description>&lt;h1 id=&#34;剪绳子剑指offer-141&#34;&gt;剪绳子(&lt;a href=&#34;https://leetcode-cn.com/problems/jian-sheng-zi-lcof/&#34;&gt;剑指Offer-14.1&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n&amp;gt;1并且m&amp;gt;1），每段绳子的长度记为 &lt;code&gt;k[0],k[1]...k[m-1]&lt;/code&gt; 。请问 &lt;code&gt;k[0]*k[1]*...*k[m-1]&lt;/code&gt; 可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gitalk on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/gitalk/</link>
+    <description>Recent content in Gitalk on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gitalk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gitalk</title>
+      <link>http://localhost:1313/y/blog/gitalk/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/blog/gitalk/</guid>
+      <description>&lt;h1 id=&#34;gitalk评论登录跳转异常&#34;&gt;Gitalk评论登录跳转异常&lt;/h1&gt;&#xA;&lt;p&gt;添加新文章，需要初始化评论，点击&lt;code&gt;使用GitHub登录&lt;/code&gt;，地址栏变成了 &lt;a href=&#34;https://gh1656409967.github.io/?error=redirect_uri_mismatch&amp;amp;error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&amp;amp;error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23redirect-uri-mismatch&#34;&gt;https://gh1656409967.github.io/?error=redirect_uri_mismatch&amp;amp;error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&amp;amp;error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23redirect-uri-mismatch&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;跳转链接中给出了相关提示，“重定向uri必须与此应用程序的已注册回调URL匹配”。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

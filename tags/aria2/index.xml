@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aria2 on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/aria2/</link>
+    <description>Recent content in Aria2 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/aria2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aria2</title>
+      <link>http://localhost:1313/y/tool/aria2/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/tool/aria2/</guid>
+      <description>&lt;h1 id=&#34;aria2&#34;&gt;aria2&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/aria2/aria2/releases&#34;&gt;下载链接&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;配置项目&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://aria2.github.io/manual/en/html/aria2c.html#options&#34;&gt;官方文档&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://aria2c.com/&#34;&gt;UI&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/aria2-%E6%95%B4%E5%90%88/hnenidncmoeebipinjdfniagjnfjbapi?pli=1&#34;&gt;浏览器插件&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;通过py爬取了文档的所有配置项，然后使用gpt4o进行翻译，根据网上给出的建议进行配置。&lt;/p&gt;&#xA;&lt;p&gt;首次下载&lt;a href=&#34;https://ubuntu.com/download/alternative-downloads&#34;&gt;Ubuntu&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/XIU2/TrackersListCollection?tab=readme-ov-file&#34;&gt;Trackers&lt;/a&gt;&#xA;&lt;a href=&#34;https://github.com/ngosang/trackerslist&#34;&gt;Trackers&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;不热门的种子还是下不动&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;aria2c.exe --conf-path&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;aria2.conf&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

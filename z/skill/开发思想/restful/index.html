@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" data-theme="light">
+<head>
+    <script>
+        (function () {
+            const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = localStorage.getItem('theme') || (prefers ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title> | 夜雨微澜</title>
+<link rel="stylesheet" href="/css/index.min.00d6b29c7f5fae6e56c20770edf340de3075bfdb64c6256587a0c2a553642e0e.css" integrity="sha256-ANaynH9frm5Wwgdw7fNA3jB1v9tkxiVlh6DCpVNkLg4=" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/z/"></a></div>
+        </div>
+
+        <div class="header-middle">
+            My New Hugo Site
+        </div>
+
+        <div class="header-right">
+            <button id="theme-toggle" class="theme-toggle" type="button">🌙</button>
+        </div>
+    </header>
+    <div class="main-container">
+        <aside id="sidebarL" class="sidebar left">
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+                    <li>
+                        <a href="/categories/">分类</a>
+                    </li>
+                    <li>
+                        <a href="/tags/">标签</a>
+                    </li>
+                    <li>
+                        <a href="/x/about/">关于</a>
+                    </li>
+                    <li>
+                        <a href="/x/">个性化</a>
+                    </li>
+                    <li>
+                        <a aria-current="true" class="ancestor" href="/z/">博客</a>
+                    </li>
+                    <li>
+                        <a href="/y/">笔记</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div id="resizerL" class="resizer left">
+            <div class="toggle-btn" data-target="sidebarL">←</div>
+        </div>
+        <main class="main-content">
+<article class="main" id="top">
+    <h1></h1>
+
+    
+    
+    <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time>
+
+    <p><a href="https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">Fielding Dissertation: CHAPTER 5: Representational State Transfer (REST) (uci.edu)</a></p>
+<h3 id="rest架构限制条件"><strong>REST架构限制条件</strong></h3>
+<p>Fielding在论文中提出REST架构的6个<strong>限制条件</strong>，也可称为RESTful 6大原则， 标准的REST约束应满足以下6个原则：</p>
+<p><strong>客户端-服务端（Client-Server）</strong>: 这个更专注客户端和服务端的分离，服务端独立可更好服务于前端、安卓、IOS等客户端设备。</p>
+<p><strong>无状态（Stateless）</strong>：服务端不保存客户端状态，客户端保存状态信息每次请求携带状态信息。</p>
+<p><strong>可缓存性（Cacheability）</strong> ：服务端需回复是否可以缓存以让客户端甄别是否缓存提高效率。</p>
+<p><strong>统一接口（Uniform Interface）</strong>：通过一定原则设计接口降低耦合，简化系统架构，这是RESTful设计的基本出发点。当然这个内容除了上述特点提到部分具体内容比较多详细了解可以参考这篇<a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">REST论文内容</a>。</p>
+<p><strong>分层系统（Layered System）</strong>：客户端无法直接知道连接的到终端还是中间设备，分层允许你灵活的部署服务端项目。</p>
+<p><strong>按需代码（Code-On-Demand，可选）</strong>：按需代码允许我们灵活的发送一些看似特殊的代码给客户端例如JavaScript代码。</p>
+<p>REST架构的一些风格和限制条件就先介绍到这里，后面就对RESTful风格API具体介绍。</p>
+<h3 id="二restful-api设计规范"><strong>二、RESTful API设计规范</strong></h3>
+<p>既然了解了RESTful的一些规则和特性，那么具体该怎么去设计一个RESTful API呢？要从URL路径、HTTP请求动词、状态码和返回结果等方面详细考虑。至于其他的方面例如错误处理、过滤信息等规范这里就不详细介绍了。</p>
+<h3 id="url设计规范"><strong>URL设计规范</strong></h3>
+<p>URL为统一资源定位器 ,接口属于服务端资源，首先要通过URL这个定位到资源才能去访问，而通常一个完整的URL组成由以下几个部分构成：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>URI = scheme &#34;://&#34; host  &#34;:&#34;  port &#34;/&#34; path [ &#34;?&#34; query ][ &#34;#&#34; fragment ]
+</span></span></code></pre></div><p>scheme: 指底层用的协议，如http、https、ftp<br>
+host: 服务器的IP地址或者域名<br>
+port: 端口，http默认为80端口<br>
+path: 访问资源的路径，就是各种web 框架中定义的route路由<br>
+query: 查询字符串，为发送给服务器的参数，在这里更多发送数据分页、排序等参数。<br>
+fragment: 锚点，定位到页面的资源</p>
+<p>我们在设计API时URL的path是需要认真考虑的，而RESTful对path的设计做了一些规范，通常一个RESTful API的path组成如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>/{version}/{resources}/{resource_id}
+</span></span></code></pre></div><p>version：API版本号，有些版本号放置在头信息中也可以，通过控制版本号有利于应用迭代。<br>
+resources：资源，RESTful API推荐用小写英文单词的复数形式。<br>
+resource_id：资源的id，访问或操作该资源。</p>
+<p>当然，有时候可能资源级别较大，其下还可细分很多子资源也可以灵活设计URL的path，例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>/{version}/{resources}/{resource_id}/{subresources}/{subresource_id}
+</span></span></code></pre></div><p>此外，有时可能增删改查无法满足业务要求，可以在URL末尾加上action，例如</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>/{version}/{resources}/{resource_id}/action
+</span></span></code></pre></div><p>其中action就是对资源的操作。</p>
+<p>从大体样式了解URL路径组成之后，对于RESTful API的URL具体设计的规范如下：</p>
+<ol>
+<li>不用大写字母，所有单词使用英文且小写。</li>
+<li>连字符用中杠<code>&quot;-&quot;</code>而不用下杠<code>&quot;_&quot;</code></li>
+<li>正确使用 <code>&quot;/&quot;</code>表示层级关系,URL的层级不要过深，并且越靠前的层级应该相对越稳定</li>
+<li>结尾不要包含正斜杠分隔符<code>&quot;/&quot;</code></li>
+<li>URL中不出现动词，用请求方式表示动作</li>
+<li>资源表示用复数不要用单数</li>
+<li>不要使用文件扩展名</li>
+</ol>
+<p>在谈及GET,POST,PUT,DELETE的时候，就必须提一下接口的<strong>安全性和幂等性</strong>，其中安全性是指方法不会修改资源状态，即读的为安全的，写的操作为非安全的。而幂等性的意思是操作一次和操作多次的最终效果相同，客户端重复调用也只返回同一个结果。</p>
+<p><strong>状态码</strong></p>
+<p>我们首先要正确使用各类状态码来表示该请求的处理执行结果。状态码主要分为五大类：</p>
+<blockquote>
+<p>1xx：相关信息<br>
+2xx：操作成功<br>
+3xx：重定向<br>
+4xx：客户端错误<br>
+5xx：服务器错误</p></blockquote>
+<p>每一大类有若干小类，状态码的种类比较多，而主要常用状态码罗列在下面：</p>
+<p>200 <code>OK - [GET]</code>：服务器成功返回用户请求的数据，该操作是幂等的（Idempotent）。<br>
+201 <code>CREATED - [POST/PUT/PATCH]</code>：用户新建或修改数据成功。<br>
+202 <code>Accepted - [*]</code>：表示一个请求已经进入后台排队（异步任务）<br>
+204 <code>NO CONTENT - [DELETE]</code>：用户删除数据成功。<br>
+400 <code>INVALID REQUEST - [POST/PUT/PATCH]</code>：用户发出的请求有错误，服务器没有进行新建或修改数据的操作，该操作是幂等的。<br>
+401 <code>Unauthorized - [*]</code>：表示用户没有权限（令牌、用户名、密码错误）。<br>
+403 <code>Forbidden - [*]</code> 表示用户得到授权（与401错误相对），但是访问是被禁止的。<br>
+404 <code>NOT FOUND - [*]</code>：用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。<br>
+406 <code>Not Acceptable - [GET]</code>：用户请求的格式不可得（比如用户请求JSON格式，但是只有XML格式）。<br>
+410 <code>Gone -[GET]</code>：用户请求的资源被永久删除，且不会再得到的。<br>
+422 <code>Unprocesable entity - [POST/PUT/PATCH]</code> 当创建一个对象时，发生一个验证错误。<br>
+500 <code>INTERNAL SERVER ERROR - [*]</code>：服务器发生错误，用户将无法判断发出的请求是否成功。</p>
+
+</article>
+
+        </main>
+        <div id="resizerR" class="resizer right">
+            <div class="toggle-btn" data-target="sidebarR">→</div>
+        </div>
+        <aside id="sidebarR" class="sidebar right"><nav class="toc">
+    <details open>
+        <summary>
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="toc-inner"><ul><ul><ul><li>
+                            <a href="#rest%e6%9e%b6%e6%9e%84%e9%99%90%e5%88%b6%e6%9d%a1%e4%bb%b6" aria-label="REST架构限制条件">REST架构限制条件</a></li><li>
+                            <a href="#%e4%ba%8crestful-api%e8%ae%be%e8%ae%a1%e8%a7%84%e8%8c%83" aria-label="二、RESTful API设计规范">二、RESTful API设计规范</a></li><li>
+                            <a href="#url%e8%ae%be%e8%ae%a1%e8%a7%84%e8%8c%83" aria-label="URL设计规范">URL设计规范</a></ul></ul></ul>
+        </div>
+    </details>
+</nav>
+
+
+        </aside>
+    </div>
+    <button id="toggleL" class="mobile-toggle left" type="button">L</button>
+    <button id="toggleR" class="mobile-toggle right" type="button">R</button>
+    <footer class="footer">
+    <div class="footer-left">
+        
+<a class="item" href="https://github.com/GH1656409967" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a class="item" href="https://music.163.com/#/user/home?id=270121274" target="_blank" rel="noopener noreferrer me"
+    title="Neteasecloudmusic">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path
+        d="M10.98,23.65c-2.69,0-5.26-1.05-7.24-2.95C1.59,18.63,.35,15.72,.35,12.73,.35,8.21,3.21,4.11,7.46,2.52c.15-.05,.3-.08,.45-.08,.42,0,.78,.21,.93,.55,.12,.26,.13,.51,.03,.75-.12,.28-.38,.52-.7,.64-3.48,1.3-5.82,4.66-5.82,8.36,0,2.46,1.02,4.84,2.79,6.54,1.6,1.54,3.68,2.39,5.85,2.39,.1,0,.2,0,.29,0,3.49-.12,6.22-1.91,7.47-4.89,.08-.2,2.01-4.93-2.59-7.9-.41-.27-.89-.46-1.42-.58l-.6-.14,.18,.58c.21,.68,.78,2.52,.84,2.93,.07,.46,.07,.51,.1,.92v.18c0,2.3-1.89,4.19-4.22,4.19-2.2,0-3.97-1.73-4.23-4.1-.25-2.35,.74-4.4,2.73-5.61,.53-.32,1.11-.57,1.73-.75l.33-.1-.48-1.74c-.16-.54-.53-2.38,1.5-3.72,.57-.38,1.22-.57,1.91-.57,1.38,0,2.62,.74,3.12,1.23,.22,.22,.36,.56,.36,.9,0,.26-.08,.48-.23,.63-.15,.15-.37,.23-.63,.23-.33,0-.67-.13-.89-.35-.06-.05-.85-.66-1.7-.66-.31,0-.59,.08-.82,.24-.04,.03-.08,.05-.12,.08-.23,.19-.71,.73-.47,1.82l.09,.34,.02,.07h0s.35,1.29,.35,1.29h.25c1.24,.08,2.39,.42,3.32,1.01l.05,.03c4.82,3.12,4.29,8.12,3.34,10.33-1.54,3.67-4.99,5.95-9.23,6.1-.12,0-.25,0-.37,0Zm.82-15.26c-.43,.13-.84,.31-1.2,.53-.94,.57-2.01,1.68-1.79,3.71,.12,1.12,.87,2.33,2.24,2.33,1.23,0,2.24-1,2.24-2.22h0s.03-.21-.05-.71c-.07-.46-.91-3.1-1-3.4l-.1-.33-.33,.1Z" />
+</svg>
+</a>
+<a class="item" href="https://www.douban.com/people/Lordash/" target="_blank" rel="noopener noreferrer me"
+    title="Douban">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="m2.42288,2.08086l19.15349,0l0,2.15751l-19.15349,0l0,-2.15751z" />
+    <path
+        d="m19.88879,14.92347l0,-8.43444l-15.82351,0l0,8.43444l15.82351,0zm-13.52889,-6.27842l11.25739,0l0,4.1235l-11.25739,0l0,-4.1235z" />
+    <path
+        d="m16.48864,19.78508c0.6885,-1.05398 1.33827,-2.27636 1.94031,-3.66377l-2.30206,-0.83906c-0.59872,1.64418 -1.29579,3.14745 -2.08899,4.50283l-4.00578,0c-0.66389,-1.75663 -1.41312,-3.25884 -2.25363,-4.50283l-2.11727,0.83906c0.87327,1.30991 1.57742,2.52932 2.11727,3.66377l-5.89733,0l0,2.13406l20.23769,0l0,-2.13406l-5.63021,0z" />
+</svg>
+</a>
+<a class="item" href="https://steamcommunity.com/id/1656409967/" target="_blank" rel="noopener noreferrer me"
+    title="Steam">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path
+        d="M-24.6 20.8c-1.4-.8-2.7-1.5-4.1-2.3-2.4-1.5-3.6-3.6-3.3-6.5.3-3 2.8-5.2 5.8-5.3h11c2.6 0 4.6 2.2 4.7 4.7 0 2.6-2 4.8-4.6 4.9h-2.8v.2c.2.2.5.3.7.5 1.2.7 2.4 1.3 3.6 2 2.5 1.5 3.7 4.5 2.9 7.2-.8 2.7-3.1 4.3-6.1 4.4h-10.6c-2.4 0-4.3-1.9-4.6-4.3-.3-2.3 1.2-4.5 3.5-5.1.6-.1 1.2-.1 1.7-.2h2.1c.1 0 .1-.1.1-.2zm4.3-3.8c-.1.3-.2.3-.2.4v3.9c0 1.1-.1 1.2-1.2 1.2h-5.1c-.4 0-.9 0-1.3.1-1.6.4-2.5 1.9-2.4 3.6.2 1.6 1.6 2.9 3.3 2.9h10.5c2.1 0 3.8-1.2 4.5-3.1.7-1.8.2-4.1-1.5-5.3-2.1-1.3-4.3-2.4-6.6-3.7zm-1.7 3.4v-4c0-1.4.1-1.5 1.4-1.5h5.3c1.5 0 2.7-1 3.1-2.4.6-2.2-1-4.2-3.4-4.3h-10.1c-2.4 0-4.3 1.3-4.9 3.4-.6 2.1.4 4.4 2.5 5.5 1.7 1 3.5 1.9 5.2 2.9.4.2.6.3.9.4z" />
+    <path
+        d="M53.3 6.9c-.2-1-1-1.7-1.9-2-1.7-.4-8.6-.4-8.6-.4s-6.9 0-8.6.5c-1 .3-1.7 1-1.9 2-.3 1.7-.5 3.5-.5 5.3 0 1.8.1 3.6.5 5.3.3.9 1 1.7 1.9 1.9 1.7.5 8.6.5 8.6.5s6.9 0 8.6-.5c1-.3 1.7-1 1.9-2 .3-1.7.5-3.5.5-5.3 0-1.8-.1-3.6-.5-5.3z" />
+    <path d="m40.6 15.5 5.7-3.3-5.7-3.3z" />
+    <path
+        d="M72.4-9.9c5.5 0 10 4 10 8.9 0 1.8-.8 3.8-2.1 5.4-.9 1-1.5 2.3-1.6 3.7 0-.1-.1-.1-.2-.2-.4-.4-1.1-.7-1.7-.7-.3 0-.5 0-.8.1-1.2.5-2.5.7-3.6.7-5.5 0-10-4-10-8.9s4.5-9 10-9m0-2c-6.6 0-12 4.9-12 10.9s5.4 11 12 11c1.4 0 2.8-.2 4.2-.7h.1c.1 0 .2 0 .3.1 1 1.3 2.5 2.3 4.2 2.7l.2-.1v-.3c-.7-.9-1-1.9-1-3s.4-2.1 1.2-2.9c1.5-1.8 2.6-4.2 2.6-6.7.1-6.1-5.3-11-11.8-11z" />
+    <path
+        d="M72.3-6.5c.1 0 .3.1.3.2l1.2 3.4 3.7.1c.1 0 .3.1.3.2s0 .3-.1.4l-3 2.2 1.1 3.5c0 .1 0 .3-.1.4h-.4l-3-2.1-3 2.1h-.4c-.1-.1-.2-.2-.1-.4L69.9 0l-3-2.2c-.1-.1-.2-.2-.1-.4 0-.1.2-.2.3-.2l3.7-.1L72-6.3c0-.1.2-.2.3-.2zM46.8-20.8c2 0 4 .6 5.6 1.6-.5-.1-1.1-.2-1.6-.2-3.2 0-5.8 2.5-6 5.6l-2.2 3.2c-.5.1-.9.2-1.4.4l-4.7-1.9c.8-5 5.2-8.7 10.3-8.7m9.9 7.2c.3 1 .5 2.1.5 3.3C57.2-4.5 52.5.2 46.7.2c-1.8 0-3.6-.5-5.1-1.3.5.2 1 .2 1.5.2 2.5 0 4.5-1.9 4.8-4.3L51-7.4c3.1-.2 5.6-2.8 5.6-6 .1-.1.1-.1.1-.2M38.3-4.2l.3.2c.1.2.2.5.3.7l-.6-.9m8.5-18.1c-6.3 0-11.5 4.9-12 11l6.4 2.7c.5-.4 1.2-.6 1.9-.6h.2l2.9-4.1v-.1c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5h-.1L46.5-6v.2c0 1.9-1.5 3.4-3.4 3.4-1.6 0-3-1.2-3.3-2.7L35.2-7c1.4 5 6 8.7 11.5 8.7 6.6 0 12-5.4 12-12s-5.3-12-11.9-12z" />
+    <path
+        d="M42.6-4.6 41.5-5c.2.4.5.7 1 .9 1 .4 2.1-.1 2.5-1 .2-.5.2-1 0-1.4-.2-.5-.6-.8-1-1-.5-.2-1-.2-1.4 0l1.1.5c.7.3 1 1.1.7 1.8-.3.6-1.1.9-1.8.6zm8.1-11.5c-1.5 0-2.7 1.2-2.7 2.7 0 1.5 1.2 2.7 2.7 2.7 1.5 0 2.7-1.2 2.7-2.7 0-1.5-1.2-2.7-2.7-2.7zm0 4.7c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c.1 1.1-.9 2-2 2zM12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22c-4.3 0-8-2.7-9.4-6.5L6.2 17c.3 1.3 1.5 2.4 2.9 2.4 1.6 0 2.9-1.3 2.9-2.9v-.1l3.5-2.5h.1c2.1 0 3.9-1.8 3.9-3.9 0-2.1-1.8-3.9-3.9-3.9-2.2 0-3.9 1.8-3.9 3.9v.1l-2.5 3.6H9c-.6 0-1.2.2-1.7.5L2 11.7C2.2 6.3 6.6 2 12 2c5.5 0 10 4.5 10 10s-4.5 10-10 10zm-2.4-7.1-1.3-.5c.5-.2 1.1-.2 1.6 0s1 .7 1.2 1.2c.2.5.2 1.1 0 1.7-.5 1.1-1.8 1.7-2.9 1.2-.5-.2-.9-.6-1.1-1.1l1.3.5c.2 0 .4.1.6.1.6 0 1.2-.4 1.5-1 .4-.9 0-1.8-.9-2.1zM13 9.8c0-1.5 1.2-2.6 2.6-2.6 1.5 0 2.6 1.2 2.6 2.6 0 1.5-1.2 2.6-2.6 2.6-1.4 0-2.6-1.2-2.6-2.6z" />
+    <path d="M13.7 9.8c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2c-1.1-.1-2-.9-2-2z" />
+</svg>
+</a>
+<a class="item" href="mailto:1656409967@qq.com" target="_blank" rel="noopener noreferrer me"
+    title="Email">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</a>
+<a class="item" href="posts/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="RSS">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+    </div>
+
+    <div class="footer-middle">
+        
+            
+        
+    </div>
+
+    <div class="footer-right">
+
+        
+            <span class="item">
+                
+                    2019(words)
+                
+            </span>
+        
+
+        <a class="item" accesskey="g" href="#top" id="top-link" title="Go to Top (Alt + G)">⬆</a>
+    </div>
+</footer>
+    
+<script type="text/javascript" src="/js/index.min.391531b7f49c15fb614e2e31fda52e79c6a37ec0e983448affe9d8c5c902611a.js" integrity="sha256-ORUxt/ScFfthTi4x/aUuecajfsDpg0SK/&#43;nYxckCYRo="></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>树链博弈 on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/%E6%A0%91%E9%93%BE%E5%8D%9A%E5%BC%88/</link>
+    <description>Recent content in 树链博弈 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 05 Aug 2020 11:55:38 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E6%A0%91%E9%93%BE%E5%8D%9A%E5%BC%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LightOJ-1355 Game of CS</title>
+      <link>http://localhost:1313/z/solution/2edafbf1618e176b/</link>
+      <pubDate>Wed, 05 Aug 2020 11:55:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/2edafbf1618e176b/</guid>
+      <description>&lt;h1 id=&#34;game-of-cslightoj-1355&#34;&gt;Game of CS(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1355&#34;&gt;LightOJ-1355&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Jolly and Emily are two bees studying in Computer  Science. Unlike other bees they are fond of playing two-player games.  They used to play Tic-tac-toe, Chess etc. But now since they are in CS  they invented a new game that definitely requires some knowledge of  computer science.&lt;/p&gt;&#xA;&lt;p&gt;Initially they draw a random rooted tree (a connected graph with no cycles) in a paper which consists of &lt;strong&gt;n&lt;/strong&gt; nodes, where the nodes are numbered from &lt;strong&gt;0&lt;/strong&gt; to &lt;strong&gt;n-1&lt;/strong&gt; and &lt;strong&gt;0&lt;/strong&gt; is the root, and the edges are weighted. Initially all the edges are unmarked. And an edge weigh &lt;strong&gt;w&lt;/strong&gt;, has &lt;strong&gt;w&lt;/strong&gt; identical units.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

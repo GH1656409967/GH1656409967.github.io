@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DFS on 夜雨微澜</title>
+    <link>http://localhost:1313/categories/dfs/</link>
+    <description>Recent content in DFS on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 20 Apr 2021 20:55:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指Offer-38 字符串的排列</title>
+      <link>http://localhost:1313/z/solution/71018918df4803a1/</link>
+      <pubDate>Tue, 20 Apr 2021 20:55:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/71018918df4803a1/</guid>
+      <description>&lt;h1 id=&#34;字符串的排列剑指offer-38&#34;&gt;字符串的排列(&lt;a href=&#34;https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/&#34;&gt;剑指Offer-38&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;输入一个字符串，打印出该字符串中字符的所有排列。&lt;/p&gt;&#xA;&lt;p&gt;你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;示例&#34;&gt;示例&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;输入：s = &amp;#34;abc&amp;#34;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span&gt;输出：[&amp;#34;abc&amp;#34;,&amp;#34;acb&amp;#34;,&amp;#34;bac&amp;#34;,&amp;#34;bca&amp;#34;,&amp;#34;cab&amp;#34;,&amp;#34;cba&amp;#34;]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;限制&#34;&gt;限制&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;1 &amp;lt;= s 的长度 &amp;lt;= 8&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;思路&#34;&gt;思路&lt;/h2&gt;&#xA;&lt;p&gt;dfs遍历回溯。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>剑指Offer-12 矩阵中的路径</title>
+      <link>http://localhost:1313/z/solution/bae5c0d732a7405b/</link>
+      <pubDate>Wed, 24 Mar 2021 15:32:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/bae5c0d732a7405b/</guid>
+      <description>&lt;h1 id=&#34;矩阵中的路径剑指offer-12&#34;&gt;矩阵中的路径(&lt;a href=&#34;https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/&#34;&gt;剑指Offer-12&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。例如，在下面的3×4的矩阵中包含一条字符串“bfce”的路径（路径中的字母用加粗标出）。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1321 棋盘问题</title>
+      <link>http://localhost:1313/z/solution/263b1255bf508f9a/</link>
+      <pubDate>Fri, 23 Mar 2018 08:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/263b1255bf508f9a/</guid>
+      <description>&lt;h1 id=&#34;棋盘问题-poj---1321&#34;&gt;棋盘问题 (&lt;a href=&#34;https://vjudge.net/problem/POJ-1321&#34;&gt;POJ - 1321&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;在一个给定形状的棋盘（形状可能是不规则的）上面摆放棋子，棋子没有区别。要求摆放时任意的两个棋子不能放在棋盘中的同一行或者同一列，请编程求解对于给定形状和大小的棋盘，摆放k个棋子的所有可行的摆放方案C。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

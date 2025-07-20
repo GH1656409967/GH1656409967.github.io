@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>最小表示法 on 夜雨微澜</title>
+    <link>http://localhost:1313/categories/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/</link>
+    <description>Recent content in 最小表示法 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 04 Aug 2020 22:47:38 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU-2609 How many</title>
+      <link>http://localhost:1313/z/solution/8e8c4a17274bbaf0/</link>
+      <pubDate>Tue, 04 Aug 2020 22:47:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/8e8c4a17274bbaf0/</guid>
+      <description>&lt;h1 id=&#34;how-manyhdu-2609&#34;&gt;How many(&lt;a href=&#34;https://vjudge.net/problem/HDU-2609&#34;&gt;HDU-2609&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Give you n ( n &amp;lt; 10000) necklaces ,the length of necklace will not large than 100,tell me&#xA;How many kinds of necklaces total have.(if two necklaces can equal by rotating ,we say the two necklaces are some).&#xA;For example 0110 express a necklace, you can rotate it. 0110 -&amp;gt; 1100 -&amp;gt; 1001 -&amp;gt; 0011-&amp;gt; 0110.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The input contains multiple test cases.&#xA;Each test case include: first one integers n. (2&amp;lt;=n&amp;lt;=10000)&#xA;Next n lines follow. Each line has a equal length character string. (string only include &amp;lsquo;0&amp;rsquo;,&amp;lsquo;1&amp;rsquo;).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3374 String Problem</title>
+      <link>http://localhost:1313/z/solution/86e3d7b59d954a3d/</link>
+      <pubDate>Tue, 04 Aug 2020 22:04:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/86e3d7b59d954a3d/</guid>
+      <description>&lt;h1 id=&#34;string-problemhdu-3374&#34;&gt;String Problem(&lt;a href=&#34;https://vjudge.net/problem/HDU-3374&#34;&gt;HDU-3374&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Give you a string with length N, you can generate N strings by left  shifts. For example let consider the string “SKYLONG”, we can generate  seven strings:&#xA;String Rank&#xA;SKYLONG 1&#xA;KYLONGS 2&#xA;YLONGSK 3&#xA;LONGSKY 4&#xA;ONGSKYL 5&#xA;NGSKYLO 6&#xA;GSKYLON 7&#xA;and lexicographically first of them is GSKYLON, lexicographically last is YLONGSK, both of them appear only once.&#xA;Your task is easy, calculate the lexicographically fisrt string’s Rank (if there are multiple answers, choose the smallest one), its  times, lexicographically last string’s Rank (if there are multiple  answers, choose the smallest one), and its times also.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

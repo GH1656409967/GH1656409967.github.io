@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fibonacci on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/fibonacci/</link>
+    <description>Recent content in Fibonacci on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 24 Mar 2021 00:18:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/fibonacci/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指Offer-10.2 青蛙跳台阶问题</title>
+      <link>http://localhost:1313/z/solution/710189871d66cdd8/</link>
+      <pubDate>Wed, 24 Mar 2021 00:18:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/710189871d66cdd8/</guid>
+      <description>&lt;h1 id=&#34;青蛙跳台阶问题剑指offer-102&#34;&gt;青蛙跳台阶问题(&lt;a href=&#34;https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/&#34;&gt;剑指Offer-10.2&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。&lt;/p&gt;&#xA;&lt;p&gt;答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>剑指Offer-10.1 斐波那契数列</title>
+      <link>http://localhost:1313/z/solution/5fde620dfaf8077a/</link>
+      <pubDate>Wed, 24 Mar 2021 00:08:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/5fde620dfaf8077a/</guid>
+      <description>&lt;h1 id=&#34;斐波那契数列剑指offer-101&#34;&gt;斐波那契数列(&lt;a href=&#34;https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/&#34;&gt;剑指Offer-10.1&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项（即 F(N)）。斐波那契数列的定义如下：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;F(0) = 0,   F(1) = 1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span&gt;F(N) = F(N - 1) + F(N - 2), 其中 N &amp;gt; 1.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

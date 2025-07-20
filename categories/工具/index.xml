@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on 夜雨微澜</title>
+    <link>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cmake</title>
+      <link>http://localhost:1313/z/tool/cmake/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/tool/cmake/</guid>
+      <description>&lt;p&gt;abcdefghijklmnopqrstuvwxyz&lt;/p&gt;&#xA;&lt;h1 id=&#34;目录解释&#34;&gt;目录解释&lt;/h1&gt;&#xA;&lt;p&gt;Makefile: make将运行指令来构建项目。&#xA;CMakefile：包含临时文件的目录，CMake用于检测操作系统、编译器等。此外，根据所选的生成器，它还包含特定的文件。&#xA;cmake_install.cmake：处理安装规则的CMake脚本，在项目安装时使用。&#xA;CMakeCache.txt：如文件名所示，CMake缓存。CMake在重新运行配置时使用这个文件。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

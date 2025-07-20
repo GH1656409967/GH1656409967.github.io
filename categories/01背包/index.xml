@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>01背包 on 夜雨微澜</title>
+    <link>http://localhost:1313/categories/01%E8%83%8C%E5%8C%85/</link>
+    <description>Recent content in 01背包 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 25 Apr 2021 09:07:11 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/01%E8%83%8C%E5%8C%85/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>01背包</title>
+      <link>http://localhost:1313/z/algo/dp/01%E8%83%8C%E5%8C%85/</link>
+      <pubDate>Sun, 25 Apr 2021 09:07:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/dp/01%E8%83%8C%E5%8C%85/</guid>
+      <description>&lt;h2 id=&#34;背包问题&#34;&gt;背包问题&lt;/h2&gt;&#xA;&lt;p&gt;给定一组物品，每种物品都有自己的重量（体积）和价值，现有一个背包，在受限制的重量（或者容积）下，取若干物品，使得总价值最大。这一类问题，被称为背包问题。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1837 Balance</title>
+      <link>http://localhost:1313/z/solution/5bb493a6ba6550f7/</link>
+      <pubDate>Sun, 22 Apr 2018 10:51:52 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/5bb493a6ba6550f7/</guid>
+      <description>&lt;h1 id=&#34;balance-poj---1837&#34;&gt;Balance (&lt;a href=&#34;https://vjudge.net/problem/POJ-1837&#34;&gt;POJ - 1837&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Gigel has a strange &amp;ldquo;balance&amp;rdquo; and he wants to poise it. Actually, the device is different from any other ordinary balance.&#xA;It orders two arms of negligible weight and each arm&amp;rsquo;s length is 15. Some hooks are attached to these arms and Gigel wants to hang up some weights from his collection of G weights (1 &amp;lt;= G &amp;lt;= 20)  knowing that these weights have distinct values in the range 1..25.  Gigel may droop any weight of any hook but he is forced to use all the  weights.&#xA;Finally, Gigel managed to balance the device using the  experience he gained at the National Olympiad in Informatics. Now he  would like to know in how many ways the device can be balanced.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2639 Bone Collector II</title>
+      <link>http://localhost:1313/z/solution/982145d223c0b506/</link>
+      <pubDate>Fri, 30 Mar 2018 09:19:05 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/982145d223c0b506/</guid>
+      <description>&lt;h1 id=&#34;bone-collector-ii-hdu---2639&#34;&gt;Bone Collector II (&lt;a href=&#34;https://vjudge.net/problem/HDU-2639&#34;&gt;HDU - 2639&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The title of this problem is familiar,isn&amp;rsquo;t it?yeah,if you had took part in the &amp;ldquo;Rookie Cup&amp;rdquo; competition,you must have seem this title.If you  haven&amp;rsquo;t seen it before,it doesn&amp;rsquo;t matter,I will give you a link:&lt;/p&gt;&#xA;&lt;p&gt;Here is the link:  &lt;a href=&#34;http://acm.hdu.edu.cn/showproblem.php?pid=2602&#34;&gt;http://acm.hdu.edu.cn/showproblem.php?pid=2602&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Today we are not desiring the maximum value of bones,but the K-th  maximum value of the bones.NOTICE that,we considerate two ways that get  the same value of bones are the same.That means,it will be a strictly  decreasing sequence from the 1st maximum , 2nd maximum .. to the K-th  maximum.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2602 Bone Collector</title>
+      <link>http://localhost:1313/z/solution/c23c5e71ca95182f/</link>
+      <pubDate>Tue, 27 Mar 2018 18:38:09 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/c23c5e71ca95182f/</guid>
+      <description>&lt;h1 id=&#34;bone-collector-hdu---2602&#34;&gt;Bone Collector (&lt;a href=&#34;https://vjudge.net/problem/HDU-2602&#34;&gt;HDU - 2602&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Many years ago , in Teddy’s hometown there was a man who was called  “Bone Collector”. This man like to collect varies of bones , such as  dog’s , cow’s , also he went to the grave …&#xA;The bone collector had a big bag with a volume of V ,and along his  trip of collecting there are a lot of bones , obviously , different bone has different value and different volume, now given the each bone’s  value along his trip , can you calculate out the maximum of the total  value the bone collector can get ?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2955 Robberies</title>
+      <link>http://localhost:1313/z/solution/4becc864832ef0cf/</link>
+      <pubDate>Mon, 26 Mar 2018 18:03:14 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/4becc864832ef0cf/</guid>
+      <description>&lt;h1 id=&#34;robberies-hdu---2955&#34;&gt;Robberies (&lt;a href=&#34;https://vjudge.net/problem/HDU-2955&#34;&gt;HDU - 2955&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The aspiring Roy the Robber has seen a lot of American movies, and knows that the bad guys usually gets caught in the end, often because they  become too greedy. He has decided to work in the lucrative business of  bank robbery only for a short while, before retiring to a comfortable  job at a university.&lt;/p&gt;&#xA;&lt;p&gt;For a few months now, Roy has been assessing the security of various banks and the amount of cash they hold. He wants to make a calculated  risk, and grab as much money as possible.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2546 饭卡</title>
+      <link>http://localhost:1313/z/solution/4d48e38e85e8b673/</link>
+      <pubDate>Sun, 25 Mar 2018 17:26:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/4d48e38e85e8b673/</guid>
+      <description>&lt;h1 id=&#34;饭卡-hdu---2546&#34;&gt;饭卡 (&lt;a href=&#34;https://vjudge.net/problem/HDU-2546&#34;&gt;HDU - 2546&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;电子科大本部食堂的饭卡有一种很诡异的设计，即在购买之前判断余额。如果购买一个商品之前，卡上的剩余金额大于或等于5元，就一定可以购买成功（即使购买后卡上余额为负），否则无法购买（即使金额足够）。所以大家都希望尽量使卡上的余额最少。&#xA;某天，食堂中有n种菜出售，每种菜可购买一次。已知每种菜的价格以及卡上的余额，问最少可使卡上的余额为多少。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

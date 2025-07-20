@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FFmpeg on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/ffmpeg/</link>
+    <description>Recent content in FFmpeg on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FFmpeg</title>
+      <link>http://localhost:1313/z/lang/cpp/ffmpeg/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/lang/cpp/ffmpeg/</guid>
+      <description>&lt;p&gt;FFmpeg 最初的名称是 &amp;ldquo;Fast Forward MPEG&amp;rdquo;，是一个自由软件/开源软件项目，用于处理多媒体数据。其名称中的 &amp;ldquo;FF&amp;rdquo; 指代 &amp;ldquo;Fast Forward&amp;rdquo;，而 &amp;ldquo;mpeg&amp;rdquo; 则是指 MPEG 格式，即 Moving Picture Experts Group 规定的一系列多媒体标准。因此，&amp;ldquo;Fast Forward MPEG&amp;rdquo; 的意思是快速前进的 MPEG，指其旨在快速处理和编辑 MPEG 格式的多媒体数据。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

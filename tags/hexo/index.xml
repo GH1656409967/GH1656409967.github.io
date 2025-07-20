@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hexo on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/hexo/</link>
+    <description>Recent content in Hexo on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 07 Aug 2022 13:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vercel托管Hexo博客</title>
+      <link>http://localhost:1313/y/blog/abf4cb68b4c20c52/</link>
+      <pubDate>Sun, 07 Aug 2022 13:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/blog/abf4cb68b4c20c52/</guid>
+      <description>&lt;h2 id=&#34;1-vercel配置&#34;&gt;1 Vercel配置&lt;/h2&gt;&#xA;&lt;p&gt;进入&lt;a href=&#34;https://vercel.com/&#34;&gt;Vercel官网&lt;/a&gt;，点击右上角&lt;code&gt;Sign Up&lt;/code&gt;注册，选择&lt;code&gt;Continue with GitHub&lt;/code&gt;使用GitHub账号注册。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/abf4cb68b4c20c52/%E6%B3%A8%E5%86%8Cvercel.png&#34; alt=&#34;注册vercel&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;注册完成后，会进入&lt;a href=&#34;https://vercel.com/new&#34;&gt;新建项目&lt;/a&gt;页面。如果没有，点击页面左上角进入&lt;a href=&#34;https://vercel.com/dashboard&#34;&gt;控制面板&lt;/a&gt;，点击&lt;code&gt;Overview&lt;/code&gt;进入概览，点击&lt;code&gt;New Project&lt;/code&gt;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/abf4cb68b4c20c52/%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE.png&#34; alt=&#34;新建项目&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;在&lt;code&gt;Import Git Repository&lt;/code&gt;下面的选择框中选择&lt;code&gt;Add GitHub Account&lt;/code&gt;，在弹出来的页面中选择之前配置GitHub Pages用的仓库，然后点击&lt;code&gt;Import&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NameSilo切换域名NS到Cloudflare</title>
+      <link>http://localhost:1313/y/blog/7f8636440ab49b65/</link>
+      <pubDate>Sun, 07 Aug 2022 11:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/blog/7f8636440ab49b65/</guid>
+      <description>&lt;h2 id=&#34;1-配置&#34;&gt;1 配置&lt;/h2&gt;&#xA;&lt;p&gt;首先，需要在&lt;a href=&#34;https://www.namesilo.com/&#34;&gt;NameSilo&lt;/a&gt;上注册登录，购买心仪的域名，然后注册并登录&lt;a href=&#34;https://dash.cloudflare.com/&#34;&gt;Cloudflare&lt;/a&gt;，&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/7f8636440ab49b65/%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8.png&#34; alt=&#34;开始使用&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;点击左侧&lt;strong&gt;网站&lt;/strong&gt;，进入网站管理页面，点击&lt;strong&gt;添加站点&lt;/strong&gt;，&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/7f8636440ab49b65/%E7%BD%91%E7%AB%99%E7%AE%A1%E7%90%86.png&#34; alt=&#34;网站管理&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;在&lt;strong&gt;输入您的站点&lt;/strong&gt;输入框内填写NameSilo上的域名，点击&lt;strong&gt;添加站点&lt;/strong&gt;，&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/7f8636440ab49b65/%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9.png&#34; alt=&#34;添加站点&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;选择您的计划&lt;/strong&gt;，一般用户选最下面的&lt;strong&gt;Free&lt;/strong&gt;免费版就行了。选中免费那一栏，然后点击&lt;strong&gt;继续&lt;/strong&gt;按钮。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hexo以及NexT8主题的配置</title>
+      <link>http://localhost:1313/y/blog/ad1c5aba78b0afc4/</link>
+      <pubDate>Thu, 07 Apr 2022 13:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/blog/ad1c5aba78b0afc4/</guid>
+      <description>&lt;h2 id=&#34;1-安装next-v80&#34;&gt;1 安装NexT v8.0&lt;/h2&gt;&#xA;&lt;p&gt;打开命令行，进入博客根目录，使用git下载&lt;a href=&#34;https://theme-next.js.org/&#34;&gt;NexT&lt;/a&gt;主题&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 下载NexT主题&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span&gt;git clone https://github.com/next-theme/hexo-theme-next themes/next&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后修改博客根目录下的&lt;code&gt;_config.yml&lt;/code&gt;配置文件，将主题设置为NexT&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Win10使用Hexo和Pages服务搭建个人博客</title>
+      <link>http://localhost:1313/y/blog/f6c59ae5f9b3dc94/</link>
+      <pubDate>Thu, 07 Apr 2022 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/blog/f6c59ae5f9b3dc94/</guid>
+      <description>&lt;h2 id=&#34;1-博客&#34;&gt;1 博客&lt;/h2&gt;&#xA;&lt;p&gt;博客（blog或weblog）正式名称是网络日志。一个典型的博客结合了文字、图像、链接以及其它主题相关的媒体，同时能够让读者以互动的方式留下建议和意见。博客的内容包括专注在特定课题上的评论或新闻，以及个人性的日记等。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hexo文章操作</title>
+      <link>http://localhost:1313/y/blog/b71402c4867572eb/</link>
+      <pubDate>Fri, 06 Mar 2020 08:12:55 +0000</pubDate>
+      <guid>http://localhost:1313/y/blog/b71402c4867572eb/</guid>
+      <description>&lt;h1 id=&#34;一创建文章&#34;&gt;一、创建文章&lt;/h1&gt;&#xA;&lt;p&gt;命令：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;hexo new &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;layout&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &amp;lt;title&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参数说明：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;layout可以为以下三种：&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;参数名&lt;/th&gt;&#xA;          &lt;th&gt;功能&lt;/th&gt;&#xA;          &lt;th&gt;文章路径&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;post&lt;/td&gt;&#xA;          &lt;td&gt;新建博文&lt;/td&gt;&#xA;          &lt;td&gt;source/_posts&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;page&lt;/td&gt;&#xA;          &lt;td&gt;新建页面（如404，分类）&lt;/td&gt;&#xA;          &lt;td&gt;source&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;draft&lt;/td&gt;&#xA;          &lt;td&gt;草稿&lt;/td&gt;&#xA;          &lt;td&gt;source/_drafts&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;草稿可通过一下命令发布：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

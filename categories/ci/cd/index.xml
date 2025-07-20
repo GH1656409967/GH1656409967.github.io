@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CI/CD on 夜雨微澜</title>
+    <link>http://localhost:1313/categories/ci/cd/</link>
+    <description>Recent content in CI/CD on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CI/CD</title>
+      <link>http://localhost:1313/z/tool/cicd/cicd/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/tool/cicd/cicd/</guid>
+      <description>&lt;h1 id=&#34;cicd&#34;&gt;CI/CD&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://travis-ci.org&#34;&gt;Travis&lt;/a&gt;用于GNU/Linux和macOS&#xA;&lt;a href=&#34;https://www.appveyor.com&#34;&gt;Appveyor&lt;/a&gt;用于Windows&#xA;&lt;a href=&#34;https://circleci.com&#34;&gt;CircleCI&lt;/a&gt;用于附加的GNU/Linux测试和商业编译器&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

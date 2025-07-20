@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anti-Nim博弈 on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/anti-nim%E5%8D%9A%E5%BC%88/</link>
+    <description>Recent content in Anti-Nim博弈 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 18 Jul 2020 10:46:12 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/anti-nim%E5%8D%9A%E5%BC%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU-2509 Be the Winner</title>
+      <link>http://localhost:1313/z/solution/e1f7bbd512788cbf/</link>
+      <pubDate>Sat, 18 Jul 2020 10:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/e1f7bbd512788cbf/</guid>
+      <description>&lt;h1 id=&#34;be-the-winnerhdu-2509&#34;&gt;Be the Winner(&lt;a href=&#34;https://vjudge.net/problem/HDU-2509&#34;&gt;HDU-2509&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s consider m apples divided into n groups. Each group contains no  more than 100 apples, arranged in a line. You can take any number of  consecutive apples at one time.&#xA;For example &amp;ldquo;@@@&amp;rdquo; can be turned into &amp;ldquo;@@&amp;rdquo; or &amp;ldquo;@&amp;rdquo; or &amp;ldquo;@ @&amp;quot;(two  piles). two people get apples one after another and the one who takes  the last is&#xA;the loser. Fra wants to know in which situations he can win by  playing strategies (that is, no matter what action the rival takes, fra  will win).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1253 Misere Nim</title>
+      <link>http://localhost:1313/z/solution/14e7debc3ca6959a/</link>
+      <pubDate>Sat, 18 Jul 2020 09:39:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/14e7debc3ca6959a/</guid>
+      <description>&lt;h1 id=&#34;misere-nimlightoj-1253&#34;&gt;Misere Nim(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1253&#34;&gt;LightOJ-1253&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Alice and Bob are playing game of &lt;strong&gt;Misère Nim&lt;/strong&gt;. Misère Nim is a game playing on &lt;strong&gt;k&lt;/strong&gt; piles of stones, each pile containing one or more stones. The players  alternate turns and in each turn a player can select one of the piles  and can remove as many stones from that pile unless the pile is empty.  In each turn a player must remove at least one stone from any pile.  Alice starts first. The player who removes the last stone &lt;strong&gt;loses&lt;/strong&gt; the game.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-3480 John</title>
+      <link>http://localhost:1313/z/solution/c331a7435e4d7434/</link>
+      <pubDate>Tue, 14 Jul 2020 18:50:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/c331a7435e4d7434/</guid>
+      <description>&lt;h1 id=&#34;johnpoj-3480&#34;&gt;John(&lt;a href=&#34;https://vjudge.net/problem/POJ-3480&#34;&gt;POJ-3480&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Little John is playing very funny  game with his younger brother. There is one big box filled with M&amp;amp;Ms of different colors. At first John has to eat several M&amp;amp;Ms of the  same color. Then his opponent has to make a turn. And so on. Please note that each player has to eat at least one M&amp;amp;M during his turn. If  John (or his brother) will eat the last M&amp;amp;M from the box he will be  considered as a looser and he will have to buy a new candy box.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

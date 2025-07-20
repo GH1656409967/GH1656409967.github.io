@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>最小循环节 on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/%E6%9C%80%E5%B0%8F%E5%BE%AA%E7%8E%AF%E8%8A%82/</link>
+    <description>Recent content in 最小循环节 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 31 Jul 2020 11:52:38 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E6%9C%80%E5%B0%8F%E5%BE%AA%E7%8E%AF%E8%8A%82/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>POJ-2406 Power Strings</title>
+      <link>http://localhost:1313/z/solution/b41a0ed18394b935/</link>
+      <pubDate>Fri, 31 Jul 2020 11:52:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/b41a0ed18394b935/</guid>
+      <description>&lt;h1 id=&#34;power-strings-poj-2406&#34;&gt;Power Strings (&lt;a href=&#34;https://vjudge.net/problem/POJ-2406&#34;&gt;POJ-2406&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given two strings a and b we define a&lt;em&gt;b to be their concatenation. For  example, if a = &amp;ldquo;abc&amp;rdquo; and b = &amp;ldquo;def&amp;rdquo; then a&lt;/em&gt;b = &amp;ldquo;abcdef&amp;rdquo;. If we think of  concatenation as multiplication, exponentiation by a non-negative  integer is defined in the normal way: a^0 = &amp;quot;&amp;quot; (the empty string) and  a^(n+1) = a*(a^n).&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each test case is a line of input representing s, a string of printable  characters. The length of s will be at least 1 and will not exceed 1  million characters. A line containing a period follows the last test  case.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1358 Period</title>
+      <link>http://localhost:1313/z/solution/5bd76b31bbe72978/</link>
+      <pubDate>Fri, 31 Jul 2020 11:44:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/5bd76b31bbe72978/</guid>
+      <description>&lt;h1 id=&#34;period-hdu-1358&#34;&gt;Period (&lt;a href=&#34;https://vjudge.net/problem/HDU-1358&#34;&gt;HDU-1358&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;For each prefix of a given string S with N characters (each character  has an ASCII code between 97 and 126, inclusive), we want to know  whether the prefix is a periodic string. That is, for each i (2 &amp;lt;= i  &amp;lt;= N) we want to know the largest K &amp;gt; 1 (if there is one) such  that the prefix of S with length i can be written as AK , that is A concatenated K times, for some string A. Of course, we also want to know the period K.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3746 Cyclic Nacklace</title>
+      <link>http://localhost:1313/z/solution/342193647a6ddb9d/</link>
+      <pubDate>Fri, 31 Jul 2020 11:28:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/342193647a6ddb9d/</guid>
+      <description>&lt;h1 id=&#34;cyclic-nacklace-hdu-3746&#34;&gt;Cyclic Nacklace (&lt;a href=&#34;https://vjudge.net/problem/HDU-3746&#34;&gt;HDU-3746&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;CC always becomes very depressed at the end of this month, he has  checked his credit card yesterday, without any surprise, there are only  99.9 yuan left. he is too distressed and thinking about how to tide over the last days. Being inspired by the entrepreneurial spirit of &amp;ldquo;HDU  CakeMan&amp;rdquo;, he wants to sell some little things to make money. Of course,  this is not an easy task.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>KMP</title>
+      <link>http://localhost:1313/z/algo/struct/string/0f99d88b6c4a1cdd/</link>
+      <pubDate>Sun, 26 Jul 2020 14:20:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/struct/string/0f99d88b6c4a1cdd/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Knuth-Morris-Pratt字符串查找算法，简称为“KMP算法”，常用于在一个&lt;code&gt;文本串S&lt;/code&gt;内查找一个&lt;code&gt;模式串T&lt;/code&gt;的出现位置。这个算法由Donald Knuth、Vaughan Pratt、James H.  Morris三人于1977年联合发表，故取这3人的姓氏命名此算法。时间复杂度O(|S|+|T|)。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>背包问题 on 夜雨微澜</title>
+    <link>http://localhost:1313/categories/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</link>
+    <description>Recent content in 背包问题 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 25 Apr 2021 09:07:11 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>背包问题</title>
+      <link>http://localhost:1313/z/algo/dp/knapsack/</link>
+      <pubDate>Sun, 25 Apr 2021 09:07:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/dp/knapsack/</guid>
+      <description>&lt;h1 id=&#34;01背包&#34;&gt;01背包&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题目描述&#34;&gt;题目描述&lt;/h2&gt;&#xA;&lt;p&gt;有 N 件物品，放入第 i 件物品的耗费是 w[i]，得到的价值是 v[i]，现给出一个容量为 C 的背包，&lt;strong&gt;每种物品只能选一次（选或者不选）&lt;/strong&gt;，如何选取物品，使得在不超过背包容量C的前提下，让装进去的物品总价值最大。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

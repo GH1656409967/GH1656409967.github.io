@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>自动机 on 夜雨微澜</title>
+    <link>http://localhost:1313/categories/%E8%87%AA%E5%8A%A8%E6%9C%BA/</link>
+    <description>Recent content in 自动机 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 03 Apr 2021 17:44:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E8%87%AA%E5%8A%A8%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指Offer-20 表示数值的字符串</title>
+      <link>http://localhost:1313/z/solution/d903acfcaec856fe/</link>
+      <pubDate>Sat, 03 Apr 2021 17:44:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/d903acfcaec856fe/</guid>
+      <description>&lt;h1 id=&#34;表示数值的字符串剑指offer-20&#34;&gt;表示数值的字符串(&lt;a href=&#34;https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/&#34;&gt;剑指Offer-20&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串&amp;quot;+100&amp;quot;、&amp;ldquo;5e2&amp;rdquo;、&amp;quot;-123&amp;quot;、&amp;ldquo;3.1416&amp;rdquo;、&amp;quot;-1E-16&amp;quot;、&amp;ldquo;0123&amp;quot;都表示数值，但&amp;quot;12e&amp;rdquo;、&amp;ldquo;1a3.14&amp;rdquo;、&amp;ldquo;1.2.3&amp;rdquo;、&amp;quot;+-5&amp;quot;及&amp;quot;12e+5.4&amp;quot;都不是。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

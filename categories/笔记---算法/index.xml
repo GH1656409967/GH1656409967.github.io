@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>笔记 - 算法 on 夜雨微澜</title>
+    <link>http://localhost:1313/categories/%E7%AC%94%E8%AE%B0---%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 笔记 - 算法 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E7%AC%94%E8%AE%B0---%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>递推</title>
+      <link>http://localhost:1313/z/algo/dp/%E9%80%92%E6%8E%A8/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/dp/%E9%80%92%E6%8E%A8/</guid>
+      <description>&lt;h2 id=&#34;递推&#34;&gt;递推&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;递推&lt;/strong&gt;也是经常被使用的一种简单算法。&lt;strong&gt;递推&lt;/strong&gt;是一种用若干步可重复的简单运算来描述复杂问题的方法。&lt;/p&gt;&#xA;&lt;p&gt;递推的特点在于，每一项都和他前面的若干项有一定关联，这种关联一般可以通过&lt;strong&gt;递推关系式&lt;/strong&gt;来表示，可以通过其前面若干项得出某项的数据。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

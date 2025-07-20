@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LIS on 夜雨微澜</title>
+    <link>http://localhost:1313/categories/lis/</link>
+    <description>Recent content in LIS on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 30 Mar 2018 19:28:50 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/lis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU-1160 FatMouse&#39;s Speed</title>
+      <link>http://localhost:1313/z/solution/3e77307198edd961/</link>
+      <pubDate>Fri, 30 Mar 2018 19:28:50 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3e77307198edd961/</guid>
+      <description>&lt;h1 id=&#34;fatmouses-speed-hdu---1160&#34;&gt;FatMouse’s Speed (&lt;a href=&#34;https://vjudge.net/problem/HDU-1160&#34;&gt;HDU - 1160&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;FatMouse believes that the fatter a mouse is, the faster it runs. To  disprove this, you want to take the data on a collection of mice and put as large a subset of this data as possible into a sequence so that the  weights are increasing, but the speeds are decreasing.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Input contains data for a bunch of mice, one mouse per line, terminated by end of file.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2533 Longest Ordered Subsequence</title>
+      <link>http://localhost:1313/z/solution/1f76fc9f9b518d48/</link>
+      <pubDate>Fri, 30 Mar 2018 09:58:35 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/1f76fc9f9b518d48/</guid>
+      <description>&lt;h1 id=&#34;longest-ordered-subsequence-poj---2533&#34;&gt;Longest Ordered Subsequence (&lt;a href=&#34;https://vjudge.net/problem/POJ-2533&#34;&gt;POJ - 2533&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A numeric sequence of        &lt;em&gt;ai&lt;/em&gt; is ordered if        &lt;em&gt;a1&lt;/em&gt; &amp;lt;        &lt;em&gt;a2&lt;/em&gt; &amp;lt; &amp;hellip; &amp;lt;        &lt;em&gt;aN&lt;/em&gt;. Let the subsequence of the given numeric sequence (       &lt;em&gt;a1&lt;/em&gt;,        &lt;em&gt;a2&lt;/em&gt;, &amp;hellip;,        &lt;em&gt;aN&lt;/em&gt;) be any sequence (       &lt;em&gt;ai1&lt;/em&gt;,        &lt;em&gt;ai2&lt;/em&gt;, &amp;hellip;,        &lt;em&gt;aiK&lt;/em&gt;), where 1 &amp;lt;=        &lt;em&gt;i1&lt;/em&gt; &amp;lt;        &lt;em&gt;i2&lt;/em&gt; &amp;lt; &amp;hellip; &amp;lt;        &lt;em&gt;iK&lt;/em&gt; &amp;lt;=        &lt;em&gt;N&lt;/em&gt;. For example, sequence (1, 7, 3, 5, 9, 4, 8) has ordered subsequences, e. g., (1, 7), (3, 4, 8) and many others. All longest  ordered subsequences are of length 4, e. g., (1, 3, 5, 8).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1836 Alignment</title>
+      <link>http://localhost:1313/z/solution/b5ba097124b287d9/</link>
+      <pubDate>Fri, 30 Mar 2018 09:44:21 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/b5ba097124b287d9/</guid>
+      <description>&lt;h1 id=&#34;alignment-poj---1836&#34;&gt;Alignment (&lt;a href=&#34;https://vjudge.net/problem/POJ-1836&#34;&gt;POJ - 1836&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;In the army, a platoon is composed by n soldiers. During the morning  inspection, the soldiers are aligned in a straight line in front of the  captain. The captain is not satisfied with the way his soldiers are  aligned; it is true that the soldiers are aligned in order by their code number: 1 , 2 , 3 , . . . , n , but they are not aligned by their  height. The captain asks some soldiers to get out of the line, as the  soldiers that remain in the line, without changing their places, but  getting closer, to form a new line, where each soldier can see by  looking lengthwise the line at least one of the line&amp;rsquo;s extremity (left  or right). A soldier see an extremity if there isn&amp;rsquo;t any soldiers with a higher or equal height than his height between him and that extremity.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

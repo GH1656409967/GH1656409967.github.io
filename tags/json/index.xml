@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Json on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/json/</link>
+    <description>Recent content in Json on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>json</title>
+      <link>http://localhost:1313/z/lang/cpp/json/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/lang/cpp/json/</guid>
+      <description>&lt;h1 id=&#34;simdjson&#34;&gt;simdjson&lt;/h1&gt;&#xA;&lt;p&gt;高性能解析库，不支持序列化（即json对象转换成字符串），只支持反序列化（即字符串转换成json对象）。&lt;/p&gt;&#xA;&lt;h1 id=&#34;nlohmannjson&#34;&gt;nlohmann/json&lt;/h1&gt;&#xA;&lt;p&gt;json_fwd.hpp 主要是用于 前向声明 json 类型，它有助于：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

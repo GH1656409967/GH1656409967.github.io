@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>01背包 on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/01%E8%83%8C%E5%8C%85/</link>
+    <description>Recent content in 01背包 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 25 Apr 2021 09:07:11 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/01%E8%83%8C%E5%8C%85/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>01背包</title>
+      <link>http://localhost:1313/z/algo/dp/01%E8%83%8C%E5%8C%85/</link>
+      <pubDate>Sun, 25 Apr 2021 09:07:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/dp/01%E8%83%8C%E5%8C%85/</guid>
+      <description>&lt;h2 id=&#34;背包问题&#34;&gt;背包问题&lt;/h2&gt;&#xA;&lt;p&gt;给定一组物品，每种物品都有自己的重量（体积）和价值，现有一个背包，在受限制的重量（或者容积）下，取若干物品，使得总价值最大。这一类问题，被称为背包问题。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

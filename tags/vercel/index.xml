@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vercel on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/vercel/</link>
+    <description>Recent content in Vercel on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 07 Aug 2022 13:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/vercel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vercel托管Hexo博客</title>
+      <link>http://localhost:1313/y/blog/abf4cb68b4c20c52/</link>
+      <pubDate>Sun, 07 Aug 2022 13:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/blog/abf4cb68b4c20c52/</guid>
+      <description>&lt;h2 id=&#34;1-vercel配置&#34;&gt;1 Vercel配置&lt;/h2&gt;&#xA;&lt;p&gt;进入&lt;a href=&#34;https://vercel.com/&#34;&gt;Vercel官网&lt;/a&gt;，点击右上角&lt;code&gt;Sign Up&lt;/code&gt;注册，选择&lt;code&gt;Continue with GitHub&lt;/code&gt;使用GitHub账号注册。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/abf4cb68b4c20c52/%E6%B3%A8%E5%86%8Cvercel.png&#34; alt=&#34;注册vercel&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;注册完成后，会进入&lt;a href=&#34;https://vercel.com/new&#34;&gt;新建项目&lt;/a&gt;页面。如果没有，点击页面左上角进入&lt;a href=&#34;https://vercel.com/dashboard&#34;&gt;控制面板&lt;/a&gt;，点击&lt;code&gt;Overview&lt;/code&gt;进入概览，点击&lt;code&gt;New Project&lt;/code&gt;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/abf4cb68b4c20c52/%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE.png&#34; alt=&#34;新建项目&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;在&lt;code&gt;Import Git Repository&lt;/code&gt;下面的选择框中选择&lt;code&gt;Add GitHub Account&lt;/code&gt;，在弹出来的页面中选择之前配置GitHub Pages用的仓库，然后点击&lt;code&gt;Import&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NameSilo切换域名NS到Cloudflare</title>
+      <link>http://localhost:1313/y/blog/7f8636440ab49b65/</link>
+      <pubDate>Sun, 07 Aug 2022 11:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/blog/7f8636440ab49b65/</guid>
+      <description>&lt;h2 id=&#34;1-配置&#34;&gt;1 配置&lt;/h2&gt;&#xA;&lt;p&gt;首先，需要在&lt;a href=&#34;https://www.namesilo.com/&#34;&gt;NameSilo&lt;/a&gt;上注册登录，购买心仪的域名，然后注册并登录&lt;a href=&#34;https://dash.cloudflare.com/&#34;&gt;Cloudflare&lt;/a&gt;，&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/7f8636440ab49b65/%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8.png&#34; alt=&#34;开始使用&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;点击左侧&lt;strong&gt;网站&lt;/strong&gt;，进入网站管理页面，点击&lt;strong&gt;添加站点&lt;/strong&gt;，&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/7f8636440ab49b65/%E7%BD%91%E7%AB%99%E7%AE%A1%E7%90%86.png&#34; alt=&#34;网站管理&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;在&lt;strong&gt;输入您的站点&lt;/strong&gt;输入框内填写NameSilo上的域名，点击&lt;strong&gt;添加站点&lt;/strong&gt;，&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/y/blog/7f8636440ab49b65/%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9.png&#34; alt=&#34;添加站点&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;选择您的计划&lt;/strong&gt;，一般用户选最下面的&lt;strong&gt;Free&lt;/strong&gt;免费版就行了。选中免费那一栏，然后点击&lt;strong&gt;继续&lt;/strong&gt;按钮。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

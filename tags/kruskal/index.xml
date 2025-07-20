@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kruskal on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/kruskal/</link>
+    <description>Recent content in Kruskal on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 31 Mar 2018 21:28:43 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/kruskal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>POJ-1251 Jungle Roads</title>
+      <link>http://localhost:1313/z/solution/6973629d80137b26/</link>
+      <pubDate>Sat, 31 Mar 2018 21:28:43 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/6973629d80137b26/</guid>
+      <description>&lt;h1 id=&#34;jungle-roads-poj---1251&#34;&gt;Jungle Roads (&lt;a href=&#34;https://vjudge.net/problem/POJ-1251&#34;&gt;POJ - 1251&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/z/solution/6973629d80137b26/POJ1251.png&#34; alt=&#34;img&#34;&gt;&#xA;The Head Elder of the tropical island of Lagrishan has a  problem. A burst of foreign aid money was spent on extra roads between  villages some years ago. But the jungle overtakes roads relentlessly, so the large road network is too expensive to maintain. The Council of  Elders must choose to stop maintaining some roads. The map above on the  left shows all the roads in use now and the cost in aacms per month to  maintain them. Of course there needs to be some way to get between all  the villages on maintained roads, even if the route is not as short as  before. The Chief Elder would like to tell the Council of Elders what  would be the smallest amount they could spend in aacms per month to  maintain roads that would connect all the villages. The villages are  labeled A through I in the maps above. The map on the right shows the  roads that could be maintained most cheaply, for 216 aacms per month.  Your task is to write a program that will solve such problems.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

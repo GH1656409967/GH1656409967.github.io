@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>书源 on 夜雨微澜</title>
+    <link>http://localhost:1313/tags/%E4%B9%A6%E6%BA%90/</link>
+    <description>Recent content in 书源 on 夜雨微澜</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 18 Jan 2025 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E4%B9%A6%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>阅读书源</title>
+      <link>http://localhost:1313/y/%E9%98%85%E8%AF%BB%E4%B9%A6%E6%BA%90/</link>
+      <pubDate>Sat, 18 Jan 2025 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/%E9%98%85%E8%AF%BB%E4%B9%A6%E6%BA%90/</guid>
+      <description>&lt;h1 id=&#34;书源仓库&#34;&gt;书源仓库&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://shuyuan.yiove.com/&#34;&gt;https://shuyuan.yiove.com/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
