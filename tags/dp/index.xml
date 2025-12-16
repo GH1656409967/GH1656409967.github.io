@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DP on 似水</title>
+    <link>http://localhost:1313/tags/dp/</link>
+    <description>Recent content in DP on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 03 Apr 2021 17:44:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指Offer-20 表示数值的字符串</title>
+      <link>http://localhost:1313/z/solution/d903acfcaec856fe/</link>
+      <pubDate>Sat, 03 Apr 2021 17:44:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/d903acfcaec856fe/</guid>
+      <description>&lt;h1 id=&#34;表示数值的字符串剑指offer-20&#34;&gt;表示数值的字符串(&lt;a href=&#34;https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/&#34;&gt;剑指Offer-20&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串&amp;quot;+100&amp;quot;、&amp;ldquo;5e2&amp;rdquo;、&amp;quot;-123&amp;quot;、&amp;ldquo;3.1416&amp;rdquo;、&amp;quot;-1E-16&amp;quot;、&amp;ldquo;0123&amp;quot;都表示数值，但&amp;quot;12e&amp;rdquo;、&amp;ldquo;1a3.14&amp;rdquo;、&amp;ldquo;1.2.3&amp;rdquo;、&amp;quot;+-5&amp;quot;及&amp;quot;12e+5.4&amp;quot;都不是。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>剑指Offer-19 正则表达式匹配</title>
+      <link>http://localhost:1313/z/solution/7e96f7d07418a4a2/</link>
+      <pubDate>Sat, 03 Apr 2021 16:37:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/7e96f7d07418a4a2/</guid>
+      <description>&lt;h1 id=&#34;正则表达式匹配剑指offer-19&#34;&gt;正则表达式匹配(&lt;a href=&#34;https://leetcode-cn.com/problems/zheng-ze-biao-da-shi-pi-pei-lcof/&#34;&gt;剑指Offer-19&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;请实现一个函数用来匹配包含&lt;code&gt;&#39;.&#39;&lt;/code&gt;和&lt;code&gt;&#39;*&#39;&lt;/code&gt;的正则表达式。模式中的字符&lt;code&gt;&#39;.&#39;&lt;/code&gt;表示任意一个字符，而&lt;code&gt;&#39;*&#39;&lt;/code&gt;表示它前面的字符可以出现任意次（含0次）。在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串&lt;code&gt;&amp;quot;aaa&amp;quot;&lt;/code&gt;与模式&lt;code&gt;&amp;quot;a.a&amp;quot;&lt;/code&gt;和&lt;code&gt;&amp;quot;ab*ac*a&amp;quot;&lt;/code&gt;匹配，但与&lt;code&gt;&amp;quot;aa.a&amp;quot;&lt;/code&gt;和&lt;code&gt;&amp;quot;ab*a&amp;quot;&lt;/code&gt;均不匹配。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PATA-1007 Maximum Subsequence Sum</title>
+      <link>http://localhost:1313/z/solution/e552f8a8e1d42eba/</link>
+      <pubDate>Fri, 28 Aug 2020 13:59:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/e552f8a8e1d42eba/</guid>
+      <description>&lt;h1 id=&#34;maximum-subsequence-sumpata-1007&#34;&gt;Maximum Subsequence Sum(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805514284679168&#34;&gt;PATA-1007&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given a sequence of K integers { N1, N2, &amp;hellip;, NK }. A continuous subsequence is defined to be { Ni, Ni+1, &amp;hellip;, Nj } where 1≤i≤j≤K. The Maximum Subsequence is the continuous subsequence which has the  largest sum of its elements. For example, given sequence { -2, 11, -4,  13, -5, -2 }, its maximum subsequence is { 11, -4, 13 } with the largest sum being 20.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1837 Balance</title>
+      <link>http://localhost:1313/z/solution/5bb493a6ba6550f7/</link>
+      <pubDate>Sun, 22 Apr 2018 10:51:52 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/5bb493a6ba6550f7/</guid>
+      <description>&lt;h1 id=&#34;balance-poj---1837&#34;&gt;Balance (&lt;a href=&#34;https://vjudge.net/problem/POJ-1837&#34;&gt;POJ - 1837&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Gigel has a strange &amp;ldquo;balance&amp;rdquo; and he wants to poise it. Actually, the device is different from any other ordinary balance.&#xA;It orders two arms of negligible weight and each arm&amp;rsquo;s length is 15. Some hooks are attached to these arms and Gigel wants to hang up some weights from his collection of G weights (1 &amp;lt;= G &amp;lt;= 20)  knowing that these weights have distinct values in the range 1..25.  Gigel may droop any weight of any hook but he is forced to use all the  weights.&#xA;Finally, Gigel managed to balance the device using the  experience he gained at the National Olympiad in Informatics. Now he  would like to know in how many ways the device can be balanced.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1050 To the Max</title>
+      <link>http://localhost:1313/z/solution/90f2e79596fd0149/</link>
+      <pubDate>Sun, 22 Apr 2018 10:45:43 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/90f2e79596fd0149/</guid>
+      <description>&lt;h1 id=&#34;to-the-max-poj---1050&#34;&gt;To the Max (&lt;a href=&#34;https://vjudge.net/problem/POJ-1050&#34;&gt;POJ - 1050&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given a two-dimensional array of positive and negative integers, a  sub-rectangle is any contiguous sub-array of size 1*1 or greater located within the whole array. The sum of a rectangle is the sum of all the  elements in that rectangle. In this problem the sub-rectangle with the  largest sum is referred to as the maximal sub-rectangle.&#xA;As an example, the maximal sub-rectangle of the array:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1069 Monkey and Banana</title>
+      <link>http://localhost:1313/z/solution/3e77307198edd961/</link>
+      <pubDate>Sun, 22 Apr 2018 10:39:02 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3e77307198edd961/</guid>
+      <description>&lt;h1 id=&#34;monkey-and-banana-hdu---1069&#34;&gt;Monkey and Banana (&lt;a href=&#34;https://vjudge.net/problem/HDU-1069&#34;&gt;HDU - 1069&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A group of researchers are designing an experiment to test the IQ of a  monkey. They will hang a banana at the roof of a building, and at the  mean time, provide the monkey with some blocks. If the monkey is clever  enough, it shall be able to reach the banana by placing one block on the top another to build a tower and climb up to get its favorite food.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1029 Ignatius and the Princess IV</title>
+      <link>http://localhost:1313/z/solution/208fcd86a174a67a/</link>
+      <pubDate>Sun, 22 Apr 2018 10:24:06 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/208fcd86a174a67a/</guid>
+      <description>&lt;h1 id=&#34;ignatius-and-the-princess-iv-hdu---1029&#34;&gt;Ignatius and the Princess IV (&lt;a href=&#34;https://vjudge.net/problem/HDU-1029&#34;&gt;HDU - 1029&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;OK, you are not too bad, em&amp;hellip; But you can never pass the next test.&amp;rdquo; feng5166 says.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;I will tell you an odd number N, and then N integers. There will  be a special integer among them, you have to tell me which integer is  the special one after I tell you all the integers.&amp;rdquo; feng5166 says.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;But what is the characteristic of the special integer?&amp;rdquo; Ignatius asks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1160 FatMouse&#39;s Speed</title>
+      <link>http://localhost:1313/z/solution/3e77307198edd961/</link>
+      <pubDate>Fri, 30 Mar 2018 19:28:50 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3e77307198edd961/</guid>
+      <description>&lt;h1 id=&#34;fatmouses-speed-hdu---1160&#34;&gt;FatMouse’s Speed (&lt;a href=&#34;https://vjudge.net/problem/HDU-1160&#34;&gt;HDU - 1160&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;FatMouse believes that the fatter a mouse is, the faster it runs. To  disprove this, you want to take the data on a collection of mice and put as large a subset of this data as possible into a sequence so that the  weights are increasing, but the speeds are decreasing.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Input contains data for a bunch of mice, one mouse per line, terminated by end of file.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2264 Advanced Fruits</title>
+      <link>http://localhost:1313/z/solution/63cc9007325a198e/</link>
+      <pubDate>Fri, 30 Mar 2018 15:45:30 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/63cc9007325a198e/</guid>
+      <description>&lt;h1 id=&#34;advanced-fruits-poj---2264&#34;&gt;Advanced Fruits (&lt;a href=&#34;https://vjudge.net/problem/POJ-2264&#34;&gt;POJ - 2264&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The company &amp;ldquo;21st Century Fruits&amp;rdquo; has specialized in creating new sorts  of fruits by transferring genes from one fruit into the genome of  another one. Most times this method doesn&amp;rsquo;t work, but sometimes, in very rare cases, a new fruit emerges that tastes like a mixture between both of them.&lt;/p&gt;&#xA;&lt;p&gt;A big topic of discussion inside the company is &amp;ldquo;How should  the new creations be called?&amp;rdquo; A mixture between an apple and a pear  could be called an apple-pear, of course, but this doesn&amp;rsquo;t sound very  interesting. The boss finally decides to use the shortest string that  contains both names of the original fruits as sub-strings as the new  name. For instance, &amp;ldquo;applear&amp;rdquo; contains &amp;ldquo;apple&amp;rdquo; and &amp;ldquo;pear&amp;rdquo; (APPLEar and  apPlEAR), and there is no shorter string that has the same property.&#xA;A combination of a cranberry and a boysenberry would therefore be called a &amp;ldquo;boysecranberry&amp;rdquo; or a &amp;ldquo;craboysenberry&amp;rdquo;, for example.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2250 Compromise</title>
+      <link>http://localhost:1313/z/solution/ab322b6a0660015b/</link>
+      <pubDate>Fri, 30 Mar 2018 15:26:03 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/ab322b6a0660015b/</guid>
+      <description>&lt;h1 id=&#34;compromise-poj---2250&#34;&gt;Compromise (&lt;a href=&#34;https://vjudge.net/problem/POJ-2250&#34;&gt;POJ - 2250&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;In a few months the European Currency Union will become a reality.  However, to join the club, the Maastricht criteria must be fulfilled,  and this is not a trivial task for the countries (maybe except for  Luxembourg). To enforce that Germany will fulfill the criteria, our  government has so many wonderful options (raise taxes, sell stocks,  revalue the gold reserves,&amp;hellip;) that it is really hard to choose what to  do.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1458 Common Subsequence</title>
+      <link>http://localhost:1313/z/solution/d75915ae48ff6105/</link>
+      <pubDate>Fri, 30 Mar 2018 10:49:03 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/d75915ae48ff6105/</guid>
+      <description>&lt;h1 id=&#34;common-subsequence-poj-1458hdu---1159&#34;&gt;Common Subsequence (&lt;a href=&#34;https://vjudge.net/problem/POJ-1458&#34;&gt;POJ-1458&lt;/a&gt;、&lt;a href=&#34;https://vjudge.net/problem/HDU-1159&#34;&gt;HDU - 1159&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A subsequence of a given sequence is the given sequence with some  elements (possible none) left out. Given a sequence X = &amp;lt; x1, x2,  &amp;hellip;, xm &amp;gt; another sequence Z = &amp;lt; z1, z2, &amp;hellip;, zk &amp;gt; is a  subsequence of X if there exists a strictly increasing sequence &amp;lt; i1, i2, &amp;hellip;, ik &amp;gt; of indices of X such that for all j = 1,2,&amp;hellip;,k, x       ij = zj. For example, Z = &amp;lt; a, b, f, c  &amp;gt; is a subsequence of X = &amp;lt; a, b, c, f, b, c &amp;gt; with index  sequence &amp;lt; 1, 2, 4, 6 &amp;gt;. Given two sequences X and Y the problem  is to find the length of the maximum-length common subsequence of X and  Y.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2533 Longest Ordered Subsequence</title>
+      <link>http://localhost:1313/z/solution/1f76fc9f9b518d48/</link>
+      <pubDate>Fri, 30 Mar 2018 09:58:35 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/1f76fc9f9b518d48/</guid>
+      <description>&lt;h1 id=&#34;longest-ordered-subsequence-poj---2533&#34;&gt;Longest Ordered Subsequence (&lt;a href=&#34;https://vjudge.net/problem/POJ-2533&#34;&gt;POJ - 2533&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A numeric sequence of        &lt;em&gt;ai&lt;/em&gt; is ordered if        &lt;em&gt;a1&lt;/em&gt; &amp;lt;        &lt;em&gt;a2&lt;/em&gt; &amp;lt; &amp;hellip; &amp;lt;        &lt;em&gt;aN&lt;/em&gt;. Let the subsequence of the given numeric sequence (       &lt;em&gt;a1&lt;/em&gt;,        &lt;em&gt;a2&lt;/em&gt;, &amp;hellip;,        &lt;em&gt;aN&lt;/em&gt;) be any sequence (       &lt;em&gt;ai1&lt;/em&gt;,        &lt;em&gt;ai2&lt;/em&gt;, &amp;hellip;,        &lt;em&gt;aiK&lt;/em&gt;), where 1 &amp;lt;=        &lt;em&gt;i1&lt;/em&gt; &amp;lt;        &lt;em&gt;i2&lt;/em&gt; &amp;lt; &amp;hellip; &amp;lt;        &lt;em&gt;iK&lt;/em&gt; &amp;lt;=        &lt;em&gt;N&lt;/em&gt;. For example, sequence (1, 7, 3, 5, 9, 4, 8) has ordered subsequences, e. g., (1, 7), (3, 4, 8) and many others. All longest  ordered subsequences are of length 4, e. g., (1, 3, 5, 8).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1836 Alignment</title>
+      <link>http://localhost:1313/z/solution/b5ba097124b287d9/</link>
+      <pubDate>Fri, 30 Mar 2018 09:44:21 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/b5ba097124b287d9/</guid>
+      <description>&lt;h1 id=&#34;alignment-poj---1836&#34;&gt;Alignment (&lt;a href=&#34;https://vjudge.net/problem/POJ-1836&#34;&gt;POJ - 1836&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;In the army, a platoon is composed by n soldiers. During the morning  inspection, the soldiers are aligned in a straight line in front of the  captain. The captain is not satisfied with the way his soldiers are  aligned; it is true that the soldiers are aligned in order by their code number: 1 , 2 , 3 , . . . , n , but they are not aligned by their  height. The captain asks some soldiers to get out of the line, as the  soldiers that remain in the line, without changing their places, but  getting closer, to form a new line, where each soldier can see by  looking lengthwise the line at least one of the line&amp;rsquo;s extremity (left  or right). A soldier see an extremity if there isn&amp;rsquo;t any soldiers with a higher or equal height than his height between him and that extremity.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2639 Bone Collector II</title>
+      <link>http://localhost:1313/z/solution/982145d223c0b506/</link>
+      <pubDate>Fri, 30 Mar 2018 09:19:05 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/982145d223c0b506/</guid>
+      <description>&lt;h1 id=&#34;bone-collector-ii-hdu---2639&#34;&gt;Bone Collector II (&lt;a href=&#34;https://vjudge.net/problem/HDU-2639&#34;&gt;HDU - 2639&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The title of this problem is familiar,isn&amp;rsquo;t it?yeah,if you had took part in the &amp;ldquo;Rookie Cup&amp;rdquo; competition,you must have seem this title.If you  haven&amp;rsquo;t seen it before,it doesn&amp;rsquo;t matter,I will give you a link:&lt;/p&gt;&#xA;&lt;p&gt;Here is the link:  &lt;a href=&#34;http://acm.hdu.edu.cn/showproblem.php?pid=2602&#34;&gt;http://acm.hdu.edu.cn/showproblem.php?pid=2602&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Today we are not desiring the maximum value of bones,but the K-th  maximum value of the bones.NOTICE that,we considerate two ways that get  the same value of bones are the same.That means,it will be a strictly  decreasing sequence from the 1st maximum , 2nd maximum .. to the K-th  maximum.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2602 Bone Collector</title>
+      <link>http://localhost:1313/z/solution/c23c5e71ca95182f/</link>
+      <pubDate>Tue, 27 Mar 2018 18:38:09 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/c23c5e71ca95182f/</guid>
+      <description>&lt;h1 id=&#34;bone-collector-hdu---2602&#34;&gt;Bone Collector (&lt;a href=&#34;https://vjudge.net/problem/HDU-2602&#34;&gt;HDU - 2602&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Many years ago , in Teddy’s hometown there was a man who was called  “Bone Collector”. This man like to collect varies of bones , such as  dog’s , cow’s , also he went to the grave …&#xA;The bone collector had a big bag with a volume of V ,and along his  trip of collecting there are a lot of bones , obviously , different bone has different value and different volume, now given the each bone’s  value along his trip , can you calculate out the maximum of the total  value the bone collector can get ?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2955 Robberies</title>
+      <link>http://localhost:1313/z/solution/4becc864832ef0cf/</link>
+      <pubDate>Mon, 26 Mar 2018 18:03:14 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/4becc864832ef0cf/</guid>
+      <description>&lt;h1 id=&#34;robberies-hdu---2955&#34;&gt;Robberies (&lt;a href=&#34;https://vjudge.net/problem/HDU-2955&#34;&gt;HDU - 2955&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The aspiring Roy the Robber has seen a lot of American movies, and knows that the bad guys usually gets caught in the end, often because they  become too greedy. He has decided to work in the lucrative business of  bank robbery only for a short while, before retiring to a comfortable  job at a university.&lt;/p&gt;&#xA;&lt;p&gt;For a few months now, Roy has been assessing the security of various banks and the amount of cash they hold. He wants to make a calculated  risk, and grab as much money as possible.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2191 采购粮食</title>
+      <link>http://localhost:1313/z/solution/63b9b5127d2992de/</link>
+      <pubDate>Mon, 26 Mar 2018 17:19:43 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/63b9b5127d2992de/</guid>
+      <description>&lt;h1 id=&#34;悼念512汶川大地震遇难同胞珍惜现在感恩生活-hdu---2191&#34;&gt;悼念512汶川大地震遇难同胞——珍惜现在，感恩生活 (&lt;a href=&#34;https://vjudge.net/problem/HDU-2191&#34;&gt;HDU - 2191&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;急！灾区的食物依然短缺！&#xA;为了挽救灾区同胞的生命，心系灾区同胞的你准备自己采购一些粮食支援灾区，现在假设你一共有资金n元，而市场有m种大米，每种大米都是袋装产品，其价格不等，并且只能整袋购买。&#xA;请问：你用有限的资金最多能采购多少公斤粮食呢？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1171 Big Event in HDU</title>
+      <link>http://localhost:1313/z/solution/62986ee569d6027a/</link>
+      <pubDate>Mon, 26 Mar 2018 11:54:36 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/62986ee569d6027a/</guid>
+      <description>&lt;h1 id=&#34;big-event-in-hdu-hdu---1171&#34;&gt;Big Event in HDU (&lt;a href=&#34;https://vjudge.net/problem/HDU-1171&#34;&gt;HDU - 1171&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Nowadays, we all know that Computer College is the biggest department in HDU. But, maybe you don&amp;rsquo;t know that Computer College had ever been  split into Computer College and Software College in 2002.&#xA;The splitting is absolutely a big event in HDU! At the same time,  it is a trouble thing too. All facilities must go halves. First, all  facilities are assessed, and two facilities are thought to be same if  they have the same value. It is assumed that there is N (0&amp;lt;N&amp;lt;1000) kinds of facilities (different value, different kinds).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2546 饭卡</title>
+      <link>http://localhost:1313/z/solution/4d48e38e85e8b673/</link>
+      <pubDate>Sun, 25 Mar 2018 17:26:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/4d48e38e85e8b673/</guid>
+      <description>&lt;h1 id=&#34;饭卡-hdu---2546&#34;&gt;饭卡 (&lt;a href=&#34;https://vjudge.net/problem/HDU-2546&#34;&gt;HDU - 2546&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;电子科大本部食堂的饭卡有一种很诡异的设计，即在购买之前判断余额。如果购买一个商品之前，卡上的剩余金额大于或等于5元，就一定可以购买成功（即使购买后卡上余额为负），否则无法购买（即使金额足够）。所以大家都希望尽量使卡上的余额最少。&#xA;某天，食堂中有n种菜出售，每种菜可购买一次。已知每种菜的价格以及卡上的余额，问最少可使卡上的余额为多少。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

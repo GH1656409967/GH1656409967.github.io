@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>字符串 on 似水</title>
+    <link>http://localhost:1313/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+    <description>Recent content in 字符串 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 06 Aug 2020 22:34:11 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>字典树</title>
+      <link>http://localhost:1313/z/algo/f59fc59ac118ba58/</link>
+      <pubDate>Thu, 06 Aug 2020 22:34:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/f59fc59ac118ba58/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;字典树又称单词查找树，Trie树，是一种树形结构，是一种哈希树的变种。典型应用是用于统计，排序和保存大量的字符串（但不仅限于字符串）。优点是利用字符串的公共前缀来减少查询时间，最大限度地减少无谓的字符串比较，查询效率比哈希树高。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>最小表示法</title>
+      <link>http://localhost:1313/z/algo/ea5cd5de805aae48/</link>
+      <pubDate>Tue, 04 Aug 2020 17:39:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/ea5cd5de805aae48/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;最小表示法，求所有与某个字符串循环同构的字符串中，字典序最小的那个。比如说一个字符串lordash，它长度为7，也就是说最多有七种循环同构的方法。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Manacher</title>
+      <link>http://localhost:1313/z/algo/246358dd39e99944/</link>
+      <pubDate>Sun, 26 Jul 2020 14:22:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/246358dd39e99944/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Manacher&amp;rsquo;s Algorithm是用来查找一个字符串的最长回文子串的线性方法，由一个叫Manacher的人在1975年发明的。中文谐音“马拉车”算法。时间复杂度O(|S|)。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>KMP</title>
+      <link>http://localhost:1313/z/algo/0f99d88b6c4a1cdd/</link>
+      <pubDate>Sun, 26 Jul 2020 14:20:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/0f99d88b6c4a1cdd/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Knuth-Morris-Pratt字符串查找算法，简称为“KMP算法”，常用于在一个&lt;code&gt;文本串S&lt;/code&gt;内查找一个&lt;code&gt;模式串T&lt;/code&gt;的出现位置。这个算法由Donald Knuth、Vaughan Pratt、James H.  Morris三人于1977年联合发表，故取这3人的姓氏命名此算法。时间复杂度O(|S|+|T|)。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>字符串 on 似水</title>
+    <link>http://localhost:1313/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+    <description>Recent content in 字符串 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 03 Apr 2021 17:44:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指Offer-20 表示数值的字符串</title>
+      <link>http://localhost:1313/z/solution/d903acfcaec856fe/</link>
+      <pubDate>Sat, 03 Apr 2021 17:44:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/d903acfcaec856fe/</guid>
+      <description>&lt;h1 id=&#34;表示数值的字符串剑指offer-20&#34;&gt;表示数值的字符串(&lt;a href=&#34;https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/&#34;&gt;剑指Offer-20&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串&amp;quot;+100&amp;quot;、&amp;ldquo;5e2&amp;rdquo;、&amp;quot;-123&amp;quot;、&amp;ldquo;3.1416&amp;rdquo;、&amp;quot;-1E-16&amp;quot;、&amp;ldquo;0123&amp;quot;都表示数值，但&amp;quot;12e&amp;rdquo;、&amp;ldquo;1a3.14&amp;rdquo;、&amp;ldquo;1.2.3&amp;rdquo;、&amp;quot;+-5&amp;quot;及&amp;quot;12e+5.4&amp;quot;都不是。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-4763 Theme Section</title>
+      <link>http://localhost:1313/z/solution/a41b27c0b8567b41/</link>
+      <pubDate>Sat, 08 Aug 2020 14:19:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/a41b27c0b8567b41/</guid>
+      <description>&lt;h1 id=&#34;theme-sectionhdu-4763&#34;&gt;Theme Section(&lt;a href=&#34;https://vjudge.net/problem/HDU-HDU-4763&#34;&gt;HDU-4763&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;It&amp;rsquo;s time for music! A lot of popular musicians are invited to join us  in the music festival. Each of them will play one of their  representative songs. To make the programs more interesting and  challenging, the hosts are going to add some constraints to the rhythm  of the songs, i.e., each song is required to have a &amp;rsquo;theme section&amp;rsquo;. The theme section shall be played at the beginning, the middle, and the end of each song. More specifically, given a theme section E, the song will be in the format of &amp;lsquo;EAEBE&amp;rsquo;, where section A and section B could have  arbitrary number of notes. Note that there are 26 types of notes,  denoted by lower case letters &amp;lsquo;a&amp;rsquo; - &amp;lsquo;z&amp;rsquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-4847 Wow! Such Doge!</title>
+      <link>http://localhost:1313/z/solution/3098fa6499691f19/</link>
+      <pubDate>Sat, 08 Aug 2020 10:33:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3098fa6499691f19/</guid>
+      <description>&lt;h1 id=&#34;wow-such-dogehdu-4847&#34;&gt;Wow! Such Doge!(&lt;a href=&#34;https://vjudge.net/problem/HDU-4847&#34;&gt;HDU-4847&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Chen, Adrian (November 7, 2013). “Doge Is An Ac- tually Good Internet Meme. Wow.”. Gawker. Retrieved November 22, 2013.&lt;/p&gt;&#xA;&lt;p&gt;Doge is an Internet meme that became popular in 2013. The meme  typically con- sists of a picture of a Shiba Inu dog ac- companied by  multicolored text in Comic Sans MS font in the foreground. The text,  representing a kind of internal monologue, is deliberately written in  broken English, and usually contains the word “wow” and the phrases  “such x”, “much x”, “many x”, “very x” and “so x”.&#xA;Kabosu, the Shiba Inu featured in the original meme, was first  pictured in a 2010 blog post by Atsuko Sato, a Japanese kindergarten  teacher. Afterwards, varia- tions of the pictures using overlaid Comic  Sans text were posted from a Tumblr blog, Shiba Confessions. However,  the use of the intentionally misspelled “doge” dates back to June 2005,  when it was mentioned in an episode of Homestar Runners puppet series.&#xA;In August 2013, images of the meme were spammed on Reddit’s  r/MURICA subreddit by 4chan’s random imageboard, /b/. A search of the  term doge on Google Trends shows an explosion of popularity occurring in October 2013, and more so in the following month. By November 2013, the meme had become widespread on the Internet. Google later created a Doge Easter egg: when doge meme was entered into the YouTube search bar, all of the site’s text would be displayed in colorful Comic Sans, similar  to the kind used by the meme.&#xA;The meme was ranked #12 on MTV’s list of “50 Things Pop Culture  Had Us Giving Thanks For” in 2013. Io9 compared the internal dialog of  the Shiba Inu dogs to lolcat-speak. The image most commonly associated  with the meme is of a female Shiba Inu named Kabosu, taken from a  Japanese blog documenting the dog’s daily activities. The spelling of  doge has several variants, leading to debate on its actual  pronunciation. On December 13, Doge was named the “top meme” of 2013 by  Know Your Meme.&#xA;In December 2013, the Dogecoin was introduced as a new  cryptocurrency, making it the first cryptocurrency to be based on an  Internet meme; the viral phenomenon, along with usage of the Comic Sans  MS typeface, gave it “the Internet density of a large star” according to Medium writer Quinn Norton.&#xA;In late December 2013, members of the U.S. Congress produced  material in the meme’s style. Huffington Post commented that Doge was  “killed” because of the Congress members’ usage of the meme.&#xA;By early 2014, Doge’s popularity was sustained by internet  communities on social media, accompanied by the rapid growth and  acceptance of Dogecoin. In April 2014, Doge experienced a second major  media resurgence due to revelations of the Dogecoin community’s intent  to sponsor Josh Wise in NASCAR and place a picture of the Shiba Inu on  his vehicle.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3068 最长回文</title>
+      <link>http://localhost:1313/z/solution/152d84979dfa485b/</link>
+      <pubDate>Sat, 08 Aug 2020 10:18:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/152d84979dfa485b/</guid>
+      <description>&lt;h1 id=&#34;最长回文hdu-3068&#34;&gt;最长回文(&lt;a href=&#34;https://vjudge.net/problem/HDU-3068&#34;&gt;HDU-3068&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;给出一个只由小写英文字符a,b,c&amp;hellip;y,z组成的字符串S,求S中最长回文串的长度.&#xA;回文就是正反读都是一样的字符串,如aba, abba等&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3294 Girls&#39; research</title>
+      <link>http://localhost:1313/z/solution/99d397601ec4e42f/</link>
+      <pubDate>Sat, 08 Aug 2020 10:08:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/99d397601ec4e42f/</guid>
+      <description>&lt;h1 id=&#34;girls-researchhdu-3294&#34;&gt;Girls&amp;rsquo; research(&lt;a href=&#34;https://vjudge.net/problem/HDU-3294&#34;&gt;HDU-3294&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;One day, sailormoon girls are so delighted that they intend to research  about palindromic strings. Operation contains two steps:&#xA;First step: girls will write a long string (only contains lower  case) on the paper. For example, &amp;ldquo;abcde&amp;rdquo;, but &amp;lsquo;a&amp;rsquo; inside is not the real &amp;lsquo;a&amp;rsquo;, that means if we define the &amp;lsquo;b&amp;rsquo; is the real &amp;lsquo;a&amp;rsquo;, then we can infer that &amp;lsquo;c&amp;rsquo; is the real &amp;lsquo;b&amp;rsquo;, &amp;rsquo;d&amp;rsquo; is the real &amp;lsquo;c&amp;rsquo; ……, &amp;lsquo;a&amp;rsquo; is the real &amp;lsquo;z&amp;rsquo;.  According to this, string &amp;ldquo;abcde&amp;rdquo; changes to &amp;ldquo;bcdef&amp;rdquo;.&#xA;Second step: girls will find out the longest palindromic string in  the given string, the length of palindromic string must be equal or more than 2.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-4513 吉哥系列故事-完美队形II</title>
+      <link>http://localhost:1313/z/solution/972906195cf816b6/</link>
+      <pubDate>Sat, 08 Aug 2020 09:46:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/972906195cf816b6/</guid>
+      <description>&lt;h1 id=&#34;吉哥系列故事-完美队形iihdu-4513&#34;&gt;吉哥系列故事-完美队形II(&lt;a href=&#34;https://vjudge.net/problem/HDU-4513&#34;&gt;HDU-4513&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;　吉哥又想出了一个新的完美队形游戏！&#xA;　假设有n个人按顺序站在他的面前，他们的身高分别是h[1], h[2] &amp;hellip; h[n]，吉哥希望从中挑出一些人，让这些人形成一个新的队形，新的队形若满足以下三点要求，则就是新的完美队形：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-3376 Finding Palindromes</title>
+      <link>http://localhost:1313/z/solution/b28828b1524bfc46/</link>
+      <pubDate>Sat, 08 Aug 2020 09:15:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/b28828b1524bfc46/</guid>
+      <description>&lt;h1 id=&#34;finding-palindromespoj-3376&#34;&gt;Finding Palindromes(&lt;a href=&#34;https://vjudge.net/problem/POJ-3376&#34;&gt;POJ-3376&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A word is called a palindrome if we read from right to left is as same as we read from left to right. For  example, &amp;ldquo;dad&amp;rdquo;, &amp;ldquo;eye&amp;rdquo; and &amp;ldquo;racecar&amp;rdquo; are all palindromes, but &amp;ldquo;odd&amp;rdquo;,  &amp;ldquo;see&amp;rdquo; and &amp;ldquo;orange&amp;rdquo; are not palindromes.&lt;/p&gt;&#xA;&lt;p&gt;Given &lt;em&gt;n&lt;/em&gt; strings, you can generate &lt;em&gt;n&lt;/em&gt; × &lt;em&gt;n&lt;/em&gt; pairs of them and concatenate the pairs into single words. The task is  to count how many of the so generated words are palindromes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-3974 Palindrome</title>
+      <link>http://localhost:1313/z/solution/ad731995c93e43b5/</link>
+      <pubDate>Fri, 07 Aug 2020 10:26:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/ad731995c93e43b5/</guid>
+      <description>&lt;h1 id=&#34;palindromepoj-3974&#34;&gt;Palindrome(&lt;a href=&#34;https://vjudge.net/problem/POJ-3974&#34;&gt;POJ-3974&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Andy the smart computer science student was attending an algorithms  class when the professor asked the students a simple question, &amp;ldquo;Can you  propose an efficient algorithm to find the length of the largest  palindrome in a string?&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;A string is said to be a palindrome if it reads the same both  forwards and backwards, for example &amp;ldquo;madam&amp;rdquo; is a palindrome while &amp;ldquo;acm&amp;rdquo;  is not.&lt;/p&gt;&#xA;&lt;p&gt;The students recognized that this is a classical problem but  couldn&amp;rsquo;t come up with a solution better than iterating over all  substrings and checking whether they are palindrome or not, obviously  this algorithm is not efficient at all, after a while Andy raised his  hand and said &amp;ldquo;Okay, I&amp;rsquo;ve a better algorithm&amp;rdquo; and before he starts to  explain his idea he stopped for a moment and then said &amp;ldquo;Well, I&amp;rsquo;ve an  even better algorithm!&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>字典树</title>
+      <link>http://localhost:1313/z/algo/f59fc59ac118ba58/</link>
+      <pubDate>Thu, 06 Aug 2020 22:34:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/f59fc59ac118ba58/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;字典树又称单词查找树，Trie树，是一种树形结构，是一种哈希树的变种。典型应用是用于统计，排序和保存大量的字符串（但不仅限于字符串）。优点是利用字符串的公共前缀来减少查询时间，最大限度地减少无谓的字符串比较，查询效率比哈希树高。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3613 Best Reward</title>
+      <link>http://localhost:1313/z/solution/6a2eaf463fb2967e/</link>
+      <pubDate>Wed, 05 Aug 2020 19:41:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/6a2eaf463fb2967e/</guid>
+      <description>&lt;h1 id=&#34;best-rewardhdu-3613&#34;&gt;Best Reward(&lt;a href=&#34;https://vjudge.net/problem/HDU-3613&#34;&gt;HDU-3613&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;After an uphill battle, General Li won a great victory. Now the head of  state decide to reward him with honor and treasures for his great  exploit.&lt;/p&gt;&#xA;&lt;p&gt;One of these treasures is a necklace made up of 26 different kinds  of gemstones, and the length of the necklace is n. (That is to say: n  gemstones are stringed together to constitute this necklace, and each of these gemstones belongs to only one of the 26 kinds.)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FZU-1901 Period II</title>
+      <link>http://localhost:1313/z/solution/7298e05265160d22/</link>
+      <pubDate>Wed, 05 Aug 2020 12:29:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/7298e05265160d22/</guid>
+      <description>&lt;h1 id=&#34;period-iifzu-1901&#34;&gt;Period II(&lt;a href=&#34;https://vjudge.net/problem/FZU-1901&#34;&gt;FZU-1901&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;For each prefix with length P of a given string S,if&lt;/p&gt;&#xA;&lt;p&gt;S[i]=S[i+P] for i in [0..SIZE(S)-p-1],&lt;/p&gt;&#xA;&lt;p&gt;then the prefix is a “period” of S. We want to all the periodic prefixs.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Input contains multiple cases.&lt;/p&gt;&#xA;&lt;p&gt;The first line contains an integer T representing the number of cases. Then following T cases.&lt;/p&gt;&#xA;&lt;p&gt;Each test case contains a string S (1 &amp;lt;= SIZE(S) &amp;lt;=  1000000),represents the title.S consists of lowercase ,uppercase letter.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2609 How many</title>
+      <link>http://localhost:1313/z/solution/8e8c4a17274bbaf0/</link>
+      <pubDate>Tue, 04 Aug 2020 22:47:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/8e8c4a17274bbaf0/</guid>
+      <description>&lt;h1 id=&#34;how-manyhdu-2609&#34;&gt;How many(&lt;a href=&#34;https://vjudge.net/problem/HDU-2609&#34;&gt;HDU-2609&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Give you n ( n &amp;lt; 10000) necklaces ,the length of necklace will not large than 100,tell me&#xA;How many kinds of necklaces total have.(if two necklaces can equal by rotating ,we say the two necklaces are some).&#xA;For example 0110 express a necklace, you can rotate it. 0110 -&amp;gt; 1100 -&amp;gt; 1001 -&amp;gt; 0011-&amp;gt; 0110.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The input contains multiple test cases.&#xA;Each test case include: first one integers n. (2&amp;lt;=n&amp;lt;=10000)&#xA;Next n lines follow. Each line has a equal length character string. (string only include &amp;lsquo;0&amp;rsquo;,&amp;lsquo;1&amp;rsquo;).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3374 String Problem</title>
+      <link>http://localhost:1313/z/solution/86e3d7b59d954a3d/</link>
+      <pubDate>Tue, 04 Aug 2020 22:04:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/86e3d7b59d954a3d/</guid>
+      <description>&lt;h1 id=&#34;string-problemhdu-3374&#34;&gt;String Problem(&lt;a href=&#34;https://vjudge.net/problem/HDU-3374&#34;&gt;HDU-3374&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Give you a string with length N, you can generate N strings by left  shifts. For example let consider the string “SKYLONG”, we can generate  seven strings:&#xA;String Rank&#xA;SKYLONG 1&#xA;KYLONGS 2&#xA;YLONGSK 3&#xA;LONGSKY 4&#xA;ONGSKYL 5&#xA;NGSKYLO 6&#xA;GSKYLON 7&#xA;and lexicographically first of them is GSKYLON, lexicographically last is YLONGSK, both of them appear only once.&#xA;Your task is easy, calculate the lexicographically fisrt string’s Rank (if there are multiple answers, choose the smallest one), its  times, lexicographically last string’s Rank (if there are multiple  answers, choose the smallest one), and its times also.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>最小表示法</title>
+      <link>http://localhost:1313/z/algo/ea5cd5de805aae48/</link>
+      <pubDate>Tue, 04 Aug 2020 17:39:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/ea5cd5de805aae48/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;最小表示法，求所有与某个字符串循环同构的字符串中，字典序最小的那个。比如说一个字符串lordash，它长度为7，也就是说最多有七种循环同构的方法。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2328 Corporate Identity</title>
+      <link>http://localhost:1313/z/solution/44044fd8e23c0706/</link>
+      <pubDate>Sun, 02 Aug 2020 23:11:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/44044fd8e23c0706/</guid>
+      <description>&lt;h1 id=&#34;corporate-identityhdu-2328&#34;&gt;Corporate Identity(&lt;a href=&#34;https://vjudge.net/problem/HDU-2328&#34;&gt;HDU-2328&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Beside other services, ACM helps companies to clearly state their  “corporate identity”, which includes company logo but also other signs,  like trademarks. One of such companies is Internet Building Masters  (IBM), which has recently asked ACM for a help with their new identity.  IBM do not want to change their existing logos and trademarks  completely, because their customers are used to the old ones. Therefore, ACM will only change existing trademarks instead of creating new ones.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1238 Substrings</title>
+      <link>http://localhost:1313/z/solution/5bd76b31bbe72978/</link>
+      <pubDate>Sun, 02 Aug 2020 22:57:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/5bd76b31bbe72978/</guid>
+      <description>&lt;h1 id=&#34;substringshdu-1238&#34;&gt;Substrings(&lt;a href=&#34;https://vjudge.net/problem/HDU-1238&#34;&gt;HDU-1238&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;You are given a number of case-sensitive strings of alphabetic  characters, find the largest string X, such that either X, or its  inverse can be found as a substring of any of the given strings.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The first line of the input file contains a single integer t (1 &amp;lt;= t  &amp;lt;= 10), the number of test cases, followed by the input data for each test case. The first line of each test case contains a single integer n (1 &amp;lt;= n &amp;lt;= 100), the number of given strings, followed by n  lines, each representing one string of minimum length 1 and maximum  length 100. There is no extra white space before and after a string.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-4300 Clairewd’s message</title>
+      <link>http://localhost:1313/z/solution/0320222b3bd1c3fb/</link>
+      <pubDate>Sun, 02 Aug 2020 21:33:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/0320222b3bd1c3fb/</guid>
+      <description>&lt;h1 id=&#34;clairewds-messagehdu-4300&#34;&gt;Clairewd’s message(&lt;a href=&#34;https://vjudge.net/problem/HDU-4300&#34;&gt;HDU-4300&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Clairewd is a member of FBI. After several years concealing in BUPT, she intercepted some important messages and she was preparing for sending  it to ykwd. They had agreed that each letter of these messages would be  transfered to another one according to a conversion table.&#xA;Unfortunately, GFW(someone&amp;rsquo;s name, not what you just think about)  has detected their action. He also got their conversion table by some  unknown methods before. Clairewd was so clever and vigilant that when  she realized that somebody was monitoring their action, she just stopped transmitting messages.&#xA;But GFW knows that Clairewd would always firstly send the  ciphertext and then plaintext(Note that they won&amp;rsquo;t overlap each other).  But he doesn&amp;rsquo;t know how to separate the text because he has no idea  about the whole message. However, he thinks that recovering the shortest possible text is not a hard task for you.&#xA;Now GFW will give you the intercepted text and the conversion table. You should help him work out this problem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3336 Count the string</title>
+      <link>http://localhost:1313/z/solution/67d004945c62a92c/</link>
+      <pubDate>Fri, 31 Jul 2020 13:01:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/67d004945c62a92c/</guid>
+      <description>&lt;h1 id=&#34;count-the-stringhdu-3336&#34;&gt;Count the string(&lt;a href=&#34;https://vjudge.net/problem/HDU-3336&#34;&gt;HDU-3336&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;It is well known that AekdyCoin is good at string problems as well as  number theory problems. When given a string s, we can write down all the non-empty prefixes of this string. For example:&#xA;s: &amp;ldquo;abab&amp;rdquo;&#xA;The prefixes are: &amp;ldquo;a&amp;rdquo;, &amp;ldquo;ab&amp;rdquo;, &amp;ldquo;aba&amp;rdquo;, &amp;ldquo;abab&amp;rdquo;&#xA;For each prefix, we can count the times it matches in s. So we can  see that prefix &amp;ldquo;a&amp;rdquo; matches twice, &amp;ldquo;ab&amp;rdquo; matches twice too, &amp;ldquo;aba&amp;rdquo; matches once, and &amp;ldquo;abab&amp;rdquo; matches once. Now you are asked to calculate the sum  of the match times for all the prefixes. For &amp;ldquo;abab&amp;rdquo;, it is 2 + 2 + 1 + 1 = 6.&#xA;The answer may be very large, so output the answer mod 10007.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2594 Simpsons’ Hidden Talents</title>
+      <link>http://localhost:1313/z/solution/ee73188e9cd45a40/</link>
+      <pubDate>Fri, 31 Jul 2020 12:34:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/ee73188e9cd45a40/</guid>
+      <description>&lt;h1 id=&#34;simpsons-hidden-talentshdu-2594&#34;&gt;Simpsons’ Hidden Talents(&lt;a href=&#34;https://vjudge.net/problem/HDU-2594&#34;&gt;HDU-2594&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Homer: Marge, I just figured out a way to discover some of the talents we weren’t aware we had.&#xA;Marge: Yeah, what is it?&#xA;Homer: Take me for example. I want to find out if I have a talent in politics, OK?&#xA;Marge: OK.&#xA;Homer: So I take some politician’s name, say Clinton, and try to find the length of the longest prefix&#xA;in Clinton’s name that is a suffix in my name. That’s how close I am to being a politician like Clinton&#xA;Marge: Why on earth choose the longest prefix that is a suffix???&#xA;Homer: Well, our talents are deeply hidden within ourselves, Marge.&#xA;Marge: So how close are you?&#xA;Homer: 0!&#xA;Marge: I’m not surprised.&#xA;Homer: But you know, you must have some real math talent hidden deep in you.&#xA;Marge: How come?&#xA;Homer: Riemann and Marjorie gives 3!!!&#xA;Marge: Who the heck is Riemann?&#xA;Homer: Never mind.&#xA;Write a program that, when given strings s1 and s2, finds the longest prefix of s1 that is a suffix of s2.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-3080 Blue Jeans</title>
+      <link>http://localhost:1313/z/solution/b70af24984276d8d/</link>
+      <pubDate>Fri, 31 Jul 2020 12:21:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/b70af24984276d8d/</guid>
+      <description>&lt;h1 id=&#34;blue-jeans-poj-3080&#34;&gt;Blue Jeans (&lt;a href=&#34;https://vjudge.net/problem/POJ-3080&#34;&gt;POJ-3080&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The Genographic Project is a research partnership between IBM and The  National Geographic Society that is analyzing DNA from hundreds of  thousands of contributors to map how the Earth was populated.&lt;/p&gt;&#xA;&lt;p&gt;As an IBM researcher, you have been tasked with writing a program  that will find commonalities amongst given snippets of DNA that can be  correlated with individual survey information to identify new genetic  markers.&lt;/p&gt;&#xA;&lt;p&gt;A DNA base sequence is noted by listing the nitrogen bases in the  order in which they are found in the molecule. There are four bases:  adenine (A), thymine (T), guanine (G), and cytosine (C). A 6-base DNA  sequence could be represented as TAGACC.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2406 Power Strings</title>
+      <link>http://localhost:1313/z/solution/b41a0ed18394b935/</link>
+      <pubDate>Fri, 31 Jul 2020 11:52:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/b41a0ed18394b935/</guid>
+      <description>&lt;h1 id=&#34;power-strings-poj-2406&#34;&gt;Power Strings (&lt;a href=&#34;https://vjudge.net/problem/POJ-2406&#34;&gt;POJ-2406&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given two strings a and b we define a&lt;em&gt;b to be their concatenation. For  example, if a = &amp;ldquo;abc&amp;rdquo; and b = &amp;ldquo;def&amp;rdquo; then a&lt;/em&gt;b = &amp;ldquo;abcdef&amp;rdquo;. If we think of  concatenation as multiplication, exponentiation by a non-negative  integer is defined in the normal way: a^0 = &amp;quot;&amp;quot; (the empty string) and  a^(n+1) = a*(a^n).&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each test case is a line of input representing s, a string of printable  characters. The length of s will be at least 1 and will not exceed 1  million characters. A line containing a period follows the last test  case.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1358 Period</title>
+      <link>http://localhost:1313/z/solution/5bd76b31bbe72978/</link>
+      <pubDate>Fri, 31 Jul 2020 11:44:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/5bd76b31bbe72978/</guid>
+      <description>&lt;h1 id=&#34;period-hdu-1358&#34;&gt;Period (&lt;a href=&#34;https://vjudge.net/problem/HDU-1358&#34;&gt;HDU-1358&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;For each prefix of a given string S with N characters (each character  has an ASCII code between 97 and 126, inclusive), we want to know  whether the prefix is a periodic string. That is, for each i (2 &amp;lt;= i  &amp;lt;= N) we want to know the largest K &amp;gt; 1 (if there is one) such  that the prefix of S with length i can be written as AK , that is A concatenated K times, for some string A. Of course, we also want to know the period K.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3746 Cyclic Nacklace</title>
+      <link>http://localhost:1313/z/solution/342193647a6ddb9d/</link>
+      <pubDate>Fri, 31 Jul 2020 11:28:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/342193647a6ddb9d/</guid>
+      <description>&lt;h1 id=&#34;cyclic-nacklace-hdu-3746&#34;&gt;Cyclic Nacklace (&lt;a href=&#34;https://vjudge.net/problem/HDU-3746&#34;&gt;HDU-3746&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;CC always becomes very depressed at the end of this month, he has  checked his credit card yesterday, without any surprise, there are only  99.9 yuan left. he is too distressed and thinking about how to tide over the last days. Being inspired by the entrepreneurial spirit of &amp;ldquo;HDU  CakeMan&amp;rdquo;, he wants to sell some little things to make money. Of course,  this is not an easy task.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2087 剪花布条</title>
+      <link>http://localhost:1313/z/solution/98f4c587dff0af0e/</link>
+      <pubDate>Fri, 31 Jul 2020 11:17:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/98f4c587dff0af0e/</guid>
+      <description>&lt;h1 id=&#34;剪花布条-hdu-2087&#34;&gt;剪花布条 (&lt;a href=&#34;https://vjudge.net/problem/HDU-2087&#34;&gt;HDU-2087&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;一块花布条，里面有些图案，另有一块直接可用的小饰条，里面也有一些图案。对于给定的花布条和小饰条，计算一下能从花布条中尽可能剪出几块小饰条来呢？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1711 Number Sequence</title>
+      <link>http://localhost:1313/z/solution/ee6078a4e614433a/</link>
+      <pubDate>Fri, 31 Jul 2020 11:03:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/ee6078a4e614433a/</guid>
+      <description>&lt;h1 id=&#34;number-sequence-hdu-1711&#34;&gt;Number Sequence (&lt;a href=&#34;https://vjudge.net/problem/HDU-1711&#34;&gt;HDU-1711&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given two sequences of numbers : a[1], a[2], &amp;hellip;&amp;hellip; , a[N], and b[1],  b[2], &amp;hellip;&amp;hellip; , b[M] (1 &amp;lt;= M &amp;lt;= 10000, 1 &amp;lt;= N &amp;lt;= 1000000).  Your task is to find a number K which make a[K] = b[1], a[K + 1] = b[2], &amp;hellip;&amp;hellip; , a[K + M - 1] = b[M]. If there are more than one K exist,  output the smallest one.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Manacher</title>
+      <link>http://localhost:1313/z/algo/246358dd39e99944/</link>
+      <pubDate>Sun, 26 Jul 2020 14:22:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/246358dd39e99944/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Manacher&amp;rsquo;s Algorithm是用来查找一个字符串的最长回文子串的线性方法，由一个叫Manacher的人在1975年发明的。中文谐音“马拉车”算法。时间复杂度O(|S|)。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>扩展KMP</title>
+      <link>http://localhost:1313/z/algo/1d27104a4bfa80d2/</link>
+      <pubDate>Sun, 26 Jul 2020 14:21:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/1d27104a4bfa80d2/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;给定长度为n的&lt;code&gt;文本串S&lt;/code&gt;和长度为m的&lt;code&gt;模式串T&lt;/code&gt;，定义extend[i]为S[i…n-1]与T[0…m-1]的&lt;strong&gt;最长公共前缀长度&lt;/strong&gt;，求extend[i]。当extend[x]==m时，则可知&lt;code&gt;文本串S&lt;/code&gt;中包含&lt;code&gt;模式串T&lt;/code&gt;，并且首位置为x，而这正是KMP算法处理的模式匹配问题。相较于KMP算法，扩展KMP算法能找到&lt;code&gt;文本串S&lt;/code&gt;中所有&lt;code&gt;模式串T&lt;/code&gt;的匹配，更一般地，可以知道&lt;code&gt;文本串S&lt;/code&gt;中以每个字符开始的后缀与&lt;code&gt;模式串T&lt;/code&gt;的最长公共前缀长度，时间复杂度O(n+m)。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>KMP</title>
+      <link>http://localhost:1313/z/algo/0f99d88b6c4a1cdd/</link>
+      <pubDate>Sun, 26 Jul 2020 14:20:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/0f99d88b6c4a1cdd/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Knuth-Morris-Pratt字符串查找算法，简称为“KMP算法”，常用于在一个&lt;code&gt;文本串S&lt;/code&gt;内查找一个&lt;code&gt;模式串T&lt;/code&gt;的出现位置。这个算法由Donald Knuth、Vaughan Pratt、James H.  Morris三人于1977年联合发表，故取这3人的姓氏命名此算法。时间复杂度O(|S|+|T|)。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2752 Seek the Name, Seek the Fame</title>
+      <link>http://localhost:1313/z/solution/5a96b527d8a850f1/</link>
+      <pubDate>Sun, 22 Apr 2018 11:22:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/5a96b527d8a850f1/</guid>
+      <description>&lt;h1 id=&#34;seek-the-name-seek-the-fame-poj-2752&#34;&gt;Seek the Name, Seek the Fame (&lt;a href=&#34;https://vjudge.net/problem/POJ-2752&#34;&gt;POJ-2752&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The little cat is so famous, that many couples tramp over hill and dale  to Byteland, and asked the little cat to give names to their newly-born  babies. They seek the name, and at the same time seek the fame. In order to escape from such boring job, the innovative little cat works out an  easy but fantastic algorithm:&lt;/p&gt;&#xA;&lt;p&gt;Step1. Connect the father&amp;rsquo;s name and the mother&amp;rsquo;s name, to a new string S.&#xA;Step2. Find a proper prefix-suffix string of S (which is not only the prefix, but also the suffix of S).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1686 Oulipo</title>
+      <link>http://localhost:1313/z/solution/af7ab7639114a9a5/</link>
+      <pubDate>Fri, 13 Apr 2018 16:09:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/af7ab7639114a9a5/</guid>
+      <description>&lt;h1 id=&#34;oulipo-hdu---1686&#34;&gt;Oulipo (&lt;a href=&#34;https://vjudge.net/problem/HDU-1686&#34;&gt;HDU - 1686&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The French author Georges Perec (1936–1982) once wrote a book, La  disparition, without the letter &amp;rsquo;e&amp;rsquo;. He was a member of the Oulipo  group. A quote from the book:&lt;/p&gt;&#xA;&lt;p&gt;Tout avait Pair normal, mais tout s’affirmait faux. Tout avait Fair normal, d’abord, puis surgissait l’inhumain, l’affolant. Il aurait  voulu savoir où s’articulait l’association qui l’unissait au roman :  stir son tapis, assaillant à tout instant son imagination, l’intuition  d’un tabou, la vision d’un mal obscur, d’un quoi vacant, d’un non-dit :  la vision, l’avision d’un oubli commandant tout, où s’abolissait la  raison : tout avait l’air normal mais…&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

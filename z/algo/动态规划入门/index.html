@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" data-theme="light">
+<head>
+    <script>
+        (function () {
+            const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = localStorage.getItem('n8rain-theme') || (prefers ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态规划入门 | 似水</title>
+    <link rel="stylesheet" href="/css/index.min.dec23d3721889f6543816a1c07a479a53dbcf86a9b0d6a9f6e8a31b397487b97.css" integrity="sha256-3sI9NyGIn2VDgWocB6R5pT28&#43;GqbDWqfbooxs5dIe5c=" />
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" id="chroma-light" href="/css/chroma-light.css">
+    <link rel="stylesheet" id="chroma-dark"  href="/css/chroma-dark.css">
+    <script>
+        (function () {
+            const isDark = document.documentElement.dataset.theme === 'dark';
+            document.getElementById('chroma-light').disabled = isDark;
+            document.getElementById('chroma-dark').disabled = !isDark;
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a class="item" href="/" target="_blank">「似水」</a>
+        </div>
+
+        <div class="header-middle">
+            动态规划入门
+        </div>
+
+        <div class="header-right">
+            <a id="reset-layout" class="item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 80V240h96V80H48zM0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V240c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80zM304 272V432h96V272H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V272zM144 368H48v64h96V368zM48 320h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48zM304 80v64h96V80H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V80z"></path></svg></a>
+            <a id="toggle-theme" class="item">◐</a>
+        </div>
+    </header>
+    <main class="container" id="container">
+        <div class="content" id="nav">
+            <nav class="menu">
+                <ul>
+                    <li><i class='fa fa-tags'>&nbsp;</i><a>网站导航</a></li>
+                    <li><i class='fa fa-thumbs-up'>&nbsp;</i><a href="/x/share/">好物分享</a></li>
+                    <li><i class='fa fa-wrench'>&nbsp;</i><a href="/x/tools/">游戏工具</a></li>
+                    <li><i class='fa fa-film'>&nbsp;</i><a href="/x/movies/">影视鉴赏</a></li>
+                    <li><i class='fa fa-book'>&nbsp;</i><a href="/x/books/">书籍阅读</a></li>
+                    <li><i class='fa fa-camera'>&nbsp;</i><a href="/x/gallery/">生活留影</a></li>
+                    <li><i class='fa fa-link'>&nbsp;</i><a href="/x/links/">友情链接</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="overview" id="overview" style="display: none;">
+            <div class="overview-container">
+                <div class="author-block">
+                    <img class="author-avatar" src="/img/avatar.png" alt="夜雨微澜" />
+                    
+                    <a class="author-name" href="/x/personal">夜雨微澜</a><p class="author-slogan">学而不思则罔，思而不学则殆</p>
+                </div>
+
+                <div class="site-state">
+                    <div class="item">
+                        <a href="/archives/">
+                            <span class="count">660</span>
+                            <span class="name">日志</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/series/">
+                            <span class="count">8</span>
+                            <span class="name">系列</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/categories/">
+                            <span class="count">93</span>
+                            <span class="name">分类</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/tags/">
+                            <span class="count">171</span>
+                            <span class="name">标签</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="diy-block">
+                    <canvas id="canvasDiyBlock" style="width:180px;">您的浏览器不支持 Canvas, 请更换浏览器!</canvas>
+                </div>
+
+                <div class="diy-block">
+                    <div id="typed-strings" style="display: none;">
+                        <p>We burn faster than light</p>
+                        <p>Shine across in the night sky</p>
+                    </div>
+                    <span id="typed" style="white-space: pre;line-height: 14px;font-size: 12px;"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="article-content">
+            <article class="main" id="top">
+                <time datetime="2021-04-25T09:07:11&#43;00:00">April 25, 2021</time>
+                <p>计蒜客的动态规划总结，现在感觉太水了，暂时放放</p>
+<h2 id="递推">递推</h2>
+<p><strong>递推</strong>也是经常被使用的一种简单算法。<strong>递推</strong>是一种用若干步可重复的简单运算来描述复杂问题的方法。</p>
+<p>递推的特点在于，每一项都和他前面的若干项有一定关联，这种关联一般可以通过<strong>递推关系式</strong>来表示，可以通过其前面若干项得出某项的数据。</p>
+<p>对于递推问题的求解一般从初始的一个或若干个数据项出发，通过递推关系式逐步推进，从而得出想要的结果，这种求解问题的方法叫<strong>递推法</strong>。其中，初始的若干数据项称为边界。</p>
+<h2 id="兔子繁殖问题">兔子繁殖问题</h2>
+<p>已知一对兔子，每个月可以生一对小兔子，小兔子出生后的第二个月会变为成年兔子，会继续生小兔子。</p>
+<blockquote>
+<p>第一个月，我们有1对小兔子。
+第二个月，我们有1对成年的兔子。
+第三个月，我们有1对成年的兔子，有1对小兔子，共2对。
+第四个月，我们有2对成年的兔子，有1对小兔子，共3对。
+第五个月，我们有3对成年的兔子，有2对小兔子，共5对。
+&hellip;&hellip;</p>
+</blockquote>
+<p>现在，我们希望知道第 $n$ 个月，一共有多少只兔子。（兔子身体素质好，不会死掉。）</p>
+<p>有可能你已经发现了规律了，但是我们还是要来理智地分析一下。</p>
+<p>设第 $i$ 个月的兔子数量为 $F_i$ ，第 $i$ 月的成年兔子数量为 $a_i$ ，第 $i$ 月的小兔子数量为 $b_i$ ，那么 $F_i = a_i + b_i$ 。</p>
+<p>第 $i$ 月的成年兔子，由第 $i-1$ 个月的小兔子长大与第 $i-1$ 月的成年兔子得到，也就是说，第 $i-1$ 个月兔子的总数量， $a_i = a_{i-1} + b_{i-1} = F_{i-1}$ 。</p>
+<p>第 $i$ 个月的小兔子，是由第 $i-1$ 个月的成年兔子生的，也就是第 $i-2$ 个月的成年兔子和小兔子，也就是 $i-2$ 个月兔子的总数量， $b_i = a_{i-1} = a_{i-2} + b_{i-2} = F_{i-2}$ 。</p>
+<p>这样，我们就找到了这个题目的递推关系式。如果用 $F_i$ 代表第 $i$ 个月兔子的总数量，那么递推关系式为： $F_i = F_{i-1} + F_{i-2}$ 。边界值，我们知道 $F_1 = 1，F_2 = 1$ 。那么，我们就可以写出这个题目的代码了。</p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln">1</span><span class="cl">    <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="c1">// f[n]即为所求。
+</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h2 id="装错信封问题">装错信封问题</h2>
+<p>某君写了 $n$ 封信，并且有 $n$ 个信封，如果所有的信都装错了信封，那么会有多少种不同的情况？</p>
+<p>这个题目，相信你就没有办法像上一道题目一样不通过分析直接猜出答案了吧。那我们来分析一下。</p>
+<p>我们用 $F_n$ 来表示 $n$ 封信和 $n$ 个信封全部装错的方案数。</p>
+<ul>
+<li>
+<p>第一步，把第 $n$ 封信放在第 $m$ 个信封 $(m \neq n)$，一共有 $n-1$ 种方法。</p>
+</li>
+<li>
+<p>第二步，放第 $m$ 封信的时候，有两种可能：</p>
+<ol>
+<li>
+<p>把第 $m$ 封信放在第 $n$ 个信封里，这样对于剩下的 $n-2$ 封信全部放错方案数就是 $F_{n-2}$ 种。</p>
+</li>
+<li>
+<p>不让第 $m$ 封信放在第 $n$ 个信封里。这样对于除第 $n$ 封以外的 $n-1$ 封信，放到剩余的 $n-1$ 个信封且全部放错，就有 $F_{n-1}$ 种方案数。(不理解这一步的同学，可以想一下，这 $n-1$ 封信里面，除第 $m$ 封信以外每个信都不能放对应的正确信封，第 $m$ 个信不能放第 $n$ 个信封，这样 $n-1$ 封信，每个信有且仅有一个对应的不能放置的信封，那么方案数就是 $F_{n-1}$)</p>
+</li>
+</ol>
+<p>这样，这一步共有 $F_{n-2} + F_{n-1}$ 种方案数。</p>
+</li>
+</ul>
+<p>到这里，我们已经可以得出这个递推式了，根据乘法原理： $F_n = (n-1) * (F_{n-1} + F_{n-2})$ 。</p>
+<p>我们再想一下，代码中的初始条件，也就是边界值。在只有一封信的时候，不可能装错，那么 $F_1 = 0$ ；有两封信的时候，装错的方案数为 $F_2 = 1$ 。</p>
+<p>现在我们初始条件和递推公式全有了，那么可以写代码了。</p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln">1</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">        <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">F</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="c1">// F[n]即为答案
+</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h2 id="马踏过河卒问题">马踏过河卒问题</h2>
+<p><a href="https://www.jisuanke.com/course/736/37740">https://www.jisuanke.com/course/736/37740</a></p>
+<p>1000ms 131072K</p>
+<p>
+
+
+  
+    <a data-fancybox="gallery" href="../../../../img/%e8%ae%a1%e8%92%9c%e5%ae%a2/%e9%a9%ac%e8%b8%8f%e8%bf%87%e6%b2%b3%e5%8d%92.png">
+      <img loading="lazy" src="../../../../img/%e8%ae%a1%e8%92%9c%e5%ae%a2/%e9%a9%ac%e8%b8%8f%e8%bf%87%e6%b2%b3%e5%8d%92.png" alt="马踏过河卒" class="fiximg-online">
+    </a>
+  
+
+</p>
+<p>$A$ 点有一个过河卒，需要走到目标 $B$ 点。卒行走规则：可以向下、或者向右。同时在棋盘上的任一点有一个对方的马（如上图的 $C$ 点），该马所在的点和所有跳跃一步可达的点称为对方马的控制点。例如上图 $C$ 点上的马可以控制9个点（图中的 $P1,P2 \cdots P8 和 C$ ）。卒不能通过对方马的控制点。</p>
+<p>棋盘用坐标表示，$A$点 $(0，0)$、$B$ 点 $(n，m)$、C点 $(c_x, c_y)$ ($0 &lt; c_x &lt; n \leq 20$ ， $0 &lt; c_y &lt; m \leq 20$ )。现在要求你计算出过河卒从 $A$ 点能够到达 $B$ 点的路径的条数。注：象棋中马走“日”。</p>
+<p><strong>输入格式</strong></p>
+<p>输入4个整数，$n$，$m$， $c_x$， $c_y$，分别表示 $B$ 点的横纵坐标和 $C$ 点的横纵坐标。</p>
+<p><strong>输出格式</strong></p>
+<p>输出一个整数，代表从A点走到B点的所有路径数。</p>
+<p><strong>样例输入</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="m">5</span> <span class="m">5</span> <span class="m">2</span> <span class="m">4</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p><strong>样例输出</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="m">14</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p><strong>提示</strong></p>
+<p>注意答案有可能会很大，超过<code>int</code>数据类型的范围，你需要用到<code>long long</code>数据类型。</p>
+<p><strong>解题思路</strong></p>
+<p>根据题目的要求，卒只能向下或者向右走，那么想要到达棋盘上的一个点，有两种方式：从左边的格子过来，或者从上边的格子过来。所以，过河卒到达某点的路径数目等于到达与其相邻的左边点和上边点的路径数目和。我们用 $F_{i,j}$ 来表示到达点 $(i,j)$ 的路径数目。所以递推式为： $F_{i,j} = F_{i-1,j} + F_{i, j-1}$ 。我们根据递推式发现，我们可以用逐行或逐列的递推方法求出从起点到终点的路径数目。我们来想一下边界条件，因为 $(0，0)$ 是卒的起始位置，那么 $F_{0,0} = 1$ 。</p>
+<p>我们再想一下如何处理马控制的点。马控制的点的路径数一定是0，这样其实并不影响我们做递推，只要遇到了马控制的点，直接设置为0就可以了。所以，我们需要提前标记出哪些点是马控制的点。我们可以用两个一维数组来表示马的横向位移和纵向位移，这样来方便我们计算马的控制点，然后使用一个二维数组来标记某个点是否是马控制的点。</p>
+<p><strong>AC代码</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"></code></pre></div>
+                        </div>
+                    </div>
+                </div><h2 id="墙壁涂色">墙壁涂色</h2>
+<p><a href="https://www.jisuanke.com/course/736/37741">https://www.jisuanke.com/course/736/37741</a></p>
+<p>1000ms 131072K</p>
+<p>蒜头君觉得白色的墙面好单调，他决定给房间的墙面涂上颜色。他买了3种颜料分别是红、黄、蓝，然后把房间的墙壁竖直地划分成 $n$ 个部分，蒜头希望每个相邻的部分颜色不能相同。他想知道一共有多少种给房间上色的方案。</p>
+<p>例如，当 $n=5$ 时，下面就是一种合法方案。</p>
+<blockquote>
+<p>蓝 红 黄 红 黄</p>
+</blockquote>
+<p>由于墙壁是一个环形，所以下面这个方案就是不合法的。</p>
+<blockquote>
+<p>蓝 红 黄 红 蓝</p>
+</blockquote>
+<p><strong>输入格式</strong></p>
+<p>一个整数n，表示房间被划分成多少部分。（ $1 \leq n \leq 50$ ）</p>
+<p><strong>输出格式</strong></p>
+<p>一个整数，表示给墙壁涂色的合法方案数。</p>
+<p><strong>样例输入</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="m">4</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p><strong>样例输出</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="m">18</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p><strong>提示</strong></p>
+<p>找出 $ans[n]$ 与 $ans[n-1]$ 和 $ans[n-2]$ 的关系。</p>
+<p>考虑第1块和 $n-1$ 块颜色不一样的情况，现在第 $n$ 块要和第 $n-1$ 和 $1$ 都不一样，但是只有3种颜色，所以 $n$ 只有一种颜色选择，这种情况方案数正好是 $ans[n-1]$ 。</p>
+<p>考虑第1块和 $n-1$ 块颜色一样的情况，第 $n-2$ 块必然要和第 $n-1$ 块不同，同时也就和第1块不同，前面 $n-2$ 块方案数是 $ans[n-2]$，第 $n$ 块要和第1块和第 $n-1$ 块不同，有2种选择，所以这种情况方案数是 $2*ans[n-2]$ 。</p>
+<p>上面2种情况加起来就是总方案数。</p>
+<p><strong>AC代码</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">ans</span><span class="p">[</span><span class="mi">60</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="n">ans</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="n">ans</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">ans</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">[</span><span class="n">n</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">            <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">[</span><span class="n">n</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h2 id="杨辉三角">杨辉三角</h2>
+<p><a href="https://www.jisuanke.com/course/736/37742">https://www.jisuanke.com/course/736/37742</a></p>
+<p>1000ms 131072K</p>
+<p>杨辉三角是二项式系数在三角形中的一种几何排列。它的每个数等于它上方两数之和，每行数字左右对称，由1开始逐渐变大。</p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl">          <span class="m">1</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">        <span class="m">1</span>   <span class="m">1</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">      <span class="m">1</span>   <span class="m">2</span>   <span class="m">1</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="m">1</span>   <span class="m">3</span>   <span class="m">3</span>   <span class="m">1</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">  <span class="m">1</span>   <span class="m">4</span>   <span class="m">6</span>   <span class="m">4</span>   <span class="m">1</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="m">1</span>   <span class="m">5</span>   <span class="m">10</span>  <span class="m">10</span>  <span class="m">5</span>   <span class="m">1</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p>请求出杨辉三角的第 $n$ 行，第 $m$ 项的数字是什么。</p>
+<p><strong>输入格式</strong></p>
+<p>第一行输入两个整数 $n$，$m$代表行数和列数。（ $1 \leq n,m \leq 50$ ）</p>
+<p><strong>输出格式</strong></p>
+<p>输出一个整数，代表杨辉三角的第 $n$ 行，第 $m$ 项的数字。</p>
+<p><strong>样例输入</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="m">6</span> <span class="m">3</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p><strong>样例输出</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="m">10</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p><strong>AC代码</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">ans</span><span class="p">[</span><span class="mi">60</span><span class="p">][</span><span class="mi">60</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="n">memset</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">ans</span><span class="p">));</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="n">ans</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">                <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">                <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">m</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h2 id="动态规划入门">动态规划入门</h2>
+<p><strong>动态规划</strong>是编程解题的一种重要手段。1951年美国数学家R.Bellman等人，根据一类多阶段问题的特点，把多阶段决策问题变换为一系列互相联系的单阶段问题，然后逐个加以解决。与此同时，他提出了解决这类问题的“最优化原理”，从而创建了解决最优化问题的一种新方法：动态规划。</p>
+<p>动态规划算法通常用于求解具有某种最优性质的问题。在这类问题中，可能会有许多可行解。每一个解都对应于一个值，我们希望找到具有最优值的解。</p>
+<p>我们可以用一个表来记录所有已解的子问题的答案。不管该子问题以后是否被用到，只要它被计算过，就将其结果填入表中。这就是动态规划法的基本思路。具体的动态规划算法多种多样，但它们具有相同的填表格式。</p>
+<p>动态规划的基本概念：</p>
+<ul>
+<li>
+<p>阶段：把所给问题的求解过程恰当地分成若干个相互联系的阶段，以便于求解。过程不同，阶段数就可能不同。描述阶段的变量称为阶段变量，常用 $k$ 表示。阶段的划分，一般是根据时间和空间的自然特征来划分，但要便于把问题的过程转化为多阶段决策的过程。</p>
+</li>
+<li>
+<p>状态：状态表示每个阶段开始面临的自然状况或客观条件，它不以人们的主观意志为转移，也称为不可控因素。通常一个阶段有若干个状态，状态通常可以用一个或一组数来描述，称为状态变量。</p>
+</li>
+<li>
+<p>决策：表示当过程处于某一阶段的某个状态时，可以做出不同的决定，从而确定下一阶段的状态，这种决定称为决策。不同的决策对应着不同的数值，描述决策的变量称决策变量。</p>
+</li>
+<li>
+<p>状态转移方程：动态规划中本阶段的状态往往是上一阶段的状态和上一阶段的决策的结果，由第 $i$ 段的状态 $f(i)$,和决策 $u(i)$ 来确定第 $i+1$ 段的状态。状态转移表示为 $F(i+1) = T(f(i),u(i))$ ，称为状态转移方程。</p>
+</li>
+<li>
+<p>策略：各个阶段决策确定后，整个问题的决策序列就构成了一个策略，对每个实际问题，可供选择的策略有一定范围，称为允许策略集合。允许策略集合中达到最优效果的策略称为最优策略。</p>
+</li>
+</ul>
+<p>动态规划必须满足最优化原理与无后效性。</p>
+<ul>
+<li>
+<p>最优化原理：“一个过程的最优决策具有这样的性质：即无论其初始状态和初始决策如何，其今后诸策略对以第一个决策所形成的状态作为初始状态的过程而言，必须构成最优策略”。也就是说一个最优策略的子策略，也是最优的。</p>
+</li>
+<li>
+<p>无后效性：如果某阶段状态给定后，则在这个阶段以后过程的发展不受这个阶段以前各个状态的影响。</p>
+</li>
+</ul>
+<h2 id="蒜头君回家">蒜头君回家</h2>
+<p>蒜头君要回家，已知蒜头君在 $(1,1)$ 位置，家在 $(n,n)$ 坐标处。蒜头君走到一个点 $(i,j)$ 会花费一定的体力 $a_{ij}$，而且蒜头君只会往家的方向走，也就是只能往上，或者往右走。蒜头君想知道他回到家需要花费的最少体力是多少。</p>
+<p>例如下图所示，格子中的数字代表走到该格子花费的体力：</p>
+<p>
+
+
+  
+    <a data-fancybox="gallery" href="../../../../img/%e8%ae%a1%e8%92%9c%e5%ae%a2/%e8%92%9c%e5%a4%b4%e5%90%9b%e5%9b%9e%e5%ae%b6.png">
+      <img loading="lazy" src="../../../../img/%e8%ae%a1%e8%92%9c%e5%ae%a2/%e8%92%9c%e5%a4%b4%e5%90%9b%e5%9b%9e%e5%ae%b6.png" alt="蒜头君回家" class="fiximg-online">
+    </a>
+  
+
+</p>
+<p>对于该图来说，最优策略已在图上标出，共花费体力为：$3+2+4+3=12$。</p>
+<p>我们把走到一个点看做一个状态，蒜头君想，我走到一个点只有两种方式，一个是从下面走到该点，一种是从左边走到该点。那么点 $(i,j)$ 要么是从 $(i-1,j)$ 走到 $(i,j)$，要么是从点 $(i,j-1)$ 走到 $(i,j)$。</p>
+<p>所以从哪个点走到 $(i,j)$ 就是一个决策，我们用 $dp(i,j)$ 来代表走到点 $(i,j)$ 一共花费的最少体力。</p>
+<p>我们需要花费最少力气走到家，所以可以得到状态转移方程： $dp(i,j) = min(dp(i-1,j), dp(i,j-1)) + a_{ij}$ 。根据转移方程我们可以推出走到每个点花费的最少体力。</p>
+<p>对于图中的边界点，要在转移前加上判断是否为边界，如：点 $(1,3)$ 只能从点 $(1,2)$ 走过来，点 $(3,1)$ 只能从点 $(2,1)$ 走过来。</p>
+<p>动态规划的题目的核心是写出状态转移方程，对于一个动态规划的题目，如果我们能写出转移方程那么代码实现就变得简单多了。大部分的动态规划题目，在计算出转移方程后，可以用类似于递推的循环嵌套，来写出代码。</p>
+<p>主要代码：</p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">][</span><span class="mi">100</span><span class="p">];</span>  <span class="c1">// a数组代表走到点(i,j)花费的体力
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="mi">100</span><span class="p">][</span><span class="mi">100</span><span class="p">];</span> <span class="c1">// dp数组代表走到点(i,j)一共花费的最少体力
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"></span><span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">            <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="p">{</span> <span class="c1">//边界点
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="c1"></span>            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">        <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="p">{</span> <span class="c1">//边界点
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="c1"></span>            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span> <span class="c1">//转移方程
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="c1"></span>        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h2 id="过河">过河</h2>
+<p>在一个夜黑风高的晚上，有 $n$ 个小朋友在桥的这边，现在他们需要过桥，但是由于桥很窄，每次只允许不超过两人通过，他们只有一个手电筒，所以每次过桥后，需要有人把手电筒带回来，第 $i$ 号小朋友过桥的时间为 $a[i]$ ，两个人过桥的总时间为二者中时间长者。问所有小朋友过桥的总时间最短是多少。</p>
+<p>我们先将所有人按花费时间递增进行排序，假设前 $i$ 个人过河花费的最少时间为 $opt[i]$，那么考虑前 $i-1$ 个人已经过河的情况，即河这边还有1个人，河那边有 $i-1$ 个人，并且这时候手电筒肯定在对岸，所以 $opt[i] = opt[i-1] + a[1] + a[i]$  (让花费时间最少的人把手电筒送过来，然后和第 $i$ 个人一起过河) 。</p>
+<p>如果河这边还有两个人，一个是第 $i$ 号，另外一个无关，河那边有 $i-2$ 个人，并且手电筒肯定在对岸，所以 $opt[i] = opt[i-2] + a[1] + a[i] + 2\times a[2]$ （让花费时间最少的人把电筒送过来，然后第 $i$ 个人和另外一个人一起过河，由于花费时间最少的人在这边，所以下一次送手电筒过来的一定是花费次少的，送过来后花费最少的和花费次少的一起过河，解决问题），所以 $opt[i] = min(opt[i-1] + a[1] + a[i], opt[i-2] + a[1] + a[i] + 2\times a[2] )$ 。</p>
+<h2 id="捡水果">捡水果</h2>
+<p><a href="https://www.jisuanke.com/course/736/37744">https://www.jisuanke.com/course/736/37744</a></p>
+<p>1000ms 131072K</p>
+<p>蒜头在玩一款游戏，他在一个山顶，现在他要下山，山上有许多水果，蒜头每下一个高度就可以捡起一个水果，并且获得水果的能量。山的形状如图所示：</p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl">   <span class="m">3</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="m">1</span> <span class="m">2</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"> <span class="m">6</span> <span class="m">2</span> <span class="m">3</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="m">3</span> <span class="m">5</span> <span class="m">4</span> <span class="m">1</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p>这是一个高度为4的山，数字代表水果的能量。每次下一个高度，蒜头需要选择是往左下走，还是往右下走。例如：对于上图的情况，蒜头能获得的最大能量为，$3+1+6+5=15$。现在，蒜头希望你能帮他计算出下山能获得的最大能量。</p>
+<p><strong>输入格式</strong></p>
+<p>第一行输入一个 $n$，代表山的高度。（$1&lt;n&lt;=1000$）接下来 $n$ 行，第 $i+1$ 行有 $i$ 个数字，代表水果的能量，水果能量为正整数且不大于 $1000$。</p>
+<p><strong>输出格式</strong></p>
+<p>输出一个数字，代表下山一共获得的最大能量，占一行。</p>
+<p><strong>样例输入</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="m">4</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="m">3</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="m">1</span> <span class="m">2</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="m">6</span> <span class="m">2</span> <span class="m">3</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="m">3</span> <span class="m">5</span> <span class="m">4</span> <span class="m">1</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p><strong>样例输出</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="m">15</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p><strong>AC代码</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="kt">int</span> <span class="n">mou</span><span class="p">[</span><span class="mi">1010</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="kt">int</span> <span class="n">ans</span><span class="p">[</span><span class="mi">1010</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">            <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mou</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">            <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">mou</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">max</span> <span class="o">&lt;</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">            <span class="n">max</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">max</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h2 id="逃生">逃生</h2>
+<p><a href="https://www.jisuanke.com/course/736/37745">https://www.jisuanke.com/course/736/37745</a></p>
+<p>1000ms 131072K</p>
+<p>蒜头君在玩一款逃生的游戏。在一个 $n \times m$ 的矩形地图上，蒜头位于其中一个点。地图上每个格子有加血的药剂，和掉血的火焰，药剂的药效不同，火焰的大小也不同，每个格子上有一个数字，如果格子上的数字是正数说明是一个药剂代表增加的生命值，如果是负数说明是火焰代表失去的生命值。</p>
+<p>蒜头初始化有 $v$ 点血量，他的血量上限是 $c$，任何时刻他的生命值都不能大于血量上限，如果血量为0则会死亡，不能继续游戏。</p>
+<p>矩形地图上的四个角 $(1,1)$， $(1,m)$， $(n,1)$， $(n,m)$ 为游戏的出口。游戏中只要选定了一个出口，就必须朝着这个方向走。例如，选择了左下的出口，就只能往左和下两个方向前进，选择了右上的出口，就只能往右和上两个方向前进，左上和右下方向的出口同理。</p>
+<p>如果成功逃生，那么剩余生命值越高，则游戏分数越高。为了能拿到最高分，请你帮忙计算如果成功逃生最多能剩余多少血量，如果不能逃生输出-1。</p>
+<p><strong>输入格式</strong></p>
+<p>第一行依次输入整数 $n，m，x，y，v，c$（ $1 &lt; n,m \leq 1000$ ， $1 \leq x \leq n$ ， $1 \leq y \leq m$ ， $1 \leq v \leq c \leq 10000$ ）, 其中 $n$, $m$ 代表地图大小，$(x,y)$ 代表蒜头君的初始位置，$v$ 代表蒜头的初始化血量，$c$ 代表蒜头的生命值上限。</p>
+<p>接下来 $n$ 行，每行有 $m$ 个数字，代表地图信息。（每个数字的绝对值不大于100，地图中蒜头君的初始位置的值一定为0）</p>
+<p><strong>输出格式</strong></p>
+<p>一行输出一个数字，代表成功逃生最多剩余的血量，如果失败输出-1。</p>
+<p><strong>样例输入</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="m">4</span> <span class="m">4</span> <span class="m">3</span> <span class="m">2</span> <span class="m">5</span> <span class="m">10</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">-1 -2 -3 -4
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="m">4</span> <span class="m">0</span> <span class="m">2</span> <span class="m">1</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">-4 -3 -2 -1</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p><strong>样例输出</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="m">10</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p><strong>AC代码</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln">  1</span><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">  2</span><span class="cl"><span class="kt">int</span> <span class="n">mp</span><span class="p">[</span><span class="mi">1010</span><span class="p">][</span><span class="mi">1010</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kt">int</span> <span class="n">dpv</span><span class="p">[</span><span class="mi">1010</span><span class="p">][</span><span class="mi">1010</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">  4</span><span class="cl"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">  5</span><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">INF</span> <span class="o">=</span> <span class="mh">0x3f3f3f3f</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">  6</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">  7</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">  8</span><span class="cl">    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d%d%d%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">  9</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 10</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 11</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 12</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 13</span><span class="cl">            <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln"> 14</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 15</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 16</span><span class="cl">    <span class="n">dpv</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 17</span><span class="cl">    <span class="c1">// 01
+</span></span></span><span class="line"><span class="ln"> 18</span><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 19</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 20</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 21</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 22</span><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 23</span><span class="cl">                <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 24</span><span class="cl">            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 25</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">mp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 26</span><span class="cl">            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 27</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dpv</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">mp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 28</span><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="ln"> 29</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dpv</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">])</span> <span class="o">+</span> <span class="n">mp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 30</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 31</span><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 32</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 33</span><span class="cl">            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 34</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">INF</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 35</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 36</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 37</span><span class="cl">    <span class="c1">// 02
+</span></span></span><span class="line"><span class="ln"> 38</span><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 39</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 40</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 41</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 42</span><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 43</span><span class="cl">                <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 44</span><span class="cl">            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 45</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">mp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 46</span><span class="cl">            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 47</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dpv</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">mp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 48</span><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="ln"> 49</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dpv</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">])</span> <span class="o">+</span> <span class="n">mp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 50</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 51</span><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 52</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 53</span><span class="cl">            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 54</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">INF</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 55</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 56</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 57</span><span class="cl">    <span class="c1">// 03
+</span></span></span><span class="line"><span class="ln"> 58</span><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 59</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 60</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">--</span><span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 61</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 62</span><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">==</span> <span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 63</span><span class="cl">                <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 64</span><span class="cl">            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 65</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">mp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 66</span><span class="cl">            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 67</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dpv</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">mp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 68</span><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="ln"> 69</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dpv</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">])</span> <span class="o">+</span> <span class="n">mp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 70</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 71</span><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 72</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 73</span><span class="cl">            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 74</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">INF</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 75</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 76</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 77</span><span class="cl">    <span class="c1">// 04
+</span></span></span><span class="line"><span class="ln"> 78</span><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 79</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 80</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">--</span><span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 81</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 82</span><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">==</span> <span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 83</span><span class="cl">                <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 84</span><span class="cl">            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 85</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">mp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 86</span><span class="cl">            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 87</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dpv</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">mp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 88</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 89</span><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 90</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 91</span><span class="cl">            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 92</span><span class="cl">                <span class="n">dpv</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">INF</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 93</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 94</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 95</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 96</span><span class="cl">    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">max</span><span class="p">(</span><span class="n">dpv</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">dpv</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">m</span><span class="p">]),</span> <span class="n">max</span><span class="p">(</span><span class="n">dpv</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">m</span><span class="p">],</span> <span class="n">dpv</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="mi">1</span><span class="p">]));</span>
+</span></span><span class="line"><span class="ln"> 97</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ans</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 98</span><span class="cl">        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 99</span><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="ln">100</span><span class="cl">        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;-1&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">101</span><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">102</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h1 id="蒜头君的新游戏">蒜头君的新游戏</h1>
+<p><a href="https://www.jisuanke.com/course/736/37746">https://www.jisuanke.com/course/736/37746</a></p>
+<p>1000ms 131072K</p>
+<p>工作空闲之余，蒜头君经常带着同事们做游戏，最近蒜头君发明了一个好玩的新游戏：$n$ 位同事围成一个圈，同事 $A$ 手里拿着一个兔妮妮的娃娃。蒜头君喊游戏开始，每位手里拿着娃娃的同事可以选择将娃娃传给左边或者右边的同学，当蒜头君喊游戏结束时，停止传娃娃。此时手里拿着娃娃的同事即是败者。</p>
+<p>玩了几轮之后，蒜头君想到一个问题：有多少种不同的方法，使得从同事 $A$ 开始传娃娃，传了 $m$ 次之后又回到了同事 $A$ 手里。两种方法，如果接娃娃的同事不同，或者接娃娃的顺序不同均视为不同的方法。例如 $1-&gt;2-&gt;3-&gt;1$ 和 $1-&gt;3-&gt;2-&gt;1$ 是两种不同的方法。</p>
+<p><strong>输入格式</strong></p>
+<p>输入一行，输入两个整数 $n,m(3 \leq n \leq 30,1 \leq m \leq 30)$ ，表示一共有 $n$ 位同事一起游戏，一共传 $m$ 次娃娃。</p>
+<p><strong>输出格式</strong></p>
+<p>输出一行，输出一个整数，表示一共有多少种不同的传娃娃方法。</p>
+<p><strong>样例输入</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="m">3</span> <span class="m">3</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p><strong>样例输出</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="m">2</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p><strong>提示</strong></p>
+<p>样例可以有 $1-&gt;2-&gt;3-&gt;1$ 和 $1-&gt;3-&gt;2-&gt;1$ 这两种不同的方法。</p>
+<p><strong>AC代码</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">INF</span> <span class="o">=</span> <span class="mh">0x3f3f3f3f</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="mi">40</span><span class="p">][</span><span class="mi">40</span><span class="p">]</span> <span class="o">=</span> <span class="p">{{</span><span class="mi">0</span><span class="p">}};</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h2 id="蒜头君的城堡之旅">蒜头君的城堡之旅</h2>
+<p><a href="https://www.jisuanke.com/course/736/37747">https://www.jisuanke.com/course/736/37747</a></p>
+<p>1000ms 131072K</p>
+<p>蒜国地域是一个 $n$ 行 $m$ 列的矩阵，下标均从1开始。蒜国有个美丽的城堡，在坐标 $(n,m)$ 上，蒜头君在坐标 $(1,1)$ 的位置上。蒜头君打算出发去城堡游玩，游玩结束后返回到起点。在出发去城堡的路上，蒜头君只会选择往下或者往右走，而在返回的路上，蒜头君只会选择往上或者往左走，每次只能走一格。已知每个格子上都有一定数量的蒜味可乐，每个格子至多经过一次。</p>
+<p>现在蒜头君请你来帮他计算一下，如何计划来回行程，可以收集到最多的蒜味可乐。</p>
+<p><strong>输入格式</strong></p>
+<p>第一行输入两个整数 $n,m(1 \leq n, m \leq 50)$ ，表示蒜国是一个 $n$ 行 $m$ 列的矩阵。</p>
+<p>接下来输入 $n$ 行，每行输入 $m$ 个整数，代表一个 $n \times m$ 的矩阵，每个整数代表对应位置上的蒜味可乐数量，每行的每两个整数之间用一个空格隔开。其中蒜头君的位置和城堡的位置上没有蒜味可乐，用0表示，其余位置上的整数范围在 $[1,100]$ 内。</p>
+<p><strong>输出格式</strong></p>
+<p>输出一行，输出一个整数，表示蒜头君在来回路上能收集到的蒜味可乐的最大值。</p>
+<p><strong>样例输入</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="m">3</span> <span class="m">3</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="m">0</span> <span class="m">2</span> <span class="m">9</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="m">4</span> <span class="m">8</span> <span class="m">6</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="m">2</span> <span class="m">7</span> <span class="m">0</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p><strong>样例输出</strong></p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="m">36</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p><strong>提示</strong></p>
+<p>样例中，蒜头君可以选择这样的路线：$0-&gt;2-&gt;9-&gt;6-&gt;0-&gt;7-&gt;8-&gt;4-&gt;0$。</p>
+<p>来回可以理解为同时从 $(1,1)$ 出发到 $(n,m)$ 的两条路径，这样思路也许会更清晰一些。</p>
+<p>我们会发现 假设一个点走到 $(i,j)$ 另一个点走到 $(k,l)$ 这样状态就可以用 $dp[i][j][k][l]$ 来表示，时间复杂度为 $\mathcal{O}(n^4)$。其实还可以再进行优化，把4维的状态降低到3维，将复杂度优化到 $\mathcal{O}(n^3)$ ，这里就留给你自己来思考了。（本题目数据范围较小，不加优化也可以通过）</p>
+<p><strong>解题思路</strong></p>
+<ol>
+<li>
+<p>看成两个独立的图，每个人都从他的起始点开始走，只是两个图的路线要求不重叠要达到一个坐标点，只有通过这个坐标点的上方或者左方进入，又已知路线不能重复，那么一旦从左方进入这个坐标，那么只能在上方离开这个坐标，反之亦然：从上方进入只能在左方离开。</p>
+</li>
+<li>
+<p>那么这个问题（去到 $(n, m)$ 点并返回能取到的最多的可乐的数量）就可以分解为：从 $(1, 1)$ 出发到 $(n - 1, m)$ 路上取到的可乐加上从 $(n, m-1)$ 出发回到 $(1, 1)$ 的路上取到的可乐数量之和的最大值（或者相反）。</p>
+</li>
+<li>
+<p>考虑到虽然出发和返回是两条路线，起始点不一样，但是最终连接的两个点却是一样的。那么就可以转化成这样：有两个人，同时在原点出发，目标都是城堡且两人路线不能重合，最后两个人可以取得的可乐的最大数量的和，就是这个题目的解。用（$x1，y1$）和（$x2，y2$）来表示这两个点，那么合法的两个点应当是：$x_1 \neq x_2 &amp;&amp; y_1 \neq y_2$ (两点不能重复) $x_1 + y_1 == x_2 + y_2$ (两人同时出发，步数相同)</p>
+</li>
+<li>
+<p>可以使用4维数组来表示这个问题的答案：$f[x1][y1][x2][y2]$，表示在原点出发后，两人分别到达点（$x1，y1$）和（$x2，y2$）时所取到的可乐的和的最大值。</p>
+</li>
+</ol>
+<p>我们先分阶段，把题意看做同时出发的两个人，同时到达终点 $(n,m)$ ，这两个人一共收集的最大数量。</p>
+<p>因此 $dp[i][j][k][l]$ 看做同一时刻一个人到达 $(i,j)$，一个人到达 $(k,l)$ 所收集可乐的最大数量。</p>
+<p>因此这一时刻的最大数量等于上一时刻的最大数量+刚刚捡到的可乐数量。</p>
+<p>$$
+\begin{align*}
+dp[i][j][k][l] = max(&amp;max(dp[i-1][j][k-1][l], dp[i-1][j][k][l-1]),\
+&amp;max(dp[i][j-1][k-1][l], dp[i][j-1][k][l-1]))\
+&amp; + a[i][j] + a[k][l];
+\end{align*}
+$$</p>
+<p>特殊情况：</p>
+<p>1.两条路不能交叉，即当 $ i==j&amp;&amp;k==l $ 时，要使 $dp[i][j][k][l]=0$；这样，这条路之后不会有人选，相当于这种情况不存在了。</p>
+<p>2.最后，$dp[n][n][n][n]$ 一定为0，因为第一点，所以，我们只需要知道当一个人到达 $(n-1,m)/(n,m-1)$ 时，若要满足两人可乐数最大，另一个人一定达到 $(n,m-1)/(n-1,m)$ 处。答案输出 $dp[n][n-1][n-1][n]$ 即可。</p>
+<p>3.把 $dp[51][51][51][51]$ 放在main函数外，全局变量所在的系统stack较大。</p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">maxn</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">maxn</span><span class="p">][</span><span class="n">maxn</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="n">maxn</span><span class="p">][</span><span class="n">maxn</span><span class="p">][</span><span class="n">maxn</span><span class="p">][</span><span class="n">maxn</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d %d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">            <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">                <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">l</span> <span class="o">&gt;</span> <span class="n">m</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">                    <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">k</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">==</span> <span class="n">l</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">                    <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">][</span><span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">l</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">][</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]),</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">                                     <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">l</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">k</span><span class="p">][</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">                                 <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">l</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">m</span><span class="p">][</span><span class="n">n</span><span class="p">][</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h2 id="背包问题">背包问题</h2>
+<p>给定一组物品，每种物品都有自己的重量（体积）和价值，现有一个背包，在受限制的重量（或者容积）下，取若干物品，使得总价值最大。这一类问题，被称为背包问题。</p>
+<p><strong>题目描述</strong></p>
+<p>当前有 $N$ 件物品和一个承重量为 $V$ 的背包。已知第i件物品的重量是 $w[i]$，价值是 $v[i]$。</p>
+<p>由于每种物品有且仅有一件，因此只能选择放或不放，我们称之为01背包问题。</p>
+<p>现在你需要选出若干件物品，在它们的重量之和不超过C的条件下，使得价值总和尽可能大。</p>
+<p>对于每个物品是否要装入背包，我们自然可以进行暴力枚举或搜索，但是如果要暴力地去做，那么时间复杂度会非常的高，这时候需要一种更加优化的算法——动态规划。</p>
+<p><strong>解析</strong></p>
+<p>对于 01 背包，先确定这个问题的状态。共有 $N$ 个物品，背包总承重为 $V$，那么可以根据物品和容量来确定一个状态。前 $i$ 个物品，放在背包里，总重量不超过 $j$ 的前提下，所获得的最大价值为 $dp[i][j]$。</p>
+<p>是否将第 $i$ 个物品装入背包中，就是决策。为了使价值最大化，如果第 $i$ 个物品放入背包后，总重量不超过限制且总价值比之前要大，那么就将第 $i$ 个物品放入背包。根据这个逻辑写出转移方程：</p>
+<p>$$
+\begin{align*}
+\displaystyle \forall\ j &lt; w[i], dp[i][j] &amp;= dp[i-1][j]\
+\displaystyle \forall\ w[i] \le j \le C, dp[i][j] &amp;= max(dp[i-1][j], dp[i - 1][j - w[i]] + v[i])
+\end{align*}
+$$</p>
+<p>为了更好地理解这个转移方程，看一个具体的例子。有 5 个物品，编号1-5，重量分别是 $[2,2,6,5,4]$，价值分别是 $[6,3,5,4,6]$，背包的总承重为 10。</p>
+<p>列出本问题中所有的状态变量，也就是转移方程中的 $dp$ 变量，且初始化为0。当第一个物品放入背包，因为第一个物品重量为2，价值为6，只要背包容量大于等于2，都可以放第一个物品，根据我们的转移方程 $dp[i][j] = max(dp[i-1][j], dp[i - 1][j - w[i]] + v[i]$ ，那么：</p>
+<p>
+
+
+  
+    <a data-fancybox="gallery" href="../../../../img/%e8%ae%a1%e8%92%9c%e5%ae%a2/%e8%83%8c%e5%8c%85-%e7%ac%ac%e4%b8%80%e4%b8%aa%e7%89%a9%e5%93%81.png">
+      <img loading="lazy" src="../../../../img/%e8%ae%a1%e8%92%9c%e5%ae%a2/%e8%83%8c%e5%8c%85-%e7%ac%ac%e4%b8%80%e4%b8%aa%e7%89%a9%e5%93%81.png" alt="第一个物品" class="fiximg-online">
+    </a>
+  
+
+</p>
+<p>根据我们的转移方程继续放第二个物品，容量为2，3的时候： $dp[i-1][j-w[i]] + v[i] &lt; dp[i-1][j]$ ，则 $dp[i][j] = dp[i-1][j]$ 。</p>
+<p>容量大于3的时候： $dp[i -1][j-w[i]] + v[i] &gt; dp[i-1][j]$ ，则 $dp[i][j] = dp[i-1][j-w[i]] + v[i]$ 。dp变量被更新为：</p>
+<p>
+
+
+  
+    <a data-fancybox="gallery" href="../../../../img/%e8%ae%a1%e8%92%9c%e5%ae%a2/%e8%83%8c%e5%8c%85-%e7%ac%ac%e4%ba%8c%e4%b8%aa%e7%89%a9%e5%93%81.png">
+      <img loading="lazy" src="../../../../img/%e8%ae%a1%e8%92%9c%e5%ae%a2/%e8%83%8c%e5%8c%85-%e7%ac%ac%e4%ba%8c%e4%b8%aa%e7%89%a9%e5%93%81.png" alt="第二个物品" class="fiximg-online">
+    </a>
+  
+
+</p>
+<p>当放第3个物品的时候，第三个物品的重量 $w[i]=6$ ，所以在背包容量 $j&lt;w[i]$ 的时候，$dp[i][j] = dp[i-1][j]$。在背包容量 $j \ge v[i]$ 的时候 $dp[i][j] = max(dp[i-1][j], dp[i - 1][j - w[i]] + v[i])$。</p>
+<p>
+
+
+  
+    <a data-fancybox="gallery" href="../../../../img/%e8%ae%a1%e8%92%9c%e5%ae%a2/%e8%83%8c%e5%8c%85-%e7%ac%ac%e4%b8%89%e4%b8%aa%e7%89%a9%e5%93%81.png">
+      <img loading="lazy" src="../../../../img/%e8%ae%a1%e8%92%9c%e5%ae%a2/%e8%83%8c%e5%8c%85-%e7%ac%ac%e4%b8%89%e4%b8%aa%e7%89%a9%e5%93%81.png" alt="第三个物品" class="fiximg-online">
+    </a>
+  
+
+</p>
+<p>以此类推，把剩余的物品全部根据转移方程放入背包后，dpdp 变量为：</p>
+<p>
+
+
+  
+    <a data-fancybox="gallery" href="../../../../img/%e8%ae%a1%e8%92%9c%e5%ae%a2/%e8%83%8c%e5%8c%85-%e5%85%a8%e9%83%a8%e7%89%a9%e5%93%81.png">
+      <img loading="lazy" src="../../../../img/%e8%ae%a1%e8%92%9c%e5%ae%a2/%e8%83%8c%e5%8c%85-%e5%85%a8%e9%83%a8%e7%89%a9%e5%93%81.png" alt="全部物品" class="fiximg-online">
+    </a>
+  
+
+</p>
+<p>通过上面的表格，可以知道当这 5 个物品放入容量为 10 的背包中，最大的价值是 15，也就是 $dp[5][10] = 15$。</p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">V</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">        <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p>时间上是两重循环，时间复杂度为 $\mathcal{O}(NV)$。</p>
+<p>空间是二维的，空间复杂度也为 $\mathcal{O}(NV)$。</p>
+<p><strong>优化空间复杂度</strong></p>
+<p>空间复杂度还可以优化到 $\mathcal{O}(V)$ ，但时间复杂度已经很难再优化了。</p>
+<p>当前计算第 $i$ 件物品，总重量为 $v$ 的最大价值。我们注意到，它需要的状态是 $dp[i-1][0\ldots v]$ 。</p>
+<p>如果从大到小，也就是从 $V$ 到 0 枚举，则当前引用的 $dp[v]$ 和 $dp[v-w[i]]$，仍然是计算第 $i-1$ 件物品的结果，即 $dp[i-1][v],dp[i-1][v-w[i]]$，那么这一维的状态是冗余的。</p>
+<p>故我们可以化简转移方程：$dp[j]=max(dp[j-w[i]]+v[i],dp[j])$。</p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="o">--</span><span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span></span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p>这个做法的空间复杂度为 $\mathcal{O}(V)$ 。</p>
+
+            </article>
+        </div>
+        
+        <div class="content" id="article-toc">
+            <nav class="toc">
+                <div class="toc-inner"><ul><ul><li>
+                    <a href="#%e9%80%92%e6%8e%a8" aria-label="递推">递推</a></li><li>
+                    <a href="#%e5%85%94%e5%ad%90%e7%b9%81%e6%ae%96%e9%97%ae%e9%a2%98" aria-label="兔子繁殖问题">兔子繁殖问题</a></li><li>
+                    <a href="#%e8%a3%85%e9%94%99%e4%bf%a1%e5%b0%81%e9%97%ae%e9%a2%98" aria-label="装错信封问题">装错信封问题</a></li><li>
+                    <a href="#%e9%a9%ac%e8%b8%8f%e8%bf%87%e6%b2%b3%e5%8d%92%e9%97%ae%e9%a2%98" aria-label="马踏过河卒问题">马踏过河卒问题</a></li><li>
+                    <a href="#%e5%a2%99%e5%a3%81%e6%b6%82%e8%89%b2" aria-label="墙壁涂色">墙壁涂色</a></li><li>
+                    <a href="#%e6%9d%a8%e8%be%89%e4%b8%89%e8%a7%92" aria-label="杨辉三角">杨辉三角</a></li><li>
+                    <a href="#%e5%8a%a8%e6%80%81%e8%a7%84%e5%88%92%e5%85%a5%e9%97%a8" aria-label="动态规划入门">动态规划入门</a></li><li>
+                    <a href="#%e8%92%9c%e5%a4%b4%e5%90%9b%e5%9b%9e%e5%ae%b6" aria-label="蒜头君回家">蒜头君回家</a></li><li>
+                    <a href="#%e8%bf%87%e6%b2%b3" aria-label="过河">过河</a></li><li>
+                    <a href="#%e6%8d%a1%e6%b0%b4%e6%9e%9c" aria-label="捡水果">捡水果</a></li><li>
+                    <a href="#%e9%80%83%e7%94%9f" aria-label="逃生">逃生</a></li></ul><li>
+                    <a href="#%e8%92%9c%e5%a4%b4%e5%90%9b%e7%9a%84%e6%96%b0%e6%b8%b8%e6%88%8f" aria-label="蒜头君的新游戏">蒜头君的新游戏</a></li><ul><li>
+                    <a href="#%e8%92%9c%e5%a4%b4%e5%90%9b%e7%9a%84%e5%9f%8e%e5%a0%a1%e4%b9%8b%e6%97%85" aria-label="蒜头君的城堡之旅">蒜头君的城堡之旅</a></li><li>
+                    <a href="#%e8%83%8c%e5%8c%85%e9%97%ae%e9%a2%98" aria-label="背包问题">背包问题</a></ul></ul>
+                </div>
+            </nav>
+        </div>
+    </main>
+    <div class="splitter-indicator" id="splitterIndicator"></div>
+    <div class="drop-indicator" id="dropIndicator"></div>
+    <footer class="footer">
+        <div class="footer-left">
+            <a class="item" href="/x/about/" target="_blank" rel="noopener noreferrer me" title="Info"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></a>
+            <a class="item" href="https://music.163.com/#/user/home?id=270121274" target="_blank" rel="noopener noreferrer me" title="NeteaseCloudMusic"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.98,23.65c-2.69,0-5.26-1.05-7.24-2.95C1.59,18.63,.35,15.72,.35,12.73,.35,8.21,3.21,4.11,7.46,2.52c.15-.05,.3-.08,.45-.08,.42,0,.78,.21,.93,.55,.12,.26,.13,.51,.03,.75-.12,.28-.38,.52-.7,.64-3.48,1.3-5.82,4.66-5.82,8.36,0,2.46,1.02,4.84,2.79,6.54,1.6,1.54,3.68,2.39,5.85,2.39,.1,0,.2,0,.29,0,3.49-.12,6.22-1.91,7.47-4.89,.08-.2,2.01-4.93-2.59-7.9-.41-.27-.89-.46-1.42-.58l-.6-.14,.18,.58c.21,.68,.78,2.52,.84,2.93,.07,.46,.07,.51,.1,.92v.18c0,2.3-1.89,4.19-4.22,4.19-2.2,0-3.97-1.73-4.23-4.1-.25-2.35,.74-4.4,2.73-5.61,.53-.32,1.11-.57,1.73-.75l.33-.1-.48-1.74c-.16-.54-.53-2.38,1.5-3.72,.57-.38,1.22-.57,1.91-.57,1.38,0,2.62,.74,3.12,1.23,.22,.22,.36,.56,.36,.9,0,.26-.08,.48-.23,.63-.15,.15-.37,.23-.63,.23-.33,0-.67-.13-.89-.35-.06-.05-.85-.66-1.7-.66-.31,0-.59,.08-.82,.24-.04,.03-.08,.05-.12,.08-.23,.19-.71,.73-.47,1.82l.09,.34,.02,.07h0s.35,1.29,.35,1.29h.25c1.24,.08,2.39,.42,3.32,1.01l.05,.03c4.82,3.12,4.29,8.12,3.34,10.33-1.54,3.67-4.99,5.95-9.23,6.1-.12,0-.25,0-.37,0Zm.82-15.26c-.43,.13-.84,.31-1.2,.53-.94,.57-2.01,1.68-1.79,3.71,.12,1.12,.87,2.33,2.24,2.33,1.23,0,2.24-1,2.24-2.22h0s.03-.21-.05-.71c-.07-.46-.91-3.1-1-3.4l-.1-.33-.33,.1Z" /></svg></a>
+            <a class="item" href="https://neodb.social/users/Lordash/" target="_blank" rel="noopener noreferrer me" title="NeoDB"><svg version="1.1" xmlns="https://www.w3.org/2000/svg" width="90" height="108" viewBox="0 0 90 108" fill="currentColor"><path d="M0 0 C4.26615504 2.04066983 6.73398524 4.58553002 10 8 C10.474375 7.195625 10.94875 6.39125 11.4375 5.5625 C13 3 13 3 14 2 C20.16698656 1.54318618 20.16698656 1.54318618 22.9375 3.0625 C24.6815774 6.24287644 24.55944728 8.4568339 24 12 C21 14.4375 21 14.4375 18 16 C20.97 18.97 23.94 21.94 27 25 C25.193388 28.61322401 24.33581029 29.83748791 21.375 32.25 C20.74335937 32.77078125 20.11171875 33.2915625 19.4609375 33.828125 C18.97882813 34.21484375 18.49671875 34.6015625 18 35 C17.566875 34.0409375 17.566875 34.0409375 17.125 33.0625 C16.17176549 30.84793921 16.17176549 30.84793921 14 30 C10.5 29.75 10.5 29.75 7 30 C4.59331253 31.99114614 4.59331253 31.99114614 4.5625 35.875 C4.62092586 39.4454694 4.80377743 39.80377743 7.5 42.5 C8.325 42.995 9.15 43.49 10 44 C7.36 46.64 4.72 49.28 2 52 C-1.49353838 50.25323081 -3.13945763 49.08594785 -5.75 46.375 C-6.36359375 45.74335937 -6.9771875 45.11171875 -7.609375 44.4609375 C-8.06828125 43.97882812 -8.5271875 43.49671875 -9 43 C-9.515625 43.99 -10.03125 44.98 -10.5625 46 C-13 49 -13 49 -16.625 49.5 C-20 49 -20 49 -22 47 C-22.56321839 40.8045977 -22.56321839 40.8045977 -20.6875 38.125 C-19 37 -19 37 -16 36 C-18.97 33.03 -21.94 30.06 -25 27 C-23.03838569 23.07677137 -20.84267796 20.58307142 -17.7734375 17.578125 C-17.26575836 17.07327576 -16.75807922 16.56842651 -16.23501587 16.04827881 C-14.61966158 14.44407904 -12.99747791 12.84699144 -11.375 11.25 C-10.27558302 10.16061893 -9.17661941 9.0707801 -8.078125 7.98046875 C-5.3906398 5.31498115 -2.69700979 2.65584857 0 0 Z"transform="translate(53,1)" /><path d="M0 0 C2.31 1.98 4.62 3.96 7 6 C6.34 6.86625 5.68 7.7325 5 8.625 C2.82375259 12.29741751 2.2907405 13.83310042 3 18 C4.34115399 21.00979883 4.34115399 21.00979883 7 23 C10.97807953 23.86409105 14.00632895 23.59620263 17.5 21.5 C17.995 21.005 18.49 20.51 19 20 C21.84383123 21.2748209 24.13754018 22.45137078 26 25 C25.57914771 28.29893891 24.42094066 29.966522 22.0625 32.25 C21.53785156 32.77078125 21.01320312 33.2915625 20.47265625 33.828125 C19 35 19 35 17 35 C17 35.66 17 36.32 17 37 C17.763125 36.938125 18.52625 36.87625 19.3125 36.8125 C22 37 22 37 23.875 38.0625 C25.69848531 41.20294693 24.8658284 43.5985313 24 47 C21 49 21 49 17.9375 48.75 C15 48 15 48 13 46 C12.505 44.02 12.505 44.02 12 42 C9.03 44.97 6.06 47.94 3 51 C-0.92322863 49.03838569 -3.41692858 46.84267796 -6.421875 43.7734375 C-6.92672424 43.26575836 -7.43157349 42.75807922 -7.95172119 42.23501587 C-9.55592096 40.61966158 -11.15300856 38.99747791 -12.75 37.375 C-13.83938107 36.27558302 -14.9292199 35.17661941 -16.01953125 34.078125 C-18.68501885 31.3906398 -21.34415143 28.69700979 -24 26 C-22.4152642 22.13671373 -19.94043113 19.71123077 -16.9921875 16.796875 C-16.50670441 16.3142218 -16.02122131 15.8315686 -15.52102661 15.33428955 C-13.97700134 13.80141438 -12.42615176 12.27565996 -10.875 10.75 C-9.82375991 9.70879639 -8.77297343 8.66713459 -7.72265625 7.625 C-5.15366996 5.07800536 -2.57851839 2.53734823 0 0 Z"transform="translate(25,29)" /><path d="M0 0 C3.81684226 1.55500981 6.19195732 4.03595495 9 7 C9.45375 6.195625 9.9075 5.39125 10.375 4.5625 C12 2 12 2 14 1 C16.9375 0.6875 16.9375 0.6875 20 1 C21.9375 2.625 21.9375 2.625 23 5 C23 8 23 8 22 11 C19.4375 13.375 19.4375 13.375 17 15 C19.97 17.97 22.94 20.94 26 24 C20.375 30.875 20.375 30.875 17 32 C16.649375 31.175 16.29875 30.35 15.9375 29.5 C14.16088977 26.60879362 14.16088977 26.60879362 10.5 26.5 C7.14672303 26.77692733 7.14672303 26.77692733 5 28.0625 C3.32384137 31.31005735 4.03723329 33.57014358 5 37 C7.4158995 39.45198044 7.4158995 39.45198044 10 41 C8.76600937 42.36877116 7.51219377 43.71969166 6.25 45.0625 C5.55390625 45.81660156 4.8578125 46.57070312 4.140625 47.34765625 C2 49 2 49 0.09619141 48.81054688 C-2.43507746 47.831766 -3.76735676 46.6052517 -5.6796875 44.68359375 C-6.36160156 44.00103516 -7.04351562 43.31847656 -7.74609375 42.61523438 C-8.79990234 41.53725586 -8.79990234 41.53725586 -9.875 40.4375 C-10.91720703 39.40012695 -10.91720703 39.40012695 -11.98046875 38.34179688 C-16.44375955 33.83227613 -20.30080588 29.1545197 -24 24 C-21.69 22.02 -19.38 20.04 -17 18 C-15.948125 18.99 -15.948125 18.99 -14.875 20 C-12.15610238 22.18293783 -12.15610238 22.18293783 -9 22.5625 C-4.86392446 21.78698584 -3.45000447 20.38677089 -1 17 C-0.44852315 13.07072743 -0.40688385 10.96381375 -2.5 7.5625 C-2.995 7.046875 -3.49 6.53125 -4 6 C-2.84826645 3.53199953 -1.95216435 1.95216435 0 0 Z"transform="translate(53,58)" /></svg></a>
+            <a class="item" href="https://github.com/GH1656409967" target="_blank" rel="noopener noreferrer me" title="GitHub"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a class="item" href="/" target="_blank" rel="noopener noreferrer me" title="BuyMeACoffee"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 884 1279" fill="none" stroke="currentColor" stroke-width="2"><path d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518Z"fill="currentColor"></path><path d="M803.896 388.891L802.916 389.166L803.896 388.891Z" fill="currentColor"></path><path d="M791.484 297.377C791.359 297.361 791.237 297.332 791.118 297.29C791.111 297.371 791.111 297.453 791.118 297.534C791.252 297.516 791.379 297.462 791.484 297.377Z"fill="currentColor"></path><path d="M791.113 297.529H791.244V297.447L791.113 297.529Z" fill="currentColor"></path><path d="M803.111 388.726L804.591 387.883L805.142 387.573L805.641 387.04C804.702 387.444 803.846 388.016 803.111 388.726Z"fill="currentColor"></path><path d="M793.669 299.515L792.223 298.138L791.243 297.605C791.77 298.535 792.641 299.221 793.669 299.515Z"fill="currentColor"></path><path d="M430.019 1186.18C428.864 1186.68 427.852 1187.46 427.076 1188.45L427.988 1187.87C428.608 1187.3 429.485 1186.63 430.019 1186.18Z"fill="currentColor"></path><path d="M641.187 1144.63C641.187 1143.33 640.551 1143.57 640.705 1148.21C640.705 1147.84 640.86 1147.46 640.929 1147.1C641.015 1146.27 641.084 1145.46 641.187 1144.63Z"fill="currentColor"></path><path d="M619.284 1186.18C618.129 1186.68 617.118 1187.46 616.342 1188.45L617.254 1187.87C617.873 1187.3 618.751 1186.63 619.284 1186.18Z"fill="currentColor"></path><path d="M281.304 1196.06C280.427 1195.3 279.354 1194.8 278.207 1194.61C279.136 1195.06 280.065 1195.51 280.684 1195.85L281.304 1196.06Z"fill="currentColor"></path><path d="M247.841 1164.01C247.704 1162.66 247.288 1161.35 246.619 1160.16C247.093 1161.39 247.489 1162.66 247.806 1163.94L247.841 1164.01Z"fill="currentColor"></path><path d="M472.623 590.836C426.682 610.503 374.546 632.802 306.976 632.802C278.71 632.746 250.58 628.868 223.353 621.274L270.086 1101.08C271.74 1121.13 280.876 1139.83 295.679 1153.46C310.482 1167.09 329.87 1174.65 349.992 1174.65C349.992 1174.65 416.254 1178.09 438.365 1178.09C462.161 1178.09 533.516 1174.65 533.516 1174.65C553.636 1174.65 573.019 1167.08 587.819 1153.45C602.619 1139.82 611.752 1121.13 613.406 1101.08L663.459 570.876C641.091 563.237 618.516 558.161 593.068 558.161C549.054 558.144 513.591 573.303 472.623 590.836Z"fill="currentColor"></path><path d="M78.6885 386.132L79.4799 386.872L79.9962 387.182C79.5987 386.787 79.1603 386.435 78.6885 386.132Z"fill="currentColor"></path><path d="M879.567 341.849L872.53 306.352C866.215 274.503 851.882 244.409 819.19 232.898C808.711 229.215 796.821 227.633 788.786 220.01C780.751 212.388 778.376 200.55 776.518 189.572C773.076 169.423 769.842 149.257 766.314 129.143C763.269 111.85 760.86 92.4243 752.928 76.56C742.604 55.2584 721.182 42.8009 699.88 34.559C688.965 30.4844 677.826 27.0375 666.517 24.2352C613.297 10.1947 557.342 5.03277 502.591 2.09047C436.875 -1.53577 370.983 -0.443234 305.422 5.35968C256.625 9.79894 205.229 15.1674 158.858 32.0469C141.91 38.224 124.445 45.6399 111.558 58.7341C95.7448 74.8221 90.5829 99.7026 102.128 119.765C110.336 134.012 124.239 144.078 138.985 150.737C158.192 159.317 178.251 165.846 198.829 170.215C256.126 182.879 315.471 187.851 374.007 189.968C438.887 192.586 503.87 190.464 568.44 183.618C584.408 181.863 600.347 179.758 616.257 177.304C634.995 174.43 647.022 149.928 641.499 132.859C634.891 112.453 617.134 104.538 597.055 107.618C594.095 108.082 591.153 108.512 588.193 108.942L586.06 109.252C579.257 110.113 572.455 110.915 565.653 111.661C551.601 113.175 537.515 114.414 523.394 115.378C491.768 117.58 460.057 118.595 428.363 118.647C397.219 118.647 366.058 117.769 334.983 115.722C320.805 114.793 306.661 113.611 292.552 112.177C286.134 111.506 279.733 110.801 273.333 110.009L267.241 109.235L265.917 109.046L259.602 108.134C246.697 106.189 233.792 103.953 221.025 101.251C219.737 100.965 218.584 100.249 217.758 99.2193C216.932 98.1901 216.482 96.9099 216.482 95.5903C216.482 94.2706 216.932 92.9904 217.758 91.9612C218.584 90.9319 219.737 90.2152 221.025 89.9293H221.266C232.33 87.5721 243.479 85.5589 254.663 83.8038C258.392 83.2188 262.131 82.6453 265.882 82.0832H265.985C272.988 81.6186 280.026 80.3625 286.994 79.5366C347.624 73.2301 408.614 71.0801 469.538 73.1014C499.115 73.9618 528.676 75.6996 558.116 78.6935C564.448 79.3474 570.746 80.0357 577.043 80.8099C579.452 81.1025 581.878 81.4465 584.305 81.7391L589.191 82.4445C603.438 84.5667 617.61 87.1419 631.708 90.1703C652.597 94.7128 679.422 96.1925 688.713 119.077C691.673 126.338 693.015 134.408 694.649 142.03L696.732 151.752C696.786 151.926 696.826 152.105 696.852 152.285C701.773 175.227 706.7 198.169 711.632 221.111C711.994 222.806 712.002 224.557 711.657 226.255C711.312 227.954 710.621 229.562 709.626 230.982C708.632 232.401 707.355 233.6 705.877 234.504C704.398 235.408 702.75 235.997 701.033 236.236H700.895L697.884 236.649L694.908 237.044C685.478 238.272 676.038 239.419 666.586 240.486C647.968 242.608 629.322 244.443 610.648 245.992C573.539 249.077 536.356 251.102 499.098 252.066C480.114 252.57 461.135 252.806 442.162 252.771C366.643 252.712 291.189 248.322 216.173 239.625C208.051 238.662 199.93 237.629 191.808 236.58C198.106 237.389 187.231 235.96 185.029 235.651C179.867 234.928 174.705 234.177 169.543 233.397C152.216 230.798 134.993 227.598 117.7 224.793C96.7944 221.352 76.8005 223.073 57.8906 233.397C42.3685 241.891 29.8055 254.916 21.8776 270.735C13.7217 287.597 11.2956 305.956 7.64786 324.075C4.00009 342.193 -1.67805 361.688 0.472751 380.288C5.10128 420.431 33.165 453.054 73.5313 460.35C111.506 467.232 149.687 472.807 187.971 477.556C338.361 495.975 490.294 498.178 641.155 484.129C653.44 482.982 665.708 481.732 677.959 480.378C681.786 479.958 685.658 480.398 689.292 481.668C692.926 482.938 696.23 485.005 698.962 487.717C701.694 490.429 703.784 493.718 705.08 497.342C706.377 500.967 706.846 504.836 706.453 508.665L702.633 545.797C694.936 620.828 687.239 695.854 679.542 770.874C671.513 849.657 663.431 928.434 655.298 1007.2C653.004 1029.39 650.71 1051.57 648.416 1073.74C646.213 1095.58 645.904 1118.1 641.757 1139.68C635.218 1173.61 612.248 1194.45 578.73 1202.07C548.022 1209.06 516.652 1212.73 485.161 1213.01C450.249 1213.2 415.355 1211.65 380.443 1211.84C343.173 1212.05 297.525 1208.61 268.756 1180.87C243.479 1156.51 239.986 1118.36 236.545 1085.37C231.957 1041.7 227.409 998.039 222.9 954.381L197.607 711.615L181.244 554.538C180.968 551.94 180.693 549.376 180.435 546.76C178.473 528.023 165.207 509.681 144.301 510.627C126.407 511.418 106.069 526.629 108.168 546.76L120.298 663.214L145.385 904.104C152.532 972.528 159.661 1040.96 166.773 1109.41C168.15 1122.52 169.44 1135.67 170.885 1148.78C178.749 1220.43 233.465 1259.04 301.224 1269.91C340.799 1276.28 381.337 1277.59 421.497 1278.24C472.979 1279.07 524.977 1281.05 575.615 1271.72C650.653 1257.95 706.952 1207.85 714.987 1130.13C717.282 1107.69 719.576 1085.25 721.87 1062.8C729.498 988.559 737.115 914.313 744.72 840.061L769.601 597.451L781.009 486.263C781.577 480.749 783.905 475.565 787.649 471.478C791.392 467.391 796.352 464.617 801.794 463.567C823.25 459.386 843.761 452.245 859.023 435.916C883.318 409.918 888.153 376.021 879.567 341.849ZM72.4301 365.835C72.757 365.68 72.1548 368.484 71.8967 369.792C71.8451 367.813 71.9483 366.058 72.4301 365.835ZM74.5121 381.94C74.6842 381.819 75.2003 382.508 75.7337 383.334C74.925 382.576 74.4089 382.009 74.4949 381.94H74.5121ZM76.5597 384.641C77.2996 385.897 77.6953 386.689 76.5597 384.641V384.641ZM80.672 387.979H80.7752C80.7752 388.1 80.9645 388.22 81.0333 388.341C80.9192 388.208 80.7925 388.087 80.6548 387.979H80.672ZM800.796 382.989C793.088 390.319 781.473 393.726 769.996 395.43C641.292 414.529 510.713 424.199 380.597 419.932C287.476 416.749 195.336 406.407 103.144 393.382C94.1102 392.109 84.3197 390.457 78.1082 383.798C66.4078 371.237 72.1548 345.944 75.2003 330.768C77.9878 316.865 83.3218 298.334 99.8572 296.355C125.667 293.327 155.64 304.218 181.175 308.09C211.917 312.781 242.774 316.538 273.745 319.36C405.925 331.405 540.325 329.529 671.92 311.91C695.906 308.686 719.805 304.941 743.619 300.674C764.835 296.871 788.356 289.731 801.175 311.703C809.967 326.673 811.137 346.701 809.778 363.615C809.359 370.984 806.139 377.915 800.779 382.989H800.796Z"fill="currentColor"></path></svg></a>
+        </div>
+
+        <div class="footer-middle">
+            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="item">#动态规划</a>
+            <a href="/tags/01%E8%83%8C%E5%8C%85/" class="item">#01背包</a>
+        </div>
+
+        <div class="footer-right">
+            <span class="item">9733(words)</span>
+            <a class="item" accesskey="g" href="#top" id="top-link" title="Go to Top (Alt + G)">⬆</a>
+        </div>
+    </footer>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                packages: { "[+]": ["ams"] }, 
+                tags: "ams", 
+            },
+            options: {
+                enableSpeech: false,        
+                enableExplorer: false,      
+                enableMenu: false,          
+                ignoreHtmlClass: "tex2jax_ignore",
+                processHtmlClass: "tex2jax_process"
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/mathjax/4.0.0/tex-chtml.min.js"></script>
+    <script type="text/javascript" defer async src="https://s4.zstatic.net/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+    <script type="text/javascript" src="/js/particle-clock.js"></script>
+    <script type="text/javascript" src="/js/index.min.62af824fc9f8f20406aebaf20c60d6fbd42ffe3d23aae53d90dddd32415f13d9.js" integrity="sha256-Yq&#43;CT8n48gQGrrryDGDW&#43;9Qv/j0jquU9kN3dMkFfE9k="></script>
+</body>
+
+</html>

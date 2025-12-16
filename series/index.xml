@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>专栏 on 似水</title>
+    <link>http://localhost:1313/series/</link>
+    <description>Recent content in 专栏 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 30 Jun 2023 11:25:26 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>静态博客搭建</title>
+      <link>http://localhost:1313/series/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Fri, 30 Jun 2023 11:25:26 +0800</pubDate>
+      <guid>http://localhost:1313/series/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>剑指Offer</title>
+      <link>http://localhost:1313/series/%E5%89%91%E6%8C%87offer/</link>
+      <pubDate>Tue, 20 Apr 2021 21:20:18 +0000</pubDate>
+      <guid>http://localhost:1313/series/%E5%89%91%E6%8C%87offer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PAT甲级</title>
+      <link>http://localhost:1313/series/pat%E7%94%B2%E7%BA%A7/</link>
+      <pubDate>Wed, 02 Sep 2020 13:18:18 +0000</pubDate>
+      <guid>http://localhost:1313/series/pat%E7%94%B2%E7%BA%A7/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kuangbin带你飞专题十六</title>
+      <link>http://localhost:1313/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E5%8D%81%E5%85%AD/</link>
+      <pubDate>Sat, 08 Aug 2020 14:19:38 +0000</pubDate>
+      <guid>http://localhost:1313/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E5%8D%81%E5%85%AD/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PAT乙级</title>
+      <link>http://localhost:1313/series/pat%E4%B9%99%E7%BA%A7/</link>
+      <pubDate>Thu, 04 Jun 2020 18:32:18 +0000</pubDate>
+      <guid>http://localhost:1313/series/pat%E4%B9%99%E7%BA%A7/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kuangbin带你飞专题十二</title>
+      <link>http://localhost:1313/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E5%8D%81%E4%BA%8C/</link>
+      <pubDate>Sun, 22 Apr 2018 10:39:02 +0000</pubDate>
+      <guid>http://localhost:1313/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E5%8D%81%E4%BA%8C/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kuangbin带你飞专题二</title>
+      <link>http://localhost:1313/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E4%BA%8C/</link>
+      <pubDate>Sun, 25 Mar 2018 09:33:16 +0000</pubDate>
+      <guid>http://localhost:1313/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E4%BA%8C/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kuangbin带你飞专题一</title>
+      <link>http://localhost:1313/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E4%B8%80/</link>
+      <pubDate>Fri, 23 Mar 2018 09:00:28 +0000</pubDate>
+      <guid>http://localhost:1313/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E4%B8%80/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

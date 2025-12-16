@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>01背包 on 似水</title>
+    <link>http://localhost:1313/tags/01%E8%83%8C%E5%8C%85/</link>
+    <description>Recent content in 01背包 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 25 Apr 2021 09:07:11 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/01%E8%83%8C%E5%8C%85/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>动态规划入门</title>
+      <link>http://localhost:1313/z/algo/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sun, 25 Apr 2021 09:07:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/</guid>
+      <description>&lt;p&gt;计蒜客的动态规划总结，现在感觉太水了，暂时放放&lt;/p&gt;&#xA;&lt;h2 id=&#34;递推&#34;&gt;递推&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;递推&lt;/strong&gt;也是经常被使用的一种简单算法。&lt;strong&gt;递推&lt;/strong&gt;是一种用若干步可重复的简单运算来描述复杂问题的方法。&lt;/p&gt;&#xA;&lt;p&gt;递推的特点在于，每一项都和他前面的若干项有一定关联，这种关联一般可以通过&lt;strong&gt;递推关系式&lt;/strong&gt;来表示，可以通过其前面若干项得出某项的数据。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

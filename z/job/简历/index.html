@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" data-theme="light">
+<head>
+    <script>
+        (function () {
+            const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = localStorage.getItem('n8rain-theme') || (prefers ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简历 | 似水</title>
+    <link rel="stylesheet" href="/css/index.min.dec23d3721889f6543816a1c07a479a53dbcf86a9b0d6a9f6e8a31b397487b97.css" integrity="sha256-3sI9NyGIn2VDgWocB6R5pT28&#43;GqbDWqfbooxs5dIe5c=" />
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" id="chroma-light" href="/css/chroma-light.css">
+    <link rel="stylesheet" id="chroma-dark"  href="/css/chroma-dark.css">
+    <script>
+        (function () {
+            const isDark = document.documentElement.dataset.theme === 'dark';
+            document.getElementById('chroma-light').disabled = isDark;
+            document.getElementById('chroma-dark').disabled = !isDark;
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a class="item" href="/" target="_blank">「似水」</a>
+        </div>
+
+        <div class="header-middle">
+            简历
+        </div>
+
+        <div class="header-right">
+            <a id="reset-layout" class="item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 80V240h96V80H48zM0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V240c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80zM304 272V432h96V272H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V272zM144 368H48v64h96V368zM48 320h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48zM304 80v64h96V80H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V80z"></path></svg></a>
+            <a id="toggle-theme" class="item">◐</a>
+        </div>
+    </header>
+    <main class="container" id="container">
+        <div class="content" id="nav">
+            <nav class="menu">
+                <ul>
+                    <li><i class='fa fa-tags'>&nbsp;</i><a>网站导航</a></li>
+                    <li><i class='fa fa-thumbs-up'>&nbsp;</i><a href="/x/share/">好物分享</a></li>
+                    <li><i class='fa fa-wrench'>&nbsp;</i><a href="/x/tools/">游戏工具</a></li>
+                    <li><i class='fa fa-film'>&nbsp;</i><a href="/x/movies/">影视鉴赏</a></li>
+                    <li><i class='fa fa-book'>&nbsp;</i><a href="/x/books/">书籍阅读</a></li>
+                    <li><i class='fa fa-camera'>&nbsp;</i><a href="/x/gallery/">生活留影</a></li>
+                    <li><i class='fa fa-link'>&nbsp;</i><a href="/x/links/">友情链接</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="overview" id="overview" style="display: none;">
+            <div class="overview-container">
+                <div class="author-block">
+                    <img class="author-avatar" src="/img/avatar.png" alt="夜雨微澜" />
+                    
+                    <a class="author-name" href="/x/personal">夜雨微澜</a><p class="author-slogan">学而不思则罔，思而不学则殆</p>
+                </div>
+
+                <div class="site-state">
+                    <div class="item">
+                        <a href="/archives/">
+                            <span class="count">660</span>
+                            <span class="name">日志</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/series/">
+                            <span class="count">8</span>
+                            <span class="name">系列</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/categories/">
+                            <span class="count">93</span>
+                            <span class="name">分类</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/tags/">
+                            <span class="count">171</span>
+                            <span class="name">标签</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="diy-block">
+                    <canvas id="canvasDiyBlock" style="width:180px;">您的浏览器不支持 Canvas, 请更换浏览器!</canvas>
+                </div>
+
+                <div class="diy-block">
+                    <div id="typed-strings" style="display: none;">
+                        <p>We burn faster than light</p>
+                        <p>Shine across in the night sky</p>
+                    </div>
+                    <span id="typed" style="white-space: pre;line-height: 14px;font-size: 12px;"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="article-content">
+            <article class="main" id="top">
+                <time datetime="2017-01-01T12:00:00&#43;00:00">January 1, 2017</time>
+                <h1 id="简历">简历</h1>
+<p>在线简历: <a href="https://www.wondercv.com/cvs/vUQuPZoj/editor">https://www.wondercv.com/cvs/vUQuPZoj/editor</a>
+模板网站: <a href="https://www.jianlimoban-ziyuan.com/zhuantijianli_46">https://www.jianlimoban-ziyuan.com/zhuantijianli_46</a></p>
+<h1 id="解析">解析</h1>
+<p>目标：约到面试，并且尽量引导面试</p>
+<p>HR思维              关键词检索
+面试官思维          考纲，提问埋点</p>
+<p>内容
+基本信息
+个人信息
+联系方式
+教育背景</p>
+<pre><code>工作经历
+    职责 作为xx公司linux应用开发工程师，负责 跟PM、产品、测试、运维沟通上下游
+
+项目经历
+    场景开头，然后细分，多用数据，突出难点
+    xxx项目为xxx的xxx，主要包括 1、xxx 2xxx  作为什么角色 为项目提出了什么贡献
+    在做的系统是干什么的（市面上有没有类似的产品）
+    角色是什么（串联人） 工作价值是什么
+    细分模块 技术细节
+
+专业技能 技术栈 体现技术能力
+</code></pre>
+<h1 id="零碎">零碎</h1>
+<h2 id="专业技能">专业技能</h2>
+<h3 id="版本1">版本1</h3>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">-</span> **C++开发**: 熟悉 C++11/14 标准及其语法特性，熟练使用 STL，具备良好的面向对象设计与编码习惯
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">-</span> **系统与网络**: 熟悉 Linux 操作环境与常用命令，理解 TCP/IP 协议栈，掌握 Socket 编程
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">-</span> **调试与构建**: 熟练使用 GDB 进行断点调试与问题定位，了解 CMake 构建系统，熟练使用 Git 版本控制工具
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="k">-</span> **脚本与工具**: 具备良好的 Python、Shell 编程能力，能编写自动化脚本与辅助开发工具
+</span></span><span class="line"><span class="ln">5</span><span class="cl">- <span class="gs">**数据库**</span>: 了解 SQLite、Redis 的基本使用场景与常用接口</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h2 id="工作经历">工作经历</h2>
+<h3 id="版本1-1">版本1</h3>
+<p>详细提到工作内容和技术细节，pass</p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="gu">### Linux应用开发工程师｜zztm科技股份有限公司
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="gu"></span>2021.06 – 2024.04
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">调度子系统 是 公交车载智能终端 中负责业务与通信的核心模块，运行于Linux系统之上，主要功能包括，通过RS485串口和CAN总线获取外设数据，通过Socket获取其他进程数据，进行业务处理，与平台通过TCP长连接协议进行通信，实现车辆的监控和管理。
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">功能开发与迭代：在现有架构下实现调度子系统新功能（司机签到/站点检测）；根据需求文档完成业务逻辑编码与单元测试
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">系统通信支持：  维护TCP长连接服务，保障车辆监控数据稳定传输；解决Socket通信过程中的数据丢包问题
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">硬件通信维护：  维护RS485/CAN总线通信模块，对接客流仪/GPS等外设；修复硬件协议解析异常问题
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">代码质量与协作：参与代码审查，修复静态扫描发现的缺陷；编写模块接口文档，协助测试团队完成用例设计
+</span></span><span class="line"><span class="ln">10</span><span class="cl">问题排查与优化：定位并修复现有功能缺陷（如超速误报等）；跨部门调试问题排查
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="gs">**主要工作内容：**</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="k">-</span> 负责 <span class="gs">**调度模块（Schedule）**</span> 的核心业务逻辑开发，处理司机签到、站点检测、超速检测等功能
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="k">-</span> 通过 <span class="gs">**RPC 与系统内模块通信**</span>，向下通过 <span class="gs">**CAN 总线 / RS485 串口**</span> 对接外设（滚动屏、节站屏、客流仪、GPS 模块等）
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="k">-</span> 实现设备与管理平台间的 <span class="gs">**TCP 长连接协议通信**</span>，支持状态上报、数据同步、指令下发等场景
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="k">-</span> 参与现场调试，定位设备兼容性与通信异常问题，积累实际部署经验
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="gs">**主要技术点**</span>：多线程事件处理机制、自定义协议封装与解析、跨线程资源同步、串口设备通信、日志与调试系统设计</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h3 id="版本2">版本2</h3>
+<p>详细说明了工作职责，没有体现和其他岗位的交流，pass</p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="gu">### Linux应用开发工程师｜zztm科技股份有限公司
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="gu"></span>2021.06 – 2024.04
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">负责调度子系统（通信和业务）的新功能开发。理解需求文档，参与评审，沟通逻辑细节，确认功能实现边界，确保按时交付，进行协议对接和系统联调
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">日常维护，
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">提供技术支持，编写接口文档，协助测试团队完成用例设计与验证
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">按需实现功能迭代并进行单元测试
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">参与系统通信模块的开发，维护TCP长连接通信及进程间Socket数据交互
+</span></span><span class="line"><span class="ln">10</span><span class="cl">支持设备端与硬件通信功能，保障外设数据的采集与协议解析的稳定性
+</span></span><span class="line"><span class="ln">11</span><span class="cl">参与代码审查与质量改进，配合测试团队完成接口文档编写与用例验证
+</span></span><span class="line"><span class="ln">12</span><span class="cl">协助排查与修复系统功能缺陷，配合相关部门完成联调与问题定位</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h3 id="版本3">版本3</h3>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="ln"> 1</span><span class="cl">Linux应用开发工程师｜zztm科技股份有限公司
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">2021.06 – 2024.04
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">负责 公交车载智能终端 中 调度子系统 的功能开发与维护，系统运行于Linux平台，主要功能包括 业务逻辑处理、外设/平台的通信协议解析，模块间数据交互。
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">功能开发与系统集成
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">-</span> 理解需求文档，参与评审和技术方案讨论，明确业务流程及边界条件，评估开发工作量和风险
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">-</span> 独立设计并实现功能（如司机签到、线路监控等），确保符合需求并具备可扩展性
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">-</span> 负责 模块 与平台（TCP）及系统内部（Socket）的数据联调，确保通信协议一致性与时序正确性
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl">测试协作与缺陷修复
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="k">-</span> 编写接口文档，协助测试团队理解功能点与边界条件，支持测试用例的设计与执行
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="k">-</span> 响应测试缺陷反馈，使用日志与调试工具（如 gdb、Wireshark）定位问题，快速修复并回归验证
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="k">-</span> 支持版本交付前的集成测试与现场问题复现，确保系统稳定上线
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl">系统维护与技术支持
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="k">-</span> 优化协议解析与数据流处理逻辑，提升系统运行稳定性
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="k">-</span> 编写使用说明与对接文档，提供跨团队的技术支持
+</span></span><span class="line"><span class="ln">22</span><span class="cl">- 参与代码审查与静态分析修复，提升代码质量</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h3 id="版本4">版本4</h3>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="ln"> 1</span><span class="cl">Linux应用开发工程师｜zztm科技股份有限公司
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">2021.06 – 2024.04
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">负责 公交车载智能终端 中 调度子系统 的功能开发与维护，系统运行于Linux平台，涵盖 业务逻辑、平台通信、外设对接、模块间数据交互 等核心任务。
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="gs">**内容**</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">-</span> 参与需求评审和技术方案制定，独立完成模块的设计与开发，对接平台端（TCP）及系统内部（Socket）协议，推动集成联调与版本交付。累计完成部门重点考核功能15+
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">-</span> 响应缺陷反馈，使用日志与调试工具（如 gdb、Wireshark）定位问题，与测试、硬件、平台开发团队密切协作，推动缺陷修复与回归验证，年故障率降低约60%
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl">- 梳理并优化/重构 协议解析与数据流处理逻辑，提升系统稳定性，关键私有协议连接速度优化20%；参与代码审查与静态分析修复，提升代码质量；编写/优化 子系统技术文档（接口规范、协议格式、使用说明），提供跨团队的技术支持，降低沟通和对接成本</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h2 id="项目经历">项目经历</h2>
+<h3 id="版本1-2">版本1</h3>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="gu">### 设备状态自检模块开发｜平台可靠性提升                        （C++模块设计 &amp; Linux系统 &amp; 底层）
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="gu"></span>*2022.06*
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="gu">#### 项目背景
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="gu"></span>公交车载终端部署量大，常见设备与外设连接异常、运行中掉线等问题，传统依赖人工排查方式效率低，成本高。项目旨在构建一套覆盖设备生命周期的自检与故障上报机制，提升系统稳定性与运维效率。
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="gu">#### 项目目标
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="gu"></span><span class="k">-</span> 实现关键外设（GPS、客流仪、滚动屏等）的**开机自检与运行时周期性自检**
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">-</span> 故障发生时，支持自动上报平台，联动运维派单或延迟处理
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">-</span> 减少司机口头反馈与模糊描述带来的误报误修问题
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="k">-</span> 提供断网情况下的本地缓存机制，返场后可回溯运行日志，定位历史异常
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="gu">#### 职责
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="gu"></span><span class="k">-</span> 主导模块设计与调度策略，建立统一的外设检测接口框架
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="k">-</span> 实现检测任务的多线程调度与状态追踪，支持异步通知与告警触发
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="k">-</span> 接入本地日志系统，支持实时与延迟上报双通道
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="k">-</span> 提供平台自定义状态码，便于一线工程师快速定位问题
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="k">-</span> 编写平台通信接口协议，协同远程管理系统实现运维联动
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="gu">#### 技术亮点
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="gu"></span><span class="k">-</span> 使用多线程模型与异步任务队列，定时检测多路外设运行状态
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="k">-</span> 支持外设掉线识别、通信失败重试、设备热插拔监测等机制
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="k">-</span> 故障信息通过 Socket/串口接口实时上报平台，断网时本地记录 JSON 日志
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="k">-</span> 自检策略可动态配置，支持检测频率、超时阈值、容错机制灵活调整
+</span></span><span class="line"><span class="ln">25</span><span class="cl">
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="gu">#### 项目成果
+</span></span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="gu"></span><span class="k">-</span> 部署后平均设备调试时间缩短约 <span class="gs">**30%**</span>，大幅提升上线效率
+</span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="k">-</span> 故障实时检测与平台联动上报，**问题响应时效从天级缩短到小时级**
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="k">-</span> 司机无需参与技术描述，平台可快速判定问题类型与位置
+</span></span><span class="line"><span class="ln">30</span><span class="cl">- 支持断网缓存与返场分析</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h3 id="版本2-1">版本2</h3>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="gu">#### 项目背景
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="gu"></span>为提升公交车载终端的部署效率与运行稳定性，开发软硬件自检模块，实现设备启动与运行阶段的自动状态监测，减少人工调试与误报。
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="gu">#### 职责与实现
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="gu"></span><span class="k">-</span> 设计并实现**开机 + 运行时双阶段自检机制**，支持定时检测 GPS、客流仪、滚动屏等外设状态
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">-</span> 检测结果通过 LED 指示、本地日志、平台状态接口多渠道输出，便于平台监控与现场排查
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">-</span> 故障支持**实时上报 + 断网缓存机制**，返场后可通过日志自动还原异常过程
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">-</span> 采用多线程调度与串口心跳机制，实现外设掉线识别、重连与告警策略
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">-</span> 提供动态配置能力，检测频率与重试逻辑可远程调整
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="gu">#### 项目成效
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="gu"></span><span class="k">-</span> 平均部署调试时间减少约 <span class="gs">**30%**</span>，支持远程预判问题
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="k">-</span> 故障响应时效从**天级缩短到小时级**，可自动联动派单
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="k">-</span> 平台可直接定位问题点，减少司机误报和工程师无效上门
+</span></span><span class="line"><span class="ln">15</span><span class="cl">- <span class="gs">**100% 异常记录留痕**</span>，提升网络不稳环境下的可追溯性</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h3 id="版本3-1">版本3</h3>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="gu">### 设备状态自检模块开发｜平台可靠性提升                        （C++模块设计 &amp; Linux系统 &amp; 底层）
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="gu"></span>*2022.06*
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="gu">#### 项目背景
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="gu"></span>公交车载终端部署量大，当出现设备异常（如GPS掉线、外设断联等）时，传统依赖人工排查方式效率低，成本高。项目旨在构建一套覆盖设备生命周期的自检与故障上报机制，提升系统稳定性与运维效率。
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="gu">#### 项目目标
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="gu"></span><span class="k">-</span> 实现关键外设（GPS、客流仪、滚动屏等）的**开机自检与运行时周期性自检**
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">-</span> 故障发生时，支持自动上报平台，联动运维派单或延迟处理
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">-</span> 减少司机口头反馈与模糊描述带来的误报误修问题
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="k">-</span> 提供断网情况下的本地缓存机制，返场后可回溯运行日志，定位历史异常
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="gu">#### 职责
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="gu"></span><span class="k">-</span> 主导模块设计与调度策略，建立统一的外设检测接口框架
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="k">-</span> 实现检测任务的多线程调度与状态追踪，支持异步通知与告警触发
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="k">-</span> 接入本地日志系统，支持实时与延迟上报双通道
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="k">-</span> 提供平台自定义状态码，便于一线工程师快速定位问题
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="k">-</span> 编写平台通信接口协议，协同远程管理系统实现运维联动
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="gu">#### 技术亮点
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="gu"></span><span class="k">-</span> 使用多线程模型与异步任务队列，定时检测多路外设运行状态
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="k">-</span> 支持外设掉线识别、通信失败重试、设备热插拔监测等机制
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="k">-</span> 故障信息通过 Socket/串口接口实时上报平台，断网时本地记录 JSON 日志
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="k">-</span> 自检策略可动态配置，支持检测频率、超时阈值、容错机制灵活调整
+</span></span><span class="line"><span class="ln">25</span><span class="cl">
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="gu">#### 项目成果
+</span></span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="gu"></span><span class="k">-</span> 部署后平均设备调试时间缩短约 <span class="gs">**30%**</span>，大幅提升上线效率
+</span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="k">-</span> 故障实时检测与平台联动上报，**问题响应时效从天级缩短到小时级**
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="k">-</span> 司机无需参与技术描述，平台可快速判定问题类型与位置
+</span></span><span class="line"><span class="ln">30</span><span class="cl">- 支持断网缓存与返场分析</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h3 id="版本1-3">版本1</h3>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="ln">1</span><span class="cl">项目背景：为实现公交车载终端对接交通部部颁 JT/T808、JT/T1078 协议，完成设备入网规范化。
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">-</span> 独立完成 JT/T808 协议中车辆状态、事件报警、位置信息等子功能解析与编码
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="k">-</span> 支持与平台间的长连接链路建立、心跳维护、分包重组与重传机制
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">-</span> 完成设备端多协议框架接入，与原有业务协议共存部署
+</span></span><span class="line"><span class="ln">6</span><span class="cl">- 项目部署覆盖深圳东部公交 4000+ 台车辆，系统运行稳定，**故障误报率降低约 70%**</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h3 id="版本2-2">版本2</h3>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">-</span> 实现平台通信链路的建立与维护，包括 长连接握手、心跳保活、消息序列管理、分包重组与丢包重传机制，保障通信稳定性
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">-</span> 独立完成 GB/T 28787 中车辆状态、事件报警、定位信息等多个子业务的编码与解析模块开发，具备完整的字段映射、校验、应答与异常处理逻辑
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl">- 模块通过集成测试并在深圳东部公交部署，覆盖 4000+ 台运营车辆，系统运行稳定，平台误报率降低约 70%，支持平台运维效率提升</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h3 id="版本3-2">版本3</h3>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="ln"> 1</span><span class="cl">国标协议 GB/T 28787-2023 是在交通部标 JT/T 808-20XX 基础上的改进版本，旨在实现公交车载终端入网规范化与统一监管。全国各地市公交公司陆续基于该标准 制定了符合本地监管及业务需求的拓展协议版本。
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">深圳东部公交 作为公司重点客户，发布了基于 GB/T 28787 的定制协议标准，为赢得该项目订单，并适配未来更多的城市定制协议，决定从原私有协议 向兼容国标协议的架构演进。
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">-</span> 协议状态机与分包重组： 独立开发完整的协议连接管理状态机、数据包缓存与分包器，提升协议解析的稳定性与健壮性。实现平台通信链路的建立与维护，包括 长连接握手、心跳保活、消息序列管理、分包重组与丢包重传机制，保障通信稳定性
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">-</span> 协议框架设计： 以 JT/T 808 为基类，GB/T 28787 为拓展类，构建支持地市定制协议的层级继承架构，实现代码复用与多版本兼容。
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">-</span> 协议适配解耦： 设计协议适配层，隔离原有私有协议与业务逻辑，支持协议层移植与业务层重构，提高系统可维护性。
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">-</span> 独立完成 GB/T 28787 中车辆状态、事件报警、定位信息等多个子业务的编码与解析模块开发，具备完整的字段映射、校验、应答与异常处理逻辑
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl">- 性能与稳定性： 框架已在深圳东部公交实际部署，处理高并发定位与事件上报数据稳定运行，满足实时报文响应与错误恢复需求。覆盖 4000+ 台运营车辆，系统运行稳定，平台误报率降低约 70%，支持平台运维效率提升</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h3 id="版本4-1">版本4</h3>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="gu">### 国标协议适配与设备平台对接｜核心项目                        （C++模块设计 &amp; 计算机网络 &amp; 协议）
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="gu"></span>*2023.10*
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="gs">**背景**</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">面对各地市 定制化国标协议 不断增长的适配需求，主导完成产品从 私有协议 向支持JT/T 808、GB/T 28787的国标协议转型，构建通用兼容框架，支撑多个客户项目落地。
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="gs">**目标**</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">对接 深圳东部公交 发布的 基于 GB/T 28787 的定制协议标准，实现标准所述业务需求。
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="gs">**职责**</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="k">-</span> 通信链路与状态管理：独立开发完整的通信状态机，支持长连接握手、心跳保活、消息序列控制、分包重组与丢包重传，确保平台通信链路稳定可靠。
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="k">-</span> 协议框架设计： 基于继承模型构建 JT/T 808 基类与 GB/T 28787 拓展类，支持各地市在不同国标版本基础上的定制协议派生，兼顾协议差异性与代码复用性。
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="k">-</span> 协议适配解耦： 设计协议适配层，解耦协议处理逻辑与业务逻辑，隔离原有私有协议，增强模块独立性，便于后续私有协议与国标协议的并行维护及业务重构。
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="k">-</span> 多业务子模块开发： 独立完成签到考核、线路调整、车辆三检等子模块的编码与解析，具备应答与异常处理能力，满足国标完整业务流要求。
+</span></span><span class="line"><span class="ln">18</span><span class="cl">
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="gs">**成果**</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">框架已稳定运行于深圳东部公交平台，覆盖 4000+ 台运营车辆。</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h1 id="完整简历">完整简历</h1>
+<h2 id="基本信息">基本信息</h2>
+<p>董业伟
+出生年月 98.12
+联系方式 132 9184 8221
+电子邮箱 dyw993 @gmail.com
+求职岗位 C++开发</p>
+<h2 id="专业技能-1">专业技能</h2>
+<ul>
+<li><strong>C++开发</strong>: 熟悉 C++11/14 标准和STL，具备良好的面向对象设计与编码习惯</li>
+<li><strong>系统与网络</strong>: 熟悉 Linux 操作环境与常用命令，理解 TCP/IP 协议栈，掌握 Socket 编程</li>
+<li><strong>调试与构建</strong>: 熟练使用 GDB 进行断点调试与问题定位，了解 CMake，熟练使用 Git</li>
+<li><strong>脚本与工具</strong>: 掌握 Python、Shell，能编写自动化脚本与开发辅助工具</li>
+<li><strong>数据库</strong>: 了解 SQLite、Redis 的基础使用与常用接口</li>
+</ul>
+<hr>
+<h2 id="工作经历---------------------------------------------------------开发--维护--文档">工作经历                                                         （开发 &amp; 维护 &amp; 文档）</h2>
+<p>Linux应用开发工程师｜zztm科技股份有限公司
+2021.06 – 2024.04</p>
+<p>负责 公交车载智能终端 调度子系统 的功能开发与维护，系统运行于Linux平台，涵盖 业务逻辑、平台通信、外设对接、模块间数据交互 等核心任务。</p>
+<p><strong>内容</strong></p>
+<ul>
+<li>
+<p>参与需求评审与方案设计，独立完成模块开发，推动集成联调与版本交付。累计完成部门重点考核功能15+项</p>
+</li>
+<li>
+<p>使用 GDB、Wireshark 等工具配合日志定位问题，协同测试、硬件、平台团队完成缺陷修复，年故障率下降约 60%</p>
+</li>
+<li>
+<p>重构协议解析与数据流处理逻辑，使私有协议连接速度提升 20%；参与代码审查与静态分析，提升代码质量；维护接口协议等技术文档，提升跨团队协作效率</p>
+</li>
+</ul>
+<hr>
+<h2 id="项目经历-1">项目经历</h2>
+<h3 id="国标协议适配与平台对接核心项目------------------------c模块设计--计算机网络--协议">国标协议适配与平台对接｜核心项目                        （C++模块设计 &amp; 计算机网络 &amp; 协议）</h3>
+<p><em>2023.10</em></p>
+<p><strong>背景</strong>
+为应对各地市定制国标协议需求，主导系统从私有协议向 JT/T 808、GB/T 28787 国标协议升级，搭建通用协议适配框架，支撑多个客户项目落地。</p>
+<p><strong>职责</strong>
+通信状态管理：独立设计通信状态机，支持长连接、心跳、分包重组、丢包重传等机制，确保通信稳定</p>
+<p>协议框架设计：构建 JT/T 808 基类 + GB/T 28787 扩展类，支持各地市协议派生，兼顾差异与复用</p>
+<p>协议适配解耦：设计适配层，隔离业务逻辑与协议处理，增强模块独立性，支持私有协议与国标并行维护</p>
+<p>业务子模块开发：独立完成考勤、车辆三检等75%功能模块，支持应答与异常处理</p>
+<p><strong>成效</strong>
+框架已稳定运行于深圳东部公交平台，覆盖 2000+ 台运营车辆。</p>
+<hr>
+<h3 id="设备状态自检模块开发平台可靠性提升------------------------c模块设计--linux系统--底层">设备状态自检模块开发｜平台可靠性提升                        （C++模块设计 &amp; Linux系统 &amp; 底层）</h3>
+<p><em>2022.06</em></p>
+<p><strong>背景</strong>
+车载终端部署量大，异常排查依赖人工反馈，存在误报与延迟，效率低成本高。项目目标为构建设备全生命周期自检与故障上报机制。</p>
+<p><strong>职责</strong></p>
+<ul>
+<li>
+<p>主导设计调度策略，构建统一检测接口框架，采用继承 + 回调的轻量级观察者模式，实现检测与响应解耦</p>
+</li>
+<li>
+<p>故障自动上报平台，支持联动运维或延迟处理；状态日志本地持久化以便返场回溯</p>
+</li>
+</ul>
+<p><strong>成效</strong>
+故障响应由天级缩短至小时级，降低误报与无效派单；排障效率提升约 30%，支持弱网追溯；复用至自动化测试系统</p>
+<hr>
+<h2 id="教育经历">教育经历</h2>
+<h3 id="河南工业大学软件工程本科">河南工业大学｜软件工程（本科）</h3>
+<p><em>2017.09 – 2021.06</em></p>
+<ul>
+<li>英语四级（CET-4），具备基础英文文档阅读能力</li>
+<li>校 ACM 算法队成员，具备扎实的数据结构与算法功底</li>
+</ul>
+<p><strong>主要竞赛奖项：</strong></p>
+<ul>
+<li>CCPC 2020 中国大学生程序设计竞赛（威海站）｜铜奖</li>
+<li>CCPC 2019 河南省大学生程序设计竞赛｜银奖</li>
+<li>ACM-ICPC 河南省赛｜铜奖</li>
+</ul>
+<p>日志库封装bug，有个配置文件监控线程，初始化失败时资源回收不到位，导致内存泄露，
+Tscancode基于cppcheck的二次开发，主要他有界面，</p>
+<p>主要有两个原因，我在上家公司做的也是挺不错的，领导也很认可。
+一是公司的管理系统还在试错和完善中，薪资和晋升比较看重工作年限和资历，涨幅很有限，与我的付出和能力不太匹配。
+二是想要有更多的发展空间，提升自己的技术水平</p>
+
+            </article>
+        </div>
+        
+        <div class="content" id="article-toc">
+            <nav class="toc">
+                <div class="toc-inner"><ul><li>
+                    <a href="#%e7%ae%80%e5%8e%86" aria-label="简历">简历</a></li><li>
+                    <a href="#%e8%a7%a3%e6%9e%90" aria-label="解析">解析</a></li><li>
+                    <a href="#%e9%9b%b6%e7%a2%8e" aria-label="零碎">零碎</a></li><ul><li>
+                    <a href="#%e4%b8%93%e4%b8%9a%e6%8a%80%e8%83%bd" aria-label="专业技能">专业技能</a></li><ul><li>
+                    <a href="#%e7%89%88%e6%9c%ac1" aria-label="版本1">版本1</a></li></ul><li>
+                    <a href="#%e5%b7%a5%e4%bd%9c%e7%bb%8f%e5%8e%86" aria-label="工作经历">工作经历</a></li><ul><li>
+                    <a href="#%e7%89%88%e6%9c%ac1-1" aria-label="版本1">版本1</a></li><li>
+                    <a href="#%e7%89%88%e6%9c%ac2" aria-label="版本2">版本2</a></li><li>
+                    <a href="#%e7%89%88%e6%9c%ac3" aria-label="版本3">版本3</a></li><li>
+                    <a href="#%e7%89%88%e6%9c%ac4" aria-label="版本4">版本4</a></li></ul><li>
+                    <a href="#%e9%a1%b9%e7%9b%ae%e7%bb%8f%e5%8e%86" aria-label="项目经历">项目经历</a></li><ul><li>
+                    <a href="#%e7%89%88%e6%9c%ac1-2" aria-label="版本1">版本1</a></li><li>
+                    <a href="#%e7%89%88%e6%9c%ac2-1" aria-label="版本2">版本2</a></li><li>
+                    <a href="#%e7%89%88%e6%9c%ac3-1" aria-label="版本3">版本3</a></li><li>
+                    <a href="#%e7%89%88%e6%9c%ac1-3" aria-label="版本1">版本1</a></li><li>
+                    <a href="#%e7%89%88%e6%9c%ac2-2" aria-label="版本2">版本2</a></li><li>
+                    <a href="#%e7%89%88%e6%9c%ac3-2" aria-label="版本3">版本3</a></li><li>
+                    <a href="#%e7%89%88%e6%9c%ac4-1" aria-label="版本4">版本4</a></li></ul></ul><li>
+                    <a href="#%e5%ae%8c%e6%95%b4%e7%ae%80%e5%8e%86" aria-label="完整简历">完整简历</a></li><ul><li>
+                    <a href="#%e5%9f%ba%e6%9c%ac%e4%bf%a1%e6%81%af" aria-label="基本信息">基本信息</a></li><li>
+                    <a href="#%e4%b8%93%e4%b8%9a%e6%8a%80%e8%83%bd-1" aria-label="专业技能">专业技能</a></li><li>
+                    <a href="#%e5%b7%a5%e4%bd%9c%e7%bb%8f%e5%8e%86---------------------------------------------------------%e5%bc%80%e5%8f%91--%e7%bb%b4%e6%8a%a4--%e6%96%87%e6%a1%a3" aria-label="工作经历                                                         （开发 &amp; 维护 &amp; 文档）">工作经历                                                         （开发 &amp; 维护 &amp; 文档）</a></li><li>
+                    <a href="#%e9%a1%b9%e7%9b%ae%e7%bb%8f%e5%8e%86-1" aria-label="项目经历">项目经历</a></li><ul><li>
+                    <a href="#%e5%9b%bd%e6%a0%87%e5%8d%8f%e8%ae%ae%e9%80%82%e9%85%8d%e4%b8%8e%e5%b9%b3%e5%8f%b0%e5%af%b9%e6%8e%a5%e6%a0%b8%e5%bf%83%e9%a1%b9%e7%9b%ae------------------------c%e6%a8%a1%e5%9d%97%e8%ae%be%e8%ae%a1--%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c--%e5%8d%8f%e8%ae%ae" aria-label="国标协议适配与平台对接｜核心项目                        （C&#43;&#43;模块设计 &amp; 计算机网络 &amp; 协议）">国标协议适配与平台对接｜核心项目                        （C++模块设计 &amp; 计算机网络 &amp; 协议）</a></li><li>
+                    <a href="#%e8%ae%be%e5%a4%87%e7%8a%b6%e6%80%81%e8%87%aa%e6%a3%80%e6%a8%a1%e5%9d%97%e5%bc%80%e5%8f%91%e5%b9%b3%e5%8f%b0%e5%8f%af%e9%9d%a0%e6%80%a7%e6%8f%90%e5%8d%87------------------------c%e6%a8%a1%e5%9d%97%e8%ae%be%e8%ae%a1--linux%e7%b3%bb%e7%bb%9f--%e5%ba%95%e5%b1%82" aria-label="设备状态自检模块开发｜平台可靠性提升                        （C&#43;&#43;模块设计 &amp; Linux系统 &amp; 底层）">设备状态自检模块开发｜平台可靠性提升                        （C++模块设计 &amp; Linux系统 &amp; 底层）</a></li></ul><li>
+                    <a href="#%e6%95%99%e8%82%b2%e7%bb%8f%e5%8e%86" aria-label="教育经历">教育经历</a></li><ul><li>
+                    <a href="#%e6%b2%b3%e5%8d%97%e5%b7%a5%e4%b8%9a%e5%a4%a7%e5%ad%a6%e8%bd%af%e4%bb%b6%e5%b7%a5%e7%a8%8b%e6%9c%ac%e7%a7%91" aria-label="河南工业大学｜软件工程（本科）">河南工业大学｜软件工程（本科）</a></ul></ul></ul>
+                </div>
+            </nav>
+        </div>
+    </main>
+    <div class="splitter-indicator" id="splitterIndicator"></div>
+    <div class="drop-indicator" id="dropIndicator"></div>
+    <footer class="footer">
+        <div class="footer-left">
+            <a class="item" href="/x/about/" target="_blank" rel="noopener noreferrer me" title="Info"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></a>
+            <a class="item" href="https://music.163.com/#/user/home?id=270121274" target="_blank" rel="noopener noreferrer me" title="NeteaseCloudMusic"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.98,23.65c-2.69,0-5.26-1.05-7.24-2.95C1.59,18.63,.35,15.72,.35,12.73,.35,8.21,3.21,4.11,7.46,2.52c.15-.05,.3-.08,.45-.08,.42,0,.78,.21,.93,.55,.12,.26,.13,.51,.03,.75-.12,.28-.38,.52-.7,.64-3.48,1.3-5.82,4.66-5.82,8.36,0,2.46,1.02,4.84,2.79,6.54,1.6,1.54,3.68,2.39,5.85,2.39,.1,0,.2,0,.29,0,3.49-.12,6.22-1.91,7.47-4.89,.08-.2,2.01-4.93-2.59-7.9-.41-.27-.89-.46-1.42-.58l-.6-.14,.18,.58c.21,.68,.78,2.52,.84,2.93,.07,.46,.07,.51,.1,.92v.18c0,2.3-1.89,4.19-4.22,4.19-2.2,0-3.97-1.73-4.23-4.1-.25-2.35,.74-4.4,2.73-5.61,.53-.32,1.11-.57,1.73-.75l.33-.1-.48-1.74c-.16-.54-.53-2.38,1.5-3.72,.57-.38,1.22-.57,1.91-.57,1.38,0,2.62,.74,3.12,1.23,.22,.22,.36,.56,.36,.9,0,.26-.08,.48-.23,.63-.15,.15-.37,.23-.63,.23-.33,0-.67-.13-.89-.35-.06-.05-.85-.66-1.7-.66-.31,0-.59,.08-.82,.24-.04,.03-.08,.05-.12,.08-.23,.19-.71,.73-.47,1.82l.09,.34,.02,.07h0s.35,1.29,.35,1.29h.25c1.24,.08,2.39,.42,3.32,1.01l.05,.03c4.82,3.12,4.29,8.12,3.34,10.33-1.54,3.67-4.99,5.95-9.23,6.1-.12,0-.25,0-.37,0Zm.82-15.26c-.43,.13-.84,.31-1.2,.53-.94,.57-2.01,1.68-1.79,3.71,.12,1.12,.87,2.33,2.24,2.33,1.23,0,2.24-1,2.24-2.22h0s.03-.21-.05-.71c-.07-.46-.91-3.1-1-3.4l-.1-.33-.33,.1Z" /></svg></a>
+            <a class="item" href="https://neodb.social/users/Lordash/" target="_blank" rel="noopener noreferrer me" title="NeoDB"><svg version="1.1" xmlns="https://www.w3.org/2000/svg" width="90" height="108" viewBox="0 0 90 108" fill="currentColor"><path d="M0 0 C4.26615504 2.04066983 6.73398524 4.58553002 10 8 C10.474375 7.195625 10.94875 6.39125 11.4375 5.5625 C13 3 13 3 14 2 C20.16698656 1.54318618 20.16698656 1.54318618 22.9375 3.0625 C24.6815774 6.24287644 24.55944728 8.4568339 24 12 C21 14.4375 21 14.4375 18 16 C20.97 18.97 23.94 21.94 27 25 C25.193388 28.61322401 24.33581029 29.83748791 21.375 32.25 C20.74335937 32.77078125 20.11171875 33.2915625 19.4609375 33.828125 C18.97882813 34.21484375 18.49671875 34.6015625 18 35 C17.566875 34.0409375 17.566875 34.0409375 17.125 33.0625 C16.17176549 30.84793921 16.17176549 30.84793921 14 30 C10.5 29.75 10.5 29.75 7 30 C4.59331253 31.99114614 4.59331253 31.99114614 4.5625 35.875 C4.62092586 39.4454694 4.80377743 39.80377743 7.5 42.5 C8.325 42.995 9.15 43.49 10 44 C7.36 46.64 4.72 49.28 2 52 C-1.49353838 50.25323081 -3.13945763 49.08594785 -5.75 46.375 C-6.36359375 45.74335937 -6.9771875 45.11171875 -7.609375 44.4609375 C-8.06828125 43.97882812 -8.5271875 43.49671875 -9 43 C-9.515625 43.99 -10.03125 44.98 -10.5625 46 C-13 49 -13 49 -16.625 49.5 C-20 49 -20 49 -22 47 C-22.56321839 40.8045977 -22.56321839 40.8045977 -20.6875 38.125 C-19 37 -19 37 -16 36 C-18.97 33.03 -21.94 30.06 -25 27 C-23.03838569 23.07677137 -20.84267796 20.58307142 -17.7734375 17.578125 C-17.26575836 17.07327576 -16.75807922 16.56842651 -16.23501587 16.04827881 C-14.61966158 14.44407904 -12.99747791 12.84699144 -11.375 11.25 C-10.27558302 10.16061893 -9.17661941 9.0707801 -8.078125 7.98046875 C-5.3906398 5.31498115 -2.69700979 2.65584857 0 0 Z"transform="translate(53,1)" /><path d="M0 0 C2.31 1.98 4.62 3.96 7 6 C6.34 6.86625 5.68 7.7325 5 8.625 C2.82375259 12.29741751 2.2907405 13.83310042 3 18 C4.34115399 21.00979883 4.34115399 21.00979883 7 23 C10.97807953 23.86409105 14.00632895 23.59620263 17.5 21.5 C17.995 21.005 18.49 20.51 19 20 C21.84383123 21.2748209 24.13754018 22.45137078 26 25 C25.57914771 28.29893891 24.42094066 29.966522 22.0625 32.25 C21.53785156 32.77078125 21.01320312 33.2915625 20.47265625 33.828125 C19 35 19 35 17 35 C17 35.66 17 36.32 17 37 C17.763125 36.938125 18.52625 36.87625 19.3125 36.8125 C22 37 22 37 23.875 38.0625 C25.69848531 41.20294693 24.8658284 43.5985313 24 47 C21 49 21 49 17.9375 48.75 C15 48 15 48 13 46 C12.505 44.02 12.505 44.02 12 42 C9.03 44.97 6.06 47.94 3 51 C-0.92322863 49.03838569 -3.41692858 46.84267796 -6.421875 43.7734375 C-6.92672424 43.26575836 -7.43157349 42.75807922 -7.95172119 42.23501587 C-9.55592096 40.61966158 -11.15300856 38.99747791 -12.75 37.375 C-13.83938107 36.27558302 -14.9292199 35.17661941 -16.01953125 34.078125 C-18.68501885 31.3906398 -21.34415143 28.69700979 -24 26 C-22.4152642 22.13671373 -19.94043113 19.71123077 -16.9921875 16.796875 C-16.50670441 16.3142218 -16.02122131 15.8315686 -15.52102661 15.33428955 C-13.97700134 13.80141438 -12.42615176 12.27565996 -10.875 10.75 C-9.82375991 9.70879639 -8.77297343 8.66713459 -7.72265625 7.625 C-5.15366996 5.07800536 -2.57851839 2.53734823 0 0 Z"transform="translate(25,29)" /><path d="M0 0 C3.81684226 1.55500981 6.19195732 4.03595495 9 7 C9.45375 6.195625 9.9075 5.39125 10.375 4.5625 C12 2 12 2 14 1 C16.9375 0.6875 16.9375 0.6875 20 1 C21.9375 2.625 21.9375 2.625 23 5 C23 8 23 8 22 11 C19.4375 13.375 19.4375 13.375 17 15 C19.97 17.97 22.94 20.94 26 24 C20.375 30.875 20.375 30.875 17 32 C16.649375 31.175 16.29875 30.35 15.9375 29.5 C14.16088977 26.60879362 14.16088977 26.60879362 10.5 26.5 C7.14672303 26.77692733 7.14672303 26.77692733 5 28.0625 C3.32384137 31.31005735 4.03723329 33.57014358 5 37 C7.4158995 39.45198044 7.4158995 39.45198044 10 41 C8.76600937 42.36877116 7.51219377 43.71969166 6.25 45.0625 C5.55390625 45.81660156 4.8578125 46.57070312 4.140625 47.34765625 C2 49 2 49 0.09619141 48.81054688 C-2.43507746 47.831766 -3.76735676 46.6052517 -5.6796875 44.68359375 C-6.36160156 44.00103516 -7.04351562 43.31847656 -7.74609375 42.61523438 C-8.79990234 41.53725586 -8.79990234 41.53725586 -9.875 40.4375 C-10.91720703 39.40012695 -10.91720703 39.40012695 -11.98046875 38.34179688 C-16.44375955 33.83227613 -20.30080588 29.1545197 -24 24 C-21.69 22.02 -19.38 20.04 -17 18 C-15.948125 18.99 -15.948125 18.99 -14.875 20 C-12.15610238 22.18293783 -12.15610238 22.18293783 -9 22.5625 C-4.86392446 21.78698584 -3.45000447 20.38677089 -1 17 C-0.44852315 13.07072743 -0.40688385 10.96381375 -2.5 7.5625 C-2.995 7.046875 -3.49 6.53125 -4 6 C-2.84826645 3.53199953 -1.95216435 1.95216435 0 0 Z"transform="translate(53,58)" /></svg></a>
+            <a class="item" href="https://github.com/GH1656409967" target="_blank" rel="noopener noreferrer me" title="GitHub"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a class="item" href="/" target="_blank" rel="noopener noreferrer me" title="BuyMeACoffee"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 884 1279" fill="none" stroke="currentColor" stroke-width="2"><path d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518Z"fill="currentColor"></path><path d="M803.896 388.891L802.916 389.166L803.896 388.891Z" fill="currentColor"></path><path d="M791.484 297.377C791.359 297.361 791.237 297.332 791.118 297.29C791.111 297.371 791.111 297.453 791.118 297.534C791.252 297.516 791.379 297.462 791.484 297.377Z"fill="currentColor"></path><path d="M791.113 297.529H791.244V297.447L791.113 297.529Z" fill="currentColor"></path><path d="M803.111 388.726L804.591 387.883L805.142 387.573L805.641 387.04C804.702 387.444 803.846 388.016 803.111 388.726Z"fill="currentColor"></path><path d="M793.669 299.515L792.223 298.138L791.243 297.605C791.77 298.535 792.641 299.221 793.669 299.515Z"fill="currentColor"></path><path d="M430.019 1186.18C428.864 1186.68 427.852 1187.46 427.076 1188.45L427.988 1187.87C428.608 1187.3 429.485 1186.63 430.019 1186.18Z"fill="currentColor"></path><path d="M641.187 1144.63C641.187 1143.33 640.551 1143.57 640.705 1148.21C640.705 1147.84 640.86 1147.46 640.929 1147.1C641.015 1146.27 641.084 1145.46 641.187 1144.63Z"fill="currentColor"></path><path d="M619.284 1186.18C618.129 1186.68 617.118 1187.46 616.342 1188.45L617.254 1187.87C617.873 1187.3 618.751 1186.63 619.284 1186.18Z"fill="currentColor"></path><path d="M281.304 1196.06C280.427 1195.3 279.354 1194.8 278.207 1194.61C279.136 1195.06 280.065 1195.51 280.684 1195.85L281.304 1196.06Z"fill="currentColor"></path><path d="M247.841 1164.01C247.704 1162.66 247.288 1161.35 246.619 1160.16C247.093 1161.39 247.489 1162.66 247.806 1163.94L247.841 1164.01Z"fill="currentColor"></path><path d="M472.623 590.836C426.682 610.503 374.546 632.802 306.976 632.802C278.71 632.746 250.58 628.868 223.353 621.274L270.086 1101.08C271.74 1121.13 280.876 1139.83 295.679 1153.46C310.482 1167.09 329.87 1174.65 349.992 1174.65C349.992 1174.65 416.254 1178.09 438.365 1178.09C462.161 1178.09 533.516 1174.65 533.516 1174.65C553.636 1174.65 573.019 1167.08 587.819 1153.45C602.619 1139.82 611.752 1121.13 613.406 1101.08L663.459 570.876C641.091 563.237 618.516 558.161 593.068 558.161C549.054 558.144 513.591 573.303 472.623 590.836Z"fill="currentColor"></path><path d="M78.6885 386.132L79.4799 386.872L79.9962 387.182C79.5987 386.787 79.1603 386.435 78.6885 386.132Z"fill="currentColor"></path><path d="M879.567 341.849L872.53 306.352C866.215 274.503 851.882 244.409 819.19 232.898C808.711 229.215 796.821 227.633 788.786 220.01C780.751 212.388 778.376 200.55 776.518 189.572C773.076 169.423 769.842 149.257 766.314 129.143C763.269 111.85 760.86 92.4243 752.928 76.56C742.604 55.2584 721.182 42.8009 699.88 34.559C688.965 30.4844 677.826 27.0375 666.517 24.2352C613.297 10.1947 557.342 5.03277 502.591 2.09047C436.875 -1.53577 370.983 -0.443234 305.422 5.35968C256.625 9.79894 205.229 15.1674 158.858 32.0469C141.91 38.224 124.445 45.6399 111.558 58.7341C95.7448 74.8221 90.5829 99.7026 102.128 119.765C110.336 134.012 124.239 144.078 138.985 150.737C158.192 159.317 178.251 165.846 198.829 170.215C256.126 182.879 315.471 187.851 374.007 189.968C438.887 192.586 503.87 190.464 568.44 183.618C584.408 181.863 600.347 179.758 616.257 177.304C634.995 174.43 647.022 149.928 641.499 132.859C634.891 112.453 617.134 104.538 597.055 107.618C594.095 108.082 591.153 108.512 588.193 108.942L586.06 109.252C579.257 110.113 572.455 110.915 565.653 111.661C551.601 113.175 537.515 114.414 523.394 115.378C491.768 117.58 460.057 118.595 428.363 118.647C397.219 118.647 366.058 117.769 334.983 115.722C320.805 114.793 306.661 113.611 292.552 112.177C286.134 111.506 279.733 110.801 273.333 110.009L267.241 109.235L265.917 109.046L259.602 108.134C246.697 106.189 233.792 103.953 221.025 101.251C219.737 100.965 218.584 100.249 217.758 99.2193C216.932 98.1901 216.482 96.9099 216.482 95.5903C216.482 94.2706 216.932 92.9904 217.758 91.9612C218.584 90.9319 219.737 90.2152 221.025 89.9293H221.266C232.33 87.5721 243.479 85.5589 254.663 83.8038C258.392 83.2188 262.131 82.6453 265.882 82.0832H265.985C272.988 81.6186 280.026 80.3625 286.994 79.5366C347.624 73.2301 408.614 71.0801 469.538 73.1014C499.115 73.9618 528.676 75.6996 558.116 78.6935C564.448 79.3474 570.746 80.0357 577.043 80.8099C579.452 81.1025 581.878 81.4465 584.305 81.7391L589.191 82.4445C603.438 84.5667 617.61 87.1419 631.708 90.1703C652.597 94.7128 679.422 96.1925 688.713 119.077C691.673 126.338 693.015 134.408 694.649 142.03L696.732 151.752C696.786 151.926 696.826 152.105 696.852 152.285C701.773 175.227 706.7 198.169 711.632 221.111C711.994 222.806 712.002 224.557 711.657 226.255C711.312 227.954 710.621 229.562 709.626 230.982C708.632 232.401 707.355 233.6 705.877 234.504C704.398 235.408 702.75 235.997 701.033 236.236H700.895L697.884 236.649L694.908 237.044C685.478 238.272 676.038 239.419 666.586 240.486C647.968 242.608 629.322 244.443 610.648 245.992C573.539 249.077 536.356 251.102 499.098 252.066C480.114 252.57 461.135 252.806 442.162 252.771C366.643 252.712 291.189 248.322 216.173 239.625C208.051 238.662 199.93 237.629 191.808 236.58C198.106 237.389 187.231 235.96 185.029 235.651C179.867 234.928 174.705 234.177 169.543 233.397C152.216 230.798 134.993 227.598 117.7 224.793C96.7944 221.352 76.8005 223.073 57.8906 233.397C42.3685 241.891 29.8055 254.916 21.8776 270.735C13.7217 287.597 11.2956 305.956 7.64786 324.075C4.00009 342.193 -1.67805 361.688 0.472751 380.288C5.10128 420.431 33.165 453.054 73.5313 460.35C111.506 467.232 149.687 472.807 187.971 477.556C338.361 495.975 490.294 498.178 641.155 484.129C653.44 482.982 665.708 481.732 677.959 480.378C681.786 479.958 685.658 480.398 689.292 481.668C692.926 482.938 696.23 485.005 698.962 487.717C701.694 490.429 703.784 493.718 705.08 497.342C706.377 500.967 706.846 504.836 706.453 508.665L702.633 545.797C694.936 620.828 687.239 695.854 679.542 770.874C671.513 849.657 663.431 928.434 655.298 1007.2C653.004 1029.39 650.71 1051.57 648.416 1073.74C646.213 1095.58 645.904 1118.1 641.757 1139.68C635.218 1173.61 612.248 1194.45 578.73 1202.07C548.022 1209.06 516.652 1212.73 485.161 1213.01C450.249 1213.2 415.355 1211.65 380.443 1211.84C343.173 1212.05 297.525 1208.61 268.756 1180.87C243.479 1156.51 239.986 1118.36 236.545 1085.37C231.957 1041.7 227.409 998.039 222.9 954.381L197.607 711.615L181.244 554.538C180.968 551.94 180.693 549.376 180.435 546.76C178.473 528.023 165.207 509.681 144.301 510.627C126.407 511.418 106.069 526.629 108.168 546.76L120.298 663.214L145.385 904.104C152.532 972.528 159.661 1040.96 166.773 1109.41C168.15 1122.52 169.44 1135.67 170.885 1148.78C178.749 1220.43 233.465 1259.04 301.224 1269.91C340.799 1276.28 381.337 1277.59 421.497 1278.24C472.979 1279.07 524.977 1281.05 575.615 1271.72C650.653 1257.95 706.952 1207.85 714.987 1130.13C717.282 1107.69 719.576 1085.25 721.87 1062.8C729.498 988.559 737.115 914.313 744.72 840.061L769.601 597.451L781.009 486.263C781.577 480.749 783.905 475.565 787.649 471.478C791.392 467.391 796.352 464.617 801.794 463.567C823.25 459.386 843.761 452.245 859.023 435.916C883.318 409.918 888.153 376.021 879.567 341.849ZM72.4301 365.835C72.757 365.68 72.1548 368.484 71.8967 369.792C71.8451 367.813 71.9483 366.058 72.4301 365.835ZM74.5121 381.94C74.6842 381.819 75.2003 382.508 75.7337 383.334C74.925 382.576 74.4089 382.009 74.4949 381.94H74.5121ZM76.5597 384.641C77.2996 385.897 77.6953 386.689 76.5597 384.641V384.641ZM80.672 387.979H80.7752C80.7752 388.1 80.9645 388.22 81.0333 388.341C80.9192 388.208 80.7925 388.087 80.6548 387.979H80.672ZM800.796 382.989C793.088 390.319 781.473 393.726 769.996 395.43C641.292 414.529 510.713 424.199 380.597 419.932C287.476 416.749 195.336 406.407 103.144 393.382C94.1102 392.109 84.3197 390.457 78.1082 383.798C66.4078 371.237 72.1548 345.944 75.2003 330.768C77.9878 316.865 83.3218 298.334 99.8572 296.355C125.667 293.327 155.64 304.218 181.175 308.09C211.917 312.781 242.774 316.538 273.745 319.36C405.925 331.405 540.325 329.529 671.92 311.91C695.906 308.686 719.805 304.941 743.619 300.674C764.835 296.871 788.356 289.731 801.175 311.703C809.967 326.673 811.137 346.701 809.778 363.615C809.359 370.984 806.139 377.915 800.779 382.989H800.796Z"fill="currentColor"></path></svg></a>
+        </div>
+
+        <div class="footer-middle">
+            <a href="/tags/%E7%AE%80%E5%8E%86/" class="item">#简历</a>
+        </div>
+
+        <div class="footer-right">
+            <span class="item">6651(words)</span>
+            <a class="item" accesskey="g" href="#top" id="top-link" title="Go to Top (Alt + G)">⬆</a>
+        </div>
+    </footer>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                packages: { "[+]": ["ams"] }, 
+                tags: "ams", 
+            },
+            options: {
+                enableSpeech: false,        
+                enableExplorer: false,      
+                enableMenu: false,          
+                ignoreHtmlClass: "tex2jax_ignore",
+                processHtmlClass: "tex2jax_process"
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/mathjax/4.0.0/tex-chtml.min.js"></script>
+    <script type="text/javascript" defer async src="https://s4.zstatic.net/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+    <script type="text/javascript" src="/js/particle-clock.js"></script>
+    <script type="text/javascript" src="/js/index.min.62af824fc9f8f20406aebaf20c60d6fbd42ffe3d23aae53d90dddd32415f13d9.js" integrity="sha256-Yq&#43;CT8n48gQGrrryDGDW&#43;9Qv/j0jquU9kN3dMkFfE9k="></script>
+</body>
+
+</html>

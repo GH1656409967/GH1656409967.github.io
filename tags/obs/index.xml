@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Obs on 似水</title>
+    <link>http://localhost:1313/tags/obs/</link>
+    <description>Recent content in Obs on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/obs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>obs</title>
+      <link>http://localhost:1313/y/tool/obs/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/y/tool/obs/</guid>
+      <description>&lt;h1 id=&#34;obs-studio&#34;&gt;OBS Studio&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/obsproject/obs-studio/releases&#34;&gt;https://github.com/obsproject/obs-studio/releases&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;手柄&#xA;&lt;a href=&#34;http://sb.plusii.com/&#34;&gt;http://sb.plusii.com/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;键盘&#xA;&lt;a href=&#34;https://github.com/univrsal/input-overlay/releases&#34;&gt;https://github.com/univrsal/input-overlay/releases&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://univrsal.github.io/input-overlay/cct/&#34;&gt;https://univrsal.github.io/input-overlay/cct/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;英伟达驱动&#xA;&lt;a href=&#34;https://www.nvidia.com/Download/index.aspx&#34;&gt;https://www.nvidia.com/Download/index.aspx&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

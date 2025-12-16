@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spark on 似水</title>
+    <link>http://localhost:1313/tags/spark/</link>
+    <description>Recent content in Spark on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 25 May 2020 14:56:05 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/spark/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win10配置Scala和Spark</title>
+      <link>http://localhost:1313/z/bigdata/949fb3f2e5a83ea5/</link>
+      <pubDate>Mon, 25 May 2020 14:56:05 +0000</pubDate>
+      <guid>http://localhost:1313/z/bigdata/949fb3f2e5a83ea5/</guid>
+      <description>&lt;h1 id=&#34;一准备&#34;&gt;一、准备&lt;/h1&gt;&#xA;&lt;p&gt;基本信息&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;操作系统: Windows10&lt;/li&gt;&#xA;&lt;li&gt;jdk版本: 1.8&lt;/li&gt;&#xA;&lt;li&gt;Hadoop版本: 2.9.2&#xA;&#xA;&#xA;  &#xA;    &lt;a data-fancybox=&#34;gallery&#34; href=&#34;http://localhost:1313/z/tool/949fb3f2e5a83ea5/java.png&#34;&gt;&#xA;      &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/z/tool/949fb3f2e5a83ea5/java.png&#34; alt=&#34;java&#34; class=&#34;fiximg-online&#34;&gt;&#xA;    &lt;/a&gt;&#xA;  &#xA;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;下载并解压&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Scala： &lt;a href=&#34;https://www.scala-lang.org/download/&#34;&gt;官网&lt;/a&gt; 或者 &lt;a href=&#34;https://downloads.lightbend.com/scala/2.13.2/scala-2.13.2.zip&#34;&gt;scala-2.13.2.zip&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Spark：&lt;a href=&#34;http://spark.apache.org/downloads.html&#34;&gt;官网&lt;/a&gt; 或者 &lt;a href=&#34;https://mirror.bit.edu.cn/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz&#34;&gt;spark-3.0.0-preview2-bin-hadoop2.7.tgz&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;二scala&#34;&gt;二、Scala&lt;/h1&gt;&#xA;&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;新建系统变量 &lt;code&gt;SCALA_HOME&lt;/code&gt; 至所在目录，如 &lt;code&gt;D:\environment\scala-2.13.2&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&#xA;&#xA;  &#xA;    &lt;a data-fancybox=&#34;gallery&#34; href=&#34;http://localhost:1313/z/tool/949fb3f2e5a83ea5/scala_home.png&#34;&gt;&#xA;      &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/z/tool/949fb3f2e5a83ea5/scala_home.png&#34; alt=&#34;scala_home&#34; class=&#34;fiximg-online&#34;&gt;&#xA;    &lt;/a&gt;&#xA;  &#xA;&#xA;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;在 &lt;code&gt;path&lt;/code&gt; 中添加 &lt;code&gt;%SCALA_HOME%\bin&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

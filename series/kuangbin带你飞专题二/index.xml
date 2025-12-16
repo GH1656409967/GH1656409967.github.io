@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kuangbin带你飞专题二 on 似水</title>
+    <link>http://localhost:1313/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E4%BA%8C/</link>
+    <description>Recent content in Kuangbin带你飞专题二 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 25 Mar 2018 09:33:16 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/series/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%E4%B8%93%E9%A2%98%E4%BA%8C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU-3567 Eight II</title>
+      <link>http://localhost:1313/z/solution/c4d35e7b9ca47ba7/</link>
+      <pubDate>Sun, 25 Mar 2018 09:33:16 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/c4d35e7b9ca47ba7/</guid>
+      <description>&lt;h1 id=&#34;eight-ii-hdu---3567&#34;&gt;Eight II （&lt;a href=&#34;https://vjudge.net/problem/HDU-3567&#34;&gt;HDU - 3567&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Eight-puzzle, which is also called &amp;ldquo;Nine grids&amp;rdquo;, comes from an old game.&lt;/p&gt;&#xA;&lt;p&gt;In this game, you are given a 3 by 3 board and 8 tiles. The tiles  are numbered from 1 to 8 and each covers a grid. As you see, there is a  blank grid which can be represented as an &amp;lsquo;X&amp;rsquo;. Tiles in grids having a  common edge with the blank grid can be moved into that blank grid. This  operation leads to an exchange of &amp;lsquo;X&amp;rsquo; with one tile.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1043 Eight</title>
+      <link>http://localhost:1313/z/solution/af2d8da09a188092/</link>
+      <pubDate>Fri, 23 Mar 2018 22:15:55 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/af2d8da09a188092/</guid>
+      <description>&lt;h1 id=&#34;eight-hdu---1043&#34;&gt;Eight (&lt;a href=&#34;https://vjudge.net/problem/HDU-1043&#34;&gt;HDU - 1043&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The 15-puzzle has been around for over 100 years; even if you don&amp;rsquo;t know it by that name, you&amp;rsquo;ve seen it. It is constructed with 15 sliding  tiles, each with a number from 1 to 15 on it, and all packed into a 4 by 4 frame with one tile missing. Let&amp;rsquo;s call the missing tile &amp;lsquo;x&amp;rsquo;; the  object of the puzzle is to arrange the tiles so that they are ordered  as:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

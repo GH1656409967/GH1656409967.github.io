@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" data-theme="light">
+<head>
+    <script>
+        (function () {
+            const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = localStorage.getItem('n8rain-theme') || (prefers ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | 似水</title>
+    <link rel="stylesheet" href="/css/index.min.dec23d3721889f6543816a1c07a479a53dbcf86a9b0d6a9f6e8a31b397487b97.css" integrity="sha256-3sI9NyGIn2VDgWocB6R5pT28&#43;GqbDWqfbooxs5dIe5c=" />
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" id="chroma-light" href="/css/chroma-light.css">
+    <link rel="stylesheet" id="chroma-dark"  href="/css/chroma-dark.css">
+    <script>
+        (function () {
+            const isDark = document.documentElement.dataset.theme === 'dark';
+            document.getElementById('chroma-light').disabled = isDark;
+            document.getElementById('chroma-dark').disabled = !isDark;
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a class="item" href="/" target="_blank">「似水」</a>
+        </div>
+
+        <div class="header-middle">
+            
+        </div>
+
+        <div class="header-right">
+            <a id="reset-layout" class="item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 80V240h96V80H48zM0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V240c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80zM304 272V432h96V272H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V272zM144 368H48v64h96V368zM48 320h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48zM304 80v64h96V80H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V80z"></path></svg></a>
+            <a id="toggle-theme" class="item">◐</a>
+        </div>
+    </header>
+    <main class="container" id="container">
+        <div class="content" id="nav">
+            <nav class="menu">
+                <ul>
+                    <li><i class='fa fa-tags'>&nbsp;</i><a>网站导航</a></li>
+                    <li><i class='fa fa-thumbs-up'>&nbsp;</i><a href="/x/share/">好物分享</a></li>
+                    <li><i class='fa fa-wrench'>&nbsp;</i><a href="/x/tools/">游戏工具</a></li>
+                    <li><i class='fa fa-film'>&nbsp;</i><a href="/x/movies/">影视鉴赏</a></li>
+                    <li><i class='fa fa-book'>&nbsp;</i><a href="/x/books/">书籍阅读</a></li>
+                    <li><i class='fa fa-camera'>&nbsp;</i><a href="/x/gallery/">生活留影</a></li>
+                    <li><i class='fa fa-link'>&nbsp;</i><a href="/x/links/">友情链接</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="overview" id="overview" style="display: none;">
+            <div class="overview-container">
+                <div class="author-block">
+                    <img class="author-avatar" src="/img/avatar.png" alt="夜雨微澜" />
+                    
+                    <a class="author-name" href="/x/personal">夜雨微澜</a><p class="author-slogan">学而不思则罔，思而不学则殆</p>
+                </div>
+
+                <div class="site-state">
+                    <div class="item">
+                        <a href="/archives/">
+                            <span class="count">660</span>
+                            <span class="name">日志</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/series/">
+                            <span class="count">8</span>
+                            <span class="name">系列</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/categories/">
+                            <span class="count">93</span>
+                            <span class="name">分类</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/tags/">
+                            <span class="count">171</span>
+                            <span class="name">标签</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="diy-block">
+                    <canvas id="canvasDiyBlock" style="width:180px;">您的浏览器不支持 Canvas, 请更换浏览器!</canvas>
+                </div>
+
+                <div class="diy-block">
+                    <div id="typed-strings" style="display: none;">
+                        <p>We burn faster than light</p>
+                        <p>Shine across in the night sky</p>
+                    </div>
+                    <span id="typed" style="white-space: pre;line-height: 14px;font-size: 12px;"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="article-content">
+            <article class="main" id="top">
+                <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time>
+                <html>
+<head>
+<meta charset="utf-8"/>
+<link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<style>
+            body {
+                font-family: 'Ubuntu Mono', 'LXGW WenKai Screen', sans-serif;
+            }
+
+            strong {
+                color: rgb(48, 79, 254);
+            }
+
+            .code1 {
+                background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(27, 31, 35, 0.05);
+                padding: 2px 4px;
+                border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                font-family: Consolas;
+                word-break: break-all;
+                color: rgb(100, 149, 237);
+            }
+
+            .code2 {
+                background-color: rgba(27, 31, 35, 0.05);
+                margin: 0px 2px;
+                padding: 2px 4px;
+                border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                overflow-wrap: break-word;
+                font-family: Consolas;
+                word-break: break-all;
+                color: rgb(100, 149, 237);
+                background-position: left top;
+            }
+
+            .pre1 {
+                border-radius: 5px;
+                box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;
+            }
+
+            .q1 {
+                color: rgb(65, 105, 225);
+            }
+
+            .img1 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bq1 {
+                border-top: 3px none rgba(0, 0, 0, 0.4);
+                border-bottom: 3px none rgba(0, 0, 0, 0.4);
+                border-right: 3px none rgba(0, 0, 0, 0.4);
+                background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(227, 242, 253);
+                overflow: auto;
+                padding: 15px 20px;
+                border-left-color: rgb(100, 149, 237);
+            }
+
+        </style>
+</head>
+<h3><span class="q1">红黑树和AVL树相比查询性能好还是插入性能好一些？</span></h3>
+<table>
+<thead>
+<tr>
+<th style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-color: rgba(204, 204, 204, 0.4);min-width: 85px;"><strong style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(0, 0, 0, 0);">操作</strong></th>
+<th style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-color: rgba(204, 204, 204, 0.4);min-width: 85px;"><strong style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(0, 0, 0, 0);">AVL 树</strong></th>
+<th style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-color: rgba(204, 204, 204, 0.4);min-width: 85px;"><strong style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(0, 0, 0, 0);">红黑树</strong></th>
+</tr>
+</thead>
+<tbody style="border-width: 0px;border-style: initial;border-color: initial;">
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);"><strong style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(0, 0, 0, 0);">查询</strong></td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">⭐⭐⭐⭐⭐（更快）</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">⭐⭐⭐⭐</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);"><strong style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(0, 0, 0, 0);">插入/删除</strong></td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">⭐⭐⭐</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">⭐⭐⭐⭐⭐（更快）</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);"><strong style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(0, 0, 0, 0);">平衡开销</strong></td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">高</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">低</td>
+</tr>
+</tbody>
+</table>
+<p>1、查询性能的对比：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>AVL 树</strong>：AVL 树是严格的平衡二叉搜索树，它要求每个节点的左右子树的高度差（平衡因子）不超过 1。这种严格的平衡特性使得 AVL 树的高度始终保持在 O(log n)，其中 n)是树中节点的数量。在进行查询操作时，由于树的高度相对较低且较为均匀，所以查找任意节点的时间复杂度稳定为 O(log n)。这意味着在理想情况下，AVL 树的查询效率非常高，能快速定位到目标节点。
+        </li>
+<li>
+<strong>红黑树</strong>：红黑树是一种弱平衡的二叉搜索树，它通过颜色标记和特定的规则（如每个节点要么是红色，要么是黑色；根节点是黑色；每个叶子节点（NIL 节点，空节点）是黑色；如果一个节点是红色的，则它的两个子节点都是黑色的；对每个节点，从该节点到其所有后代叶节点的简单路径上，均包含相同数目的黑色节点）来维持大致的平衡。红黑树的高度通常比 AVL 树略高，其高度上限为 2log(n + 1)，因此查询操作的时间复杂度同样为 (log n)，但在实际应用中，由于树的高度相对较高，其查询性能可能会略逊于 AVL 树。
+        </li>
+</ul>
+<p>在查询性能上，AVL 树由于其严格的平衡特性，表现会稍好于红黑树，但差距通常不大。</p>
+<p>2、插入性能的对比：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>AVL 树</strong>：在插入新节点后，AVL 树可能会破坏原有的平衡结构，需要通过旋转操作（单旋转或双旋转）来重新平衡树。由于 AVL 树对平衡的要求非常严格，插入操作后可能需要进行多次旋转来恢复平衡，特别是在树的高度较高时，插入操作可能会引发较多的旋转操作，导致插入性能受到一定影响。插入操作的平均时间复杂度虽然也是 O(log n)，但由于旋转操作的开销，实际插入效率相对较低。
+        </li>
+<li>
+<strong>红黑树</strong>：红黑树在插入新节点后，同样可能会破坏树的平衡，但它只需要进行少量的颜色调整和最多两次旋转操作就能恢复平衡。红黑树的平衡规则相对宽松，使得在插入操作时不需要像 AVL 树那样频繁地进行旋转操作，因此插入性能相对较好。插入操作的平均时间复杂度同样为 O(log n)，但由于减少了旋转操作的次数，实际插入效率更高。
+        </li>
+</ul>
+<p>在插入性能上，红黑树由于其弱平衡特性，表现优于 AVL 树。</p>
+<p>在实际应用中，如果查询操作频繁，对查询性能要求较高，且插入和删除操作相对较少，可以选择 AVL 树；如果插入和删除操作较为频繁，对插入性能有较高要求，同时查询性能也能接受一定的损耗，则红黑树是更好的选择。例如，Java 中的 <code class="code1">TreeMap</code> 和 <code class="code1">TreeSet</code> 底层使用的就是红黑树，以兼顾插入、删除和查询操作的性能。</p>
+<h3><span class="q1">为什么要用红黑树而不是平衡二叉树？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+            平衡二叉树追求的是一种 <strong>“完全平衡”</strong> 状态：任何结点的左右子树的高度差不会超过 1，优势是树的结点是很平均分配的。这个要求实在是太严了，导致每次进行插入/删除节点的时候，几乎都会破坏平衡树的第二个规则，进而我们都需要通过<strong>左旋</strong>和<strong>右旋</strong>来进行调整，使之再次成为一颗符合要求的平衡树。
+    </li>
+<li>
+            红黑树不追求这种完全平衡状态，而是追求一种 <strong>“弱平衡”</strong> 状态：整个树最长路径不会超过最短路径的 2 倍。优势是虽然牺牲了一部分查找的性能效率，但是能够换取一部分维持树平衡状态的成本。与平衡树不同的是，红黑树在插入、删除等操作，<strong>不会像平衡树那样，频繁着破坏红黑树的规则，所以不需要频繁着调整</strong>，这也是我们为什么大多数情况下使用红黑树的原因。
+        </li>
+</ul>
+<h3><span class="q1">红黑树说一下，跳表说一下？</span></h3>
+<p>红黑树（Red-Black Tree）是一种自平衡的二叉搜索树，它在插入和删除操作后能够通过旋转和重新着色来保持树的平衡。红黑树的特点如下：</p>
+<ol class="list-paddingleft-1">
+<li>
+            每个节点都有一个颜色，红色或黑色。
+        </li>
+<li>
+            根节点是黑色的。
+        </li>
+<li>
+            每个叶子节点（NIL节点）都是黑色的。
+        </li>
+<li>
+        如果一个节点是红色的，则它的两个子节点都是黑色的。
+        </li>
+<li>
+            从根节点到叶子节点或空子节点的每条路径上，黑色节点的数量是相同的。
+        </li>
+</ol>
+<p>红黑树通过这些特性来保持树的平衡，确保最长路径不超过最短路径的两倍，从而保证了在最坏情况下的搜索、插入和删除操作的时间复杂度都为O(logN)。</p>
+<figure class="img1"><img _width="677px" data-index="15" data-src="../img/____001_5004a70e.png" data-w="1080" src="../img/____001_5004a70e.png" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/></figure>
+<p>跳表（Skip List）是一种基于链表的数据结构，它通过添加多层索引来加速搜索操作。</p>
+<figure class="img1"><img _width="677px" data-index="16" data-src="../img/____002_95e18e40.png" data-w="936" src="../img/____002_95e18e40.png" style="   border-radius: 4px;  height: auto !important;  width: 656.984px !important;"/></figure>
+<p>跳表的特点如下：</p>
+<ol class="list-paddingleft-1">
+<li>
+            跳表中的数据是有序的。
+        </li>
+<li>
+            跳表中的每个节点都包含一个指向下一层和右侧节点的指针。
+        </li>
+</ol>
+<p>跳表通过多层索引的方式来加速搜索操作。最底层是一个普通的有序链表，而上面的每一层都是前一层的子集，每个节点在上一层都有一个指针指向它在下一层的对应节点。这样，在搜索时可以通过跳过一些节点，直接进入目标区域，从而减少搜索的时间复杂度。</p>
+<p>跳表的平均搜索、插入和删除操作的时间复杂度都为O(logN)，与红黑树相比，跳表的实现更加简单，但空间复杂度稍高。跳表常用于需要高效搜索和插入操作的场景，如数据库、缓存等。</p>
+<h3><span class="q1">你知道什么地方用了红黑树和跳表吗？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+        epoll 用了红黑树来保存监听的 socket
+    </li>
+<li>
+        redis 用了跳表来实现 zset
+    </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);"><span>10. c++中 stl 中map的插入时间复杂度是多少？</span></span></h3>
+<p style=""><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>std::map</span></code><span> 是基于红黑树实现的，红黑树的插入时间复杂度是 O(logn)。</span></p>
+<h3><span style="color: rgb(65, 105, 225);"><span>红黑树，b树，b+树有什么区别？</span></span></h3>
+<table style="display: table;">
+<thead>
+<tr>
+<th style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>特性</span></strong></th>
+<th style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>红黑树</span></strong></th>
+<th style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>B树</span></strong></th>
+<th style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>B+树</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><strong><span>节点容量</span></strong></td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>每个节点存1个键值对</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>每个节点存多个键值对</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>非叶节点存多个键，仅叶节点存值</span>
+</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><strong><span>分支数</span></strong></td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>二分叉（二叉树）</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>多分叉（多路树）</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>多分叉，叶节点额外链表连接</span>
+</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><strong><span>数据存储位置</span></strong></td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>所有节点均存数据</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>所有节点均存数据</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>数据仅存于叶节点</span>
+</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><strong><span>平衡维护方式</span></strong></td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>颜色标记与旋转</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>节点分裂/合并</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>节点分裂/合并</span>
+</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><strong><span>查找稳定性</span></strong></td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>查到即返回</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>查到即返回</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>必须查至叶节点</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p style=""><span>核心区别：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>查询效率：红黑树</span></strong><span>单点查询稳定在 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>O(log n)</span></code><span>，但树深度较高（如1亿数据需约30次查找）。</span><strong><span>B/B+树</span></strong><span>：树高更低（相同数据量下树高度可能仅为红黑树的1/3），显著减少磁盘I/O次数。</span>
+</li>
+<li>
+<strong><span>范围查询：B+树</span></strong><span>的叶子节点通过指针形成链表，范围遍历效率极高（如查询</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>[A, Z]</span></code><span>只需找到起点后顺序遍历）。</span><strong><span>B树/红黑树</span></strong><span>：范围查询需回溯父节点或频繁调整指针，效率较低。</span>
+</li>
+<li>
+<strong><span>插入/删除维护成本：红黑树</span></strong><span>需频繁旋转和变色，维护规则复杂。</span><strong><span>B/B+树</span></strong><span>：通过批量调整（分裂/合并节点）减少频繁操作，更适合海量数据。</span>
+</li>
+<li>
+<strong><span>场景选择</span></strong><span>：如果数据在内存中 + 高频增删 ，选择红黑树更合适，如果数据在磁盘 + 随机/范围查询均需 ，选择B+树更合适。</span>
+</li>
+</ul>
+<h3><span class="q1">红黑树和b➕的区别？</span></h3>
+<p>红黑树是一种自平衡的二叉查找树</p>
+<figure class="img1"><img _width="677px" data-index="8" data-src="../img/____003_8d66492a.png" data-w="1080" src="../img/____003_8d66492a.png" style="height: auto !important;  width: 656.984px !important;"/></figure>
+<p>B+树是一种多路平衡查找树</p>
+<figure class="img1"><img _width="677px" data-index="9" data-src="../img/____004_1628da9b.png" data-w="1080" src="../img/____004_1628da9b.png" style="height: auto !important;  width: 656.984px !important;"/></figure>
+<p>对于有 N 个叶子节点的 B+Tree，其搜索复杂度为O(logdN)，其中 d 表示节点允许的最大子节点个数为 d 个。</p>
+<p>在实际的应用当中， d 值是大于100的，这样就保证了，即使数据达到千万级别时，B+Tree 的高度依然维持在 3~4 层左右，也就是说一次数据查询操作只需要做 3~4 次的磁盘 I/O 操作就能查询到目标数据。</p>
+<p>而红黑树的每个父节点的儿子节点个数只能是 2 个，意味着其搜索复杂度为 O(logN)，这已经比 B+Tree 高出不少，因此红黑树检索到目标数据所经历的磁盘 I/O 次数要更多。</p>
+<h3><span class="q1">二叉树搜索最坏的时间复杂度，为什么会这样？以及用什么结果解决？</span></h3>
+<p>**当每次插入的元素都是二叉查找树中最大的元素，二叉查找树就会退化成了一条链表，查找数据的时间复杂度变成了 O(n)**，如下动图演示：</p>
+<figure class="img1"><img _width="677px" class="rich_pages wxw-img __bg_gif" data-index="10" data-order="0" data-src="../img/____005_c7ecf364.gif" data-type="gif" data-w="714" src="../img/____005_c7ecf364.gif" style="height: auto !important;  width: 656.969px !important;"/></figure>
+<p>二叉查找树由于存在退化成链表的可能性，会使得查询操作的时间复杂度从 O(logn) 升为 O(n)。</p>
+<p>为了解决二叉查找树会在极端情况下退化成链表的问题，后面就有人提出<strong>平衡二叉查找树（AVL 树）</strong>。</p>
+<p>主要是在二叉查找树的基础上增加了一些条件约束：<strong>每个节点的左子树和右子树的高度差不能超过 1</strong>。也就是说节点的左子树和右子树仍然为平衡二叉树，这样查询操作的时间复杂度就会一直维持在 O(logn) 。</p>
+<p>下图是每次插入的元素都是平衡二叉查找树中最大的元素，可以看到，它会维持自平衡：</p>
+<figure class="img1"><img _width="387px" class="rich_pages wxw-img __bg_gif" data-index="11" data-order="1" data-src="../img/____006_c04d7868.gif" data-type="gif" data-w="387" src="../img/____006_c04d7868.gif" style="height: auto !important;  width: 387px !important;"/></figure>
+<p>除了平衡二叉查找树，还有很多自平衡的二叉树，比如红黑树，它也是通过一些约束条件来达到自平衡，不过红黑树的约束条件比较复杂。下面是红黑树插入节点的过程，这左旋右旋的操作，就是为了自平衡。</p>
+<figure class="img1"><img _width="677px" class="rich_pages wxw-img __bg_gif" data-index="12" data-order="2" data-src="../img/____007_e24f22d1.gif" data-type="gif" data-w="747" src="../img/____007_e24f22d1.gif" style="height: auto !important;  width: 656.953px !important;"/></figure>
+<h3><span class="q1">avl树和红黑树的区别？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+        平衡二叉树追求的是一种 <strong>“完全平衡”</strong> 状态：任何结点的左右子树的高度差不会超过 1，优势是树的结点是很平均分配的。这个要求实在是太严了，导致每次进行插入/删除节点的时候，几乎都会破坏平衡树的第二个规则，进而我们都需要通过<strong>左旋</strong>和<strong>右旋</strong>来进行调整，使之再次成为一颗符合要求的平衡树。
+    </li>
+<li>
+        红黑树不追求这种完全平衡状态，而是追求一种 <strong>“弱平衡”</strong> 状态：整个树最长路径不会超过最短路径的 2 倍。优势是虽然牺牲了一部分查找的性能效率，但是能够换取一部分维持树平衡状态的成本。与平衡树不同的是，红黑树在插入、删除等操作，<strong>不会像平衡树那样，频繁着破坏红黑树的规则，所以不需要频繁着调整</strong>，这也是我们为什么大多数情况下使用红黑树的原因。
+    </li>
+</ul>
+<h3><span class="q1">红黑树插入的时间复杂度是多少？</span></h3>
+<p>红黑树平衡，插入、删除、查找操作的时间复杂度都是O(logn)。</p>
+<h3><span class="q1">说说红黑树</span></h3>
+<p>红黑树是一种自平衡的二叉查找树，</p>
+<figure class="img1"><img _width="677px" data-index="16" data-src="../img/____008_a29799a1.png" data-w="900" src="../img/____008_a29799a1.png" style="   border-radius: 4px;  height: auto !important;  width: 656.969px !important;"/></figure>
+<p>具有以下特点：</p>
+<ol class="list-paddingleft-1">
+<li>
+            每个节点要么是红色，要么是黑色。
+        </li>
+<li>
+            根节点是黑色。
+        </li>
+<li>
+            每个叶子节点（NIL节点）是黑色。
+        </li>
+<li>
+            如果一个节点是红色，则其子节点必须是黑色。
+        </li>
+<li>
+            从任一节点到其每个叶子节点的所有路径都包含相同数目的黑色节点。
+        </li>
+</ol>
+<p>红黑树的自平衡性质可以保证在进行插入、删除等操作后，树的高度保持在O(log n)内，从而保持了较高的查找、插入和删除效率。</p>
+<p>下面是红黑树插入节点的过程，这左旋右旋的操作，就是为了自平衡。</p>
+<figure class="img1"><img _width="677px" class="rich_pages wxw-img __bg_gif" data-index="17" data-order="0" data-src="../img/____009_c98638d1.gif" data-type="gif" data-w="747" src="../img/____009_c98638d1.gif" style="   border-radius: 4px;  height: auto !important;  width: 656.953px !important;"/></figure>
+<h3><span class="q1">说说红黑树怎么左旋右旋</span></h3>
+<p>左旋和右旋是两种基本的旋转操作，用于保持红黑树的平衡。下面简单描述一下左旋和右旋的操作步骤：</p>
+<p>左旋操作：</p>
+<ol class="list-paddingleft-1">
+<li>
+            将当前节点的右子节点作为新的根节点。
+        </li>
+<li>
+            将新根节点的左子节点移动为当前节点的右子节点。
+        </li>
+<li>
+            如果当前节点有父节点，将当前节点的父节点更新为新根节点的父节点；否则，将新根节点设置为树的根节点。
+        </li>
+<li>
+            更新新根节点和其子节点的父节点关系。
+        </li>
+</ol>
+<p>接下来看下图片展示，首先断开节点PL与右子节点G的关系，同时将其右子节点的引用指向节点C2；然后断开节点G与左子节点C2的关系，同时将G的左子节点的应用指向节点PL。</p>
+<figure class="img1"><img _width="677px" data-index="18" data-src="../img/____010_c44d2bf3.png" data-w="720" src="../img/____010_c44d2bf3.png" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/></figure>
+<p>接下来再放下 gif 图，希望能帮助大家更好地理解左旋</p>
+<p><span><img _width="329px" data-index="19" data-src="../img/____011_3ecc1a41.jpg" data-type="other" data-w="329" src="../img/____011_3ecc1a41.jpg" style="height: auto !important;  width: 329px !important;"/></span></p>
+<p>右旋操作与左旋操作对称，具体步骤如下：</p>
+<ol class="list-paddingleft-1">
+<li>
+            将当前节点的左子节点作为新的根节点。
+        </li>
+<li>
+            将新根节点的右子节点移动为当前节点的左子节点。
+        </li>
+<li>
+            如果当前节点有父节点，将当前节点的父节点更新为新根节点的父节点；否则，将新根节点设置为树的根节点。
+        </li>
+<li>
+            更新新根节点和其子节点的父节点关系。
+        </li>
+</ol>
+<p>首先断开节点G与左子节点PL的关系，同时将其左子节点的引用指向节点C2；然后断开节点PL与右子节点C2的关系，同时将PL的右子节点的应用指向节点G。</p>
+<figure class="img1"><img _width="677px" data-index="20" data-src="../img/____012_ec42eb9f.png" data-w="720" src="../img/____012_ec42eb9f.png" style="   border-radius: 4px;  height: auto !important;  width: 656.922px !important;"/></figure>
+<p>右旋的gif展示（图片来自网络）:</p>
+<p><img _width="301px" data-index="21" data-src="../img/____013_b2bb51b4.jpg" data-type="other" data-w="301" src="../img/____013_b2bb51b4.jpg" style="height: auto !important;  width: 301px !important;"/></p>
+<figure class="img1"><br/></figure>
+</html>
+            </article>
+        </div>
+        
+        <div class="content" id="article-toc">
+            <nav class="toc">
+                <div class="toc-inner"><ul><ul><ul><li>
+                    <a href="#" aria-label="红黑树和AVL树相比查询性能好还是插入性能好一些？">红黑树和AVL树相比查询性能好还是插入性能好一些？</a></li><li>
+                    <a href="#" aria-label="为什么要用红黑树而不是平衡二叉树？">为什么要用红黑树而不是平衡二叉树？</a></li><li>
+                    <a href="#" aria-label="红黑树说一下，跳表说一下？">红黑树说一下，跳表说一下？</a></li><li>
+                    <a href="#" aria-label="你知道什么地方用了红黑树和跳表吗？">你知道什么地方用了红黑树和跳表吗？</a></li><li>
+                    <a href="#" aria-label="10. c&#43;&#43;中 stl 中map的插入时间复杂度是多少？">10. c++中 stl 中map的插入时间复杂度是多少？</a></li><li>
+                    <a href="#" aria-label="红黑树，b树，b&#43;树有什么区别？">红黑树，b树，b+树有什么区别？</a></li><li>
+                    <a href="#" aria-label="红黑树和b➕的区别？">红黑树和b➕的区别？</a></li><li>
+                    <a href="#" aria-label="二叉树搜索最坏的时间复杂度，为什么会这样？以及用什么结果解决？">二叉树搜索最坏的时间复杂度，为什么会这样？以及用什么结果解决？</a></li><li>
+                    <a href="#" aria-label="avl树和红黑树的区别？">avl树和红黑树的区别？</a></li><li>
+                    <a href="#" aria-label="红黑树插入的时间复杂度是多少？">红黑树插入的时间复杂度是多少？</a></li><li>
+                    <a href="#" aria-label="说说红黑树">说说红黑树</a></li><li>
+                    <a href="#" aria-label="说说红黑树怎么左旋右旋">说说红黑树怎么左旋右旋</a></ul></ul></ul>
+                </div>
+            </nav>
+        </div>
+    </main>
+    <div class="splitter-indicator" id="splitterIndicator"></div>
+    <div class="drop-indicator" id="dropIndicator"></div>
+    <footer class="footer">
+        <div class="footer-left">
+            <a class="item" href="/x/about/" target="_blank" rel="noopener noreferrer me" title="Info"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></a>
+            <a class="item" href="https://music.163.com/#/user/home?id=270121274" target="_blank" rel="noopener noreferrer me" title="NeteaseCloudMusic"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.98,23.65c-2.69,0-5.26-1.05-7.24-2.95C1.59,18.63,.35,15.72,.35,12.73,.35,8.21,3.21,4.11,7.46,2.52c.15-.05,.3-.08,.45-.08,.42,0,.78,.21,.93,.55,.12,.26,.13,.51,.03,.75-.12,.28-.38,.52-.7,.64-3.48,1.3-5.82,4.66-5.82,8.36,0,2.46,1.02,4.84,2.79,6.54,1.6,1.54,3.68,2.39,5.85,2.39,.1,0,.2,0,.29,0,3.49-.12,6.22-1.91,7.47-4.89,.08-.2,2.01-4.93-2.59-7.9-.41-.27-.89-.46-1.42-.58l-.6-.14,.18,.58c.21,.68,.78,2.52,.84,2.93,.07,.46,.07,.51,.1,.92v.18c0,2.3-1.89,4.19-4.22,4.19-2.2,0-3.97-1.73-4.23-4.1-.25-2.35,.74-4.4,2.73-5.61,.53-.32,1.11-.57,1.73-.75l.33-.1-.48-1.74c-.16-.54-.53-2.38,1.5-3.72,.57-.38,1.22-.57,1.91-.57,1.38,0,2.62,.74,3.12,1.23,.22,.22,.36,.56,.36,.9,0,.26-.08,.48-.23,.63-.15,.15-.37,.23-.63,.23-.33,0-.67-.13-.89-.35-.06-.05-.85-.66-1.7-.66-.31,0-.59,.08-.82,.24-.04,.03-.08,.05-.12,.08-.23,.19-.71,.73-.47,1.82l.09,.34,.02,.07h0s.35,1.29,.35,1.29h.25c1.24,.08,2.39,.42,3.32,1.01l.05,.03c4.82,3.12,4.29,8.12,3.34,10.33-1.54,3.67-4.99,5.95-9.23,6.1-.12,0-.25,0-.37,0Zm.82-15.26c-.43,.13-.84,.31-1.2,.53-.94,.57-2.01,1.68-1.79,3.71,.12,1.12,.87,2.33,2.24,2.33,1.23,0,2.24-1,2.24-2.22h0s.03-.21-.05-.71c-.07-.46-.91-3.1-1-3.4l-.1-.33-.33,.1Z" /></svg></a>
+            <a class="item" href="https://neodb.social/users/Lordash/" target="_blank" rel="noopener noreferrer me" title="NeoDB"><svg version="1.1" xmlns="https://www.w3.org/2000/svg" width="90" height="108" viewBox="0 0 90 108" fill="currentColor"><path d="M0 0 C4.26615504 2.04066983 6.73398524 4.58553002 10 8 C10.474375 7.195625 10.94875 6.39125 11.4375 5.5625 C13 3 13 3 14 2 C20.16698656 1.54318618 20.16698656 1.54318618 22.9375 3.0625 C24.6815774 6.24287644 24.55944728 8.4568339 24 12 C21 14.4375 21 14.4375 18 16 C20.97 18.97 23.94 21.94 27 25 C25.193388 28.61322401 24.33581029 29.83748791 21.375 32.25 C20.74335937 32.77078125 20.11171875 33.2915625 19.4609375 33.828125 C18.97882813 34.21484375 18.49671875 34.6015625 18 35 C17.566875 34.0409375 17.566875 34.0409375 17.125 33.0625 C16.17176549 30.84793921 16.17176549 30.84793921 14 30 C10.5 29.75 10.5 29.75 7 30 C4.59331253 31.99114614 4.59331253 31.99114614 4.5625 35.875 C4.62092586 39.4454694 4.80377743 39.80377743 7.5 42.5 C8.325 42.995 9.15 43.49 10 44 C7.36 46.64 4.72 49.28 2 52 C-1.49353838 50.25323081 -3.13945763 49.08594785 -5.75 46.375 C-6.36359375 45.74335937 -6.9771875 45.11171875 -7.609375 44.4609375 C-8.06828125 43.97882812 -8.5271875 43.49671875 -9 43 C-9.515625 43.99 -10.03125 44.98 -10.5625 46 C-13 49 -13 49 -16.625 49.5 C-20 49 -20 49 -22 47 C-22.56321839 40.8045977 -22.56321839 40.8045977 -20.6875 38.125 C-19 37 -19 37 -16 36 C-18.97 33.03 -21.94 30.06 -25 27 C-23.03838569 23.07677137 -20.84267796 20.58307142 -17.7734375 17.578125 C-17.26575836 17.07327576 -16.75807922 16.56842651 -16.23501587 16.04827881 C-14.61966158 14.44407904 -12.99747791 12.84699144 -11.375 11.25 C-10.27558302 10.16061893 -9.17661941 9.0707801 -8.078125 7.98046875 C-5.3906398 5.31498115 -2.69700979 2.65584857 0 0 Z"transform="translate(53,1)" /><path d="M0 0 C2.31 1.98 4.62 3.96 7 6 C6.34 6.86625 5.68 7.7325 5 8.625 C2.82375259 12.29741751 2.2907405 13.83310042 3 18 C4.34115399 21.00979883 4.34115399 21.00979883 7 23 C10.97807953 23.86409105 14.00632895 23.59620263 17.5 21.5 C17.995 21.005 18.49 20.51 19 20 C21.84383123 21.2748209 24.13754018 22.45137078 26 25 C25.57914771 28.29893891 24.42094066 29.966522 22.0625 32.25 C21.53785156 32.77078125 21.01320312 33.2915625 20.47265625 33.828125 C19 35 19 35 17 35 C17 35.66 17 36.32 17 37 C17.763125 36.938125 18.52625 36.87625 19.3125 36.8125 C22 37 22 37 23.875 38.0625 C25.69848531 41.20294693 24.8658284 43.5985313 24 47 C21 49 21 49 17.9375 48.75 C15 48 15 48 13 46 C12.505 44.02 12.505 44.02 12 42 C9.03 44.97 6.06 47.94 3 51 C-0.92322863 49.03838569 -3.41692858 46.84267796 -6.421875 43.7734375 C-6.92672424 43.26575836 -7.43157349 42.75807922 -7.95172119 42.23501587 C-9.55592096 40.61966158 -11.15300856 38.99747791 -12.75 37.375 C-13.83938107 36.27558302 -14.9292199 35.17661941 -16.01953125 34.078125 C-18.68501885 31.3906398 -21.34415143 28.69700979 -24 26 C-22.4152642 22.13671373 -19.94043113 19.71123077 -16.9921875 16.796875 C-16.50670441 16.3142218 -16.02122131 15.8315686 -15.52102661 15.33428955 C-13.97700134 13.80141438 -12.42615176 12.27565996 -10.875 10.75 C-9.82375991 9.70879639 -8.77297343 8.66713459 -7.72265625 7.625 C-5.15366996 5.07800536 -2.57851839 2.53734823 0 0 Z"transform="translate(25,29)" /><path d="M0 0 C3.81684226 1.55500981 6.19195732 4.03595495 9 7 C9.45375 6.195625 9.9075 5.39125 10.375 4.5625 C12 2 12 2 14 1 C16.9375 0.6875 16.9375 0.6875 20 1 C21.9375 2.625 21.9375 2.625 23 5 C23 8 23 8 22 11 C19.4375 13.375 19.4375 13.375 17 15 C19.97 17.97 22.94 20.94 26 24 C20.375 30.875 20.375 30.875 17 32 C16.649375 31.175 16.29875 30.35 15.9375 29.5 C14.16088977 26.60879362 14.16088977 26.60879362 10.5 26.5 C7.14672303 26.77692733 7.14672303 26.77692733 5 28.0625 C3.32384137 31.31005735 4.03723329 33.57014358 5 37 C7.4158995 39.45198044 7.4158995 39.45198044 10 41 C8.76600937 42.36877116 7.51219377 43.71969166 6.25 45.0625 C5.55390625 45.81660156 4.8578125 46.57070312 4.140625 47.34765625 C2 49 2 49 0.09619141 48.81054688 C-2.43507746 47.831766 -3.76735676 46.6052517 -5.6796875 44.68359375 C-6.36160156 44.00103516 -7.04351562 43.31847656 -7.74609375 42.61523438 C-8.79990234 41.53725586 -8.79990234 41.53725586 -9.875 40.4375 C-10.91720703 39.40012695 -10.91720703 39.40012695 -11.98046875 38.34179688 C-16.44375955 33.83227613 -20.30080588 29.1545197 -24 24 C-21.69 22.02 -19.38 20.04 -17 18 C-15.948125 18.99 -15.948125 18.99 -14.875 20 C-12.15610238 22.18293783 -12.15610238 22.18293783 -9 22.5625 C-4.86392446 21.78698584 -3.45000447 20.38677089 -1 17 C-0.44852315 13.07072743 -0.40688385 10.96381375 -2.5 7.5625 C-2.995 7.046875 -3.49 6.53125 -4 6 C-2.84826645 3.53199953 -1.95216435 1.95216435 0 0 Z"transform="translate(53,58)" /></svg></a>
+            <a class="item" href="https://github.com/GH1656409967" target="_blank" rel="noopener noreferrer me" title="GitHub"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a class="item" href="/" target="_blank" rel="noopener noreferrer me" title="BuyMeACoffee"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 884 1279" fill="none" stroke="currentColor" stroke-width="2"><path d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518Z"fill="currentColor"></path><path d="M803.896 388.891L802.916 389.166L803.896 388.891Z" fill="currentColor"></path><path d="M791.484 297.377C791.359 297.361 791.237 297.332 791.118 297.29C791.111 297.371 791.111 297.453 791.118 297.534C791.252 297.516 791.379 297.462 791.484 297.377Z"fill="currentColor"></path><path d="M791.113 297.529H791.244V297.447L791.113 297.529Z" fill="currentColor"></path><path d="M803.111 388.726L804.591 387.883L805.142 387.573L805.641 387.04C804.702 387.444 803.846 388.016 803.111 388.726Z"fill="currentColor"></path><path d="M793.669 299.515L792.223 298.138L791.243 297.605C791.77 298.535 792.641 299.221 793.669 299.515Z"fill="currentColor"></path><path d="M430.019 1186.18C428.864 1186.68 427.852 1187.46 427.076 1188.45L427.988 1187.87C428.608 1187.3 429.485 1186.63 430.019 1186.18Z"fill="currentColor"></path><path d="M641.187 1144.63C641.187 1143.33 640.551 1143.57 640.705 1148.21C640.705 1147.84 640.86 1147.46 640.929 1147.1C641.015 1146.27 641.084 1145.46 641.187 1144.63Z"fill="currentColor"></path><path d="M619.284 1186.18C618.129 1186.68 617.118 1187.46 616.342 1188.45L617.254 1187.87C617.873 1187.3 618.751 1186.63 619.284 1186.18Z"fill="currentColor"></path><path d="M281.304 1196.06C280.427 1195.3 279.354 1194.8 278.207 1194.61C279.136 1195.06 280.065 1195.51 280.684 1195.85L281.304 1196.06Z"fill="currentColor"></path><path d="M247.841 1164.01C247.704 1162.66 247.288 1161.35 246.619 1160.16C247.093 1161.39 247.489 1162.66 247.806 1163.94L247.841 1164.01Z"fill="currentColor"></path><path d="M472.623 590.836C426.682 610.503 374.546 632.802 306.976 632.802C278.71 632.746 250.58 628.868 223.353 621.274L270.086 1101.08C271.74 1121.13 280.876 1139.83 295.679 1153.46C310.482 1167.09 329.87 1174.65 349.992 1174.65C349.992 1174.65 416.254 1178.09 438.365 1178.09C462.161 1178.09 533.516 1174.65 533.516 1174.65C553.636 1174.65 573.019 1167.08 587.819 1153.45C602.619 1139.82 611.752 1121.13 613.406 1101.08L663.459 570.876C641.091 563.237 618.516 558.161 593.068 558.161C549.054 558.144 513.591 573.303 472.623 590.836Z"fill="currentColor"></path><path d="M78.6885 386.132L79.4799 386.872L79.9962 387.182C79.5987 386.787 79.1603 386.435 78.6885 386.132Z"fill="currentColor"></path><path d="M879.567 341.849L872.53 306.352C866.215 274.503 851.882 244.409 819.19 232.898C808.711 229.215 796.821 227.633 788.786 220.01C780.751 212.388 778.376 200.55 776.518 189.572C773.076 169.423 769.842 149.257 766.314 129.143C763.269 111.85 760.86 92.4243 752.928 76.56C742.604 55.2584 721.182 42.8009 699.88 34.559C688.965 30.4844 677.826 27.0375 666.517 24.2352C613.297 10.1947 557.342 5.03277 502.591 2.09047C436.875 -1.53577 370.983 -0.443234 305.422 5.35968C256.625 9.79894 205.229 15.1674 158.858 32.0469C141.91 38.224 124.445 45.6399 111.558 58.7341C95.7448 74.8221 90.5829 99.7026 102.128 119.765C110.336 134.012 124.239 144.078 138.985 150.737C158.192 159.317 178.251 165.846 198.829 170.215C256.126 182.879 315.471 187.851 374.007 189.968C438.887 192.586 503.87 190.464 568.44 183.618C584.408 181.863 600.347 179.758 616.257 177.304C634.995 174.43 647.022 149.928 641.499 132.859C634.891 112.453 617.134 104.538 597.055 107.618C594.095 108.082 591.153 108.512 588.193 108.942L586.06 109.252C579.257 110.113 572.455 110.915 565.653 111.661C551.601 113.175 537.515 114.414 523.394 115.378C491.768 117.58 460.057 118.595 428.363 118.647C397.219 118.647 366.058 117.769 334.983 115.722C320.805 114.793 306.661 113.611 292.552 112.177C286.134 111.506 279.733 110.801 273.333 110.009L267.241 109.235L265.917 109.046L259.602 108.134C246.697 106.189 233.792 103.953 221.025 101.251C219.737 100.965 218.584 100.249 217.758 99.2193C216.932 98.1901 216.482 96.9099 216.482 95.5903C216.482 94.2706 216.932 92.9904 217.758 91.9612C218.584 90.9319 219.737 90.2152 221.025 89.9293H221.266C232.33 87.5721 243.479 85.5589 254.663 83.8038C258.392 83.2188 262.131 82.6453 265.882 82.0832H265.985C272.988 81.6186 280.026 80.3625 286.994 79.5366C347.624 73.2301 408.614 71.0801 469.538 73.1014C499.115 73.9618 528.676 75.6996 558.116 78.6935C564.448 79.3474 570.746 80.0357 577.043 80.8099C579.452 81.1025 581.878 81.4465 584.305 81.7391L589.191 82.4445C603.438 84.5667 617.61 87.1419 631.708 90.1703C652.597 94.7128 679.422 96.1925 688.713 119.077C691.673 126.338 693.015 134.408 694.649 142.03L696.732 151.752C696.786 151.926 696.826 152.105 696.852 152.285C701.773 175.227 706.7 198.169 711.632 221.111C711.994 222.806 712.002 224.557 711.657 226.255C711.312 227.954 710.621 229.562 709.626 230.982C708.632 232.401 707.355 233.6 705.877 234.504C704.398 235.408 702.75 235.997 701.033 236.236H700.895L697.884 236.649L694.908 237.044C685.478 238.272 676.038 239.419 666.586 240.486C647.968 242.608 629.322 244.443 610.648 245.992C573.539 249.077 536.356 251.102 499.098 252.066C480.114 252.57 461.135 252.806 442.162 252.771C366.643 252.712 291.189 248.322 216.173 239.625C208.051 238.662 199.93 237.629 191.808 236.58C198.106 237.389 187.231 235.96 185.029 235.651C179.867 234.928 174.705 234.177 169.543 233.397C152.216 230.798 134.993 227.598 117.7 224.793C96.7944 221.352 76.8005 223.073 57.8906 233.397C42.3685 241.891 29.8055 254.916 21.8776 270.735C13.7217 287.597 11.2956 305.956 7.64786 324.075C4.00009 342.193 -1.67805 361.688 0.472751 380.288C5.10128 420.431 33.165 453.054 73.5313 460.35C111.506 467.232 149.687 472.807 187.971 477.556C338.361 495.975 490.294 498.178 641.155 484.129C653.44 482.982 665.708 481.732 677.959 480.378C681.786 479.958 685.658 480.398 689.292 481.668C692.926 482.938 696.23 485.005 698.962 487.717C701.694 490.429 703.784 493.718 705.08 497.342C706.377 500.967 706.846 504.836 706.453 508.665L702.633 545.797C694.936 620.828 687.239 695.854 679.542 770.874C671.513 849.657 663.431 928.434 655.298 1007.2C653.004 1029.39 650.71 1051.57 648.416 1073.74C646.213 1095.58 645.904 1118.1 641.757 1139.68C635.218 1173.61 612.248 1194.45 578.73 1202.07C548.022 1209.06 516.652 1212.73 485.161 1213.01C450.249 1213.2 415.355 1211.65 380.443 1211.84C343.173 1212.05 297.525 1208.61 268.756 1180.87C243.479 1156.51 239.986 1118.36 236.545 1085.37C231.957 1041.7 227.409 998.039 222.9 954.381L197.607 711.615L181.244 554.538C180.968 551.94 180.693 549.376 180.435 546.76C178.473 528.023 165.207 509.681 144.301 510.627C126.407 511.418 106.069 526.629 108.168 546.76L120.298 663.214L145.385 904.104C152.532 972.528 159.661 1040.96 166.773 1109.41C168.15 1122.52 169.44 1135.67 170.885 1148.78C178.749 1220.43 233.465 1259.04 301.224 1269.91C340.799 1276.28 381.337 1277.59 421.497 1278.24C472.979 1279.07 524.977 1281.05 575.615 1271.72C650.653 1257.95 706.952 1207.85 714.987 1130.13C717.282 1107.69 719.576 1085.25 721.87 1062.8C729.498 988.559 737.115 914.313 744.72 840.061L769.601 597.451L781.009 486.263C781.577 480.749 783.905 475.565 787.649 471.478C791.392 467.391 796.352 464.617 801.794 463.567C823.25 459.386 843.761 452.245 859.023 435.916C883.318 409.918 888.153 376.021 879.567 341.849ZM72.4301 365.835C72.757 365.68 72.1548 368.484 71.8967 369.792C71.8451 367.813 71.9483 366.058 72.4301 365.835ZM74.5121 381.94C74.6842 381.819 75.2003 382.508 75.7337 383.334C74.925 382.576 74.4089 382.009 74.4949 381.94H74.5121ZM76.5597 384.641C77.2996 385.897 77.6953 386.689 76.5597 384.641V384.641ZM80.672 387.979H80.7752C80.7752 388.1 80.9645 388.22 81.0333 388.341C80.9192 388.208 80.7925 388.087 80.6548 387.979H80.672ZM800.796 382.989C793.088 390.319 781.473 393.726 769.996 395.43C641.292 414.529 510.713 424.199 380.597 419.932C287.476 416.749 195.336 406.407 103.144 393.382C94.1102 392.109 84.3197 390.457 78.1082 383.798C66.4078 371.237 72.1548 345.944 75.2003 330.768C77.9878 316.865 83.3218 298.334 99.8572 296.355C125.667 293.327 155.64 304.218 181.175 308.09C211.917 312.781 242.774 316.538 273.745 319.36C405.925 331.405 540.325 329.529 671.92 311.91C695.906 308.686 719.805 304.941 743.619 300.674C764.835 296.871 788.356 289.731 801.175 311.703C809.967 326.673 811.137 346.701 809.778 363.615C809.359 370.984 806.139 377.915 800.779 382.989H800.796Z"fill="currentColor"></path></svg></a>
+        </div>
+
+        <div class="footer-middle">
+        </div>
+
+        <div class="footer-right">
+            <span class="item">4159(words)</span>
+            <a class="item" accesskey="g" href="#top" id="top-link" title="Go to Top (Alt + G)">⬆</a>
+        </div>
+    </footer>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                packages: { "[+]": ["ams"] }, 
+                tags: "ams", 
+            },
+            options: {
+                enableSpeech: false,        
+                enableExplorer: false,      
+                enableMenu: false,          
+                ignoreHtmlClass: "tex2jax_ignore",
+                processHtmlClass: "tex2jax_process"
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/mathjax/4.0.0/tex-chtml.min.js"></script>
+    <script type="text/javascript" defer async src="https://s4.zstatic.net/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+    <script type="text/javascript" src="/js/particle-clock.js"></script>
+    <script type="text/javascript" src="/js/index.min.62af824fc9f8f20406aebaf20c60d6fbd42ffe3d23aae53d90dddd32415f13d9.js" integrity="sha256-Yq&#43;CT8n48gQGrrryDGDW&#43;9Qv/j0jquU9kN3dMkFfE9k="></script>
+</body>
+
+</html>

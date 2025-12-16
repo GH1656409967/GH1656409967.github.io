@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博弈论 on 似水</title>
+    <link>http://localhost:1313/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/</link>
+    <description>Recent content in 博弈论 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 18 Jul 2020 11:07:12 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU-3980 Paint Chain</title>
+      <link>http://localhost:1313/z/solution/69e1bd87f5e149bb/</link>
+      <pubDate>Sat, 18 Jul 2020 11:07:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/69e1bd87f5e149bb/</guid>
+      <description>&lt;h1 id=&#34;paint-chainhdu-3980&#34;&gt;Paint Chain(&lt;a href=&#34;https://vjudge.net/problem/HDU-3980&#34;&gt;HDU-3980&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Aekdycoin and abcdxyzk are playing a game. They get a circle chain with  some beads. Initially none of the beads is painted. They take turns to  paint the chain. In Each turn one player must paint a unpainted beads.  Whoever is unable to paint in his turn lose the game. Aekdycoin will  take the first move.&lt;/p&gt;&#xA;&lt;p&gt;Now, they thought this game is too simple, and they want to change  some rules. In each turn one player must select a certain number of  consecutive unpainted beads to paint. The other rules is The same as the original. Who will win under the rules ?You may assume that both of  them are so clever.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2509 Be the Winner</title>
+      <link>http://localhost:1313/z/solution/e1f7bbd512788cbf/</link>
+      <pubDate>Sat, 18 Jul 2020 10:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/e1f7bbd512788cbf/</guid>
+      <description>&lt;h1 id=&#34;be-the-winnerhdu-2509&#34;&gt;Be the Winner(&lt;a href=&#34;https://vjudge.net/problem/HDU-2509&#34;&gt;HDU-2509&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s consider m apples divided into n groups. Each group contains no  more than 100 apples, arranged in a line. You can take any number of  consecutive apples at one time.&#xA;For example &amp;ldquo;@@@&amp;rdquo; can be turned into &amp;ldquo;@@&amp;rdquo; or &amp;ldquo;@&amp;rdquo; or &amp;ldquo;@ @&amp;quot;(two  piles). two people get apples one after another and the one who takes  the last is&#xA;the loser. Fra wants to know in which situations he can win by  playing strategies (that is, no matter what action the rival takes, fra  will win).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1199 Partitioning Game</title>
+      <link>http://localhost:1313/z/solution/0af9c51d49f437d1/</link>
+      <pubDate>Sat, 18 Jul 2020 10:32:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/0af9c51d49f437d1/</guid>
+      <description>&lt;h1 id=&#34;partitioning-gamelightoj-1199&#34;&gt;Partitioning Game(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1199&#34;&gt;LightOJ-1199&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Alice and Bob are playing a strange game. The rules of the game are:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Initially there are &lt;strong&gt;n&lt;/strong&gt; piles.&lt;/li&gt;&#xA;&lt;li&gt;A pile is formed by some cells.&lt;/li&gt;&#xA;&lt;li&gt;Alice starts the game and they alternate turns.&lt;/li&gt;&#xA;&lt;li&gt;In each tern a player can pick any pile and divide it into two unequal piles.&lt;/li&gt;&#xA;&lt;li&gt;If a player cannot do so, he/she loses the game.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Now you are  given the number of cells in each of the piles, you have to find the  winner of the game if both of them play optimally.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1393 Crazy Calendar</title>
+      <link>http://localhost:1313/z/solution/ae287e704686433c/</link>
+      <pubDate>Sat, 18 Jul 2020 09:53:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/ae287e704686433c/</guid>
+      <description>&lt;h1 id=&#34;crazy-calendarlightoj-1393&#34;&gt;Crazy Calendar(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1393&#34;&gt;LightOJ-1393&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;2011 was a crazy year. Many people all over the  world proposed on 11-11-11, married on 11-11-11, some even went through  surgery only to have 11-11-11 as their child&amp;rsquo;s birth date. How crazy  people can be! Don&amp;rsquo;t they see there is a &amp;ldquo;20&amp;rdquo; hidden? Then what to do? A very elegant solution came from ARR, a very famous and funny character - why do we need to follow Christian (or some calls it Gregorian)  calendar? Why don&amp;rsquo;t we start our own calendar on the day of marriage?  And those who like to celebrate their marriage ceremony too frequent,  why don&amp;rsquo;t they declare only 1 day per year. In that fashion they can  celebrate their anniversary every day. And may be one minute a year or a second or &amp;hellip; Uh.. getting complex. Let&amp;rsquo;s back to the title. From now,  we start to have a new calendar system, &amp;ldquo;Kisu Pari Na&amp;rdquo;. And we hope to  update this calendar on every national contest.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1253 Misere Nim</title>
+      <link>http://localhost:1313/z/solution/14e7debc3ca6959a/</link>
+      <pubDate>Sat, 18 Jul 2020 09:39:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/14e7debc3ca6959a/</guid>
+      <description>&lt;h1 id=&#34;misere-nimlightoj-1253&#34;&gt;Misere Nim(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1253&#34;&gt;LightOJ-1253&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Alice and Bob are playing game of &lt;strong&gt;Misère Nim&lt;/strong&gt;. Misère Nim is a game playing on &lt;strong&gt;k&lt;/strong&gt; piles of stones, each pile containing one or more stones. The players  alternate turns and in each turn a player can select one of the piles  and can remove as many stones from that pile unless the pile is empty.  In each turn a player must remove at least one stone from any pile.  Alice starts first. The player who removes the last stone &lt;strong&gt;loses&lt;/strong&gt; the game.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1247 Matrix Game</title>
+      <link>http://localhost:1313/z/solution/cd78223e3f4a75fb/</link>
+      <pubDate>Sat, 18 Jul 2020 09:24:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/cd78223e3f4a75fb/</guid>
+      <description>&lt;h1 id=&#34;matrix-gamelightoj-1247&#34;&gt;Matrix Game(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1247&#34;&gt;LightOJ-1247&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given an &lt;strong&gt;m x n&lt;/strong&gt; matrix, where &lt;strong&gt;m&lt;/strong&gt; denotes the number of rows and &lt;strong&gt;n&lt;/strong&gt; denotes the number of columns and in each cell a pile of stones is given. For example, let there be a &lt;strong&gt;2 x 3&lt;/strong&gt; matrix, and the piles are&lt;/p&gt;&#xA;&lt;p&gt;2 3 8&lt;/p&gt;&#xA;&lt;p&gt;5 2 7&lt;/p&gt;&#xA;&lt;p&gt;That means that in cell(1, 1) there is a pile with 2 stones, in cell(1, 2) there is a pile with 3 stones and so on.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1192 Left Right</title>
+      <link>http://localhost:1313/z/solution/98dd99a0f235d0ac/</link>
+      <pubDate>Fri, 17 Jul 2020 18:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/98dd99a0f235d0ac/</guid>
+      <description>&lt;h1 id=&#34;left-rightlightoj-1192&#34;&gt;Left Right(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1192&#34;&gt;LightOJ-1192&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Two players, Alice and Bob are playing a strange game in a 1 x n board. The cells are numbered from 0 to n-1, where the left most cell is marked as cell 0. Each cell can contain at most one piece.&lt;/p&gt;&#xA;&lt;p&gt;There are two kinds of pieces, gray and white. Alice moves all the gray pieces, and bob moves all the white ones. The pieces alternate, that is, leftmost piece is gray, next is white, next to that is gray, then it&amp;rsquo;s white again, and so on. There will always be equal number of black and gray pieces. Alice can only move pieces to the right. Bob can only move pieces to the left.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1186 Incredible Chess</title>
+      <link>http://localhost:1313/z/solution/298cea19fed8781d/</link>
+      <pubDate>Fri, 17 Jul 2020 18:38:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/298cea19fed8781d/</guid>
+      <description>&lt;h1 id=&#34;incredible-chesslightoj-1186&#34;&gt;Incredible Chess(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1186&#34;&gt;LightOJ-1186&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;You are given an &lt;strong&gt;n x n&lt;/strong&gt; chess board. Only  pawn is used in the &amp;lsquo;Incredible Chess&amp;rsquo; and they can move forward or  backward. In each column there are two pawns, one white and one black.  White pawns are placed in the lower part of the board and the black  pawns are placed in the upper part of the board.&lt;/p&gt;&#xA;&lt;p&gt;The game is played by two players. Initially a board configuration is given. One player uses white pieces while the  other uses black. In each move, a player can move a pawn of his piece,  which can go forward or backward any positive integer steps, but it  cannot jump over any piece. White gives the first move.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-4388 Stone Game II</title>
+      <link>http://localhost:1313/z/solution/6dd2fa1e3acd2ab5/</link>
+      <pubDate>Fri, 17 Jul 2020 17:27:43 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/6dd2fa1e3acd2ab5/</guid>
+      <description>&lt;h1 id=&#34;stone-game-ii-hdu-4388&#34;&gt;Stone Game II (&lt;a href=&#34;https://vjudge.net/problem/HDU-4388&#34;&gt;HDU-4388&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;　Stone Game II comes. It needs two players to play this game. There are some piles of stones on the desk at the beginning. Two players move the stones in turn. At each step of the game the player should do the  following operations.&#xA;First, choose a pile of stones. (We assume that the number of stones in this pile is n)&#xA;Second, take some stones from this pile. Assume the number of  stones left in this pile is k. The player must ensure that 0 &amp;lt; k &amp;lt; n and (k XOR n) &amp;lt; n, otherwise he loses.&#xA;At last, add a new pile of size (k XOR n). Now the player can  add a pile of size ((2*k) XOR n) instead of (k XOR n) (However, there is only one opportunity for each player in each game).&#xA;The first player who can&amp;rsquo;t do these operations loses. Suppose two  players will do their best in the game, you are asked to write a program to determine who will win the game.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2188 选拔志愿者</title>
+      <link>http://localhost:1313/z/solution/b472f6f4d765900c/</link>
+      <pubDate>Fri, 17 Jul 2020 17:11:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/b472f6f4d765900c/</guid>
+      <description>&lt;h1 id=&#34;悼念512汶川大地震遇难同胞选拔志愿者hdu-2188&#34;&gt;悼念512汶川大地震遇难同胞——选拔志愿者(&lt;a href=&#34;https://vjudge.net/problem/HDU-2188&#34;&gt;HDU-2188&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;对于四川同胞遭受的灾难，全国人民纷纷伸出援助之手，几乎每个省市都派出了大量的救援人员，这其中包括抢险救灾的武警部队，治疗和防疫的医护人员，以及进行心理疏导的心理学专家。根据要求，我校也有一个奔赴灾区救灾的名额，由于广大师生报名踊跃，学校不得不进行选拔来决定最后的人选。经过多轮的考核，形势逐渐明朗，最后的名额将在“林队”和“徐队”之间产生。但是很巧合，2个人的简历几乎一模一样，这让主持选拔的8600很是为难。无奈，他决定通过捐款来决定两人谁能入选。&#xA;选拔规则如下：&#xA;1、最初的捐款箱是空的；&#xA;2、两人轮流捐款，每次捐款额必须为正整数，并且每人每次捐款最多不超过m元(1&amp;lt;=m&amp;lt;=10)。&#xA;3、最先使得总捐款额达到或者超过n元（0&amp;lt;n&amp;lt;10000）的一方为胜者，则其可以亲赴灾区服务。&#xA;我们知道，两人都很想入选志愿者名单，并且都是非常聪明的人，假设林队先捐，请你判断谁能入选最后的名单？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2897 邂逅明下</title>
+      <link>http://localhost:1313/z/solution/bf620dd875151538/</link>
+      <pubDate>Fri, 17 Jul 2020 16:59:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/bf620dd875151538/</guid>
+      <description>&lt;h1 id=&#34;邂逅明下hdu-2897&#34;&gt;邂逅明下(&lt;a href=&#34;https://vjudge.net/problem/HDU-2897&#34;&gt;HDU-2897&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;当日遇到月，于是有了明。当我遇到了你，便成了侣。&#xA;那天，日月相会，我见到了你。而且，大地失去了光辉，你我是否成侣？这注定是个凄美的故事。（以上是废话）&#xA;小t和所有世俗的人们一样，期待那百年难遇的日食。驻足街头看天，看日月渐渐走近，小t的脖子那个酸呀（他坚持这个姿势已经有半个多小时啦）。他低下仰起的头，环顾四周。忽然发现身边竟站着位漂亮的mm。天渐渐暗下，这mm在这街头竟然如此耀眼，她是天使吗？站着小t身边的天使。&#xA;小t对mm惊呼：“缘分呐~~”。mm却毫不含糊：“是啊，500年一遇哦！”（此后省略5000字….）&#xA;小t赶紧向mm要联系方式，可mm说：“我和你玩个游戏吧，赢了，我就把我的手机号告诉你。”小t，心想天下哪有题目能难倒我呢，便满口答应下来。mm开始说游戏规则：“我有一堆硬币，一共7枚，从这个硬币堆里取硬币，一次最少取2枚，最多4枚，如果剩下少于2枚就要一次取完。我和你轮流取，直到堆里的硬币取完，最后一次取硬币的算输。我玩过这个游戏好多次了，就让让你，让你先取吧~”&#xA;小t掐指一算，不对呀，这是不可能的任务么。小t露出得意的笑：“还是mm优先啦，呵呵~”mm霎时愣住了，想是对小t的反应出乎意料吧。&#xA;她却也不生气：“好小子，挺聪明呢，要不这样吧，你把我的邮箱给我，我给你发个文本，每行有三个数字n，p，q，表示一堆硬币一共有n枚，从这个硬币堆里取硬币，一次最少取p枚，最多q枚，如果剩下少于p枚就要一次取完。两人轮流取，直到堆里的硬币取完，最后一次取硬币的算输。对于每一行的三个数字，给出先取的人是否有必胜策略，如果有回答WIN，否则回答LOST。你把对应的答案发给我，如果你能在今天晚上8点以前发给我正确答案，或许我们明天下午可以再见。”&#xA;小t二话没说，将自己的邮箱给了mm。当他兴冲冲得赶回家，上网看邮箱，哇！mm的邮件已经到了。他发现文本长达100000行，每行的三个数字都很大，但是都是不超过65536的整数。小t看表已经下午6点了，要想手工算出所有结果，看来是不可能了。你能帮帮他，让他再见到那个mm吗？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2516 取石子游戏</title>
+      <link>http://localhost:1313/z/solution/a22a070129bb9e3e/</link>
+      <pubDate>Fri, 17 Jul 2020 16:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/a22a070129bb9e3e/</guid>
+      <description>&lt;h1 id=&#34;取石子游戏hdu-2516&#34;&gt;取石子游戏(&lt;a href=&#34;https://vjudge.net/problem/HDU-2516&#34;&gt;HDU-2516&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;1堆石子有n个,两人轮流取.先取者第1次可以取任意多个，但不能全部取完.以后每次取的石子数不能超过上次取子数的2倍。取完者胜.先取者负输出&amp;quot;Second win&amp;quot;.先取者胜输出&amp;quot;First win&amp;quot;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2486 A simple stone game</title>
+      <link>http://localhost:1313/z/solution/bdbb5938b9b09b74/</link>
+      <pubDate>Fri, 17 Jul 2020 00:24:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/bdbb5938b9b09b74/</guid>
+      <description>&lt;h1 id=&#34;a-simple-stone-gamehdu-2486&#34;&gt;A simple stone game(&lt;a href=&#34;https://vjudge.net/problem/HDU-2486&#34;&gt;HDU-2486&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;After he has learned how to play Nim game, Mike begins to try another stone game which seems much easier.&lt;/p&gt;&#xA;&lt;p&gt;The game goes like this: Two players start the game with a pile of n stones. They take stones from the pile in turn and every time they take at least one stone. The one who goes first can take at most n-1 stones  for his first move. From then on a player can take at most k times as  many stones as his opponent has taken last time. For example, if one  player take m stones in his turn, then the other player can take at most k * m stones next time. The player who takes the last stone wins the  game. Suppose that those two players always take the best moves and  never make mistakes, your job is to find out who will definitely win the game.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2177 取(2堆)石子游戏</title>
+      <link>http://localhost:1313/z/solution/8370fc6a49e88a13/</link>
+      <pubDate>Thu, 16 Jul 2020 19:48:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/8370fc6a49e88a13/</guid>
+      <description>&lt;h1 id=&#34;取2堆石子游戏hdu-2177&#34;&gt;取(2堆)石子游戏(&lt;a href=&#34;https://vjudge.net/problem/HDU-2177&#34;&gt;HDU-2177&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;有两堆石子，数量任意，可以不同。游戏开始由两个人轮流取石子。游戏规定，每次有两种不同的取法，一是可以在任意的一堆中取走任意多的石子；二是可以在两堆中同时取走相同数量的石子。最后把石子全部取完者为胜者。现在给出初始的两堆石子的数目，如果轮到你先取，假设双方都采取最好的策略，问最后你是胜者还是败者。如果你胜，你第1次怎样取子?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ZOJ-3057 Beans Game</title>
+      <link>http://localhost:1313/z/solution/59becec5b38f9314/</link>
+      <pubDate>Thu, 16 Jul 2020 16:00:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/59becec5b38f9314/</guid>
+      <description>&lt;h1 id=&#34;beans-gamezoj-3057&#34;&gt;Beans Game(&lt;a href=&#34;https://vjudge.net/problem/ZOJ-3057&#34;&gt;ZOJ-3057&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;There are three piles of beans. TT and DD pick any number of beans from  any pile or the same number from any two piles by turns. Who get the  last bean will win. TT and DD are very clever.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each test case contains of a single line containing 3 integers &lt;em&gt;a&lt;/em&gt; &lt;em&gt;b&lt;/em&gt; &lt;em&gt;c&lt;/em&gt;, indicating the numbers of beans of these piles. It is assumed that 0 &amp;lt;= &lt;em&gt;a&lt;/em&gt;,&lt;em&gt;b&lt;/em&gt;,&lt;em&gt;c&lt;/em&gt; &amp;lt;= 300 and &lt;em&gt;a&lt;/em&gt; + &lt;em&gt;b&lt;/em&gt; + &lt;em&gt;c&lt;/em&gt; &amp;gt; 0.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-3922 A simple stone game</title>
+      <link>http://localhost:1313/z/solution/045835710680316e/</link>
+      <pubDate>Thu, 16 Jul 2020 14:02:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/045835710680316e/</guid>
+      <description>&lt;h1 id=&#34;a-simple-stone-gamepoj-3922&#34;&gt;A simple stone game(&lt;a href=&#34;https://vjudge.net/problem/POJ-3922&#34;&gt;POJ-3922&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;After he has learned how to play Nim game, Mike begins to try another stone game which seems much easier.&lt;/p&gt;&#xA;&lt;p&gt;The game goes like this: Two players start the game with a pile of n stones. They take stones from the pile in turn and every time they take at least one stone. The one who goes first can take at most n-1 stones  for his first move. From then on a player can take at most k times as  many stones as his opponent has taken last time. For example, if one  player take m stones in his turn, then the other player can take at most k * m stones next time. The player who takes the last stone wins the  game. Suppose that those two players always take the best moves and  never make mistakes, your job is to find out who will definitely win the game.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-3533 Light Switching Game</title>
+      <link>http://localhost:1313/z/solution/3f8607271fa47184/</link>
+      <pubDate>Wed, 15 Jul 2020 11:58:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3f8607271fa47184/</guid>
+      <description>&lt;h1 id=&#34;light-switching-gamepoj-3533&#34;&gt;Light Switching Game(&lt;a href=&#34;https://vjudge.net/problem/POJ-3533&#34;&gt;POJ-3533&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The Light Switching Game is played  on a 1000 × 1000 × 1000 cube of cells with a light in each cell, as  Figure.1 shows. Initially, most of the lights are off while exactly &lt;em&gt;N&lt;/em&gt; lights are on. Two players take moves alternately. A move consists of switching the lights at the corners of a cuboid, i.e. (&lt;em&gt;x&lt;/em&gt;1,&lt;em&gt;y&lt;/em&gt;1,&lt;em&gt;z&lt;/em&gt;1), (&lt;em&gt;x&lt;/em&gt;1,&lt;em&gt;y&lt;/em&gt;1,&lt;em&gt;z&lt;/em&gt;2), (&lt;em&gt;x&lt;/em&gt;1,&lt;em&gt;y&lt;/em&gt;2,&lt;em&gt;z&lt;/em&gt;1), (&lt;em&gt;x&lt;/em&gt;1,&lt;em&gt;y&lt;/em&gt;2,&lt;em&gt;z&lt;/em&gt;2), (&lt;em&gt;x&lt;/em&gt;2,&lt;em&gt;y&lt;/em&gt;1,&lt;em&gt;z&lt;/em&gt;1), (&lt;em&gt;x&lt;/em&gt;2,&lt;em&gt;y&lt;/em&gt;1,&lt;em&gt;z&lt;/em&gt;2), (&lt;em&gt;x&lt;/em&gt;2,&lt;em&gt;y&lt;/em&gt;2,&lt;em&gt;z&lt;/em&gt;1), (&lt;em&gt;x&lt;/em&gt;2,&lt;em&gt;y&lt;/em&gt;2,&lt;em&gt;z&lt;/em&gt;2) where 1 ≤ &lt;em&gt;x&lt;/em&gt;1 ≤ &lt;em&gt;x&lt;/em&gt;2 ≤ 1000, 1 ≤&lt;em&gt;y&lt;/em&gt;1 ≤ &lt;em&gt;y&lt;/em&gt;2 ≤ 1000, 1 ≤&lt;em&gt;z&lt;/em&gt;1 ≤ &lt;em&gt;z&lt;/em&gt;2 ≤ 1000 and the light at the corner (&lt;em&gt;x&lt;/em&gt;2,&lt;em&gt;y&lt;/em&gt;2,&lt;em&gt;z&lt;/em&gt;2) must be on (and turned off after the move). Notice the cuboid is  possibly degenerated to a rectangle, a line or even a single cell so  that the player may also switching four, two or one besides eight lights in a move. The player loses the game when he can not take a move.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3404 Switch lights</title>
+      <link>http://localhost:1313/z/solution/30b31979099adc88/</link>
+      <pubDate>Wed, 15 Jul 2020 11:38:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/30b31979099adc88/</guid>
+      <description>&lt;h1 id=&#34;switch-lightshdu-3404&#34;&gt;Switch lights(&lt;a href=&#34;https://vjudge.net/problem/HDU-3404&#34;&gt;HDU-3404&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;lxhgww is playing a game with his computer Deep Blue.&#xA;The game is played on a matrix containing lights. At first, some  lights are on, while others are off. lxhgww and Deep Blue take turns to  switch the lights. For each step, the player should choose a rectangle  in the matrix: (x1 , y1) , (x1 , y2) , (x2 , y1) , (x2 , y2) ,  (x1&amp;lt;=x2,y1&amp;lt;=y2, the light at (x2, y2) should be on) and change the lights’ status on the four vertex of the rectangle, namely on to off,  and off to on. The player turns all the lights off wins the game. Notice the rectangle is possibly degenerated to line or even a single cell so  that the player may also switch two or one besides four lights in a  move.&#xA;Deep Blue&amp;rsquo;s strategy is perfect, if it has a chance to win, never  will it lose. Does lxhgww have a chance to win if he takes the first  step?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-3480 John</title>
+      <link>http://localhost:1313/z/solution/c331a7435e4d7434/</link>
+      <pubDate>Tue, 14 Jul 2020 18:50:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/c331a7435e4d7434/</guid>
+      <description>&lt;h1 id=&#34;johnpoj-3480&#34;&gt;John(&lt;a href=&#34;https://vjudge.net/problem/POJ-3480&#34;&gt;POJ-3480&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Little John is playing very funny  game with his younger brother. There is one big box filled with M&amp;amp;Ms of different colors. At first John has to eat several M&amp;amp;Ms of the  same color. Then his opponent has to make a turn. And so on. Please note that each player has to eat at least one M&amp;amp;M during his turn. If  John (or his brother) will eat the last M&amp;amp;M from the box he will be  considered as a looser and he will have to buy a new candy box.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2975 Nim</title>
+      <link>http://localhost:1313/z/solution/d3025254d8b6e1cb/</link>
+      <pubDate>Tue, 14 Jul 2020 17:31:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/d3025254d8b6e1cb/</guid>
+      <description>&lt;h1 id=&#34;nimpoj-2975&#34;&gt;Nim(&lt;a href=&#34;https://vjudge.net/problem/POJ-2975&#34;&gt;POJ-2975&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Nim is a  2-player game featuring several piles of stones. Players alternate  turns, and on his/her turn, a player’s move consists of removing &lt;em&gt;one or more stones&lt;/em&gt; from any single pile. Play ends when all the stones have been removed,  at which point the last player to have moved is declared the winner.  Given a position in Nim, your task is to determine how many winning  moves there are in that position.A position in Nim is called  “losing” if the first player to move from that position would lose if  both sides played perfectly. A “winning move,” then, is a move that  leaves the game in a losing position. There is a famous theorem that  classifies all losing positions. Suppose a Nim position contains &lt;em&gt;n&lt;/em&gt; piles having &lt;em&gt;k&lt;/em&gt;1, &lt;em&gt;k&lt;/em&gt;2, …, &lt;em&gt;kn&lt;/em&gt; stones respectively; in such a position, there are &lt;em&gt;k&lt;/em&gt;1 + &lt;em&gt;k&lt;/em&gt;2 + … + &lt;em&gt;kn&lt;/em&gt; possible moves. We write each &lt;em&gt;ki&lt;/em&gt; in binary (base 2). Then, the Nim position is losing if and only if, among all the &lt;em&gt;ki&lt;/em&gt;’s, there are an even number of 1’s in each digit position. In other words, the Nim position is losing if and only if the &lt;em&gt;xor&lt;/em&gt; of the &lt;em&gt;ki&lt;/em&gt;’s is 0.Consider the position with three piles given by &lt;em&gt;k&lt;/em&gt;1 = 7, &lt;em&gt;k&lt;/em&gt;2 = 11, and &lt;em&gt;k&lt;/em&gt;3 = 13. In binary, these values are as follows:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2960 S-Nim</title>
+      <link>http://localhost:1313/z/solution/2c1305a7d83bd756/</link>
+      <pubDate>Tue, 14 Jul 2020 13:01:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/2c1305a7d83bd756/</guid>
+      <description>&lt;h1 id=&#34;s-nimpoj-2960&#34;&gt;S-Nim(&lt;a href=&#34;https://vjudge.net/problem/POJ-2960&#34;&gt;POJ-2960&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Arthur and his sister Caroll have been playing a game called Nim for some time now. Nim is played as follows:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The starting position has a number of heaps, all containing some, not necessarily equal, number of beads.&lt;/li&gt;&#xA;&lt;li&gt;The players take turns chosing a heap and removing a positive number of beads from it.&lt;/li&gt;&#xA;&lt;li&gt;The first player not able to make a move, loses.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Arthur and Caroll really enjoyed playing this simple game until they&#xA;recently learned an easy way to always be able to find the best move:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2425 A Chess Game</title>
+      <link>http://localhost:1313/z/solution/58cf0cf93fa5f8c7/</link>
+      <pubDate>Tue, 14 Jul 2020 12:16:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/58cf0cf93fa5f8c7/</guid>
+      <description>&lt;h1 id=&#34;a-chess-gamepoj-2425&#34;&gt;A Chess Game(&lt;a href=&#34;https://vjudge.net/problem/POJ-2425&#34;&gt;POJ-2425&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s design a new chess game. There are N positions to hold M chesses  in this game. Multiple chesses can be located in the same position. The  positions are constituted as a topological graph, i.e. there are  directed edges connecting some positions, and no cycle exists. Two  players you and I move chesses alternately. In each turn the player  should move only one chess from the current position to one of its  out-positions along an edge. The game does not end, until one of the  players cannot move chess any more. If you cannot move any chess in your turn, you lose. Otherwise, if the misfortune falls on me&amp;hellip; I will  disturb the chesses and play it again.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2348 Euclid&#39;s Game</title>
+      <link>http://localhost:1313/z/solution/e4e9e382a582a902/</link>
+      <pubDate>Tue, 14 Jul 2020 11:16:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/e4e9e382a582a902/</guid>
+      <description>&lt;h1 id=&#34;euclids-gamepoj-2348&#34;&gt;Euclid&amp;rsquo;s Game(&lt;a href=&#34;https://vjudge.net/problem/POJ-2348&#34;&gt;POJ-2348&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Two players, Stan and Ollie, play, starting with two natural numbers.  Stan, the first player, subtracts any positive multiple of the lesser of the two numbers from the greater of the two numbers, provided that the  resulting number must be nonnegative. Then Ollie, the second player,  does the same with the two resulting numbers, then Stan, etc.,  alternately, until one player is able to subtract a multiple of the  lesser number from the greater to reach 0, and thereby wins. For  example, the players may start with (25,7):&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1848 Fibonacci again and again</title>
+      <link>http://localhost:1313/z/solution/87fb0756021b4dda/</link>
+      <pubDate>Mon, 13 Jul 2020 11:06:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/87fb0756021b4dda/</guid>
+      <description>&lt;h1 id=&#34;fibonacci-again-and-againhdu-1848&#34;&gt;Fibonacci again and again(&lt;a href=&#34;https://vjudge.net/problem/HDU-1848&#34;&gt;HDU-1848&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;任何一个大学生对菲波那契数列(Fibonacci numbers)应该都不会陌生，它是这样定义的：&#xA;F(1)=1;&#xA;F(2)=2;&#xA;F(n)=F(n-1)+F(n-2)(n&amp;gt;=3);&#xA;所以，1,2,3,5,8,13……就是菲波那契数列。&#xA;在HDOJ上有不少相关的题目，比如1005 Fibonacci again就是曾经的浙江省赛题。&#xA;今天，又一个关于Fibonacci的题目出现了，它是一个小游戏，定义如下：&#xA;1、 这是一个二人游戏;&#xA;2、 一共有3堆石子，数量分别是m, n, p个；&#xA;3、 两人轮流走;&#xA;4、 每走一步可以选择任意一堆石子，然后取走f个；&#xA;5、 f只能是菲波那契数列中的元素（即每次只能取1，2，3，5，8…等数量）；&#xA;6、 最先取光所有石子的人为胜者；&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2068 Nim</title>
+      <link>http://localhost:1313/z/solution/567b57a74cf05d73/</link>
+      <pubDate>Mon, 13 Jul 2020 10:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/567b57a74cf05d73/</guid>
+      <description>&lt;h1 id=&#34;nimpoj-2068&#34;&gt;Nim(&lt;a href=&#34;https://vjudge.net/problem/POJ-2068&#34;&gt;POJ-2068&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s play a traditional game Nim. You and I are seated across a table  and we have a hundred stones on the table (we know the number of stones  exactly). We play in turn and at each turn, you or I can remove on to  four stones from the heap. You play first and the one who removed the  last stone loses.&#xA;In this game, you have a winning strategy. To see this, you first  remove four stones and leave 96 stones. No matter how I play, I will end up with leaving 92 - 95 stones. Then you will in turn leave 91 stones  for me (verify this is always possible). This way, you can always leave  5k+1 stones for me and finally I get the last stone, sigh. If we  initially had 101 stones, on the other hand, I have a winning strategy  and you are doomed to lose.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2311 Cutting Game</title>
+      <link>http://localhost:1313/z/solution/0a2d6ccc86c03ede/</link>
+      <pubDate>Mon, 13 Jul 2020 09:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/0a2d6ccc86c03ede/</guid>
+      <description>&lt;h1 id=&#34;cutting-gamepoj-2311&#34;&gt;Cutting Game(&lt;a href=&#34;https://vjudge.net/problem/POJ-2311&#34;&gt;POJ-2311&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Urej loves to play various types of dull games. He usually asks other  people to play with him. He says that playing those games can show his  extraordinary wit. Recently Urej takes a great interest in a new game,  and Erif Nezorf becomes the victim. To get away from suffering playing  such a dull game, Erif Nezorf requests your help. The game uses a  rectangular paper that consists of W*H grids. Two players cut the paper  into two pieces of rectangular sections in turn. In each turn the player can cut either horizontally or vertically, keeping every grids  unbroken. After N turns the paper will be broken into N+1 pieces, and in the later turn the players can choose any piece to cut. If one player  cuts out a piece of paper with a single grid, he wins the game. If these two people are both quite clear, you should write a problem to tell  whether the one who cut first can win or not.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1704 Georgia and Bob</title>
+      <link>http://localhost:1313/z/solution/e05dbb0999e38849/</link>
+      <pubDate>Sun, 12 Jul 2020 10:16:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/e05dbb0999e38849/</guid>
+      <description>&lt;h1 id=&#34;georgia-and-bobpoj-1704&#34;&gt;Georgia and Bob(&lt;a href=&#34;https://vjudge.net/problem/POJ-1704&#34;&gt;POJ-1704&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Georgia and Bob decide to play a self-invented game. They draw a row of  grids on paper, number the grids from left to right by 1, 2, 3, &amp;hellip;, and place N chessmen on different grids, as shown in the following figure  for example:&#xA;&#xA;&#xA;&#xA;  &#xA;    &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://vj.z180.cn/c76b52797bb489f0387716c46010da41?v=1594466739&#34;&gt;&#xA;      &lt;img loading=&#34;lazy&#34; src=&#34;https://vj.z180.cn/c76b52797bb489f0387716c46010da41?v=1594466739&#34; alt=&#34;img&#34; class=&#34;fiximg-online&#34;&gt;&#xA;    &lt;/a&gt;&#xA;  &#xA;&#xA;&#xA;Georgia and Bob move the chessmen in turn. Every time a player will  choose a chessman, and move it to the left without going over any other  chessmen or across the left edge. The player can freely choose number of steps the chessman moves, with the constraint that the chessman must be moved at least ONE step and one grid can at most contains ONE single  chessman. The player who cannot make a move loses the game.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1740 A New Stone Game</title>
+      <link>http://localhost:1313/z/solution/cfa9607b5f5aba30/</link>
+      <pubDate>Sun, 12 Jul 2020 10:16:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/cfa9607b5f5aba30/</guid>
+      <description>&lt;h1 id=&#34;a-new-stone-gamepoj-1740&#34;&gt;A New Stone Game(&lt;a href=&#34;https://vjudge.net/problem/POJ-1740&#34;&gt;POJ-1740&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Alice and Bob decide to play a new stone game.At the beginning of the  game they pick n(1&amp;lt;=n&amp;lt;=10) piles of stones in a line. Alice and  Bob move the stones in turn.&#xA;At each step of the game,the player choose a pile,remove at least  one stones,then freely move stones from this pile to any other pile that still has stones.&#xA;For example:n=4 and the piles have (3,1,4,2) stones.If the player  chose the first pile and remove one.Then it can reach the follow states.&#xA;2 1 4 2&#xA;1 2 4 2（move one stone to Pile 2）&#xA;1 1 5 2（move one stone to Pile 3）&#xA;1 1 4 3（move one stone to Pile 4）&#xA;0 2 5 2（move one stone to Pile 2 and another one to Pile 3）&#xA;0 2 4 3（move one stone to Pile 2 and another one to Pile 4）&#xA;0 1 5 3（move one stone to Pile 3 and another one to Pile 4）&#xA;0 3 4 2（move two stones to Pile 2）&#xA;0 1 6 2（move two stones to Pile 3）&#xA;0 1 4 4（move two stones to Pile 4）&#xA;Alice always moves first. Suppose that both Alice and Bob do their best in the game.&#xA;You are to write a program to determine who will finally win the game.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1846 Brave Game</title>
+      <link>http://localhost:1313/z/solution/401abd3132fbd91f/</link>
+      <pubDate>Sun, 12 Jul 2020 00:35:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/401abd3132fbd91f/</guid>
+      <description>&lt;h1 id=&#34;brave-gamehdu-1846&#34;&gt;Brave Game(&lt;a href=&#34;https://vjudge.net/problem/HDU-1846&#34;&gt;HDU-1846&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;十年前读大学的时候，中国每年都要从国外引进一些电影大片，其中有一部电影就叫《勇敢者的游戏》（英文名称：Zathura），一直到现在，我依然对于电影中的部分电脑特技印象深刻。&#xA;今天，大家选择上机考试，就是一种勇敢（brave）的选择；这个短学期，我们讲的是博弈（game）专题；所以，大家现在玩的也是“勇敢者的游戏”，这也是我命名这个题目的原因。&#xA;当然，除了“勇敢”，我还希望看到“诚信”，无论考试成绩如何，希望看到的都是一个真实的结果，我也相信大家一定能做到的~&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1847 Good Luck in CET-4 Everybody!</title>
+      <link>http://localhost:1313/z/solution/1c76c0be3708c224/</link>
+      <pubDate>Sun, 12 Jul 2020 00:28:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/1c76c0be3708c224/</guid>
+      <description>&lt;h1 id=&#34;good-luck-in-cet-4-everybodyhdu-1847&#34;&gt;Good Luck in CET-4 Everybody!(&lt;a href=&#34;https://vjudge.net/problem/HDU-1847&#34;&gt;HDU-1847&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;大学英语四级考试就要来临了，你是不是在紧张的复习？也许紧张得连短学期的ACM都没工夫练习了，反正我知道的Kiki和Cici都是如此。当然，作为在考场浸润了十几载的当代大学生，Kiki和Cici更懂得考前的放松，所谓“张弛有道”就是这个意思。这不，Kiki和Cici在每天晚上休息之前都要玩一会儿扑克牌以放松神经。&#xA;“升级”？“双扣”？“红五”？还是“斗地主”？&#xA;当然都不是！那多俗啊~&#xA;作为计算机学院的学生，Kiki和Cici打牌的时候可没忘记专业，她们打牌的规则是这样的：&#xA;1、 总共n张牌;&#xA;2、 双方轮流抓牌；&#xA;3、 每人每次抓牌的个数只能是2的幂次（即：1，2，4，8，16…）&#xA;4、 抓完牌，胜负结果也出来了：最后抓完牌的人为胜者；&#xA;假设Kiki和Cici都是足够聪明（其实不用假设，哪有不聪明的学生~），并且每次都是Kiki先抓牌，请问谁能赢呢？&#xA;当然，打牌无论谁赢都问题不大，重要的是马上到来的CET-4能有好的状态。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1849 Rabbit and Grass</title>
+      <link>http://localhost:1313/z/solution/149d1e8cf3491dc7/</link>
+      <pubDate>Sat, 11 Jul 2020 22:05:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/149d1e8cf3491dc7/</guid>
+      <description>&lt;h1 id=&#34;rabbit-and-grasshdu-1849&#34;&gt;Rabbit and Grass(&lt;a href=&#34;https://vjudge.net/problem/HDU-1849&#34;&gt;HDU-1849&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;大学时光是浪漫的，女生是浪漫的，圣诞更是浪漫的，但是Rabbit和Grass这两个大学女生在今年的圣诞节却表现得一点都不浪漫：不去逛商场，不去逛公园，不去和AC男约会，两个人竟然猫在寝食下棋……&#xA;说是下棋，其实只是一个简单的小游戏而已，游戏的规则是这样的：&#xA;1、棋盘包含1*n个方格，方格从左到右分别编号为0，1，2，…，n-1；&#xA;2、m个棋子放在棋盘的方格上，方格可以为空，也可以放多于一个的棋子；&#xA;3、双方轮流走棋；&#xA;4、每一步可以选择任意一个棋子向左移动到任意的位置（可以多个棋子位于同一个方格），当然，任何棋子不能超出棋盘边界；&#xA;5、如果所有的棋子都位于最左边（即编号为0的位置），则游戏结束，并且规定最后走棋的一方为胜者。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1805 Being a Good Boy in Spring Festival</title>
+      <link>http://localhost:1313/z/solution/4749c95132726660/</link>
+      <pubDate>Sat, 11 Jul 2020 21:50:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/4749c95132726660/</guid>
+      <description>&lt;h1 id=&#34;being-a-good-boy-in-spring-festivalhdu-1805&#34;&gt;Being a Good Boy in Spring Festival(&lt;a href=&#34;https://vjudge.net/problem/HDU-1850&#34;&gt;HDU-1805&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;一年在外 父母时刻牵挂&#xA;春节回家 你能做几天好孩子吗&#xA;寒假里尝试做做下面的事情吧&lt;/p&gt;&#xA;&lt;p&gt;陪妈妈逛一次菜场&#xA;悄悄给爸爸买个小礼物&#xA;主动地 强烈地 要求洗一次碗&#xA;某一天早起 给爸妈用心地做回早餐&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2147 kiki&#39;s game</title>
+      <link>http://localhost:1313/z/solution/7fbc7960878dc635/</link>
+      <pubDate>Sat, 11 Jul 2020 21:02:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/7fbc7960878dc635/</guid>
+      <description>&lt;h1 id=&#34;kikis-gamehdu-2147&#34;&gt;kiki&amp;rsquo;s game(&lt;a href=&#34;https://vjudge.net/problem/HDU-2147&#34;&gt;HDU-2147&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Recently kiki has nothing to do. While she is bored, an idea appears in  his mind, she just playes the checkerboard game.The size of the  chesserboard is n*m.First of all, a coin is placed in the top right  corner(1,m). Each time one people can move the coin into the left, the  underneath or the left-underneath blank space.The person who can&amp;rsquo;t make a move will lose the game. kiki plays it with ZZ.The game always starts  with kiki. If both play perfectly, who will win the game?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-2149 Public Sale</title>
+      <link>http://localhost:1313/z/solution/07924860204bf24b/</link>
+      <pubDate>Sat, 11 Jul 2020 20:47:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/07924860204bf24b/</guid>
+      <description>&lt;h1 id=&#34;public-salehdu-2149&#34;&gt;Public Sale(&lt;a href=&#34;https://vjudge.net/problem/HDU-2149&#34;&gt;HDU-2149&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;虽然不想，但是现实总归是现实，Lele始终没有逃过退学的命运，因为他没有拿到奖学金。现在等待他的，就是像FarmJohn一样的农田生涯。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2505 A multiplication game</title>
+      <link>http://localhost:1313/z/solution/d06ce34ae44f7cfe/</link>
+      <pubDate>Thu, 09 Jul 2020 19:42:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/d06ce34ae44f7cfe/</guid>
+      <description>&lt;h1 id=&#34;a-multiplication-gamepoj-2505&#34;&gt;A multiplication game(&lt;a href=&#34;https://vjudge.net/problem/POJ-2505&#34;&gt;POJ-2505&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Stan and Ollie play the game of multiplication by multiplying an integer p by one of the numbers 2 to 9. Stan always starts with p = 1, does his multiplication, then Ollie multiplies the number, then Stan and so on.  Before a game starts, they draw an integer 1 &amp;lt; n &amp;lt; 4294967295 and  the winner is who first reaches p &amp;gt;= n.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each line of input contains one integer number n.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2484 A Funny Game</title>
+      <link>http://localhost:1313/z/solution/dceaba313d3295ba/</link>
+      <pubDate>Thu, 09 Jul 2020 17:45:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/dceaba313d3295ba/</guid>
+      <description>&lt;h1 id=&#34;a-funny-gamepoj-2484&#34;&gt;A Funny Game(&lt;a href=&#34;https://vjudge.net/problem/POJ-2484&#34;&gt;POJ-2484&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Alice and Bob decide to play a funny game. At the beginning of the game they pick n(1 &amp;lt;= n &amp;lt;= 106) coins in a circle, as Figure 1 shows. A move consists in removing one  or two adjacent coins, leaving all other coins untouched. At least one  coin must be removed. Players alternate moves with Alice starting. The  player that removes the last coin wins. (The last player to move wins.  If you can&amp;rsquo;t move, you lose.)&#xA;&#xA;&#xA;&#xA;  &#xA;    &lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://vj.z180.cn/1b9c20b33d7865ca00f61de4bf4fb1d1?v=1593928809&#34;&gt;&#xA;      &lt;img loading=&#34;lazy&#34; src=&#34;https://vj.z180.cn/1b9c20b33d7865ca00f61de4bf4fb1d1?v=1593928809&#34; alt=&#34;Figure 1&#34; class=&#34;fiximg-online&#34;&gt;&#xA;    &lt;/a&gt;&#xA;  &#xA;&#xA;&#xA;&lt;strong&gt;Note&lt;/strong&gt;: For n &amp;gt; 3, we use c1, c2, &amp;hellip;, cn to denote the  coins clockwise and if Alice remove c2, then c1 and c3 are NOT adjacent! (Because there is an empty place between c1 and c3.)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2234 Matches Game</title>
+      <link>http://localhost:1313/z/solution/0751a29a685c5459/</link>
+      <pubDate>Thu, 09 Jul 2020 17:16:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/0751a29a685c5459/</guid>
+      <description>&lt;h1 id=&#34;matches-gamepoj-2234&#34;&gt;Matches Game(&lt;a href=&#34;https://vjudge.net/problem/POJ-2234&#34;&gt;POJ-2234&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Here is a simple game. In this game, there are several piles of matches  and two players. The two player play in turn. In each turn, one can  choose a pile and take away arbitrary number of matches from the pile  (Of course the number of matches, which is taken away, cannot be zero  and cannot be larger than the number of matches in the chosen pile). If  after a player’s turn, there is no match left, the player is the winner. Suppose that the two players are all very clear. Your job is to tell  whether the player who plays first can win the game or not.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1527 取石子游戏</title>
+      <link>http://localhost:1313/z/solution/0096d7f5d39be617/</link>
+      <pubDate>Thu, 09 Jul 2020 16:35:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/0096d7f5d39be617/</guid>
+      <description>&lt;h1 id=&#34;取石子游戏hdu-1527&#34;&gt;取石子游戏(&lt;a href=&#34;https://vjudge.net/problem/HDU-1527&#34;&gt;HDU-1527&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;有两堆石子，数量任意，可以不同。游戏开始由两个人轮流取石子。游戏规定，每次有两种不同的取法，一是可以在任意的一堆中取走任意多的石子；二是可以在两堆中同时取走相同数量的石子。最后把石子全部取完者为胜者。现在给出初始的两堆石子的数目，如果轮到你先取，假设双方都采取最好的策略，问最后你是胜者还是败者。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1067 取石子游戏</title>
+      <link>http://localhost:1313/z/solution/bb500cf1542b2b06/</link>
+      <pubDate>Thu, 09 Jul 2020 16:35:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/bb500cf1542b2b06/</guid>
+      <description>&lt;h1 id=&#34;取石子游戏poj-1067&#34;&gt;取石子游戏(&lt;a href=&#34;https://vjudge.net/problem/POJ-1067&#34;&gt;POJ-1067&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;有两堆石子，数量任意，可以不同。游戏开始由两个人轮流取石子。游戏规定，每次有两种不同的取法，一是可以在任意的一堆中取走任意多的石子；二是可以在两堆中同时取走相同数量的石子。最后把石子全部取完者为胜者。现在给出初始的两堆石子的数目，如果轮到你先取，假设双方都采取最好的策略，问最后你是胜者还是败者。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fibonacci博弈</title>
+      <link>http://localhost:1313/z/algo/ee3ddd3d0d64d1e8/</link>
+      <pubDate>Thu, 18 Jun 2020 17:40:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/ee3ddd3d0d64d1e8/</guid>
+      <description>&lt;h1 id=&#34;fibonacci博弈&#34;&gt;Fibonacci博弈&lt;/h1&gt;&#xA;&lt;p&gt;基本的斐波那契博弈（Fibonacci Game）描述如下：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;有一堆数量多于一的物品，两人轮流取走物品，第一次至少取一个，但不能取完，从第二次开始每个人最少取一个，最多取对手上次取的两倍。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wythoff博弈</title>
+      <link>http://localhost:1313/z/algo/872bcae11a67f2fa/</link>
+      <pubDate>Wed, 17 Jun 2020 17:40:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/872bcae11a67f2fa/</guid>
+      <description>&lt;h2 id=&#34;wythoff博弈&#34;&gt;Wythoff博弈&lt;/h2&gt;&#xA;&lt;p&gt;基本的威佐夫博弈（Wythoff Game）描述如下：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;有两堆各若干个物品，两个人轮流从某一堆或同时从两堆中取同样多的物品，每次至少取一个，多者不限，最后取光者得胜。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bash博弈</title>
+      <link>http://localhost:1313/z/algo/3a30f522610343ae/</link>
+      <pubDate>Mon, 15 Jun 2020 17:40:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/3a30f522610343ae/</guid>
+      <description>&lt;h1 id=&#34;bash博奕&#34;&gt;Bash博奕&lt;/h1&gt;&#xA;&lt;p&gt;基本的巴什博弈（Bash Game）描述如下：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;有一堆n个物品，两人轮流取走物品，每次至少取一个，最多取m个，最后取光者获胜。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;博弈过程如下：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;如果n&amp;lt;m，那么先手可以一次取完。先手必胜。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nim博弈</title>
+      <link>http://localhost:1313/z/algo/b3f72d320d8d4e65/</link>
+      <pubDate>Sun, 14 Jun 2020 17:40:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/b3f72d320d8d4e65/</guid>
+      <description>&lt;h1 id=&#34;nim博弈&#34;&gt;Nim博弈&lt;/h1&gt;&#xA;&lt;p&gt;基本的尼姆博弈（Nim Game）描述如下：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;有若干堆各若干个物品，两个人轮流从某一堆取任意多的物品，每次至少取一个，多者不限，最后取光者得胜。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;博弈过程如下：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SG函数</title>
+      <link>http://localhost:1313/z/algo/671a581fd4a227f6/</link>
+      <pubDate>Mon, 08 Jun 2020 22:00:54 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/671a581fd4a227f6/</guid>
+      <description>&lt;h1 id=&#34;公平组合游戏&#34;&gt;公平组合游戏&lt;/h1&gt;&#xA;&lt;p&gt;公平组合游戏（Impartial Combinatorial Games）简称ICG，大致定义如下：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;游戏有2名选手&lt;/li&gt;&#xA;&lt;li&gt;对于游戏任何一种可能的局面（position），合法的操作集合只取决于这个局面本身&lt;/li&gt;&#xA;&lt;li&gt;选手轮流操作（move），且只能在合法操作集合中选择&lt;/li&gt;&#xA;&lt;li&gt;在游戏出于某状态，当前选手合法操作集合为空时判负，游戏结束&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;details&gt;&#xA;    &lt;summary&gt;查看解析&lt;/summary&gt;&#xA;    &lt;p&gt;一个公平游戏可以抽象地用一个有向无环图来表示，这个图中每个点都对应一个状态，每条有向边代表从一个状态到另一个状态的合法操作。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cmd on 似水</title>
+    <link>http://localhost:1313/tags/cmd/</link>
+    <description>Recent content in Cmd on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cmd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cmd</title>
+      <link>http://localhost:1313/z/script/cmd/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/script/cmd/</guid>
+      <description>&lt;h1 id=&#34;dp0&#34;&gt;dp0&lt;/h1&gt;&#xA;&lt;p&gt;路径通过 %~dp0 来动态获取当前脚本所在的路径&lt;/p&gt;&#xA;&lt;h1 id=&#34;创建链接&#34;&gt;创建链接&lt;/h1&gt;&#xA;&lt;p&gt;硬链接，符号链接：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;指向 文件的实际数据（inode），不是路径。&lt;/li&gt;&#xA;&lt;li&gt;多个硬链接指向同一个文件内容，共享同一个 inode。&lt;/li&gt;&#xA;&lt;li&gt;删除原文件名不会影响其他硬链接，文件实际内容直到所有硬链接被删除才会释放。&lt;/li&gt;&#xA;&lt;li&gt;只能在同一个文件系统（分区）中创建。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;软链接：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

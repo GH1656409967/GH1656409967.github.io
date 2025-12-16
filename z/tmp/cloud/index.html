@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" data-theme="light">
+<head>
+    <script>
+        (function () {
+            const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = localStorage.getItem('n8rain-theme') || (prefers ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | 似水</title>
+    <link rel="stylesheet" href="/css/index.min.dec23d3721889f6543816a1c07a479a53dbcf86a9b0d6a9f6e8a31b397487b97.css" integrity="sha256-3sI9NyGIn2VDgWocB6R5pT28&#43;GqbDWqfbooxs5dIe5c=" />
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" id="chroma-light" href="/css/chroma-light.css">
+    <link rel="stylesheet" id="chroma-dark"  href="/css/chroma-dark.css">
+    <script>
+        (function () {
+            const isDark = document.documentElement.dataset.theme === 'dark';
+            document.getElementById('chroma-light').disabled = isDark;
+            document.getElementById('chroma-dark').disabled = !isDark;
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a class="item" href="/" target="_blank">「似水」</a>
+        </div>
+
+        <div class="header-middle">
+            
+        </div>
+
+        <div class="header-right">
+            <a id="reset-layout" class="item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 80V240h96V80H48zM0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V240c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80zM304 272V432h96V272H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V272zM144 368H48v64h96V368zM48 320h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48zM304 80v64h96V80H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V80z"></path></svg></a>
+            <a id="toggle-theme" class="item">◐</a>
+        </div>
+    </header>
+    <main class="container" id="container">
+        <div class="content" id="nav">
+            <nav class="menu">
+                <ul>
+                    <li><i class='fa fa-tags'>&nbsp;</i><a>网站导航</a></li>
+                    <li><i class='fa fa-thumbs-up'>&nbsp;</i><a href="/x/share/">好物分享</a></li>
+                    <li><i class='fa fa-wrench'>&nbsp;</i><a href="/x/tools/">游戏工具</a></li>
+                    <li><i class='fa fa-film'>&nbsp;</i><a href="/x/movies/">影视鉴赏</a></li>
+                    <li><i class='fa fa-book'>&nbsp;</i><a href="/x/books/">书籍阅读</a></li>
+                    <li><i class='fa fa-camera'>&nbsp;</i><a href="/x/gallery/">生活留影</a></li>
+                    <li><i class='fa fa-link'>&nbsp;</i><a href="/x/links/">友情链接</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="overview" id="overview" style="display: none;">
+            <div class="overview-container">
+                <div class="author-block">
+                    <img class="author-avatar" src="/img/avatar.png" alt="夜雨微澜" />
+                    
+                    <a class="author-name" href="/x/personal">夜雨微澜</a><p class="author-slogan">学而不思则罔，思而不学则殆</p>
+                </div>
+
+                <div class="site-state">
+                    <div class="item">
+                        <a href="/archives/">
+                            <span class="count">660</span>
+                            <span class="name">日志</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/series/">
+                            <span class="count">8</span>
+                            <span class="name">系列</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/categories/">
+                            <span class="count">93</span>
+                            <span class="name">分类</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/tags/">
+                            <span class="count">171</span>
+                            <span class="name">标签</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="diy-block">
+                    <canvas id="canvasDiyBlock" style="width:180px;">您的浏览器不支持 Canvas, 请更换浏览器!</canvas>
+                </div>
+
+                <div class="diy-block">
+                    <div id="typed-strings" style="display: none;">
+                        <p>We burn faster than light</p>
+                        <p>Shine across in the night sky</p>
+                    </div>
+                    <span id="typed" style="white-space: pre;line-height: 14px;font-size: 12px;"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="article-content">
+            <article class="main" id="top">
+                <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time>
+                <html>
+<head>
+<meta charset="utf-8"/>
+<link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<style>
+            body {
+                font-family: 'Ubuntu Mono', 'LXGW WenKai Screen', sans-serif;
+            }
+
+            strong {
+                color: rgb(48, 79, 254);
+            }
+
+            .code1 {
+                background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(27, 31, 35, 0.05);
+                padding: 2px 4px;
+                border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                font-family: Consolas;
+                word-break: break-all;
+                color: rgb(100, 149, 237);
+            }
+
+            .code2 {
+                background-color: rgba(27, 31, 35, 0.05);
+                margin: 0px 2px;
+                padding: 2px 4px;
+                border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                overflow-wrap: break-word;
+                font-family: Consolas;
+                word-break: break-all;
+                color: rgb(100, 149, 237);
+                background-position: left top;
+            }
+
+            .pre1 {
+                border-radius: 5px;
+                box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;
+            }
+
+            .q1 {
+                color: rgb(65, 105, 225);
+            }
+
+            .img1 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bq1 {
+                border-top: 3px none rgba(0, 0, 0, 0.4);
+                border-bottom: 3px none rgba(0, 0, 0, 0.4);
+                border-right: 3px none rgba(0, 0, 0, 0.4);
+                background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(227, 242, 253);
+                overflow: auto;
+                padding: 15px 20px;
+                border-left-color: rgb(100, 149, 237);
+            }
+
+        </style>
+</head>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>2. 微服务和单体的区别与优势是什么？</span></span></h3>
+<figure class="img1"><span><img _width="677px" data-index="5" data-src="../img/cloud_001_0f061ffe.png" data-w="874" src="../img/cloud_001_0f061ffe.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>所有功能模块（如用户管理、订单处理、支付等）集中在一个单一的代码库中，编译为一个可执行文件或服务，共享同一个数据库和资源。单体架构适合业务简单、团队小的场景，优势是开发效率高、性能好，不过随着随着业务增长，代码库臃肿，维护会变的更困难，而且任何修改都可能影响全局，回归测试成本高。</span>
+</li>
+<li>
+<span>将应用拆分为多个独立的、松耦合的小型服务，每个服务专注于单一业务功能，拥有独立的代码库、数据库和进程，通过API（如REST或gRPC）通信。微服务通过解耦服务实现灵活扩展和独立部署，但复杂度高，适合大型系统（如电商平台、社交网络）。</span>
+</li>
+</ul>
+<h3><span class="q1">Zookeeper怎么用的？知道ZAB协议吗？</span></h3>
+<p>z a b 这个协议我是没有了解过，在我这个项目里面我就是拿它来做，就是做一个注册中心，把它具体的那个 port 和具体的 service 注册在这个 Zookeeper上面。因为我是自己去实现路由层的这一块的，所以我的只是去注册了一个监听事件，然后把 zookeeper 上面如果产生了更新数据的话，我就把这个节点给拉下来，然后更新我的路由层里面的这个缓存数据。</p>
+<p>追问：就说你现在这个监听是怎么实现的</p>
+<p>答：监听就是用一个 Listener的，然后就去就是它有一个 ZK client，就是在 Java 里面是有一个客户端，然后可以写一个 update 事件，如果有产生 update 事件，它就会感应到这事件，就发到我们的 listener 那里去做具体的handle。然后具体怎么感应啊？我觉得我猜一下，我不是很确定这一块就是zookeeper，他可能会，嗯，发一下自己最新的这个数据，如果他产生更新的话，他就发一下到他注册的这一块，这是一个推送的方式，要么就是我们自己轮询的去拉，就这两种方式。我猜。</p>
+<h3><span class="q1">刚才讲到推拉，那微博怎么做feed流的？（追问答得很差）</span></h3>
+<p>推拉结合是很经典的。</p>
+<p>推的话，就是相当于说我们会每次发送一条动态的时候，把这条动态给送到所有的粉丝的信箱里面去，然后粉丝在上线的时候，他就去看查看他的这个信箱</p>
+<p>拉的话就是粉丝他自主的去那个他关注了 up 主那里，把他的动态给拉过来。</p>
+<p>这个是，但是这种就会有个问题，像是微博大 v 的那种场景，假如说他要给他所有的粉丝给发消息的话，就是会有很大的这个存储的压力，会耗很多空间，因为他要发很多条消息给他所有的这个粉丝的信箱里面去。</p>
+<p>嗯，那所以说微博它就采用了一种推拉结合的方式去识别一下哪一些是活跃粉丝，哪一些是非活跃粉丝。然后具体而言，我不知道微博的算法是怎么样，但是我觉得他可以从两个方面来看，一个就是他最近一次的上线时间，如果他很久没上线的话，比如说他一个星期以上没有上线了，那我就认为他是一个非活跃粉丝，那就不发给他了。那如果说而另外一个方法就是看这个他查看的次数，当然这个就要去记录一下这个粉丝查看的历史记录了，可能就会其实也不是很复杂，就是一个计数器而已，然后就去判断他是不是一个活跃粉丝，如果是僵尸粉的话，就让僵尸粉想要看的时候自己来拉就好了。</p>
+<p>【开始答不好了】</p>
+<p>追问：那你刚刚你有说到就是说储存压力，对吧？嗯，就相当于说他可能推的时候会有很多很大的储存压力。对对对，那什么时候应该用拉呢？</p>
+<p>答：每一个 up 主他的粉丝量不能太多，如果他太多的话用推就会不合适，然后让每个粉丝自己来拉，就会这个存储压力就非常小</p>
+<p>追问：你觉得推跟拉的优势是什么？</p>
+<p>答：拉的优势就是实现很简单，就是你想看的时候自己去获取就好了。那推的优势我觉得就是可以保证他这个每个粉丝他不用自主的去，自主地去原始的那个信箱拉数据，他只要上线就可以看到那个小红点。</p>
+<h3><span class="q1">一致性怎么做的？</span></h3>
+<p>一致性的方法其实就是有一个强一致性和最终一致性。然后像我简历里面之前写的那个使用Seata，它就是用强一致性来执行的，就是说有一个两阶段提交，需要我讲两阶段提交吗？（不用）这是一种实现方法。</p>
+<p>嗯，然后像RabbitMQ，它其实就是借助消息队列来实现一个弱一致性。最终一致性。嗯，就是像我们这个场景，就是你发送一个信息过来，然后我会把它发到一个延时队列里面去，就是说这个队列它是会计时的，比如说我们下一个订单你还没有付款，我这个定这个队列就开始计时，如果超过时间还没有付款的话就会放到一个死信队列里面去，然后这个死信队列就会最终去恢复对应我们一开始扣减的库存，这就是实现它最终一致性的方法。</p>
+<h3><span class="q1">分布式 ID 这里有哪些方案？你之前有调研过，你可以说一下吗？</span></h3>
+<p>分布式 ID 它其实有很多种方案，首先就是基于数据库的，是他自增的ID。然后还有像数据库本身有一个号段，但这两种方式都是很容易被其他人比如说猜到我们的业务具体数据量是有多少的，所以一般是不用这种比较简单实现的方案的。</p>
+<p>然后还有一些其他的，像 Snowflake 是 Twitter 推出的，应该是就是它会有一个 worker ID，一个时间戳，还有一个随机数，就是来设置这个 worker ID，就是对应的机器生成的机器来设置这个ID。</p>
+<p>然后还有一种方法就是 UUID 了，但 UID 它就是无序性更强，而且它很长，不适合存在我们的数据库里面。</p>
+<p>然后像我们这个项目里面使用的就是美团的leaf，然后美团 leaf它也有两种模式，一种是号段模式，然后另外一种它也是基于 Snowflake 的，然后我们具体是用 Snowflake 的这种方案，因为为什么呢？号段它其实虽然说美团它是做了一个双号段的 buffer 模式，但仍然是会存在刚才我们说的那种被别人猜到业务量的问题，所以还是选择了 Snowflake 这种方式。然后 Snowflake 美团它是使用了一个弱依赖于 zookeeper 的方式来解决 Snowflake 原先会存在的一个时钟不一致的问题。（一时没想起时钟回退这个词）就大概是这几种方案。</p>
+<h3><span class="q1">挑一个项目讲项目难点</span></h3>
+<p>没讲好，想讲多机并发的，但是后面扯到用MQ，把自己给绕晕了，发现MQ不是用来解决抢分布式锁的竞争问题的</p>
+<h3><span class="q1">【分布式协议】Raft和Paxos怎么学的？</span></h3>
+<p>看论文学的，Simple的那篇</p>
+<h3><span class="q1">【分布式协议】Raft和Paxos的工程实现有了解吗？</span></h3>
+<p>我感觉现在大部分的这一种，这种类似于选举的这种方案，还有维护多机的，像Redis，还有 MySQL 多机，他们其实用的基本上都是这种选举还有 vote 的方法。</p>
+<h3><span class="q1">【分布式协议】Raft 他什么时候他不可用？</span></h3>
+<p>选举的时候不可用</p>
+<h3><span class="q1">【分布式协议】Paxos有这个问题吗？</span></h3>
+<p>Paxos没有选举，是对单值一致性投票。（我不确定，瞎说的）</p>
+<p>追问：有没有不可用的时间？没了解过</p>
+<h3><span class="q1">【网络安全】XSS和CSRF讲一下</span></h3>
+<p>XSS就是脚本攻击，跨站脚本攻击，然后 CSRF 是跨站请求攻击。</p>
+<p>然后像跨端请求攻击，它主要就是会因为我们基本一般的那种实现认证的方式都是带个cookie，然后他可能就会拿着我们这个 cookie 然后去做一些事情。然后或者是他会导向外站的一个钓鱼网站之类的，然后这个解决方式就有两种，一种是去它的 header 设置一个referer，就是它是从哪一个来源来的，然后第二个就是禁止它导向外链。像我们现在经常设置的就是如果你要导向其它的链接，我就会给你一个提示，相当于把这个风险给转嫁了，如果你自愿过去，那就是你的问题。</p>
+<p>然后 XSS 攻击是就是跨站脚本攻击，可能就是在我们的 HTML 里面插入一些，插入一些病毒或者是什么，就是改掉我们原始的 HTML 文件。但这个通常是出现于像是用户论坛或者是评价这种用户可以自己发数据上去的地方。那解决这个方法也是首先是要去过滤一下用户他发的信息，去识别一些敏感的字，比如说像 Javascript 这样子的敏感的关键词。还有去做一个就是纯前端渲染的过程，那它存的时候去后端去做校验，然后再在前端只是去拿数据，然后把它渲染出来而已。</p>
+<h3><span class="q1">【网络安全】SQL注入说一下</span></h3>
+<p>知道。SQL注入就是...（面试官打断了：那就不用了，下一个）</p>
+<h3 style="margin: 1.2em 0px 15px;padding: 0px;"><span style="color: rgb(65, 105, 225);text-align: left;"><span>分布式事务的解决方案你知道哪些？</span></span></h3>
+<table style="display: table;text-align: left;">
+<thead>
+<tr>
+<th style="text-align: left;background-color: rgb(240, 240, 240);border: 1px solid rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;background-position: left top;"><strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>方案</span></strong></th>
+<th style="text-align: left;background-color: rgb(240, 240, 240);border: 1px solid rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;background-position: left top;"><strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>一致性</span></strong></th>
+<th style="text-align: left;background-color: rgb(240, 240, 240);border: 1px solid rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;background-position: left top;"><strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>性能</span></strong></th>
+<th style="text-align: left;background-color: rgb(240, 240, 240);border: 1px solid rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;background-position: left top;"><strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>复杂度</span></strong></th>
+<th style="text-align: left;background-color: rgb(240, 240, 240);border: 1px solid rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;background-position: left top;"><strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>适用场景</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>2PC</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>强一致性</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>低</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>中</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>传统数据库、XA协议</span>
+</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position: left top;">
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>3PC</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>强一致性</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>中低</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>高</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>需减少阻塞的强一致场景</span>
+</td>
+</tr>
+<tr>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>TCC</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>最终一致性</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>高</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>高</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>高并发业务（支付、库存）</span>
+</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position: left top;">
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>Saga</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>最终一致性</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>中</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>高</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>长事务、跨服务流程</span>
+</td>
+</tr>
+<tr>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>消息队列</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>最终一致性</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>高</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>中</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>事件驱动架构</span>
+</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position: left top;">
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>本地消息表</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>最终一致性</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>中</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>低</span>
+</td>
+<td style="padding: 5px 10px;min-width: 85px;border: 1px solid rgba(204, 204, 204, 0.4);">
+<span>异步通知（订单-积分）</span>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<span>两阶段提交协议（2PC）：为准备阶段和提交阶段。准备阶段，协调者向参与者发送准备请求，参与者执行事务操作并反馈结果。若所有参与者准备就绪，协调者在提交阶段发送提交请求，参与者执行提交；否则发送回滚请求。实现简单，能保证事务强一致性。存在单点故障，协调者故障会影响事务流程；性能低，多次消息交互增加延迟；资源锁导致资源长时间占用，降低并发性能。适用于对数据一致性要求高、并发度低的场景，如金融系统转账业务。</span>
+</li>
+<li>
+<span>三阶段提交协议（3PC）：在 2PC 基础上，将准备阶段拆分为询问阶段和准备阶段，形成询问、准备和提交三个阶段。询问阶段协调者询问参与者能否执行事务，后续阶段与 2PC 类似。降低参与者阻塞时间，提高并发性能，引入超时机制一定程度解决单点故障问题。无法完全避免数据不一致，极端网络情况下可能出现部分提交部分回滚。用于对并发性能有要求、对数据一致性要求相对较低的场景。</span>
+</li>
+<li>
+<span>TCC：将业务操作拆分为 Try、Confirm、Cancel 三个阶段。Try 阶段预留业务资源，Confirm 阶段确认资源完成业务操作，Cancel 阶段在失败时释放资源回滚操作。可根据业务场景定制开发，性能较高，减少资源占用时间。开发成本高，需实现三个方法，要处理异常和补偿逻辑，实现复杂度大。适用于对性能要求高、业务逻辑复杂的场景，如电商系统订单处理、库存管理。</span>
+</li>
+<li>
+<span>Saga：将长事务拆分为多个短事务，每个短事务有对应的补偿事务。某个短事务失败，按相反顺序执行补偿事务回滚系统状态。性能较高，短事务可并行执行减少时间，对业务侵入性小，只需实现补偿事务。只能保证最终一致性，部分补偿事务失败可能导致系统状态不一致。适用于业务流程长、对数据一致性要求为最终一致性的场景，如旅游系统订单、航班、酒店预订。</span>
+</li>
+<li>
+<span>可靠消息最终一致性方案：基于消息队列，业务系统执行本地事务时将业务操作封装成消息发至消息队列，下游系统消费消息并执行操作，失败则消息队列重试。实现简单，对业务代码修改小，系统耦合度低，能保证数据最终一致性。消息队列可靠性和性能影响大，可能出现消息丢失或延迟，需处理消息幂等性。适用于对数据一致性要求为最终一致性、系统耦合度低的场景，如电商订单支付、库存扣减。</span>
+</li>
+<li>
+<span>本地消息表：业务与消息存储在同一个数据库，利用本地事务保证一致性，后台任务轮询消息表，通过MQ通知下游服务，下游服务消费成功后确认消息，失败则重试。简单可靠，无外部依赖。消息可能重复消费，需幂等设计。适用场景是异步最终一致性（如订单创建后通知积分服务）。</span>
+</li>
+</ul>
+<h3 style="margin: 1.2em 0px 15px;padding: 0px;"><span style="color: rgb(65, 105, 225);text-align: left;"><span>阿里的seata框架了解过吗？</span></span></h3>
+<p style="text-align: left;"><span>Seata 是开源分布式事务解决方案，支持多种模式：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>AT模式</span></strong><span>：是 Seata 默认的模式，基于支持本地 ACID 事务的关系型数据库。在 AT 模式下，Seata 会自动生成回滚日志，在业务 SQL 执行前后分别记录数据的快照。当全局事务需要回滚时，根据回滚日志将数据恢复到事务开始前的状态。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>TCC模式</span></strong><span>：需要开发者手动编写 Try、Confirm 和 Cancel 三个方法。Try 方法用于对业务资源进行预留，Confirm 方法用于确认资源并完成业务操作，Cancel 方法用于在业务执行失败时释放预留的资源。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>SAGA 模式</span></strong><span>：将一个长事务拆分为多个短事务，每个短事务都有一个对应的补偿事务。当某个短事务执行失败时，会按照相反的顺序执行之前所有短事务的补偿事务，将系统状态回滚到初始状态。</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>7. 分布式的 cap理论说一下？</span></span></h3>
+<p style="text-align: left;"><span>CAP 原则又称 CAP 定理, 指的是在一个分布式系统中, Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性）, </span><strong><span>三者不可得兼</span></strong></p>
+<figure class="img1"><span><img _width="677px" alt="img" data-index="10" data-src="../img/cloud_002_2287b9be.png" data-w="1080" src="../img/cloud_002_2287b9be.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span>
+<figcaption style="font-family: PingFangSC-Light;color: rgb(136, 136, 136);text-align: center;&lt;br&gt;"><span>img</span></figcaption>
+</figure>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>一致性(C) :</span></strong><span> 在分布式系统中的所有数据备份, 在同一时刻是否同样的值(等同于所有节点访问同一份最新的数据副本)</span>
+</li>
+<li>
+<strong><span>可用性(A):</span></strong><span> 在集群中一部分节点故障后, 集群整体是否还能响应客户端的读写请求(对数据更新具备高可用性)</span>
+</li>
+<li>
+<strong><span>分区容忍性(P):</span></strong><span> 以实际效果而言, 分区相当于对通信的时限要求. 系统如果不能在时限内达成数据一致性, 就意味着发生了分区的情况, 必须就当前操作在 C 和 A 之间做出选择</span>
+</li>
+</ul>
+<h3><span class="q1">分布式锁除了redisson，还能怎么实现？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+<strong>基于MySQL：</strong>通过 for update 排他锁，对特定数据记录加排他锁。我们可以当做查询到数据时，则获取到分布式锁，接下来执行方法中的逻辑。在方法执行完毕后，提交事务，锁会自动释放。
+        </li>
+<li>
+<strong>基于 ZooKeeper</strong>：利用临时顺序节点来实现分布式锁的获取和释放。
+        </li>
+</ul>
+<h3><span class="q1">zookerper实现分布式锁和redisson实现分布式的区别？</span></h3>
+<p>zookerper 实现的分布式锁是强一致性的，<strong>因为它底层的 ZAB协议(原子广播协议), 天然满足 CP，</strong>但是这也意味着性能的下降, 所以不站在具体数据下看 Redis 和 Zookeeper, 代表着性能和一致性的取舍</p>
+<p>如果项目没有强依赖 ZK, 使用 Redis 就好了, 因为现在 Redis 用途很广, 大部分项目中都引用了 Redis，没必要对此再引入一个新的组件, 如果业务场景对于 Redis 异步方式的同步数据造成锁丢失无法忍受, 在业务层处理就好了</p>
+<h3><span class="q1">cap是啥？</span></h3>
+<p>CAP 原则又称 CAP 定理, 指的是在一个分布式系统中,  Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性）, <strong>三者不可得兼</strong></p>
+<figure class="img1"><img _width="677px" data-index="7" data-src="../img/cloud_003_476b3257.png" data-w="1080" src="../img/cloud_003_476b3257.png" style="height: auto !important;  width: 656.984px !important;"/></figure>
+<ul class="list-paddingleft-1">
+<li>
+<strong>一致性(C) :</strong> 在分布式系统中的所有数据备份, 在同一时刻是否同样的值(等同于所有节点访问同一份最新的数据副本)
+        </li>
+<li>
+<strong>可用性(A):</strong> 在集群中一部分节点故障后, 集群整体是否还能响应客户端的读写请求(对数据更新具备高可用性)
+        </li>
+<li>
+<strong>分区容忍性(P):</strong> 以实际效果而言, 分区相当于对通信的时限要求. 系统如果不能在时限内达成数据一致性, 就意味着发生了分区的情况, 必须就当前操作在 C 和 A 之间做出选择
+        </li>
+</ul>
+<h3><span class="q1">redisson对于cap定理的体现是什么？</span></h3>
+<p>主要是 ap 模型，牺牲一致性，换取可用性。</p>
+<p>Redis Cluster通过数据分片（Sharding）和主从复制（Master-Slave Replication）实现了高可用性和一定的数据冗余。在Redis Cluster中，每个节点都保存了部分数据，并通过复制机制保证数据在多个节点上的可用性。</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>分区容忍性（P）</strong>：Redis Cluster天生支持分区容忍性，通过多个节点和分片机制，即使部分节点或网络发生故障，系统仍能继续运行。
+        </li>
+<li>
+<strong>一致性（C）与可用性（A）的权衡</strong>：Redis Cluster在默认情况下更倾向于可用性（A）。在数据复制过程中，Redis采用了异步复制机制，这意味着主节点写入数据后，不会等待所有从节点确认就返回操作成功的结果。这样做提高了系统的响应速度和可用性，但在极端情况下（如主节点宕机且未完成数据同步）可能会导致数据丢失，即牺牲了强一致性（C）。
+        </li>
+</ul>
+<h3><span class="q1">redis 实现的分布式锁还有什么缺点？红锁是什么？</span></h3>
+<p>基于 Redis 实现分布式锁的<strong>缺点</strong>：</p>
+<ul class="list-paddingleft-1">
+<li>
+<p><strong>超时时间不好设置</strong>。如果锁的超时时间设置过长，会影响性能，如果设置的超时时间过短会保护不到共享资源。比如在有些场景中，一个线程 A 获取到了锁之后，由于业务代码执行时间可能比较长，导致超过了锁的超时时间，自动失效，注意 A 线程没执行完，后续线程 B 又意外的持有了锁，意味着可以操作共享资源，那么两个线程之间的共享资源就没办法进行保护了。</p>
+</li>
+<ul class="list-paddingleft-1" style="list-style-type: square;">
+<li>
+<p><strong>那么如何合理设置超时时间呢？</strong> 我们可以基于续约的方式设置超时时间：先给锁设置一个超时时间，然后启动一个守护线程，让守护线程在一段时间后，重新设置这个锁的超时时间。实现方式就是：写一个守护线程，然后去判断锁的情况，当锁快失效的时候，再次进行续约加锁，当主线程执行完成后，销毁续约锁即可，不过这种方式实现起来相对复杂。</p>
+</li>
+</ul>
+<li>
+<p><strong>Redis 主从复制模式中的数据是异步复制的，这样导致分布式锁的不可靠性</strong>。如果在 Redis 主节点获取到锁后，在没有同步到其他节点时，Redis 主节点宕机了，此时新的 Redis 主节点依然可以获取锁，所以多个应用服务就可以同时获取到锁。</p>
+</li>
+</ul>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">Redis 如何解决集群情况下分布式锁的可靠性？</p>
+</blockquote>
+<p>为了保证集群环境下分布式锁的可靠性，Redis 官方已经设计了一个分布式锁算法 Redlock（红锁）。</p>
+<p>它是基于<strong>多个 Redis 节点</strong>的分布式锁，即使有节点发生了故障，锁变量仍然是存在的，客户端还是可以完成锁操作。官方推荐是至少部署 5 个 Redis 节点，而且都是主节点，它们之间没有任何关系，都是一个个孤立的节点。</p>
+<p>Redlock 算法的基本思路，<strong>是让客户端和多个独立的 Redis 节点依次请求申请加锁，如果客户端能够和半数以上的节点成功地完成加锁操作，那么我们就认为，客户端成功地获得分布式锁，否则加锁失败</strong>。</p>
+<p>这样一来，即使有某个 Redis 节点发生故障，因为锁的数据在其他节点上也有保存，所以客户端仍然可以正常地进行锁操作，锁的数据也不会丢失。</p>
+<p>Redlock 算法加锁三个过程：</p>
+<ul class="list-paddingleft-1">
+<li>
+<p>第一步是，客户端获取当前时间（t1）。</p>
+</li>
+<li>
+<p>第二步是，客户端按顺序依次向 N 个 Redis 节点执行加锁操作：</p>
+</li>
+<li>
+<p>加锁操作使用 SET 命令，带上 NX，EX/PX 选项，以及带上客户端的唯一标识。</p>
+</li>
+<li>
+<p>如果某个 Redis 节点发生故障了，为了保证在这种情况下，Redlock 算法能够继续运行，我们需要给「加锁操作」设置一个超时时间（不是对「锁」设置超时时间，而是对「加锁操作」设置超时时间），加锁操作的超时时间需要远远地小于锁的过期时间，一般也就是设置为几十毫秒。</p>
+</li>
+<li>
+<p>第三步是，一旦客户端从超过半数（大于等于 N/2+1）的 Redis 节点上成功获取到了锁，就再次获取当前时间（t2），然后计算计算整个加锁过程的总耗时（t2-t1）。如果 t2-t1 &lt; 锁的过期时间，此时，认为客户端加锁成功，否则认为加锁失败。</p>
+</li>
+</ul>
+<p>可以看到，加锁成功要同时满足两个条件（<em>简述：如果有超过半数的 Redis 节点成功的获取到了锁，并且总耗时没有超过锁的有效时间，那么就是加锁成功</em>）：</p>
+<ul class="list-paddingleft-1">
+<li>
+            条件一：客户端从超过半数（大于等于 N/2+1）的 Redis 节点上成功获取到了锁；
+        </li>
+<li>
+            条件二：客户端从大多数节点获取锁的总耗时（t2-t1）小于锁设置的过期时间。
+        </li>
+</ul>
+<p>加锁成功后，客户端需要重新计算这把锁的有效时间，计算的结果是「锁最初设置的过期时间」减去「客户端从大多数节点获取锁的总耗时（t2-t1）」。如果计算的结果已经来不及完成共享数据的操作了，我们可以释放锁，以免出现还没完成数据操作，锁就过期了的情况。</p>
+<p>加锁失败后，客户端向<strong>所有 Redis 节点发起释放锁的操作</strong>，释放锁的操作和在单节点上释放锁的操作一样，只要执行释放锁的 Lua 脚本就可以了。</p>
+<h3><span class="q1">CAP是什么？</span></h3>
+<p>CAP 原则又称 CAP 定理, 指的是在一个分布式系统中,  Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性）, <strong>三者不可得兼</strong></p>
+<figure class="img1"><img _width="677px" data-index="9" data-src="../img/cloud_004_bda3f6e8.jpg" data-type="other" data-w="1080" src="../img/cloud_004_bda3f6e8.jpg" style="height: auto !important;  width: 656.984px !important;"/>
+<figcaption style="font-family: PingFangSC-Light;color: rgb(136, 136, 136);text-align: center;">img</figcaption>
+</figure>
+<ul class="list-paddingleft-1">
+<li>
+<strong>一致性(C) :</strong> 在分布式系统中的所有数据备份, 在同一时刻是否同样的值(等同于所有节点访问同一份最新的数据副本)
+        </li>
+<li>
+<strong>可用性(A):</strong> 在集群中一部分节点故障后, 集群整体是否还能响应客户端的读写请求(对数据更新具备高可用性)
+        </li>
+<li>
+<strong>分区容忍性(P):</strong> 以实际效果而言, 分区相当于对通信的时限要求. 系统如果不能在时限内达成数据一致性, 就意味着发生了分区的情况, 必须就当前操作在 C 和 A 之间做出选择
+        </li>
+</ul>
+<h3></h3>
+<h3><span class="q1">怎么实现分布式锁？</span></h3>
+<p>可以用 redis 来实现分布式锁</p>
+<h3><span class="q1">redis怎么实现？</span></h3>
+<p><strong>分布式锁是用于分布式环境下并发控制的一种机制，用于控制某个资源在同一时刻只能被一个应用所使用</strong>。如下图所示：<img _width="677px" data-index="10" data-src="../img/cloud_005_9d2ddd26.jpg" data-type="other" data-w="1080" src="../img/cloud_005_9d2ddd26.jpg" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>Redis 本身可以被多个客户端共享访问，正好就是一个共享存储系统，可以用来保存分布式锁，而且 Redis 的读写性能高，可以应对高并发的锁操作场景。Redis 的 SET 命令有个 NX 参数可以实现「key不存在才插入」，所以可以用它来实现分布式锁：</p>
+<ul class="list-paddingleft-1">
+<li>
+            如果 key 不存在，则显示插入成功，可以用来表示加锁成功；
+        </li>
+<li>
+            如果 key 存在，则会显示插入失败，可以用来表示加锁失败。
+        </li>
+</ul>
+<p>基于 Redis 节点实现分布式锁时，对于加锁操作，我们需要满足三个条件。</p>
+<ul class="list-paddingleft-1">
+<li>
+            加锁包括了读取锁变量、检查锁变量值和设置锁变量值三个操作，但需要以原子操作的方式完成，所以，我们使用 SET 命令带上 NX 选项来实现加锁；
+        </li>
+<li>
+            锁变量需要设置过期时间，以免客户端拿到锁后发生异常，导致锁一直无法释放，所以，我们在 SET 命令执行时加上 EX/PX 选项，设置其过期时间；
+        </li>
+<li>
+            锁变量的值需要能区分来自不同客户端的加锁操作，以免在释放锁时，出现误释放操作，所以，我们使用 SET 命令设置锁变量值时，每个客户端设置的值是一个唯一值，用于标识客户端；
+        </li>
+</ul>
+<p>满足这三个条件的分布式命令如下：</p><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIOP11IzaiatZAibibFAWy5F3QLx3ZyN4LGaSO7V5egmZwLuvd9gpiacr1QSIDLHKGEP9M00LLa4mbYoFPHPCMpp9VZr/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;">SET lock_key unique_value NX PX 10000<br/></code></pre>
+<ul class="list-paddingleft-1">
+<li>
+            lock_key 就是 key 键；
+        </li>
+<li>
+            unique_value 是客户端生成的唯一的标识，区分来自不同客户端的锁操作；
+        </li>
+<li>
+            NX 代表只在 lock_key 不存在时，才对 lock_key 进行设置操作；
+        </li>
+<li>
+            PX 10000 表示设置 lock_key 的过期时间为 10s，这是为了避免客户端发生异常而无法释放锁。
+        </li>
+</ul>
+<p>而解锁的过程就是将 lock_key 键删除（del lock_key），但不能乱删，要保证执行操作的客户端就是加锁的客户端。所以，解锁的时候，我们要先判断锁的 unique_value 是否为加锁客户端，是的话，才将 lock_key 键删除。</p>
+<p>可以看到，解锁是有两个操作，这时就需要 Lua 脚本来保证解锁的原子性，因为 Redis 在执行 Lua 脚本时，可以以原子性的方式执行，保证了锁释放操作的原子性。</p><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIOP11IzaiatZAibibFAWy5F3QLx3ZyN4LGaSO7V5egmZwLuvd9gpiacr1QSIDLHKGEP9M00LLa4mbYoFPHPCMpp9VZr/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;">// 释放锁时，先比较 unique_value 是否相等，避免锁的误释放<br/><span style="color: #c678dd;">if</span> redis.call(<span style="color: #98c379;">"get"</span>,KEYS[<span style="color: #d19a66;">1</span>]) == ARGV[<span style="color: #d19a66;">1</span>] <span style="color: #c678dd;">then</span><br/>  <span style="color: #c678dd;">return</span> redis.call(<span style="color: #98c379;">"del"</span>,KEYS[<span style="color: #d19a66;">1</span>])<br/><span style="color: #c678dd;">else</span><br/>  <span style="color: #c678dd;">return</span> <span style="color: #d19a66;">0</span><br/><span style="color: #c678dd;">end</span><br/></code></pre>
+<p>这样一来，就通过使用 SET 命令和 Lua 脚本在 Redis 单节点上完成了分布式锁的加锁和解锁。</p>
+<h3><span class="q1">还有没有其他方法实现分布式锁？</span></h3>
+<p>还可以基于zookeeper来实现分布式。</p>
+<p>首先我们来了解一下zookeeper的特性，看看它为什么适合做分布式锁，</p>
+<p>zookeeper是一个为分布式应用提供一致性服务的软件，它内部是一个分层的文件系统目录树结构，规定统一个目录下只能有一个唯一文件名。</p>
+<p>数据模型：</p>
+<ul class="list-paddingleft-1">
+<li>
+            永久节点：节点创建后，不会因为会话失效而消失
+        </li>
+<li>
+            临时节点：与永久节点相反，如果客户端连接失效，则立即删除节点
+        </li>
+<li>
+            顺序节点：与上述两个节点特性类似，如果指定创建这类节点时，zk会自动在节点名后加一个数字后缀，并且是有序的。
+        </li>
+</ul>
+<p>监视器（watcher）：</p>
+<ul class="list-paddingleft-1">
+<li>
+            当创建一个节点时，可以注册一个该节点的监视器，当节点状态发生改变时，watch被触发时，ZooKeeper将会向客户端发送且仅发送一条通知，因为watch只能被触发一次。
+        </li>
+</ul>
+<p>利用Zookeeper的临时顺序节点和监听机制两大特性，可以帮助我们实现分布式锁。</p>
+<figure class="img1"><img _width="677px" data-index="11" data-src="../img/cloud_006_f533fc63.png" data-w="1080" src="../img/cloud_006_f533fc63.png" style="height: auto !important;  width: 656.969px !important;"/></figure>
+<ul class="list-paddingleft-1">
+<li>
+            首先得有一个持久节点<code class="code1">/locks</code>, 路径服务于某个使用场景，如果有多个使用场景建议路径不同。
+        </li>
+<li>
+            请求进来时首先在<code class="code1">/locks</code>创建临时有序节点，所有会看到在<code class="code1">/locks</code>下面有seq-000000000, seq-00000001 等等节点。
+        </li>
+<li>
+            然后判断当前创建得节点是不是<code class="code1">/locks</code>路径下面最小的节点，如果是，获取锁，不是，阻塞线程，同时设置监听器，监听前一个节点。
+        </li>
+<li>
+            获取到锁以后，开始处理业务逻辑，最后delete当前节点，表示释放锁。
+        </li>
+<li>
+            后一个节点就会收到通知，唤起线程，重复上面的判断。
+        </li>
+</ul>
+<p>zookerper 实现的分布式锁是强一致性的，<strong>因为它底层的 ZAB协议(原子广播协议), 天然满足 CP，</strong>但是这也意味着性能的下降, 所以不站在具体数据下看 Redis 和 Zookeeper, 代表着性能和一致性的取舍。</p>
+<p>如果项目没有强依赖 ZK, 使用 Redis 就好了, 因为现在 Redis 用途很广, 大部分项目中都引用了 Redis，没必要对此再引入一个新的组件, 如果业务场景对于 Redis 异步方式的同步数据造成锁丢失无法忍受, 在业务层处理就好了。</p>
+<p style="text-align: left;text-wrap: wrap;"><strong>推荐阅读：</strong></p>
+<p style="text-align: left;text-wrap: wrap;"><a data-itemshowtype="0" data-linktype="2" hasload="1" href="http://mp.weixin.qq.com/s?__biz=MzUxODAzNDg4NQ==&amp;mid=2247541210&amp;idx=2&amp;sn=4d9eeaa4359640c174856952e6aa472b&amp;chksm=f98d6570cefaec66d04a94c474177205525be2b85ea02fda534b45a4dc56f6045453ad7b41ac&amp;scene=21#wechat_redirect" imgdata="null" imgurl="" linktype="text" style="color: var(--weui-LINK);cursor: default;" target="_blank" textvalue="后端训练营，又开卷了！！！">后端训练营，又开卷了！！！</a><strong><a data-itemshowtype="0" data-linktype="2" hasload="1" href="http://mp.weixin.qq.com/s?__biz=MzUxODAzNDg4NQ==&amp;mid=2247541210&amp;idx=2&amp;sn=4d9eeaa4359640c174856952e6aa472b&amp;chksm=f98d6570cefaec66d04a94c474177205525be2b85ea02fda534b45a4dc56f6045453ad7b41ac&amp;scene=21#wechat_redirect" imgdata="null" imgurl="" linktype="text" style="color: var(--weui-LINK);cursor: default;" target="_blank" textvalue="后端训练营，又开卷了！！！"></a><br/></strong></p>
+<p style="text-align: left;text-wrap: wrap;"><a data-itemshowtype="0" data-linktype="2" hasload="1" href="http://mp.weixin.qq.com/s?__biz=MzUxODAzNDg4NQ==&amp;mid=2247541923&amp;idx=1&amp;sn=001fee228196b595c189f375d86bf436&amp;chksm=f98d6009cefae91f2628f82652ae404b4ee5f2ae112b12c8d015b729bac02d862d8d5b5f2c6f&amp;scene=21#wechat_redirect" imgdata="null" imgurl="" linktype="text" target="_blank" textvalue="今年C++又输麻了？">今年C++又输麻了？</a><br/></p><a data-itemshowtype="0" data-linktype="2" hasload="1" href="http://mp.weixin.qq.com/s?__biz=MzUxODAzNDg4NQ==&amp;mid=2247541916&amp;idx=1&amp;sn=8c9d4ca8f9d9b995fd715a9d0b80e2cb&amp;chksm=f98d6036cefae9204f412b1e2f2e6aa5af970ebe17b5a1ee7362575dfbda6248687ea26796f8&amp;scene=21#wechat_redirect" imgdata="null" imgurl="" linktype="text" target="_blank" textvalue="比亚迪开奖了，点击就送？？">比亚迪开奖了，点击就送？？</a>
+<h3><span class="q1">我看你用了中间件，消息幂等了解吗？</span></h3>
+<p>消息幂等指的是对同一个消息进行多次处理和只进行一次处理，所产生的业务结果是相同的，不会因为重复处理而导致额外的影响或错误。例如，在电商系统中，处理用户的下单消息，无论该消息被消费一次还是多次，最终订单的状态和数量等信息应该保持一致。</p>
+<p>要保证消息幂等性可以有下面这些方式：</p>
+<ul class="list-paddingleft-1">
+<li>
+            唯一标识法：在消息生产时，为每条消息生成一个全局唯一的标识（如 UUID、雪花算法），并将该标识随消息一起发送。消息消费者在处理消息前，先检查该标识是否已经被处理过。可以通过数据库、缓存等存储介质来记录已经处理过的消息标识。
+        </li>
+<li>
+            状态机法：对于一些有状态的业务操作，可以使用状态机来控制消息的处理。每个业务对象都有一个状态，根据不同的消息和当前状态，定义相应的状态转移规则。当收到重复消息时，根据当前状态判断是否需要处理。比如，在订单系统中，订单有 “未支付”“已支付”“已发货” 等状态。当收到 “支付成功” 的消息时，如果订单状态已经是 “已支付”，则直接忽略该消息。
+        </li>
+<li>
+            业务幂等设计：在业务逻辑层面设计幂等操作。例如，在进行数据更新时，使用数据库的唯一索引或乐观锁机制，确保重复操作不会产生额外的影响。
+        </li>
+</ul>
+<h3><span></span><span style="color: rgb(65, 105, 225);">你的项目用到了哪些微服务组件？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+<p><strong>Eureka</strong>：服务注册与发现组件，用于实现微服务架构中的服务注册和发现。</p>
+</li>
+<li>
+<p><strong>Ribbon</strong>：负载均衡组件，用于在客户端实现负载均衡，提高系统的可用性和性能。</p>
+</li>
+<li>
+<p><strong>Feign</strong>：声明式的 HTTP 客户端组件，简化了服务之间的调用和通信。</p>
+</li>
+<li>
+<p><strong>Hystrix</strong>：熔断器组件，用于防止微服务间的故障蔓延，提高系统的容错能力。</p>
+</li>
+<li>
+<p><strong>Zuul</strong>：API 网关组件，用于统一访问入口、路由请求和过滤请求，提高系统的安全性和可维护性。</p>
+</li>
+<li>
+<p><strong>Config</strong>：配置中心组件，用于集中管理微服务的配置信息，实现配置的动态刷新。</p>
+</li>
+</ul>
+<h3><span></span><span style="color: rgb(65, 105, 225);">负载均衡有哪些算法？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+<p>简单轮询：将请求按顺序分发给后端服务器上，不关心服务器当前的状态，比如后端服务器的性能、当前的负载。</p>
+</li>
+<li>
+<p>加权轮询：根据服务器自身的性能给服务器设置不同的权重，将请求按顺序和权重分发给后端服务器，可以让性能高的机器处理更多的请求</p>
+</li>
+<li>
+<p>简单随机：将请求随机分发给后端服务器上，请求越多，各个服务器接收到的请求越平均</p>
+</li>
+<li>
+<p>加权随机：根据服务器自身的性能给服务器设置不同的权重，将请求按各个服务器的权重随机分发给后端服务器</p>
+</li>
+<li>
+<p>一致性哈希：根据请求的客户端 ip、或请求参数通过哈希算法得到一个数值，利用该数值取模映射出对应的后端服务器，这样能保证同一个客户端或相同参数的请求每次都使用同一台服务器</p>
+</li>
+<li>
+<p>最小活跃数：统计每台服务器上当前正在处理的请求数，也就是请求活跃数，将请求分发给活跃数最少的后台服务器</p>
+</li>
+</ul>
+<h3><span></span><span style="color: rgb(65, 105, 225);">如何实现一直均衡给一个用户？</span></h3>
+<p>可以通过「一致性哈希算法」来实现，根据请求的客户端 ip、或请求参数通过哈希算法得到一个数值，利用该数值取模映射出对应的后端服务器，这样能保证同一个客户端或相同参数的请求每次都使用同一台服务器。</p>
+<h3><span></span><span style="color: rgb(65, 105, 225);">介绍一下服务熔断</span></h3>
+<p>服务熔断是应对微服务雪崩效应的一种<strong>链路保护机制，类似股市、保险丝</strong>。</p>
+<p>比如说，微服务之间的数据交互是通过远程调用来完成的。服务A调用服务，服务B调用服务c，某一时间链路上对服务C的调用响应时间过长或者服务C不可用，随着时间的增长，对服务C的调用也越来越多，然后服务C崩溃了，但是链路调用还在，对服务B的调用也在持续增多，然后服务B崩溃，随之A也崩溃，导致雪崩效应。</p>
+<p>服务熔断是应对雪崩效应的一种微服务链路保护机制。例如在高压电路中，如果某个地方的电压过高，熔断器就会熔断，对电路进行保护。同样，在微服务架构中，熔断机制也是起着类似的作用。当调用链路的某个微服务不可用或者响应时间太长时，会进行服务熔断，不再有该节点微服务的调用，快速返回错误的响应信息。当检测到该节点微服务调用响应正常后，恢复调用链路。</p>
+<p>所以，服务熔断的作用类似于我们家用的保险丝，当某服务出现不可用或响应超时的情况时，为了防止整个系统出现雪崩，暂时停止对该服务的调用。</p>
+<p>在Spring Cloud框架里，熔断机制通过Hystrix实现。Hystrix会监控微服务间调用的状况，当失败的调用到一定阈值，缺省是5秒内20次调用失败，就会启动熔断机制。</p>
+<h3><span></span><span style="color: rgb(65, 105, 225);">介绍一下服务降级</span></h3>
+<p>服务降级一般是指在服务器压力剧增的时候，根据实际业务使用情况以及流量，对一些服务和页面有策略的不处理或者用一种简单的方式进行处理，从而<strong>释放服务器资源的资源以保证核心业务的正常高效运行。</strong></p>
+<p>服务器的资源是有限的，而请求是无限的。在用户使用即并发高峰期，会影响整体服务的性能，严重的话会导致宕机，以至于某些重要服务不可用。故高峰期为了保证核心功能服务的可用性，就需要对某些服务降级处理。可以理解为舍小保大</p>
+<p>服务降级是从整个系统的负荷情况出发和考虑的，对某些负荷会比较高的情况，为了预防某些功能（业务场景）出现负荷过载或者响应慢的情况，在其内部暂时舍弃对一些非核心的接口和数据的请求，而直接返回一个提前准备好的fallback（退路）错误处理信息。这样，虽然提供的是一个有损的服务，但却保证了整个系统的稳定性和可用性。</p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>raft协议和paxos协议的原理？</span></span></h3>
+<p style="text-align: left;"><span>Raft 和 Paxos 是两种经典的分布式一致性算法，旨在实现</span><strong><span>多节点状态机的高可靠一致性</span></strong><span>。两者核心目标相同（保证分布式系统数据一致性），但设计理念和实现方式有区别。</span></p>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>raft 协议的原理</span></p>
+</blockquote>
+<p style="text-align: left;"><span>Raft算法由leader节点来处理一致性问题。leader节点接收来自客户端的请求日志数据，然后同步到集群中其它节点进行复制，当日志已经同步到超过半数以上节点的时候，leader节点再通知集群中其它节点哪些日志已经被复制成功，可以提交到raft状态机中执行。</span></p>
+<p style="text-align: left;"><span>通过以上方式，Raft算法将要解决的一致性问题分为了以下几个子问题。</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>leader选举：集群中必须存在一个leader节点。</span>
+</li>
+<li>
+<span>日志复制：leader节点接收来自客户端的请求然后将这些请求序列化成日志数据再同步到集群中其它节点。</span>
+</li>
+<li>
+<span>安全性：如果某个节点已经将一条提交过的数据输入raft状态机执行了，那么其它节点不可能再将相同索引 的另一条日志数据输入到raft状态机中执行。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>Raft算法需要有两个比较重要的机制</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>角色转换与选举机制</span></strong><span>：Raft 将系统中的节点分为三种角色：领导者（Leader）、跟随者（Follower）和候选人（Candidate）。系统启动时，所有节点都是跟随者。跟随者会定期从领导者处接收心跳信息以确认领导者的存活。如果跟随者在一段时间内（选举超时时间）没有收到领导者的心跳，它会转变为候选人，发起新一轮的选举。候选人向其他节点发送请求投票消息。其他节点根据收到的请求投票消息，决定是否为该候选人投票。当候选人获得超过半数节点的投票时，它就成为新的领导者。领导者会周期性地向所有跟随者发送心跳消息，以维持自己的领导地位。每个领导者的领导周期称为一个任期（Term），任期号是单调递增的。</span>
+</li>
+</ul>
+<figure class="img1"><span><img _width="677px" data-index="8" data-src="../img/cloud_007_a205c959.png" data-w="1080" src="../img/cloud_007_a205c959.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>日志复制机制：</span></strong><span>客户端的请求会被领导者作为日志条目添加到自己的日志中。领导者将新的日志条目复制到其他跟随者节点。它会通过附加日志消息将日志条目发送给跟随者，跟随者收到消息后会将日志条目追加到自己的日志中，并向领导者发送确认消息。当领导者得知某个日志条目已经被大多数节点复制时，它会将该日志条目标记为已提交，并将其应用到状态机中。然后，领导者会通知其他节点该日志条目已提交，跟随者也会将已提交的日志条目应用到自己的状态机中。</span>
+</li>
+</ul>
+<figure class="img1"><span><img _width="677px" data-index="9" data-src="../img/cloud_008_0b4ce56d.png" data-w="772" src="../img/cloud_008_0b4ce56d.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>paxos协议的原理</span></p>
+</blockquote>
+<p style="text-align: left;"><span>Paxos算法的核心思想是将一致性问题分解为多个阶段，每个阶段都有一个专门的协议来处理。Paxos算法的主要组成部分包括提议者（Proposer）、接受者（Acceptor）和投票者（Voter）。</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<p style="text-align: left;"><span>提议者：提议者是负责提出一致性问题的节点，它会向接受者发送提议，并等待接受者的回复。</span></p>
+</li>
+<li>
+<p style="text-align: left;"><span>接受者：接受者是负责处理提议的节点，它会接收提议者发送的提议，并对提议进行判断。如果接受者认为提议是有效的，它会向投票者发送请求，并等待投票者的回复。</span></p>
+</li>
+<li>
+<p style="text-align: left;"><span>投票者：投票者是负责决定提议是否有效的节点，它会接收接受者发送的请求，并对请求进行判断。如果投票者认为请求是有效的，它会向接受者发送投票，表示支持或反对提议。</span></p>
+</li>
+</ul>
+<figure class="img1"><span><img _width="677px" data-index="10" data-src="../img/cloud_009_b731b04e.png" data-w="1080" src="../img/cloud_009_b731b04e.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<p style="text-align: left;"><span>Paxos算法的流程如下（以Basic Paxos 算法为例子）：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>准备阶段：提议者选择一个提案编号，并向所有接受者发送准备请求。提案编号是一个全局唯一的、单调递增的数字。接受者收到准备请求后，如果提案编号大于它之前接受过的任何提案编号，它会承诺不再接受编号小于该提案编号的提案，并返回它之前接受过的最大编号的提案信息（如果有）。</span>
+</li>
+<li>
+<span>接受阶段：如果提议者收到了超过半数接受者的响应，它会根据这些响应确定要提议的值。如果接受者返回了之前接受过的提案信息，提议者会选择编号最大的提案中的值作为要提议的值；如果没有，提议者可以选择自己的值。提议者向所有接受者发送接受请求，包含提案编号和要提议的值。</span>
+</li>
+<li>
+<span>学习阶段：当提议者收到超过半数接受者对某个提案的接受响应时，该提案被认为达成共识。学习者通过接受者的通知得知达成共识的值。</span>
+</li>
+</ul>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>对比总结</span></p>
+</blockquote>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>Raft</span></strong><span> 更易于理解和实现，它将共识过程分解为选举和日志复制两个相对独立的子问题，并且对选举超时时间等参数进行了明确的定义和限制，降低了算法的复杂度。</span>
+</li>
+<li>
+<strong><span>Paxos</span></strong><span> 是一种更通用、更基础的共识算法，它的理论性更强，在学术界有广泛的研究和应用。但 Paxos 的实现相对复杂，理解和调试难度较大。</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>有什么框架或技术用了raft协议？</span></span></h3>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>Etcd</span></strong><span>：一个开源的分布式键值存储系统，用于共享配置和服务发现等。它使用 Raft 协议来实现数据的一致性和分布式共识，确保在分布式环境中数据的可靠存储和访问，常被用于 Kubernetes 等容器编排系统中，为其提供配置管理和服务发现等功能。</span>
+</li>
+<li>
+<strong><span>Consul</span></strong><span>：是一个用于实现服务发现、配置管理和分布式一致性的工具，它使用 Raft 协议来管理集群状态和实现数据复制，确保在分布式环境中服务的注册、发现和配置信息的一致性和可靠性，为微服务架构等提供了重要的基础设施支持。</span>
+</li>
+</ul>
+<h3><span class="q1">你有看过一些负载均衡的一些方案吗</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+<strong>硬件负载均衡：</strong>使用专用的硬件设备（如负载均衡器）来分配流量，比如F5设备，优点是性能强大，支持高并发。缺点是成本太高，通常一个专业级的硬件设备，都需要百万级别的价格。
+        </li>
+<li>
+<strong>软件负载均衡：</strong>使用软件应用程序来实现负载均衡，可以运行在普通服务器上，比如 <strong>Nginx</strong> 支持反向代理和负载均衡，优点灵活性高，成本低，易于修改和扩展，缺点是性能不如硬件负载均衡，但是软件负载均衡的性能也足够应对大多数场景的并发量了。
+        </li>
+<li>
+<strong>DNS 负载均衡：</strong>通过 DNS 服务器将流量分配到多个服务器上，不同的客户端请求可能获得不同的 IP 地址。优点是简单易用，不需要额外的硬件或软件。缺点是无法智能感知服务器的实时状态，缓存问题可能导致不均匀负载。
+        </li>
+<li>
+<strong>内容分发网络 (CDN)：</strong>CDN 是一种分布式的网络结构，可以将内容分发到离用户最近的节点上。优点减少延迟，提高用户体验。缺点主要适用于静态内容，动态请求仍需其他形式的负载均衡。
+        </li>
+</ul>
+</html>
+            </article>
+        </div>
+        
+        <div class="content" id="article-toc">
+            <nav class="toc">
+                <div class="toc-inner"><ul><ul><ul><li>
+                    <a href="#" aria-label="2. 微服务和单体的区别与优势是什么？">2. 微服务和单体的区别与优势是什么？</a></li><li>
+                    <a href="#" aria-label="Zookeeper怎么用的？知道ZAB协议吗？">Zookeeper怎么用的？知道ZAB协议吗？</a></li><li>
+                    <a href="#" aria-label="刚才讲到推拉，那微博怎么做feed流的？（追问答得很差）">刚才讲到推拉，那微博怎么做feed流的？（追问答得很差）</a></li><li>
+                    <a href="#" aria-label="一致性怎么做的？">一致性怎么做的？</a></li><li>
+                    <a href="#" aria-label="分布式 ID 这里有哪些方案？你之前有调研过，你可以说一下吗？">分布式 ID 这里有哪些方案？你之前有调研过，你可以说一下吗？</a></li><li>
+                    <a href="#" aria-label="挑一个项目讲项目难点">挑一个项目讲项目难点</a></li><li>
+                    <a href="#" aria-label="【分布式协议】Raft和Paxos怎么学的？">【分布式协议】Raft和Paxos怎么学的？</a></li><li>
+                    <a href="#" aria-label="【分布式协议】Raft和Paxos的工程实现有了解吗？">【分布式协议】Raft和Paxos的工程实现有了解吗？</a></li><li>
+                    <a href="#" aria-label="【分布式协议】Raft 他什么时候他不可用？">【分布式协议】Raft 他什么时候他不可用？</a></li><li>
+                    <a href="#" aria-label="【分布式协议】Paxos有这个问题吗？">【分布式协议】Paxos有这个问题吗？</a></li><li>
+                    <a href="#" aria-label="【网络安全】XSS和CSRF讲一下">【网络安全】XSS和CSRF讲一下</a></li><li>
+                    <a href="#" aria-label="【网络安全】SQL注入说一下">【网络安全】SQL注入说一下</a></li><li>
+                    <a href="#" aria-label="分布式事务的解决方案你知道哪些？">分布式事务的解决方案你知道哪些？</a></li><li>
+                    <a href="#" aria-label="阿里的seata框架了解过吗？">阿里的seata框架了解过吗？</a></li><li>
+                    <a href="#" aria-label="7. 分布式的 cap理论说一下？">7. 分布式的 cap理论说一下？</a></li><li>
+                    <a href="#" aria-label="分布式锁除了redisson，还能怎么实现？">分布式锁除了redisson，还能怎么实现？</a></li><li>
+                    <a href="#" aria-label="zookerper实现分布式锁和redisson实现分布式的区别？">zookerper实现分布式锁和redisson实现分布式的区别？</a></li><li>
+                    <a href="#" aria-label="cap是啥？">cap是啥？</a></li><li>
+                    <a href="#" aria-label="redisson对于cap定理的体现是什么？">redisson对于cap定理的体现是什么？</a></li><li>
+                    <a href="#" aria-label="redis 实现的分布式锁还有什么缺点？红锁是什么？">redis 实现的分布式锁还有什么缺点？红锁是什么？</a></li><li>
+                    <a href="#" aria-label="CAP是什么？">CAP是什么？</a></li><li>
+                    <a href="#" aria-label=""></a></li><li>
+                    <a href="#" aria-label="怎么实现分布式锁？">怎么实现分布式锁？</a></li><li>
+                    <a href="#" aria-label="redis怎么实现？">redis怎么实现？</a></li><li>
+                    <a href="#" aria-label="还有没有其他方法实现分布式锁？">还有没有其他方法实现分布式锁？</a></li><li>
+                    <a href="#" aria-label="我看你用了中间件，消息幂等了解吗？">我看你用了中间件，消息幂等了解吗？</a></li><li>
+                    <a href="#" aria-label="你的项目用到了哪些微服务组件？">你的项目用到了哪些微服务组件？</a></li><li>
+                    <a href="#" aria-label="负载均衡有哪些算法？">负载均衡有哪些算法？</a></li><li>
+                    <a href="#" aria-label="如何实现一直均衡给一个用户？">如何实现一直均衡给一个用户？</a></li><li>
+                    <a href="#" aria-label="介绍一下服务熔断">介绍一下服务熔断</a></li><li>
+                    <a href="#" aria-label="介绍一下服务降级">介绍一下服务降级</a></li><li>
+                    <a href="#" aria-label="raft协议和paxos协议的原理？">raft协议和paxos协议的原理？</a></li><li>
+                    <a href="#" aria-label="有什么框架或技术用了raft协议？">有什么框架或技术用了raft协议？</a></li><li>
+                    <a href="#" aria-label="你有看过一些负载均衡的一些方案吗">你有看过一些负载均衡的一些方案吗</a></ul></ul></ul>
+                </div>
+            </nav>
+        </div>
+    </main>
+    <div class="splitter-indicator" id="splitterIndicator"></div>
+    <div class="drop-indicator" id="dropIndicator"></div>
+    <footer class="footer">
+        <div class="footer-left">
+            <a class="item" href="/x/about/" target="_blank" rel="noopener noreferrer me" title="Info"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></a>
+            <a class="item" href="https://music.163.com/#/user/home?id=270121274" target="_blank" rel="noopener noreferrer me" title="NeteaseCloudMusic"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.98,23.65c-2.69,0-5.26-1.05-7.24-2.95C1.59,18.63,.35,15.72,.35,12.73,.35,8.21,3.21,4.11,7.46,2.52c.15-.05,.3-.08,.45-.08,.42,0,.78,.21,.93,.55,.12,.26,.13,.51,.03,.75-.12,.28-.38,.52-.7,.64-3.48,1.3-5.82,4.66-5.82,8.36,0,2.46,1.02,4.84,2.79,6.54,1.6,1.54,3.68,2.39,5.85,2.39,.1,0,.2,0,.29,0,3.49-.12,6.22-1.91,7.47-4.89,.08-.2,2.01-4.93-2.59-7.9-.41-.27-.89-.46-1.42-.58l-.6-.14,.18,.58c.21,.68,.78,2.52,.84,2.93,.07,.46,.07,.51,.1,.92v.18c0,2.3-1.89,4.19-4.22,4.19-2.2,0-3.97-1.73-4.23-4.1-.25-2.35,.74-4.4,2.73-5.61,.53-.32,1.11-.57,1.73-.75l.33-.1-.48-1.74c-.16-.54-.53-2.38,1.5-3.72,.57-.38,1.22-.57,1.91-.57,1.38,0,2.62,.74,3.12,1.23,.22,.22,.36,.56,.36,.9,0,.26-.08,.48-.23,.63-.15,.15-.37,.23-.63,.23-.33,0-.67-.13-.89-.35-.06-.05-.85-.66-1.7-.66-.31,0-.59,.08-.82,.24-.04,.03-.08,.05-.12,.08-.23,.19-.71,.73-.47,1.82l.09,.34,.02,.07h0s.35,1.29,.35,1.29h.25c1.24,.08,2.39,.42,3.32,1.01l.05,.03c4.82,3.12,4.29,8.12,3.34,10.33-1.54,3.67-4.99,5.95-9.23,6.1-.12,0-.25,0-.37,0Zm.82-15.26c-.43,.13-.84,.31-1.2,.53-.94,.57-2.01,1.68-1.79,3.71,.12,1.12,.87,2.33,2.24,2.33,1.23,0,2.24-1,2.24-2.22h0s.03-.21-.05-.71c-.07-.46-.91-3.1-1-3.4l-.1-.33-.33,.1Z" /></svg></a>
+            <a class="item" href="https://neodb.social/users/Lordash/" target="_blank" rel="noopener noreferrer me" title="NeoDB"><svg version="1.1" xmlns="https://www.w3.org/2000/svg" width="90" height="108" viewBox="0 0 90 108" fill="currentColor"><path d="M0 0 C4.26615504 2.04066983 6.73398524 4.58553002 10 8 C10.474375 7.195625 10.94875 6.39125 11.4375 5.5625 C13 3 13 3 14 2 C20.16698656 1.54318618 20.16698656 1.54318618 22.9375 3.0625 C24.6815774 6.24287644 24.55944728 8.4568339 24 12 C21 14.4375 21 14.4375 18 16 C20.97 18.97 23.94 21.94 27 25 C25.193388 28.61322401 24.33581029 29.83748791 21.375 32.25 C20.74335937 32.77078125 20.11171875 33.2915625 19.4609375 33.828125 C18.97882813 34.21484375 18.49671875 34.6015625 18 35 C17.566875 34.0409375 17.566875 34.0409375 17.125 33.0625 C16.17176549 30.84793921 16.17176549 30.84793921 14 30 C10.5 29.75 10.5 29.75 7 30 C4.59331253 31.99114614 4.59331253 31.99114614 4.5625 35.875 C4.62092586 39.4454694 4.80377743 39.80377743 7.5 42.5 C8.325 42.995 9.15 43.49 10 44 C7.36 46.64 4.72 49.28 2 52 C-1.49353838 50.25323081 -3.13945763 49.08594785 -5.75 46.375 C-6.36359375 45.74335937 -6.9771875 45.11171875 -7.609375 44.4609375 C-8.06828125 43.97882812 -8.5271875 43.49671875 -9 43 C-9.515625 43.99 -10.03125 44.98 -10.5625 46 C-13 49 -13 49 -16.625 49.5 C-20 49 -20 49 -22 47 C-22.56321839 40.8045977 -22.56321839 40.8045977 -20.6875 38.125 C-19 37 -19 37 -16 36 C-18.97 33.03 -21.94 30.06 -25 27 C-23.03838569 23.07677137 -20.84267796 20.58307142 -17.7734375 17.578125 C-17.26575836 17.07327576 -16.75807922 16.56842651 -16.23501587 16.04827881 C-14.61966158 14.44407904 -12.99747791 12.84699144 -11.375 11.25 C-10.27558302 10.16061893 -9.17661941 9.0707801 -8.078125 7.98046875 C-5.3906398 5.31498115 -2.69700979 2.65584857 0 0 Z"transform="translate(53,1)" /><path d="M0 0 C2.31 1.98 4.62 3.96 7 6 C6.34 6.86625 5.68 7.7325 5 8.625 C2.82375259 12.29741751 2.2907405 13.83310042 3 18 C4.34115399 21.00979883 4.34115399 21.00979883 7 23 C10.97807953 23.86409105 14.00632895 23.59620263 17.5 21.5 C17.995 21.005 18.49 20.51 19 20 C21.84383123 21.2748209 24.13754018 22.45137078 26 25 C25.57914771 28.29893891 24.42094066 29.966522 22.0625 32.25 C21.53785156 32.77078125 21.01320312 33.2915625 20.47265625 33.828125 C19 35 19 35 17 35 C17 35.66 17 36.32 17 37 C17.763125 36.938125 18.52625 36.87625 19.3125 36.8125 C22 37 22 37 23.875 38.0625 C25.69848531 41.20294693 24.8658284 43.5985313 24 47 C21 49 21 49 17.9375 48.75 C15 48 15 48 13 46 C12.505 44.02 12.505 44.02 12 42 C9.03 44.97 6.06 47.94 3 51 C-0.92322863 49.03838569 -3.41692858 46.84267796 -6.421875 43.7734375 C-6.92672424 43.26575836 -7.43157349 42.75807922 -7.95172119 42.23501587 C-9.55592096 40.61966158 -11.15300856 38.99747791 -12.75 37.375 C-13.83938107 36.27558302 -14.9292199 35.17661941 -16.01953125 34.078125 C-18.68501885 31.3906398 -21.34415143 28.69700979 -24 26 C-22.4152642 22.13671373 -19.94043113 19.71123077 -16.9921875 16.796875 C-16.50670441 16.3142218 -16.02122131 15.8315686 -15.52102661 15.33428955 C-13.97700134 13.80141438 -12.42615176 12.27565996 -10.875 10.75 C-9.82375991 9.70879639 -8.77297343 8.66713459 -7.72265625 7.625 C-5.15366996 5.07800536 -2.57851839 2.53734823 0 0 Z"transform="translate(25,29)" /><path d="M0 0 C3.81684226 1.55500981 6.19195732 4.03595495 9 7 C9.45375 6.195625 9.9075 5.39125 10.375 4.5625 C12 2 12 2 14 1 C16.9375 0.6875 16.9375 0.6875 20 1 C21.9375 2.625 21.9375 2.625 23 5 C23 8 23 8 22 11 C19.4375 13.375 19.4375 13.375 17 15 C19.97 17.97 22.94 20.94 26 24 C20.375 30.875 20.375 30.875 17 32 C16.649375 31.175 16.29875 30.35 15.9375 29.5 C14.16088977 26.60879362 14.16088977 26.60879362 10.5 26.5 C7.14672303 26.77692733 7.14672303 26.77692733 5 28.0625 C3.32384137 31.31005735 4.03723329 33.57014358 5 37 C7.4158995 39.45198044 7.4158995 39.45198044 10 41 C8.76600937 42.36877116 7.51219377 43.71969166 6.25 45.0625 C5.55390625 45.81660156 4.8578125 46.57070312 4.140625 47.34765625 C2 49 2 49 0.09619141 48.81054688 C-2.43507746 47.831766 -3.76735676 46.6052517 -5.6796875 44.68359375 C-6.36160156 44.00103516 -7.04351562 43.31847656 -7.74609375 42.61523438 C-8.79990234 41.53725586 -8.79990234 41.53725586 -9.875 40.4375 C-10.91720703 39.40012695 -10.91720703 39.40012695 -11.98046875 38.34179688 C-16.44375955 33.83227613 -20.30080588 29.1545197 -24 24 C-21.69 22.02 -19.38 20.04 -17 18 C-15.948125 18.99 -15.948125 18.99 -14.875 20 C-12.15610238 22.18293783 -12.15610238 22.18293783 -9 22.5625 C-4.86392446 21.78698584 -3.45000447 20.38677089 -1 17 C-0.44852315 13.07072743 -0.40688385 10.96381375 -2.5 7.5625 C-2.995 7.046875 -3.49 6.53125 -4 6 C-2.84826645 3.53199953 -1.95216435 1.95216435 0 0 Z"transform="translate(53,58)" /></svg></a>
+            <a class="item" href="https://github.com/GH1656409967" target="_blank" rel="noopener noreferrer me" title="GitHub"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a class="item" href="/" target="_blank" rel="noopener noreferrer me" title="BuyMeACoffee"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 884 1279" fill="none" stroke="currentColor" stroke-width="2"><path d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518Z"fill="currentColor"></path><path d="M803.896 388.891L802.916 389.166L803.896 388.891Z" fill="currentColor"></path><path d="M791.484 297.377C791.359 297.361 791.237 297.332 791.118 297.29C791.111 297.371 791.111 297.453 791.118 297.534C791.252 297.516 791.379 297.462 791.484 297.377Z"fill="currentColor"></path><path d="M791.113 297.529H791.244V297.447L791.113 297.529Z" fill="currentColor"></path><path d="M803.111 388.726L804.591 387.883L805.142 387.573L805.641 387.04C804.702 387.444 803.846 388.016 803.111 388.726Z"fill="currentColor"></path><path d="M793.669 299.515L792.223 298.138L791.243 297.605C791.77 298.535 792.641 299.221 793.669 299.515Z"fill="currentColor"></path><path d="M430.019 1186.18C428.864 1186.68 427.852 1187.46 427.076 1188.45L427.988 1187.87C428.608 1187.3 429.485 1186.63 430.019 1186.18Z"fill="currentColor"></path><path d="M641.187 1144.63C641.187 1143.33 640.551 1143.57 640.705 1148.21C640.705 1147.84 640.86 1147.46 640.929 1147.1C641.015 1146.27 641.084 1145.46 641.187 1144.63Z"fill="currentColor"></path><path d="M619.284 1186.18C618.129 1186.68 617.118 1187.46 616.342 1188.45L617.254 1187.87C617.873 1187.3 618.751 1186.63 619.284 1186.18Z"fill="currentColor"></path><path d="M281.304 1196.06C280.427 1195.3 279.354 1194.8 278.207 1194.61C279.136 1195.06 280.065 1195.51 280.684 1195.85L281.304 1196.06Z"fill="currentColor"></path><path d="M247.841 1164.01C247.704 1162.66 247.288 1161.35 246.619 1160.16C247.093 1161.39 247.489 1162.66 247.806 1163.94L247.841 1164.01Z"fill="currentColor"></path><path d="M472.623 590.836C426.682 610.503 374.546 632.802 306.976 632.802C278.71 632.746 250.58 628.868 223.353 621.274L270.086 1101.08C271.74 1121.13 280.876 1139.83 295.679 1153.46C310.482 1167.09 329.87 1174.65 349.992 1174.65C349.992 1174.65 416.254 1178.09 438.365 1178.09C462.161 1178.09 533.516 1174.65 533.516 1174.65C553.636 1174.65 573.019 1167.08 587.819 1153.45C602.619 1139.82 611.752 1121.13 613.406 1101.08L663.459 570.876C641.091 563.237 618.516 558.161 593.068 558.161C549.054 558.144 513.591 573.303 472.623 590.836Z"fill="currentColor"></path><path d="M78.6885 386.132L79.4799 386.872L79.9962 387.182C79.5987 386.787 79.1603 386.435 78.6885 386.132Z"fill="currentColor"></path><path d="M879.567 341.849L872.53 306.352C866.215 274.503 851.882 244.409 819.19 232.898C808.711 229.215 796.821 227.633 788.786 220.01C780.751 212.388 778.376 200.55 776.518 189.572C773.076 169.423 769.842 149.257 766.314 129.143C763.269 111.85 760.86 92.4243 752.928 76.56C742.604 55.2584 721.182 42.8009 699.88 34.559C688.965 30.4844 677.826 27.0375 666.517 24.2352C613.297 10.1947 557.342 5.03277 502.591 2.09047C436.875 -1.53577 370.983 -0.443234 305.422 5.35968C256.625 9.79894 205.229 15.1674 158.858 32.0469C141.91 38.224 124.445 45.6399 111.558 58.7341C95.7448 74.8221 90.5829 99.7026 102.128 119.765C110.336 134.012 124.239 144.078 138.985 150.737C158.192 159.317 178.251 165.846 198.829 170.215C256.126 182.879 315.471 187.851 374.007 189.968C438.887 192.586 503.87 190.464 568.44 183.618C584.408 181.863 600.347 179.758 616.257 177.304C634.995 174.43 647.022 149.928 641.499 132.859C634.891 112.453 617.134 104.538 597.055 107.618C594.095 108.082 591.153 108.512 588.193 108.942L586.06 109.252C579.257 110.113 572.455 110.915 565.653 111.661C551.601 113.175 537.515 114.414 523.394 115.378C491.768 117.58 460.057 118.595 428.363 118.647C397.219 118.647 366.058 117.769 334.983 115.722C320.805 114.793 306.661 113.611 292.552 112.177C286.134 111.506 279.733 110.801 273.333 110.009L267.241 109.235L265.917 109.046L259.602 108.134C246.697 106.189 233.792 103.953 221.025 101.251C219.737 100.965 218.584 100.249 217.758 99.2193C216.932 98.1901 216.482 96.9099 216.482 95.5903C216.482 94.2706 216.932 92.9904 217.758 91.9612C218.584 90.9319 219.737 90.2152 221.025 89.9293H221.266C232.33 87.5721 243.479 85.5589 254.663 83.8038C258.392 83.2188 262.131 82.6453 265.882 82.0832H265.985C272.988 81.6186 280.026 80.3625 286.994 79.5366C347.624 73.2301 408.614 71.0801 469.538 73.1014C499.115 73.9618 528.676 75.6996 558.116 78.6935C564.448 79.3474 570.746 80.0357 577.043 80.8099C579.452 81.1025 581.878 81.4465 584.305 81.7391L589.191 82.4445C603.438 84.5667 617.61 87.1419 631.708 90.1703C652.597 94.7128 679.422 96.1925 688.713 119.077C691.673 126.338 693.015 134.408 694.649 142.03L696.732 151.752C696.786 151.926 696.826 152.105 696.852 152.285C701.773 175.227 706.7 198.169 711.632 221.111C711.994 222.806 712.002 224.557 711.657 226.255C711.312 227.954 710.621 229.562 709.626 230.982C708.632 232.401 707.355 233.6 705.877 234.504C704.398 235.408 702.75 235.997 701.033 236.236H700.895L697.884 236.649L694.908 237.044C685.478 238.272 676.038 239.419 666.586 240.486C647.968 242.608 629.322 244.443 610.648 245.992C573.539 249.077 536.356 251.102 499.098 252.066C480.114 252.57 461.135 252.806 442.162 252.771C366.643 252.712 291.189 248.322 216.173 239.625C208.051 238.662 199.93 237.629 191.808 236.58C198.106 237.389 187.231 235.96 185.029 235.651C179.867 234.928 174.705 234.177 169.543 233.397C152.216 230.798 134.993 227.598 117.7 224.793C96.7944 221.352 76.8005 223.073 57.8906 233.397C42.3685 241.891 29.8055 254.916 21.8776 270.735C13.7217 287.597 11.2956 305.956 7.64786 324.075C4.00009 342.193 -1.67805 361.688 0.472751 380.288C5.10128 420.431 33.165 453.054 73.5313 460.35C111.506 467.232 149.687 472.807 187.971 477.556C338.361 495.975 490.294 498.178 641.155 484.129C653.44 482.982 665.708 481.732 677.959 480.378C681.786 479.958 685.658 480.398 689.292 481.668C692.926 482.938 696.23 485.005 698.962 487.717C701.694 490.429 703.784 493.718 705.08 497.342C706.377 500.967 706.846 504.836 706.453 508.665L702.633 545.797C694.936 620.828 687.239 695.854 679.542 770.874C671.513 849.657 663.431 928.434 655.298 1007.2C653.004 1029.39 650.71 1051.57 648.416 1073.74C646.213 1095.58 645.904 1118.1 641.757 1139.68C635.218 1173.61 612.248 1194.45 578.73 1202.07C548.022 1209.06 516.652 1212.73 485.161 1213.01C450.249 1213.2 415.355 1211.65 380.443 1211.84C343.173 1212.05 297.525 1208.61 268.756 1180.87C243.479 1156.51 239.986 1118.36 236.545 1085.37C231.957 1041.7 227.409 998.039 222.9 954.381L197.607 711.615L181.244 554.538C180.968 551.94 180.693 549.376 180.435 546.76C178.473 528.023 165.207 509.681 144.301 510.627C126.407 511.418 106.069 526.629 108.168 546.76L120.298 663.214L145.385 904.104C152.532 972.528 159.661 1040.96 166.773 1109.41C168.15 1122.52 169.44 1135.67 170.885 1148.78C178.749 1220.43 233.465 1259.04 301.224 1269.91C340.799 1276.28 381.337 1277.59 421.497 1278.24C472.979 1279.07 524.977 1281.05 575.615 1271.72C650.653 1257.95 706.952 1207.85 714.987 1130.13C717.282 1107.69 719.576 1085.25 721.87 1062.8C729.498 988.559 737.115 914.313 744.72 840.061L769.601 597.451L781.009 486.263C781.577 480.749 783.905 475.565 787.649 471.478C791.392 467.391 796.352 464.617 801.794 463.567C823.25 459.386 843.761 452.245 859.023 435.916C883.318 409.918 888.153 376.021 879.567 341.849ZM72.4301 365.835C72.757 365.68 72.1548 368.484 71.8967 369.792C71.8451 367.813 71.9483 366.058 72.4301 365.835ZM74.5121 381.94C74.6842 381.819 75.2003 382.508 75.7337 383.334C74.925 382.576 74.4089 382.009 74.4949 381.94H74.5121ZM76.5597 384.641C77.2996 385.897 77.6953 386.689 76.5597 384.641V384.641ZM80.672 387.979H80.7752C80.7752 388.1 80.9645 388.22 81.0333 388.341C80.9192 388.208 80.7925 388.087 80.6548 387.979H80.672ZM800.796 382.989C793.088 390.319 781.473 393.726 769.996 395.43C641.292 414.529 510.713 424.199 380.597 419.932C287.476 416.749 195.336 406.407 103.144 393.382C94.1102 392.109 84.3197 390.457 78.1082 383.798C66.4078 371.237 72.1548 345.944 75.2003 330.768C77.9878 316.865 83.3218 298.334 99.8572 296.355C125.667 293.327 155.64 304.218 181.175 308.09C211.917 312.781 242.774 316.538 273.745 319.36C405.925 331.405 540.325 329.529 671.92 311.91C695.906 308.686 719.805 304.941 743.619 300.674C764.835 296.871 788.356 289.731 801.175 311.703C809.967 326.673 811.137 346.701 809.778 363.615C809.359 370.984 806.139 377.915 800.779 382.989H800.796Z"fill="currentColor"></path></svg></a>
+        </div>
+
+        <div class="footer-middle">
+        </div>
+
+        <div class="footer-right">
+            <span class="item">13547(words)</span>
+            <a class="item" accesskey="g" href="#top" id="top-link" title="Go to Top (Alt + G)">⬆</a>
+        </div>
+    </footer>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                packages: { "[+]": ["ams"] }, 
+                tags: "ams", 
+            },
+            options: {
+                enableSpeech: false,        
+                enableExplorer: false,      
+                enableMenu: false,          
+                ignoreHtmlClass: "tex2jax_ignore",
+                processHtmlClass: "tex2jax_process"
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/mathjax/4.0.0/tex-chtml.min.js"></script>
+    <script type="text/javascript" defer async src="https://s4.zstatic.net/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+    <script type="text/javascript" src="/js/particle-clock.js"></script>
+    <script type="text/javascript" src="/js/index.min.62af824fc9f8f20406aebaf20c60d6fbd42ffe3d23aae53d90dddd32415f13d9.js" integrity="sha256-Yq&#43;CT8n48gQGrrryDGDW&#43;9Qv/j0jquU9kN3dMkFfE9k="></script>
+</body>
+
+</html>

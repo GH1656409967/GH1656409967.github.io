@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>net on 似水</title>
+    <link>http://localhost:1313/z/net/</link>
+    <description>Recent content in net on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 05 Jan 2025 17:26:10 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/z/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mqtt</title>
+      <link>http://localhost:1313/z/net/mqtt/</link>
+      <pubDate>Sun, 05 Jan 2025 17:26:10 +0800</pubDate>
+      <guid>http://localhost:1313/z/net/mqtt/</guid>
+      <description>&lt;h1 id=&#34;mqtt&#34;&gt;MQTT&lt;/h1&gt;&#xA;&lt;p&gt;MQTT（Message Queuing Telemetry Transport）是一种轻量级的发布/订阅模式消息传输协议，专为低带宽、高延迟或不稳定网络环境中的物联网（IoT）和机器对机器（M2M）通信设计。以下是其核心特性和详细说明：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>quic</title>
+      <link>http://localhost:1313/z/net/quic/</link>
+      <pubDate>Sun, 05 Jan 2025 17:26:10 +0800</pubDate>
+      <guid>http://localhost:1313/z/net/quic/</guid>
+      <description>&lt;h1 id=&#34;quic&#34;&gt;quic&lt;/h1&gt;&#xA;&lt;p&gt;QUIC（Quick UDP Internet Connections）是一种基于 UDP 的现代传输协议，由 Google 提出并逐步标准化为 IETF QUIC（RFC 9000 系列），现已成为 HTTP/3 的底层协议。QUIC 旨在解决 TCP 和传统 TLS 的性能瓶颈，同时提供低延迟、高安全性和可靠传输。以下是其核心实现机制：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>tcp</title>
+      <link>http://localhost:1313/z/net/tcp/</link>
+      <pubDate>Sun, 05 Jan 2025 17:26:10 +0800</pubDate>
+      <guid>http://localhost:1313/z/net/tcp/</guid>
+      <description>&lt;h1 id=&#34;tcp协议&#34;&gt;TCP协议&lt;/h1&gt;&#xA;&lt;h2 id=&#34;基本定义&#34;&gt;基本定义&lt;/h2&gt;&#xA;&lt;p&gt;传输控制协议（Transmission Control Protocol）&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;OSI模型第四层(传输层)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;面向连接的可靠字节流服务&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;面向连接（连接建立与释放，只能一对一，不能像UDP一对多）&lt;/li&gt;&#xA;&lt;li&gt;可靠传输（确认应答 + 超时重传 + 校验 + 有序传输 + 流量控制 + 拥塞控制）&lt;/li&gt;&#xA;&lt;li&gt;面向字节流（数据以字节流方式发送，不保留消息边界。且有序的，当「前一个」TCP 报文没有收到的时候，即使它先收到了后面的 TCP 报文，那么也不能扔给应用层去处理，同时对「重复」的 TCP 报文会自动丢弃）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;全双工通信模式（双方可以同时发送和接收）&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>curl</title>
+      <link>http://localhost:1313/z/net/curl/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/net/curl/</guid>
+      <description>&lt;p&gt;直接访问&lt;/p&gt;&#xA;    &#xA;                &lt;div class=&#34;fold-container folded&#34; data-previewHeight=&#34;300px&#34;&gt;&#xA;                    &lt;div class=&#34;fold-inner&#34;&gt;&#xA;                        &lt;div class=&#34;fold-button-layer&#34;&gt;&#xA;                            &lt;button class=&#34;line-break-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-solid fa-arrows-left-right-to-line&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                            &lt;button class=&#34;code-copy-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-regular fa-copy&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                            &lt;button class=&#34;fold-toggle-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-solid fa-angle-down&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                        &lt;/div&gt;&#xA;                        &lt;div class=&#34;fold-content&#34;&gt;&#xA;                            &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;curl localhost:20000&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;                        &lt;/div&gt;&#xA;                    &lt;/div&gt;&#xA;                &lt;/div&gt;&lt;p&gt;只查看状态值&lt;/p&gt;&#xA;    &#xA;                &lt;div class=&#34;fold-container folded&#34; data-previewHeight=&#34;300px&#34;&gt;&#xA;                    &lt;div class=&#34;fold-inner&#34;&gt;&#xA;                        &lt;div class=&#34;fold-button-layer&#34;&gt;&#xA;                            &lt;button class=&#34;line-break-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-solid fa-arrows-left-right-to-line&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                            &lt;button class=&#34;code-copy-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-regular fa-copy&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                            &lt;button class=&#34;fold-toggle-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-solid fa-angle-down&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                        &lt;/div&gt;&#xA;                        &lt;div class=&#34;fold-content&#34;&gt;&#xA;                            &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;curl -s -o /dev/null -w &lt;span class=&#34;s2&#34;&gt;&amp;#34;%{http_code}&amp;#34;&lt;/span&gt; localhost:20001&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;                        &lt;/div&gt;&#xA;                    &lt;/div&gt;&#xA;                &lt;/div&gt;&lt;p&gt;下载文件&lt;/p&gt;&#xA;    &#xA;                &lt;div class=&#34;fold-container folded&#34; data-previewHeight=&#34;300px&#34;&gt;&#xA;                    &lt;div class=&#34;fold-inner&#34;&gt;&#xA;                        &lt;div class=&#34;fold-button-layer&#34;&gt;&#xA;                            &lt;button class=&#34;line-break-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-solid fa-arrows-left-right-to-line&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                            &lt;button class=&#34;code-copy-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-regular fa-copy&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                            &lt;button class=&#34;fold-toggle-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-solid fa-angle-down&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                        &lt;/div&gt;&#xA;                        &lt;div class=&#34;fold-content&#34;&gt;&#xA;                            &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;curl -o T1901c.txt https://www.hko.gov.hk/tc/gts/time/calendar/text/files/T1901c.txt&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;                        &lt;/div&gt;&#xA;                    &lt;/div&gt;&#xA;                &lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on 似水</title>
+    <link>http://localhost:1313/tags/golang/</link>
+    <description>Recent content in Golang on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang</title>
+      <link>http://localhost:1313/z/lang/go/golang/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/lang/go/golang/</guid>
+      <description>&lt;h3 id=&#34;疑问&#34;&gt;疑问&lt;/h3&gt;&#xA;&lt;p&gt;1.环境安装&#xA;2.hello world&#xA;3.基础语法，运算符、关键字、数据类型，特别的地方&#xA;数值类型&#xA;字符串的修改、Raw字符串&#xA;分组声明&#xA;itoa枚举&#xA;函数、变量作用域和导出&#xA;array&#xA;slice&#xA;map&#xA;make和new的区别&#xA;流程控制for、switch&#xA;多返回值，&lt;code&gt;_&lt;/code&gt;&#xA;变参&#xA;传值与传指针&#xA;defer&#xA;函数类型，函数作为参数&#xA;Panic和Recover&#xA;保留函数，main，init&#xA;如何导入包，处理名称冲突，别名&#xA;struct定义方法，嵌套，访问字段，名称冲突&#xA;method作用，传指针及用法，method继承和重写，公有私有&#xA;interface的含义及作用，空interface，判断包含类型，嵌入&#xA;反射的含义及用法&#xA;并发，通信机制，同步&#xA;channel，close+range&#xA;select，goroutine阻塞&#xA;error&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>图论 on 似水</title>
+    <link>http://localhost:1313/tags/%E5%9B%BE%E8%AE%BA/</link>
+    <description>Recent content in 图论 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 12 Aug 2020 11:03:11 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Johnson</title>
+      <link>http://localhost:1313/z/algo/89112e2c641f5e5c/</link>
+      <pubDate>Wed, 12 Aug 2020 11:03:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/89112e2c641f5e5c/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Johnson算法是求解多源最短路的算法之一，核心操作是&lt;code&gt;re-weight&lt;/code&gt;，适用于不包含负环（负权回路）的图。时间复杂度$O(nm+nmlogm)$。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Floyd-Warshall</title>
+      <link>http://localhost:1313/z/algo/628d2014b1e1c7d7/</link>
+      <pubDate>Wed, 12 Aug 2020 11:02:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/628d2014b1e1c7d7/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Floyd-Warshall算法是求解多源最短路的算法之一，核心思想是动态规划，适用于不包含负环（负权回路）的图。时间复杂度$O(n^{3})$，空间复杂度$O(n^{2})$。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bellman-Ford</title>
+      <link>http://localhost:1313/z/algo/86f4e99b0e080776/</link>
+      <pubDate>Wed, 12 Aug 2020 10:58:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/86f4e99b0e080776/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Bellman-Ford算法是求解单源最短路的算法之一，适用于&lt;strong&gt;可包含负边权&lt;/strong&gt;的有向和无向图，可以判断是否包含负环（注意，如果是包含负权回路则不存在最短路问题）。时间复杂度$O(nm)$。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dijkstra</title>
+      <link>http://localhost:1313/z/algo/884a0d0dae24aa88/</link>
+      <pubDate>Wed, 12 Aug 2020 10:57:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/884a0d0dae24aa88/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Dijkstra算法是求解单源最短路的算法之一，核心思想是贪心，只适用于&lt;strong&gt;边权为正&lt;/strong&gt;的无向和有向图。原复杂度$O(n^{2})$，优化后时间复杂度能到$O(mlog_{m})$。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

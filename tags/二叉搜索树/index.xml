@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>二叉搜索树 on 似水</title>
+    <link>http://localhost:1313/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</link>
+    <description>Recent content in 二叉搜索树 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 25 Apr 2021 09:07:11 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>二叉搜索树</title>
+      <link>http://localhost:1313/z/algo/bst/</link>
+      <pubDate>Sun, 25 Apr 2021 09:07:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/bst/</guid>
+      <description>&lt;h1 id=&#34;定义&#34;&gt;定义&lt;/h1&gt;&#xA;&lt;p&gt;我们希望有一种数据结构，既能保持有序性（方便范围查询），又能支持高效率的动态插入和删除。&lt;/p&gt;&#xA;&lt;p&gt;利用了二叉树的层级结构分割搜索空间。每一步比较键值后，只需进入左或右子树，像二分搜索一样缩小范围。因此，查找、插入、删除的时间复杂度与树高h成正比。理想情况下，h约为log n，操作复杂度为O(log n)。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

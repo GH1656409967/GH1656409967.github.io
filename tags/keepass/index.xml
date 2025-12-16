@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KeePass on 似水</title>
+    <link>http://localhost:1313/tags/keepass/</link>
+    <description>Recent content in KeePass on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 28 Dec 2024 12:39:47 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/keepass/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win11使用KeePass管理密码</title>
+      <link>http://localhost:1313/y/tool/24122801/</link>
+      <pubDate>Sat, 28 Dec 2024 12:39:47 +0800</pubDate>
+      <guid>http://localhost:1313/y/tool/24122801/</guid>
+      <description>&lt;h1 id=&#34;密码管理工具&#34;&gt;密码管理工具&lt;/h1&gt;&#xA;&lt;p&gt;常见的包括但不限于以下几种：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;工具&lt;/th&gt;&#xA;          &lt;th&gt;付费&lt;/th&gt;&#xA;          &lt;th&gt;开源&lt;/th&gt;&#xA;          &lt;th&gt;云同步&lt;/th&gt;&#xA;          &lt;th&gt;跨平台&lt;/th&gt;&#xA;          &lt;th&gt;团队共享&lt;/th&gt;&#xA;          &lt;th&gt;自托管&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://1password.com/pricing&#34;&gt;1Password&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;付费&lt;/td&gt;&#xA;          &lt;td&gt;闭源&lt;/td&gt;&#xA;          &lt;td&gt;官方云同步&lt;/td&gt;&#xA;          &lt;td&gt;支持&lt;/td&gt;&#xA;          &lt;td&gt;支持&lt;/td&gt;&#xA;          &lt;td&gt;无自托管&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://www.lastpass.com/pricing&#34;&gt;LastPass&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;免费功能有限&lt;/td&gt;&#xA;          &lt;td&gt;闭源&lt;/td&gt;&#xA;          &lt;td&gt;官方云同步&lt;/td&gt;&#xA;          &lt;td&gt;支持&lt;/td&gt;&#xA;          &lt;td&gt;支持&lt;/td&gt;&#xA;          &lt;td&gt;无自托管&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://keepass.info/help/base/security.html&#34;&gt;KeePass&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;免费&lt;/td&gt;&#xA;          &lt;td&gt;开源&lt;/td&gt;&#xA;          &lt;td&gt;第三方&lt;/td&gt;&#xA;          &lt;td&gt;第三方&lt;/td&gt;&#xA;          &lt;td&gt;第三方&lt;/td&gt;&#xA;          &lt;td&gt;本地数据库，手动同步&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://bitwarden.com/pricing/business/&#34;&gt;Bitwarden&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;免费&lt;/td&gt;&#xA;          &lt;td&gt;开源&lt;/td&gt;&#xA;          &lt;td&gt;支持&lt;/td&gt;&#xA;          &lt;td&gt;支持&lt;/td&gt;&#xA;          &lt;td&gt;付费版&lt;/td&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://bitwarden.com/self-hosted-password-manager-on-premises/&#34;&gt;自托管&lt;/a&gt;版本，数据库存储&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;简述一下原理，KeePass会把密码存在一个加密的&lt;code&gt;.kdbx&lt;/code&gt;数据库中，通过坚果云进行云备份，坚果云WebDAV可以分配第三方应用的账号密码，让多端的KeePass类应用进行访问。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

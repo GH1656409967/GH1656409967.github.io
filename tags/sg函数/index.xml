@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SG函数 on 似水</title>
+    <link>http://localhost:1313/tags/sg%E5%87%BD%E6%95%B0/</link>
+    <description>Recent content in SG函数 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 05 Aug 2020 11:55:38 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/sg%E5%87%BD%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LightOJ-1355 Game of CS</title>
+      <link>http://localhost:1313/z/solution/2edafbf1618e176b/</link>
+      <pubDate>Wed, 05 Aug 2020 11:55:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/2edafbf1618e176b/</guid>
+      <description>&lt;h1 id=&#34;game-of-cslightoj-1355&#34;&gt;Game of CS(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1355&#34;&gt;LightOJ-1355&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Jolly and Emily are two bees studying in Computer  Science. Unlike other bees they are fond of playing two-player games.  They used to play Tic-tac-toe, Chess etc. But now since they are in CS  they invented a new game that definitely requires some knowledge of  computer science.&lt;/p&gt;&#xA;&lt;p&gt;Initially they draw a random rooted tree (a connected graph with no cycles) in a paper which consists of &lt;strong&gt;n&lt;/strong&gt; nodes, where the nodes are numbered from &lt;strong&gt;0&lt;/strong&gt; to &lt;strong&gt;n-1&lt;/strong&gt; and &lt;strong&gt;0&lt;/strong&gt; is the root, and the edges are weighted. Initially all the edges are unmarked. And an edge weigh &lt;strong&gt;w&lt;/strong&gt;, has &lt;strong&gt;w&lt;/strong&gt; identical units.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3980 Paint Chain</title>
+      <link>http://localhost:1313/z/solution/69e1bd87f5e149bb/</link>
+      <pubDate>Sat, 18 Jul 2020 11:07:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/69e1bd87f5e149bb/</guid>
+      <description>&lt;h1 id=&#34;paint-chainhdu-3980&#34;&gt;Paint Chain(&lt;a href=&#34;https://vjudge.net/problem/HDU-3980&#34;&gt;HDU-3980&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Aekdycoin and abcdxyzk are playing a game. They get a circle chain with  some beads. Initially none of the beads is painted. They take turns to  paint the chain. In Each turn one player must paint a unpainted beads.  Whoever is unable to paint in his turn lose the game. Aekdycoin will  take the first move.&lt;/p&gt;&#xA;&lt;p&gt;Now, they thought this game is too simple, and they want to change  some rules. In each turn one player must select a certain number of  consecutive unpainted beads to paint. The other rules is The same as the original. Who will win under the rules ?You may assume that both of  them are so clever.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LightOJ-1199 Partitioning Game</title>
+      <link>http://localhost:1313/z/solution/0af9c51d49f437d1/</link>
+      <pubDate>Sat, 18 Jul 2020 10:32:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/0af9c51d49f437d1/</guid>
+      <description>&lt;h1 id=&#34;partitioning-gamelightoj-1199&#34;&gt;Partitioning Game(&lt;a href=&#34;https://vjudge.net/problem/LightOJ-1199&#34;&gt;LightOJ-1199&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Alice and Bob are playing a strange game. The rules of the game are:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Initially there are &lt;strong&gt;n&lt;/strong&gt; piles.&lt;/li&gt;&#xA;&lt;li&gt;A pile is formed by some cells.&lt;/li&gt;&#xA;&lt;li&gt;Alice starts the game and they alternate turns.&lt;/li&gt;&#xA;&lt;li&gt;In each tern a player can pick any pile and divide it into two unequal piles.&lt;/li&gt;&#xA;&lt;li&gt;If a player cannot do so, he/she loses the game.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Now you are  given the number of cells in each of the piles, you have to find the  winner of the game if both of them play optimally.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2960 S-Nim</title>
+      <link>http://localhost:1313/z/solution/2c1305a7d83bd756/</link>
+      <pubDate>Tue, 14 Jul 2020 13:01:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/2c1305a7d83bd756/</guid>
+      <description>&lt;h1 id=&#34;s-nimpoj-2960&#34;&gt;S-Nim(&lt;a href=&#34;https://vjudge.net/problem/POJ-2960&#34;&gt;POJ-2960&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Arthur and his sister Caroll have been playing a game called Nim for some time now. Nim is played as follows:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The starting position has a number of heaps, all containing some, not necessarily equal, number of beads.&lt;/li&gt;&#xA;&lt;li&gt;The players take turns chosing a heap and removing a positive number of beads from it.&lt;/li&gt;&#xA;&lt;li&gt;The first player not able to make a move, loses.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Arthur and Caroll really enjoyed playing this simple game until they&#xA;recently learned an easy way to always be able to find the best move:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2425 A Chess Game</title>
+      <link>http://localhost:1313/z/solution/58cf0cf93fa5f8c7/</link>
+      <pubDate>Tue, 14 Jul 2020 12:16:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/58cf0cf93fa5f8c7/</guid>
+      <description>&lt;h1 id=&#34;a-chess-gamepoj-2425&#34;&gt;A Chess Game(&lt;a href=&#34;https://vjudge.net/problem/POJ-2425&#34;&gt;POJ-2425&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s design a new chess game. There are N positions to hold M chesses  in this game. Multiple chesses can be located in the same position. The  positions are constituted as a topological graph, i.e. there are  directed edges connecting some positions, and no cycle exists. Two  players you and I move chesses alternately. In each turn the player  should move only one chess from the current position to one of its  out-positions along an edge. The game does not end, until one of the  players cannot move chess any more. If you cannot move any chess in your turn, you lose. Otherwise, if the misfortune falls on me&amp;hellip; I will  disturb the chesses and play it again.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1848 Fibonacci again and again</title>
+      <link>http://localhost:1313/z/solution/87fb0756021b4dda/</link>
+      <pubDate>Mon, 13 Jul 2020 11:06:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/87fb0756021b4dda/</guid>
+      <description>&lt;h1 id=&#34;fibonacci-again-and-againhdu-1848&#34;&gt;Fibonacci again and again(&lt;a href=&#34;https://vjudge.net/problem/HDU-1848&#34;&gt;HDU-1848&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;任何一个大学生对菲波那契数列(Fibonacci numbers)应该都不会陌生，它是这样定义的：&#xA;F(1)=1;&#xA;F(2)=2;&#xA;F(n)=F(n-1)+F(n-2)(n&amp;gt;=3);&#xA;所以，1,2,3,5,8,13……就是菲波那契数列。&#xA;在HDOJ上有不少相关的题目，比如1005 Fibonacci again就是曾经的浙江省赛题。&#xA;今天，又一个关于Fibonacci的题目出现了，它是一个小游戏，定义如下：&#xA;1、 这是一个二人游戏;&#xA;2、 一共有3堆石子，数量分别是m, n, p个；&#xA;3、 两人轮流走;&#xA;4、 每走一步可以选择任意一堆石子，然后取走f个；&#xA;5、 f只能是菲波那契数列中的元素（即每次只能取1，2，3，5，8…等数量）；&#xA;6、 最先取光所有石子的人为胜者；&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2068 Nim</title>
+      <link>http://localhost:1313/z/solution/567b57a74cf05d73/</link>
+      <pubDate>Mon, 13 Jul 2020 10:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/567b57a74cf05d73/</guid>
+      <description>&lt;h1 id=&#34;nimpoj-2068&#34;&gt;Nim(&lt;a href=&#34;https://vjudge.net/problem/POJ-2068&#34;&gt;POJ-2068&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s play a traditional game Nim. You and I are seated across a table  and we have a hundred stones on the table (we know the number of stones  exactly). We play in turn and at each turn, you or I can remove on to  four stones from the heap. You play first and the one who removed the  last stone loses.&#xA;In this game, you have a winning strategy. To see this, you first  remove four stones and leave 96 stones. No matter how I play, I will end up with leaving 92 - 95 stones. Then you will in turn leave 91 stones  for me (verify this is always possible). This way, you can always leave  5k+1 stones for me and finally I get the last stone, sigh. If we  initially had 101 stones, on the other hand, I have a winning strategy  and you are doomed to lose.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2311 Cutting Game</title>
+      <link>http://localhost:1313/z/solution/0a2d6ccc86c03ede/</link>
+      <pubDate>Mon, 13 Jul 2020 09:46:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/0a2d6ccc86c03ede/</guid>
+      <description>&lt;h1 id=&#34;cutting-gamepoj-2311&#34;&gt;Cutting Game(&lt;a href=&#34;https://vjudge.net/problem/POJ-2311&#34;&gt;POJ-2311&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Urej loves to play various types of dull games. He usually asks other  people to play with him. He says that playing those games can show his  extraordinary wit. Recently Urej takes a great interest in a new game,  and Erif Nezorf becomes the victim. To get away from suffering playing  such a dull game, Erif Nezorf requests your help. The game uses a  rectangular paper that consists of W*H grids. Two players cut the paper  into two pieces of rectangular sections in turn. In each turn the player can cut either horizontally or vertically, keeping every grids  unbroken. After N turns the paper will be broken into N+1 pieces, and in the later turn the players can choose any piece to cut. If one player  cuts out a piece of paper with a single grid, he wins the game. If these two people are both quite clear, you should write a problem to tell  whether the one who cut first can win or not.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SG函数</title>
+      <link>http://localhost:1313/z/algo/671a581fd4a227f6/</link>
+      <pubDate>Mon, 08 Jun 2020 22:00:54 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/671a581fd4a227f6/</guid>
+      <description>&lt;h1 id=&#34;公平组合游戏&#34;&gt;公平组合游戏&lt;/h1&gt;&#xA;&lt;p&gt;公平组合游戏（Impartial Combinatorial Games）简称ICG，大致定义如下：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;游戏有2名选手&lt;/li&gt;&#xA;&lt;li&gt;对于游戏任何一种可能的局面（position），合法的操作集合只取决于这个局面本身&lt;/li&gt;&#xA;&lt;li&gt;选手轮流操作（move），且只能在合法操作集合中选择&lt;/li&gt;&#xA;&lt;li&gt;在游戏出于某状态，当前选手合法操作集合为空时判负，游戏结束&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;details&gt;&#xA;    &lt;summary&gt;查看解析&lt;/summary&gt;&#xA;    &lt;p&gt;一个公平游戏可以抽象地用一个有向无环图来表示，这个图中每个点都对应一个状态，每条有向边代表从一个状态到另一个状态的合法操作。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>思维 on 似水</title>
+    <link>http://localhost:1313/categories/%E6%80%9D%E7%BB%B4/</link>
+    <description>Recent content in 思维 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 27 Mar 2021 12:42:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E6%80%9D%E7%BB%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指Offer-14.2 剪绳子II</title>
+      <link>http://localhost:1313/z/solution/d9a07c5ba4c843bf/</link>
+      <pubDate>Sat, 27 Mar 2021 12:42:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/d9a07c5ba4c843bf/</guid>
+      <description>&lt;h1 id=&#34;剪绳子ii剑指offer-142&#34;&gt;剪绳子II(&lt;a href=&#34;https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof/&#34;&gt;剑指Offer-14.2&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n&amp;gt;1并且m&amp;gt;1），每段绳子的长度记为 &lt;code&gt;k[0],k[1]...k[m-1]&lt;/code&gt; 。请问 &lt;code&gt;k[0]*k[1]*...*k[m-1]&lt;/code&gt; 可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>剑指Offer-14.1 剪绳子</title>
+      <link>http://localhost:1313/z/solution/f9e17b3c55b14bd3/</link>
+      <pubDate>Sat, 27 Mar 2021 12:31:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/f9e17b3c55b14bd3/</guid>
+      <description>&lt;h1 id=&#34;剪绳子剑指offer-141&#34;&gt;剪绳子(&lt;a href=&#34;https://leetcode-cn.com/problems/jian-sheng-zi-lcof/&#34;&gt;剑指Offer-14.1&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n&amp;gt;1并且m&amp;gt;1），每段绳子的长度记为 &lt;code&gt;k[0],k[1]...k[m-1]&lt;/code&gt; 。请问 &lt;code&gt;k[0]*k[1]*...*k[m-1]&lt;/code&gt; 可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>剑指Offer-04 二维数组中的查找</title>
+      <link>http://localhost:1313/z/solution/e7ea816fda14d77b/</link>
+      <pubDate>Tue, 23 Mar 2021 13:32:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/e7ea816fda14d77b/</guid>
+      <description>&lt;h1 id=&#34;二维数组中的查找剑指offer-04&#34;&gt;二维数组中的查找(&lt;a href=&#34;https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/&#34;&gt;剑指Offer-04&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

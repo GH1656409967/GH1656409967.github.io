@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on 似水</title>
+    <link>http://localhost:1313/categories/java/</link>
+    <description>Recent content in Java on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>java</title>
+      <link>http://localhost:1313/z/tool/java/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/tool/java/</guid>
+      <description>&lt;h1 id=&#34;jdk&#34;&gt;jdk&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/taiyang3285/article/details/135231807&#34;&gt;https://blog.csdn.net/taiyang3285/article/details/135231807&lt;/a&gt;&lt;/p&gt;&#xA;    &#xA;                &lt;div class=&#34;fold-container folded&#34; data-previewHeight=&#34;300px&#34;&gt;&#xA;                    &lt;div class=&#34;fold-inner&#34;&gt;&#xA;                        &lt;div class=&#34;fold-button-layer&#34;&gt;&#xA;                            &lt;button class=&#34;line-break-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-solid fa-arrows-left-right-to-line&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                            &lt;button class=&#34;code-copy-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-regular fa-copy&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                            &lt;button class=&#34;fold-toggle-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-solid fa-angle-down&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                        &lt;/div&gt;&#xA;                        &lt;div class=&#34;fold-content&#34;&gt;&#xA;                            &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;JAVA_HOME22 D:&lt;span class=&#34;se&#34;&gt;\e&lt;/span&gt;nv&lt;span class=&#34;se&#34;&gt;\J&lt;/span&gt;ava&lt;span class=&#34;se&#34;&gt;\j&lt;/span&gt;dk-22.0.2&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;JAVA_HOME   %JAVA_HOME22%&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Path        %JAVA_HOME%&lt;span class=&#34;se&#34;&gt;\b&lt;/span&gt;in&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;                        &lt;/div&gt;&#xA;                    &lt;/div&gt;&#xA;                &lt;/div&gt;&lt;h1 id=&#34;jre&#34;&gt;jre&lt;/h1&gt;&#xA;&lt;p&gt;好像都不带jre了，运行时根据所需进行配置，而不是统一一个很大的runtime&#xA;bin\jlink.exe &amp;ndash;module-path jmods &amp;ndash;add-modules java.desktop &amp;ndash;output jre&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

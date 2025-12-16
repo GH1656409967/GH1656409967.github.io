@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fmt on 似水</title>
+    <link>http://localhost:1313/tags/fmt/</link>
+    <description>Recent content in Fmt on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/fmt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fmt</title>
+      <link>http://localhost:1313/z/lang/go/fmt/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/lang/go/fmt/</guid>
+      <description>&lt;h1 id=&#34;输出&#34;&gt;输出&lt;/h1&gt;&#xA;&lt;p&gt;Print 系列输出内容到终端&#xA;Fprint系列输出内容到一个io.Writer接口类中，通常用于写文件&#xA;Sprint系列把传入的数据生成并返回一个字符串&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

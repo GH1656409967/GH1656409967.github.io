@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编程语言 on 似水</title>
+    <link>http://localhost:1313/z/lang/</link>
+    <description>Recent content in 编程语言 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/z/lang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bilibili后端</title>
+      <link>http://localhost:1313/z/lang/go/gin-gorm-oj/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/lang/go/gin-gorm-oj/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/GetcharZp/gin-gorm-oj/tree/master&#34;&gt;GitHub - GetcharZp/gin-gorm-oj&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;在线练习系统 ==&amp;gt; 后端：基于Gin、Redis、Gorm实现 前端：基于Vue、Element实现&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>flutter</title>
+      <link>http://localhost:1313/z/lang/flutter/flutter/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/lang/flutter/flutter/</guid>
+      <description>&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.flutter.cn/get-started/install/windows/desktop#configure-a-text-editor-or-ide&#34;&gt;https://docs.flutter.cn/get-started/install/windows/desktop#configure-a-text-editor-or-ide&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;在vscode中切换调试设备&#34;&gt;在vscode中切换调试设备&lt;/h1&gt;&#xA;&lt;p&gt;右下角可以点击切换&lt;/p&gt;&#xA;&lt;p&gt;windows调试，安装visual studio，安装c++桌面开发&lt;/p&gt;&#xA;&lt;p&gt;windows kits 污染路径&#xA;&lt;a href=&#34;https://setsuikihyoryu.github.io/zh/programming/coding-memo/rust-change-windows-kits-root.html&#34;&gt;https://setsuikihyoryu.github.io/zh/programming/coding-memo/rust-change-windows-kits-root.html&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;android调试，安装android studio，打开android sdk 管理器安装如下组件&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>fmt</title>
+      <link>http://localhost:1313/z/lang/go/fmt/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/lang/go/fmt/</guid>
+      <description>&lt;h1 id=&#34;输出&#34;&gt;输出&lt;/h1&gt;&#xA;&lt;p&gt;Print 系列输出内容到终端&#xA;Fprint系列输出内容到一个io.Writer接口类中，通常用于写文件&#xA;Sprint系列把传入的数据生成并返回一个字符串&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>golang</title>
+      <link>http://localhost:1313/z/lang/go/golang/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/lang/go/golang/</guid>
+      <description>&lt;h3 id=&#34;疑问&#34;&gt;疑问&lt;/h3&gt;&#xA;&lt;p&gt;1.环境安装&#xA;2.hello world&#xA;3.基础语法，运算符、关键字、数据类型，特别的地方&#xA;数值类型&#xA;字符串的修改、Raw字符串&#xA;分组声明&#xA;itoa枚举&#xA;函数、变量作用域和导出&#xA;array&#xA;slice&#xA;map&#xA;make和new的区别&#xA;流程控制for、switch&#xA;多返回值，&lt;code&gt;_&lt;/code&gt;&#xA;变参&#xA;传值与传指针&#xA;defer&#xA;函数类型，函数作为参数&#xA;Panic和Recover&#xA;保留函数，main，init&#xA;如何导入包，处理名称冲突，别名&#xA;struct定义方法，嵌套，访问字段，名称冲突&#xA;method作用，传指针及用法，method继承和重写，公有私有&#xA;interface的含义及作用，空interface，判断包含类型，嵌入&#xA;反射的含义及用法&#xA;并发，通信机制，同步&#xA;channel，close+range&#xA;select，goroutine阻塞&#xA;error&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>utf8</title>
+      <link>http://localhost:1313/z/lang/go/utf8/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/lang/go/utf8/</guid>
+      <description>&lt;p&gt;Rune: 在Go中，字符被称为rune，它是int32的别名，用于表示一个Unicode码点。&lt;/p&gt;&#xA;&lt;h4 id=&#34;decoderuneinstring&#34;&gt;DecodeRuneInString&lt;/h4&gt;&#xA;&lt;p&gt;utf8.DecodeRuneInString是Go标准库unicode/utf8包中的一个函数，它专门用于解码字符串中的第一个UTF-8编码的字符。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

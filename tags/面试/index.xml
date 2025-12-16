@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>面试 on 似水</title>
+    <link>http://localhost:1313/tags/%E9%9D%A2%E8%AF%95/</link>
+    <description>Recent content in 面试 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E9%9D%A2%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>面试</title>
+      <link>http://localhost:1313/z/job/%E9%9D%A2%E8%AF%95/20250620/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/job/%E9%9D%A2%E8%AF%95/20250620/</guid>
+      <description>&lt;p&gt;首先，我只找非Qt非后端的C++，所以要求降低，只需要&lt;/p&gt;&#xA;&lt;p&gt;计算机网络 tcp  操作系统            cpp&#xA;socket          多线程 内存管理     面向对象 设计模式 stl&lt;/p&gt;&#xA;&lt;p&gt;工具&#xA;gdb cmake git&lt;/p&gt;&#xA;&lt;p&gt;收集到了很多面试题，也进行了简单的分类，接下来需要全部吸收，整理成自己的文档&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>面试</title>
+      <link>http://localhost:1313/z/job/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95old/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/job/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95old/</guid>
+      <description>&lt;h1 id=&#34;目录&#34;&gt;目录&lt;/h1&gt;&#xA;&lt;p&gt;cpp&lt;/p&gt;&#xA;&lt;p&gt;设计模式&lt;/p&gt;&#xA;&lt;p&gt;笔试 算法题 场景题&lt;/p&gt;&#xA;&lt;p&gt;操作系统&#xA;进程 同步 通信 调度&#xA;线程&#xA;协程&#xA;命令&#xA;并发&lt;/p&gt;&#xA;&lt;p&gt;计算机网络&#xA;网络分层&#xA;http https&#xA;tcp udp&#xA;ip&#xA;dns&#xA;arp&#xA;dhcp&#xA;nat&#xA;vpn&#xA;cdn&#xA;数据库&#xA;MySQL&#xA;索引, 事务, 锁, 视图, 缓存&#xA;Redis&#xA;缓存击穿, 缓存雪崩, 缓存穿透&#xA;中间件&#xA;消息队列   RabbitMQ Kafka&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bilibili后端 on 似水</title>
+    <link>http://localhost:1313/tags/bilibili%E5%90%8E%E7%AB%AF/</link>
+    <description>Recent content in Bilibili后端 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/bilibili%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bilibili后端</title>
+      <link>http://localhost:1313/z/lang/go/gin-gorm-oj/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/lang/go/gin-gorm-oj/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/GetcharZp/gin-gorm-oj/tree/master&#34;&gt;GitHub - GetcharZp/gin-gorm-oj&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;在线练习系统 ==&amp;gt; 后端：基于Gin、Redis、Gorm实现 前端：基于Vue、Element实现&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Manacher on 似水</title>
+    <link>http://localhost:1313/tags/manacher/</link>
+    <description>Recent content in Manacher on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 08 Aug 2020 10:18:38 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/manacher/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU-3068 最长回文</title>
+      <link>http://localhost:1313/z/solution/152d84979dfa485b/</link>
+      <pubDate>Sat, 08 Aug 2020 10:18:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/152d84979dfa485b/</guid>
+      <description>&lt;h1 id=&#34;最长回文hdu-3068&#34;&gt;最长回文(&lt;a href=&#34;https://vjudge.net/problem/HDU-3068&#34;&gt;HDU-3068&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;给出一个只由小写英文字符a,b,c&amp;hellip;y,z组成的字符串S,求S中最长回文串的长度.&#xA;回文就是正反读都是一样的字符串,如aba, abba等&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3294 Girls&#39; research</title>
+      <link>http://localhost:1313/z/solution/99d397601ec4e42f/</link>
+      <pubDate>Sat, 08 Aug 2020 10:08:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/99d397601ec4e42f/</guid>
+      <description>&lt;h1 id=&#34;girls-researchhdu-3294&#34;&gt;Girls&amp;rsquo; research(&lt;a href=&#34;https://vjudge.net/problem/HDU-3294&#34;&gt;HDU-3294&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;One day, sailormoon girls are so delighted that they intend to research  about palindromic strings. Operation contains two steps:&#xA;First step: girls will write a long string (only contains lower  case) on the paper. For example, &amp;ldquo;abcde&amp;rdquo;, but &amp;lsquo;a&amp;rsquo; inside is not the real &amp;lsquo;a&amp;rsquo;, that means if we define the &amp;lsquo;b&amp;rsquo; is the real &amp;lsquo;a&amp;rsquo;, then we can infer that &amp;lsquo;c&amp;rsquo; is the real &amp;lsquo;b&amp;rsquo;, &amp;rsquo;d&amp;rsquo; is the real &amp;lsquo;c&amp;rsquo; ……, &amp;lsquo;a&amp;rsquo; is the real &amp;lsquo;z&amp;rsquo;.  According to this, string &amp;ldquo;abcde&amp;rdquo; changes to &amp;ldquo;bcdef&amp;rdquo;.&#xA;Second step: girls will find out the longest palindromic string in  the given string, the length of palindromic string must be equal or more than 2.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-4513 吉哥系列故事-完美队形II</title>
+      <link>http://localhost:1313/z/solution/972906195cf816b6/</link>
+      <pubDate>Sat, 08 Aug 2020 09:46:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/972906195cf816b6/</guid>
+      <description>&lt;h1 id=&#34;吉哥系列故事-完美队形iihdu-4513&#34;&gt;吉哥系列故事-完美队形II(&lt;a href=&#34;https://vjudge.net/problem/HDU-4513&#34;&gt;HDU-4513&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;　吉哥又想出了一个新的完美队形游戏！&#xA;　假设有n个人按顺序站在他的面前，他们的身高分别是h[1], h[2] &amp;hellip; h[n]，吉哥希望从中挑出一些人，让这些人形成一个新的队形，新的队形若满足以下三点要求，则就是新的完美队形：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-3974 Palindrome</title>
+      <link>http://localhost:1313/z/solution/ad731995c93e43b5/</link>
+      <pubDate>Fri, 07 Aug 2020 10:26:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/ad731995c93e43b5/</guid>
+      <description>&lt;h1 id=&#34;palindromepoj-3974&#34;&gt;Palindrome(&lt;a href=&#34;https://vjudge.net/problem/POJ-3974&#34;&gt;POJ-3974&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Andy the smart computer science student was attending an algorithms  class when the professor asked the students a simple question, &amp;ldquo;Can you  propose an efficient algorithm to find the length of the largest  palindrome in a string?&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;A string is said to be a palindrome if it reads the same both  forwards and backwards, for example &amp;ldquo;madam&amp;rdquo; is a palindrome while &amp;ldquo;acm&amp;rdquo;  is not.&lt;/p&gt;&#xA;&lt;p&gt;The students recognized that this is a classical problem but  couldn&amp;rsquo;t come up with a solution better than iterating over all  substrings and checking whether they are palindrome or not, obviously  this algorithm is not efficient at all, after a while Andy raised his  hand and said &amp;ldquo;Okay, I&amp;rsquo;ve a better algorithm&amp;rdquo; and before he starts to  explain his idea he stopped for a moment and then said &amp;ldquo;Well, I&amp;rsquo;ve an  even better algorithm!&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3613 Best Reward</title>
+      <link>http://localhost:1313/z/solution/6a2eaf463fb2967e/</link>
+      <pubDate>Wed, 05 Aug 2020 19:41:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/6a2eaf463fb2967e/</guid>
+      <description>&lt;h1 id=&#34;best-rewardhdu-3613&#34;&gt;Best Reward(&lt;a href=&#34;https://vjudge.net/problem/HDU-3613&#34;&gt;HDU-3613&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;After an uphill battle, General Li won a great victory. Now the head of  state decide to reward him with honor and treasures for his great  exploit.&lt;/p&gt;&#xA;&lt;p&gt;One of these treasures is a necklace made up of 26 different kinds  of gemstones, and the length of the necklace is n. (That is to say: n  gemstones are stringed together to constitute this necklace, and each of these gemstones belongs to only one of the 26 kinds.)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Manacher</title>
+      <link>http://localhost:1313/z/algo/246358dd39e99944/</link>
+      <pubDate>Sun, 26 Jul 2020 14:22:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/246358dd39e99944/</guid>
+      <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;&#xA;&lt;p&gt;Manacher&amp;rsquo;s Algorithm是用来查找一个字符串的最长回文子串的线性方法，由一个叫Manacher的人在1975年发明的。中文谐音“马拉车”算法。时间复杂度O(|S|)。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

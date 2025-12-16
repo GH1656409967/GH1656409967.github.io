@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" data-theme="light">
+<head>
+    <script>
+        (function () {
+            const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = localStorage.getItem('n8rain-theme') || (prefers ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | 似水</title>
+    <link rel="stylesheet" href="/css/index.min.dec23d3721889f6543816a1c07a479a53dbcf86a9b0d6a9f6e8a31b397487b97.css" integrity="sha256-3sI9NyGIn2VDgWocB6R5pT28&#43;GqbDWqfbooxs5dIe5c=" />
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" id="chroma-light" href="/css/chroma-light.css">
+    <link rel="stylesheet" id="chroma-dark"  href="/css/chroma-dark.css">
+    <script>
+        (function () {
+            const isDark = document.documentElement.dataset.theme === 'dark';
+            document.getElementById('chroma-light').disabled = isDark;
+            document.getElementById('chroma-dark').disabled = !isDark;
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a class="item" href="/" target="_blank">「似水」</a>
+        </div>
+
+        <div class="header-middle">
+            
+        </div>
+
+        <div class="header-right">
+            <a id="reset-layout" class="item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 80V240h96V80H48zM0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V240c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80zM304 272V432h96V272H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V272zM144 368H48v64h96V368zM48 320h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48zM304 80v64h96V80H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V80z"></path></svg></a>
+            <a id="toggle-theme" class="item">◐</a>
+        </div>
+    </header>
+    <main class="container" id="container">
+        <div class="content" id="nav">
+            <nav class="menu">
+                <ul>
+                    <li><i class='fa fa-tags'>&nbsp;</i><a>网站导航</a></li>
+                    <li><i class='fa fa-thumbs-up'>&nbsp;</i><a href="/x/share/">好物分享</a></li>
+                    <li><i class='fa fa-wrench'>&nbsp;</i><a href="/x/tools/">游戏工具</a></li>
+                    <li><i class='fa fa-film'>&nbsp;</i><a href="/x/movies/">影视鉴赏</a></li>
+                    <li><i class='fa fa-book'>&nbsp;</i><a href="/x/books/">书籍阅读</a></li>
+                    <li><i class='fa fa-camera'>&nbsp;</i><a href="/x/gallery/">生活留影</a></li>
+                    <li><i class='fa fa-link'>&nbsp;</i><a href="/x/links/">友情链接</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="overview" id="overview" style="display: none;">
+            <div class="overview-container">
+                <div class="author-block">
+                    <img class="author-avatar" src="/img/avatar.png" alt="夜雨微澜" />
+                    
+                    <a class="author-name" href="/x/personal">夜雨微澜</a><p class="author-slogan">学而不思则罔，思而不学则殆</p>
+                </div>
+
+                <div class="site-state">
+                    <div class="item">
+                        <a href="/archives/">
+                            <span class="count">660</span>
+                            <span class="name">日志</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/series/">
+                            <span class="count">8</span>
+                            <span class="name">系列</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/categories/">
+                            <span class="count">93</span>
+                            <span class="name">分类</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/tags/">
+                            <span class="count">171</span>
+                            <span class="name">标签</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="diy-block">
+                    <canvas id="canvasDiyBlock" style="width:180px;">您的浏览器不支持 Canvas, 请更换浏览器!</canvas>
+                </div>
+
+                <div class="diy-block">
+                    <div id="typed-strings" style="display: none;">
+                        <p>We burn faster than light</p>
+                        <p>Shine across in the night sky</p>
+                    </div>
+                    <span id="typed" style="white-space: pre;line-height: 14px;font-size: 12px;"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="article-content">
+            <article class="main" id="top">
+                <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time>
+                <html>
+<head>
+<meta charset="utf-8"/>
+<link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<style>
+            body {
+                font-family: 'Ubuntu Mono', 'LXGW WenKai Screen', sans-serif;
+            }
+
+            strong {
+                color: rgb(48, 79, 254);
+            }
+
+            .code1 {
+                background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(27, 31, 35, 0.05);
+                padding: 2px 4px;
+                border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                font-family: Consolas;
+                word-break: break-all;
+                color: rgb(100, 149, 237);
+            }
+
+            .code2 {
+                background-color: rgba(27, 31, 35, 0.05);
+                margin: 0px 2px;
+                padding: 2px 4px;
+                border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                overflow-wrap: break-word;
+                font-family: Consolas;
+                word-break: break-all;
+                color: rgb(100, 149, 237);
+                background-position: left top;
+            }
+
+            .pre1 {
+                border-radius: 5px;
+                box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;
+            }
+
+            .q1 {
+                color: rgb(65, 105, 225);
+            }
+
+            .img1 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bq1 {
+                border-top: 3px none rgba(0, 0, 0, 0.4);
+                border-bottom: 3px none rgba(0, 0, 0, 0.4);
+                border-right: 3px none rgba(0, 0, 0, 0.4);
+                background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(227, 242, 253);
+                overflow: auto;
+                padding: 15px 20px;
+                border-left-color: rgb(100, 149, 237);
+            }
+
+        </style>
+</head>
+<h3><span class="q1">如何设计一个可重入的分布式锁，用什么结构设计？</span></h3>
+<p>可重入锁允许同一线程在持有锁的情况下多次获得锁而不会产生死锁。当线程请求锁时，如果它已经拥有了该锁，则可以直接获得锁，锁的计数器会增加。在释放锁时，计数器会减少，只有当计数器为零时，锁才会真正释放。</p>
+<p>在分布式系统中，通常会使用诸如 Redis、Zookeeper 或 etcd 等组件来实现锁的管理。下面以 <strong>Redis</strong> 为例，简单描述如何设计一个可重入的分布式锁。</p>
+<p>设计要素：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>锁的标识符（Lock ID）</strong>：用于标识锁的唯一性。
+        </li>
+<li>
+<strong>持有者标识（Owner ID）</strong>：线程或进程的唯一标识符，通常是线程的 ID 或进程的 ID。
+        </li>
+<li>
+<strong>计数器</strong>：记录当前持有锁的次数。
+        </li>
+<li>
+<strong>过期时间</strong>：为了避免死锁，锁需要设定一个合理的超时时间。
+        </li>
+</ul>
+<p>我们可以在 Redis 中使用一个哈希表或简单的键值对来存储锁的状态。使用一个 key（如 <code class="code1">lock:&lt;resource&gt;</code>）来表示锁，包含以下字段：</p>
+<ul class="list-paddingleft-1">
+<li>
+<code class="code1">owner</code>: 当前持有锁的线程/进程标识符
+        </li>
+<li>
+<code class="code1">count</code>: 当前计数器，表示获得锁的次数
+        </li>
+<li>
+<code class="code1">expires_at</code>: 锁的到期时间，用于防止死锁
+        </li>
+</ul>
+<p>示例数据结构</p><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIOP11IzaiatZA6R5Cab8jUiaRuZWlj47NFozBl2JjTSU8FzhUULVvUiaqzD80jcGqXDuw6ALFjHMJwNWrhKNy0kJSu/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;">{<br/>  "key": "lock:resource_1",<br/>  "value": {<br/>    "owner": "thread_id_or_process_id",<br/>    "count": 3,<br/>    "expires_at": "2023-10-01T12:00:00Z"<br/>  }<br/>}<br/></code></pre>
+<p>以下是围绕这个锁结构的基本操作：</p>
+<ol class="list-paddingleft-1">
+<li>
+            获取锁 (Lock Acquisition)：尝试设置 lock: 的值，如果这个 key 不存在（即没有锁），那么可以创建该 key，并设置 owner 为当前线程/进程的唯一ID，count 设为 1，expires_at 设为当前时间加上锁的过期时间。如果该 key 已存在且 owner 是当前线程/进程的 ID，则增加 count 并更新 expires_at。
+        </li>
+<li>
+            释放锁 (Lock Release)：检查当前的 owner 是否是当前线程/进程的 ID。如果是，减少 count。如果 count 减少到 0，则删除该 key。如果在持有锁的情况下，锁已过期，系统会根据 expires_at 检查锁是否可释放，避免死锁。
+        </li>
+<li>
+            锁续期 (Lock Renewal)：如果当前线程在执行过程中需要继续持有锁，可以在逻辑处理中重新设置 expires_at.
+        </li>
+<li>
+            超时与故障恢复：可以设置锁的自动超时时间，例如，设定一个最大持锁时间，超时后锁自动释放。这可以在一定程度上防止死锁的情况。
+        </li>
+</ol>
+<p>整体流程示例</p>
+<ul class="list-paddingleft-1">
+<li>
+<p><strong>获取锁</strong>：线程A调用获取锁的 API。如果成功，返回锁的状态。如果线程B也尝试获取同一把锁，则会返回锁已被占用。</p>
+</li>
+<li>
+<p><strong>释放锁</strong>：线程A在完成任务时调用释放锁的 API，递减 <code class="code1">count</code> 字段。如果 <code class="code1">count</code> 达到 0，删除锁并释放资源。</p>
+</li>
+<li>
+<p><strong>续约锁</strong>：线程A在处理过程中可以根据需要续约锁，更新 <code class="code1">expires_at</code>。</p>
+</li>
+</ul>
+<h3><span class="q1">场景题：你认为你所在的城市有多少个加油站</span></h3>
+<p>我所在的城市是北京,首先，明确问题：求北京地区加油站的数量。</p>
+<p>然后建立拆解公式，加油站是供给方，而有车一族是需求方，假设市场供需平衡，我们可以从需求方去估算加油站数量。</p>
+<p>加油站的数量 = 每天需要加油的车辆数/每个加油站每天可加油的车辆数`，接着又可以进一步拆分。</p>
+<p>每天需要加油的车辆数与北京车辆数和车的加油周期有关，北京车辆数可以通过北京常住人口数估算得到，北京人口数已知（约2000万），假设每个家庭有4个人，每个家庭有一辆车，每辆车五天加一次油，则每天需要加油的车辆数 = 2000W/4/5 = 100。</p>
+<p>当然如果要考虑再细一点，不同家庭人数可以分层，按比例计算，每个家庭车辆数也可以深究，每辆车几天加一次油也可以分层，这些条件及假设，在过程中也可以提出和表明。</p>
+<p>每个加油站每天可加油车辆数可以通过加油站加油桩数量，加油效率，作业时间来估算，如每个桩加一次油需要5分钟，每天可以作业14小时，根据时间段可拆为8小时加油桩利用率为80%，另外6小时加油桩利用率为30%，加油站平均有4个加油桩，则每个加油站每天可加油车辆数 = 8/(5/60)<em>0.8</em>4+6/(5/60)<em>0.3</em>4=392个</p>
+<p>据此可以估算加油站的数量 = 100万/392 = 2551个</p>
+<p>场景题：</p>
+<ul class="list-paddingleft-1">
+<li>
+            设计短链系统
+        </li>
+</ul>
+<h3><span class="q1">如何设计一个秒杀场景？</span></h3>
+<p>秒杀场景的核心特点是<strong>高并发、低库存、短时间爆发式访问</strong> 。因此，设计时需要解决以下几个问题：</p>
+<ol class="list-paddingleft-1">
+<li>
+<strong>高并发处理</strong> ：如何应对大量用户同时访问？
+        </li>
+<li>
+<strong>库存一致性</strong> ：如何保证库存不会超卖或少卖？
+        </li>
+<li>
+<strong>用户体验</strong> ：如何减少用户等待时间，避免页面崩溃？
+        </li>
+<li>
+<strong>防刷机制</strong> ：如何防止恶意用户利用脚本抢购商品？
+        </li>
+</ol>
+<p>面对上面这些问题，可以针对每一层做一些设计：</p>
+<figure class="img1"><img _width="677px" data-index="14" data-src="../img/think_001_871dba22.png" data-w="1080" src="../img/think_001_871dba22.png" style="height: auto !important;  width: 656.984px !important;"/></figure>
+<p>1、前端层：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>静态资源分离</strong> ：将秒杀页面的静态资源（如HTML、CSS、JS）部署到CDN（内容分发网络），减轻服务器压力。
+        </li>
+<li>
+<strong>请求拦截</strong>：活动未开始时，前端按钮置灰；通过验证码、点击频率限制。
+        </li>
+</ul>
+<p>2、网关层：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>流量拦截</strong> ：使用API网关对请求进行初步过滤，例如IP限流、黑名单拦截等。
+        </li>
+<li>
+<strong>身份验证</strong> ：通过Token或签名验证用户身份，防止未登录用户直接访问秒杀接口。
+        </li>
+</ul>
+<p>3、缓存层：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>Redis缓存库存</strong> ：将商品库存信息存储在Redis中，利用其高性能特性处理库存扣减操作。
+        </li>
+<li>
+<strong>预热数据</strong> ：在秒杀活动开始前，将商品信息和库存数据加载到Redis中，减少数据库压力。
+        </li>
+</ul>
+<p>4、消息队列：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>削峰填谷</strong> ：使用消息队列（如Kafka）将用户的秒杀请求异步化，避免直接冲击后端服务。
+        </li>
+<li>
+<strong>订单处理</strong> ：将成功的秒杀请求放入队列，由后台服务异步生成订单，提高系统吞吐量。
+        </li>
+</ul>
+<p>5、数据库层</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>乐观锁</strong>：在库存扣减时，使用乐观锁确保库存一致性。
+        </li>
+<li>
+<strong>读写分离</strong> ：通过主从复制实现数据库的读写分离，提升查询性能。
+        </li>
+</ul>
+<p>关键的核心业务逻辑实现，<strong>库存防超卖方案采用：Redis原子操作 + 异步扣减数据库</strong></p>
+<figure class="img1"><img _width="677px" data-index="15" data-src="../img/think_002_8ded3f13.png" data-w="1080" src="../img/think_002_8ded3f13.png" style="height: auto !important;  width: 656.969px !important;"/></figure>
+<p>具体流程如下：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>秒杀请求达到</strong>：用户发起秒杀请求，系统接收到请求后，首先进行一些基础校验（如用户身份验证、活动是否开始等）。如果校验通过，进入库存扣减逻辑。
+        </li>
+<li>
+<strong>Redis库存扣减：</strong>在Redis中检查商品库存是否充足。例如，使用<code class="code1">GET</code>命令获取当前库存数量。如果库存不足，直接返回失败，结束流程。如果库存充足，使用Redis的原子操作（如<code class="code1">DECR</code>或Lua脚本）扣减库存。
+        </li>
+<li>
+<strong>异步更新数据库</strong>：如果Redis库存扣减成功，生成一个秒杀成功的消息，并将其放入消息队列
+        </li>
+<li>
+<strong>后台服务消费消息：</strong>后台服务从消息队列中消费秒杀成功的消息，执行以下操作：1、为用户创建订单记录；2、使用乐观锁将数据库中的库存数量减少1；3、通过唯一标识（如用户ID+商品ID+时间戳）防止重复消费。
+        </li>
+<li>
+<strong>最终一致性校验：</strong>在Redis库存扣减和数据库库存更新之间，可能会存在短暂的不一致状态。为了保证最终一致性，可以采取以下措施：1、定期将Redis中的库存数据与数据库进行同步。2、如果发现Redis和数据库库存不一致，触发补偿逻辑（如回滚订单或调整库存）。
+        </li>
+</ul>
+<h3><span class="q1">给你一个场景吧，在支付界面让用户同时选择支付宝和微信支付，但是用户点了微信，这个时候网卡了，又点了支付宝，这个时候如何保证用户不重复付款</span></h3>
+<p>前端页面变灰，或者执行支付逻辑之前先加锁，返回给前端成功再释放锁</p>
+<h3><span class="q1">还有别的方案呢？前端往往是不可信的</span></h3>
+<p>不知道了</p>
+<h3><span class="q1">多线程打印奇偶数，怎么控制打印的顺序</span></h3>
+<p>可以利用wait()和notify()来控制线程的执行顺序。以下是一个基于这种方法的简单示例：</p><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIP4WkGwRDXsDcByYVqjOR6IFQYjDTfPDxiadpKddxRuWITJ5xDiaK13yxkoUYPA7F4mvWR4RgIyptZcys6lLedvzn/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;display: -webkit-box;font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;-webkit-overflow-scrolling: touch;background: #282c34;border-radius: 5px;"><span style="color: #c678dd;">public</span> <span><span style="color: #c678dd;">class</span> <span style="color: #e6c07b;">PrintOddEven</span> </span>{<br/>    <span style="color: #c678dd;">private</span> <span style="color: #c678dd;">static</span> <span style="color: #c678dd;">final</span> Object lock = <span style="color: #c678dd;">new</span> Object();<br/>    <span style="color: #c678dd;">private</span> <span style="color: #c678dd;">static</span> <span style="color: #c678dd;">int</span> count = <span style="color: #d19a66;">1</span>;<br/>    <span style="color: #c678dd;">private</span> <span style="color: #c678dd;">static</span> <span style="color: #c678dd;">final</span> <span style="color: #c678dd;">int</span> MAX_COUNT = <span style="color: #d19a66;">10</span>;<br/><br/>    <span><span style="color: #c678dd;">public</span> <span style="color: #c678dd;">static</span> <span style="color: #c678dd;">void</span> <span style="color: #61aeee;">main</span><span>(String[] args)</span> </span>{<br/>        Runnable printOdd = () -&gt; {<br/>            <span style="color: #c678dd;">synchronized</span> (lock) {<br/>                <span style="color: #c678dd;">while</span> (count &lt;= MAX_COUNT) {<br/>                    <span style="color: #c678dd;">if</span> (count % <span style="color: #d19a66;">2</span> != <span style="color: #d19a66;">0</span>) {<br/>                        System.out.println(Thread.currentThread().getName() + <span style="color: #98c379;">": "</span> + count++);<br/>                        lock.notify();<br/>                    } <span style="color: #c678dd;">else</span> {<br/>                        <span style="color: #c678dd;">try</span> {<br/>                            lock.wait();<br/>                        } <span style="color: #c678dd;">catch</span> (InterruptedException e) {<br/>                            e.printStackTrace();<br/>                        }<br/>                    }<br/>                }<br/>            }<br/>        };<br/><br/>        Runnable printEven = () -&gt; {<br/>            <span style="color: #c678dd;">synchronized</span> (lock) {<br/>                <span style="color: #c678dd;">while</span> (count &lt;= MAX_COUNT) {<br/>                    <span style="color: #c678dd;">if</span> (count % <span style="color: #d19a66;">2</span> == <span style="color: #d19a66;">0</span>) {<br/>                        System.out.println(Thread.currentThread().getName() + <span style="color: #98c379;">": "</span> + count++);<br/>                        lock.notify();<br/>                    } <span style="color: #c678dd;">else</span> {<br/>                        <span style="color: #c678dd;">try</span> {<br/>                            lock.wait();<br/>                        } <span style="color: #c678dd;">catch</span> (InterruptedException e) {<br/>                            e.printStackTrace();<br/>                        }<br/>                    }<br/>                }<br/>            }<br/>        };<br/><br/>        Thread oddThread = <span style="color: #c678dd;">new</span> Thread(printOdd, <span style="color: #98c379;">"OddThread"</span>);<br/>        Thread evenThread = <span style="color: #c678dd;">new</span> Thread(printEven, <span style="color: #98c379;">"EvenThread"</span>);<br/><br/>        oddThread.start();<br/>        evenThread.start();<br/>    }<br/>}<br/></code></pre>
+<p>在上面的示例中，通过一个共享的锁对象lock来控制两个线程的交替执行。一个线程负责打印奇数，另一个线程负责打印偶数，通过wait()和notify()方法来在两个线程之间实现顺序控制。当当前应该打印奇数时，偶数线程会进入等待状态，反之亦然。</p>
+<li>
+        场景题：给定一个1TB的字符串大文件，内存有限，找出其中出现次数前10的字符串
+    </li>
+<h3><span class="q1">常见的限流算法你知道哪些？？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+            滑动窗口限流算法是对固定窗口限流算法的改进，有效解决了窗口切换时可能会产生两倍于阈值流量请求的问题。
+        </li>
+<li>
+            漏桶限流算法能够对流量起到整流的作用，让随机不稳定的流量以固定的速率流出，但是不能解决流量突发的问题。
+        </li>
+<li>
+            令牌桶算法作为漏斗算法的一种改进，除了能够起到平滑流量的作用，还允许一定程度的流量突发。
+        </li>
+</ul>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">固定窗口限流算法</p>
+</blockquote>
+<p>固定窗口限流算法就是对一段固定时间窗口内的请求进行计数，如果请求数超过了阈值，则舍弃该请求；如果没有达到设定的阈值，则接受该请求，且计数加1。当时间窗口结束时，重置计数器为0。</p>
+<figure class="img1"><img _width="677px" data-index="10" data-src="../img/think_003_cdf3ff7c.png" data-w="1080" src="../img/think_003_cdf3ff7c.png" style="height: auto !important;  width: 656.953px !important;"/></figure>
+<p>固定窗口限流优点是实现简单，但是会有“流量吐刺”的问题，假设窗口大小为1s，限流大小为100，然后恰好在某个窗口的第999ms来了100个请求，窗口前期没有请求，所以这100个请求都会通过。再恰好，下一个窗口的第1ms有来了100个请求，也全部通过了，那也就是在2ms之内通过了200个请求，而我们设定的阈值是100，通过的请求达到了阈值的两倍，这样可能会给系统造成巨大的负载压力。</p>
+<figure class="img1"><img _width="677px" data-index="11" data-src="../img/think_004_4097dc38.png" data-w="1080" src="../img/think_004_4097dc38.png" style="height: auto !important;  width: 656.984px !important;"/></figure>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">滑动窗口限流算法</p>
+</blockquote>
+<p>改进固定窗口缺陷的方法是采用滑动窗口限流算法，滑动窗口就是将限流窗口内部切分成一些更小的时间片，然后在时间轴上滑动，每次滑动，滑过一个小时间片，就形成一个新的限流窗口，即滑动窗口。然后在这个滑动窗口内执行固定窗口算法即可。</p>
+<p>滑动窗口可以避免固定窗口出现的放过两倍请求的问题，因为一个短时间内出现的所有请求必然在一个滑动窗口内，所以一定会被滑动窗口限流。</p>
+<figure class="img1"><img _width="677px" data-index="12" data-src="../img/think_005_e7fd5fbb.png" data-w="1080" src="../img/think_005_e7fd5fbb.png" style="height: auto !important;  width: 656.984px !important;"/></figure>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">漏桶限流算法</p>
+</blockquote>
+<p>漏桶限流算法是模拟水流过一个有漏洞的桶进而限流的思路，如图。</p>
+<figure class="img1"><img _width="442px" data-index="13" data-src="../img/think_006_53da3226.png" data-w="442" src="../img/think_006_53da3226.png" style="height: auto !important;  width: 442px !important;"/></figure>
+<p>水龙头的水先流入漏桶，再通过漏桶底部的孔流出。如果流入的水量太大，底部的孔来不及流出，就会导致水桶太满溢出去。</p>
+<p>从系统的角度来看，我们不知道什么时候会有请求来，也不知道请求会以多大的速率来，这就给系统的安全性埋下了隐患。但是如果加了一层漏斗算法限流之后，就能够保证请求以恒定的速率流出。在系统看来，请求永远是以平滑的传输速率过来，从而起到了保护系统的作用。</p>
+<p>使用漏桶限流算法，缺点有两个：</p>
+<ul class="list-paddingleft-1">
+<li>
+            即使系统资源很空闲，多个请求同时到达时，漏桶也是慢慢地一个接一个地去处理请求，这其实并不符合人们的期望，因为这样就是在浪费计算资源。
+        </li>
+<li>
+            不能解决流量突发的问题，假设漏斗速率是2个/秒，然后突然来了10个请求，受限于漏斗的容量，只有5个请求被接受，另外5个被拒绝。你可能会说，漏斗速率是2个/秒，然后瞬间接受了5个请求，这不就解决了流量突发的问题吗？不，这5个请求只是被接受了，但是没有马上被处理，处理的速度仍然是我们设定的2个/秒，所以没有解决流量突发的问题
+        </li>
+</ul>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">令牌桶限流算法</p>
+</blockquote>
+<p>令牌桶是另一种桶限流算法，模拟一个特定大小的桶，然后向桶中以特定的速度放入令牌（token），请求到达后，必须从桶中取出一个令牌才能继续处理。如果桶中已经没有令牌了，那么当前请求就被限流。如果桶中的令牌放满了，令牌桶也会溢出。</p>
+令牌的动作是持续不断进行的，如果桶中令牌数达到上限，则丢弃令牌，因此桶中可能一直持有大量的可用令牌。此时请求进来可以直接拿到令牌执行。比如设置 qps 为 100，那么限流器初始化完成 1 秒后，桶中就已经有 100 个令牌了，如果此前还没有请求过来，这时突然来了 100 个请求，该限流器可以抵挡瞬时的 100 个请求。由此可见，只有桶中没有令牌时，请求才会进行等待，最终表现的效果即为以一定的速率执行。令牌桶的示意图如下：
+<figure class="img1"><img _width="677px" data-index="14" data-src="../img/think_007_d08bc011.png" data-w="1080" src="../img/think_007_d08bc011.png" style="height: auto !important;  width: 656.984px !important;"/></figure>
+<p>令牌桶限流算法综合效果比较好，能在最大程度利用系统资源处理请求的基础上，实现限流的目标，建议通常场景中优先使用该算法。</p>
+<h3><span class="q1">思考题：抛硬币，先抛到正面算赢，否则轮流抛。问先抛的人获胜的概率。</span></h3>
+<p>读者答：阿巴阿巴……考虑一轮，（正，-）（反，正）（反，反），其中，（正，-）可以还原成（正，正）（正，）两份，而（反，反）相当于再来一次，这样（正，-）占2份，（反，正）占1份，赢的概率就算2/3</p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>线上项目，没有日志，没后台数据的情况下怎么找出问题？</span></span></h3>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>根据用户反馈的信息，尝试在测试环境或本地环境中重现问题。通过模拟用户的操作步骤，可能会发现一些在生产环境中难以察觉的问题。如果能够重现问题，就可以更方便地进行调试和分析。</span>
+</li>
+<li>
+<span>如果问题是在某个版本发布后出现的，对比当前线上版本与之前正常工作的版本之间的代码差异。查看是否有引入新的功能、修改了配置或依赖关系等，这些变化可能导致了问题的出现。</span>
+</li>
+<li>
+<span>可以通过生成Heap Dump或者线程转储来分析。例如，使用jstack、jmap这些JDK工具。或者使用Arthas的监控命令，实时查看方法执行情况。还要考虑到网络问题，比如是否有外部服务调用失败，或者资源耗尽的情况，比如数据库连接池满了。这时候可能需要检查系统资源，如CPU、内存、磁盘IO、网络流量等，使用top、netstat、ss等命令。</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>看你项目用了策略模式，介绍一下策略模式？</span></span></h3>
+<p style="text-align: left;"><span>策略模式是一种行为设计模式，它能让你定义一系列算法，并将每个算法封装起来，使它们可以相互替换。策略模式让算法的变化独立于使用算法的客户端。在 Java 里，策略模式的实现通常涉及以下几个角色：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>策略接口（Strategy）</span></strong><span>：定义所有支持的算法的公共接口。</span>
+</li>
+<li>
+<strong><span>具体策略类（Concrete Strategy）</span></strong><span>：实现策略接口，包含具体的算法。</span>
+</li>
+<li>
+<strong><span>上下文类（Context）</span></strong><span>：持有一个策略接口的引用，负责根据需要选择和使用具体的策略。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>假设你要实现一个简单的计算器，它支持加法、减法和乘法运算。你可以使用策略模式来实现这个计算器。</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIQoficyaMgnreLRLbiaicRBXygg8qJchxdLYBKUD2foa75geB0MicajRJTlthyr41xmY0fRpovKC00N4/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIQoficyaMgnreLRLbiaicRBXygg8qJchxdLYBKUD2foa75geB0MicajRJTlthyr41xmY0fRpovKC00N4/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span style="color: #5c6370;font-style: italic;"><span>// 策略接口</span></span><br/><span><span style="color: #c678dd;"><span>interface</span></span><span> </span><span style="color: #e6c07b;"><span>OperationStrategy</span></span><span> </span></span><span>{</span><br/><span>    </span><span><span style="color: #c678dd;"><span>int</span></span><span> </span><span style="color: #61aeee;"><span>doOperation</span></span><span><span>(</span><span style="color: #c678dd;"><span>int</span></span><span> num1, </span><span style="color: #c678dd;"><span>int</span></span><span> num2)</span></span></span><span>;</span><br/><span>}</span><br/><br/><span style="color: #5c6370;font-style: italic;"><span>// 具体策略类：加法</span></span><br/><span><span style="color: #c678dd;"><span>class</span></span><span> </span><span style="color: #e6c07b;"><span>AdditionStrategy</span></span><span> </span><span style="color: #c678dd;"><span>implements</span></span><span> </span><span style="color: #e6c07b;"><span>OperationStrategy</span></span><span> </span></span><span>{</span><br/><span>    </span><span style="color: #61aeee;"><span>@Override</span></span><br/><span>    </span><span><span style="color: #c678dd;"><span>public</span></span><span> </span><span style="color: #c678dd;"><span>int</span></span><span> </span><span style="color: #61aeee;"><span>doOperation</span></span><span><span>(</span><span style="color: #c678dd;"><span>int</span></span><span> num1, </span><span style="color: #c678dd;"><span>int</span></span><span> num2)</span></span><span> </span></span><span>{</span><br/><span>        </span><span style="color: #c678dd;"><span>return</span></span><span> num1 + num2;</span><br/><span>    }</span><br/><span>}</span><br/><br/><span style="color: #5c6370;font-style: italic;"><span>// 具体策略类：减法</span></span><br/><span><span style="color: #c678dd;"><span>class</span></span><span> </span><span style="color: #e6c07b;"><span>SubtractionStrategy</span></span><span> </span><span style="color: #c678dd;"><span>implements</span></span><span> </span><span style="color: #e6c07b;"><span>OperationStrategy</span></span><span> </span></span><span>{</span><br/><span>    </span><span style="color: #61aeee;"><span>@Override</span></span><br/><span>    </span><span><span style="color: #c678dd;"><span>public</span></span><span> </span><span style="color: #c678dd;"><span>int</span></span><span> </span><span style="color: #61aeee;"><span>doOperation</span></span><span><span>(</span><span style="color: #c678dd;"><span>int</span></span><span> num1, </span><span style="color: #c678dd;"><span>int</span></span><span> num2)</span></span><span> </span></span><span>{</span><br/><span>        </span><span style="color: #c678dd;"><span>return</span></span><span> num1 - num2;</span><br/><span>    }</span><br/><span>}</span><br/><br/><span style="color: #5c6370;font-style: italic;"><span>// 具体策略类：乘法</span></span><br/><span><span style="color: #c678dd;"><span>class</span></span><span> </span><span style="color: #e6c07b;"><span>MultiplicationStrategy</span></span><span> </span><span style="color: #c678dd;"><span>implements</span></span><span> </span><span style="color: #e6c07b;"><span>OperationStrategy</span></span><span> </span></span><span>{</span><br/><span>    </span><span style="color: #61aeee;"><span>@Override</span></span><br/><span>    </span><span><span style="color: #c678dd;"><span>public</span></span><span> </span><span style="color: #c678dd;"><span>int</span></span><span> </span><span style="color: #61aeee;"><span>doOperation</span></span><span><span>(</span><span style="color: #c678dd;"><span>int</span></span><span> num1, </span><span style="color: #c678dd;"><span>int</span></span><span> num2)</span></span><span> </span></span><span>{</span><br/><span>        </span><span style="color: #c678dd;"><span>return</span></span><span> num1 * num2;</span><br/><span>    }</span><br/><span>}</span><br/><br/><span style="color: #5c6370;font-style: italic;"><span>// 上下文类</span></span><br/><span><span style="color: #c678dd;"><span>class</span></span><span> </span><span style="color: #e6c07b;"><span>Calculator</span></span><span> </span></span><span>{</span><br/><span>    </span><span style="color: #c678dd;"><span>private</span></span><span> OperationStrategy strategy;</span><br/><br/><span>    </span><span><span style="color: #c678dd;"><span>public</span></span><span> </span><span style="color: #61aeee;"><span>Calculator</span></span><span><span>(OperationStrategy strategy)</span></span><span> </span></span><span>{</span><br/><span>        </span><span style="color: #c678dd;"><span>this</span></span><span>.strategy = strategy;</span><br/><span>    }</span><br/><br/><span>    </span><span><span style="color: #c678dd;"><span>public</span></span><span> </span><span style="color: #c678dd;"><span>void</span></span><span> </span><span style="color: #61aeee;"><span>setStrategy</span></span><span><span>(OperationStrategy strategy)</span></span><span> </span></span><span>{</span><br/><span>        </span><span style="color: #c678dd;"><span>this</span></span><span>.strategy = strategy;</span><br/><span>    }</span><br/><br/><span>    </span><span><span style="color: #c678dd;"><span>public</span></span><span> </span><span style="color: #c678dd;"><span>int</span></span><span> </span><span style="color: #61aeee;"><span>executeOperation</span></span><span><span>(</span><span style="color: #c678dd;"><span>int</span></span><span> num1, </span><span style="color: #c678dd;"><span>int</span></span><span> num2)</span></span><span> </span></span><span>{</span><br/><span>        </span><span style="color: #c678dd;"><span>return</span></span><span> strategy.doOperation(num1, num2);</span><br/><span>    }</span><br/><span>}</span><br/><br/><span style="color: #5c6370;font-style: italic;"><span>// 客户端代码</span></span><br/><span style="color: #c678dd;"><span>public</span></span><span><span style="color: #c678dd;"><span>class</span></span><span> </span><span style="color: #e6c07b;"><span>StrategyPatternDemo</span></span><span> </span></span><span>{</span><br/><span>    </span><span><span style="color: #c678dd;"><span>public</span></span><span> </span><span style="color: #c678dd;"><span>static</span></span><span> </span><span style="color: #c678dd;"><span>void</span></span><span> </span><span style="color: #61aeee;"><span>main</span></span><span><span>(String[] args)</span></span><span> </span></span><span>{</span><br/><span>        </span><span style="color: #5c6370;font-style: italic;"><span>// 创建加法策略</span></span><br/><span>        OperationStrategy addition = </span><span style="color: #c678dd;"><span>new</span></span><span> AdditionStrategy();</span><br/><span>        Calculator calculator = </span><span style="color: #c678dd;"><span>new</span></span><span> Calculator(addition);</span><br/><br/><span>        </span><span style="color: #5c6370;font-style: italic;"><span>// 执行加法运算</span></span><br/><span>        </span><span style="color: #c678dd;"><span>int</span></span><span> result = calculator.executeOperation(</span><span style="color: #d19a66;"><span>5</span></span><span>, </span><span style="color: #d19a66;"><span>3</span></span><span>);</span><br/><span>        System.out.println(</span><span style="color: #98c379;"><span>"5 + 3 = "</span></span><span> + result);</span><br/><br/><span>        </span><span style="color: #5c6370;font-style: italic;"><span>// 切换到减法策略</span></span><br/><span>        OperationStrategy subtraction = </span><span style="color: #c678dd;"><span>new</span></span><span> SubtractionStrategy();</span><br/><span>        calculator.setStrategy(subtraction);</span><br/><br/><span>        </span><span style="color: #5c6370;font-style: italic;"><span>// 执行减法运算</span></span><br/><span>        result = calculator.executeOperation(</span><span style="color: #d19a66;"><span>5</span></span><span>, </span><span style="color: #d19a66;"><span>3</span></span><span>);</span><br/><span>        System.out.println(</span><span style="color: #98c379;"><span>"5 - 3 = "</span></span><span> + result);</span><br/><br/><span>        </span><span style="color: #5c6370;font-style: italic;"><span>// 切换到乘法策略</span></span><br/><span>        OperationStrategy multiplication = </span><span style="color: #c678dd;"><span>new</span></span><span> MultiplicationStrategy();</span><br/><span>        calculator.setStrategy(multiplication);</span><br/><br/><span>        </span><span style="color: #5c6370;font-style: italic;"><span>// 执行乘法运算</span></span><br/><span>        result = calculator.executeOperation(</span><span style="color: #d19a66;"><span>5</span></span><span>, </span><span style="color: #d19a66;"><span>3</span></span><span>);</span><br/><span>        System.out.println(</span><span style="color: #98c379;"><span>"5 * 3 = "</span></span><span> + result);</span><br/><span>    }</span><br/><span>}</span><br/></code></pre>
+<ol class="list-paddingleft-1" style="list-style-type: decimal;">
+<li>
+<span>策略接口（</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>OperationStrategy</span></code><span>）：定义了一个 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>doOperation</span></code><span> 方法，用于执行具体的运算。</span>
+</li>
+<li>
+<span>具体策略类（</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>AdditionStrategy</span></code><span>、</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>SubtractionStrategy</span></code><span>、</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>MultiplicationStrategy</span></code><span>）：实现了 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>OperationStrategy</span></code><span> 接口，分别实现了加法、减法和乘法运算。</span>
+</li>
+<li>
+<span>上下文类（</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>Calculator</span></code><span>）：持有一个 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>OperationStrategy</span></code><span> 接口的引用，通过 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>setStrategy</span></code><span> 方法可以动态切换策略，</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>executeOperation</span></code><span> 方法调用具体策略的 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>doOperation</span></code><span> 方法来执行运算。</span>
+</li>
+<li>
+<span>客户端代码（</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>StrategyPatternDemo</span></code><span>）：创建了不同的具体策略对象，并将它们传递给 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>Calculator</span></code><span> 对象，通过调用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>executeOperation</span></code><span> 方法执行不同的运算。</span>
+</li>
+</ol>
+<p style="text-align: left;"><span>策略模式优势是可以轻松添加新的策略类，而不需要修改现有的代码，每个策略类都有自己的职责，代码结构清晰，易于维护。</span></p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>10. 手撕：单例模式</span></span></h3><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIf3GnjH9TjzKQIPnpwahTQNZIEibS88THUoRW9cZ15W2kz6Jx2a9J3Qnc27ibzHT02kVM3O2HtprGO/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIf3GnjH9TjzKQIPnpwahTQNZIEibS88THUoRW9cZ15W2kz6Jx2a9J3Qnc27ibzHT02kVM3O2HtprGO/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span style="color: #c678dd;"><span>public</span></span><span> </span><span><span style="color: #c678dd;"><span>class</span></span><span> </span><span style="color: #e6c07b;"><span>SingleTon</span></span><span> </span></span><span>{</span><br/><br/><span>    </span><span style="color: #5c6370;font-style: italic;"><span>// volatile 关键字修饰变量 防止指令重排序</span></span><br/><span>    </span><span style="color: #c678dd;"><span>private</span></span><span style="color: #c678dd;"><span>static</span></span><span style="color: #c678dd;"><span>volatile</span></span><span> SingleTon instance = </span><span style="color: #c678dd;"><span>null</span></span><span>;</span><br/><span>    </span><span><span style="color: #c678dd;"><span>private</span></span><span> </span><span style="color: #61aeee;"><span>SingleTon</span></span><span><span>()</span></span></span><span>{}</span><br/><span>     </span><br/><span>    </span><span><span style="color: #c678dd;"><span>public</span></span><span> </span><span style="color: #c678dd;"><span>static</span></span><span>  SingleTon </span><span style="color: #61aeee;"><span>getInstance</span></span><span><span>()</span></span></span><span>{</span><br/><span>        </span><span style="color: #c678dd;"><span>if</span></span><span>(instance == </span><span style="color: #c678dd;"><span>null</span></span><span>){</span><br/><span>            </span><span style="color: #5c6370;font-style: italic;"><span>//同步代码块 只有在第一次获取对象的时候会执行到 ，第二次及以后访问时 instance变量均非null故不会往下执行了 直接返回啦</span></span><br/><span>            </span><span style="color: #c678dd;"><span>synchronized</span></span><span>(SingleTon</span><span><span>.</span><span style="color: #c678dd;"><span>class</span></span><span>)</span></span><span>{</span><br/><span>                </span><span style="color: #c678dd;"><span>if</span></span><span>(instance == </span><span style="color: #c678dd;"><span>null</span></span><span>){</span><br/><span>                    instance = </span><span style="color: #c678dd;"><span>new</span></span><span> SingleTon();</span><br/><span>                }</span><br/><span>            }</span><br/><span>        }</span><br/><span>        </span><span style="color: #c678dd;"><span>return</span></span><span> instance;</span><br/><span>    }</span><br/><span>}</span><br/></code></pre>
+<p style="text-align: left;"><span>正确的双重检查锁定模式需要需要使用 volatile。volatile主要包含两个功能。</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>保证可见性。使用 volatile 定义的变量，将会保证对所有线程的可见性。</span>
+</li>
+<li>
+<span>禁止指令重排序优化。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>由于 volatile 禁止对象创建时指令之间重排序，所以其他线程不会访问到一个未初始化的对象，从而保证安全性。</span></p>
+<h3><span class="q1">高并发的场景下保证数据库和缓存一致性？</span></h3>
+<p>对于读数据，我会选择旁路缓存策略，如果 cache 不命中，会从 db 加载数据到 cache。对于写数据，我会选择更新 db 后，再删除缓存。</p>
+<figure class="img1"><img _width="677px" data-index="14" data-src="../img/think_008_3a473806.png" data-w="731" src="../img/think_008_3a473806.png" style="height: auto !important;  width: 656.984px !important;"/></figure>
+<p>缓存是通过牺牲强一致性来提高性能的。这是由<strong>CAP理论</strong>决定的。缓存系统适用的场景就是非强一致性的场景，它属于CAP中的AP。所以，如果需要数据库和缓存数据保持强一致，就不适合使用缓存。</p>
+<p>所以使用缓存提升性能，就是会有数据更新的延迟。这需要我们在设计时结合业务仔细思考是否适合用缓存。然后缓存一定要设置过期时间，这个时间太短、或者太长都不好：</p>
+<ul class="list-paddingleft-1">
+<li>
+            太短的话请求可能会比较多的落到数据库上，这也意味着失去了缓存的优势。
+        </li>
+<li>
+            太长的话缓存中的脏数据会使系统长时间处于一个延迟的状态，而且系统中长时间没有人访问的数据一直存在内存中不过期，浪费内存。
+        </li>
+</ul>
+<p>但是，通过一些方案优化处理，是可以<strong>最终一致性</strong>的。</p>
+<p>针对删除缓存异常的情况，可以使用 2 个方案避免：</p>
+<ul class="list-paddingleft-1">
+<li>
+            删除缓存重试策略（消息队列）
+        </li>
+<li>
+            订阅 binlog，再删除缓存（Canal+消息队列）
+        </li>
+</ul>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">消息队列方案</p>
+</blockquote>
+<p>我们可以引入<strong>消息队列</strong>，将第二个操作（删除缓存）要操作的数据加入到消息队列，由消费者来操作数据。</p>
+<ul class="list-paddingleft-1">
+<li>
+            如果应用<strong>删除缓存失败</strong>，可以从消息队列中重新读取数据，然后再次删除缓存，这个就是<strong>重试机制</strong>。当然，如果重试超过的一定次数，还是没有成功，我们就需要向业务层发送报错信息了。
+        </li>
+<li>
+            如果<strong>删除缓存成功</strong>，就要把数据从消息队列中移除，避免重复操作，否则就继续重试。
+        </li>
+</ul>
+<p>举个例子，来说明重试机制的过程。</p>
+<figure class="img1"><img _width="677px" data-index="15" data-src="../img/think_009_910d0f2f.png" data-w="1080" src="../img/think_009_910d0f2f.png" style="height: auto !important;  width: 656.984px !important;"/></figure>
+<p>重试删除缓存机制还可以，就是会<strong>造成好多业务代码入侵</strong>。</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">订阅 MySQL binlog，再操作缓存</p>
+</blockquote>
+<p>「<strong>先更新数据库，再删缓存</strong>」的策略的第一步是更新数据库，那么更新数据库成功，就会产生一条变更日志，记录在 binlog 里。</p>
+<p>于是我们就可以通过订阅 binlog 日志，拿到具体要操作的数据，然后再执行缓存删除，阿里巴巴开源的 Canal 中间件就是基于这个实现的。</p>
+<p>Canal 模拟 MySQL 主从复制的交互协议，把自己伪装成一个 MySQL 的从节点，向 MySQL 主节点发送 dump 请求，MySQL 收到请求后，就会开始推送 Binlog 给 Canal，Canal 解析 Binlog 字节流之后，转换为便于读取的结构化数据，供下游程序订阅使用。</p>
+<p>下图是 Canal 的工作原理：</p>
+<figure class="img1"><img _width="677px" data-index="16" data-src="../img/think_010_1f1f97bb.png" data-w="782" src="../img/think_010_1f1f97bb.png" style="height: auto !important;  width: 656.969px !important;"/></figure>
+<p>将binlog日志采集发送到MQ队列里面，然后编写一个简单的缓存删除消息者订阅binlog日志，根据更新log删除缓存，并且通过ACK机制确认处理这条更新log，保证数据缓存一致性</p>
+<h3><span class="q1">使用消息队列还应该注意哪些问题？</span></h3>
+<p>需要考虑消息可靠性和顺序性方面的问题。</p>
+<h3><span class="q1">消息队列的可靠性、顺序性怎么保证？</span></h3>
+<p>消息可靠性可以通过下面这些方式来保证</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>消息持久化</strong>：确保消息队列能够持久化消息是非常关键的。在系统崩溃、重启或者网络故障等情况下，未处理的消息不应丢失。例如，像 RabbitMQ 可以通过配置将消息持久化到磁盘，通过将队列和消息都设置为持久化的方式（设置<code class="code1">durable = true</code>），这样在服务器重启后，消息依然可以被重新读取和处理。
+        </li>
+<li>
+<strong>消息确认机制</strong>：消费者在成功处理消息后，应该向消息队列发送确认（acknowledgment）。消息队列只有收到确认后，才会将消息从队列中移除。如果没有收到确认，消息队列可能会在一定时间后重新发送消息给其他消费者或者再次发送给同一个消费者。以 Kafka 为例，消费者通过<code class="code1">commitSync</code>或者<code class="code1">commitAsync</code>方法来提交偏移量（offset），从而确认消息的消费。
+        </li>
+<li>
+<strong>消息重试策略</strong>：当消费者处理消息失败时，需要有合理的重试策略。可以设置重试次数和重试间隔时间。例如，在第一次处理失败后，等待一段时间（如 5 秒）后进行第二次重试，如果重试多次（如 3 次）后仍然失败，可以将消息发送到死信队列，以便后续人工排查或者采取其他特殊处理。
+        </li>
+</ul>
+<p>消息顺序性保证的方式如下：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>有序消息处理场景识别</strong>：首先需要明确业务场景中哪些消息是需要保证顺序的。例如，在金融交易系统中，对于同用户的转账操作顺序是不能打乱的。对于需要顺序处理的消息，要确保消息队列和消费者能够按照特定的顺序进行处理。
+        </li>
+<li>
+<strong>消息队列对顺序性的支持</strong>：部分消息队列本身提供了顺序性保证的功能。比如 Kafka 可以通过将消息划分到同一个分区（Partition）来保证消息在分区内是有序的，消费者按照分区顺序读取消息就可以保证消息顺序。但这也可能会限制消息的并行处理程度，需要在顺序性和吞吐量之间进行权衡。
+        </li>
+<li>
+<strong>消费者顺序处理策略</strong>：消费者在处理顺序消息时，应该避免并发处理可能导致顺序打乱的情况。例如，可以通过单线程或者使用线程池并对顺序消息进行串行化处理等方式，确保消息按照正确的顺序被消费。
+        </li>
+</ul>
+<h3><span class="q1">秒杀系统设计如何做？</span></h3>
+<p>系统架构分层设计如下。</p>
+<p><strong>前端层：</strong></p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>页面静态化</strong>：将商品展示页面等静态内容进行缓存，用户请求时可以直接从缓存中获取，减少服务器的渲染压力。例如，使用内容分发网络（CDN）缓存商品图片、详情介绍等静态资源。
+        </li>
+<li>
+<strong>防刷机制</strong>：通过验证码、限制用户请求频率等方式防止恶意刷请求。例如，在秒杀开始前要求用户输入验证码，并且在一定时间内限制单个用户的请求次数，如每秒最多允许 3 次请求。
+        </li>
+</ul>
+<p><strong>应用层：</strong></p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>负载均衡</strong>：采用负载均衡器将用户请求均匀地分配到多个后端服务器，避免单点服务器过载。如使用 Nginx 作为负载均衡器，根据服务器的负载情况和性能动态分配请求。
+        </li>
+<li>
+<strong>服务拆分与微服务化</strong>：将秒杀系统的不同功能模块拆分成独立的微服务，如用户服务、商品服务、订单服务等。这样可以独立部署和扩展各个模块，提高系统的灵活性和可维护性。
+        </li>
+<li>
+<strong>缓存策略</strong>：在应用层使用缓存来提高系统性能。例如，使用 Redis 缓存商品库存信息，用户下单前先从 Redis 中查询库存，减少对数据库的直接访问。
+        </li>
+</ul>
+<p><strong>数据层：</strong></p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>数据库优化</strong>：对数据库进行性能优化，如数据库索引优化、SQL 语句优化等。对于库存表，可以为库存字段添加索引，加快库存查询和更新的速度。
+        </li>
+<li>
+<strong>数据库集群与读写分离</strong>：采用数据库集群来提高数据库的处理能力，同时进行读写分离。将读操作（如查询商品信息）和写操作（如库存扣减、订单生成）分布到不同的数据库节点上，提高系统的并发处理能力。
+        </li>
+</ul>
+<p><strong>高并发场景下扣减库存的方式：</strong></p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>预扣库存</strong>：在用户下单时，先预扣库存，将库存数量在缓存（如 Redis）中进行减 1 操作。同时设置一个较短的过期时间，如 1 - 2 分钟。如果用户在过期时间内完成支付，正式扣减库存；如果未完成支付，库存自动回补。
+        </li>
+<li>
+<strong>异步更新数据库：</strong>通过 Redis 判断之后，去更新数据库的请求都是必要的请求，这些请求数据库必须要处理，但是如果数据库还是处理不过来这些请求怎么办呢？这个时候就可以考虑削峰填谷操作了，削峰填谷最好的实践就是 MQ 了。经过 Redis 库存扣减判断之后，我们已经确保这次请求需要生成订单，我们就可以通过异步的形式通知订单服务生成订单并扣减库存。
+        </li>
+<li>
+<strong>数据库乐观锁防止超卖</strong>：更新数据库减库存的时候，采用乐观锁方式，进行库存限制条件，<code class="code1">update goods set stock = stock - 1 where goods_id = ? and stock &gt;0</code>
+</li>
+</ul>
+<h3><span class="q1">设计题：订单到了半个小时，半个小时未支付就取消</span></h3>
+<p>有多种实现订单超时自动取消的技术方案，包括定时轮询、JDK的延迟队列、时间轮算法、Redis实现以及MQ消息队列中的延迟队列和死信队列。</p>
+<ul class="list-paddingleft-1">
+<li>
+            定时轮询：基于SpringBoot的Scheduled实现，通过定时任务扫描数据库中的订单。优点是实现简单直接，但缺点是会给数据库带来持续压力，处理效率受任务执行间隔影响较大，且在高并发场景下可能引发并发问题和资源浪费。
+        </li>
+<li>
+            JDK的延迟队列（DelayQueue）：基于优先级队列实现，减少数据库访问，提供高效的任务处理。优点是内部数据结构高效，线程安全。缺点是所有待处理订单需保留在内存中，可能导致内存消耗大，且无持久化机制，系统崩溃时可能丢失数据。
+        </li>
+<li>
+            时间轮算法：通过时间轮结构实现定时任务调度，能高效处理大量定时任务，提供精确的超时控制。优点是实现简单，执行效率高，且有成熟实现库。缺点同样是内存占用和崩溃时数据丢失的问题。
+        </li>
+<li>
+            Redis实现：
+        </li>
+<ul class="list-paddingleft-1" style="list-style-type: square;">
+<li>
+                有序集合（Sorted Set）：利用有序集合的特性，定时轮询查找已超时的任务。优点是查询效率高，适用于分布式环境，减少数据库压力。缺点是依赖定时任务执行频率，处理超时订单的实时性受限，且在处理事务一致性方面需要额外努力。
+            </li>
+<li>
+                Key过期监听：利用Redis键过期事件自动触发订单取消逻辑。优点是实时性好，资源消耗少，支持高并发。缺点是对Redis服务的依赖性强，极端情况下处理能力可能成为瓶颈，且键过期有一定的不确定性。
+            </li>
+</ul>
+<li>
+            MQ消息队列：
+        </li>
+<ul class="list-paddingleft-1" style="list-style-type: square;">
+<li>
+                延迟队列（如RabbitMQ的rabbitmq_delayed_message_exchange插件）：实现消息在指定延迟后送达处理队列。优点是处理高效，异步执行，易于扩展，模块化程度高。缺点是高度依赖消息队列服务，配置复杂度增加，可能涉及消息丢失或延迟风险，以及消息队列与数据库操作一致性问题。
+            </li>
+<li>
+                死信队列：通过设置队列TTL将超时订单转为死信，由监听死信队列的消费者处理。优点是能捕获并隔离异常消息，实现业务逻辑分离，资源保护良好，方便追踪和分析问题。缺点是相比延迟队列，处理超时不够精确，配置复杂，且同样存在消息处理完整性及一致性问题。
+            </li>
+</ul>
+</ul>
+<p>不同方案各有优劣，实际应用中应根据系统的具体需求、资源状况以及技术栈等因素综合评估，选择最适合的方案。在许多现代大型系统中，通常会选择消息队列的延迟队列或死信队列方案，以充分利用其异步处理、资源优化和扩展性方面的优势。</p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>12. 从前端页面到Java后台再到数据库，有一张表，表存在上百万条数据，从这三个层面，去做一个查询方面的优化，单表查询。</span></span></h3>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>前端层面的优化：</span></p>
+</blockquote>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>分页显示数据</span></strong><span>：默认加载第一页，滚动到底部时自动加载下一页，每页返回 20~50 条数据，避免大体积传输。</span>
+</li>
+<li>
+<strong><span>预加载技术</span></strong><span>：用户访问第一页时，后台预加载后续页面的数据（需权衡服务器压力）。</span>
+</li>
+<li>
+<strong><span>缓存已查询数据</span></strong><span>：对已加载的分页结果进行前端缓存（如 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>localStorage</span></code><span> 或内存缓存），避免重复请求相同数据。</span>
+</li>
+</ul>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>Java 后端层面的优化：</span></p>
+</blockquote>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>只返回必要字段，减少网络传输与反序列化开销。</span>
+</li>
+<li>
+<span>对高频且变化不频繁的查询结果缓存起来，减少数据库的查询</span>
+</li>
+</ul>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>数据库层面的优化：</span></p>
+</blockquote>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>创建合适的索引字段，比如可以考虑对高频查询字段（如 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>user_id</span></code><span>、</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>create_time</span></code><span>）建立复合索引，这样就能索引字段覆盖查询所需数据，减少回表操作。</span>
+</li>
+<li>
+<span>分页查询的优化，避免深度分页的问题：</span>
+</li>
+</ul><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYKdPI0P7v06Bd8LszJeUyeDFMLapv7HHtJrYlUSZVNvnoUaZQIPSoH4xNEIZtnYK36yOG0VjBOW/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYKdPI0P7v06Bd8LszJeUyeDFMLapv7HHtJrYlUSZVNvnoUaZQIPSoH4xNEIZtnYK36yOG0VjBOW/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>-- 低效写法（offset 过大）</span><br/><span>SELECT * FROM table ORDER BY id LIMIT </span><span style="color: #d19a66;"><span>1000000</span></span><span>, </span><span style="color: #d19a66;"><span>10</span></span><span>;</span><br/><br/><span>-- 高效写法：基于游标（上次查询的最大ID）</span><br/><span>SELECT * FROM table WHERE id &gt; </span><span style="color: #d19a66;"><span>1000000</span></span><span> ORDER BY id LIMIT </span><span style="color: #d19a66;"><span>10</span></span><span>;</span><br/></code></pre>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>如果系统读操作远多于写操作，可以考虑实现读写分离，将读请求分发到多个从库上。</span>
+</li>
+</ul>
+<h3><span class="q1">简单讲一下工厂模式，简单工厂，还有工厂方法，还有抽象工厂，这三个工厂就有什么区别呀？</span></h3>
+<p>工厂模式是一种创建对象的设计模式，主要用于封装对象的创建过程，使代码与具体产品解耦。工厂模式可以帮助管理和扩展对象的创建，同时遵循开闭原则（对扩展开放，对修改关闭）</p>
+<ul class="list-paddingleft-1">
+<li>
+<p><strong>简单工厂</strong>：</p>
+</li>
+<li>
+<p>只有一个工厂类，接受参数决定创建具体产品。</p>
+</li>
+<li>
+<p>不符合严格的设计原则，扩展性差。</p>
+</li>
+<li>
+<p><strong>工厂方法</strong>：</p>
+</li>
+<li>
+<p>每个具体产品都有对应的工厂类，符合开闭原则。</p>
+</li>
+<li>
+<p>允许用户自定义具体产品的创建过程，增加新的产品较为方便，但工厂的数量增加，系统复杂度提高。</p>
+</li>
+<li>
+<p><strong>抽象工厂</strong>：</p>
+</li>
+<li>
+<p>提供接口创建一系列相关的产品，适合产品组合的场景。</p>
+</li>
+<li>
+<p>提高了系统的灵活性和可扩展性，但要求开发者定义更复杂的接口和类层次结构。</p>
+</li>
+</ul>
+<h3><span class="q1">讲一讲单例模式？它有什么线程不安全的地方，就是多线程的时候它会出现什么问题？</span></h3>
+<p>单例模式主要是确保一个类只有一个实例，并提供一个全局访问点，常用于控制对资源的访问，比如数据库连接、线程池等。</p>
+<p>单例模式（非线程安全版本）</p><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIP4WkGwRDXsDTbN5FMUV2qvajflicKIJm5xT6bJPLbusGTjicwq8ongSUyicRV6sKdgnBYUiaTXT81QhibNkpoIG83mB/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span style="color: #c678dd;">public</span> <span><span style="color: #c678dd;">class</span> <span style="color: #e6c07b;">Singleton</span> </span>{<br>    <span style="color: #c678dd;">private</span> <span style="color: #c678dd;">static</span> Singleton instance;<br><br>    <span><span style="color: #c678dd;">private</span> <span style="color: #61aeee;">Singleton</span><span>()</span> </span>{}<br><br>    <span><span style="color: #c678dd;">public</span> <span style="color: #c678dd;">static</span> Singleton <span style="color: #61aeee;">getInstance</span><span>()</span> </span>{<br>        <span style="color: #c678dd;">if</span> (instance == <span style="color: #c678dd;">null</span>) {<br>            instance = <span style="color: #c678dd;">new</span> Singleton();<br>        }<br>        <span style="color: #c678dd;">return</span> instance;<br>    }<br>}<br/></br></br></br></br></br></br></br></br></br></br></br></code></pre>
+<p>多线程时候存在的问题：</p>
+<ul class="list-paddingleft-1">
+<li>
+            在多线程环境中，如果多个线程同时调用 <code class="code1">getInstance</code> 方法，可能会导致创建多个 <code class="code1">Singleton</code> 实例。
+        </li>
+<li>
+            例如，线程 A 检查到 <code class="code1">instance</code> 为 <code class="code1">null</code>，随后被上下文切换，线程 B 也检查到 <code class="code1">instance</code> 为 <code class="code1">null</code>，并创建了第二个实例。
+        </li>
+</ul>
+<h3><span class="q1">手写一个双重检查锁实现的单例，并讲解</span></h3><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIP4WkGwRDXsDTbN5FMUV2qvajflicKIJm5xT6bJPLbusGTjicwq8ongSUyicRV6sKdgnBYUiaTXT81QhibNkpoIG83mB/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;">public <span><span style="color: #c678dd;">class</span> <span style="color: #e6c07b;">SingleTon</span> </span>{<br><br>    <span style="color: #5c6370;font-style: italic;">// volatile 关键字修饰变量 防止指令重排序</span><br>    private <span style="color: #c678dd;">static</span> volatile SingleTon instance = <span style="color: #56b6c2;">null</span>;<br>    private SingleTon(){}<br>     <br>    public <span style="color: #c678dd;">static</span>  SingleTon getInstance(){<br>        <span style="color: #c678dd;">if</span>(instance == <span style="color: #56b6c2;">null</span>){<br>            <span style="color: #5c6370;font-style: italic;">//同步代码块 只有在第一次获取对象的时候会执行到 ，第二次及以后访问时 instance变量均非null故不会往下执行了 直接返回啦</span><br>            synchronized(SingleTon.class){<br>                <span style="color: #c678dd;">if</span>(instance == <span style="color: #56b6c2;">null</span>){<br>                    instance = <span style="color: #c678dd;">new</span> SingleTon();<br>                }<br>            }<br>        }<br>        <span style="color: #c678dd;">return</span> instance;<br>    }<br>}<br/></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></code></pre>
+<p>正确的双重检查锁定模式需要需要使用 volatile。volatile主要包含两个功能。</p>
+<ul class="list-paddingleft-1">
+<li>
+            保证可见性。使用 volatile 定义的变量，将会保证对所有线程的可见性。
+        </li>
+<li>
+            禁止指令重排序优化。
+        </li>
+</ul>
+<p>由于 volatile 禁止对象创建时指令之间重排序，所以其他线程不会访问到一个未初始化的对象，从而保证安全性。</p>
+<h3 style="margin: 1.2em 0px 15px;padding: 0px;"><span style="color: rgb(65, 105, 225);text-align: left;"><span>7. 设计一个抢票软件，高并发过来的时候，做哪些设计去应对呢？</span></span></h3>
+<p style="text-align: left;"><span>面对高并发抢票场景，我会构建分层防御体系与异步化架构。首先在流量入口部署Nginx集群进行三级拦截：第一级采用令牌桶算法限制全局QPS不超过10万，第二级通过Redis执行用户维度的频率控制，例如对每个用户ID执行INCR命令并设置5秒过期时间，超过每秒5次请求则直接拒绝，第三级引入动态人机验证，当检测到单IP每秒50次以上异常请求时强制弹出滑块验证码。这三层过滤可确保80%以上的无效流量在进入核心系统前被拦截。</span></p>
+<p style="text-align: left;"><span>核心业务采用异步解耦设计化解瞬时压力。当请求通过校验后，系统通过执行Redis Lua脚本实现原子化库存预扣减，例如先检查余票数量是否大于零再执行DECR操作，该操作在单节点可承载8万以上QPS。预扣减成功的请求会按车次ID哈希分区进入Kafka队列，此举将数据库写入压力从百万级压缩至万级。下游订单服务异步消费消息生成订单，此时数据库通过乐观锁保障最终一致性，执行</span><code class="code2"><span>UPDATE票表SET库存=库存-1 WHERE 票ID=101 AND 库存&gt;0</span></code><span>，同时设置Redis库存键15分钟过期以支持未支付回补。</span></p>
+<p style="text-align: left;"><span>在容灾层面实施动态降级策略。通过Sentinel实时监控系统负载，当Redis延迟超过50毫秒时自动切换至本地缓存库存计数器，虽然可能产生1%左右的超卖误差但保障系统不崩溃；针对热门车次实施物理隔离策略，将其路由到独立的Redis分片和专用线程池处理；MySQL压力达到阈值时主动返回排队页面，配合每2分钟执行的Redis与数据库库存对账程序修正数据偏差。</span></p>
+<p style="text-align: left;"><span>整套设计始终围绕四个核心原则：流量分层过滤确保系统不被冲垮，异步队列实现亿级流量到万级数据库写入的压缩，最终一致性平衡性能与准确率，动态降级提供柔性可用性。实测中该架构可在单节点承载8000QPS的压力下保持80毫秒内响应，将200万并发洪峰转化为可持续处理的业务流。</span></p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>12. 手撕：三个线程循环打印1-100</span></span></h3>
+<p style="text-align: left;"><span>实现思路：</span></p>
+<ol class="list-paddingleft-1" style="list-style-type: decimal;">
+<li>
+<strong><span>线程协作</span></strong><span>：通过 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>wait()</span></code><span> 和 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>notifyAll()</span></code><span> 实现线程间的同步。</span>
+</li>
+<li>
+<strong><span>共享状态</span></strong><span>：使用一个共享变量 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>current</span></code><span> 表示当前应该打印的数字，并通过取模运算（</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>% 3</span></code><span>）决定哪个线程应该执行打印。</span>
+</li>
+<li>
+<strong><span>线程安全</span></strong><span>：所有操作在 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>synchronized</span></code><span> 块中完成，避免竞态条件。</span>
+</li>
+</ol><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIWADdYPJibmbXC3icxDd5RtK5St69qsicJNn1LMicrzraNs70KykYqDzA69n9wkhjnCuvExO2ibzEzkVx/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIWADdYPJibmbXC3icxDd5RtK5St69qsicJNn1LMicrzraNs70KykYqDzA69n9wkhjnCuvExO2ibzEzkVx/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span style="color: #c678dd;"><span>public</span></span><span> </span><span><span style="color: #c678dd;"><span>class</span></span><span> </span><span style="color: #e6c07b;"><span>CyclicPrinting</span></span><span> </span></span><span>{</span><br/><span>    </span><span style="color: #c678dd;"><span>private</span></span><span style="color: #c678dd;"><span>static</span></span><span style="color: #c678dd;"><span>final</span></span><span style="color: #c678dd;"><span>int</span></span><span> MAX_NUMBER = </span><span style="color: #d19a66;"><span>100</span></span><span>;</span><br/><span>    </span><span style="color: #c678dd;"><span>private</span></span><span style="color: #c678dd;"><span>static</span></span><span style="color: #c678dd;"><span>int</span></span><span> current = </span><span style="color: #d19a66;"><span>1</span></span><span>; </span><span style="color: #5c6370;font-style: italic;"><span>// 共享变量，表示当前应打印的数字</span></span><br/><span>    </span><span style="color: #c678dd;"><span>private</span></span><span style="color: #c678dd;"><span>static</span></span><span style="color: #c678dd;"><span>final</span></span><span> Object lock = </span><span style="color: #c678dd;"><span>new</span></span><span> Object(); </span><span style="color: #5c6370;font-style: italic;"><span>// 锁对象</span></span><br/><br/><span>    </span><span><span style="color: #c678dd;"><span>public</span></span><span> </span><span style="color: #c678dd;"><span>static</span></span><span> </span><span style="color: #c678dd;"><span>void</span></span><span> </span><span style="color: #61aeee;"><span>main</span></span><span><span>(String[] args)</span></span><span> </span></span><span>{</span><br/><span>        </span><span style="color: #5c6370;font-style: italic;"><span>// 创建三个线程</span></span><br/><span>        Thread threadA = </span><span style="color: #c678dd;"><span>new</span></span><span> Thread(</span><span style="color: #c678dd;"><span>new</span></span><span> Printer(</span><span style="color: #d19a66;"><span>0</span></span><span>), </span><span style="color: #98c379;"><span>"ThreadA"</span></span><span>);</span><br/><span>        Thread threadB = </span><span style="color: #c678dd;"><span>new</span></span><span> Thread(</span><span style="color: #c678dd;"><span>new</span></span><span> Printer(</span><span style="color: #d19a66;"><span>1</span></span><span>), </span><span style="color: #98c379;"><span>"ThreadB"</span></span><span>);</span><br/><span>        Thread threadC = </span><span style="color: #c678dd;"><span>new</span></span><span> Thread(</span><span style="color: #c678dd;"><span>new</span></span><span> Printer(</span><span style="color: #d19a66;"><span>2</span></span><span>), </span><span style="color: #98c379;"><span>"ThreadC"</span></span><span>);</span><br/><br/><span>        </span><span style="color: #5c6370;font-style: italic;"><span>// 启动线程</span></span><br/><span>        threadA.start();</span><br/><span>        threadB.start();</span><br/><span>        threadC.start();</span><br/><span>    }</span><br/><br/><span>    </span><span style="color: #c678dd;"><span>static</span></span><span><span style="color: #c678dd;"><span>class</span></span><span> </span><span style="color: #e6c07b;"><span>Printer</span></span><span> </span><span style="color: #c678dd;"><span>implements</span></span><span> </span><span style="color: #e6c07b;"><span>Runnable</span></span><span> </span></span><span>{</span><br/><span>        </span><span style="color: #c678dd;"><span>private</span></span><span style="color: #c678dd;"><span>final</span></span><span style="color: #c678dd;"><span>int</span></span><span> remainder; </span><span style="color: #5c6370;font-style: italic;"><span>// 当前线程的标识（0、1、2）</span></span><br/><br/><span>        </span><span><span style="color: #c678dd;"><span>public</span></span><span> </span><span style="color: #61aeee;"><span>Printer</span></span><span><span>(</span><span style="color: #c678dd;"><span>int</span></span><span> remainder)</span></span><span> </span></span><span>{</span><br/><span>            </span><span style="color: #c678dd;"><span>this</span></span><span>.remainder = remainder;</span><br/><span>        }</span><br/><br/><span>        </span><span style="color: #61aeee;"><span>@Override</span></span><br/><span>        </span><span><span style="color: #c678dd;"><span>public</span></span><span> </span><span style="color: #c678dd;"><span>void</span></span><span> </span><span style="color: #61aeee;"><span>run</span></span><span><span>()</span></span><span> </span></span><span>{</span><br/><span>            </span><span style="color: #c678dd;"><span>while</span></span><span> (</span><span style="color: #c678dd;"><span>true</span></span><span>) {</span><br/><span>                </span><span style="color: #c678dd;"><span>synchronized</span></span><span> (lock) {</span><br/><span>                    </span><span style="color: #5c6370;font-style: italic;"><span>// 检查是否超过最大值</span></span><br/><span>                    </span><span style="color: #c678dd;"><span>if</span></span><span> (current &gt; MAX_NUMBER) {</span><br/><span>                        </span><span style="color: #c678dd;"><span>break</span></span><span>;</span><br/><span>                    }</span><br/><span>                    </span><span style="color: #5c6370;font-style: italic;"><span>// 如果当前线程不该打印，则等待</span></span><br/><span>                    </span><span style="color: #c678dd;"><span>while</span></span><span> (current % </span><span style="color: #d19a66;"><span>3</span></span><span> != remainder) {</span><br/><span>                        </span><span style="color: #c678dd;"><span>try</span></span><span> {</span><br/><span>                            lock.wait();</span><br/><span>                        } </span><span style="color: #c678dd;"><span>catch</span></span><span> (InterruptedException e) {</span><br/><span>                            Thread.currentThread().interrupt();</span><br/><span>                            </span><span style="color: #c678dd;"><span>return</span></span><span>;</span><br/><span>                        }</span><br/><span>                    }</span><br/><span>                    </span><span style="color: #5c6370;font-style: italic;"><span>// 打印并更新 current</span></span><br/><span>                    System.out.println(Thread.currentThread().getName() + </span><span style="color: #98c379;"><span>": "</span></span><span> + current);</span><br/><span>                    current++;</span><br/><span>                    </span><span style="color: #5c6370;font-style: italic;"><span>// 唤醒其他线程</span></span><br/><span>                    lock.notifyAll();</span><br/><span>                }</span><br/><span>            }</span><br/><span>        }</span><br/><span>    }</span><br/><span>}</span><br/></code></pre>
+<h3><span class="q1">七个球，有一个不一样，称几次能找出来</span></h3>
+<p>要找出七个球中一个不一样的球（假设这个球的重量不同），可以使用天平称重的方法，称的次数取决于不一样的球是重还是轻。以下是解决方案的步骤：</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">第一步：分组称重</p>
+</blockquote>
+<p><strong>第一次称重</strong>：将七个球分为三组，分别是：</p>
+<ul class="list-paddingleft-1">
+<li>
+            组1：3个球（比如球A、B、C）
+        </li>
+<li>
+            组2：3个球（比如球D、E、F）
+        </li>
+<li>
+            组3：1个球（球G）
+        </li>
+</ul>
+<p>将组1与组2进行称重：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>情况1</strong>：如果两组重量相等，说明不一样的球在组3的球G中。
+        </li>
+<li>
+<strong>情况2</strong>：如果两组重量不等，进一步确定哪个组中有不一样的球（我们也可以知道这个球是重还是轻，根据称重的结果）。
+        </li>
+</ul>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">第二步：根据第一次称重的结果进行第二次称重</p>
+</blockquote>
+<p><strong>情况1</strong>：如果第一次称重重量相等（球G不一样）。</p>
+<ul class="list-paddingleft-1">
+<li>
+            第二次称重：从组G（只有1个球）中选出，直接得出球G就是不一样的球。
+        </li>
+</ul>
+<p><strong>情况2</strong>：如果组1（A、B、C）和组2（D、E、F）有不同的重量，假设组1重于组2。那么可以进一步判断：</p>
+<ul class="list-paddingleft-1">
+<li>
+<p><strong>第二次称重</strong>：将组1的两个球与组2的两个球进行称重：比如将A和B与D和E进行称重。</p>
+</li>
+<li>
+<p>如果A和B重于D和E，则不一样的球在A或B中，并且可以知道它是重的。</p>
+</li>
+<li>
+<p>如果A和B轻于D和E，则不一样的球在D或E中，并且可以知道它是轻的。</p>
+</li>
+<li>
+<p>如果两边重量相等，则不一样的球必在组中没有称重的那个球（C或F），并且可以知道它是重还是轻。</p>
+</li>
+</ul>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">第三步：找到不一样的球</p>
+</blockquote>
+<ul class="list-paddingleft-1">
+<li>
+<p><strong>第三次称重</strong>：根据上一步的结果，可以从两个候选球中选择一个进行称重。比如：</p>
+</li>
+<li>
+<p>假如上一步得知A和B中有一个球不一样，再称重一次A和B，这样可以确定出哪个是不同的球。</p>
+</li>
+</ul>
+<p>因此，通过这三个称重的步骤，最多只需要 <strong>3 次称重</strong> 就可以找出7个球中那个不一样的球。</p>
+<h3><span class="q1">分布式登陆怎样做</span></h3>
+<p>分布式系统中的登录机制需要解决多个服务器节点共享用户认证状态的问题。以下是常见的解决方法及关键概念：</p>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<ol class="list-paddingleft-1">
+<li>
+                基于Session的分布式登录
+            </li>
+</ol>
+</blockquote>
+<p>1.1 共享Session</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>Session复制</strong>：将用户的session在多个服务器之间进行复制。这种方法容易造成性能瓶颈，因为每次用户登录或状态改变都需要在所有服务器之间同步session数据。
+        </li>
+</ul>
+<p>1.2 中央Session存储</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>Session存储在集中式数据库</strong>：使用如Redis、Memcached等分布式缓存作为Session存储，这种方式可以快速访问和更新Session。
+        </li>
+<li>
+<strong>使用Spring Session</strong>：Spring Session提供了一套解决分布式Session管理的方案，可以与Redis、Hazelcast等集成。
+        </li>
+</ul>
+<p><strong>示例：Spring Session与Redis集成</strong></p><pre class="pre1"><span data-cacheurl="https://files.mdnice.com/user/3441/876cad08-0422-409d-bb5a-08afec5da8ee.svg" data-remoteid="c1715935213445" style="background: none 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;"></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;display: -webkit-box;font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;-webkit-overflow-scrolling: touch;background: #282c34;border-radius: 5px;"><span>&lt;<span style="color: #e06c75;">dependency</span>&gt;</span><br>    <span>&lt;<span style="color: #e06c75;">groupId</span>&gt;</span>org.springframework.session<span>&lt;/<span style="color: #e06c75;">groupId</span>&gt;</span><br>    <span>&lt;<span style="color: #e06c75;">artifactId</span>&gt;</span>spring-session-data-redis<span>&lt;/<span style="color: #e06c75;">artifactId</span>&gt;</span><br><span>&lt;/<span style="color: #e06c75;">dependency</span>&gt;</span><br/></br></br></br></code></pre><pre class="pre1"><span data-cacheurl="https://files.mdnice.com/user/3441/876cad08-0422-409d-bb5a-08afec5da8ee.svg" data-remoteid="c1715935213446" style="background: none 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;"></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;display: -webkit-box;font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;-webkit-overflow-scrolling: touch;background: #282c34;border-radius: 5px;"><span style="color: #d19a66;">spring:</span><br>  <span style="color: #d19a66;">session:</span><br>    <span style="color: #d19a66;">store-type:</span> <span style="color: #98c379;">redis</span><br>  <span style="color: #d19a66;">redis:</span><br>    <span style="color: #d19a66;">host:</span> <span style="color: #98c379;">localhost</span><br>    <span style="color: #d19a66;">port:</span> <span style="color: #d19a66;">6379</span><br/></br></br></br></br></br></code></pre>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<ol class="list-paddingleft-1" start="2">
+<li>
+                基于Token的分布式登录（推荐）
+            </li>
+</ol>
+</blockquote>
+<p>2.1 JWT（JSON Web Token）</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>JWT工作原理</strong>：
+        </li>
+<ol class="list-paddingleft-1">
+<li>
+                用户使用用户名和密码登录，服务器验证成功后生成JWT。
+            </li>
+<li>
+                JWT包含用户信息和签名，返回给客户端。
+            </li>
+<li>
+                客户端存储JWT并在每次请求中携带，服务器使用密钥验证JWT的合法性，无需服务器存储用户状态。
+            </li>
+</ol>
+<li>
+<strong>JWT示例</strong>:
+        </li>
+<ul class="list-paddingleft-1" style="list-style-type: square;">
+<li>
+<strong>生成JWT</strong>：
+            </li>
+</ul>
+</ul><pre class="pre1"><span data-cacheurl="https://files.mdnice.com/user/3441/876cad08-0422-409d-bb5a-08afec5da8ee.svg" data-remoteid="c1715935213447" style="background: none 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;"></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;display: -webkit-box;font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;-webkit-overflow-scrolling: touch;background: #282c34;border-radius: 5px;"><span style="color: #c678dd;">import</span> io.jsonwebtoken.Jwts;<br><span style="color: #c678dd;">import</span> io.jsonwebtoken.SignatureAlgorithm;<br><br>String jwt = Jwts.builder()<br>    .setSubject(<span style="color: #98c379;">"user"</span>)<br>    .signWith(SignatureAlgorithm.HS256, <span style="color: #98c379;">"secretKey"</span>)<br>    .compact();<br/></br></br></br></br></br></br></code></pre>
+<ul class="list-paddingleft-1">
+<li>
+<strong>验证JWT</strong>：
+        </li>
+</ul><pre class="pre1"><span data-cacheurl="https://files.mdnice.com/user/3441/876cad08-0422-409d-bb5a-08afec5da8ee.svg" data-remoteid="c1715935213448" style="background: none 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;"></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;display: -webkit-box;font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;-webkit-overflow-scrolling: touch;background: #282c34;border-radius: 5px;">Jwts.parser()<br>    .setSigningKey(<span style="color: #98c379;">"secretKey"</span>)<br>    .parseClaimsJws(jwt);<br/></br></br></code></pre>
+<p>2.2 OAuth 2.0</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>OAuth 2.0</strong>是一个开放授权框架，用于第三方应用访问资源所有者资源。
+        </li>
+<li>
+<strong>授权码模式</strong>是最常用的模式，特别适合分布式系统。
+        </li>
+</ul>
+<p><strong>OAuth 2.0工作流程</strong>:</p>
+<ol class="list-paddingleft-1">
+<li>
+<strong>用户认证请求</strong>：客户端请求授权服务器。
+        </li>
+<li>
+<strong>授权码返回</strong>：授权服务器验证用户后返回授权码。
+        </li>
+<li>
+<strong>获取Access Token</strong>：客户端使用授权码请求授权服务器获取Access Token。
+        </li>
+<li>
+<strong>访问资源</strong>：客户端使用Access Token访问资源服务器。
+        </li>
+</ol>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);">总结</p>
+</blockquote>
+<p>选择分布式登录方案需要根据具体的业务需求和系统架构来决定。以下是一些推荐和注意事项：</p>
+<ul class="list-paddingleft-1">
+<li>
+            小型、简单系统可以使用中央Session存储解决方案，如Spring Session + Redis。
+        </li>
+<li>
+            对于大型系统，特别是需要与第三方系统集成的，推荐使用基于JWT的分布式登录或OAuth 2.0。
+        </li>
+<li>
+            借助现代化单点登录协议（如OAuth 2.0, OpenID Connect）实现更复杂的认证和授权需求。
+        </li>
+<li>
+            安全是关键：确保Token的安全传输和存储，使用HTTPS，且对重要信息进行加密处理。
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>linux程序崩溃怎么定位问题？</span></span></h3>
+<p style="text-align: left;"><span>如果开启了core dump文件的转存，那么程序崩溃之后，就会生成 core dump 文件，这里面会有程序运行时的堆栈信息，然后我们可以用 gdp 工具去分析 core dump 文件。</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIWTpEfSEB3JSno85icu9Sj0GQjTF0c9rkyC9TIveeib2NtEq31Pdrck6rthSxcrutyH35uqeeibBBTO/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIWTpEfSEB3JSno85icu9Sj0GQjTF0c9rkyC9TIveeib2NtEq31Pdrck6rthSxcrutyH35uqeeibBBTO/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>gdb myapp core</span><br/></code></pre>
+<p style="text-align: left;"><span>在 GDB 中，使用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>bt</span></code><span>（backtrace）命令可以查看程序崩溃时的调用栈：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIWTpEfSEB3JSno85icu9Sj0GQjTF0c9rkyC9TIveeib2NtEq31Pdrck6rthSxcrutyH35uqeeibBBTO/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIWTpEfSEB3JSno85icu9Sj0GQjTF0c9rkyC9TIveeib2NtEq31Pdrck6rthSxcrutyH35uqeeibBBTO/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>(gdb) bt</span><br/></code></pre>
+<p style="text-align: left;"><span>如果程序崩溃问题可以重现，页可以使用 GDB 直接调试程序。在编译程序时，使用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>-g</span></code><span> 选项添加调试信息。例如：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIWTpEfSEB3JSno85icu9Sj0GQjTF0c9rkyC9TIveeib2NtEq31Pdrck6rthSxcrutyH35uqeeibBBTO/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIWTpEfSEB3JSno85icu9Sj0GQjTF0c9rkyC9TIveeib2NtEq31Pdrck6rthSxcrutyH35uqeeibBBTO/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>gcc -g -o myapp myapp.c</span><br/></code></pre>
+<p style="text-align: left;"><span>使用 GDB 启动程序并运行，当程序崩溃时，GDB 会停在崩溃的位置。</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIWTpEfSEB3JSno85icu9Sj0GQjTF0c9rkyC9TIveeib2NtEq31Pdrck6rthSxcrutyH35uqeeibBBTO/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIWTpEfSEB3JSno85icu9Sj0GQjTF0c9rkyC9TIveeib2NtEq31Pdrck6rthSxcrutyH35uqeeibBBTO/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span><span>gdb </span><span style="color: #61aeee;"><span>myapp</span></span><br/><span><span>(gdb)</span></span><span> run</span><br/></span></code></pre>
+<p style="text-align: left;"><span>程序崩溃后，使用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>bt</span></code><span> 命令查看调用栈，找出问题所在的函数和代码行。</span></p>
+<p style="text-align: left;"><span>有些程序会在崩溃时输出错误信息到标准错误输出（stderr），那么这时候直接去看错误日志就行了。</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIWTpEfSEB3JSno85icu9Sj0GQjTF0c9rkyC9TIveeib2NtEq31Pdrck6rthSxcrutyH35uqeeibBBTO/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIWTpEfSEB3JSno85icu9Sj0GQjTF0c9rkyC9TIveeib2NtEq31Pdrck6rthSxcrutyH35uqeeibBBTO/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span> cat error.log</span><br/></code></pre>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>3. 如果用户说系统使用的时候会偶尔卡顿，该怎么排除问题？</span></span></h3>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>慢SQL</span></strong><span>：使用数据库自带的慢查询日志功能，设置合适的时间阈值，找出执行时间过长的 SQL 语句，分析 SQL 执行计划，查看是否存在全表扫描、索引未使用等问题。为查询语句涉及的字段添加合适的索引；对复杂的 SQL 进行拆分，避免一次性处理大量数据；优化查询逻辑，减少子查询和嵌套查询的使用。</span>
+</li>
+<li>
+<strong><span>慢接口</span></strong><span>：利用 APM（应用性能监控）工具，如 SkyWalking、Pinpoint 等，监控接口的响应时间，找出响应慢的接口。在代码中添加日志记录接口的处理时间，分析每个步骤的耗时情况。对接口中的业务逻辑进行拆分和异步处理，减少同步操作；缓存一些常用的数据，避免重复查询数据库或进行复杂计算；优化算法和数据结构，提高代码执行效率。</span>
+</li>
+<li>
+<strong><span>Full GC：</span></strong><span>使用 JVM 自带的工具，如 VisualVM、jstat、jmap 等，监控 JVM 的内存使用情况和垃圾回收频率。查看 GC 日志，分析 Full GC 的触发原因和耗时。调整 JVM 的堆内存大小，避免内存过小导致频繁的 Full GC；选择合适的垃圾回收器，根据应用的特点和服务器资源进行配置；优化代码中的对象创建和销毁，减少内存泄漏的可能性。</span>
+</li>
+<li>
+<strong><span>线程阻塞和死锁</span></strong><span>：使用线程分析工具，如 VisualVM 的线程分析功能，查看线程的状态和堆栈信息，找出阻塞或死锁的线程。在代码中添加日志，记录线程的执行情况，辅助定位问题。减少同步代码块的使用，避免锁的嵌套和长时间持有；使用更细粒度的锁，降低锁的竞争；合理设置线程池的参数，避免线程池耗尽或线程创建销毁过于频繁。</span>
+</li>
+</ul>
+<h3><span class="q1">给定a、b两个文件，各存放50亿个url，每个url各占64字节，内存限制是4G，让你找出a、b文件共同的url</span></h3>
+<p>方法：分治+hashmap</p>
+<ul class="list-paddingleft-1">
+<li>
+            遍历文件a，<strong>对每个url求取hash(url)%1000</strong>，然后根据所取得的值将url分别存储到1000个小文件（记为a0,a1,…,a999）中。这样每个小文件的大约为300M。
+        </li>
+<li>
+            遍历文件b，采取和a相同的方式将url分别存储到1000小文件（记为b0,b1,…,b999）。这样处理后，所有可能相同的url都在对应的小文件（a0-b0， a1-b1,…,a999-b999）中，不对应的小文件不可能有相同的url。然后我们只要求出1000对小文件中相同的url即可。
+        </li>
+<li>
+            求每对小文件中相同的url时，可以把其中一个小文件的url存储到hash_set中。然后遍历另一个小文件的每个url，看其是否在刚才构建的hash_set中，如果是，那么就是共同的url，存到文件里面就可以了。
+        </li>
+</ul>
+<h3><span class="q1">给定a、b两个文件，各存放50亿个url，每个url各占64字节，内存限制是4G，让你找出a、b文件共同的url</span></h3>
+<p>方法：分治+hashmap</p>
+<ul class="list-paddingleft-1">
+<li>
+            遍历文件a，<strong>对每个url求取hash(url)%1000</strong>，然后根据所取得的值将url分别存储到1000个小文件（记为a0,a1,…,a999）中。这样每个小文件的大约为300M。
+        </li>
+<li>
+            遍历文件b，采取和a相同的方式将url分别存储到1000小文件（记为b0,b1,…,b999）。这样处理后，所有可能相同的url都在对应的小文件（a0-b0， a1-b1,…,a999-b999）中，不对应的小文件不可能有相同的url。然后我们只要求出1000对小文件中相同的url即可。
+        </li>
+<li>
+            求每对小文件中相同的url时，可以把其中一个小文件的url存储到hash_set中。然后遍历另一个小文件的每个url，看其是否在刚才构建的hash_set中，如果是，那么就是共同的url，存到文件里面就可以了。
+        </li>
+</ul>
+<h3><span class="q1">服务器不通怎么排查？</span></h3>
+<p>最直接的办法就是抓包，排查的思路大概有：</p>
+<ol class="list-paddingleft-1">
+<li>
+<p>先确定是服务端的问题，还是客户端的问题。先确认浏览器是否可以访问其他网站，如果不可以，说明客户端网络自身的问题，然后检查客户端网络配置（连接wifi正不正常，有没有插网线）；如果可以正常其他网页，说明客户端网络是可以正常上网的。</p>
+</li>
+<li>
+<p>如果客户端网络没问题，就抓包确认 DNS 是否解析出了 IP 地址，如果没有解析出来，说明域名写错了，如果解析出了 IP 地址，抓包确认有没有和服务端建立三次握手，如果能成功建立三次握手，并且发出了 HTTP 请求，但是就是没有显示页面，可以查看服务端返回的响应码：</p>
+</li>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<p>如果是404错误码，检查输入的url是否正确；</p>
+</li>
+<li>
+<p>如果是500，说明服务器此时有问题；</p>
+</li>
+<li>
+<p>如果是200，F12看看前端代码有问题导致浏览器没有渲染出页面。</p>
+</li>
+</ul>
+<li>
+<p>如果客户端网络是正常的，但是访问速度很慢，导致很久才显示出来。这时候要看客户端的网口流量是否太大的了，导致tcp发生丢包之类的问题。</p>
+</li>
+</ol>
+<p>总之就是一层一层有没有插网线，网络配置是否正确、DNS有没有解析出 IP地址、TCP有没有三次握手、HTTP返回的响应码是什么。</p>
+<p>详细参考：<a data-linktype="2" href="https://mp.weixin.qq.com/s?__biz=MzUxODAzNDg4NQ==&amp;mid=2247513356&amp;idx=1&amp;sn=84ee69a86cc86f42557d4a4ca7e228d0&amp;scene=21#wechat_redirect" style="border-style: none none solid;border-width: 3px 3px 1px;border-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4) rgb(48, 79, 254);">字节一面：网站显示不出来，怎么排查？</a></p>
+<h3><span class="q1">怎么保证缓存数据一致性？</span></h3>
+<p>对于读数据，我会选择旁路缓存策略，如果 cache 不命中，会从 db 加载数据到 cache。对于写数据，我会选择更新 db 后，再删除缓存。<img _width="677px" data-index="3" data-src="../img/think_011_24dc7333.jpg" data-type="other" data-w="731" src="../img/think_011_24dc7333.jpg" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/></p>
+<p>针对删除缓存异常的情况，我还会对 key 设置过期时间兜底，只要过期时间一到，过期的 key 就会被删除了。</p>
+<p>除此之外，还有两种方式应对删除缓存失败的情况。</p>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);">消息队列方案</p>
+</blockquote>
+<p>我们可以引入<strong>消息队列</strong>，将第二个操作（删除缓存）要操作的数据加入到消息队列，由消费者来操作数据。</p>
+<ul class="list-paddingleft-1">
+<li>
+            如果应用<strong>删除缓存失败</strong>，可以从消息队列中重新读取数据，然后再次删除缓存，这个就是<strong>重试机制</strong>。当然，如果重试超过的一定次数，还是没有成功，我们就需要向业务层发送报错信息了。
+        </li>
+<li>
+            如果<strong>删除缓存成功</strong>，就要把数据从消息队列中移除，避免重复操作，否则就继续重试。
+        </li>
+</ul>
+<p>举个例子，来说明重试机制的过程。</p>
+<figure class="img1"><img _width="677px" data-index="4" data-src="../img/think_012_2260f6be.jpg" data-type="other" data-w="1080" src="../img/think_012_2260f6be.jpg" style="   border-radius: 4px;  height: auto !important;  width: 656.984px !important;"/></figure>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);">订阅 MySQL binlog，再操作缓存</p>
+</blockquote>
+<p>「<strong>先更新数据库，再删缓存</strong>」的策略的第一步是更新数据库，那么更新数据库成功，就会产生一条变更日志，记录在 binlog 里。</p>
+<p>于是我们就可以通过订阅 binlog 日志，拿到具体要操作的数据，然后再执行缓存删除，阿里巴巴开源的 Canal 中间件就是基于这个实现的。</p>
+<p>Canal 模拟 MySQL 主从复制的交互协议，把自己伪装成一个 MySQL 的从节点，向 MySQL 主节点发送 dump 请求，MySQL 收到请求后，就会开始推送 Binlog 给 Canal，Canal 解析 Binlog 字节流之后，转换为便于读取的结构化数据，供下游程序订阅使用。</p>
+<p>下图是 Canal 的工作原理：<img _width="677px" data-index="5" data-src="../img/think_013_548e92b1.jpg" data-type="other" data-w="782" src="../img/think_013_548e92b1.jpg" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>所以，<strong>如果要想保证「先更新数据库，再删缓存」策略第二个操作能执行成功，我们可以使用「消息队列来重试缓存的删除」，或者「订阅 MySQL binlog 再操作缓存」，这两种方法有一个共同的特点，都是采用异步操作缓存。</strong></p>
+<ul class="list-paddingleft-1">
+<li>
+            设计一个基本的用户隐私设置功能
+        </li>
+</ul>
+<ul class="list-paddingleft-1">
+<li>
+            设计一个用户积分系统，怎么维护积分有效性和实现提醒功能？
+        </li>
+<li>
+            追问：怎么进行数据库设计？怎么进行积分过期提醒？
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>12. 如何实现一个单点登录？</span></span></h3>
+<p style="text-align: left;"><span>参考：<a data-linktype="2" href="https://mp.weixin.qq.com/s?__biz=MzUxODAzNDg4NQ==&amp;mid=2247544959&amp;idx=2&amp;sn=e74c561be52e1b42e2ac7fab5d711ad7&amp;token=724645736&amp;lang=zh_CN&amp;scene=21#wechat_redirect" linktype="text" style="border-style: none none solid;border-width: 3px 3px 1px;border-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4) rgb(48, 79, 254);padding: 0px;text-decoration: none;overflow-wrap: break-word;" target="_blank" textvalue="">面试官：单点登录是怎么工作的？</a></span></p>
+<h3><span class="q1">对于一个后端服务怎么提升性能</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+            回答：讲了存储层面的使用中间缓存、网络框架设计优化
+        </li>
+<li>
+            追问：提示长连接短连接
+        </li>
+<li>
+            追问：怎么避免拷贝呢，不同的层面说说
+        </li>
+<li>
+            回答：C++移动语义、零拷贝
+        </li>
+<li>
+            追问：零拷贝的使用场景
+        </li>
+<li>
+            追问：kafka了解吗
+        </li>
+<li>
+            回答：不了解
+        </li>
+<li>
+            追问：建议关注一下kafka，很快很好用
+        </li>
+</ul>
+<h3><span class="q1">智力题</span></h3>
+<p>屋里四盏灯，屋外四个开关，一个开关仅控制一盏灯，屋外看不到屋里，怎样只进屋一次，就知道哪个开关控制哪盏</p>
+<p><strong>chatgpt 4.0 的回答：</strong></p>
+<p>为了找出哪个开关控制哪盏灯，你可以按照以下步骤操作：</p>
+<ol class="list-paddingleft-1">
+<li>
+            先打开第一个开关，等待几分钟。
+        </li>
+<li>
+            然后关闭第一个开关，打开第二个开关。
+        </li>
+<li>
+            进入屋内。
+        </li>
+</ol>
+<p>现在你会看到以下情况：</p>
+<ul class="list-paddingleft-1">
+<li>
+            一盏灯亮着：这盏灯是由第二个开关控制的。
+        </li>
+<li>
+            一盏灯熄灭，但灯泡发热：这盏灯是由第一个开关控制的，因为它之前亮着但现在已经关闭。
+        </li>
+<li>
+            剩下两盏灯熄灭且不发热：分别由第三个和第四个开关控制。
+        </li>
+</ul>
+<p>为了确定第三个和第四个开关分别控制哪盏灯，只需在屋内尝试打开其中一个。如果这盏灯亮起，那么就知道它由当前打开的开关控制，另一盏灯则由未尝试的开关控制。这样就可以在进屋一次的情况下，找出四个开关分别控制哪盏灯。</p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>智力题</span></span></h3>
+<p style="text-align: left;"><span>问题：一个装满水10升容量瓶子，一个7升空瓶子，一个3升空瓶子，平分为两瓶5升水。</span></p>
+<h3><span class="q1">如果要对一个很大的数据集，进行排序，而没办法一次性在内存排序，这时候怎么办？</span></h3>
+<p>可以使用外部排序来解决，基本思路分为两个阶段。</p>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);">部分排序阶段。</p>
+</blockquote>
+<p>我们根据内存大小，将待排序的文件拆成多个部分，使得每个部分都是足以存入内存中的。然后选择合适的内排序算法，将多个文件部分排序，并输出到容量可以更大的外存临时文件中，每个临时文件都是有序排列的，我们将其称之为一个“顺段”。</p>
+<p>在第一个阶段部分排序中，由于内存可以装下每个顺段的所有元素，可以使用<strong>快速排序</strong>，时间复杂度是O(nlogn)。</p>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);">归并阶段</p>
+</blockquote>
+<p>我们对前面的多个“顺段”进行合并，思想和归并排序其实是一样的。以 2 路归并为例，每次都将两个连续的顺段合并成一个更大的顺段。</p>
+<p>因为内存限制，每次可能只能读入两个顺段的部分内容，所以我们需要一部分一部分读入，在内存里将可以确定顺序的部分排列，并输出到外存里的文件中，不断重复这个过程，直至两个顺段被完整遍历。这样经过多层的归并之后，最终会得到一个完整的顺序文件。</p>
+<figure class="img1"><img _width="677px" data-index="8" data-src="../img/think_014_be4d2fde.png" data-w="932" src="../img/think_014_be4d2fde.png" style="   border-radius: 4px;  height: auto !important;  width: 656.969px !important;"/></figure>
+<p>归并阶段有个非常大的时间消耗就是 IO，也就是输入输出。最好就是让归并的层数越低越好，为了降低降低归并层数，可以使用<strong>败者树</strong>。</p>
+<p>败者树中的非终端结点中存储的是胜利（左右孩子相比较，谁最小即为胜者）的一方；而败者树中的非终端结点存储的是失败的一方。而在比较过程中，都是拿胜者去比较。</p>
+<figure class="img1"><img _width="411px" data-index="9" data-src="../img/think_015_8357d3af.png" data-w="411" src="../img/think_015_8357d3af.png" style="   border-radius: 4px;  height: auto !important;  width: 411px !important;"/></figure>
+<p>现在有了败者树的加持，多路归并排序就可以比较高效地解决外部排序的问题了。</p>
+<p>大致思路就是：</p>
+<ul class="list-paddingleft-1">
+<li>
+            先用内排序算法（比如快速排序），尽可能多的加载源文件，将其变成 n 个有序顺段。
+        </li>
+<li>
+            在内存有限的前提下每 k 个文件为一组，每次流式地从各个文件中读取一个单词，借助败者树选出字典序最低的一个，输出到文件中，这样就可以将 k 个顺段合并到一个顺段中了；反复执行这样的操作，直至所有顺段被归并到同一个顺段。
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>如何解决库存超卖？</span></span></h3>
+<p style="text-align: left;"><strong><span>库存防超卖方案采用：Redis原子操作 + 异步扣减数据库</span></strong></p>
+<figure class="img1"><span><img _width="677px" alt="img" data-index="5" data-src="../img/think_016_fa76ee78.png" data-w="1080" src="../img/think_016_fa76ee78.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span>
+<figcaption style="font-family: PingFangSC-Light;color: rgb(136, 136, 136);text-align: center;&lt;br&gt;"><span>img</span></figcaption>
+</figure>
+<p style="text-align: left;"><span>具体流程如下：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>秒杀请求达到</span></strong><span>：用户发起秒杀请求，系统接收到请求后，首先进行一些基础校验（如用户身份验证、活动是否开始等）。如果校验通过，进入库存扣减逻辑。</span>
+</li>
+<li>
+<strong><span>Redis库存扣减</span></strong><span>：在Redis中检查商品库存是否充足。例如，使用</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>GET</span></code><span>命令获取当前库存数量。如果库存不足，直接返回失败，结束流程。如果库存充足，使用Redis的原子操作（如</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>DECR</span></code><span>或Lua脚本）扣减库存。</span>
+</li>
+<li>
+<strong><span>异步更新数据库</span></strong><span>：如果Redis库存扣减成功，生成一个秒杀成功的消息，并将其放入消息队列</span>
+</li>
+<li>
+<strong><span>后台服务消费消息</span></strong><span>：后台服务从消息队列中消费秒杀成功的消息，执行以下操作：1、为用户创建订单记录；2、使用乐观锁将数据库中的库存数量减少1；3、通过唯一标识（如用户ID+商品ID+时间戳）防止重复消费。</span>
+</li>
+<li>
+<strong><span>最终一致性校验</span></strong><span>：在Redis库存扣减和数据库库存更新之间，可能会存在短暂的不一致状态。为了保证最终一致性，可以采取以下措施：1、定期将Redis中的库存数据与数据库进行同步。2、如果发现Redis和数据库库存不一致，触发补偿逻辑（如回滚订单或调整库存）。</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>秒杀怎么防止黄牛</span></span></h3>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>验证码与滑块验证：</span></strong><span>在秒杀过程中设置验证码或滑块验证，要求用户完成特定的验证操作才能继续购买。验证码可以是数字、字母、图片等形式，滑块验证则需要用户通过拖动滑块来完成拼图或其他验证任务。这可以有效防止自动化脚本的批量操作，因为黄牛使用的机器人较难识别和处理验证码。</span>
+</li>
+<li>
+<strong><span>限制访问频率</span></strong><span>：对同一 IP 地址、同一账号或同一设备的访问频率进行限制。例如，规定每秒或每分钟内的请求次数上限，超过限制的请求将被拒绝。这样可以防止黄牛利用大量的请求来抢占商品。</span>
+</li>
+</ul>
+<h3 style="margin: 1.2em 0px 15px;padding: 0px;"><span style="color: rgb(65, 105, 225);text-align: left;"><span>11. 场景题</span></span></h3>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<span>分布式部署下的的日志文件如何进行收集和分析</span>
+</li>
+<li>
+<span>如何设计一个高可用的分布式系统</span>
+</li>
+<li>
+<span>在线部署项目或者更新项目的时候可能会导致某些节点暂时不可用，如何解决</span>
+</li>
+</ul>
+<p>场景题：</p>
+<ul class="list-paddingleft-1">
+<li>
+            如果要做一个分布式的调度系统，我们需要考虑哪些东西呢？
+        </li>
+<li>
+            比如我可能有一个集群来调度保证高可用，你有什么想法？
+        </li>
+</ul>
+<h3 style="margin: 1.2em 0px 15px;padding: 0px;"><span style="color: rgb(65, 105, 225);text-align: left;"><span>6. 如何快速统计大文件中某个单词的出现次数？</span></span></h3>
+<p style="text-align: left;"><span>常见的解决思路有三种：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>字典树算法</span></strong>
+</li>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>构建字典树</span></strong><span>：遍历大文件，将文件中的每个单词依次插入到字典树中。在插入过程中，若单词已存在于字典树中，则对应节点的计数加 1；若不存在，则创建新的节点并将计数初始化为 1。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>查询单词</span></strong><span>：构建好字典树后，直接查询目标单词在字典树中对应的节点，获取其计数，即可得到该单词在大文件中的出现次数。</span>
+</li>
+</ul>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>哈希表算法</span></strong>
+</li>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>遍历文件</span></strong><span>：逐行读取大文件，对每行内容进行分割得到单词列表。然后遍历单词列表，对于每个单词，在哈希表中查找其是否已存在。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>更新哈希表</span></strong><span>：若单词在哈希表中已存在，则将其对应的值（出现次数）加 1；若不存在，则将该单词作为键，出现次数初始化为 1，存入哈希表。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>获取结果</span></strong><span>：遍历完整个文件后，在哈希表中查找目标单词对应的出现次数即可。</span>
+</li>
+</ul>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>分治法</span></strong>
+</li>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>分割文件</span></strong><span>：将大文件分割成多个较小的子文件，使每个子文件能够被内存轻松处理。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>并行统计</span></strong><span>：对每个子文件并行地进行单词统计，可以使用多线程或多进程来实现。在每个子文件中，可采用哈希表或其他简单的数据结构来统计单词出现的次数。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>合并结果</span></strong><span>：将各个子文件的统计结果进行合并，得到大文件中目标单词的出现次数。</span>
+</li>
+</ul>
+</ul>
+<h3 style="margin: 1.2em 0px 15px;padding: 0px;"><span style="color: rgb(65, 105, 225);text-align: left;"><span>7. 手撕：随机红包功能。给定一个金额和人数，生成一个数组，表示每人分得的金钱值。要求最大金额不能超过总金额的90%且全部分完。</span></span></h3>
+<p style="text-align: left;"><span>以下是Java实现的随机红包算法，满足最大金额不超过总金额的90%且全部分完：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;margin: 10px 0px;padding: 0px;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYPOWbZ5MCLpcW7Mroic0tJDcn1ichoxCdvMibAZowiccty2wibhEJnPQ639iafuhp1Jcmse5WVtEl3drk/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' height: 30px; width: 749px; background-size: 40px; background-color: rgb(40, 44, 52); margin-bottom: -7px; border-radius: 5px; background-position: 10px 10px;  background-image: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYPOWbZ5MCLpcW7Mroic0tJDcn1ichoxCdvMibAZowiccty2wibhEJnPQ639iafuhp1Jcmse5WVtEl3drk/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1");'></span><code style="overflow-x: auto;padding: 15px 16px 16px;color: rgb(171, 178, 191);background-color: rgb(40, 44, 52);border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span style="color: rgb(198, 120, 221);"><span>import</span></span><span> java.util.Arrays;</span><br><span style="color: rgb(198, 120, 221);"><span>import</span></span><span> java.util.concurrent.ThreadLocalRandom;</span><br><br><span style="color: rgb(198, 120, 221);"><span>public</span></span><span> </span><span><span style="color: rgb(198, 120, 221);"><span>class</span></span><span> </span><span style="color: rgb(230, 192, 123);"><span>RedPacketGenerator</span></span><span> </span></span><span>{</span><br><br><span>    </span><span style="color: rgb(198, 120, 221);"><span>public</span></span><span> </span><span style="color: rgb(198, 120, 221);"><span>static</span></span><span> </span><span style="color: rgb(198, 120, 221);"><span>double</span></span><span>[] generateRedPacket(</span><span style="color: rgb(198, 120, 221);"><span>double</span></span><span> total, </span><span style="color: rgb(198, 120, 221);"><span>int</span></span><span> num) {</span><br><span>        </span><span style="color: rgb(92, 99, 112);font-style: italic;"><span>// 基础校验</span></span><br><span>        </span><span style="color: rgb(198, 120, 221);"><span>if</span></span><span> (num &lt; </span><span style="color: rgb(209, 154, 102);"><span>2</span></span><span>) </span><span style="color: rgb(198, 120, 221);"><span>throw</span></span><span> </span><span style="color: rgb(198, 120, 221);"><span>new</span></span><span> IllegalArgumentException(</span><span style="color: rgb(152, 195, 121);"><span>"至少需要2人"</span></span><span>);</span><br><span>        </span><span style="color: rgb(198, 120, 221);"><span>if</span></span><span> (total &lt;= </span><span style="color: rgb(209, 154, 102);"><span>0</span></span><span>) </span><span style="color: rgb(198, 120, 221);"><span>throw</span></span><span> </span><span style="color: rgb(198, 120, 221);"><span>new</span></span><span> IllegalArgumentException(</span><span style="color: rgb(152, 195, 121);"><span>"金额必须大于0"</span></span><span>);</span><br><span>        </span><br><span>        </span><span style="color: rgb(92, 99, 112);font-style: italic;"><span>// 转换为分处理避免浮点误差</span></span><br><span>        </span><span style="color: rgb(198, 120, 221);"><span>long</span></span><span> totalCents = Math.round(total * </span><span style="color: rgb(209, 154, 102);"><span>100</span></span><span>);</span><br><span>        </span><span style="color: rgb(198, 120, 221);"><span>long</span></span><span> maxAllowed = Math.round(total * </span><span style="color: rgb(209, 154, 102);"><span>0.9</span></span><span> * </span><span style="color: rgb(209, 154, 102);"><span>100</span></span><span>);</span><br><span>        </span><br><span>        </span><span style="color: rgb(92, 99, 112);font-style: italic;"><span>// 校验约束条件</span></span><br><span>        </span><span style="color: rgb(198, 120, 221);"><span>if</span></span><span> (totalCents &lt; num) </span><span style="color: rgb(198, 120, 221);"><span>throw</span></span><span> </span><span style="color: rgb(198, 120, 221);"><span>new</span></span><span> IllegalArgumentException(</span><span style="color: rgb(152, 195, 121);"><span>"金额不足"</span></span><span>);</span><br><span>        </span><span style="color: rgb(198, 120, 221);"><span>if</span></span><span> (maxAllowed &lt; </span><span style="color: rgb(209, 154, 102);"><span>1</span></span><span>) </span><span style="color: rgb(198, 120, 221);"><span>throw</span></span><span> </span><span style="color: rgb(198, 120, 221);"><span>new</span></span><span> IllegalArgumentException(</span><span style="color: rgb(152, 195, 121);"><span>"金额过小无法满足最大限制"</span></span><span>);</span><br><br><span>        </span><span style="color: rgb(198, 120, 221);"><span>long</span></span><span>[] cents = </span><span style="color: rgb(198, 120, 221);"><span>new</span></span><span> </span><span style="color: rgb(198, 120, 221);"><span>long</span></span><span>[num];</span><br><span>        </span><span style="color: rgb(198, 120, 221);"><span>long</span></span><span> remaining = totalCents;</span><br><span>        </span><span style="color: rgb(198, 120, 221);"><span>int</span></span><span> left = num;</span><br><br><span>        </span><span style="color: rgb(198, 120, 221);"><span>for</span></span><span> (</span><span style="color: rgb(198, 120, 221);"><span>int</span></span><span> i = </span><span style="color: rgb(209, 154, 102);"><span>0</span></span><span>; i &lt; num - </span><span style="color: rgb(209, 154, 102);"><span>1</span></span><span>; i++) {</span><br><span>            left--; </span><span style="color: rgb(92, 99, 112);font-style: italic;"><span>// 剩余人数</span></span><br><span>            </span><br><span>            </span><span style="color: rgb(92, 99, 112);font-style: italic;"><span>// 动态计算取值范围</span></span><br><span>            </span><span style="color: rgb(198, 120, 221);"><span>long</span></span><span> min = Math.max(</span><span style="color: rgb(209, 154, 102);"><span>1</span></span><span>, remaining - maxAllowed * left);</span><br><span>            </span><span style="color: rgb(198, 120, 221);"><span>long</span></span><span> max = Math.min(remaining - left * </span><span style="color: rgb(209, 154, 102);"><span>1L</span></span><span>, maxAllowed);</span><br><span>            </span><br><span>            </span><span style="color: rgb(198, 120, 221);"><span>if</span></span><span> (min &gt; max) {</span><br><span>                </span><span style="color: rgb(92, 99, 112);font-style: italic;"><span>// 若无法满足条件（理论上不会触发，因校验已覆盖）</span></span><br><span>                </span><span style="color: rgb(198, 120, 221);"><span>throw</span></span><span> </span><span style="color: rgb(198, 120, 221);"><span>new</span></span><span> IllegalStateException(</span><span style="color: rgb(152, 195, 121);"><span>"无法生成满足条件的红包"</span></span><span>);</span><br><span>            }</span><br><br><span>            </span><span style="color: rgb(92, 99, 112);font-style: italic;"><span>// 生成随机金额（含边界）</span></span><br><span>            </span><span style="color: rgb(198, 120, 221);"><span>long</span></span><span> current = ThreadLocalRandom.current().nextLong(min, max + </span><span style="color: rgb(209, 154, 102);"><span>1</span></span><span>);</span><br><span>            cents[i] = current;</span><br><span>            remaining -= current;</span><br><span>        }</span><br><span>        </span><br><span>        </span><span style="color: rgb(92, 99, 112);font-style: italic;"><span>// 最后一人拿剩余金额</span></span><br><span>        cents[num-</span><span style="color: rgb(209, 154, 102);"><span>1</span></span><span>] = remaining;</span><br><br><span>        </span><span style="color: rgb(92, 99, 112);font-style: italic;"><span>// 最终校验（防御性编程）</span></span><br><span>        </span><span style="color: rgb(198, 120, 221);"><span>if</span></span><span> (Arrays.stream(cents).anyMatch(c -&gt; c &gt; maxAllowed)) {</span><br><span>            </span><span style="color: rgb(198, 120, 221);"><span>throw</span></span><span> </span><span style="color: rgb(198, 120, 221);"><span>new</span></span><span> IllegalStateException(</span><span style="color: rgb(152, 195, 121);"><span>"生成结果违反最大金额限制"</span></span><span>);</span><br><span>        }</span><br><br><span>        </span><span style="color: rgb(92, 99, 112);font-style: italic;"><span>// 转换回元</span></span><br><span>        </span><span style="color: rgb(198, 120, 221);"><span>return</span></span><span> Arrays.stream(cents)</span><br><span>                .mapToDouble(c -&gt; c / </span><span style="color: rgb(209, 154, 102);"><span>100.0</span></span><span>)</span><br><span>                .toArray();</span><br><span>    }</span><br><br><span>    </span><span><span style="color: rgb(198, 120, 221);"><span>public</span></span><span> </span><span style="color: rgb(198, 120, 221);"><span>static</span></span><span> </span><span style="color: rgb(198, 120, 221);"><span>void</span></span><span> </span><span style="color: rgb(97, 174, 238);"><span>main</span></span><span><span>(String[] args)</span></span><span> </span></span><span>{</span><br><span>        </span><span style="color: rgb(92, 99, 112);font-style: italic;"><span>// 示例用法</span></span><br><span>        </span><span style="color: rgb(198, 120, 221);"><span>double</span></span><span>[] packet = generateRedPacket(</span><span style="color: rgb(209, 154, 102);"><span>100.0</span></span><span>, </span><span style="color: rgb(209, 154, 102);"><span>5</span></span><span>);</span><br><span>        System.out.println(</span><span style="color: rgb(152, 195, 121);"><span>"红包分配："</span></span><span> + Arrays.toString(packet));</span><br><span>        System.out.println(</span><span style="color: rgb(152, 195, 121);"><span>"总额验证："</span></span><span> + Arrays.stream(packet).sum());</span><br><span>    }</span><br><span>}</span><br/></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></code></pre>
+<p style="text-align: left;"><span>算法的时间复杂度O(n)，空间复杂度O(n)，算法的特点是每次分配时动态计算：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<span>min = max(1, 剩余金额 - 最大允许值*剩余人数)</span>
+</li>
+<li>
+<span>max = min(剩余金额 - 每人保底分, 最大允许值)</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>输入输出示例：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<span>输入：</span><code class="code2"><span>generateRedPacket(100.0, 5)</span></code>
+</li>
+<li>
+<span>可能输出：</span><code class="code2"><span>[89.99, 5.0, 2.5, 1.5, 1.01]</span></code>
+</li>
+<li>
+<span>验证：总和100元，最大金额89.99元 ≤ 90元（100*90%）</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>16. 商品秒杀功能怎么实现？如何避免超卖的？</span></span></h3>
+<p style="text-align: left;"><span>秒杀场景的核心特点是</span><strong><span>高并发、低库存、短时间爆发式访问</span></strong><span> 。因此，设计时需要解决以下几个问题：</span></p>
+<ol class="list-paddingleft-1" style="list-style-type: decimal;">
+<li>
+<strong><span>高并发处理</span></strong><span> ：如何应对大量用户同时访问？</span>
+</li>
+<li>
+<strong><span>库存一致性</span></strong><span> ：如何保证库存不会超卖或少卖？</span>
+</li>
+<li>
+<strong><span>用户体验</span></strong><span> ：如何减少用户等待时间，避免页面崩溃？</span>
+</li>
+<li>
+<strong><span>防刷机制</span></strong><span> ：如何防止恶意用户利用脚本抢购商品？</span>
+</li>
+</ol>
+<p style="text-align: left;"><span>面对上面这些问题，可以针对每一层做一些设计：</span></p>
+<figure class="img1"><span><img _width="677px" data-index="10" data-src="../img/think_017_c7a1cf50.png" data-w="1080" src="../img/think_017_c7a1cf50.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<p style="text-align: left;"><span>1、前端层：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>静态资源分离</span></strong><span> ：将秒杀页面的静态资源（如HTML、CSS、JS）部署到CDN（内容分发网络），减轻服务器压力。</span>
+</li>
+<li>
+<strong><span>请求拦截</span></strong><span>：活动未开始时，前端按钮置灰；通过验证码、点击频率限制。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>2、网关层：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>流量拦截</span></strong><span> ：使用API网关对请求进行初步过滤，例如IP限流、黑名单拦截等。</span>
+</li>
+<li>
+<strong><span>身份验证</span></strong><span> ：通过Token或签名验证用户身份，防止未登录用户直接访问秒杀接口。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>3、缓存层：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>Redis缓存库存</span></strong><span> ：将商品库存信息存储在Redis中，利用其高性能特性处理库存扣减操作。</span>
+</li>
+<li>
+<strong><span>预热数据</span></strong><span> ：在秒杀活动开始前，将商品信息和库存数据加载到Redis中，减少数据库压力。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>4、消息队列：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>削峰填谷</span></strong><span> ：使用消息队列（如Kafka）将用户的秒杀请求异步化，避免直接冲击后端服务。</span>
+</li>
+<li>
+<strong><span>订单处理</span></strong><span> ：将成功的秒杀请求放入队列，由后台服务异步生成订单，提高系统吞吐量。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>5、数据库层</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>乐观锁</span></strong><span>：在库存扣减时，使用乐观锁确保库存一致性。</span>
+</li>
+<li>
+<strong><span>读写分离</span></strong><span> ：通过主从复制实现数据库的读写分离，提升查询性能。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>关键的核心业务逻辑实现，</span><strong><span>库存防超卖方案采用：Redis原子操作 + 异步扣减数据库</span></strong><span>。</span></p>
+<figure class="img1"><span><img _width="677px" data-index="11" data-src="../img/think_018_1e1d9778.png" data-w="1080" src="../img/think_018_1e1d9778.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<p style="text-align: left;"><span>具体流程如下：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>秒杀请求达到</span></strong><span>：用户发起秒杀请求，系统接收到请求后，首先进行一些基础校验（如用户身份验证、活动是否开始等）。如果校验通过，进入库存扣减逻辑。</span>
+</li>
+<li>
+<strong><span>Redis库存扣减</span></strong><span>：在Redis中检查商品库存是否充足。例如，使用</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>GET</span></code><span>命令获取当前库存数量。如果库存不足，直接返回失败，结束流程。如果库存充足，使用Redis的原子操作（如</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>DECR</span></code><span>或Lua脚本）扣减库存。</span>
+</li>
+<li>
+<strong><span>异步更新数据库</span></strong><span>：如果Redis库存扣减成功，生成一个秒杀成功的消息，并将其放入消息队列</span>
+</li>
+<li>
+<strong><span>后台服务消费消息</span></strong><span>：后台服务从消息队列中消费秒杀成功的消息，执行以下操作：</span>
+</li>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>1、为用户创建订单记录；</span>
+</li>
+<li>
+<span>2、使用乐观锁将数据库中的库存数量减少1；</span>
+</li>
+<li>
+<span>3、通过唯一标识（如用户ID+商品ID+时间戳）防止重复消费。</span>
+</li>
+</ul>
+<li>
+<strong><span>最终一致性校验</span></strong><span>：在Redis库存扣减和数据库库存更新之间，可能会存在短暂的不一致状态。为了保证最终一致性，可以采取以下措施：</span>
+</li>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>1、定期将Redis中的库存数据与数据库进行同步。</span>
+</li>
+<li>
+<span>2、如果发现Redis和数据库库存不一致，触发补偿逻辑（如回滚订单或调整库存）。</span>
+</li>
+</ul>
+</ul>
+</html>
+            </article>
+        </div>
+        
+        <div class="content" id="article-toc">
+            <nav class="toc">
+                <div class="toc-inner"><ul><ul><ul><li>
+                    <a href="#" aria-label="如何设计一个可重入的分布式锁，用什么结构设计？">如何设计一个可重入的分布式锁，用什么结构设计？</a></li><li>
+                    <a href="#" aria-label="场景题：你认为你所在的城市有多少个加油站">场景题：你认为你所在的城市有多少个加油站</a></li><li>
+                    <a href="#" aria-label="如何设计一个秒杀场景？">如何设计一个秒杀场景？</a></li><li>
+                    <a href="#" aria-label="给你一个场景吧，在支付界面让用户同时选择支付宝和微信支付，但是用户点了微信，这个时候网卡了，又点了支付宝，这个时候如何保证用户不重复付款">给你一个场景吧，在支付界面让用户同时选择支付宝和微信支付，但是用户点了微信，这个时候网卡了，又点了支付宝，这个时候如何保证用户不重复付款</a></li><li>
+                    <a href="#" aria-label="还有别的方案呢？前端往往是不可信的">还有别的方案呢？前端往往是不可信的</a></li><li>
+                    <a href="#" aria-label="多线程打印奇偶数，怎么控制打印的顺序">多线程打印奇偶数，怎么控制打印的顺序</a></li><li>
+                    <a href="#" aria-label="常见的限流算法你知道哪些？？">常见的限流算法你知道哪些？？</a></li><li>
+                    <a href="#" aria-label="思考题：抛硬币，先抛到正面算赢，否则轮流抛。问先抛的人获胜的概率。">思考题：抛硬币，先抛到正面算赢，否则轮流抛。问先抛的人获胜的概率。</a></li><li>
+                    <a href="#" aria-label="线上项目，没有日志，没后台数据的情况下怎么找出问题？">线上项目，没有日志，没后台数据的情况下怎么找出问题？</a></li><li>
+                    <a href="#" aria-label="看你项目用了策略模式，介绍一下策略模式？">看你项目用了策略模式，介绍一下策略模式？</a></li><li>
+                    <a href="#" aria-label="10. 手撕：单例模式">10. 手撕：单例模式</a></li><li>
+                    <a href="#" aria-label="高并发的场景下保证数据库和缓存一致性？">高并发的场景下保证数据库和缓存一致性？</a></li><li>
+                    <a href="#" aria-label="使用消息队列还应该注意哪些问题？">使用消息队列还应该注意哪些问题？</a></li><li>
+                    <a href="#" aria-label="消息队列的可靠性、顺序性怎么保证？">消息队列的可靠性、顺序性怎么保证？</a></li><li>
+                    <a href="#" aria-label="秒杀系统设计如何做？">秒杀系统设计如何做？</a></li><li>
+                    <a href="#" aria-label="设计题：订单到了半个小时，半个小时未支付就取消">设计题：订单到了半个小时，半个小时未支付就取消</a></li><li>
+                    <a href="#" aria-label="12. 从前端页面到Java后台再到数据库，有一张表，表存在上百万条数据，从这三个层面，去做一个查询方面的优化，单表查询。">12. 从前端页面到Java后台再到数据库，有一张表，表存在上百万条数据，从这三个层面，去做一个查询方面的优化，单表查询。</a></li><li>
+                    <a href="#" aria-label="简单讲一下工厂模式，简单工厂，还有工厂方法，还有抽象工厂，这三个工厂就有什么区别呀？">简单讲一下工厂模式，简单工厂，还有工厂方法，还有抽象工厂，这三个工厂就有什么区别呀？</a></li><li>
+                    <a href="#" aria-label="讲一讲单例模式？它有什么线程不安全的地方，就是多线程的时候它会出现什么问题？">讲一讲单例模式？它有什么线程不安全的地方，就是多线程的时候它会出现什么问题？</a></li><li>
+                    <a href="#" aria-label="手写一个双重检查锁实现的单例，并讲解">手写一个双重检查锁实现的单例，并讲解</a></li><li>
+                    <a href="#" aria-label="7. 设计一个抢票软件，高并发过来的时候，做哪些设计去应对呢？">7. 设计一个抢票软件，高并发过来的时候，做哪些设计去应对呢？</a></li><li>
+                    <a href="#" aria-label="12. 手撕：三个线程循环打印1-100">12. 手撕：三个线程循环打印1-100</a></li><li>
+                    <a href="#" aria-label="七个球，有一个不一样，称几次能找出来">七个球，有一个不一样，称几次能找出来</a></li><li>
+                    <a href="#" aria-label="分布式登陆怎样做">分布式登陆怎样做</a></li><li>
+                    <a href="#" aria-label="linux程序崩溃怎么定位问题？">linux程序崩溃怎么定位问题？</a></li><li>
+                    <a href="#" aria-label="3. 如果用户说系统使用的时候会偶尔卡顿，该怎么排除问题？">3. 如果用户说系统使用的时候会偶尔卡顿，该怎么排除问题？</a></li><li>
+                    <a href="#" aria-label="给定a、b两个文件，各存放50亿个url，每个url各占64字节，内存限制是4G，让你找出a、b文件共同的url">给定a、b两个文件，各存放50亿个url，每个url各占64字节，内存限制是4G，让你找出a、b文件共同的url</a></li><li>
+                    <a href="#" aria-label="给定a、b两个文件，各存放50亿个url，每个url各占64字节，内存限制是4G，让你找出a、b文件共同的url">给定a、b两个文件，各存放50亿个url，每个url各占64字节，内存限制是4G，让你找出a、b文件共同的url</a></li><li>
+                    <a href="#" aria-label="服务器不通怎么排查？">服务器不通怎么排查？</a></li><li>
+                    <a href="#" aria-label="怎么保证缓存数据一致性？">怎么保证缓存数据一致性？</a></li><li>
+                    <a href="#" aria-label="12. 如何实现一个单点登录？">12. 如何实现一个单点登录？</a></li><li>
+                    <a href="#" aria-label="对于一个后端服务怎么提升性能">对于一个后端服务怎么提升性能</a></li><li>
+                    <a href="#" aria-label="智力题">智力题</a></li><li>
+                    <a href="#" aria-label="智力题">智力题</a></li><li>
+                    <a href="#" aria-label="如果要对一个很大的数据集，进行排序，而没办法一次性在内存排序，这时候怎么办？">如果要对一个很大的数据集，进行排序，而没办法一次性在内存排序，这时候怎么办？</a></li><li>
+                    <a href="#" aria-label="如何解决库存超卖？">如何解决库存超卖？</a></li><li>
+                    <a href="#" aria-label="秒杀怎么防止黄牛">秒杀怎么防止黄牛</a></li><li>
+                    <a href="#" aria-label="11. 场景题">11. 场景题</a></li><li>
+                    <a href="#" aria-label="6. 如何快速统计大文件中某个单词的出现次数？">6. 如何快速统计大文件中某个单词的出现次数？</a></li><li>
+                    <a href="#" aria-label="7. 手撕：随机红包功能。给定一个金额和人数，生成一个数组，表示每人分得的金钱值。要求最大金额不能超过总金额的90%且全部分完。">7. 手撕：随机红包功能。给定一个金额和人数，生成一个数组，表示每人分得的金钱值。要求最大金额不能超过总金额的90%且全部分完。</a></li><li>
+                    <a href="#" aria-label="16. 商品秒杀功能怎么实现？如何避免超卖的？">16. 商品秒杀功能怎么实现？如何避免超卖的？</a></ul></ul></ul>
+                </div>
+            </nav>
+        </div>
+    </main>
+    <div class="splitter-indicator" id="splitterIndicator"></div>
+    <div class="drop-indicator" id="dropIndicator"></div>
+    <footer class="footer">
+        <div class="footer-left">
+            <a class="item" href="/x/about/" target="_blank" rel="noopener noreferrer me" title="Info"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></a>
+            <a class="item" href="https://music.163.com/#/user/home?id=270121274" target="_blank" rel="noopener noreferrer me" title="NeteaseCloudMusic"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.98,23.65c-2.69,0-5.26-1.05-7.24-2.95C1.59,18.63,.35,15.72,.35,12.73,.35,8.21,3.21,4.11,7.46,2.52c.15-.05,.3-.08,.45-.08,.42,0,.78,.21,.93,.55,.12,.26,.13,.51,.03,.75-.12,.28-.38,.52-.7,.64-3.48,1.3-5.82,4.66-5.82,8.36,0,2.46,1.02,4.84,2.79,6.54,1.6,1.54,3.68,2.39,5.85,2.39,.1,0,.2,0,.29,0,3.49-.12,6.22-1.91,7.47-4.89,.08-.2,2.01-4.93-2.59-7.9-.41-.27-.89-.46-1.42-.58l-.6-.14,.18,.58c.21,.68,.78,2.52,.84,2.93,.07,.46,.07,.51,.1,.92v.18c0,2.3-1.89,4.19-4.22,4.19-2.2,0-3.97-1.73-4.23-4.1-.25-2.35,.74-4.4,2.73-5.61,.53-.32,1.11-.57,1.73-.75l.33-.1-.48-1.74c-.16-.54-.53-2.38,1.5-3.72,.57-.38,1.22-.57,1.91-.57,1.38,0,2.62,.74,3.12,1.23,.22,.22,.36,.56,.36,.9,0,.26-.08,.48-.23,.63-.15,.15-.37,.23-.63,.23-.33,0-.67-.13-.89-.35-.06-.05-.85-.66-1.7-.66-.31,0-.59,.08-.82,.24-.04,.03-.08,.05-.12,.08-.23,.19-.71,.73-.47,1.82l.09,.34,.02,.07h0s.35,1.29,.35,1.29h.25c1.24,.08,2.39,.42,3.32,1.01l.05,.03c4.82,3.12,4.29,8.12,3.34,10.33-1.54,3.67-4.99,5.95-9.23,6.1-.12,0-.25,0-.37,0Zm.82-15.26c-.43,.13-.84,.31-1.2,.53-.94,.57-2.01,1.68-1.79,3.71,.12,1.12,.87,2.33,2.24,2.33,1.23,0,2.24-1,2.24-2.22h0s.03-.21-.05-.71c-.07-.46-.91-3.1-1-3.4l-.1-.33-.33,.1Z" /></svg></a>
+            <a class="item" href="https://neodb.social/users/Lordash/" target="_blank" rel="noopener noreferrer me" title="NeoDB"><svg version="1.1" xmlns="https://www.w3.org/2000/svg" width="90" height="108" viewBox="0 0 90 108" fill="currentColor"><path d="M0 0 C4.26615504 2.04066983 6.73398524 4.58553002 10 8 C10.474375 7.195625 10.94875 6.39125 11.4375 5.5625 C13 3 13 3 14 2 C20.16698656 1.54318618 20.16698656 1.54318618 22.9375 3.0625 C24.6815774 6.24287644 24.55944728 8.4568339 24 12 C21 14.4375 21 14.4375 18 16 C20.97 18.97 23.94 21.94 27 25 C25.193388 28.61322401 24.33581029 29.83748791 21.375 32.25 C20.74335937 32.77078125 20.11171875 33.2915625 19.4609375 33.828125 C18.97882813 34.21484375 18.49671875 34.6015625 18 35 C17.566875 34.0409375 17.566875 34.0409375 17.125 33.0625 C16.17176549 30.84793921 16.17176549 30.84793921 14 30 C10.5 29.75 10.5 29.75 7 30 C4.59331253 31.99114614 4.59331253 31.99114614 4.5625 35.875 C4.62092586 39.4454694 4.80377743 39.80377743 7.5 42.5 C8.325 42.995 9.15 43.49 10 44 C7.36 46.64 4.72 49.28 2 52 C-1.49353838 50.25323081 -3.13945763 49.08594785 -5.75 46.375 C-6.36359375 45.74335937 -6.9771875 45.11171875 -7.609375 44.4609375 C-8.06828125 43.97882812 -8.5271875 43.49671875 -9 43 C-9.515625 43.99 -10.03125 44.98 -10.5625 46 C-13 49 -13 49 -16.625 49.5 C-20 49 -20 49 -22 47 C-22.56321839 40.8045977 -22.56321839 40.8045977 -20.6875 38.125 C-19 37 -19 37 -16 36 C-18.97 33.03 -21.94 30.06 -25 27 C-23.03838569 23.07677137 -20.84267796 20.58307142 -17.7734375 17.578125 C-17.26575836 17.07327576 -16.75807922 16.56842651 -16.23501587 16.04827881 C-14.61966158 14.44407904 -12.99747791 12.84699144 -11.375 11.25 C-10.27558302 10.16061893 -9.17661941 9.0707801 -8.078125 7.98046875 C-5.3906398 5.31498115 -2.69700979 2.65584857 0 0 Z"transform="translate(53,1)" /><path d="M0 0 C2.31 1.98 4.62 3.96 7 6 C6.34 6.86625 5.68 7.7325 5 8.625 C2.82375259 12.29741751 2.2907405 13.83310042 3 18 C4.34115399 21.00979883 4.34115399 21.00979883 7 23 C10.97807953 23.86409105 14.00632895 23.59620263 17.5 21.5 C17.995 21.005 18.49 20.51 19 20 C21.84383123 21.2748209 24.13754018 22.45137078 26 25 C25.57914771 28.29893891 24.42094066 29.966522 22.0625 32.25 C21.53785156 32.77078125 21.01320312 33.2915625 20.47265625 33.828125 C19 35 19 35 17 35 C17 35.66 17 36.32 17 37 C17.763125 36.938125 18.52625 36.87625 19.3125 36.8125 C22 37 22 37 23.875 38.0625 C25.69848531 41.20294693 24.8658284 43.5985313 24 47 C21 49 21 49 17.9375 48.75 C15 48 15 48 13 46 C12.505 44.02 12.505 44.02 12 42 C9.03 44.97 6.06 47.94 3 51 C-0.92322863 49.03838569 -3.41692858 46.84267796 -6.421875 43.7734375 C-6.92672424 43.26575836 -7.43157349 42.75807922 -7.95172119 42.23501587 C-9.55592096 40.61966158 -11.15300856 38.99747791 -12.75 37.375 C-13.83938107 36.27558302 -14.9292199 35.17661941 -16.01953125 34.078125 C-18.68501885 31.3906398 -21.34415143 28.69700979 -24 26 C-22.4152642 22.13671373 -19.94043113 19.71123077 -16.9921875 16.796875 C-16.50670441 16.3142218 -16.02122131 15.8315686 -15.52102661 15.33428955 C-13.97700134 13.80141438 -12.42615176 12.27565996 -10.875 10.75 C-9.82375991 9.70879639 -8.77297343 8.66713459 -7.72265625 7.625 C-5.15366996 5.07800536 -2.57851839 2.53734823 0 0 Z"transform="translate(25,29)" /><path d="M0 0 C3.81684226 1.55500981 6.19195732 4.03595495 9 7 C9.45375 6.195625 9.9075 5.39125 10.375 4.5625 C12 2 12 2 14 1 C16.9375 0.6875 16.9375 0.6875 20 1 C21.9375 2.625 21.9375 2.625 23 5 C23 8 23 8 22 11 C19.4375 13.375 19.4375 13.375 17 15 C19.97 17.97 22.94 20.94 26 24 C20.375 30.875 20.375 30.875 17 32 C16.649375 31.175 16.29875 30.35 15.9375 29.5 C14.16088977 26.60879362 14.16088977 26.60879362 10.5 26.5 C7.14672303 26.77692733 7.14672303 26.77692733 5 28.0625 C3.32384137 31.31005735 4.03723329 33.57014358 5 37 C7.4158995 39.45198044 7.4158995 39.45198044 10 41 C8.76600937 42.36877116 7.51219377 43.71969166 6.25 45.0625 C5.55390625 45.81660156 4.8578125 46.57070312 4.140625 47.34765625 C2 49 2 49 0.09619141 48.81054688 C-2.43507746 47.831766 -3.76735676 46.6052517 -5.6796875 44.68359375 C-6.36160156 44.00103516 -7.04351562 43.31847656 -7.74609375 42.61523438 C-8.79990234 41.53725586 -8.79990234 41.53725586 -9.875 40.4375 C-10.91720703 39.40012695 -10.91720703 39.40012695 -11.98046875 38.34179688 C-16.44375955 33.83227613 -20.30080588 29.1545197 -24 24 C-21.69 22.02 -19.38 20.04 -17 18 C-15.948125 18.99 -15.948125 18.99 -14.875 20 C-12.15610238 22.18293783 -12.15610238 22.18293783 -9 22.5625 C-4.86392446 21.78698584 -3.45000447 20.38677089 -1 17 C-0.44852315 13.07072743 -0.40688385 10.96381375 -2.5 7.5625 C-2.995 7.046875 -3.49 6.53125 -4 6 C-2.84826645 3.53199953 -1.95216435 1.95216435 0 0 Z"transform="translate(53,58)" /></svg></a>
+            <a class="item" href="https://github.com/GH1656409967" target="_blank" rel="noopener noreferrer me" title="GitHub"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a class="item" href="/" target="_blank" rel="noopener noreferrer me" title="BuyMeACoffee"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 884 1279" fill="none" stroke="currentColor" stroke-width="2"><path d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518Z"fill="currentColor"></path><path d="M803.896 388.891L802.916 389.166L803.896 388.891Z" fill="currentColor"></path><path d="M791.484 297.377C791.359 297.361 791.237 297.332 791.118 297.29C791.111 297.371 791.111 297.453 791.118 297.534C791.252 297.516 791.379 297.462 791.484 297.377Z"fill="currentColor"></path><path d="M791.113 297.529H791.244V297.447L791.113 297.529Z" fill="currentColor"></path><path d="M803.111 388.726L804.591 387.883L805.142 387.573L805.641 387.04C804.702 387.444 803.846 388.016 803.111 388.726Z"fill="currentColor"></path><path d="M793.669 299.515L792.223 298.138L791.243 297.605C791.77 298.535 792.641 299.221 793.669 299.515Z"fill="currentColor"></path><path d="M430.019 1186.18C428.864 1186.68 427.852 1187.46 427.076 1188.45L427.988 1187.87C428.608 1187.3 429.485 1186.63 430.019 1186.18Z"fill="currentColor"></path><path d="M641.187 1144.63C641.187 1143.33 640.551 1143.57 640.705 1148.21C640.705 1147.84 640.86 1147.46 640.929 1147.1C641.015 1146.27 641.084 1145.46 641.187 1144.63Z"fill="currentColor"></path><path d="M619.284 1186.18C618.129 1186.68 617.118 1187.46 616.342 1188.45L617.254 1187.87C617.873 1187.3 618.751 1186.63 619.284 1186.18Z"fill="currentColor"></path><path d="M281.304 1196.06C280.427 1195.3 279.354 1194.8 278.207 1194.61C279.136 1195.06 280.065 1195.51 280.684 1195.85L281.304 1196.06Z"fill="currentColor"></path><path d="M247.841 1164.01C247.704 1162.66 247.288 1161.35 246.619 1160.16C247.093 1161.39 247.489 1162.66 247.806 1163.94L247.841 1164.01Z"fill="currentColor"></path><path d="M472.623 590.836C426.682 610.503 374.546 632.802 306.976 632.802C278.71 632.746 250.58 628.868 223.353 621.274L270.086 1101.08C271.74 1121.13 280.876 1139.83 295.679 1153.46C310.482 1167.09 329.87 1174.65 349.992 1174.65C349.992 1174.65 416.254 1178.09 438.365 1178.09C462.161 1178.09 533.516 1174.65 533.516 1174.65C553.636 1174.65 573.019 1167.08 587.819 1153.45C602.619 1139.82 611.752 1121.13 613.406 1101.08L663.459 570.876C641.091 563.237 618.516 558.161 593.068 558.161C549.054 558.144 513.591 573.303 472.623 590.836Z"fill="currentColor"></path><path d="M78.6885 386.132L79.4799 386.872L79.9962 387.182C79.5987 386.787 79.1603 386.435 78.6885 386.132Z"fill="currentColor"></path><path d="M879.567 341.849L872.53 306.352C866.215 274.503 851.882 244.409 819.19 232.898C808.711 229.215 796.821 227.633 788.786 220.01C780.751 212.388 778.376 200.55 776.518 189.572C773.076 169.423 769.842 149.257 766.314 129.143C763.269 111.85 760.86 92.4243 752.928 76.56C742.604 55.2584 721.182 42.8009 699.88 34.559C688.965 30.4844 677.826 27.0375 666.517 24.2352C613.297 10.1947 557.342 5.03277 502.591 2.09047C436.875 -1.53577 370.983 -0.443234 305.422 5.35968C256.625 9.79894 205.229 15.1674 158.858 32.0469C141.91 38.224 124.445 45.6399 111.558 58.7341C95.7448 74.8221 90.5829 99.7026 102.128 119.765C110.336 134.012 124.239 144.078 138.985 150.737C158.192 159.317 178.251 165.846 198.829 170.215C256.126 182.879 315.471 187.851 374.007 189.968C438.887 192.586 503.87 190.464 568.44 183.618C584.408 181.863 600.347 179.758 616.257 177.304C634.995 174.43 647.022 149.928 641.499 132.859C634.891 112.453 617.134 104.538 597.055 107.618C594.095 108.082 591.153 108.512 588.193 108.942L586.06 109.252C579.257 110.113 572.455 110.915 565.653 111.661C551.601 113.175 537.515 114.414 523.394 115.378C491.768 117.58 460.057 118.595 428.363 118.647C397.219 118.647 366.058 117.769 334.983 115.722C320.805 114.793 306.661 113.611 292.552 112.177C286.134 111.506 279.733 110.801 273.333 110.009L267.241 109.235L265.917 109.046L259.602 108.134C246.697 106.189 233.792 103.953 221.025 101.251C219.737 100.965 218.584 100.249 217.758 99.2193C216.932 98.1901 216.482 96.9099 216.482 95.5903C216.482 94.2706 216.932 92.9904 217.758 91.9612C218.584 90.9319 219.737 90.2152 221.025 89.9293H221.266C232.33 87.5721 243.479 85.5589 254.663 83.8038C258.392 83.2188 262.131 82.6453 265.882 82.0832H265.985C272.988 81.6186 280.026 80.3625 286.994 79.5366C347.624 73.2301 408.614 71.0801 469.538 73.1014C499.115 73.9618 528.676 75.6996 558.116 78.6935C564.448 79.3474 570.746 80.0357 577.043 80.8099C579.452 81.1025 581.878 81.4465 584.305 81.7391L589.191 82.4445C603.438 84.5667 617.61 87.1419 631.708 90.1703C652.597 94.7128 679.422 96.1925 688.713 119.077C691.673 126.338 693.015 134.408 694.649 142.03L696.732 151.752C696.786 151.926 696.826 152.105 696.852 152.285C701.773 175.227 706.7 198.169 711.632 221.111C711.994 222.806 712.002 224.557 711.657 226.255C711.312 227.954 710.621 229.562 709.626 230.982C708.632 232.401 707.355 233.6 705.877 234.504C704.398 235.408 702.75 235.997 701.033 236.236H700.895L697.884 236.649L694.908 237.044C685.478 238.272 676.038 239.419 666.586 240.486C647.968 242.608 629.322 244.443 610.648 245.992C573.539 249.077 536.356 251.102 499.098 252.066C480.114 252.57 461.135 252.806 442.162 252.771C366.643 252.712 291.189 248.322 216.173 239.625C208.051 238.662 199.93 237.629 191.808 236.58C198.106 237.389 187.231 235.96 185.029 235.651C179.867 234.928 174.705 234.177 169.543 233.397C152.216 230.798 134.993 227.598 117.7 224.793C96.7944 221.352 76.8005 223.073 57.8906 233.397C42.3685 241.891 29.8055 254.916 21.8776 270.735C13.7217 287.597 11.2956 305.956 7.64786 324.075C4.00009 342.193 -1.67805 361.688 0.472751 380.288C5.10128 420.431 33.165 453.054 73.5313 460.35C111.506 467.232 149.687 472.807 187.971 477.556C338.361 495.975 490.294 498.178 641.155 484.129C653.44 482.982 665.708 481.732 677.959 480.378C681.786 479.958 685.658 480.398 689.292 481.668C692.926 482.938 696.23 485.005 698.962 487.717C701.694 490.429 703.784 493.718 705.08 497.342C706.377 500.967 706.846 504.836 706.453 508.665L702.633 545.797C694.936 620.828 687.239 695.854 679.542 770.874C671.513 849.657 663.431 928.434 655.298 1007.2C653.004 1029.39 650.71 1051.57 648.416 1073.74C646.213 1095.58 645.904 1118.1 641.757 1139.68C635.218 1173.61 612.248 1194.45 578.73 1202.07C548.022 1209.06 516.652 1212.73 485.161 1213.01C450.249 1213.2 415.355 1211.65 380.443 1211.84C343.173 1212.05 297.525 1208.61 268.756 1180.87C243.479 1156.51 239.986 1118.36 236.545 1085.37C231.957 1041.7 227.409 998.039 222.9 954.381L197.607 711.615L181.244 554.538C180.968 551.94 180.693 549.376 180.435 546.76C178.473 528.023 165.207 509.681 144.301 510.627C126.407 511.418 106.069 526.629 108.168 546.76L120.298 663.214L145.385 904.104C152.532 972.528 159.661 1040.96 166.773 1109.41C168.15 1122.52 169.44 1135.67 170.885 1148.78C178.749 1220.43 233.465 1259.04 301.224 1269.91C340.799 1276.28 381.337 1277.59 421.497 1278.24C472.979 1279.07 524.977 1281.05 575.615 1271.72C650.653 1257.95 706.952 1207.85 714.987 1130.13C717.282 1107.69 719.576 1085.25 721.87 1062.8C729.498 988.559 737.115 914.313 744.72 840.061L769.601 597.451L781.009 486.263C781.577 480.749 783.905 475.565 787.649 471.478C791.392 467.391 796.352 464.617 801.794 463.567C823.25 459.386 843.761 452.245 859.023 435.916C883.318 409.918 888.153 376.021 879.567 341.849ZM72.4301 365.835C72.757 365.68 72.1548 368.484 71.8967 369.792C71.8451 367.813 71.9483 366.058 72.4301 365.835ZM74.5121 381.94C74.6842 381.819 75.2003 382.508 75.7337 383.334C74.925 382.576 74.4089 382.009 74.4949 381.94H74.5121ZM76.5597 384.641C77.2996 385.897 77.6953 386.689 76.5597 384.641V384.641ZM80.672 387.979H80.7752C80.7752 388.1 80.9645 388.22 81.0333 388.341C80.9192 388.208 80.7925 388.087 80.6548 387.979H80.672ZM800.796 382.989C793.088 390.319 781.473 393.726 769.996 395.43C641.292 414.529 510.713 424.199 380.597 419.932C287.476 416.749 195.336 406.407 103.144 393.382C94.1102 392.109 84.3197 390.457 78.1082 383.798C66.4078 371.237 72.1548 345.944 75.2003 330.768C77.9878 316.865 83.3218 298.334 99.8572 296.355C125.667 293.327 155.64 304.218 181.175 308.09C211.917 312.781 242.774 316.538 273.745 319.36C405.925 331.405 540.325 329.529 671.92 311.91C695.906 308.686 719.805 304.941 743.619 300.674C764.835 296.871 788.356 289.731 801.175 311.703C809.967 326.673 811.137 346.701 809.778 363.615C809.359 370.984 806.139 377.915 800.779 382.989H800.796Z"fill="currentColor"></path></svg></a>
+        </div>
+
+        <div class="footer-middle">
+        </div>
+
+        <div class="footer-right">
+            <span class="item">21197(words)</span>
+            <a class="item" accesskey="g" href="#top" id="top-link" title="Go to Top (Alt + G)">⬆</a>
+        </div>
+    </footer>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                packages: { "[+]": ["ams"] }, 
+                tags: "ams", 
+            },
+            options: {
+                enableSpeech: false,        
+                enableExplorer: false,      
+                enableMenu: false,          
+                ignoreHtmlClass: "tex2jax_ignore",
+                processHtmlClass: "tex2jax_process"
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/mathjax/4.0.0/tex-chtml.min.js"></script>
+    <script type="text/javascript" defer async src="https://s4.zstatic.net/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+    <script type="text/javascript" src="/js/particle-clock.js"></script>
+    <script type="text/javascript" src="/js/index.min.62af824fc9f8f20406aebaf20c60d6fbd42ffe3d23aae53d90dddd32415f13d9.js" integrity="sha256-Yq&#43;CT8n48gQGrrryDGDW&#43;9Qv/j0jquU9kN3dMkFfE9k="></script>
+</body>
+
+</html>

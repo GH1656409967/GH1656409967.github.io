@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>K倍动态减法博弈 on 似水</title>
+    <link>http://localhost:1313/tags/k%E5%80%8D%E5%8A%A8%E6%80%81%E5%87%8F%E6%B3%95%E5%8D%9A%E5%BC%88/</link>
+    <description>Recent content in K倍动态减法博弈 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 17 Jul 2020 00:24:12 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/k%E5%80%8D%E5%8A%A8%E6%80%81%E5%87%8F%E6%B3%95%E5%8D%9A%E5%BC%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU-2486 A simple stone game</title>
+      <link>http://localhost:1313/z/solution/bdbb5938b9b09b74/</link>
+      <pubDate>Fri, 17 Jul 2020 00:24:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/bdbb5938b9b09b74/</guid>
+      <description>&lt;h1 id=&#34;a-simple-stone-gamehdu-2486&#34;&gt;A simple stone game(&lt;a href=&#34;https://vjudge.net/problem/HDU-2486&#34;&gt;HDU-2486&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;After he has learned how to play Nim game, Mike begins to try another stone game which seems much easier.&lt;/p&gt;&#xA;&lt;p&gt;The game goes like this: Two players start the game with a pile of n stones. They take stones from the pile in turn and every time they take at least one stone. The one who goes first can take at most n-1 stones  for his first move. From then on a player can take at most k times as  many stones as his opponent has taken last time. For example, if one  player take m stones in his turn, then the other player can take at most k * m stones next time. The player who takes the last stone wins the  game. Suppose that those two players always take the best moves and  never make mistakes, your job is to find out who will definitely win the game.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-3922 A simple stone game</title>
+      <link>http://localhost:1313/z/solution/045835710680316e/</link>
+      <pubDate>Thu, 16 Jul 2020 14:02:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/045835710680316e/</guid>
+      <description>&lt;h1 id=&#34;a-simple-stone-gamepoj-3922&#34;&gt;A simple stone game(&lt;a href=&#34;https://vjudge.net/problem/POJ-3922&#34;&gt;POJ-3922&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;After he has learned how to play Nim game, Mike begins to try another stone game which seems much easier.&lt;/p&gt;&#xA;&lt;p&gt;The game goes like this: Two players start the game with a pile of n stones. They take stones from the pile in turn and every time they take at least one stone. The one who goes first can take at most n-1 stones  for his first move. From then on a player can take at most k times as  many stones as his opponent has taken last time. For example, if one  player take m stones in his turn, then the other player can take at most k * m stones next time. The player who takes the last stone wins the  game. Suppose that those two players always take the best moves and  never make mistakes, your job is to find out who will definitely win the game.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

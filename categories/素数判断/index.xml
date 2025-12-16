@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>素数判断 on 似水</title>
+    <link>http://localhost:1313/categories/%E7%B4%A0%E6%95%B0%E5%88%A4%E6%96%AD/</link>
+    <description>Recent content in 素数判断 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 04 May 2020 21:35:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E7%B4%A0%E6%95%B0%E5%88%A4%E6%96%AD/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PATB-1059 C语言竞赛</title>
+      <link>http://localhost:1313/z/solution/9d7fa83e5534bdba/</link>
+      <pubDate>Mon, 04 May 2020 21:35:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/9d7fa83e5534bdba/</guid>
+      <description>&lt;h1 id=&#34;c语言竞赛-patb-1059&#34;&gt;C语言竞赛 (&lt;a href=&#34;https://pintia.cn/problem-sets/994805260223102976/exam/problems/type/7?problemSetProblemId=994805269828059136&#34;&gt;PATB-1059&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;C 语言竞赛是浙江大学计算机学院主持的一个欢乐的竞赛。既然竞赛主旨是为了好玩，颁奖规则也就制定得很滑稽：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;0、冠军将赢得一份“神秘大奖”（比如很巨大的一本学生研究论文集……）。&lt;/li&gt;&#xA;&lt;li&gt;1、排名为素数的学生将赢得最好的奖品 —— 小黄人玩偶！&lt;/li&gt;&#xA;&lt;li&gt;2、其他人将得到巧克力。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;给定比赛的最终排名以及一系列参赛者的 ID，你要给出这些参赛者应该获得的奖品。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,4 @@
+diary_dir   = "E:/work/note/content/w/diary/"
+diary_tpl   = "E:/work/note/content/w/tool/template/diary.md"
+archive_dir = "E:/work/note/content/w/archive/diary/"
+

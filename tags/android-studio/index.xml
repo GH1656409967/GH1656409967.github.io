@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android Studio on 似水</title>
+    <link>http://localhost:1313/tags/android-studio/</link>
+    <description>Recent content in Android Studio on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/android-studio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>android studio</title>
+      <link>http://localhost:1313/z/tool/android-studio/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/tool/android-studio/</guid>
+      <description>&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;&#xA;&lt;p&gt;首先挂上梯子，访问&lt;a href=&#34;https://developer.android.com/studio?hl=zh-cn&#34;&gt;https://developer.android.com/studio?hl=zh-cn&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;点击下载后，会发现无法下载，这时候关掉梯子&lt;/p&gt;&#xA;&lt;p&gt;下载完成后，再启用梯子&lt;/p&gt;&#xA;&lt;p&gt;&lt;del&gt;出现了Unable to access Android SDK add-on list，这里选择Setup Proxy，选择&lt;code&gt;Manual proxy configuration&lt;/code&gt;，&lt;code&gt;HTTP&lt;/code&gt;协议，填写&lt;code&gt;mirrors.dormforce.net&lt;/code&gt;，大连东软信息学院&lt;/del&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

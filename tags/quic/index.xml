@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quic on 似水</title>
+    <link>http://localhost:1313/tags/quic/</link>
+    <description>Recent content in Quic on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 05 Jan 2025 17:26:10 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/quic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>quic</title>
+      <link>http://localhost:1313/z/net/quic/</link>
+      <pubDate>Sun, 05 Jan 2025 17:26:10 +0800</pubDate>
+      <guid>http://localhost:1313/z/net/quic/</guid>
+      <description>&lt;h1 id=&#34;quic&#34;&gt;quic&lt;/h1&gt;&#xA;&lt;p&gt;QUIC（Quick UDP Internet Connections）是一种基于 UDP 的现代传输协议，由 Google 提出并逐步标准化为 IETF QUIC（RFC 9000 系列），现已成为 HTTP/3 的底层协议。QUIC 旨在解决 TCP 和传统 TLS 的性能瓶颈，同时提供低延迟、高安全性和可靠传输。以下是其核心实现机制：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Utf8 on 似水</title>
+    <link>http://localhost:1313/tags/utf8/</link>
+    <description>Recent content in Utf8 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/utf8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>utf8</title>
+      <link>http://localhost:1313/z/lang/go/utf8/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/lang/go/utf8/</guid>
+      <description>&lt;p&gt;Rune: 在Go中，字符被称为rune，它是int32的别名，用于表示一个Unicode码点。&lt;/p&gt;&#xA;&lt;h4 id=&#34;decoderuneinstring&#34;&gt;DecodeRuneInString&lt;/h4&gt;&#xA;&lt;p&gt;utf8.DecodeRuneInString是Go标准库unicode/utf8包中的一个函数，它专门用于解码字符串中的第一个UTF-8编码的字符。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>位运算 on 似水</title>
+    <link>http://localhost:1313/categories/%E4%BD%8D%E8%BF%90%E7%AE%97/</link>
+    <description>Recent content in 位运算 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 27 Mar 2021 12:51:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E4%BD%8D%E8%BF%90%E7%AE%97/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指Offer-15 二进制中1的个数</title>
+      <link>http://localhost:1313/z/solution/c40a03a8c31b21e2/</link>
+      <pubDate>Sat, 27 Mar 2021 12:51:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/c40a03a8c31b21e2/</guid>
+      <description>&lt;h1 id=&#34;二进制中1的个数剑指offer-15&#34;&gt;二进制中1的个数(&lt;a href=&#34;https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/&#34;&gt;剑指Offer-15&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;请实现一个函数，输入一个整数（以二进制串形式），输出该数二进制表示中 1 的个数。例如，把 9 表示成二进制是 1001，有 2 位是 1。因此，如果输入 9，则该函数输出 2。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

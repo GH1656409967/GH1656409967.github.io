@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>基础DP on 似水</title>
+    <link>http://localhost:1313/categories/%E5%9F%BA%E7%A1%80dp/</link>
+    <description>Recent content in 基础DP on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 03 Apr 2021 16:37:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E5%9F%BA%E7%A1%80dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>剑指Offer-19 正则表达式匹配</title>
+      <link>http://localhost:1313/z/solution/7e96f7d07418a4a2/</link>
+      <pubDate>Sat, 03 Apr 2021 16:37:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/7e96f7d07418a4a2/</guid>
+      <description>&lt;h1 id=&#34;正则表达式匹配剑指offer-19&#34;&gt;正则表达式匹配(&lt;a href=&#34;https://leetcode-cn.com/problems/zheng-ze-biao-da-shi-pi-pei-lcof/&#34;&gt;剑指Offer-19&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;请实现一个函数用来匹配包含&lt;code&gt;&#39;.&#39;&lt;/code&gt;和&lt;code&gt;&#39;*&#39;&lt;/code&gt;的正则表达式。模式中的字符&lt;code&gt;&#39;.&#39;&lt;/code&gt;表示任意一个字符，而&lt;code&gt;&#39;*&#39;&lt;/code&gt;表示它前面的字符可以出现任意次（含0次）。在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串&lt;code&gt;&amp;quot;aaa&amp;quot;&lt;/code&gt;与模式&lt;code&gt;&amp;quot;a.a&amp;quot;&lt;/code&gt;和&lt;code&gt;&amp;quot;ab*ac*a&amp;quot;&lt;/code&gt;匹配，但与&lt;code&gt;&amp;quot;aa.a&amp;quot;&lt;/code&gt;和&lt;code&gt;&amp;quot;ab*a&amp;quot;&lt;/code&gt;均不匹配。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1050 To the Max</title>
+      <link>http://localhost:1313/z/solution/90f2e79596fd0149/</link>
+      <pubDate>Sun, 22 Apr 2018 10:45:43 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/90f2e79596fd0149/</guid>
+      <description>&lt;h1 id=&#34;to-the-max-poj---1050&#34;&gt;To the Max (&lt;a href=&#34;https://vjudge.net/problem/POJ-1050&#34;&gt;POJ - 1050&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given a two-dimensional array of positive and negative integers, a  sub-rectangle is any contiguous sub-array of size 1*1 or greater located within the whole array. The sum of a rectangle is the sum of all the  elements in that rectangle. In this problem the sub-rectangle with the  largest sum is referred to as the maximal sub-rectangle.&#xA;As an example, the maximal sub-rectangle of the array:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1069 Monkey and Banana</title>
+      <link>http://localhost:1313/z/solution/3e77307198edd961/</link>
+      <pubDate>Sun, 22 Apr 2018 10:39:02 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3e77307198edd961/</guid>
+      <description>&lt;h1 id=&#34;monkey-and-banana-hdu---1069&#34;&gt;Monkey and Banana (&lt;a href=&#34;https://vjudge.net/problem/HDU-1069&#34;&gt;HDU - 1069&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A group of researchers are designing an experiment to test the IQ of a  monkey. They will hang a banana at the roof of a building, and at the  mean time, provide the monkey with some blocks. If the monkey is clever  enough, it shall be able to reach the banana by placing one block on the top another to build a tower and climb up to get its favorite food.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1029 Ignatius and the Princess IV</title>
+      <link>http://localhost:1313/z/solution/208fcd86a174a67a/</link>
+      <pubDate>Sun, 22 Apr 2018 10:24:06 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/208fcd86a174a67a/</guid>
+      <description>&lt;h1 id=&#34;ignatius-and-the-princess-iv-hdu---1029&#34;&gt;Ignatius and the Princess IV (&lt;a href=&#34;https://vjudge.net/problem/HDU-1029&#34;&gt;HDU - 1029&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;OK, you are not too bad, em&amp;hellip; But you can never pass the next test.&amp;rdquo; feng5166 says.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;I will tell you an odd number N, and then N integers. There will  be a special integer among them, you have to tell me which integer is  the special one after I tell you all the integers.&amp;rdquo; feng5166 says.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;But what is the characteristic of the special integer?&amp;rdquo; Ignatius asks.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

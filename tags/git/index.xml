@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 似水</title>
+    <link>http://localhost:1313/tags/git/</link>
+    <description>Recent content in Git on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 07 Apr 2022 11:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win10配置Git和SSH</title>
+      <link>http://localhost:1313/z/vcs/bb23eaa4846998e0/</link>
+      <pubDate>Thu, 07 Apr 2022 11:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/vcs/bb23eaa4846998e0/</guid>
+      <description>&lt;h2 id=&#34;1-git配置&#34;&gt;1 Git配置&lt;/h2&gt;&#xA;&lt;p&gt;打开Git Bash，配置用户信息,&lt;/p&gt;&#xA;    &#xA;                &lt;div class=&#34;fold-container folded&#34; data-previewHeight=&#34;300px&#34;&gt;&#xA;                    &lt;div class=&#34;fold-inner&#34;&gt;&#xA;                        &lt;div class=&#34;fold-button-layer&#34;&gt;&#xA;                            &lt;button class=&#34;line-break-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-solid fa-arrows-left-right-to-line&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                            &lt;button class=&#34;code-copy-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-regular fa-copy&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                            &lt;button class=&#34;fold-toggle-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-solid fa-angle-down&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                        &lt;/div&gt;&#xA;                        &lt;div class=&#34;fold-content&#34;&gt;&#xA;                            &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 配置用户名和邮箱&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;git config --global user.name &lt;span class=&#34;s2&#34;&gt;&amp;#34;github用户名&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;git config --global user.email &lt;span class=&#34;s2&#34;&gt;&amp;#34;github注册邮箱&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;                        &lt;/div&gt;&#xA;                    &lt;/div&gt;&#xA;                &lt;/div&gt;&lt;p&gt;&#xA;&#xA;&#xA;  &#xA;    &lt;a data-fancybox=&#34;gallery&#34; href=&#34;http://localhost:1313/z/tool/bb23eaa4846998e0/git_config.png&#34;&gt;&#xA;      &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/z/tool/bb23eaa4846998e0/git_config.png&#34; alt=&#34;git_config&#34; class=&#34;fiximg-online&#34;&gt;&#xA;    &lt;/a&gt;&#xA;  &#xA;&#xA;&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-ssh配置&#34;&gt;2 SSH配置&lt;/h2&gt;&#xA;&lt;p&gt;Git和GitHub之间可以通过HTTPS、SSH、GitHub CLI等形式来连接，这里我们使用SSH方式连接。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>git</title>
+      <link>http://localhost:1313/z/vcs/git/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/vcs/git/</guid>
+      <description>&lt;p&gt;Git 的主要特点（为什么它如此流行）：&#xA;分布式&lt;/p&gt;&#xA;&lt;p&gt;传统的集中式 VCS（如 SVN）：只有一个中央仓库，所有人的工作都依赖于它。如果中央服务器坏了，所有人都无法工作。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

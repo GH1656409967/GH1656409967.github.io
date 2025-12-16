@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hadoop on 似水</title>
+    <link>http://localhost:1313/tags/hadoop/</link>
+    <description>Recent content in Hadoop on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 26 Apr 2020 10:25:05 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hadoop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win10配置Hadoop2.9.2单机版</title>
+      <link>http://localhost:1313/z/bigdata/4f05172528ab13b7/</link>
+      <pubDate>Sun, 26 Apr 2020 10:25:05 +0000</pubDate>
+      <guid>http://localhost:1313/z/bigdata/4f05172528ab13b7/</guid>
+      <description>&lt;h1 id=&#34;一准备&#34;&gt;一、准备&lt;/h1&gt;&#xA;&lt;p&gt;基本信息&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;操作系统: Windows10&lt;/li&gt;&#xA;&lt;li&gt;jdk版本: 1.8&lt;/li&gt;&#xA;&lt;li&gt;Hadoop版本: 2.9.2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;下载并解压&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Apache Hadoop: &lt;a href=&#34;https://hadoop.apache.org/releases.html&#34;&gt;官网&lt;/a&gt; 或者 &lt;a href=&#34;https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/&#34;&gt;清华源&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;winutils: &lt;a href=&#34;https://github.com/cdarlint/winutils&#34;&gt;github/cdarlint&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;二配置&#34;&gt;二、配置&lt;/h1&gt;&#xA;&lt;h2 id=&#34;环境变量&#34;&gt;环境变量&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;新建系统变量 &lt;code&gt;HADOOP_HOME&lt;/code&gt; 至所在目录，如 &lt;code&gt;D:\environment\hadoop-2.9.2&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&#xA;&#xA;  &#xA;    &lt;a data-fancybox=&#34;gallery&#34; href=&#34;http://localhost:1313/z/tool/4f05172528ab13b7/HadoopHOME.png&#34;&gt;&#xA;      &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/z/tool/4f05172528ab13b7/HadoopHOME.png&#34; alt=&#34;HadoopHOME&#34; class=&#34;fiximg-online&#34;&gt;&#xA;    &lt;/a&gt;&#xA;  &#xA;&#xA;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;在 &lt;code&gt;path&lt;/code&gt; 中添加 &lt;code&gt;%HADOOP_HOME%\bin&lt;/code&gt; 及 &lt;code&gt;%HADOOP_HOME%\sbin&lt;/code&gt; 并以 &lt;code&gt;;&lt;/code&gt; (英文分号)与其他项隔开。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

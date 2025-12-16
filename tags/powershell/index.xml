@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Powershell on 似水</title>
+    <link>http://localhost:1313/tags/powershell/</link>
+    <description>Recent content in Powershell on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>powershell</title>
+      <link>http://localhost:1313/z/script/powershell/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/script/powershell/</guid>
+      <description>&lt;h1 id=&#34;定时休眠&#34;&gt;定时休眠&lt;/h1&gt;&#xA;    &#xA;                &lt;div class=&#34;fold-container folded&#34; data-previewHeight=&#34;300px&#34;&gt;&#xA;                    &lt;div class=&#34;fold-inner&#34;&gt;&#xA;                        &lt;div class=&#34;fold-button-layer&#34;&gt;&#xA;                            &lt;button class=&#34;line-break-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-solid fa-arrows-left-right-to-line&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                            &lt;button class=&#34;code-copy-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-regular fa-copy&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                            &lt;button class=&#34;fold-toggle-button&#34; type=&#34;button&#34;&gt;&lt;i class=&#34;fa-solid fa-angle-down&#34;&gt;&lt;/i&gt;&lt;/button&gt;&#xA;                        &lt;/div&gt;&#xA;                        &lt;div class=&#34;fold-content&#34;&gt;&#xA;                            &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;powercfg -h on&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;schtasks /create /tn &lt;span class=&#34;s2&#34;&gt;&amp;#34;my-standby&amp;#34;&lt;/span&gt; /tr &lt;span class=&#34;s2&#34;&gt;&amp;#34;rundll32.exe powrprof.dll,SetSuspendState&amp;#34;&lt;/span&gt; /sc once /sd 2025/06/26 /st 02:00&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;schtasks /delete /tn &lt;span class=&#34;s2&#34;&gt;&amp;#34;my-standby&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;                        &lt;/div&gt;&#xA;                    &lt;/div&gt;&#xA;                &lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

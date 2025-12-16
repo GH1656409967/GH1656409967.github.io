@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" data-theme="light">
+<head>
+    <script>
+        (function () {
+            const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = localStorage.getItem('n8rain-theme') || (prefers ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | 似水</title>
+    <link rel="stylesheet" href="/css/index.min.dec23d3721889f6543816a1c07a479a53dbcf86a9b0d6a9f6e8a31b397487b97.css" integrity="sha256-3sI9NyGIn2VDgWocB6R5pT28&#43;GqbDWqfbooxs5dIe5c=" />
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" id="chroma-light" href="/css/chroma-light.css">
+    <link rel="stylesheet" id="chroma-dark"  href="/css/chroma-dark.css">
+    <script>
+        (function () {
+            const isDark = document.documentElement.dataset.theme === 'dark';
+            document.getElementById('chroma-light').disabled = isDark;
+            document.getElementById('chroma-dark').disabled = !isDark;
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a class="item" href="/" target="_blank">「似水」</a>
+        </div>
+
+        <div class="header-middle">
+            
+        </div>
+
+        <div class="header-right">
+            <a id="reset-layout" class="item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 80V240h96V80H48zM0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V240c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80zM304 272V432h96V272H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V272zM144 368H48v64h96V368zM48 320h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48zM304 80v64h96V80H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V80z"></path></svg></a>
+            <a id="toggle-theme" class="item">◐</a>
+        </div>
+    </header>
+    <main class="container" id="container">
+        <div class="content" id="nav">
+            <nav class="menu">
+                <ul>
+                    <li><i class='fa fa-tags'>&nbsp;</i><a>网站导航</a></li>
+                    <li><i class='fa fa-thumbs-up'>&nbsp;</i><a href="/x/share/">好物分享</a></li>
+                    <li><i class='fa fa-wrench'>&nbsp;</i><a href="/x/tools/">游戏工具</a></li>
+                    <li><i class='fa fa-film'>&nbsp;</i><a href="/x/movies/">影视鉴赏</a></li>
+                    <li><i class='fa fa-book'>&nbsp;</i><a href="/x/books/">书籍阅读</a></li>
+                    <li><i class='fa fa-camera'>&nbsp;</i><a href="/x/gallery/">生活留影</a></li>
+                    <li><i class='fa fa-link'>&nbsp;</i><a href="/x/links/">友情链接</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="overview" id="overview" style="display: none;">
+            <div class="overview-container">
+                <div class="author-block">
+                    <img class="author-avatar" src="/img/avatar.png" alt="夜雨微澜" />
+                    
+                    <a class="author-name" href="/x/personal">夜雨微澜</a><p class="author-slogan">学而不思则罔，思而不学则殆</p>
+                </div>
+
+                <div class="site-state">
+                    <div class="item">
+                        <a href="/archives/">
+                            <span class="count">660</span>
+                            <span class="name">日志</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/series/">
+                            <span class="count">8</span>
+                            <span class="name">系列</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/categories/">
+                            <span class="count">93</span>
+                            <span class="name">分类</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/tags/">
+                            <span class="count">171</span>
+                            <span class="name">标签</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="diy-block">
+                    <canvas id="canvasDiyBlock" style="width:180px;">您的浏览器不支持 Canvas, 请更换浏览器!</canvas>
+                </div>
+
+                <div class="diy-block">
+                    <div id="typed-strings" style="display: none;">
+                        <p>We burn faster than light</p>
+                        <p>Shine across in the night sky</p>
+                    </div>
+                    <span id="typed" style="white-space: pre;line-height: 14px;font-size: 12px;"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="article-content">
+            <article class="main" id="top">
+                <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time>
+                <html>
+<head>
+<meta charset="utf-8"/>
+<link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<style>
+            body {
+                font-family: 'Ubuntu Mono', 'LXGW WenKai Screen', sans-serif;
+            }
+
+            strong {
+                color: rgb(48, 79, 254);
+            }
+
+            .code1 {
+                background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(27, 31, 35, 0.05);
+                padding: 2px 4px;
+                border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                font-family: Consolas;
+                word-break: break-all;
+                color: rgb(100, 149, 237);
+            }
+
+            .code2 {
+                background-color: rgba(27, 31, 35, 0.05);
+                margin: 0px 2px;
+                padding: 2px 4px;
+                border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                overflow-wrap: break-word;
+                font-family: Consolas;
+                word-break: break-all;
+                color: rgb(100, 149, 237);
+                background-position: left top;
+            }
+
+            .pre1 {
+                border-radius: 5px;
+                box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;
+            }
+
+            .q1 {
+                color: rgb(65, 105, 225);
+            }
+
+            .img1 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bq1 {
+                border-top: 3px none rgba(0, 0, 0, 0.4);
+                border-bottom: 3px none rgba(0, 0, 0, 0.4);
+                border-right: 3px none rgba(0, 0, 0, 0.4);
+                background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(227, 242, 253);
+                overflow: auto;
+                padding: 15px 20px;
+                border-left-color: rgb(100, 149, 237);
+            }
+
+        </style>
+</head>
+<h2><span style="display: inline-block;background: rgb(65, 105, 225);padding: 3px 10px 1px;border-top-right-radius: 3px;border-top-left-radius: 3px;">介绍5种IO模型</span><span style="display: inline-block;vertical-align: bottom;border-bottom-width: 36px;border-bottom-style: solid;border-bottom-color: rgb(239, 235, 233);border-right-width: 20px;border-right-style: solid;border-right-color: transparent;"> </span></h2>
+<figure class="img1"><img _width="677px" data-index="5" data-src="../img/io_001_875572b0.png" data-w="815" src="../img/io_001_875572b0.png" style="height: auto !important;  width: 636.984px !important;"/></figure>
+<ul class="list-paddingleft-1">
+<li>
+            阻塞I/O模型：应用程序发起I/O操作后会被阻塞，直到操作完成才返回结果。适用于对实时性要求不高的场景。
+        </li>
+<li>
+            非阻塞I/O模型：应用程序发起I/O操作后立即返回，不会被阻塞，但需要不断轮询或者使用select/poll/epoll等系统调用来检查I/O操作是否完成。适合于需要进行多路复用的场景，例如需要同时处理多个socket连接的服务器程序。
+        </li>
+<li>
+            I/O复用模型：通过select、poll、epoll等系统调用，应用程序可以同时等待多个I/O操作，当其中任何一个I/O操作准备就绪时，应用程序会被通知。适合于需要同时处理多个I/O操作的场景，比如高并发的服务端程序。
+        </li>
+<li>
+            信号驱动I/O模型：应用程序发起I/O操作后，可以继续做其他事情，当I/O操作完成时，操作系统会向应用程序发送信号来通知其完成。适合于需要异步I/O通知的场景，可以提高系统的并发能力。
+        </li>
+<li>
+            异步I/O模型：应用程序发起I/O操作后可以立即做其他事情，当I/O操作完成时，应用程序会得到通知。异步I/O模型由操作系统内核完成I/O操作，应用程序只需等待通知即可。适合于需要大量并发连接和高性能的场景，能够减少系统调用次数，提高系统效率。
+        </li>
+</ul>
+<h3><span class="q1">linux有几种IO模型？分别说说？</span></h3>
+<p>在Linux中一共有5种I/O模型，分别如下:</p>
+<ul class="list-paddingleft-1">
+<li>
+            阻塞 I/O
+        </li>
+</ul>
+<p>当程序向kernel发起system call <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>read()</code>时，进程此时阻塞，等待数据就绪(等待kernel读取数据到kernel space)</p>
+<p>Process –&gt; systel call –&gt;kernel –&gt; hardware(hard disk)</p>
+<p>上面的阻塞并正常情况不会带来太大的资源浪费，因为Kernel从磁盘中读取数据这过程瞬间就能完成。但如果是网络I/O，情况就会变的不同，比如Socket。</p>
+<figure class="img1"><img _width="500px" class="rich_pages wxw-img __bg_gif" data-index="14" data-order="0" data-src="../img/io_002_5aa96a15.png" data-type="gif" data-w="500" src="../img/io_002_5aa96a15.png" style="   border-radius: 4px;  height: auto !important;  width: 500px !important;"/></figure>
+<p>上图是blocking I/O发起system call <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>recvfrom()</code>时，进程将一直阻塞等待另一端Socket的数据到来。在这种I/O模型下，我们不得不为每一个Socket都分配一个线程，这会造成很大的资源浪费。</p>
+<p>Blocking I/O优缺点都非常明显。优点是简单易用，对于本地I/O而言性能很高。缺点是处理网络I/O时，造成进程阻塞空等，浪费资源。</p>
+<ul class="list-paddingleft-1">
+<li>
+            非阻塞 I/O
+        </li>
+</ul>
+<p>非阻塞I/O很容易理解。相对于阻塞I/O在那傻傻的等待，非阻塞I/O隔一段时间就发起system call看数据是否就绪(ready)。</p>
+<p>如果数据就绪，就从kernel space复制到user space，操作数据; 如果还没就绪，kernel会<strong>立即</strong>返回<code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>EWOULDBLOCK</code>这个错误。如下图</p>
+<figure class="img1"><img _width="500px" class="rich_pages wxw-img __bg_gif" data-index="15" data-order="1" data-src="../img/io_003_1ed21665.png" data-type="gif" data-w="500" src="../img/io_003_1ed21665.png" style="   border-radius: 4px;  height: auto !important;  width: 500px !important;"/></figure>
+<p>Non-blocking I/O的优势在于，<strong>进程发起I/O操作时，不会因为数据还没就绪而阻塞</strong>，这就是”非阻塞”的含义。</p>
+<p>但这种I/O模型缺陷过于明显。在本地I/O，kernel读取数据很快，这种模式下多了至少一次system call，而system call是比较消耗cpu的操作。对于Socket而言，大量的system call更是这种模型显得很鸡肋。</p>
+<ul class="list-paddingleft-1">
+<li>
+            I/O 多路复用 (<code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>select</code> 、<code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>poll</code>、 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>epoll</code>)
+        </li>
+</ul>
+<p>I/O Multiplexing又叫IO多路复用，这是借用了集成电路多路复用中的概念。它优化了非阻塞I/O大量发起system call的问题。</p>
+<p>上面介绍的I/O模型都是直接发起I/O操作，而I/O Multiplexing首先向kernel发起system call，传入file descriptor和感兴趣的事件(readable、writable等)让kernel监测，当其中一个或多个fd数据就绪，就会返回结果。程序再发起真正的I/O操作<code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>recvfrom</code>读取数据。</p>
+<figure class="img1"><img _width="500px" class="rich_pages wxw-img __bg_gif" data-index="16" data-order="2" data-src="../img/io_004_75740417.png" data-type="gif" data-w="500" src="../img/io_004_75740417.png" style="   border-radius: 4px;  height: auto !important;  width: 500px !important;"/></figure>
+<p>在linux中，有3种system call可以让内核监测file descriptors，分别是select、poll、epoll。</p>
+<ul class="list-paddingleft-1">
+<li>
+            信号驱动 I/O (<code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>SIGIO</code>)
+        </li>
+</ul>
+<p>第一次发起system call不会阻塞进程，kernel的数据就绪后会发送一个signal给进程。进程发起真正的IO操作。</p>
+<figure class="img1"><img _width="500px" class="rich_pages wxw-img __bg_gif" data-index="17" data-order="3" data-src="../img/io_005_2db98a64.png" data-type="gif" data-w="500" src="../img/io_005_2db98a64.png" style="   border-radius: 4px;  height: auto !important;  width: 500px !important;"/></figure>
+<ul class="list-paddingleft-1">
+<li>
+            异步 I/O (the POSIX <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>aio_</code>functions)
+        </li>
+</ul>
+<figure class="img1"><img _width="500px" class="rich_pages wxw-img __bg_gif" data-index="18" data-order="4" data-src="../img/io_006_77081f8c.png" data-type="gif" data-w="500" src="../img/io_006_77081f8c.png" style="   border-radius: 4px;  height: auto !important;  width: 500px !important;"/></figure>
+<p>异步I/O，即I/O操作不会引起进程阻塞。请看上图，发起aio_read请求后，kernel会直接返回。等数据就绪，发送一个signal到process处理数据。</p>
+<p>请留意图片细节，程序不需要再次发起读取数据的system call，因为kernel会把数据复制到user space再通知进程处理，整个过程不存在任何阻塞。</p>
+<h3><span class="q1">你了解过哪些io模型？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+            阻塞I/O模型：应用程序发起I/O操作后会被阻塞，直到操作完成才返回结果。适用于对实时性要求不高的场景。
+        </li>
+<li>
+            非阻塞I/O模型：应用程序发起I/O操作后立即返回，不会被阻塞，但需要不断轮询或者使用select/poll/epoll等系统调用来检查I/O操作是否完成。适合于需要进行多路复用的场景，例如需要同时处理多个socket连接的服务器程序。
+        </li>
+<li>
+            I/O复用模型：通过select、poll、epoll等系统调用，应用程序可以同时等待多个I/O操作，当其中任何一个I/O操作准备就绪时，应用程序会被通知。适合于需要同时处理多个I/O操作的场景，比如高并发的服务端程序。
+        </li>
+<li>
+            信号驱动I/O模型：应用程序发起I/O操作后，可以继续做其他事情，当I/O操作完成时，操作系统会向应用程序发送信号来通知其完成。适合于需要异步I/O通知的场景，可以提高系统的并发能力。
+        </li>
+<li>
+            异步I/O模型：应用程序发起I/O操作后可以立即做其他事情，当I/O操作完成时，应用程序会得到通知。异步I/O模型由操作系统内核完成I/O操作，应用程序只需等待通知即可。适合于需要大量并发连接和高性能的场景，能够减少系统调用次数，提高系统效率。
+        </li>
+</ul>
+<h3><span class="q1">LINUX有哪些IO机制？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+<p>阻塞IO（Blocking IO）：应用程序在进行IO操作时，会一直阻塞等待IO完成，期间无法进行其他操作。</p>
+</li>
+<li>
+<p>非阻塞IO（Non-blocking IO）：应用程序在进行IO操作时，会立即返回，无论IO操作是否完成，应用程序都可以进行其他操作。需要通过轮询的方式来判断IO是否完成，因此效率较低。</p>
+</li>
+<li>
+<p>IO多路复用（IO Multiplexing）：通过select、poll、epoll等系统调用，在一个进程中可以同时监控多个文件描述符，当有任何一个文件描述符就绪时，就可以进行IO操作。</p>
+</li>
+<li>
+<p>信号驱动IO（Signal Driven IO）：应用程序在进行IO操作时，向内核注册一个信号处理函数，内核在IO完成时会向应用程序发送一个信号，应用程序收到信号后再进行数据处理。</p>
+</li>
+<li>
+<p>异步IO（Asynchronous IO）：应用程序进行IO操作时，可以立即返回，内核负责将数据读取到指定的缓冲区中，并在完成后通知应用程序，应用程序可以继续进行其他操作。异步IO需要操作系统和硬件的支持，目前主要应用于高性能IO场景。</p>
+</li>
+</ul>
+<h3><span class="q1">你了解过哪些io模型？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+            阻塞I/O模型：应用程序发起I/O操作后会被阻塞，直到操作完成才返回结果。适用于对实时性要求不高的场景。
+        </li>
+<li>
+            非阻塞I/O模型：应用程序发起I/O操作后立即返回，不会被阻塞，但需要不断轮询或者使用select/poll/epoll等系统调用来检查I/O操作是否完成。适合于需要进行多路复用的场景，例如需要同时处理多个socket连接的服务器程序。
+        </li>
+<li>
+            I/O复用模型：通过select、poll、epoll等系统调用，应用程序可以同时等待多个I/O操作，当其中任何一个I/O操作准备就绪时，应用程序会被通知。适合于需要同时处理多个I/O操作的场景，比如高并发的服务端程序。
+        </li>
+<li>
+            信号驱动I/O模型：应用程序发起I/O操作后，可以继续做其他事情，当I/O操作完成时，操作系统会向应用程序发送信号来通知其完成。适合于需要异步I/O通知的场景，可以提高系统的并发能力。
+        </li>
+<li>
+            异步I/O模型：应用程序发起I/O操作后可以立即做其他事情，当I/O操作完成时，应用程序会得到通知。异步I/O模型由操作系统内核完成I/O操作，应用程序只需等待通知即可。适合于需要大量并发连接和高性能的场景，能够减少系统调用次数，提高系统效率。
+        </li>
+</ul>
+<h3><span class="q1">io多路复用的用途是什么？</span></h3>
+<p>io 多路复用可以只需要1 个线程就能并发处理多个客户端 i/o 事件，减少了需要创建大量线程来处理多个I/O事件的系统开销，比如线程上下文切换，占用cpu资源。</p>
+<h3><span class="q1">I/O多路复用的使用场景有哪些?</span></h3>
+<p>I/O多路复用是一种允许单个进程处理多个网络I/O的技术，在服务器端，可以使用I/O多路复用来同时处理多个客户端连接。这样可以避免为每个客户端连接创建一个线程，提高服务器的性能和扩展性。</p>
+<p>像 redis、nginx 这些优秀的开源项目，在网络I/O方便都用到了I/O多路复用。</p>
+<figure class="img1"><img _width="617px" data-index="6" data-src="../img/io_007_c29a5379.png" data-w="617" src="../img/io_007_c29a5379.png" style="   border-radius: 4px;  height: auto !important;  width: 617px !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">image.png</figcaption>
+</figure>
+<p>常见的IO多路复用技术包括select、poll和epoll等。这些技术各有特点，但核心思想都是通过一个线程来管理多个连接，减少系统资源的消耗，并提高程序运行的效率。</p>
+<p>select 实现多路复用的方式是，将已连接的 Socket 都放到一个<strong>文件描述符集合</strong>，然后调用 select 函数将文件描述符集合<strong>拷贝</strong>到内核里，让内核来检查是否有网络事件产生，检查的方式很粗暴，就是通过<strong>遍历</strong>文件描述符集合的方式，当检查到有事件产生后，将此 Socket 标记为可读或可写， 接着再把整个文件描述符集合<strong>拷贝</strong>回用户态里，然后用户态还需要再通过<strong>遍历</strong>的方法找到可读或可写的 Socket，然后再对其处理。</p>
+<p>所以，对于 select 这种方式，需要进行 <strong>2 次「遍历」文件描述符集合</strong>，一次是在内核态里，一个次是在用户态里 ，而且还会发生 <strong>2 次「拷贝」文件描述符集合</strong>，先从用户空间传入内核空间，由内核修改后，再传出到用户空间中。</p>
+<p>select 使用固定长度的 BitsMap，表示文件描述符集合，而且所支持的文件描述符的个数是有限制的，在 Linux 系统中，由内核中的 FD_SETSIZE 限制， 默认最大值为 1024，只能监听 0~1023 的文件描述符。</p>
+<p>poll 不再用 BitsMap 来存储所关注的文件描述符，取而代之用动态数组，以链表形式来组织，突破了 select 的文件描述符个数限制，当然还会受到系统文件描述符限制。</p>
+<p>但是 poll 和 select 并没有太大的本质区别，<strong>都是使用「线性结构」存储进程关注的 Socket 集合，因此都需要遍历文件描述符集合来找到可读或可写的 Socket，时间复杂度为 O(n)，而且也需要在用户态与内核态之间拷贝文件描述符集合</strong>，这种方式随着并发数上来，性能的损耗会呈指数级增长。</p>
+<p>epoll 通过两个方面，很好解决了 select/poll 的问题。</p>
+<ul class="list-paddingleft-1">
+<li>
+            第一点，epoll 在内核里使用<strong>红黑树来跟踪进程所有待检测的文件描述字</strong>，把需要监控的 socket 通过 epoll_ctl() 函数加入内核中的红黑树里，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)。而 select/poll 内核里没有类似 epoll 红黑树这种保存所有待检测的 socket 的数据结构，所以 select/poll 每次操作时都传入整个 socket 集合给内核，而 epoll 因为在内核维护了红黑树，可以保存所有待检测的 socket ，所以只需要传入一个待检测的 socket，减少了内核和用户空间大量的数据拷贝和内存分配。
+        </li>
+<li>
+            第二点， epoll 使用<strong>事件驱动</strong>的机制，内核里<strong>维护了一个链表来记录就绪事件</strong>，当某个 socket 有事件发生时，通过<strong>回调函数</strong>内核会将其加入到这个就绪事件列表中，当用户调用 epoll_wait() 函数时，只会返回有事件发生的文件描述符的个数，不需要像 select/poll 那样轮询扫描整个 socket 集合，大大提高了检测的效率。
+    </li>
+</ul>
+<p>从下图你可以看到 epoll 相关的接口作用：<img _width="677px" data-index="7" data-src="../img/io_008_9124c32c.jpg" data-type="other" data-w="1080" src="../img/io_008_9124c32c.jpg" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>epoll 的方式即使监听的 Socket 数量越多的时候，效率不会大幅度降低，能够同时监听的 Socket 的数目也非常的多了，上限就为系统定义的进程打开的最大文件描述符个数。因而，<strong>epoll 被称为解决 C10K 问题的利器</strong>。</p>
+<h3><span class="q1">有了解过io多路复用吗？</span></h3>
+<p>IO多路复用是一种高效的IO处理方式，它允许单个进程或线程同时监视多个文件描述符，如网络连接或文件句柄。当这些描述符中的任何一个就绪时，比如有数据可读或可写，多路复用机制就能够通知应用程序进行相应的读写操作。这种机制的核心优势在于，它可以在不增加额外线程或进程的情况下，处理大量的并发连接，从而显著地提高系统的并发性和响应能力。常见的IO多路复用技术包括select、poll和epoll等。这些技术各有特点，但核心思想都是通过一个线程来管理多个连接，减少系统资源的消耗，并提高程序运行的效率。select 实现多路复用的方式是，将已连接的 Socket 都放到一个<strong>文件描述符集合</strong>，然后调用 select 函数将文件描述符集合<strong>拷贝</strong>到内核里，让内核来检查是否有网络事件产生，检查的方式很粗暴，就是通过<strong>遍历</strong>文件描述符集合的方式，当检查到有事件产生后，将此 Socket 标记为可读或可写， 接着再把整个文件描述符集合<strong>拷贝</strong>回用户态里，然后用户态还需要再通过<strong>遍历</strong>的方法找到可读或可写的 Socket，然后再对其处理。所以，对于 select 这种方式，需要进行 <strong>2 次「遍历」文件描述符集合</strong>，一次是在内核态里，一个次是在用户态里 ，而且还会发生 <strong>2 次「拷贝」文件描述符集合</strong>，先从用户空间传入内核空间，由内核修改后，再传出到用户空间中。select 使用固定长度的 BitsMap，表示文件描述符集合，而且所支持的文件描述符的个数是有限制的，在 Linux 系统中，由内核中的 FD_SETSIZE 限制， 默认最大值为 1024，只能监听 0~1023 的文件描述符。poll 不再用 BitsMap 来存储所关注的文件描述符，取而代之用动态数组，以链表形式来组织，突破了 select 的文件描述符个数限制，当然还会受到系统文件描述符限制。但是 poll 和 select 并没有太大的本质区别，<strong>都是使用「线性结构」存储进程关注的 Socket 集合，因此都需要遍历文件描述符集合来找到可读或可写的 Socket，时间复杂度为 O(n)，而且也需要在用户态与内核态之间拷贝文件描述符集合</strong>，这种方式随着并发数上来，性能的损耗会呈指数级增长。poll 通过两个方面，很好解决了 select/poll 的问题。</p>
+<ul class="list-paddingleft-1">
+<li>
+            _第一点_，epoll 在内核里使用<strong>红黑树来跟踪进程所有待检测的文件描述字</strong>，把需要监控的 socket 通过 epoll_ctl() 函数加入内核中的红黑树里，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)。而 select/poll 内核里没有类似 epoll 红黑树这种保存所有待检测的 socket 的数据结构，所以 select/poll 每次操作时都传入整个 socket 集合给内核，而 epoll 因为在内核维护了红黑树，可以保存所有待检测的 socket ，所以只需要传入一个待检测的 socket，减少了内核和用户空间大量的数据拷贝和内存分配。
+        </li>
+<li>
+            _第二点_， epoll 使用<strong>事件驱动</strong>的机制，内核里<strong>维护了一个链表来记录就绪事件</strong>，当某个 socket 有事件发生时，通过<strong>回调函数</strong>内核会将其加入到这个就绪事件列表中，当用户调用 epoll_wait() 函数时，只会返回有事件发生的文件描述符的个数，不需要像 select/poll 那样轮询扫描整个 socket 集合，大大提高了检测的效率。
+        </li>
+</ul>
+<p>从下图你可以看到 epoll 相关的接口作用：<img _width="677px" data-index="4" data-src="../img/io_009_ba19d058.jpg" data-type="other" data-w="1080" src="../img/io_009_ba19d058.jpg" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>epoll 的方式即使监听的 Socket 数量越多的时候，效率不会大幅度降低，能够同时监听的 Socket 的数目也非常的多了，上限就为系统定义的进程打开的最大文件描述符个数。因而，<strong>epoll 被称为解决 C10K 问题的利器</strong>。</p>
+<h3><span class="q1">介绍一下io多路复用</span></h3>
+<p>IO多路复用是一种IO得处理方式，指的是复用一个线程，处理多个socket中的事件。能够资源复用，防止创建过多线程导致的上下文切换的开销。</p>
+<figure class="img1"><img _width="617px" data-index="3" data-src="../img/io_010_50884d64.png" data-w="617" src="../img/io_010_50884d64.png" style="   border-radius: 4px;  height: auto !important;  width: 617px !important;"/></figure>
+<p>常见的IO多路复用系统调用有select、poll和epoll。</p>
+<p>select 实现多路复用的方式是，将已连接的 Socket 都放到一个<strong>文件描述符集合</strong>，然后调用 select 函数将文件描述符集合<strong>拷贝</strong>到内核里，让内核来检查是否有网络事件产生，检查的方式很粗暴，就是通过<strong>遍历</strong>文件描述符集合的方式，当检查到有事件产生后，将此 Socket 标记为可读或可写， 接着再把整个文件描述符集合<strong>拷贝</strong>回用户态里，然后用户态还需要再通过<strong>遍历</strong>的方法找到可读或可写的 Socket，然后再对其处理。</p>
+<p>所以，对于 select 这种方式，需要进行 <strong>2 次「遍历」文件描述符集合</strong>，一次是在内核态里，一个次是在用户态里 ，而且还会发生 <strong>2 次「拷贝」文件描述符集合</strong>，先从用户空间传入内核空间，由内核修改后，再传出到用户空间中。</p>
+<p>select 使用固定长度的 BitsMap，表示文件描述符集合，而且所支持的文件描述符的个数是有限制的，在 Linux 系统中，由内核中的 FD_SETSIZE 限制， 默认最大值为 1024，只能监听 0~1023 的文件描述符。poll 不再用 BitsMap 来存储所关注的文件描述符，取而代之用动态数组，以链表形式来组织，突破了 select 的文件描述符个数限制，当然还会受到系统文件描述符限制。</p>
+<p>但是 poll 和 select 并没有太大的本质区别，<strong>都是使用「线性结构」存储进程关注的 Socket 集合，因此都需要遍历文件描述符集合来找到可读或可写的 Socket，时间复杂度为 O(n)，而且也需要在用户态与内核态之间拷贝文件描述符集合</strong>，这种方式随着并发数上来，性能的损耗会呈指数级增长。</p>
+<p>epoll 通过两个方面，很好解决了 select/poll 的问题。</p>
+<figure class="img1"><img _width="677px" data-index="4" data-src="../img/io_011_831cfe71.png" data-w="1080" src="../img/io_011_831cfe71.png" style="   border-radius: 4px;  height: auto !important;  width: 656.969px !important;"/></figure>
+<ul class="list-paddingleft-1">
+<li>
+            _第一点_，epoll 在内核里使用<strong>红黑树来跟踪进程所有待检测的文件描述字</strong>，把需要监控的 socket 通过 epoll_ctl() 函数加入内核中的红黑树里，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)。而 select/poll 内核里没有类似 epoll 红黑树这种保存所有待检测的 socket 的数据结构，所以 select/poll 每次操作时都传入整个 socket 集合给内核，而 epoll 因为在内核维护了红黑树，可以保存所有待检测的 socket ，所以只需要传入一个待检测的 socket，减少了内核和用户空间大量的数据拷贝和内存分配。
+        </li>
+<li>
+            _第二点_， epoll 使用<strong>事件驱动</strong>的机制，内核里<strong>维护了一个链表来记录就绪事件</strong>，当某个 socket 有事件发生时，通过<strong>回调函数</strong>内核会将其加入到这个就绪事件列表中，当用户调用 epoll_wait() 函数时，只会返回有事件发生的文件描述符的个数，不需要像 select/poll 那样轮询扫描整个 socket 集合，大大提高了检测的效率。
+        </li>
+</ul>
+<h3><span class="q1">有了解过io多路复用吗？</span></h3>
+<p>select 实现多路复用的方式是，将已连接的 Socket 都放到一个<strong>文件描述符集合</strong>，然后调用 select 函数将文件描述符集合<strong>拷贝</strong>到内核里，让内核来检查是否有网络事件产生，检查的方式很粗暴，就是通过<strong>遍历</strong>文件描述符集合的方式，当检查到有事件产生后，将此 Socket 标记为可读或可写， 接着再把整个文件描述符集合<strong>拷贝</strong>回用户态里，然后用户态还需要再通过<strong>遍历</strong>的方法找到可读或可写的 Socket，然后再对其处理。</p>
+<p>所以，对于 select 这种方式，需要进行 <strong>2 次「遍历」文件描述符集合</strong>，一次是在内核态里，一个次是在用户态里 ，而且还会发生 <strong>2 次「拷贝」文件描述符集合</strong>，先从用户空间传入内核空间，由内核修改后，再传出到用户空间中。</p>
+<p>select 使用固定长度的 BitsMap，表示文件描述符集合，而且所支持的文件描述符的个数是有限制的，在 Linux 系统中，由内核中的 FD_SETSIZE 限制， 默认最大值为 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>1024</code>，只能监听 0~1023 的文件描述符。</p>
+<p>poll 不再用 BitsMap 来存储所关注的文件描述符，取而代之用动态数组，以链表形式来组织，突破了 select 的文件描述符个数限制，当然还会受到系统文件描述符限制。</p>
+<p>但是 poll 和 select 并没有太大的本质区别，<strong>都是使用「线性结构」存储进程关注的 Socket 集合，因此都需要遍历文件描述符集合来找到可读或可写的 Socket，时间复杂度为 O(n)，而且也需要在用户态与内核态之间拷贝文件描述符集合</strong>，这种方式随着并发数上来，性能的损耗会呈指数级增长。</p>
+<p>poll 通过两个方面，很好解决了 select/poll 的问题。</p>
+<ul class="list-paddingleft-1">
+<li>
+<em>第一点</em>，epoll 在内核里使用<strong>红黑树来跟踪进程所有待检测的文件描述字</strong>，把需要监控的 socket 通过 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>epoll_ctl()</code> 函数加入内核中的红黑树里，红黑树是个高效的数据结构，增删改一般时间复杂度是 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>O(logn)</code>。而 select/poll 内核里没有类似 epoll 红黑树这种保存所有待检测的 socket 的数据结构，所以 select/poll 每次操作时都传入整个 socket 集合给内核，而 epoll 因为在内核维护了红黑树，可以保存所有待检测的 socket ，所以只需要传入一个待检测的 socket，减少了内核和用户空间大量的数据拷贝和内存分配。
+        </li>
+<li>
+<em>第二点</em>， epoll 使用<strong>事件驱动</strong>的机制，内核里<strong>维护了一个链表来记录就绪事件</strong>，当某个 socket 有事件发生时，通过<strong>回调函数</strong>内核会将其加入到这个就绪事件列表中，当用户调用 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>epoll_wait()</code> 函数时，只会返回有事件发生的文件描述符的个数，不需要像 select/poll 那样轮询扫描整个 socket 集合，大大提高了检测的效率。
+        </li>
+</ul>
+<p>从下图你可以看到 epoll 相关的接口作用：</p>
+<figure class="img1"><img _width="677px" data-index="3" data-src="../img/io_012_8cd3dc56.png" data-w="1080" src="../img/io_012_8cd3dc56.png" style="   border-radius: 4px;  height: auto !important;  width: 656.969px !important;"/></figure>
+<p>epoll 的方式即使监听的 Socket 数量越多的时候，效率不会大幅度降低，能够同时监听的 Socket 的数目也非常的多了，上限就为系统定义的进程打开的最大文件描述符个数。因而，<strong>epoll 被称为解决 C10K 问题的利器</strong>。</p>
+<h3><span class="q1">讲一下io多路复用</span></h3>
+<p>一个进程虽然任一时刻只能处理一个请求，但是处理每个请求的事件时，耗时控制在 1 毫秒以内，这样 1 秒内就可以处理上千个请求，把时间拉长来看，多个请求复用了一个进程，这就是多路复用，这种思想很类似一个 CPU 并发多个进程，所以也叫做时分多路复用。</p>
+<p>我们熟悉的 select/poll/epoll 内核提供给用户态的多路复用系统调用，<strong>进程可以通过一个系统调用函数从内核中获取多个事件</strong>。</p>
+<p>select/poll/epoll 是如何获取网络事件的呢？在获取事件时，先把所有连接（文件描述符）传给内核，再由内核返回产生了事件的连接，然后在用户态中再处理这些连接对应的请求即可。</p>
+<p>select/poll/epoll 这是三个多路复用接口，都能实现 C10K 吗？接下来，我们分别说说它们。</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">select/poll</p>
+</blockquote>
+<p>select 实现多路复用的方式是，将已连接的 Socket 都放到一个<strong>文件描述符集合</strong>，然后调用 select 函数将文件描述符集合<strong>拷贝</strong>到内核里，让内核来检查是否有网络事件产生，检查的方式很粗暴，就是通过<strong>遍历</strong>文件描述符集合的方式，当检查到有事件产生后，将此 Socket 标记为可读或可写， 接着再把整个文件描述符集合<strong>拷贝</strong>回用户态里，然后用户态还需要再通过<strong>遍历</strong>的方法找到可读或可写的 Socket，然后再对其处理。</p>
+<p>所以，对于 select 这种方式，需要进行 <strong>2 次「遍历」文件描述符集合</strong>，一次是在内核态里，一个次是在用户态里 ，而且还会发生 <strong>2 次「拷贝」文件描述符集合</strong>，先从用户空间传入内核空间，由内核修改后，再传出到用户空间中。</p>
+<p>select 使用固定长度的 BitsMap，表示文件描述符集合，而且所支持的文件描述符的个数是有限制的，在 Linux 系统中，由内核中的 FD_SETSIZE 限制， 默认最大值为 1024，只能监听 0~1023 的文件描述符。
+        poll 不再用 BitsMap 来存储所关注的文件描述符，取而代之用动态数组，以链表形式来组织，突破了 select 的文件描述符个数限制，当然还会受到系统文件描述符限制。</p>
+<p>但是 poll 和 select 并没有太大的本质区别，<strong>都是使用「线性结构」存储进程关注的 Socket 集合，因此都需要遍历文件描述符集合来找到可读或可写的 Socket，时间复杂度为 O(n)，而且也需要在用户态与内核态之间拷贝文件描述符集合</strong>，这种方式随着并发数上来，性能的损耗会呈指数级增长。</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">epoll</p>
+</blockquote>
+<p>先复习下 epoll 的用法。如下的代码中，先用epoll_create 创建一个 epol l对象 epfd，再通过 epoll_ctl 将需要监视的 socket 添加到epfd中，最后调用 epoll_wait 等待数据。</p><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIP4WkGwRDXsDZvDKaD8O3vSx7V4WJ9ZpCCPv7icI5x8zEZKFRTUbTzCulOYHPOgtSiasypFad45cxtZQCnQic02icF2/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span style="color: #c678dd;">int</span> s = socket(AF_INET, SOCK_STREAM, <span style="color: #d19a66;">0</span>);<br/>bind(s, ...);<br/>listen(s, ...)<br/><br/><span style="color: #c678dd;">int</span> epfd = epoll_create(...);<br/>epoll_ctl(epfd, ...); <span style="color: #5c6370;font-style: italic;">//将所有需要监听的socket添加到epfd中</span><br/><br/><span style="color: #c678dd;">while</span>(<span style="color: #d19a66;">1</span>) {<br/>    <span style="color: #c678dd;">int</span> n = epoll_wait(...);<br/>    <span style="color: #c678dd;">for</span>(接收到数据的socket){<br/>        <span style="color: #5c6370;font-style: italic;">//处理</span><br/>    }<br/>}<br/></code></pre>
+<p>epoll 通过两个方面，很好解决了 select/poll 的问题。 </p>
+<p>第一点，epoll 在内核里使用<strong>红黑树来跟踪进程所有待检测的文件描述字</strong>，把需要监控的 socket 通过 epoll_ctl() 函数加入内核中的红黑树里，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)。而 select/poll 内核里没有类似 epoll 红黑树这种保存所有待检测的 socket 的数据结构，所以 select/poll 每次操作时都传入整个 socket 集合给内核，而 epoll 因为在内核维护了红黑树，可以保存所有待检测的 socket ，所以只需要传入一个待检测的 socket，减少了内核和用户空间大量的数据拷贝和内存分配。 </p>
+<p>第二点， epoll 使用<strong>事件驱动</strong>的机制，内核里<strong>维护了一个链表来记录就绪事件</strong>，当某个 socket 有事件发生时，通过<strong>回调函数</strong>内核会将其加入到这个就绪事件列表中，当用户调用 epoll_wait() 函数时，只会返回有事件发生的文件描述符的个数，不需要像 select/poll 那样轮询扫描整个 socket 集合，大大提高了检测的效率。
+        从下图你可以看到 epoll 相关的接口作用：<img _width="677px" data-index="5" data-src="../img/io_013_6b6cfe61.png" data-w="1080" src="../img/io_013_6b6cfe61.png" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>epoll 的方式即使监听的 Socket 数量越多的时候，效率不会大幅度降低，能够同时监听的 Socket 的数目也非常的多了，上限就为系统定义的进程打开的最大文件描述符个数。因而，<strong>epoll 被称为解决 C10K 问题的利器</strong>。</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">边缘触发和水平触发</p>
+</blockquote>
+<p>epoll 支持两种事件触发模式，分别是<strong>边缘触发（edge-triggered，ET）和水平触发（level-triggered，LT）</strong>。
+        这两个术语还挺抽象的，其实它们的区别还是很好理解的。</p>
+<ul class="list-paddingleft-1">
+<li>
+            使用边缘触发模式时，当被监控的 Socket 描述符上有可读事件发生时，<strong>服务器端只会从 epoll_wait 中苏醒一次</strong>，即使进程没有调用 read 函数从内核读取数据，也依然只苏醒一次，因此我们程序要保证一次性将内核缓冲区的数据读取完；
+        </li>
+<li>
+            使用水平触发模式时，当被监控的 Socket 上有可读事件发生时，<strong>服务器端不断地从 epoll_wait 中苏醒，直到内核缓冲区数据被 read 函数读完才结束</strong>，目的是告诉我们有数据需要读取；
+        </li>
+</ul>
+<p>举个例子，你的快递被放到了一个快递箱里，如果快递箱只会通过短信通知你一次，即使你一直没有去取，它也不会再发送第二条短信提醒你，这个方式就是边缘触发；如果快递箱发现你的快递没有被取出，它就会不停地发短信通知你，直到你取出了快递，它才消停，这个就是水平触发的方式。</p>
+<p>这就是两者的区别，水平触发的意思是只要满足事件的条件，比如内核中有数据需要读，就一直不断地把这个事件传递给用户；而边缘触发的意思是只有第一次满足条件的时候才触发，之后就不会再传递同样的事件了。</p>
+<p>如果使用水平触发模式，当内核通知文件描述符可读写时，接下来还可以继续去检测它的状态，看它是否依然可读或可写。所以在收到通知后，没必要一次执行尽可能多的读写操作。</p>
+<p>如果使用边缘触发模式，I/O 事件发生时只会通知一次，而且我们不知道到底能读写多少数据，所以在收到通知后应尽可能地读写数据，以免错失读写的机会。因此，我们会<strong>循环</strong>从文件描述符读写数据，那么如果文件描述符是阻塞的，没有数据可读写时，进程会阻塞在读写函数那里，程序就没办法继续往下执行。所以，<strong>边缘触发模式一般和非阻塞 I/O 搭配使用</strong>，程序会一直执行 I/O 操作，直到系统调用（如 read 和 write）返回错误，错误类型为 EAGAIN 或 EWOULDBLOCK。</p>
+<p>一般来说，边缘触发的效率比水平触发的效率要高，因为边缘触发可以减少 epoll_wait 的系统调用次数，系统调用也是有一定的开销的的，毕竟也存在上下文的切换。</p>
+<h3><span class="q1">谈一下 I/O 多路复用</span></h3>
+<p>IO多路复用是一种高效的IO处理方式，它允许单个进程或线程同时监视多个文件描述符，如网络连接或文件句柄。当这些描述符中的任何一个就绪时，比如有数据可读或可写，多路复用机制就能够通知应用程序进行相应的读写操作。这种机制的核心优势在于，它可以在不增加额外线程或进程的情况下，处理大量的并发连接，从而显著地提高系统的并发性和响应能力。</p>
+<figure class="img1"><img _width="617px" data-index="3" data-src="../img/io_014_49ddba56.png" data-w="617" src="../img/io_014_49ddba56.png" style="   border-radius: 4px;  height: auto !important;  width: 617px !important;"/></figure>
+<p>常见的IO多路复用技术包括select、poll和epoll等。这些技术各有特点，但核心思想都是通过一个线程来管理多个连接，减少系统资源的消耗，并提高程序运行的效率。</p>
+<p>select 实现多路复用的方式是，将已连接的 Socket 都放到一个<strong>文件描述符集合</strong>，然后调用 select 函数将文件描述符集合<strong>拷贝</strong>到内核里，让内核来检查是否有网络事件产生，检查的方式很粗暴，就是通过<strong>遍历</strong>文件描述符集合的方式，当检查到有事件产生后，将此 Socket 标记为可读或可写， 接着再把整个文件描述符集合<strong>拷贝</strong>回用户态里，然后用户态还需要再通过<strong>遍历</strong>的方法找到可读或可写的 Socket，然后再对其处理。</p>
+<p>所以，对于 select 这种方式，需要进行 <strong>2 次「遍历」文件描述符集合</strong>，一次是在内核态里，一个次是在用户态里 ，而且还会发生 <strong>2 次「拷贝」文件描述符集合</strong>，先从用户空间传入内核空间，由内核修改后，再传出到用户空间中。</p>
+<p>select 使用固定长度的 BitsMap，表示文件描述符集合，而且所支持的文件描述符的个数是有限制的，在 Linux 系统中，由内核中的 FD_SETSIZE 限制， 默认最大值为 1024，只能监听 0~1023 的文件描述符。</p>
+<p>poll 不再用 BitsMap 来存储所关注的文件描述符，取而代之用动态数组，以链表形式来组织，突破了 select 的文件描述符个数限制，当然还会受到系统文件描述符限制。</p>
+<p>但是 poll 和 select 并没有太大的本质区别，<strong>都是使用「线性结构」存储进程关注的 Socket 集合，因此都需要遍历文件描述符集合来找到可读或可写的 Socket，时间复杂度为 O(n)，而且也需要在用户态与内核态之间拷贝文件描述符集合</strong>，这种方式随着并发数上来，性能的损耗会呈指数级增长。</p>
+<p>epoll 通过两个方面，很好解决了 select/poll 的问题。</p>
+<ul class="list-paddingleft-1">
+<li>
+            第一点，epoll 在内核里使用<strong>红黑树来跟踪进程所有待检测的文件描述字</strong>，把需要监控的 socket 通过 epoll_ctl() 函数加入内核中的红黑树里，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)。而 select/poll 内核里没有类似 epoll 红黑树这种保存所有待检测的 socket 的数据结构，所以 select/poll 每次操作时都传入整个 socket 集合给内核，而 epoll 因为在内核维护了红黑树，可以保存所有待检测的 socket ，所以只需要传入一个待检测的 socket，减少了内核和用户空间大量的数据拷贝和内存分配。
+        </li>
+<li>
+            第二点， epoll 使用<strong>事件驱动</strong>的机制，内核里<strong>维护了一个链表来记录就绪事件</strong>，当某个 socket 有事件发生时，通过<strong>回调函数</strong>内核会将其加入到这个就绪事件列表中，当用户调用 epoll_wait() 函数时，只会返回有事件发生的文件描述符的个数，不需要像 select/poll 那样轮询扫描整个 socket 集合，大大提高了检测的效率。
+        </li>
+</ul>
+<p>从下图你可以看到 epoll 相关的接口作用：<img _width="677px" data-index="4" data-src="../img/io_015_4bb11502.jpg" data-type="other" data-w="1080" src="../img/io_015_4bb11502.jpg" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>epoll 的方式即使监听的 Socket 数量越多的时候，效率不会大幅度降低，能够同时监听的 Socket 的数目也非常的多了，上限就为系统定义的进程打开的最大文件描述符个数。因而，<strong>epoll 被称为解决 C10K 问题的利器</strong>。</p>
+<h3><span class="q1">讲讲IO多路复用的实现原理，select和epoll的区别是什么？</span></h3>
+<p>I/O 的多路复用，可以只在一个进程里处理多个文件的 I/O，Linux 下有三种提供 I/O 多路复用的 API，分别是：select、poll、epoll。</p>
+<p>select 和 poll 并没有本质区别，它们内部都是使用「线性结构」来存储进程关注的 Socket 集合。</p>
+<p>在使用的时候，首先需要把关注的 Socket 集合通过 select/poll 系统调用从用户态拷贝到内核态，然后由内核检测事件，当有网络事件产生时，内核需要遍历进程关注 Socket 集合，找到对应的 Socket，并设置其状态为可读/可写，然后把整个 Socket 集合从内核态拷贝到用户态，用户态还要继续遍历整个 Socket 集合找到可读/可写的 Socket，然后对其处理。</p>
+<p>很明显发现，select 和 poll 的缺陷在于，当客户端越多，也就是 Socket 集合越大，Socket 集合的遍历和拷贝会带来很大的开销，因此也很难应对 C10K。</p>
+<figure class="img1"><img _width="677px" data-index="24" data-src="../img/io_016_ad39c1f0.png" data-w="1080" src="../img/io_016_ad39c1f0.png" style="   border-radius: 4px;  height: auto !important;  width: 656.969px !important;"/></figure>
+<p>epoll 是解决 C10K 问题的利器，通过两个方面解决了 select/poll 的问题。</p>
+<ul class="list-paddingleft-1">
+<li>
+            epoll 在内核里使用「红黑树」来关注进程所有待检测的 Socket，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)，通过对这棵黑红树的管理，不需要像 select/poll 在每次操作时都传入整个 Socket 集合，减少了内核和用户空间大量的数据拷贝和内存分配。
+        </li>
+<li>
+            epoll 使用事件驱动的机制，内核里维护了一个「链表」来记录就绪事件，只将有事件发生的 Socket 集合传递给应用程序，不需要像 select/poll 那样轮询扫描整个集合（包含有和无事件的 Socket ），大大提高了检测的效率。
+        </li>
+</ul>
+<h3><span class="q1">【IO】IO多路复用里select、poll、epoll的适用场景？根据他们的优缺点来说。</span></h3>
+<p>我思考一下， select 的话，它是维护了一个 1024 的数组，那它这个数组，嗯，可以是它的优势，也可以是它的劣势。劣势就在于它不能。连更多的 f d，那优势的话，我觉得如果你要限制你可以连 FD 的数量的话，用 select 也是可以的。</p>
+<p>但是如果是不想要限制这个连接数量的话，就可以用poll。</p>
+<p>然后像epoll，他对他们的改进就是用了红黑树加链表的方式。我觉得在大部分情况下 epoll 都是相对来说更好的，因为，嗯，因为它更快，也是用 O(1) 的时间就拿过去，而且也不用去做这个，这是个大规模的复制。</p>
+<h3><span class="q1">select,poll,epoll区别？</span></h3>
+<p>我们熟悉的 select/poll/epoll 内核提供给用户态的多路复用系统调用，<strong>进程可以通过一个系统调用函数从内核中获取多个事件</strong>。</p>
+<p>select/poll/epoll 是如何获取网络事件的呢？在获取事件时，先把所有连接（文件描述符）传给内核，再由内核返回产生了事件的连接，然后在用户态中再处理这些连接对应的请求即可。</p>
+<p>select/poll/epoll 这是三个多路复用接口，都能实现 C10K 吗？接下来，我们分别说说它们。</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">select/poll</p>
+</blockquote>
+<p>select 实现多路复用的方式是，将已连接的 Socket 都放到一个<strong>文件描述符集合</strong>，然后调用 select 函数将文件描述符集合<strong>拷贝</strong>到内核里，让内核来检查是否有网络事件产生，检查的方式很粗暴，就是通过<strong>遍历</strong>文件描述符集合的方式，当检查到有事件产生后，将此 Socket 标记为可读或可写， 接着再把整个文件描述符集合<strong>拷贝</strong>回用户态里，然后用户态还需要再通过<strong>遍历</strong>的方法找到可读或可写的 Socket，然后再对其处理。</p>
+<p>所以，对于 select 这种方式，需要进行 <strong>2 次「遍历」文件描述符集合</strong>，一次是在内核态里，一个次是在用户态里 ，而且还会发生 <strong>2 次「拷贝」文件描述符集合</strong>，先从用户空间传入内核空间，由内核修改后，再传出到用户空间中。</p>
+<p>select 使用固定长度的 BitsMap，表示文件描述符集合，而且所支持的文件描述符的个数是有限制的，在 Linux 系统中，由内核中的 FD_SETSIZE 限制， 默认最大值为 1024，只能监听 0~1023 的文件描述符。</p>
+<p>poll 不再用 BitsMap 来存储所关注的文件描述符，取而代之用动态数组，以链表形式来组织，突破了 select 的文件描述符个数限制，当然还会受到系统文件描述符限制。</p>
+<p>但是 poll 和 select 并没有太大的本质区别，<strong>都是使用「线性结构」存储进程关注的 Socket 集合，因此都需要遍历文件描述符集合来找到可读或可写的 Socket，时间复杂度为 O(n)，而且也需要在用户态与内核态之间拷贝文件描述符集合</strong>，这种方式随着并发数上来，性能的损耗会呈指数级增长。</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">epoll</p>
+</blockquote>
+<p>先复习下 epoll 的用法。如下的代码中，先用epoll_create 创建一个 epol l对象 epfd，再通过 epoll_ctl 将需要监视的 socket 添加到epfd中，最后调用 epoll_wait 等待数据。</p><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIP4WkGwRDXsDdp9T7qqico8zTSdcPChicHFCvJMDZhXybdeEtDO3DqToAKjS0GAe0k6InZ03cc3WI3EiasKPxxRE85/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span style="color: #c678dd;">int</span> s = socket(AF_INET, SOCK_STREAM, <span style="color: #d19a66;">0</span>);<br/>bind(s, ...);<br/>listen(s, ...)<br/><br/><span style="color: #c678dd;">int</span> epfd = epoll_create(...);<br/>epoll_ctl(epfd, ...); <span style="color: #5c6370;font-style: italic;">//将所有需要监听的socket添加到epfd中</span><br/><br/><span style="color: #c678dd;">while</span>(<span style="color: #d19a66;">1</span>) {<br/>    <span style="color: #c678dd;">int</span> n = epoll_wait(...);<br/>    <span style="color: #c678dd;">for</span>(接收到数据的socket){<br/>        <span style="color: #5c6370;font-style: italic;">//处理</span><br/>    }<br/>}<br/></code></pre>
+<p>epoll 通过两个方面，很好解决了 select/poll 的问题。</p>
+<ul class="list-paddingleft-1">
+<li>
+            _第一点_，epoll 在内核里使用<strong>红黑树来跟踪进程所有待检测的文件描述字</strong>，把需要监控的 socket 通过 epoll_ctl() 函数加入内核中的红黑树里，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)。而 select/poll 内核里没有类似 epoll 红黑树这种保存所有待检测的 socket 的数据结构，所以 select/poll 每次操作时都传入整个 socket 集合给内核，而 epoll 因为在内核维护了红黑树，可以保存所有待检测的 socket ，所以只需要传入一个待检测的 socket，减少了内核和用户空间大量的数据拷贝和内存分配。
+        </li>
+<li>
+            _第二点_， epoll 使用<strong>事件驱动</strong>的机制，内核里<strong>维护了一个链表来记录就绪事件</strong>，当某个 socket 有事件发生时，通过<strong>回调函数</strong>内核会将其加入到这个就绪事件列表中，当用户调用 epoll_wait() 函数时，只会返回有事件发生的文件描述符的个数，不需要像 select/poll 那样轮询扫描整个 socket 集合，大大提高了检测的效率。
+        </li>
+</ul>
+<p>从下图你可以看到 epoll 相关的接口作用：<img _width="677px" data-index="7" data-src="../img/io_017_6bebae8e.png" data-w="1080" src="../img/io_017_6bebae8e.png" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>epoll 的方式即使监听的 Socket 数量越多的时候，效率不会大幅度降低，能够同时监听的 Socket 的数目也非常的多了，上限就为系统定义的进程打开的最大文件描述符个数。因而，<strong>epoll 被称为解决 C10K 问题的利器</strong>。</p>
+<h3><span class="q1">select poll epoll，底层实现有什么区别？</span></h3>
+<p>select 和 poll 并没有本质区别，它们内部都是使用「线性结构」来存储进程关注的 Socket 集合。</p>
+<p>在使用的时候，首先需要把关注的 Socket 集合通过 select/poll 系统调用从用户态拷贝到内核态，然后由内核检测事件，当有网络事件产生时，内核需要遍历进程关注 Socket 集合，找到对应的 Socket，并设置其状态为可读/可写，然后把整个 Socket 集合从内核态拷贝到用户态，用户态还要继续遍历整个 Socket 集合找到可读/可写的 Socket，然后对其处理。</p>
+<p>很明显发现，select 和 poll 的缺陷在于，当客户端越多，也就是 Socket 集合越大，Socket 集合的遍历和拷贝会带来很大的开销，因此也很难应对 C10K。</p>
+<p>epoll 是解决 C10K 问题的利器，通过两个方面解决了 select/poll 的问题。</p>
+<ul class="list-paddingleft-1">
+<li>
+            epoll 在内核里使用「红黑树」来关注进程所有待检测的 Socket，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)，通过对这棵黑红树的管理，不需要像 select/poll 在每次操作时都传入整个 Socket 集合，减少了内核和用户空间大量的数据拷贝和内存分配。
+        </li>
+<li>
+            epoll 使用事件驱动的机制，内核里维护了一个「链表」来记录就绪事件，只将有事件发生的 Socket 集合传递给应用程序，不需要像 select/poll 那样轮询扫描整个集合（包含有和无事件的 Socket ），大大提高了检测的效率。
+        </li>
+</ul>
+<h3><span class="q1">select 和 epoll 的区别，epoll 的底层数据结构</span></h3>
+<p>IO多路复用是一种IO得处理方式，指的是复用一个线程，处理多个socket中的事件。能够资源复用，防止创建过多线程导致的上下文切换的开销。<img _width="617px" data-index="9" data-src="../img/io_018_dbd9ed95.png" data-w="617" src="../img/io_018_dbd9ed95.png" style="   border-radius: 4px;  height: auto !important;  width: 617px !important;"/>常见的IO多路复用系统调用有select、poll和epoll。select 实现多路复用的方式是，将已连接的 Socket 都放到一个<strong>文件描述符集合</strong>，然后调用 select 函数将文件描述符集合<strong>拷贝</strong>到内核里，让内核来检查是否有网络事件产生，检查的方式很粗暴，就是通过<strong>遍历</strong>文件描述符集合的方式，当检查到有事件产生后，将此 Socket 标记为可读或可写， 接着再把整个文件描述符集合<strong>拷贝</strong>回用户态里，然后用户态还需要再通过<strong>遍历</strong>的方法找到可读或可写的 Socket，然后再对其处理。</p>
+<p>所以，对于 select 这种方式，需要进行 <strong>2 次「遍历」文件描述符集合</strong>，一次是在内核态里，一个次是在用户态里 ，而且还会发生 <strong>2 次「拷贝」文件描述符集合</strong>，先从用户空间传入内核空间，由内核修改后，再传出到用户空间中。</p>
+<p>select 使用固定长度的 BitsMap，表示文件描述符集合，而且所支持的文件描述符的个数是有限制的，在 Linux 系统中，由内核中的 FD_SETSIZE 限制， 默认最大值为 1024，只能监听 0~1023 的文件描述符。</p>
+<p>poll 不再用 BitsMap 来存储所关注的文件描述符，取而代之用动态数组，以链表形式来组织，突破了 select 的文件描述符个数限制，当然还会受到系统文件描述符限制。</p>
+<p>但是 poll 和 select 并没有太大的本质区别，<strong>都是使用「线性结构」存储进程关注的 Socket 集合，因此都需要遍历文件描述符集合来找到可读或可写的 Socket，时间复杂度为 O(n)，而且也需要在用户态与内核态之间拷贝文件描述符集合</strong>，这种方式随着并发数上来，性能的损耗会呈指数级增长。</p>
+<p>epoll 通过两个方面，很好解决了 select/poll 的问题。<img _width="677px" data-index="10" data-src="../img/io_019_3e9e819f.png" data-w="1080" src="../img/io_019_3e9e819f.png" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/></p>
+<ul class="list-paddingleft-1">
+<li>
+            _第一点_，epoll 在内核里使用<strong>红黑树来跟踪进程所有待检测的文件描述字</strong>，把需要监控的 socket 通过 epoll_ctl() 函数加入内核中的红黑树里，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)。而 select/poll 内核里没有类似 epoll 红黑树这种保存所有待检测的 socket 的数据结构，所以 select/poll 每次操作时都传入整个 socket 集合给内核，而 epoll 因为在内核维护了红黑树，可以保存所有待检测的 socket ，所以只需要传入一个待检测的 socket，减少了内核和用户空间大量的数据拷贝和内存分配。
+        </li>
+<li>
+            _第二点_， epoll 使用<strong>事件驱动</strong>的机制，内核里<strong>维护了一个链表来记录就绪事件</strong>，当某个 socket 有事件发生时，通过<strong>回调函数</strong>内核会将其加入到这个就绪事件列表中，当用户调用 epoll_wait() 函数时，只会返回有事件发生的文件描述符的个数，不需要像 select/poll 那样轮询扫描整个 socket 集合，大大提高了检测的效率。
+        </li>
+</ul>
+<h3><span class="q1">epoll 和 select 的区别？</span></h3>
+<p>select 和 poll 并没有本质区别，它们内部都是使用「线性结构」来存储进程关注的 Socket 集合。</p>
+<p>在使用的时候，首先需要把关注的 Socket 集合通过 select/poll 系统调用从用户态拷贝到内核态，然后由内核检测事件，当有网络事件产生时，内核需要遍历进程关注 Socket 集合，找到对应的 Socket，并设置其状态为可读/可写，然后把整个 Socket 集合从内核态拷贝到用户态，用户态还要继续遍历整个 Socket 集合找到可读/可写的 Socket，然后对其处理。</p>
+<p>很明显发现，select 和 poll 的缺陷在于，当客户端越多，也就是 Socket 集合越大，Socket 集合的遍历和拷贝会带来很大的开销，因此也很难应对 C10K。</p>
+<p>epoll 是解决 C10K 问题的利器，通过两个方面解决了 select/poll 的问题。</p>
+<ul class="list-paddingleft-1">
+<li>
+            epoll 在内核里使用「红黑树」来关注进程所有待检测的 Socket，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)，通过对这棵黑红树的管理，不需要像 select/poll 在每次操作时都传入整个 Socket 集合，减少了内核和用户空间大量的数据拷贝和内存分配。
+        </li>
+<li>
+            epoll 使用事件驱动的机制，内核里维护了一个「链表」来记录就绪事件，只将有事件发生的 Socket 集合传递给应用程序，不需要像 select/poll 那样轮询扫描整个集合（包含有和无事件的 Socket ），大大提高了检测的效率。
+    </li>
+</ul>
+<h3><span class="q1">select、poll、epoll区别</span></h3>
+<p><strong>小林补充</strong>：</p>
+<p>select 实现多路复用的方式是，将已连接的 Socket 都放到一个<strong>文件描述符集合</strong>，然后调用 select 函数将文件描述符集合<strong>拷贝</strong>到内核里，让内核来检查是否有网络事件产生，检查的方式很粗暴，就是通过<strong>遍历</strong>文件描述符集合的方式，当检查到有事件产生后，将此 Socket 标记为可读或可写， 接着再把整个文件描述符集合<strong>拷贝</strong>回用户态里，然后用户态还需要再通过<strong>遍历</strong>的方法找到可读或可写的 Socket，然后再对其处理。</p>
+<p>所以，对于 select 这种方式，需要进行 <strong>2 次「遍历」文件描述符集合</strong>，一次是在内核态里，一个次是在用户态里 ，而且还会发生 <strong>2 次「拷贝」文件描述符集合</strong>，先从用户空间传入内核空间，由内核修改后，再传出到用户空间中。</p>
+<p>select 使用固定长度的 BitsMap，表示文件描述符集合，而且所支持的文件描述符的个数是有限制的，在 Linux 系统中，由内核中的 FD_SETSIZE 限制， 默认最大值为 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>1024</code>，只能监听 0~1023 的文件描述符。</p>
+<p>poll 不再用 BitsMap 来存储所关注的文件描述符，取而代之用动态数组，以链表形式来组织，突破了 select 的文件描述符个数限制，当然还会受到系统文件描述符限制。</p>
+<p>但是 poll 和 select 并没有太大的本质区别，<strong>都是使用「线性结构」存储进程关注的 Socket 集合，因此都需要遍历文件描述符集合来找到可读或可写的 Socket，时间复杂度为 O(n)，而且也需要在用户态与内核态之间拷贝文件描述符集合</strong>，这种方式随着并发数上来，性能的损耗会呈指数级增长。</p>
+<p>epoll 通过两个方面解决了 select/poll 的问题。</p>
+<p><img _width="677px" class="rich_pages wxw-img js_img_placeholder wx_img_placeholder" data-index="8" data-src="../img/io_020_6776b760.png" data-w="1080" src="../img/io_020_6776b760.png" style="width: 657px !important; height: 302.95px !important;"/></p>
+<p>1、epoll 在内核里使用「红黑树」来关注进程所有待检测的 Socket，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)，通过对这棵黑红树的管理，不需要像 select/poll 在每次操作时都传入整个 Socket 集合，减少了内核和用户空间大量的数据拷贝和内存分配。</p>
+<p>2、epoll 使用事件驱动的机制，内核里维护了一个「链表」来记录就绪事件，只将有事件发生的 Socket 集合传递给应用程序，不需要像 select/poll 那样轮询扫描整个集合（包含有和无事件的 Socket ），大大提高了检测的效率。</p>
+<h3><span class="q1">说一下select，poll，epoll的区别？</span></h3>
+<p>select 和 poll 内部都是使用「线性结构」来存储进程关注的 Socket 集合。</p>
+<p>在使用的时候，首先需要把关注的 Socket 集合通过 select/poll 系统调用从用户态拷贝到内核态，然后由内核检测事件，当有网络事件产生时，内核需要遍历进程关注 Socket 集合，找到对应的 Socket，并设置其状态为可读/可写，然后把整个 Socket 集合从内核态拷贝到用户态，用户态还要继续遍历整个 Socket 集合找到可读/可写的 Socket，然后对其处理。</p>
+<p>很明显发现，select 和 poll 的缺陷在于，当客户端越多，也就是 Socket 集合越大，Socket 集合的遍历和拷贝会带来很大的开销，因此也很难应对 C10K。</p>
+<p>epoll 是解决 C10K 问题的利器，通过两个方面解决了 select/poll 的问题。</p>
+<figure class="img1"><img _width="677px" data-index="2" data-src="../img/io_021_b74be786.png" data-w="1080" src="../img/io_021_b74be786.png" style="   border-radius: 4px;  height: auto !important;  width: 656.969px !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">img</figcaption>
+</figure>
+<ul class="list-paddingleft-1">
+<li>
+            epoll 在内核里使用「红黑树」来关注进程所有待检测的 Socket，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)，通过对这棵黑红树的管理，不需要像 select/poll 在每次操作时都传入整个 Socket 集合，减少了内核和用户空间大量的数据拷贝和内存分配。
+        </li>
+<li>
+            epoll 使用事件驱动的机制，内核里维护了一个「链表」来记录就绪事件，只将有事件发生的 Socket 集合传递给应用程序，不需要像 select/poll 那样轮询扫描整个集合（包含有和无事件的 Socket ），大大提高了检测的效率。
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>select,poll,epoll区别？</span></span></h3>
+<p style="text-align: left;"><span>我们熟悉的 select/poll/epoll 内核提供给用户态的多路复用系统调用，</span><strong><span>进程可以通过一个系统调用函数从内核中获取多个事件</span></strong><span>。</span></p>
+<p style="text-align: left;"><span>select/poll/epoll 是如何获取网络事件的呢？在获取事件时，先把所有连接（文件描述符）传给内核，再由内核返回产生了事件的连接，然后在用户态中再处理这些连接对应的请求即可。</span></p>
+<p style="text-align: left;"><span>select/poll/epoll 这是三个多路复用接口，都能实现 C10K 吗？接下来，我们分别说说它们。</span></p>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>select/poll</span></p>
+</blockquote>
+<p style="text-align: left;"><span>select 实现多路复用的方式是，将已连接的 Socket 都放到一个</span><strong><span>文件描述符集合</span></strong><span>，然后调用 select 函数将文件描述符集合</span><strong><span>拷贝</span></strong><span>到内核里，让内核来检查是否有网络事件产生，检查的方式很粗暴，就是通过</span><strong><span>遍历</span></strong><span>文件描述符集合的方式，当检查到有事件产生后，将此 Socket 标记为可读或可写， 接着再把整个文件描述符集合</span><strong><span>拷贝</span></strong><span>回用户态里，然后用户态还需要再通过</span><strong><span>遍历</span></strong><span>的方法找到可读或可写的 Socket，然后再对其处理。</span></p>
+<p style="text-align: left;"><span>所以，对于 select 这种方式，需要进行 </span><strong><span>2 次「遍历」文件描述符集合</span></strong><span>，一次是在内核态里，一个次是在用户态里 ，而且还会发生 </span><strong><span>2 次「拷贝」文件描述符集合</span></strong><span>，先从用户空间传入内核空间，由内核修改后，再传出到用户空间中。</span></p>
+<p style="text-align: left;"><span>select 使用固定长度的 BitsMap，表示文件描述符集合，而且所支持的文件描述符的个数是有限制的，在 Linux 系统中，由内核中的 FD_SETSIZE 限制， 默认最大值为 1024，只能监听 0~1023 的文件描述符。</span></p>
+<p style="text-align: left;"><span>poll 不再用 BitsMap 来存储所关注的文件描述符，取而代之用动态数组，以链表形式来组织，突破了 select 的文件描述符个数限制，当然还会受到系统文件描述符限制。</span></p>
+<p style="text-align: left;"><span>但是 poll 和 select 并没有太大的本质区别，</span><strong><span>都是使用「线性结构」存储进程关注的 Socket 集合，因此都需要遍历文件描述符集合来找到可读或可写的 Socket，时间复杂度为 O(n)，而且也需要在用户态与内核态之间拷贝文件描述符集合</span></strong><span>，这种方式随着并发数上来，性能的损耗会呈指数级增长。</span></p>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>epoll</span></p>
+</blockquote>
+<p style="text-align: left;"><span>先复习下 epoll 的用法。如下的代码中，先用epoll_create 创建一个 epol l对象 epfd，再通过 epoll_ctl 将需要监视的 socket 添加到epfd中，最后调用 epoll_wait 等待数据。</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIRxKNE94X7qQIkhtI2xCib7myTOOsVJx4MoN1n9kaAE1TIjg2q3foCyvprANibicE4roANrQiaUG4yicI/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIRxKNE94X7qQIkhtI2xCib7myTOOsVJx4MoN1n9kaAE1TIjg2q3foCyvprANibicE4roANrQiaUG4yicI/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>int s = socket(AF_INET, SOCK_STREAM, 0);</span><br/><span>bind(s, ...);</span><br/><span>listen(s, ...)</span><br/><br/><span>int epfd = epoll_create(...);</span><br/><span>epoll_ctl(epfd, ...); //将所有需要监听的socket添加到epfd中</span><br/><br/><span>while(1) {</span><br/><span>    int n = epoll_wait(...);</span><br/><span>    for(接收到数据的socket){</span><br/><span>        //处理</span><br/><span>    }</span><br/><span>}</span><br/></code></pre>
+<p style="text-align: left;"><span>epoll 通过两个方面，很好解决了 select/poll 的问题。</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>第一点，epoll 在内核里使用</span><strong><span>红黑树来跟踪进程所有待检测的文件描述字</span></strong><span>，把需要监控的 socket 通过 epoll_ctl() 函数加入内核中的红黑树里，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)。而 select/poll 内核里没有类似 epoll 红黑树这种保存所有待检测的 socket 的数据结构，所以 select/poll 每次操作时都传入整个 socket 集合给内核，而 epoll 因为在内核维护了红黑树，可以保存所有待检测的 socket ，所以只需要传入一个待检测的 socket，减少了内核和用户空间大量的数据拷贝和内存分配。</span>
+</li>
+<li>
+<span>第二点， epoll 使用</span><strong><span>事件驱动</span></strong><span>的机制，内核里</span><strong><span>维护了一个链表来记录就绪事件</span></strong><span>，当某个 socket 有事件发生时，通过</span><strong><span>回调函数</span></strong><span>内核会将其加入到这个就绪事件列表中，当用户调用 epoll_wait() 函数时，只会返回有事件发生的文件描述符的个数，不需要像 select/poll 那样轮询扫描整个 socket 集合，大大提高了检测的效率。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>从下图你可以看到 epoll 相关的接口作用：<img _width="677px" data-index="10" data-src="../img/io_022_d5aab4b5.jpg" data-type="other" data-w="1080" src="../img/io_022_d5aab4b5.jpg" style=" margin: 0px auto 25px; max-width: 100%; border-radius: 4px; height: auto !important;  width: 657px !important;"/>epoll 的方式即使监听的 Socket 数量越多的时候，效率不会大幅度降低，能够同时监听的 Socket 的数目也非常的多了，上限就为系统定义的进程打开的最大文件描述符个数。因而，</span><strong><span>epoll 被称为解决 C10K 问题的利器</span></strong><span>。</span></p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>零拷贝是什么意思？哪里用到了？</span></span></h3>
+<p style="text-align: left;"><span>传统 IO 的工作方式，从硬盘读取数据，然后再通过网卡向外发送，我们需要进行 4 上下文切换，和 4 次数据拷贝，其中 2 次数据拷贝发生在内存里的缓冲区和对应的硬件设备之间，这个是由 DMA 完成，另外 2 次则发生在内核态和用户态之间，这个数据搬移工作是由 CPU 完成的。<img _width="677px" data-index="11" data-src="../img/io_023_183e7ad6.jpg" data-type="other" data-w="1080" src="../img/io_023_183e7ad6.jpg" style=" margin: 0px auto 25px; max-width: 100%; border-radius: 4px; height: auto !important;  width: 657px !important;"/>为了提高文件传输的性能，于是就出现了零拷贝技术，它通过一次系统调用（sendfile 方法）合并了磁盘读取与网络发送两个操作，降低了上下文切换次数。另外，拷贝数据都是发生在内核中的，天然就降低了数据拷贝的次数。<img _width="677px" data-index="12" data-src="../img/io_024_e670f981.jpg" data-type="other" data-w="1080" src="../img/io_024_e670f981.jpg" style=" margin: 0px auto 25px; max-width: 100%; border-radius: 4px; height: auto !important;  width: 657px !important;"/>零拷贝技术的文件传输方式相比传统文件传输的方式，减少了 2 次上下文切换和数据拷贝次数，</span><strong><span>只需要 2 次上下文切换和数据拷贝次数，就可以完成文件的传输，而且 2 次的数据拷贝过程，都不需要通过 CPU，2 次都是由 DMA 来搬运。</span></strong></p>
+<p style="text-align: left;"><span>总体来看，</span><strong><span>零拷贝技术可以把文件传输的性能提高至少一倍以上</span></strong><span>。</span></p>
+<p style="text-align: left;"><strong><span>kafka 高性能之一的原因是用到零拷贝的技术</span></strong><span>，追溯 Kafka 文件传输的代码，你会发现，最终它调用了 Java NIO 库里的 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>transferTo</span></code><span> 方法：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIRxKNE94X7qQIkhtI2xCib7myTOOsVJx4MoN1n9kaAE1TIjg2q3foCyvprANibicE4roANrQiaUG4yicI/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIRxKNE94X7qQIkhtI2xCib7myTOOsVJx4MoN1n9kaAE1TIjg2q3foCyvprANibicE4roANrQiaUG4yicI/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>@Overridepublic </span><br/><span>long transferFrom(FileChannel fileChannel, long position, long count) throws IOException { </span><br/><span>    return fileChannel.transferTo(position, count, socketChannel);</span><br/><span>}</span><br/></code></pre>
+<p style="text-align: left;"><span>如果 Linux 系统支持 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>sendfile()</span></code><span> 系统调用，那么 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>transferTo()</span></code><span> 实际上最后就会使用到 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>sendfile()</span></code><span> 系统调用函数。</span></p>
+<p style="text-align: left;"><strong><span>Nginx 也支持零拷贝的技术</span></strong><span>，在内核中实现的 TLS 叫 kTLS， 可显着减少用户空间和内核之间复制操作的需要，从而提高性能。</span><strong><span>将 kTLS 和</span></strong><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>sendfile()</span></code><strong><span>结合</span></strong><span>意味着数据在传递到网络堆栈进行传输之前直接在内核空间中加密。这样就无需将数据复制到用户空间以由 TLS 库加密，然后再复制回内核空间进行传输。kTLS 还支持将 TLS 处理卸载到硬件，包括将 TLS 对称加密处理卸载到网络设备。</span></p>
+<figure class="img1"><span><img _width="677px" data-index="13" data-src="../img/io_025_a06cbbd4.jpg" data-type="other" data-w="1080" src="../img/io_025_a06cbbd4.jpg" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<h3><span class="q1">说一下select，poll，epoll的区别？</span></h3>
+<p>select 和 poll 内部都是使用「线性结构」来存储进程关注的 Socket 集合。</p>
+<p>在使用的时候，首先需要把关注的 Socket 集合通过 select/poll 系统调用从用户态拷贝到内核态，然后由内核检测事件，当有网络事件产生时，内核需要遍历进程关注 Socket 集合，找到对应的 Socket，并设置其状态为可读/可写，然后把整个 Socket 集合从内核态拷贝到用户态，用户态还要继续遍历整个 Socket 集合找到可读/可写的 Socket，然后对其处理。</p>
+<p>很明显发现，select 和 poll 的缺陷在于，当客户端越多，也就是 Socket 集合越大，Socket 集合的遍历和拷贝会带来很大的开销，因此也很难应对 C10K。</p>
+<p>epoll 是解决 C10K 问题的利器，通过两个方面解决了 select/poll 的问题。<img _width="677px" data-index="5" data-src="../img/io_026_996276cf.jpg" data-type="other" data-w="1080" src="../img/io_026_996276cf.jpg" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/></p>
+<ul class="list-paddingleft-1">
+<li>
+            epoll 在内核里使用「红黑树」来关注进程所有待检测的 Socket，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)，通过对这棵黑红树的管理，不需要像 select/poll 在每次操作时都传入整个 Socket 集合，减少了内核和用户空间大量的数据拷贝和内存分配。
+        </li>
+<li>
+            epoll 使用事件驱动的机制，内核里维护了一个「链表」来记录就绪事件，只将有事件发生的 Socket 集合传递给应用程序，不需要像 select/poll 那样轮询扫描整个集合（包含有和无事件的 Socket ），大大提高了检测的效率。
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>select，poll，epoll有什么区别？</span></span></h3>
+<p style="text-align: left;"><span>我们熟悉的 select/poll/epoll 内核提供给用户态的多路复用系统调用，</span><strong><span>进程可以通过一个系统调用函数从内核中获取多个事件</span></strong><span>。</span></p>
+<p style="text-align: left;"><span>select/poll/epoll 是如何获取网络事件的呢？在获取事件时，先把所有连接（文件描述符）传给内核，再由内核返回产生了事件的连接，然后在用户态中再处理这些连接对应的请求即可。</span></p>
+<p style="text-align: left;"><span>select/poll/epoll 这是三个多路复用接口，都能实现 C10K 吗？接下来，我们分别说说它们。</span></p>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>select/poll</span></p>
+</blockquote>
+<p style="text-align: left;"><span>select 实现多路复用的方式是，将已连接的 Socket 都放到一个</span><strong><span>文件描述符集合</span></strong><span>，然后调用 select 函数将文件描述符集合</span><strong><span>拷贝</span></strong><span>到内核里，让内核来检查是否有网络事件产生，检查的方式很粗暴，就是通过</span><strong><span>遍历</span></strong><span>文件描述符集合的方式，当检查到有事件产生后，将此 Socket 标记为可读或可写， 接着再把整个文件描述符集合</span><strong><span>拷贝</span></strong><span>回用户态里，然后用户态还需要再通过</span><strong><span>遍历</span></strong><span>的方法找到可读或可写的 Socket，然后再对其处理。</span></p>
+<p style="text-align: left;"><span>所以，对于 select 这种方式，需要进行 </span><strong><span>2 次「遍历」文件描述符集合</span></strong><span>，一次是在内核态里，一个次是在用户态里 ，而且还会发生 </span><strong><span>2 次「拷贝」文件描述符集合</span></strong><span>，先从用户空间传入内核空间，由内核修改后，再传出到用户空间中。</span></p>
+<p style="text-align: left;"><span>select 使用固定长度的 BitsMap，表示文件描述符集合，而且所支持的文件描述符的个数是有限制的，在 Linux 系统中，由内核中的 FD_SETSIZE 限制， 默认最大值为 1024，只能监听 0~1023 的文件描述符。</span></p>
+<p style="text-align: left;"><span>poll 不再用 BitsMap 来存储所关注的文件描述符，取而代之用动态数组，以链表形式来组织，突破了 select 的文件描述符个数限制，当然还会受到系统文件描述符限制。</span></p>
+<p style="text-align: left;"><span>但是 poll 和 select 并没有太大的本质区别，</span><strong><span>都是使用「线性结构」存储进程关注的 Socket 集合，因此都需要遍历文件描述符集合来找到可读或可写的 Socket，时间复杂度为 O(n)，而且也需要在用户态与内核态之间拷贝文件描述符集合</span></strong><span>，这种方式随着并发数上来，性能的损耗会呈指数级增长。</span></p>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>epoll</span></p>
+</blockquote>
+<p style="text-align: left;"><span>先复习下 epoll 的用法。如下的代码中，先用epoll_create 创建一个 epol l对象 epfd，再通过 epoll_ctl 将需要监视的 socket 添加到epfd中，最后调用 epoll_wait 等待数据。</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIfMbyXNUH6NzL7f5PVLd784rAwMjNpauzKbFDyy7QzF6HgDluBxrhyuLjeEic1w8IEICKf9wNKYtT/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIfMbyXNUH6NzL7f5PVLd784rAwMjNpauzKbFDyy7QzF6HgDluBxrhyuLjeEic1w8IEICKf9wNKYtT/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span style="color: #c678dd;"><span>int</span></span><span> s = socket(AF_INET, SOCK_STREAM, </span><span style="color: #d19a66;"><span>0</span></span><span>);</span><br/><span>bind(s, ...);</span><br/><span>listen(s, ...)</span><br/><br/><span style="color: #c678dd;"><span>int</span></span><span> epfd = epoll_create(...);</span><br/><span>epoll_ctl(epfd, ...); </span><span style="color: #5c6370;font-style: italic;"><span>//将所有需要监听的socket添加到epfd中</span></span><br/><br/><span style="color: #c678dd;"><span>while</span></span><span>(</span><span style="color: #d19a66;"><span>1</span></span><span>) {</span><br/><span>    </span><span style="color: #c678dd;"><span>int</span></span><span> n = epoll_wait(...);</span><br/><span>    </span><span style="color: #c678dd;"><span>for</span></span><span>(接收到数据的socket){</span><br/><span>        </span><span style="color: #5c6370;font-style: italic;"><span>//处理</span></span><br/><span>    }</span><br/><span>}</span><br/></code></pre>
+<p style="text-align: left;"><span>epoll 通过两个方面，很好解决了 select/poll 的问题。</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<em style="font-style: italic;background-color: rgba(0, 0, 0, 0);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><span>第一点</span></em><span>，epoll 在内核里使用</span><strong><span>红黑树来跟踪进程所有待检测的文件描述字</span></strong><span>，把需要监控的 socket 通过 epoll_ctl() 函数加入内核中的红黑树里，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)。而 select/poll 内核里没有类似 epoll 红黑树这种保存所有待检测的 socket 的数据结构，所以 select/poll 每次操作时都传入整个 socket 集合给内核，而 epoll 因为在内核维护了红黑树，可以保存所有待检测的 socket ，所以只需要传入一个待检测的 socket，减少了内核和用户空间大量的数据拷贝和内存分配。</span>
+</li>
+<li>
+<em style="font-style: italic;background-color: rgba(0, 0, 0, 0);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><span>第二点</span></em><span>， epoll 使用</span><strong><span>事件驱动</span></strong><span>的机制，内核里</span><strong><span>维护了一个链表来记录就绪事件</span></strong><span>，当某个 socket 有事件发生时，通过</span><strong><span>回调函数</span></strong><span>内核会将其加入到这个就绪事件列表中，当用户调用 epoll_wait() 函数时，只会返回有事件发生的文件描述符的个数，不需要像 select/poll 那样轮询扫描整个 socket 集合，大大提高了检测的效率。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>从下图你可以看到 epoll 相关的接口作用：</span></p>
+<figure class="img1"><span><img _width="677px" data-index="7" data-src="../img/io_027_512b7d3a.png" data-w="1080" src="../img/io_027_512b7d3a.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<p style="text-align: left;"><span>epoll 的方式即使监听的 Socket 数量越多的时候，效率不会大幅度降低，能够同时监听的 Socket 的数目也非常的多了，上限就为系统定义的进程打开的最大文件描述符个数。因而，</span><strong><span>epoll 被称为解决 C10K 问题的利器</span></strong><span>。</span></p>
+<h3><span class="q1">IO多路复用，select、poll、epoll 的区别？</span></h3>
+<p>select 实现多路复用的方式是，将已连接的 Socket 都放到一个<strong>文件描述符集合</strong>，然后调用 select 函数将文件描述符集合<strong>拷贝</strong>到内核里，让内核来检查是否有网络事件产生，检查的方式很粗暴，就是通过<strong>遍历</strong>文件描述符集合的方式，当检查到有事件产生后，将此 Socket 标记为可读或可写， 接着再把整个文件描述符集合<strong>拷贝</strong>回用户态里，然后用户态还需要再通过<strong>遍历</strong>的方法找到可读或可写的 Socket，然后再对其处理。</p>
+<p>所以，对于 select 这种方式，需要进行 <strong>2 次「遍历」文件描述符集合</strong>，一次是在内核态里，一个次是在用户态里 ，而且还会发生 <strong>2 次「拷贝」文件描述符集合</strong>，先从用户空间传入内核空间，由内核修改后，再传出到用户空间中。</p>
+<p>select 使用固定长度的 BitsMap，表示文件描述符集合，而且所支持的文件描述符的个数是有限制的，在 Linux 系统中，由内核中的 FD_SETSIZE 限制， 默认最大值为 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>1024</code>，只能监听 0~1023 的文件描述符。</p>
+<p>poll 不再用 BitsMap 来存储所关注的文件描述符，取而代之用动态数组，以链表形式来组织，突破了 select 的文件描述符个数限制，当然还会受到系统文件描述符限制。</p>
+<p>但是 poll 和 select 并没有太大的本质区别，<strong>都是使用「线性结构」存储进程关注的 Socket 集合，因此都需要遍历文件描述符集合来找到可读或可写的 Socket，时间复杂度为 O(n)，而且也需要在用户态与内核态之间拷贝文件描述符集合</strong>，这种方式随着并发数上来，性能的损耗会呈指数级增长。</p>
+<p>epoll 通过两个方面，很好解决了 select/poll 的问题。</p>
+<ul class="list-paddingleft-1">
+<li>
+<p><em>第一点</em>，epoll 在内核里使用<strong>红黑树来跟踪进程所有待检测的文件描述字</strong>，把需要监控的 socket 通过 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>epoll_ctl()</code> 函数加入内核中的红黑树里，红黑树是个高效的数据结构，增删改一般时间复杂度是 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>O(logn)</code>。而 select/poll 内核里没有类似 epoll 红黑树这种保存所有待检测的 socket 的数据结构，所以 select/poll 每次操作时都传入整个 socket 集合给内核，而 epoll 因为在内核维护了红黑树，可以保存所有待检测的 socket ，所以只需要传入一个待检测的 socket，减少了内核和用户空间大量的数据拷贝和内存分配。</p>
+</li>
+<li>
+<p><em>第二点</em>， epoll 使用<strong>事件驱动</strong>的机制，内核里<strong>维护了一个链表来记录就绪事件</strong>，当某个 socket 有事件发生时，通过<strong>回调函数</strong>内核会将其加入到这个就绪事件列表中，当用户调用 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>epoll_wait()</code> 函数时，只会返回有事件发生的文件描述符的个数，不需要像 select/poll 那样轮询扫描整个 socket 集合，大大提高了检测的效率。</p>
+</li>
+</ul>
+<p>从下图你可以看到 epoll 相关的接口作用：</p>
+<figure class="img1"><img _width="677px" data-index="10" data-src="../img/io_028_ec7c9ebd.png" data-w="1080" src="../img/io_028_ec7c9ebd.png" style="   border-radius: 4px;  height: auto !important;  width: 656.969px !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">img</figcaption>
+</figure>
+<p>epoll 的方式即使监听的 Socket 数量越多的时候，效率不会大幅度降低，能够同时监听的 Socket 的数目也非常的多了，上限就为系统定义的进程打开的最大文件描述符个数。因而，<strong>epoll 被称为解决 C10K 问题的利器</strong>。</p>
+<h3><span style=" color: rgb(65, 105, 225); ">二、select、poll、epoll的选择</span></h3>
+<p>select缺点：</p>
+<ol class="list-paddingleft-1">
+<li>
+            select() 检测数量有限制，最大值通常为 1024（bit），每一个比特位对应一个监听的文件描述符
+        </li>
+<li>
+            fd_set被内核修改后，不可以重用，每次都需要重置
+        </li>
+<li>
+            每次调用select，都需要把fd集合从用户态拷贝到内核态，这个开销在fd很多时会很大
+        </li>
+<li>
+            每次调用select都需要在内核遍历传递进来的所有fd，这个开销在fd很多时也很大（((时间复杂度是O(n)))）
+        </li>
+</ol>
+<p>poll缺点：select第三四条缺点没有解决</p>
+<ol class="list-paddingleft-1">
+<li>
+            每次调用select，都需要把**fd集合从用户态拷贝到内核态，这个开销在fd很多时会很大
+        </li>
+<li>
+            每次调用select都需要在内核遍历传递进来的所有fd，这个开销在fd很多时也很大（((时间复杂度是O(n)))）
+        </li>
+</ol>
+<p>epoll优点：epoll底层数据结构</p>
+<ul class="list-paddingleft-1">
+<li>
+<p>红黑树增删改综合效率高</p>
+</li>
+<li>
+<p>就绪的描述符的链表。当有的连接就绪的时候，内核会把就绪的连接放到 rdllist 链表里。这样应用进程只需要判断链表就能找出就绪进程，而不用去遍历整棵树。</p>
+</li>
+</ul>
+<h3><span class="q1">epoll 具体工作流程</span></h3>
+<p><strong>读者回答：</strong>先建立epoll对象，然后添加事件，然后wait等待事件发生 但他好像不是很满意这个回答。</p>
+<p><strong>小林补充</strong>：</p>
+<ol class="list-paddingleft-1">
+<li>
+<p>通过epoll_create创建epoll对象，此时epoll对象的内核结构包含就绪链表和红黑树，就绪队列是用于保存所有读写事件到来的socket。红黑树用于保存所有待检测的socket。</p>
+</li>
+<li>
+<p>通过 epoll_crt 将待检测的socket，加入到红黑树中，并注册一个事件回调函数，当有事件到来的之后，会调用这个回调函数，进而通知到 epoll 对象。</p>
+</li>
+<li>
+<p>调用 epoll_wait 等待事件的发生，当内核检测到事件发生后，调用该socket注册的回调函数，执行回调函数就能找到socket对应的epoll对象，然后会将事件加入到epoll对象的绪队列中，最后将就绪队列返回给应用层。</p>
+</li>
+</ol>
+<h3><span class="q1">epoll 的工作原理？</span></h3>
+<p>先用 epoll_create 创建一个 epoll 对象 epfd，再通过 epoll_ctl 将需要监视的 socket 添加到epfd中，最后调用 epoll_wait 等待数据，当epoll_wait返回后，就可以遍历它返回的事件列表，然后根据事件类型做出相应的处理。</p><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPSDevZntbLLdbR8eAv2LdvibOC7SugDIfLtI7RicVZic1CocDevQhSUqibzNlNyMESFxHh9BExBNZkqggtB9vAJHpS/640?wx_fmt=svg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;display: -webkit-box;font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;-webkit-overflow-scrolling: touch;background: #282c34;border-radius: 5px;"><span style="color: #c678dd;">int</span> s = socket(AF_INET, SOCK_STREAM, <span style="color: #d19a66;">0</span>);<br>bind(s, ...);<br>listen(s, ...)<br><br><span style="color: #c678dd;">int</span> epfd = epoll_create(...);<br>epoll_ctl(epfd, ...); <span style="color: #5c6370;font-style: italic;">//将所有需要监听的socket添加到epfd中</span><br><br><span style="color: #c678dd;">while</span>(<span style="color: #d19a66;">1</span>) {<br>    <span style="color: #c678dd;">int</span> n = epoll_wait(...);<br>    <span style="color: #c678dd;">for</span>(接收到数据的socket){<br>        <span style="color: #5c6370;font-style: italic;">//处理</span><br>    }<br>}<br/></br></br></br></br></br></br></br></br></br></br></br></br></code></pre>
+<h3><span class="q1">epoll、select、poll的区别？</span></h3>
+<p>select 实现多路复用的方式是，将已连接的 Socket 都放到一个<strong>文件描述符集合</strong>，然后调用 select 函数将文件描述符集合<strong>拷贝</strong>到内核里，让内核来检查是否有网络事件产生，检查的方式很粗暴，就是通过<strong>遍历</strong>文件描述符集合的方式，当检查到有事件产生后，将此 Socket 标记为可读或可写， 接着再把整个文件描述符集合<strong>拷贝</strong>回用户态里，然后用户态还需要再通过<strong>遍历</strong>的方法找到可读或可写的 Socket，然后再对其处理。</p>
+<p>所以，对于 select 这种方式，需要进行 <strong>2 次「遍历」文件描述符集合</strong>，一次是在内核态里，一个次是在用户态里 ，而且还会发生 <strong>2 次「拷贝」文件描述符集合</strong>，先从用户空间传入内核空间，由内核修改后，再传出到用户空间中。</p>
+<p>select 使用固定长度的 BitsMap，表示文件描述符集合，而且所支持的文件描述符的个数是有限制的，在 Linux 系统中，由内核中的 FD_SETSIZE 限制， 默认最大值为 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>1024</code>，只能监听 0~1023 的文件描述符。</p>
+<p>poll 不再用 BitsMap 来存储所关注的文件描述符，取而代之用动态数组，以链表形式来组织，突破了 select 的文件描述符个数限制，当然还会受到系统文件描述符限制。</p>
+<p>但是 poll 和 select 并没有太大的本质区别，<strong>都是使用「线性结构」存储进程关注的 Socket 集合，因此都需要遍历文件描述符集合来找到可读或可写的 Socket，时间复杂度为 O(n)，而且也需要在用户态与内核态之间拷贝文件描述符集合</strong>，这种方式随着并发数上来，性能的损耗会呈指数级增长。</p>
+<p>epoll 通过两个方面，很好解决了 select/poll 的问题。</p>
+<ul class="list-paddingleft-1">
+<li>
+<p><em>第一点</em>，epoll 在内核里使用<strong>红黑树来跟踪进程所有待检测的文件描述字</strong>，把需要监控的 socket 通过 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>epoll_ctl()</code> 函数加入内核中的红黑树里，红黑树是个高效的数据结构，增删改一般时间复杂度是 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>O(logn)</code>。而 select/poll 内核里没有类似 epoll 红黑树这种保存所有待检测的 socket 的数据结构，所以 select/poll 每次操作时都传入整个 socket 集合给内核，而 epoll 因为在内核维护了红黑树，可以保存所有待检测的 socket ，所以只需要传入一个待检测的 socket，减少了内核和用户空间大量的数据拷贝和内存分配。</p>
+</li>
+<li>
+<p><em>第二点</em>， epoll 使用<strong>事件驱动</strong>的机制，内核里<strong>维护了一个链表来记录就绪事件</strong>，当某个 socket 有事件发生时，通过<strong>回调函数</strong>内核会将其加入到这个就绪事件列表中，当用户调用 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>epoll_wait()</code> 函数时，只会返回有事件发生的文件描述符的个数，不需要像 select/poll 那样轮询扫描整个 socket 集合，大大提高了检测的效率。</p>
+</li>
+</ul>
+<p>可以看到 epoll 相关的接口作用：</p>
+<figure class="img1"><img _width="677px" data-index="2" data-src="../img/io_029_9e2f3bdb.png" data-w="1080" src="../img/io_029_9e2f3bdb.png" style="   border-radius: 4px;  height: auto !important;  width: 656.969px !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">img</figcaption>
+</figure>
+<p>epoll 的方式即使监听的 Socket 数量越多的时候，效率不会大幅度降低，能够同时监听的 Socket 的数目也非常的多了，上限就为系统定义的进程打开的最大文件描述符个数。因而，<strong>epoll 被称为解决 C10K 问题的利器</strong>。</p>
+<h3><span class="q1">select线性表要从用户态复制到内核态，具体怎么复制的？</span></h3>
+<p>用户态准备一个文件描述符集合，通常是使用<code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>fd_set</code>数据结构来表示，该集合包含要监视的文件描述符。调用<code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>select</code>系统调用时，将该文件描述符集合作为参数传递给<code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>select</code>函数。</p>
+<p>内核态的<code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>select</code>函数接收到用户态传递的文件描述符集合后，会在内核中创建一个与用户态相对应的数据结构 fdset，然后将用户空间的ufdset拷贝到内核空间fdset。</p>
+<figure class="img1"><img _width="677px" data-index="3" data-src="../img/io_030_e1a3a300.png" data-w="1080" src="../img/io_030_e1a3a300.png" style="   border-radius: 4px;  height: auto !important;  width: 656.984px !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">image-20230829160943074</figcaption>
+</figure>
+<h3><span class="q1">eopll水平测发和边缘测发的差距</span></h3>
+<p>答：（看到过，但是忘记了）对这个问题不是很清楚</p>
+<p><strong>补充：</strong></p>
+<p>epoll 支持两种事件触发模式，分别是<strong>边缘触发（*edge-triggered，ET*）**和**水平触发（*level-triggered，LT*）</strong>。</p>
+<p>这两个术语还挺抽象的，其实它们的区别还是很好理解的。</p>
+<ul class="list-paddingleft-1">
+<li>
+            使用边缘触发模式时，当被监控的 Socket 描述符上有可读事件发生时，<strong>服务器端只会从 epoll_wait 中苏醒一次</strong>，即使进程没有调用 read 函数从内核读取数据，也依然只苏醒一次，因此我们程序要保证一次性将内核缓冲区的数据读取完；
+        </li>
+<li>
+            使用水平触发模式时，当被监控的 Socket 上有可读事件发生时，<strong>服务器端不断地从 epoll_wait 中苏醒，直到内核缓冲区数据被 read 函数读完才结束</strong>，目的是告诉我们有数据需要读取；
+        </li>
+</ul>
+<p>举个例子，你的快递被放到了一个快递箱里，如果快递箱只会通过短信通知你一次，即使你一直没有去取，它也不会再发送第二条短信提醒你，这个方式就是边缘触发；如果快递箱发现你的快递没有被取出，它就会不停地发短信通知你，直到你取出了快递，它才消停，这个就是水平触发的方式。</p>
+<p>这就是两者的区别，水平触发的意思是只要满足事件的条件，比如内核中有数据需要读，就一直不断地把这个事件传递给用户；而边缘触发的意思是只有第一次满足条件的时候才触发，之后就不会再传递同样的事件了。</p>
+<p>如果使用水平触发模式，当内核通知文件描述符可读写时，接下来还可以继续去检测它的状态，看它是否依然可读或可写。所以在收到通知后，没必要一次执行尽可能多的读写操作。</p>
+<p>如果使用边缘触发模式，I/O 事件发生时只会通知一次，而且我们不知道到底能读写多少数据，所以在收到通知后应尽可能地读写数据，以免错失读写的机会。因此，我们会<strong>循环</strong>从文件描述符读写数据，那么如果文件描述符是阻塞的，没有数据可读写时，进程会阻塞在读写函数那里，程序就没办法继续往下执行。所以，<strong>边缘触发模式一般和非阻塞 I/O 搭配使用</strong>，程序会一直执行 I/O 操作，直到系统调用（如 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>read</code> 和 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>write</code>）返回错误，错误类型为 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>EAGAIN</code> 或 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>EWOULDBLOCK</code>。</p>
+<p>一般来说，边缘触发的效率比水平触发的效率要高，因为边缘触发可以减少 epoll_wait 的系统调用次数，系统调用也是有一定的开销的的，毕竟也存在上下文的切换。</p>
+<p>select/poll 只有水平触发模式，epoll 默认的触发模式是水平触发，但是可以根据应用场景设置为边缘触发模式。</p>
+<h3><span class="q1">说一下代码里使用异步的思路</span></h3>
+<p>答：举了个客户端异步connect，使用select检测结果的例子</p>
+<h3><span class="q1">顺势问select/epoll的区别</span></h3>
+<p>答：常规八股回答</p>
+<p><strong>补充：</strong></p>
+<p>select 和 poll 的缺陷在于，当客户端越多，也就是 Socket 集合越大，Socket 集合的遍历和拷贝会带来很大的开销，因此也很难应对 C10K。</p>
+<p>epoll 是解决 C10K 问题的利器，通过两个方面解决了 select/poll 的问题。</p>
+<ul class="list-paddingleft-1">
+<li>
+            epoll 在内核里使用「红黑树」来关注进程所有待检测的 Socket，红黑树是个高效的数据结构，增删改一般时间复杂度是 O(logn)，通过对这棵黑红树的管理，不需要像 select/poll 在每次操作时都传入整个 Socket 集合，减少了内核和用户空间大量的数据拷贝和内存分配。
+        </li>
+<li>
+            epoll 使用事件驱动的机制，内核里维护了一个「链表」来记录就绪事件，只将有事件发生的 Socket 集合传递给应用程序，不需要像 select/poll 那样轮询扫描整个集合（包含有和无事件的 Socket ），大大提高了检测的效率。
+        </li>
+</ul>
+<h3><span class="q1">IO特别密集时epoll效率还高吗</span></h3>
+<p>答：可以考虑select/poll，这种情况轮询也很高效，且结构简单。</p>
+<p><strong>补充：</strong></p>
+<p>可以先解释io特别密集时为什么 epoll 效率不高。原因是：</p>
+<ul class="list-paddingleft-1">
+<li>
+<p>连接密集（短连接特别多），使用epoll的话，每一次连接需要发生epoll_wait-&gt;accpet-&gt;epoll_ctl调用，而使用select只需要select-&gt;accpet，减少了一次系统调用。</p>
+</li>
+<li>
+<p>读写密集的话，如果收到数据，我们需要响应数据的话，使用epoll的情况下， read 完后也需要epoll_ctl 加入写事件，相比select多了一次系统调用</p>
+</li>
+</ul>
+<h3><span class="q1">讲一讲ET模式</span></h3>
+<p>答：常规八股回答</p>
+<p><strong>补充：</strong></p>
+<p>epoll 支持两种事件触发模式，分别是边缘触发（edge-triggered，ET）和水平触发（level-triggered，LT）。</p>
+<p>这两个术语还挺抽象的，其实它们的区别还是很好理解的。</p>
+<ul class="list-paddingleft-1">
+<li>
+            使用边缘触发模式时，当被监控的 Socket 描述符上有可读事件发生时，<strong>服务器端只会从 epoll_wait 中苏醒一次</strong>，即使进程没有调用 read 函数从内核读取数据，也依然只苏醒一次，因此我们程序要保证一次性将内核缓冲区的数据读取完；
+        </li>
+<li>
+            使用水平触发模式时，当被监控的 Socket 上有可读事件发生时，<strong>服务器端不断地从 epoll_wait 中苏醒，直到内核缓冲区数据被 read 函数读完才结束</strong>，目的是告诉我们有数据需要读取；
+        </li>
+</ul>
+<p>举个例子，你的快递被放到了一个快递箱里，如果快递箱只会通过短信通知你一次，即使你一直没有去取，它也不会再发送第二条短信提醒你，这个方式就是边缘触发；如果快递箱发现你的快递没有被取出，它就会不停地发短信通知你，直到你取出了快递，它才消停，这个就是水平触发的方式。</p>
+<p>这就是两者的区别，水平触发的意思是只要满足事件的条件，比如内核中有数据需要读，就一直不断地把这个事件传递给用户；而边缘触发的意思是只有第一次满足条件的时候才触发，之后就不会再传递同样的事件了。</p>
+<p>如果使用水平触发模式，当内核通知文件描述符可读写时，接下来还可以继续去检测它的状态，看它是否依然可读或可写。所以在收到通知后，没必要一次执行尽可能多的读写操作。</p>
+<p>如果使用边缘触发模式，I/O 事件发生时只会通知一次，而且我们不知道到底能读写多少数据，所以在收到通知后应尽可能地读写数据，以免错失读写的机会。因此，我们会<strong>循环</strong>从文件描述符读写数据，那么如果文件描述符是阻塞的，没有数据可读写时，进程会阻塞在读写函数那里，程序就没办法继续往下执行。所以，<strong>边缘触发模式一般和非阻塞 I/O 搭配使用</strong>，程序会一直执行 I/O 操作，直到系统调用（如 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>read</code> 和 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>write</code>）返回错误，错误类型为 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>EAGAIN</code> 或 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>EWOULDBLOCK</code>。</p>
+<p>一般来说，边缘触发的效率比水平触发的效率要高，因为边缘触发可以减少 epoll_wait 的系统调用次数，系统调用也是有一定的开销的的，毕竟也存在上下文的切换。</p>
+<h3><span class="q1">异步非阻塞 IO 模型</span></h3>
+<p>先来看看<strong>阻塞 I/O</strong>，当用户程序执行 read ，线程会被阻塞，一直等到内核数据准备好，并把数据从内核缓冲区拷贝到应用程序的缓冲区中，当拷贝过程完成，read 才会返回。注意，<strong>阻塞等待的是「内核数据准备好」和「数据从内核态拷贝到用户态」这两个过程</strong>。过程如下图：</p>
+<figure class="img1"><img _width="677px" data-index="4" data-src="../img/io_031_da06c2db.png" data-w="707" src="../img/io_031_da06c2db.png" style="   border-radius: 4px;  height: auto !important;  width: 656.984px !important;"/></figure>
+<p>知道了阻塞 I/O ，来看看<strong>非阻塞 I/O</strong>，非阻塞的 read 请求在数据未准备好的情况下立即返回，可以继续往下执行，此时应用程序不断轮询内核，直到数据准备好，内核将数据拷贝到应用程序缓冲区，read 调用才可以获取到结果。过程如下图：</p>
+<figure class="img1"><img _width="677px" data-index="5" data-src="../img/io_032_272595c0.png" data-w="677" src="../img/io_032_272595c0.png" style="   border-radius: 4px;  height: auto !important;  width: 656.984px !important;"/></figure>
+<p>注意，<strong>这里最后一次 read 调用，获取数据的过程，是一个同步的过程，是需要等待的过程。这里的同步指的是内核态的数据拷贝到用户程序的缓存区这个过程。</strong></p>
+<p>举个例子，访问管道或 socket 时，如果设置了 O_NONBLOCK 标志，那么就表示使用的是非阻塞 I/O 的方式访问，而不做任何设置的话，默认是阻塞 I/O。</p>
+<p>应用程序每次轮询内核的 I/O 是否准备好，感觉有点傻乎乎，因为轮询的过程中，应用程序啥也做不了，只是在循环。</p>
+<p>为了解决这种傻乎乎轮询方式，于是 <strong>I/O 多路复用</strong>技术就出来了，如 select、poll，它是通过 I/O 事件分发，当内核数据准备好时，再以事件通知应用程序进行操作。</p>
+<p>这个做法大大改善了 CPU 的利用率，因为当调用了 I/O 多路复用接口，如果没有事件发生，那么当前线程就会发生阻塞，这时 CPU 会切换其他线程执行任务，等内核发现有事件到来的时候，会唤醒阻塞在 I/O 多路复用接口的线程，然后用户可以进行后续的事件处理。</p>
+<p>整个流程要比阻塞 IO 要复杂，似乎也更浪费性能。但 <strong>I/O 多路复用接口最大的优势在于，用户可以在一个线程内同时处理多个 socket 的 IO 请求</strong>。</p>
+<p>用户可以注册多个 socket，然后不断地调用 I/O 多路复用接口读取被激活的 socket，即可达到在同一个线程内同时处理多个 IO 请求的目的。而在同步阻塞模型中，必须通过多线程的方式才能达到这个目的。</p>
+<p>下图是使用 select I/O 多路复用过程。注意，read 获取数据的过程（数据从内核态拷贝到用户态的过程），也是一个<strong>同步的过程</strong>，需要等待：</p>
+<figure class="img1"><img _width="677px" data-index="6" data-src="../img/io_033_7e746037.png" data-w="693" src="../img/io_033_7e746037.png" style="   border-radius: 4px;  height: auto !important;  width: 656.984px !important;"/></figure>
+<p>实际上，无论是阻塞 I/O、非阻塞 I/O，还是基于非阻塞 I/O 的多路复用<strong>都是同步调用。因为它们在 read 调用时，内核将数据从内核空间拷贝到应用程序空间，过程都是需要等待的，也就是说这个过程是同步的，如果内核实现的拷贝效率不高，read 调用就会在这个同步过程中等待比较长的时间。</strong></p>
+<p>而真正的<strong>异步 I/O</strong> 是「内核数据准备好」和「数据从内核态拷贝到用户态」这两个过程都不用等待。</p>
+<p>当我们发起 aio_read 之后，就立即返回，内核自动将数据从内核空间拷贝到应用程序空间，这个拷贝过程同样是异步的，内核自动完成的，和前面的同步操作不一样，应用程序并不需要主动发起拷贝动作。过程如下图：</p>
+<figure class="img1"><img _width="677px" data-index="7" data-src="../img/io_034_8a1fe358.png" data-w="678" src="../img/io_034_8a1fe358.png" style="   border-radius: 4px;  height: auto !important;  width: 656.969px !important;"/></figure>
+<p>下面这张图，总结了以上几种 I/O 模型：</p>
+<figure class="img1"><img _width="677px" data-index="8" data-src="../img/io_035_5f8000d0.png" data-w="698" src="../img/io_035_5f8000d0.png" style="   border-radius: 4px;  height: auto !important;  width: 656.969px !important;"/></figure>
+<p>在前面我们知道了，I/O 是分为两个过程的：</p>
+<ol class="list-paddingleft-1">
+<li>
+            数据准备的过程
+        </li>
+<li>
+            数据从内核空间拷贝到用户进程缓冲区的过程
+        </li>
+</ol>
+<p>阻塞 I/O 会阻塞在「过程 1 」和「过程 2」，而非阻塞 I/O 和基于非阻塞 I/O 的多路复用只会阻塞在「过程 2」，所以这三个都可以认为是同步 I/O。异步 I/O 则不同，「过程 1 」和「过程 2 」都不会阻塞。</p>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);">用故事去理解这几种 I/O 模型</p>
+</blockquote>
+<p>举个你去饭堂吃饭的例子，你好比用户程序，饭堂好比操作系统。</p>
+<p>阻塞 I/O 好比，你去饭堂吃饭，但是饭堂的菜还没做好，然后你就一直在那里等啊等，等了好长一段时间终于等到饭堂阿姨把菜端了出来（数据准备的过程），但是你还得继续等阿姨把菜（内核空间）打到你的饭盒里（用户空间），经历完这两个过程，你才可以离开。</p>
+<p>非阻塞 I/O 好比，你去了饭堂，问阿姨菜做好了没有，阿姨告诉你没，你就离开了，过几十分钟，你又来饭堂问阿姨，阿姨说做好了，于是阿姨帮你把菜打到你的饭盒里，这个过程你是得等待的。</p>
+<p>基于非阻塞的 I/O 多路复用好比，你去饭堂吃饭，发现有一排窗口，饭堂阿姨告诉你这些窗口都还没做好菜，等做好了再通知你，于是等啊等（select 调用中），过了一会阿姨通知你菜做好了，但是不知道哪个窗口的菜做好了，你自己看吧。于是你只能一个一个窗口去确认，后面发现 5 号窗口菜做好了，于是你让 5 号窗口的阿姨帮你打菜到饭盒里，这个打菜的过程你是要等待的，虽然时间不长。打完菜后，你自然就可以离开了。</p>
+<p>异步 I/O 好比，你让饭堂阿姨将菜做好并把菜打到饭盒里后，把饭盒送到你面前，整个过程你都不需要任何等待。</p>
+</html>
+            </article>
+        </div>
+        
+        <div class="content" id="article-toc">
+            <nav class="toc">
+                <div class="toc-inner"><ul><ul><li>
+                    <a href="#" aria-label="介绍5种IO模型 ">介绍5种IO模型 </a></li><ul><li>
+                    <a href="#" aria-label="linux有几种IO模型？分别说说？">linux有几种IO模型？分别说说？</a></li><li>
+                    <a href="#" aria-label="你了解过哪些io模型？">你了解过哪些io模型？</a></li><li>
+                    <a href="#" aria-label="LINUX有哪些IO机制？">LINUX有哪些IO机制？</a></li><li>
+                    <a href="#" aria-label="你了解过哪些io模型？">你了解过哪些io模型？</a></li><li>
+                    <a href="#" aria-label="io多路复用的用途是什么？">io多路复用的用途是什么？</a></li><li>
+                    <a href="#" aria-label="I/O多路复用的使用场景有哪些?">I/O多路复用的使用场景有哪些?</a></li><li>
+                    <a href="#" aria-label="有了解过io多路复用吗？">有了解过io多路复用吗？</a></li><li>
+                    <a href="#" aria-label="介绍一下io多路复用">介绍一下io多路复用</a></li><li>
+                    <a href="#" aria-label="有了解过io多路复用吗？">有了解过io多路复用吗？</a></li><li>
+                    <a href="#" aria-label="讲一下io多路复用">讲一下io多路复用</a></li><li>
+                    <a href="#" aria-label="谈一下 I/O 多路复用">谈一下 I/O 多路复用</a></li><li>
+                    <a href="#" aria-label="讲讲IO多路复用的实现原理，select和epoll的区别是什么？">讲讲IO多路复用的实现原理，select和epoll的区别是什么？</a></li><li>
+                    <a href="#" aria-label="【IO】IO多路复用里select、poll、epoll的适用场景？根据他们的优缺点来说。">【IO】IO多路复用里select、poll、epoll的适用场景？根据他们的优缺点来说。</a></li><li>
+                    <a href="#" aria-label="select,poll,epoll区别？">select,poll,epoll区别？</a></li><li>
+                    <a href="#" aria-label="select poll epoll，底层实现有什么区别？">select poll epoll，底层实现有什么区别？</a></li><li>
+                    <a href="#" aria-label="select 和 epoll 的区别，epoll 的底层数据结构">select 和 epoll 的区别，epoll 的底层数据结构</a></li><li>
+                    <a href="#" aria-label="epoll 和 select 的区别？">epoll 和 select 的区别？</a></li><li>
+                    <a href="#" aria-label="select、poll、epoll区别">select、poll、epoll区别</a></li><li>
+                    <a href="#" aria-label="说一下select，poll，epoll的区别？">说一下select，poll，epoll的区别？</a></li><li>
+                    <a href="#" aria-label="select,poll,epoll区别？">select,poll,epoll区别？</a></li><li>
+                    <a href="#" aria-label="零拷贝是什么意思？哪里用到了？">零拷贝是什么意思？哪里用到了？</a></li><li>
+                    <a href="#" aria-label="说一下select，poll，epoll的区别？">说一下select，poll，epoll的区别？</a></li><li>
+                    <a href="#" aria-label="select，poll，epoll有什么区别？">select，poll，epoll有什么区别？</a></li><li>
+                    <a href="#" aria-label="IO多路复用，select、poll、epoll 的区别？">IO多路复用，select、poll、epoll 的区别？</a></li><li>
+                    <a href="#" aria-label="二、select、poll、epoll的选择">二、select、poll、epoll的选择</a></li><li>
+                    <a href="#" aria-label="epoll 具体工作流程">epoll 具体工作流程</a></li><li>
+                    <a href="#" aria-label="epoll 的工作原理？">epoll 的工作原理？</a></li><li>
+                    <a href="#" aria-label="epoll、select、poll的区别？">epoll、select、poll的区别？</a></li><li>
+                    <a href="#" aria-label="select线性表要从用户态复制到内核态，具体怎么复制的？">select线性表要从用户态复制到内核态，具体怎么复制的？</a></li><li>
+                    <a href="#" aria-label="eopll水平测发和边缘测发的差距">eopll水平测发和边缘测发的差距</a></li><li>
+                    <a href="#" aria-label="说一下代码里使用异步的思路">说一下代码里使用异步的思路</a></li><li>
+                    <a href="#" aria-label="顺势问select/epoll的区别">顺势问select/epoll的区别</a></li><li>
+                    <a href="#" aria-label="IO特别密集时epoll效率还高吗">IO特别密集时epoll效率还高吗</a></li><li>
+                    <a href="#" aria-label="讲一讲ET模式">讲一讲ET模式</a></li><li>
+                    <a href="#" aria-label="异步非阻塞 IO 模型">异步非阻塞 IO 模型</a></ul></ul></ul>
+                </div>
+            </nav>
+        </div>
+    </main>
+    <div class="splitter-indicator" id="splitterIndicator"></div>
+    <div class="drop-indicator" id="dropIndicator"></div>
+    <footer class="footer">
+        <div class="footer-left">
+            <a class="item" href="/x/about/" target="_blank" rel="noopener noreferrer me" title="Info"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></a>
+            <a class="item" href="https://music.163.com/#/user/home?id=270121274" target="_blank" rel="noopener noreferrer me" title="NeteaseCloudMusic"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.98,23.65c-2.69,0-5.26-1.05-7.24-2.95C1.59,18.63,.35,15.72,.35,12.73,.35,8.21,3.21,4.11,7.46,2.52c.15-.05,.3-.08,.45-.08,.42,0,.78,.21,.93,.55,.12,.26,.13,.51,.03,.75-.12,.28-.38,.52-.7,.64-3.48,1.3-5.82,4.66-5.82,8.36,0,2.46,1.02,4.84,2.79,6.54,1.6,1.54,3.68,2.39,5.85,2.39,.1,0,.2,0,.29,0,3.49-.12,6.22-1.91,7.47-4.89,.08-.2,2.01-4.93-2.59-7.9-.41-.27-.89-.46-1.42-.58l-.6-.14,.18,.58c.21,.68,.78,2.52,.84,2.93,.07,.46,.07,.51,.1,.92v.18c0,2.3-1.89,4.19-4.22,4.19-2.2,0-3.97-1.73-4.23-4.1-.25-2.35,.74-4.4,2.73-5.61,.53-.32,1.11-.57,1.73-.75l.33-.1-.48-1.74c-.16-.54-.53-2.38,1.5-3.72,.57-.38,1.22-.57,1.91-.57,1.38,0,2.62,.74,3.12,1.23,.22,.22,.36,.56,.36,.9,0,.26-.08,.48-.23,.63-.15,.15-.37,.23-.63,.23-.33,0-.67-.13-.89-.35-.06-.05-.85-.66-1.7-.66-.31,0-.59,.08-.82,.24-.04,.03-.08,.05-.12,.08-.23,.19-.71,.73-.47,1.82l.09,.34,.02,.07h0s.35,1.29,.35,1.29h.25c1.24,.08,2.39,.42,3.32,1.01l.05,.03c4.82,3.12,4.29,8.12,3.34,10.33-1.54,3.67-4.99,5.95-9.23,6.1-.12,0-.25,0-.37,0Zm.82-15.26c-.43,.13-.84,.31-1.2,.53-.94,.57-2.01,1.68-1.79,3.71,.12,1.12,.87,2.33,2.24,2.33,1.23,0,2.24-1,2.24-2.22h0s.03-.21-.05-.71c-.07-.46-.91-3.1-1-3.4l-.1-.33-.33,.1Z" /></svg></a>
+            <a class="item" href="https://neodb.social/users/Lordash/" target="_blank" rel="noopener noreferrer me" title="NeoDB"><svg version="1.1" xmlns="https://www.w3.org/2000/svg" width="90" height="108" viewBox="0 0 90 108" fill="currentColor"><path d="M0 0 C4.26615504 2.04066983 6.73398524 4.58553002 10 8 C10.474375 7.195625 10.94875 6.39125 11.4375 5.5625 C13 3 13 3 14 2 C20.16698656 1.54318618 20.16698656 1.54318618 22.9375 3.0625 C24.6815774 6.24287644 24.55944728 8.4568339 24 12 C21 14.4375 21 14.4375 18 16 C20.97 18.97 23.94 21.94 27 25 C25.193388 28.61322401 24.33581029 29.83748791 21.375 32.25 C20.74335937 32.77078125 20.11171875 33.2915625 19.4609375 33.828125 C18.97882813 34.21484375 18.49671875 34.6015625 18 35 C17.566875 34.0409375 17.566875 34.0409375 17.125 33.0625 C16.17176549 30.84793921 16.17176549 30.84793921 14 30 C10.5 29.75 10.5 29.75 7 30 C4.59331253 31.99114614 4.59331253 31.99114614 4.5625 35.875 C4.62092586 39.4454694 4.80377743 39.80377743 7.5 42.5 C8.325 42.995 9.15 43.49 10 44 C7.36 46.64 4.72 49.28 2 52 C-1.49353838 50.25323081 -3.13945763 49.08594785 -5.75 46.375 C-6.36359375 45.74335937 -6.9771875 45.11171875 -7.609375 44.4609375 C-8.06828125 43.97882812 -8.5271875 43.49671875 -9 43 C-9.515625 43.99 -10.03125 44.98 -10.5625 46 C-13 49 -13 49 -16.625 49.5 C-20 49 -20 49 -22 47 C-22.56321839 40.8045977 -22.56321839 40.8045977 -20.6875 38.125 C-19 37 -19 37 -16 36 C-18.97 33.03 -21.94 30.06 -25 27 C-23.03838569 23.07677137 -20.84267796 20.58307142 -17.7734375 17.578125 C-17.26575836 17.07327576 -16.75807922 16.56842651 -16.23501587 16.04827881 C-14.61966158 14.44407904 -12.99747791 12.84699144 -11.375 11.25 C-10.27558302 10.16061893 -9.17661941 9.0707801 -8.078125 7.98046875 C-5.3906398 5.31498115 -2.69700979 2.65584857 0 0 Z"transform="translate(53,1)" /><path d="M0 0 C2.31 1.98 4.62 3.96 7 6 C6.34 6.86625 5.68 7.7325 5 8.625 C2.82375259 12.29741751 2.2907405 13.83310042 3 18 C4.34115399 21.00979883 4.34115399 21.00979883 7 23 C10.97807953 23.86409105 14.00632895 23.59620263 17.5 21.5 C17.995 21.005 18.49 20.51 19 20 C21.84383123 21.2748209 24.13754018 22.45137078 26 25 C25.57914771 28.29893891 24.42094066 29.966522 22.0625 32.25 C21.53785156 32.77078125 21.01320312 33.2915625 20.47265625 33.828125 C19 35 19 35 17 35 C17 35.66 17 36.32 17 37 C17.763125 36.938125 18.52625 36.87625 19.3125 36.8125 C22 37 22 37 23.875 38.0625 C25.69848531 41.20294693 24.8658284 43.5985313 24 47 C21 49 21 49 17.9375 48.75 C15 48 15 48 13 46 C12.505 44.02 12.505 44.02 12 42 C9.03 44.97 6.06 47.94 3 51 C-0.92322863 49.03838569 -3.41692858 46.84267796 -6.421875 43.7734375 C-6.92672424 43.26575836 -7.43157349 42.75807922 -7.95172119 42.23501587 C-9.55592096 40.61966158 -11.15300856 38.99747791 -12.75 37.375 C-13.83938107 36.27558302 -14.9292199 35.17661941 -16.01953125 34.078125 C-18.68501885 31.3906398 -21.34415143 28.69700979 -24 26 C-22.4152642 22.13671373 -19.94043113 19.71123077 -16.9921875 16.796875 C-16.50670441 16.3142218 -16.02122131 15.8315686 -15.52102661 15.33428955 C-13.97700134 13.80141438 -12.42615176 12.27565996 -10.875 10.75 C-9.82375991 9.70879639 -8.77297343 8.66713459 -7.72265625 7.625 C-5.15366996 5.07800536 -2.57851839 2.53734823 0 0 Z"transform="translate(25,29)" /><path d="M0 0 C3.81684226 1.55500981 6.19195732 4.03595495 9 7 C9.45375 6.195625 9.9075 5.39125 10.375 4.5625 C12 2 12 2 14 1 C16.9375 0.6875 16.9375 0.6875 20 1 C21.9375 2.625 21.9375 2.625 23 5 C23 8 23 8 22 11 C19.4375 13.375 19.4375 13.375 17 15 C19.97 17.97 22.94 20.94 26 24 C20.375 30.875 20.375 30.875 17 32 C16.649375 31.175 16.29875 30.35 15.9375 29.5 C14.16088977 26.60879362 14.16088977 26.60879362 10.5 26.5 C7.14672303 26.77692733 7.14672303 26.77692733 5 28.0625 C3.32384137 31.31005735 4.03723329 33.57014358 5 37 C7.4158995 39.45198044 7.4158995 39.45198044 10 41 C8.76600937 42.36877116 7.51219377 43.71969166 6.25 45.0625 C5.55390625 45.81660156 4.8578125 46.57070312 4.140625 47.34765625 C2 49 2 49 0.09619141 48.81054688 C-2.43507746 47.831766 -3.76735676 46.6052517 -5.6796875 44.68359375 C-6.36160156 44.00103516 -7.04351562 43.31847656 -7.74609375 42.61523438 C-8.79990234 41.53725586 -8.79990234 41.53725586 -9.875 40.4375 C-10.91720703 39.40012695 -10.91720703 39.40012695 -11.98046875 38.34179688 C-16.44375955 33.83227613 -20.30080588 29.1545197 -24 24 C-21.69 22.02 -19.38 20.04 -17 18 C-15.948125 18.99 -15.948125 18.99 -14.875 20 C-12.15610238 22.18293783 -12.15610238 22.18293783 -9 22.5625 C-4.86392446 21.78698584 -3.45000447 20.38677089 -1 17 C-0.44852315 13.07072743 -0.40688385 10.96381375 -2.5 7.5625 C-2.995 7.046875 -3.49 6.53125 -4 6 C-2.84826645 3.53199953 -1.95216435 1.95216435 0 0 Z"transform="translate(53,58)" /></svg></a>
+            <a class="item" href="https://github.com/GH1656409967" target="_blank" rel="noopener noreferrer me" title="GitHub"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a class="item" href="/" target="_blank" rel="noopener noreferrer me" title="BuyMeACoffee"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 884 1279" fill="none" stroke="currentColor" stroke-width="2"><path d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518Z"fill="currentColor"></path><path d="M803.896 388.891L802.916 389.166L803.896 388.891Z" fill="currentColor"></path><path d="M791.484 297.377C791.359 297.361 791.237 297.332 791.118 297.29C791.111 297.371 791.111 297.453 791.118 297.534C791.252 297.516 791.379 297.462 791.484 297.377Z"fill="currentColor"></path><path d="M791.113 297.529H791.244V297.447L791.113 297.529Z" fill="currentColor"></path><path d="M803.111 388.726L804.591 387.883L805.142 387.573L805.641 387.04C804.702 387.444 803.846 388.016 803.111 388.726Z"fill="currentColor"></path><path d="M793.669 299.515L792.223 298.138L791.243 297.605C791.77 298.535 792.641 299.221 793.669 299.515Z"fill="currentColor"></path><path d="M430.019 1186.18C428.864 1186.68 427.852 1187.46 427.076 1188.45L427.988 1187.87C428.608 1187.3 429.485 1186.63 430.019 1186.18Z"fill="currentColor"></path><path d="M641.187 1144.63C641.187 1143.33 640.551 1143.57 640.705 1148.21C640.705 1147.84 640.86 1147.46 640.929 1147.1C641.015 1146.27 641.084 1145.46 641.187 1144.63Z"fill="currentColor"></path><path d="M619.284 1186.18C618.129 1186.68 617.118 1187.46 616.342 1188.45L617.254 1187.87C617.873 1187.3 618.751 1186.63 619.284 1186.18Z"fill="currentColor"></path><path d="M281.304 1196.06C280.427 1195.3 279.354 1194.8 278.207 1194.61C279.136 1195.06 280.065 1195.51 280.684 1195.85L281.304 1196.06Z"fill="currentColor"></path><path d="M247.841 1164.01C247.704 1162.66 247.288 1161.35 246.619 1160.16C247.093 1161.39 247.489 1162.66 247.806 1163.94L247.841 1164.01Z"fill="currentColor"></path><path d="M472.623 590.836C426.682 610.503 374.546 632.802 306.976 632.802C278.71 632.746 250.58 628.868 223.353 621.274L270.086 1101.08C271.74 1121.13 280.876 1139.83 295.679 1153.46C310.482 1167.09 329.87 1174.65 349.992 1174.65C349.992 1174.65 416.254 1178.09 438.365 1178.09C462.161 1178.09 533.516 1174.65 533.516 1174.65C553.636 1174.65 573.019 1167.08 587.819 1153.45C602.619 1139.82 611.752 1121.13 613.406 1101.08L663.459 570.876C641.091 563.237 618.516 558.161 593.068 558.161C549.054 558.144 513.591 573.303 472.623 590.836Z"fill="currentColor"></path><path d="M78.6885 386.132L79.4799 386.872L79.9962 387.182C79.5987 386.787 79.1603 386.435 78.6885 386.132Z"fill="currentColor"></path><path d="M879.567 341.849L872.53 306.352C866.215 274.503 851.882 244.409 819.19 232.898C808.711 229.215 796.821 227.633 788.786 220.01C780.751 212.388 778.376 200.55 776.518 189.572C773.076 169.423 769.842 149.257 766.314 129.143C763.269 111.85 760.86 92.4243 752.928 76.56C742.604 55.2584 721.182 42.8009 699.88 34.559C688.965 30.4844 677.826 27.0375 666.517 24.2352C613.297 10.1947 557.342 5.03277 502.591 2.09047C436.875 -1.53577 370.983 -0.443234 305.422 5.35968C256.625 9.79894 205.229 15.1674 158.858 32.0469C141.91 38.224 124.445 45.6399 111.558 58.7341C95.7448 74.8221 90.5829 99.7026 102.128 119.765C110.336 134.012 124.239 144.078 138.985 150.737C158.192 159.317 178.251 165.846 198.829 170.215C256.126 182.879 315.471 187.851 374.007 189.968C438.887 192.586 503.87 190.464 568.44 183.618C584.408 181.863 600.347 179.758 616.257 177.304C634.995 174.43 647.022 149.928 641.499 132.859C634.891 112.453 617.134 104.538 597.055 107.618C594.095 108.082 591.153 108.512 588.193 108.942L586.06 109.252C579.257 110.113 572.455 110.915 565.653 111.661C551.601 113.175 537.515 114.414 523.394 115.378C491.768 117.58 460.057 118.595 428.363 118.647C397.219 118.647 366.058 117.769 334.983 115.722C320.805 114.793 306.661 113.611 292.552 112.177C286.134 111.506 279.733 110.801 273.333 110.009L267.241 109.235L265.917 109.046L259.602 108.134C246.697 106.189 233.792 103.953 221.025 101.251C219.737 100.965 218.584 100.249 217.758 99.2193C216.932 98.1901 216.482 96.9099 216.482 95.5903C216.482 94.2706 216.932 92.9904 217.758 91.9612C218.584 90.9319 219.737 90.2152 221.025 89.9293H221.266C232.33 87.5721 243.479 85.5589 254.663 83.8038C258.392 83.2188 262.131 82.6453 265.882 82.0832H265.985C272.988 81.6186 280.026 80.3625 286.994 79.5366C347.624 73.2301 408.614 71.0801 469.538 73.1014C499.115 73.9618 528.676 75.6996 558.116 78.6935C564.448 79.3474 570.746 80.0357 577.043 80.8099C579.452 81.1025 581.878 81.4465 584.305 81.7391L589.191 82.4445C603.438 84.5667 617.61 87.1419 631.708 90.1703C652.597 94.7128 679.422 96.1925 688.713 119.077C691.673 126.338 693.015 134.408 694.649 142.03L696.732 151.752C696.786 151.926 696.826 152.105 696.852 152.285C701.773 175.227 706.7 198.169 711.632 221.111C711.994 222.806 712.002 224.557 711.657 226.255C711.312 227.954 710.621 229.562 709.626 230.982C708.632 232.401 707.355 233.6 705.877 234.504C704.398 235.408 702.75 235.997 701.033 236.236H700.895L697.884 236.649L694.908 237.044C685.478 238.272 676.038 239.419 666.586 240.486C647.968 242.608 629.322 244.443 610.648 245.992C573.539 249.077 536.356 251.102 499.098 252.066C480.114 252.57 461.135 252.806 442.162 252.771C366.643 252.712 291.189 248.322 216.173 239.625C208.051 238.662 199.93 237.629 191.808 236.58C198.106 237.389 187.231 235.96 185.029 235.651C179.867 234.928 174.705 234.177 169.543 233.397C152.216 230.798 134.993 227.598 117.7 224.793C96.7944 221.352 76.8005 223.073 57.8906 233.397C42.3685 241.891 29.8055 254.916 21.8776 270.735C13.7217 287.597 11.2956 305.956 7.64786 324.075C4.00009 342.193 -1.67805 361.688 0.472751 380.288C5.10128 420.431 33.165 453.054 73.5313 460.35C111.506 467.232 149.687 472.807 187.971 477.556C338.361 495.975 490.294 498.178 641.155 484.129C653.44 482.982 665.708 481.732 677.959 480.378C681.786 479.958 685.658 480.398 689.292 481.668C692.926 482.938 696.23 485.005 698.962 487.717C701.694 490.429 703.784 493.718 705.08 497.342C706.377 500.967 706.846 504.836 706.453 508.665L702.633 545.797C694.936 620.828 687.239 695.854 679.542 770.874C671.513 849.657 663.431 928.434 655.298 1007.2C653.004 1029.39 650.71 1051.57 648.416 1073.74C646.213 1095.58 645.904 1118.1 641.757 1139.68C635.218 1173.61 612.248 1194.45 578.73 1202.07C548.022 1209.06 516.652 1212.73 485.161 1213.01C450.249 1213.2 415.355 1211.65 380.443 1211.84C343.173 1212.05 297.525 1208.61 268.756 1180.87C243.479 1156.51 239.986 1118.36 236.545 1085.37C231.957 1041.7 227.409 998.039 222.9 954.381L197.607 711.615L181.244 554.538C180.968 551.94 180.693 549.376 180.435 546.76C178.473 528.023 165.207 509.681 144.301 510.627C126.407 511.418 106.069 526.629 108.168 546.76L120.298 663.214L145.385 904.104C152.532 972.528 159.661 1040.96 166.773 1109.41C168.15 1122.52 169.44 1135.67 170.885 1148.78C178.749 1220.43 233.465 1259.04 301.224 1269.91C340.799 1276.28 381.337 1277.59 421.497 1278.24C472.979 1279.07 524.977 1281.05 575.615 1271.72C650.653 1257.95 706.952 1207.85 714.987 1130.13C717.282 1107.69 719.576 1085.25 721.87 1062.8C729.498 988.559 737.115 914.313 744.72 840.061L769.601 597.451L781.009 486.263C781.577 480.749 783.905 475.565 787.649 471.478C791.392 467.391 796.352 464.617 801.794 463.567C823.25 459.386 843.761 452.245 859.023 435.916C883.318 409.918 888.153 376.021 879.567 341.849ZM72.4301 365.835C72.757 365.68 72.1548 368.484 71.8967 369.792C71.8451 367.813 71.9483 366.058 72.4301 365.835ZM74.5121 381.94C74.6842 381.819 75.2003 382.508 75.7337 383.334C74.925 382.576 74.4089 382.009 74.4949 381.94H74.5121ZM76.5597 384.641C77.2996 385.897 77.6953 386.689 76.5597 384.641V384.641ZM80.672 387.979H80.7752C80.7752 388.1 80.9645 388.22 81.0333 388.341C80.9192 388.208 80.7925 388.087 80.6548 387.979H80.672ZM800.796 382.989C793.088 390.319 781.473 393.726 769.996 395.43C641.292 414.529 510.713 424.199 380.597 419.932C287.476 416.749 195.336 406.407 103.144 393.382C94.1102 392.109 84.3197 390.457 78.1082 383.798C66.4078 371.237 72.1548 345.944 75.2003 330.768C77.9878 316.865 83.3218 298.334 99.8572 296.355C125.667 293.327 155.64 304.218 181.175 308.09C211.917 312.781 242.774 316.538 273.745 319.36C405.925 331.405 540.325 329.529 671.92 311.91C695.906 308.686 719.805 304.941 743.619 300.674C764.835 296.871 788.356 289.731 801.175 311.703C809.967 326.673 811.137 346.701 809.778 363.615C809.359 370.984 806.139 377.915 800.779 382.989H800.796Z"fill="currentColor"></path></svg></a>
+        </div>
+
+        <div class="footer-middle">
+        </div>
+
+        <div class="footer-right">
+            <span class="item">28186(words)</span>
+            <a class="item" accesskey="g" href="#top" id="top-link" title="Go to Top (Alt + G)">⬆</a>
+        </div>
+    </footer>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                packages: { "[+]": ["ams"] }, 
+                tags: "ams", 
+            },
+            options: {
+                enableSpeech: false,        
+                enableExplorer: false,      
+                enableMenu: false,          
+                ignoreHtmlClass: "tex2jax_ignore",
+                processHtmlClass: "tex2jax_process"
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/mathjax/4.0.0/tex-chtml.min.js"></script>
+    <script type="text/javascript" defer async src="https://s4.zstatic.net/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+    <script type="text/javascript" src="/js/particle-clock.js"></script>
+    <script type="text/javascript" src="/js/index.min.62af824fc9f8f20406aebaf20c60d6fbd42ffe3d23aae53d90dddd32415f13d9.js" integrity="sha256-Yq&#43;CT8n48gQGrrryDGDW&#43;9Qv/j0jquU9kN3dMkFfE9k="></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flutter on 似水</title>
+    <link>http://localhost:1313/tags/flutter/</link>
+    <description>Recent content in Flutter on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>flutter</title>
+      <link>http://localhost:1313/z/lang/flutter/flutter/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/lang/flutter/flutter/</guid>
+      <description>&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.flutter.cn/get-started/install/windows/desktop#configure-a-text-editor-or-ide&#34;&gt;https://docs.flutter.cn/get-started/install/windows/desktop#configure-a-text-editor-or-ide&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;在vscode中切换调试设备&#34;&gt;在vscode中切换调试设备&lt;/h1&gt;&#xA;&lt;p&gt;右下角可以点击切换&lt;/p&gt;&#xA;&lt;p&gt;windows调试，安装visual studio，安装c++桌面开发&lt;/p&gt;&#xA;&lt;p&gt;windows kits 污染路径&#xA;&lt;a href=&#34;https://setsuikihyoryu.github.io/zh/programming/coding-memo/rust-change-windows-kits-root.html&#34;&gt;https://setsuikihyoryu.github.io/zh/programming/coding-memo/rust-change-windows-kits-root.html&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;android调试，安装android studio，打开android sdk 管理器安装如下组件&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

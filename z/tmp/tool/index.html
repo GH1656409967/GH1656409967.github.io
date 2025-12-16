@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" data-theme="light">
+<head>
+    <script>
+        (function () {
+            const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = localStorage.getItem('n8rain-theme') || (prefers ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | 似水</title>
+    <link rel="stylesheet" href="/css/index.min.dec23d3721889f6543816a1c07a479a53dbcf86a9b0d6a9f6e8a31b397487b97.css" integrity="sha256-3sI9NyGIn2VDgWocB6R5pT28&#43;GqbDWqfbooxs5dIe5c=" />
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" id="chroma-light" href="/css/chroma-light.css">
+    <link rel="stylesheet" id="chroma-dark"  href="/css/chroma-dark.css">
+    <script>
+        (function () {
+            const isDark = document.documentElement.dataset.theme === 'dark';
+            document.getElementById('chroma-light').disabled = isDark;
+            document.getElementById('chroma-dark').disabled = !isDark;
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a class="item" href="/" target="_blank">「似水」</a>
+        </div>
+
+        <div class="header-middle">
+            
+        </div>
+
+        <div class="header-right">
+            <a id="reset-layout" class="item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 80V240h96V80H48zM0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V240c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80zM304 272V432h96V272H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V272zM144 368H48v64h96V368zM48 320h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48zM304 80v64h96V80H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V80z"></path></svg></a>
+            <a id="toggle-theme" class="item">◐</a>
+        </div>
+    </header>
+    <main class="container" id="container">
+        <div class="content" id="nav">
+            <nav class="menu">
+                <ul>
+                    <li><i class='fa fa-tags'>&nbsp;</i><a>网站导航</a></li>
+                    <li><i class='fa fa-thumbs-up'>&nbsp;</i><a href="/x/share/">好物分享</a></li>
+                    <li><i class='fa fa-wrench'>&nbsp;</i><a href="/x/tools/">游戏工具</a></li>
+                    <li><i class='fa fa-film'>&nbsp;</i><a href="/x/movies/">影视鉴赏</a></li>
+                    <li><i class='fa fa-book'>&nbsp;</i><a href="/x/books/">书籍阅读</a></li>
+                    <li><i class='fa fa-camera'>&nbsp;</i><a href="/x/gallery/">生活留影</a></li>
+                    <li><i class='fa fa-link'>&nbsp;</i><a href="/x/links/">友情链接</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="overview" id="overview" style="display: none;">
+            <div class="overview-container">
+                <div class="author-block">
+                    <img class="author-avatar" src="/img/avatar.png" alt="夜雨微澜" />
+                    
+                    <a class="author-name" href="/x/personal">夜雨微澜</a><p class="author-slogan">学而不思则罔，思而不学则殆</p>
+                </div>
+
+                <div class="site-state">
+                    <div class="item">
+                        <a href="/archives/">
+                            <span class="count">660</span>
+                            <span class="name">日志</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/series/">
+                            <span class="count">8</span>
+                            <span class="name">系列</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/categories/">
+                            <span class="count">93</span>
+                            <span class="name">分类</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/tags/">
+                            <span class="count">171</span>
+                            <span class="name">标签</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="diy-block">
+                    <canvas id="canvasDiyBlock" style="width:180px;">您的浏览器不支持 Canvas, 请更换浏览器!</canvas>
+                </div>
+
+                <div class="diy-block">
+                    <div id="typed-strings" style="display: none;">
+                        <p>We burn faster than light</p>
+                        <p>Shine across in the night sky</p>
+                    </div>
+                    <span id="typed" style="white-space: pre;line-height: 14px;font-size: 12px;"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="article-content">
+            <article class="main" id="top">
+                <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time>
+                <html>
+<head>
+<meta charset="utf-8"/>
+<link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<style>
+            body {
+                font-family: 'Ubuntu Mono', 'LXGW WenKai Screen', sans-serif;
+            }
+
+            strong {
+                color: rgb(48, 79, 254);
+            }
+
+            .code1 {
+                background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(27, 31, 35, 0.05);
+                padding: 2px 4px;
+                border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                font-family: Consolas;
+                word-break: break-all;
+                color: rgb(100, 149, 237);
+            }
+
+            .code2 {
+                background-color: rgba(27, 31, 35, 0.05);
+                margin: 0px 2px;
+                padding: 2px 4px;
+                border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                overflow-wrap: break-word;
+                font-family: Consolas;
+                word-break: break-all;
+                color: rgb(100, 149, 237);
+                background-position: left top;
+            }
+
+            .pre1 {
+                border-radius: 5px;
+                box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;
+            }
+
+            .q1 {
+                color: rgb(65, 105, 225);
+            }
+
+            .img1 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bq1 {
+                border-top: 3px none rgba(0, 0, 0, 0.4);
+                border-bottom: 3px none rgba(0, 0, 0, 0.4);
+                border-right: 3px none rgba(0, 0, 0, 0.4);
+                background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(227, 242, 253);
+                overflow: auto;
+                padding: 15px 20px;
+                border-left-color: rgb(100, 149, 237);
+            }
+
+        </style>
+</head>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>Git 使用熟练吗？</span></span></h3>
+<p style="text-align: left;"><span>熟悉，项目的代码是用 git 工具来管理的/</span></p>
+<p style="text-align: left;"><span>git 的工作原理如下图：</span></p>
+<figure class="img1"><span><img _width="677px" data-index="7" data-src="../img/tool_001_e4133031.png" data-w="1031" src="../img/tool_001_e4133031.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<p style="text-align: left;"><span>几个专用名词的译名如下：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>Workspace：工作区</span>
+</li>
+<li>
+<span>Index / Stage：暂存区</span>
+</li>
+<li>
+<span>Repository：仓库区（或本地仓库）</span>
+</li>
+<li>
+<span>Remote：远程仓库</span>
+</li>
+</ul>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>工作流程</span></p>
+</blockquote>
+<p style="text-align: left;"><span>最基础的工作流程，首先执行 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git pull</span></code><span> 获取远程仓库的最新代码，进行代码的编写。</span></p>
+<p style="text-align: left;"><span>完成相应功能的开发后执行 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git add .</span></code><span> 将工作区代码的修改添加到暂存区，再执行 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git commit -m 完成xx功能</span></code><span> 将暂存区代码提交到本地仓库并添加相应的注释，最后执行 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git push</span></code><span> 命令推送到远程仓库。</span></p>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>撤回 git commit 操作</span></p>
+</blockquote>
+<p style="text-align: left;"><span>当执行了 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git commit -m 注释内容</span></code><span> 命令想要撤回，可以使用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git reset --soft HEAD^</span></code><span> 把本地仓库回退到当前版本的上一个版本，也就是刚刚还没提交的时候，代码的改动会保留在暂存区和工作区。</span></p>
+<p style="text-align: left;"><span>也可以使用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git reset --mixed HEAD^</span></code><span>，这样不止回退了刚刚的 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git commit</span></code><span> 操作，还回退了 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git add</span></code><span> 操作，代码的改动只会保留在工作区。因为 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>--mixed</span></code><span> 参数是 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git reset</span></code><span> 命令的默认选项，也就是可以写为 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git reset HEAD^</span></code><span>。</span></p>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>撤回 git push 操作</span></p>
+</blockquote>
+<p style="text-align: left;"><span>当执行了 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git push</span></code><span> 命令想要撤回，可以使用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git reset HEAD^</span></code><span> 将本地仓库回退到当前版本的上一个版本，代码的修改会保留在工作区，然后使用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git push origin xxx --force</span></code><span> 将本地仓库当前版本的代码强制推送到远程仓库。</span></p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>Docker 有了解吗？</span></span></h3>
+<p style="text-align: left;"><span>了解过，大家一起开发一个软件时，每个人的电脑就像不同的房子，里面的家具（软件、工具等环境配置）都不太一样。用 Docker 就可以打造一个标准的 “样板房”，不管谁拿到这个 “样板房”（Docker 镜像），里面的东西都是一样的。这样开发时就不会因为环境不同，出现代码在这个人电脑上能跑，在另一个人电脑上就出错的情况。</span></p>
+<p style="text-align: left;"><span>docker 底层的隔离实现原理如下：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>基于 Namespace 的视图隔离：</span></strong><span>Docker利用Linux命名空间（Namespace）来实现不同容器之间的隔离。每个容器都运行在自己的一组命名空间中，包括PID（进程）、网络、挂载点、IPC（进程间通信）等。这样，容器中的进程只能看到自己所在命名空间内的进程，而不会影响其他容器中的进程。</span>
+</li>
+<li>
+<strong><span>基于 cgroups 的资源隔离：</span></strong><span>cgroups 是Linux内核的一个功能，允许在进程组之间分配、限制和优先处理系统资源，如CPU、内存和磁盘I/O。它们提供了一种机制，用于管理和隔离进程集合的资源使用，有助于资源限制、工作负载隔离以及在不同进程组之间进行资源优先处理。</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>Jenkins 有了解吗？讲讲什么是持续集成和持续部署？</span></span></h3>
+<p style="text-align: left;"><span>Jenkins 是</span><strong><span>开源的自动化服务器</span></strong><span>，核心功能是实现 CI/CD 流程的调度和管理。例子，一个软件开发团队使用 Jenkins 作为 CI/CD 工具，开发人员每天多次将代码提交到 Git 仓库，Jenkins 会自动触发构建和测试任务。如果代码通过了所有测试，Jenkins 会将代码自动部署到生产环境，让用户能够尽快使用到新的功能。</span></p>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>持续集成（Continuous Integration，CI）</span></p>
+</blockquote>
+<p style="text-align: left;"><span>持续集成是什么？开发人员频繁地将代码变更合并到主分支（如每天多次），每次合并后自动触发构建、测试和代码检查，确保新代码不会破坏已有功能。核心目标：快速发现并修复集成问题，避免“集成地狱”。</span></p>
+<p style="text-align: left;"><span>关键流程：</span></p>
+<ol class="list-paddingleft-1" style="list-style-type: decimal;">
+<li>
+<span>代码提交 → 触发自动化流程。</span>
+</li>
+<li>
+<span>代码编译 → 检查语法错误。</span>
+</li>
+<li>
+<span>运行单元测试 → 确保新代码不影响现有功能。</span>
+</li>
+<li>
+<span>代码质量检查 → 如 SonarQube 分析代码规范。</span>
+</li>
+<li>
+<span>生成报告 → 失败时通知团队，成功则生成可部署的产物（如 Jar 包）。</span>
+</li>
+</ol>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>持续部署（Continuous Deployment，CD）</span></p>
+</blockquote>
+<p style="text-align: left;"><span>持续部署是什么？自动化将代码发布到生产环境，只要通过 CI 流程的代码变更，无需人工干预即可直接上线。核心目标：快速、安全地交付用户价值。</span></p>
+<p style="text-align: left;"><span>关键流程：</span></p>
+<ol class="list-paddingleft-1" style="list-style-type: decimal;">
+<li>
+<span>从 CI 产物出发 → 如通过测试的 Jar 包。</span>
+</li>
+<li>
+<span>环境部署 → 自动部署到测试、预发布、生产环境。</span>
+</li>
+<li>
+<span>自动化验收测试 → 验证功能是否符合需求。</span>
+</li>
+<li>
+<span>监控与回滚 → 发现生产问题自动回退版本。</span>
+</li>
+</ol>
+<p style="text-align: left;"><span>假设团队开发一个 Java Web 项目：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>持续集成（</span></strong><span>CI</span><strong><span>）</span></strong><span>：开发者提交代码到 Git → Jenkins 自动拉取代码 → 运行 Maven 构建 → 执行单元测试 → 生成测试报告。如果测试失败，邮件通知负责人；成功则生成 War 包。</span>
+</li>
+<li>
+<strong><span>持续部署（</span></strong><span>CD</span><strong><span>）</span></strong><span>：先将 War 包自动部署到 Tomcat 服务器，然后使用 Docker 或 Kubernetes 实现滚动更新，零停机部署。</span>
+</li>
+</ul>
+<h3><span class="q1">RabbitMQ的特性你知道哪些？</span></h3>
+<p>RabbitMQ 以 <strong>可靠性</strong>、<strong>灵活性</strong> 和 <strong>易扩展性</strong> 为核心优势，适合需要稳定消息传递的复杂系统。其丰富的插件和协议支持使其在微服务、IoT、金融等领域广泛应用，比较核心的特性有如下：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>持久化机制</strong>：RabbitMQ 支持消息、队列和交换器的持久化。当启用持久化时，消息会被写入磁盘，即使 RabbitMQ 服务器重启，消息也不会丢失。例如，在声明队列时可以设置 <code class="code1">durable</code> 参数为 <code class="code1">true</code> 来实现队列的持久化：
+        </li>
+</ul><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIce3PIDCobztN3tdEKp02iadYKC14iabhtcGBL7hSsibNKN0exlnq9T7E19R2libwk2J7zqlXVsZKDicv/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span style="color: #c678dd;">import</span> pika<br/><br/>connection = pika.BlockingConnection(pika.ConnectionParameters(<span style="color: #98c379;">'localhost'</span>))<br/>channel = connection.channel()<br/><br/><span style="color: #5c6370;font-style: italic;"># 声明一个持久化队列</span><br/>channel.queue_declare(queue=<span style="color: #98c379;">'durable_queue'</span>, durable=<span style="color: #56b6c2;">True</span>)<br/></code></pre>
+<ul class="list-paddingleft-1">
+<li>
+<strong>消息确认机制</strong>：提供了生产者确认和消费者确认机制。生产者可以设置 <code class="code1">confirm</code> 模式，当消息成功到达 RabbitMQ 服务器时，会收到确认消息；消费者在处理完消息后，可以向 RabbitMQ 发送确认信号，告知服务器该消息已被成功处理，服务器才会将消息从队列中删除。
+        </li>
+<li>
+<strong>镜像队列</strong>：支持创建镜像队列，将队列的内容复制到多个节点上，提高消息的可用性和可靠性。当一个节点出现故障时，其他节点仍然可以提供服务，确保消息不会丢失。
+        </li>
+<li>
+<strong>多种交换器类型</strong>：RabbitMQ 提供了多种类型的交换器，如直连交换器（Direct Exchange）、扇形交换器（Fanout Exchange）、主题交换器（Topic Exchange）和头部交换器（Headers Exchange）。不同类型的交换器根据不同的规则将消息路由到队列中。例如，扇形交换器会将接收到的消息广播到所有绑定的队列中；主题交换器则根据消息的路由键和绑定键的匹配规则进行路由。
+        </li>
+</ul>
+<h3><span class="q1">RPC的概念是什么？</span></h3>
+<p>RPC 即远程过程调用，允许程序调用运行在另一台计算机上的程序中的过程或函数，就像调用本地程序中的过程或函数一样，而无需了解底层网络细节。</p>
+<p>一个典型的 RPC 调用过程通常包含以下几个步骤：</p>
+<ol class="list-paddingleft-1">
+<li>
+<strong>客户端调用</strong>：客户端程序调用本地的一个 “伪函数”（也称为存根，Stub），并传入所需的参数。这个 “伪函数” 看起来和普通的本地函数一样，但实际上它会负责处理远程调用的相关事宜。
+        </li>
+<li>
+<strong>请求发送</strong>：客户端存根将调用信息（包括函数名、参数等）进行序列化，然后通过网络将请求发送到服务器端。
+        </li>
+<li>
+<strong>服务器接收与处理</strong>：服务器端接收到请求后，将请求信息进行反序列化，然后找到对应的函数并执行。
+        </li>
+<li>
+<strong>结果返回</strong>：服务器端将函数的执行结果进行序列化，通过网络发送回客户端。
+        </li>
+<li>
+<strong>客户端接收结果</strong>：客户端接收到服务器返回的结果后，将其反序列化，并将结果返回给调用者。
+        </li>
+</ol>
+<p>常见的 RPC 框架：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>gRPC</strong>：由 Google 开发的高性能、开源的 RPC 框架，支持多种编程语言，使用 Protocol Buffers 作为序列化协议，具有高效、灵活等特点。
+        </li>
+<li>
+<strong>Thrift</strong>：由 Facebook 开发的跨语言的 RPC 框架，支持多种数据传输协议和序列化格式，具有良好的可扩展性和性能。
+        </li>
+<li>
+<strong>Dubbo</strong>：阿里巴巴开源的高性能 Java RPC 框架，提供了服务治理、集群容错、负载均衡等功能，广泛应用于国内的互联网企业。
+        </li>
+</ul>
+<h3><span class="q1">zookeeper的ZAB和RAFT有什么区别</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+<strong>Leader选举</strong>：Raft协议采用随机定时器选举Leader，而Zab协议采用广播选举Leader。在Raft协议中，节点通过定时器在一段时间内随机发起Leader选举，如果某个节点获得了大多数节点的支持，则成为Leader；而在Zab协议中，节点通过向所有节点发送消息来宣布自己的竞选，如果某个节点获得了大多数节点的支持，则成为Leader。
+        </li>
+<li>
+<strong>日志复制</strong>：Raft协议采用Leader作为日志复制的中心控制器，而Zab协议采用集合Leader作为日志复制的中心控制器。在Raft协议中，Leader节点负责接收客户端请求，并将这些请求复制到其他节点的日志中，从而实现数据一致性；而在Zab协议中，除了Leader节点，其他节点都有可能参与日志复制，从而实现数据一致性。
+        </li>
+<li>
+<strong>数据复制</strong>：Raft协议采用多数派决策，而Zab协议采用恢复模式。在Raft协议中，数据只有在大多数节点都写入成功之后，才认为提交成功，这种方法保证了数据的一致性；而在Zab协议中，如果出现了节点故障，集群需要进入恢复模式来保证数据一致性。
+        </li>
+<li>
+<strong>可扩展性</strong>：Raft协议相对于Zab协议来说更具有可扩展性。Raft协议中节点之间的通信方式更加灵活，可以采用TCP、UDP等多种协议，从而更适合大规模的分布式系统；而Zab协议则更适合规模较小的集群。
+        </li>
+<li>
+<strong>日志表示</strong>：ZAB使用epoch和count的组合来唯一标识一个日志条目。Raft使用term和index来唯一标识日志条目。
+        </li>
+</ul>
+<h3><span class="q1">zookeeper实现了cap理论的哪一种</span></h3>
+<p>CAP理论告诉我们，一个分布式系统不可能同时满足以下三种</p>
+<ul class="list-paddingleft-1">
+<li>
+            一致性（C:Consistency）
+        </li>
+<li>
+            可用性（A:Available）
+        </li>
+<li>
+            分区容错性（P:Partition Tolerance）
+        </li>
+</ul>
+<p>这三个基本需求，最多只能同时满足其中的两项，<strong>因为P是必须的,因此往往选择就在CP或者AP中</strong>。</p>
+<p>在此<strong>ZooKeeper保证的是CP</strong>，原因：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>不能保证每次服务请求的可用性</strong>。任何时刻对ZooKeeper的访问请求能得到一致的数据结果，同时系统对网络分割具备容错性；但是它不能保证每次服务请求的可用性（注：也就是在极端环境下，ZooKeeper可能会丢弃一些请求，消费者程序需要重新请求才能获得结果）。所以说，ZooKeeper不能保证服务可用性。
+        </li>
+<li>
+<strong>进行leader选举时集群都是不可用</strong>。在使用ZooKeeper获取服务列表时，当master节点因为网络故障与其他节点失去联系时，剩余节点会重新进行leader选举。问题在于，选举leader的时间太长，30 ~ 120s, 且选举期间整个zk集群都是不可用的，这就导致在选举期间注册服务瘫痪，虽然服务能够最终恢复，但是漫长的选举时间导致的注册长期不可用是不能容忍的。所以说，ZooKeeper不能保证服务可用性。
+        </li>
+</ul>
+<h3><span class="q1">Kafka 如何保证顺序读取消息？</span></h3>
+<p>Kafka 可以保证在同一个分区内消息是有序的，生产者写入到同一分区的消息会按照写入顺序追加到分区日志文件中，消费者从分区中读取消息时也会按照这个顺序。这是 Kafka 天然具备的特性。</p>
+<p>要在 Kafka 中保证顺序读取消息，需要结合生产者、消费者的配置以及合适的业务处理逻辑来实现。以下具体说明如何实现顺序读取消息：</p>
+<ul class="list-paddingleft-1">
+<li>
+            生产者端确保消息顺序：为了保证消息写入同一分区从而确保顺序性，生产者需要将消息发送到指定分区。可以通过自定义分区器来实现，通过为消息指定相同的Key，保证相同Key的消息发送到同一分区。
+        </li>
+<li>
+            消费者端保证顺序消费：消费者在消费消息时，需要单线程消费同一分区的消息，这样才能保证按顺序处理消息。如果使用多线程消费同一分区，就无法保证消息处理的顺序性。
+        </li>
+</ul>
+<p>Kafka 本身不能保证跨分区的消息顺序性，如果需要全局的消息顺序性，通常有以下两种方法：</p>
+<ul class="list-paddingleft-1">
+<li>
+            只使用一个分区：将所有消息都写入到同一个分区，消费者也只从这个分区消费消息。但这种方式会导致 Kafka 的并行处理能力下降，因为 Kafka 的性能优势在于多分区并行处理。
+        </li>
+<li>
+            业务层面保证：在业务代码中对消息进行编号或添加时间戳等标识，消费者在消费消息后，根据这些标识对消息进行排序处理。但这种方式会增加业务代码的复杂度。
+        </li>
+</ul>
+<h3><span class="q1">如何保证幂等写？</span></h3>
+<p>幂等性是指 <strong>同一操作的多次执行对系统状态的影响与一次执行结果一致</strong>。例如，支付接口若因网络重试被多次调用，最终应确保仅扣款一次。实现幂等写的核心方案：</p>
+<ul class="list-paddingleft-1">
+<li>
+            唯一标识（幂等键）：客户端为每个请求生成全局唯一ID（如 UUID、业务主键），服务端校验该ID是否已处理，适用场景接口调用、消息消费等。
+        </li>
+<li>
+            数据库事务 + 乐观锁：通过版本号或状态字段控制并发更新，确保多次更新等同于单次操作，适用场景数据库记录更新（如余额扣减、订单状态变更）。
+        </li>
+<li>
+            数据库唯一约束：利用数据库唯一索引防止重复数据写入，适用场景数据插入场景（如订单创建）。
+        </li>
+<li>
+            分布式锁：通过锁机制保证同一时刻仅有一个请求执行关键操作，适用场景高并发下的资源抢夺（如秒杀）。
+        </li>
+<li>
+            消息去重：消息队列生产者为每条消息生成唯一的消息 ID，消费者在处理消息前，先检查该消息 ID 是否已经处理过，如果已经处理过则丢弃该消息。
+        </li>
+</ul>
+<h3><span class="q1">Kafka 为什么这么快？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+<strong>顺序写入优化：</strong>Kafka将消息顺序写入磁盘，减少了磁盘的寻道时间。这种方式比随机写入更高效，因为磁盘读写头在顺序写入时只需移动一次。
+        </li>
+<li>
+<strong>批量处理技术</strong>：Kafka支持批量发送消息，这意味着生产者在发送消息时可以等待直到有足够的数据积累到一定量，然后再发送。这种方法减少了网络开销和磁盘I/O操作的次数，从而提高了吞吐量。
+        </li>
+<li>
+<strong>零拷贝技术</strong>：Kafka使用零拷贝技术，可以直接将数据从磁盘发送到网络套接字，避免了在用户空间和内核空间之间的多次数据拷贝。这大幅降低了CPU和内存的负载，提高了数据传输效率。
+        </li>
+<li>
+<strong>压缩技术</strong>：Kafka支持对消息进行压缩，这不仅减少了网络传输的数据量，还提高了整体的吞吐量。
+        </li>
+</ul>
+<h3><span class="q1">常用的git操作有哪些？</span><span class="q1"><br/></span>
+<p style="text-align: center;"><img _width="677px" data-index="7" data-original-="" data-s="300,640" data-src="../img/tool_002_ce25e4d4.jpg" data-w="1031" src="../img/tool_002_ce25e4d4.jpg" style="height: auto !important;  width: 657px !important;"/></p>
+</h3>
+<p>几个专用名词的译名如下：</p>
+<ul class="list-paddingleft-1">
+<li>
+            Workspace：工作区
+        </li>
+<li>
+            Index / Stage：暂存区
+        </li>
+<li>
+            Repository：仓库区（或本地仓库）
+        </li>
+<li>
+            Remote：远程仓库
+        </li>
+</ul>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">工作流程</p>
+</blockquote>
+<p>最基础的工作流程，首先执行 <code class="code1">git pull</code> 获取远程仓库的最新代码，进行代码的编写。</p>
+<p>完成相应功能的开发后执行 <code class="code1">git add .</code> 将工作区代码的修改添加到暂存区，再执行 <code class="code1">git commit -m 完成xx功能</code> 将暂存区代码提交到本地仓库并添加相应的注释，最后执行 <code class="code1">git push</code> 命令推送到远程仓库。</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">撤回 git commit 操作</p>
+</blockquote>
+<p>当执行了 <code class="code1">git commit -m 注释内容</code> 命令想要撤回，可以使用 <code class="code1">git reset --soft HEAD^</code> 把本地仓库回退到当前版本的上一个版本，也就是刚刚还没提交的时候，代码的改动会保留在暂存区和工作区。</p>
+<p>也可以使用 <code class="code1">git reset --mixed HEAD^</code>，这样不止回退了刚刚的 <code class="code1">git commit</code> 操作，还回退了 <code class="code1">git add</code> 操作，代码的改动只会保留在工作区。因为 <code class="code1">--mixed</code> 参数是 <code class="code1">git reset</code> 命令的默认选项，也就是可以写为 <code class="code1">git reset HEAD^</code>。</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">撤回 git push 操作</p>
+</blockquote>
+<p>当执行了 <code class="code1">git push</code> 命令想要撤回，可以使用 <code class="code1">git reset HEAD^</code> 将本地仓库回退到当前版本的上一个版本，代码的修改会保留在工作区，然后使用 <code class="code1">git push origin xxx --force</code> 将本地仓库当前版本的代码强制推送到远程仓库。</p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>Redis有哪些客户端，有什么区别？</span></span></h3>
+<p style="text-align: left;"><span>在 Java 编程中，我了解到的有 Jedis 和 Redisson 这两种客户端</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>Jedis</span></strong><span>：一款老牌的 Java Redis 客户端，提供了全面且简洁的 API，能直接对应 Redis 的各种命令，使用方式简单直观，适合对 Redis 命令操作有直接需求的场景，例如，执行 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>SET</span></code><span> 命令可以直接调用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>jedis.set(key, value)</span></code><span> 方法，但它没有提供分布式锁的实现，在分布式场景下功能有所欠缺</span>
+</li>
+<li>
+<strong><span>Redisson</span></strong><span>：基于 Redis 实现的分布式和可扩展的 Java 数据结构集合，它不仅提供了与 Redis 交互的基本功能，还封装了丰富的分布式对象和服务，如分布式锁、分布式集合等，让开发者可以方便地在分布式系统中使用这些功能，而不需要自己去实现复杂的分布式逻辑。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>我的项目中，因为有用到 redis 分布式锁，所以选择了 Redisson。</span></p>
+<h3><span></span><span style="color: rgb(65, 105, 225);">ElasticSearch如何进行全文检索的？</span></h3>
+<p>主要是利用了<strong>倒排索引</strong>的查询结构，倒排索引是一种用于快速搜索的数据结构，它将文档中的每个单词与包含该单词的文档进行关联。通常，倒排索引由单词（terms）和包含这些单词的文档（document）列表组成。</p>
+<p>如何理解倒排索引呢？假如现有三份数据文档，文档的内容如下分别是：</p>
+<figure style="display: flex;flex-direction: column;justify-content: center;align-items: center;"><img _width="532px" data-index="8" data-src="../img/tool_003_a235cd82.png" data-w="532" src="../img/tool_003_a235cd82.png" style="      border-radius: 4px;  width: 532px !important; height: auto !important;"/></figure>
+<p>通过分词器将每个文档的内容域拆分成单独的「词词汇」：</p>
+<figure style="display: flex;flex-direction: column;justify-content: center;align-items: center;"><img _width="550px" data-index="9" data-src="../img/tool_004_a30e7c77.png" data-w="550" src="../img/tool_004_a30e7c77.png" style="      border-radius: 4px;  width: 550px !important; height: auto !important;"/></figure>
+<p>然后再构建从词汇到文档ID的映射，就形成了倒排索引。</p>
+<figure style="display: flex;flex-direction: column;justify-content: center;align-items: center;"><img _width="416px" data-index="10" data-src="../img/tool_005_5247ee70.png" data-w="416" src="../img/tool_005_5247ee70.png" style="      border-radius: 4px;  width: 416px !important; height: auto !important;"/></figure>
+<p>当进行搜索时，系统只需查找倒排索引中包含搜索关键词的文档列表，比如用户输入"秋水"，通过倒排索引，可以快速的找到含有"秋水"的文档是id为 1,2 的文档，从而达到快速的全文检索的目的。</p>
+<h3><span></span><span style="color: rgb(65, 105, 225);">了解过 es 分词器有哪些？</span></h3>
+<p>常见的分词器如下：</p>
+<ul class="list-paddingleft-1">
+<li>
+<p>standard 默认分词器，对单个字符进行切分，查全率高，准确度较低</p>
+</li>
+<li>
+<p>IK 分词器 ik_max_word：查全率与准确度较高，性能也高，是业务中普遍采用的中文分词器</p>
+</li>
+<li>
+<p>IK 分词器 ik_smart：切分力度较大，准确度与查全率不高，但是查询性能较高</p>
+</li>
+<li>
+<p>Smart Chinese 分词器：查全率与准确率性能较高</p>
+</li>
+<li>
+<p>hanlp 中文分词器：切分力度较大，准确度与查全率不高，但是查询性能较高</p>
+</li>
+<li>
+<p>Pinyin 分词器：针对汉字拼音进行的分词器，与上面介绍的分词器稍有不同，在用拼音进行查询时查全率准确度较高</p>
+</li>
+</ul>
+<figure style="display: flex;flex-direction: column;justify-content: center;align-items: center;"><img _width="656.977px" data-index="11" data-src="../img/tool_006_8d4b1288.png" data-w="1020" src="../img/tool_006_8d4b1288.png" style="      border-radius: 4px;  width: 656.969px !important; height: auto !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">分词器比较</figcaption>
+</figure>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>mafka和kafka有什么区别？</span></span></h3>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>1、背景的区别</span></p>
+</blockquote>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>mafka 是美团基于 kafka 再结合公司的业务自研的消息队列中间件。</span>
+</li>
+<li>
+<span>kafka是开源的消息队列中间件。</span>
+</li>
+</ul>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>2、功能特性的区别：</span></p>
+</blockquote>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>mafka 除了支持普通消息的多渠道并发生产和多业务并发消费外，还提供事务消息、优先级消息、延迟消息等多种消息特性，还具有流量隔离功能，能够在不同业务或用户之间进行流量控制和隔离，保障系统的稳定性，管理平台功能强大，不仅能实时查看队列的生产和消费情况，还支持自定义告警配置，方便对消息积压、消费速率等进行监控和告警。</span>
+</li>
+<li>
+<span>kafka 主要专注于高吞吐量的消息处理和流计算，在处理大规模的实时数据方面表现出色，支持消息的持久化存储，通过将消息存储在磁盘上，保证消息在处理过程中的可靠性和可恢复性，具有强大的分区和副本机制，能够实现数据的分布式存储和高可用性，确保在部分节点出现故障时，系统仍然能够正常运行。</span>
+</li>
+</ul>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>3、架构设计的区别：</span></p>
+</blockquote>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>mafka 架构由 Castle、Broker、Client SDK 等多个模块构成。Castle 负责配置管理和元数据存储，Broker 负责消息的存储和转发，Client SDK 提供给业务方进行消息的生产和消费，在消息生产和消费过程中，客户端与 Castle 建立心跳连接获取配置信息，然后根据不同的消息类型和业务需求，将消息发送到相应的 Broker 节点进行处理。</span>
+</li>
+<li>
+<span>kafka 主要由生产者（Producer）、消费者（Consumer）、主题（Topic）、分区（Partition）和代理（Broker）等组件构成，生产者将消息发送到指定的主题，主题被划分为多个分区，每个分区可以分布在不同的 Broker 上，消费者通过订阅主题来获取消息。</span>
+</li>
+</ul>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>4、应用场景的区别：</span></p>
+</blockquote>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>mafka 由于其丰富的功能特性和强大的管理平台，更适合于业务场景复杂、对消息队列功能要求多样化的企业内部应用。例如美团内部的各种业务场景，如订单处理、外卖配送、酒店预订等，需要支持多种消息类型和复杂的业务逻辑。</span>
+</li>
+<li>
+<span>kafka 因其高吞吐量、低延迟和强大的流处理能力，广泛应用于大数据处理、日志收集、实时监控、金融交易等领域。例如，在电商平台的实时数据监控、金融领域的交易流水处理等场景中，Kafka 能够快速处理大量的实时数据。</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>zookeeper拿来做什么？核心的原理是什么？</span></span></h3>
+<p style="text-align: left;"><span>zookeeper是 </span><strong><span>分布式协调服务</span></strong><span>，它能很好地支持集群部署，并且具有很好的分布式协调能力，可以让我们在分布式部署的应用之间传递数据， 保证 </span><strong><span>顺序一致性（全序广播）</span></strong><span> 而不是 </span><strong><span>强一致性，</span></strong><span>以下是其常见的应用场景：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>配置管理</span></strong><span>：在分布式系统中，不同节点往往需要相同的配置信息，如数据库连接参数、服务端口等。ZooKeeper 可以将这些配置信息集中存储，当配置发生变更时，能及时通知到各个节点。例如，一个由多个微服务组成的系统，各个服务实例可以从 ZooKeeper 中获取统一的配置，当配置更新时，ZooKeeper 会通知所有相关服务重新加载配置。</span>
+</li>
+<li>
+<strong><span>服务注册与发现</span></strong><span>：服务注册与发现是微服务架构中的关键环节。服务提供者在启动时将自己的服务信息（如服务名称、地址、端口等）注册到 ZooKeeper 中，服务消费者通过 ZooKeeper 查找并获取服务提供者的信息。当服务提供者发生变化（如上线、下线、故障等）时，ZooKeeper 会实时更新服务列表并通知服务消费者。像 Dubbo 框架就可以利用 ZooKeeper 实现服务的注册与发现。</span>
+</li>
+<li>
+<strong><span>分布式锁</span></strong><span>：在分布式环境下，多个进程或线程可能会竞争同一资源，为了避免数据不一致等问题，需要实现分布式锁。ZooKeeper 可以通过创建临时顺序节点来实现分布式锁。当一个客户端需要获取锁时，它会在 ZooKeeper 中创建一个临时顺序节点，然后检查自己创建的节点是否是序号最小的节点，如果是，则表示获取到了锁；如果不是，则等待前一个节点释放锁。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>ZooKeeper 的数据模型类似于文件系统的树形结构，每个节点称为 Znode。</span></p>
+<figure class="img1"><span><img _width="404px" data-index="5" data-src="../img/tool_007_2ec535d6.png" data-w="404" src="../img/tool_007_2ec535d6.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 404px !important;"/></span></figure>
+<p style="text-align: left;"><span>每个 Znode 可以存储数据，也可以有子节点。Znode 有不同的类型，包括持久节点（PERSISTENT）、临时节点（EPHEMERAL）和顺序节点（SEQUENTIAL）。</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>持久节点</span></strong><span>：一旦创建，除非主动删除，否则会一直存在。</span>
+</li>
+<li>
+<strong><span>临时节点</span></strong><span>：与客户端会话绑定，当客户端会话结束时，临时节点会自动被删除。</span>
+</li>
+<li>
+<strong><span>顺序节点</span></strong><span>：在创建时，ZooKeeper 会为其名称添加一个单调递增的序号，保证节点创建的顺序性。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>ZooKeeper 使用 ZAB协议来保证集群中数据的一致性。ZAB 协议基于主从架构，有一个领导者（Leader）和多个跟随者（Follower）。</span></p>
+<figure class="img1"><span><img _width="677px" data-index="6" data-src="../img/tool_008_777fb78c.png" data-w="702" src="../img/tool_008_777fb78c.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>消息广播</span></strong><span>：当客户端发起写请求时，请求会先到达领导者。领导者将写操作封装成一个事务提案，并广播给所有跟随者。跟随者收到提案后，将其写入本地日志，并向领导者发送确认消息。当领导者收到超过半数跟随者的确认消息后，会发送提交消息给所有跟随者，跟随者收到提交消息后，将事务应用到本地状态机。</span>
+</li>
+<li>
+<strong><span>崩溃恢复</span></strong><span>：当领导者出现故障时，ZooKeeper 会进入崩溃恢复阶段。在这个阶段，集群会选举出新的领导者，并确保在新领导者产生之前，不会处理新的写请求。选举过程基于节点的事务 ID 和节点 ID 等信息，保证新选举出的领导者包含了所有已提交的事务。</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>7. git了解哪些命令？cherry-pick、rebase了解吗？</span></span></h3>
+<p style="text-align: left;"><span>Git 命令我主要分为基础和高级两类。</span></p>
+<p style="text-align: left;"><span>基础命令比如</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>clone</span></code><span>拉取远程仓库，</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>add</span></code><span>和</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>commit</span></code><span>管理本地提交，</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>push</span></code><span>和</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>pull</span></code><span>同步远程分支，</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>branch</span></code><span>和</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>checkout</span></code><span>创建切换分支，</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>merge</span></code><span>合并分支。</span></p>
+<p style="text-align: left;"><span>高级命令里，我对</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>cherry-pick</span></code><span>和</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>rebase</span></code><span>比较熟悉。</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>cherry-pick</span></code><span>就像是 “精准复制提交”，当你只需要某个分支的特定提交，而不是整个分支时，就可以用它。比如，开发分支上有个 bug 修复提交，但主分支不需要开发分支的其他代码，这时就可以在主分支上</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>cherry-pick</span></code><span>这个修复提交，Git 会在主分支上重新生成一个内容相同但哈希值不同的新提交。</span>
+</li>
+<li>
+<code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>rebase</span></code><span>则是 “线性化提交历史” 的利器。比如你在 feature 分支开发了一段时间，主分支有了新提交，你可以在 feature 分支上执行</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>rebase master</span></code><span>，把 feature 的提交 “接到” 主分支最新提交之后，让提交历史看起来更整洁。但要注意，rebase 会修改提交哈希，所以不要对已推送的分支执行 rebase，否则会导致团队协作的冲突。这两个命令在处理复杂分支和提交时非常实用。</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>9.  docker底层实现了解吗？怎么做的容器隔离？</span></span></h3>
+<p style="text-align: left;"><span>Docker 的容器隔离主要基于 Linux 内核的命名空间（Namespaces）和控制组（cgroups）技术。</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>基于 Namespace 的视图隔离：</span></strong><span>Docker利用Linux命名空间（Namespace）来实现不同容器之间的隔离。每个容器都运行在自己的一组命名空间中，包括PID（进程）、网络、挂载点、IPC（进程间通信）等。这样，容器中的进程只能看到自己所在命名空间内的进程，而不会影响其他容器中的进程。</span>
+</li>
+<li>
+<strong><span>基于 cgroups 的资源隔离：</span></strong><span>cgroups 是Linux内核的一个功能，允许在进程组之间分配、限制和优先处理系统资源，如CPU、内存和磁盘I/O。它们提供了一种机制，用于管理和隔离进程集合的资源使用，有助于资源限制、工作负载隔离以及在不同进程组之间进行资源优先处理。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>举个例子，当你启动一个容器时，Docker 会为它创建独立的 PID 命名空间，容器内的第一个进程 PID 为 1，与宿主机的 PID 完全隔离；同时，容器有自己的网络命名空间，可以分配独立的 IP 地址和端口。</span></p>
+<p style="text-align: left;"><span>这些命名空间和控制组都是 Linux 内核原生支持的，Docker 只是把它们组合起来，实现了高效的容器隔离。</span></p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>6. kafka了解嘛？es？常见的开源组件？</span></span></h3>
+<p style="text-align: left;"><span>我对 Kafka、ES 这些开源组件都有一定了解，平时工作中也常会接触到。</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>Kafka 算是消息队列里的佼佼者，主要用来处理高吞吐的实时数据流，比如日志收集、事件驱动架构里的消息传递。它的核心是分区和副本机制，分区能让数据并行处理，副本则保证了数据不丢，所以能扛住每秒几十万的消息量，很多大厂用它做数据管道或者实时分析的基础。</span>
+</li>
+<li>
+<span>ES 也就是 Elasticsearch，是个分布式搜索引擎，基于 Lucene 做的，最擅长全文检索和日志分析。它把数据存在分片里，分片还能有副本，既能扩容量又能保证高可用。平时我们在系统里做模糊搜索、按条件过滤大量数据，用 ES 就很合适，比如电商的商品搜索、日志平台的查询，响应速度很快，还支持各种复杂的聚合分析。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>除了这两个，常见的开源组件还有不少。比如 Redis，作为缓存和中间件，能做分布式锁、计数器，支持多种数据结构，性能特别好。数据库方面，MySQL 是关系型里的代表，PostgreSQL 功能更全，适合复杂业务；非关系型的像 MongoDB，存文档数据很方便，适合内容管理类场景。</span></p>
+<h3><span class="q1">你使用过Docker吗？</span></h3>
+<p>简单用过，Docker可以让开发者将应用程序和其依赖项打包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</p>
+<p>以下是 Docker 的一些常见操作和功能：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>镜像操作</strong>：可以使用<code class="code1">docker pull</code>命令从镜像仓库中拉取已有的镜像，也可以通过<code class="code1">docker build</code>命令基于 Dockerfile 构建自己的镜像。例如，要拉取官方的 Nginx 镜像，可以在命令行中执行<code class="code1">docker pull nginx</code>。
+        </li>
+<li>
+<strong>容器管理</strong>：利用<code class="code1">docker run</code>命令可以基于镜像创建并运行容器，还能使用<code class="code1">docker stop</code>、<code class="code1">docker start</code>、<code class="code1">docker restart</code>等命令对容器进行停止、启动、重启等操作。比如，<code class="code1">docker run -d -p 80:80 nginx</code>可以在后台运行一个 Nginx 容器，并将容器的 80 端口映射到主机的 80 端口。
+        </li>
+<li>
+<strong>网络配置</strong>：Docker 支持多种网络模式，如桥接网络、主机网络、overlay 网络等。可以通过<code class="code1">docker network create</code>命令创建自定义网络，然后使用<code class="code1">docker network connect</code>将容器连接到指定网络。
+        </li>
+<li>
+<strong>数据管理</strong>：通过数据卷可以实现容器数据的持久化和共享。可以使用<code class="code1">docker volume create</code>创建数据卷，然后在<code class="code1">docker run</code>命令中通过<code class="code1">-v</code>参数将数据卷挂载到容器内指定目录。
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>6. 你知道devops的开发流程吗？</span></span></h3>
+<p style="text-align: left;"><span>DevOps 的开发流程核心是打破开发与运维的壁垒，通过工具链自动化实现从开发到部署的全流程协同。</span></p>
+<p style="text-align: left;"><span>流程始于开发阶段，开发者通过版本控制工具（如 Git）管理代码，结合 CI 工具（如 Jenkins）触发自动构建、单元测试和集成测试，确保代码质量。测试通过后，代码进入预发布环境，由自动化工具部署并执行验收测试、性能测试。</span></p>
+<p style="text-align: left;"><span>验证通过后，运维团队借助配置管理工具（如 Ansible）将应用部署到生产环境，同时监控系统（如 Prometheus）实时跟踪运行状态，收集日志与性能数据。</span></p>
+<p style="text-align: left;"><span>若出现问题，通过反馈机制快速定位并由开发团队修复，修复后的代码再次进入自动化流程，形成 “开发 - 测试 - 部署 - 监控 - 迭代” 的闭环，最终实现持续集成、持续部署和持续反馈，提升交付效率与系统稳定性。</span></p>
+<h3><span class="q1">docker底层依托于linux怎么实现资源隔离的？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+<strong>基于 Namespace 的视图隔离：</strong>Docker利用Linux命名空间（Namespace）来实现不同容器之间的隔离。每个容器都运行在自己的一组命名空间中，包括PID（进程）、网络、挂载点、IPC（进程间通信）等。这样，容器中的进程只能看到自己所在命名空间内的进程，而不会影响其他容器中的进程。
+        </li>
+<li>
+<strong>基于 cgroups 的资源隔离：</strong>cgroups** **是Linux内核的一个功能，允许在进程组之间分配、限制和优先处理系统资源，如CPU、内存和磁盘I/O。它们提供了一种机制，用于管理和隔离进程集合的资源使用，有助于资源限制、工作负载隔离以及在不同进程组之间进行资源优先处理。
+        </li>
+</ul>
+<h3><span class="q1">讲讲cgroup v2.0</span></h3>
+<p>cgroup v2 是 Linux cgroup API 的下一个版本。cgroup v2 提供了一个具有增强资源管理能力的统一控制系统。</p>
+<p>cgroup v2 对 cgroup v1 进行了多项改进，例如：</p>
+<ul class="list-paddingleft-1">
+<li>
+            API 中单个统一的层次结构设计
+        </li>
+<li>
+            更安全的子树委派给容器
+        </li>
+<li>
+            更新的功能特性， 例如压力阻塞信息（Pressure Stall Information，PSI）
+        </li>
+<li>
+            跨多个资源的增强资源分配管理和隔离
+        </li>
+<ul class="list-paddingleft-1" style="list-style-type: square;">
+<li>
+                统一核算不同类型的内存分配（网络内存、内核内存等）
+            </li>
+<li>
+                考虑非即时资源变化，例如页面缓存回写
+            </li>
+</ul>
+</ul>
+<p>v1 的 cgroup 为每个控制器都使用独立的树(目录)</p><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIP4WkGwRDXsDTzsibwcvl68upYiaUFGoiaTghmZZDFps33kScjsw5F9FlYaMapCNUIRfribN7sq8jwD5aqPJEDzEQDh/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;display: -webkit-box;font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;-webkit-overflow-scrolling: touch;background: #282c34;border-radius: 5px;">[root@docker cgroup]<span style="color: #5c6370;font-style: italic;"># ls /sys/fs/cgroup/</span><br/>blkio  cpu  cpuacct  cpuacct,cpu  cpu,cpuacct  cpuset  devices  freezer  hugetlb  memory  net_cls  net_cls,net_prio  net_prio  perf_event  pids  rdma  systemd<br/></code></pre>
+<p>每个目录就代表了一个 cgroup subsystem，比如要限制 cpu 则需要到 cpu 目录下创建子目录(树)，限制 memory 则需要到 memory 目录下去创建子目录(树)。</p>
+<p>比如 Docker 就会在 cpu、memory 等等目录下都创建一个名为 docker 的目录，在 docker 目录下在根据 containerID 创建子目录来实现资源限制。</p>
+<p>各个 Subsystem 各自为政，看起来比混乱，难以管理</p>
+<p>因此最终的结果就是：</p>
+<ol class="list-paddingleft-1">
+<li>
+            用户空间最后<strong>管理着多个非常类似的 hierarchy</strong>，
+        </li>
+<li>
+            在执行 hierarchy 管理操作时，<strong>每个 hierarchy 上都重复着相同的操作</strong>。
+        </li>
+</ol>
+<p><strong>v2 中对 cgroups 的最大更改是将重点放在简化层次结构上</strong></p>
+<ul class="list-paddingleft-1">
+<li>
+            v1 为每个控制器使用独立的树（例如 /sys/fs/cgroup/cpu/GROUPNAME和 /sys/fs/cgroup/memory/GROUPNAME）。
+        </li>
+<li>
+            v2 将统一/sys/fs/cgroup/GROUPNAME中的树，如果进程 X 加入/sys/fs/cgroup/test，则启用 test 的每个控制器都将控制进程 X。
+        </li>
+</ul>
+<h3><span class="q1">如何使用 git 命令合并两个分支，发生冲突如何解决</span></h3>
+<ol class="list-paddingleft-1">
+<li>
+<strong>查看冲突</strong>：当发生冲突时，Git 会提示您文件中的冲突部分。您可以使用以下命令查看所有冲突文件的状态。
+        </li>
+</ol><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIP4WkGwRDXsDQU6EeLY5sJOs8DbLEFArPT4fNQ0qNTPDiaRqClBUuNJMl10sF3V1IZurxiaWWs9NnvyAgUnib1Rgt6/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;display: -webkit-box;font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;-webkit-overflow-scrolling: touch;background: #282c34;border-radius: 5px;">git status<br/></code></pre>
+<ol class="list-paddingleft-1" start="2">
+<li>
+<strong>解决冲突</strong>：打开包含冲突的文件，您会看到类似以下的标记：
+        </li>
+</ol><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIP4WkGwRDXsDQU6EeLY5sJOs8DbLEFArPT4fNQ0qNTPDiaRqClBUuNJMl10sF3V1IZurxiaWWs9NnvyAgUnib1Rgt6/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;display: -webkit-box;font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;-webkit-overflow-scrolling: touch;background: #282c34;border-radius: 5px;">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br/>// 代码来自目标分支<br/>=======<br/>// 代码来自要合并的分支<br/>&gt;&gt;&gt;&gt;&gt;&gt;&gt; branchName<br/></code></pre>
+<p>您需要手动编辑这些文件，决定保留哪些变更或者如何整合这些变更。</p>
+<ol class="list-paddingleft-1" start="3">
+<li>
+<strong>标记为已解决</strong>：完成冲突解决后，对已解决的文件使用以下命令标记为已解决。
+        </li>
+</ol><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIP4WkGwRDXsDQU6EeLY5sJOs8DbLEFArPT4fNQ0qNTPDiaRqClBUuNJMl10sF3V1IZurxiaWWs9NnvyAgUnib1Rgt6/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;display: -webkit-box;font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;-webkit-overflow-scrolling: touch;background: #282c34;border-radius: 5px;">git add &lt;已解决文件&gt;<br/></code></pre>
+<ol class="list-paddingleft-1" start="4">
+<li>
+<strong>完成合并</strong>：继续提交这些已解决的冲突文件。
+        </li>
+</ol><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIP4WkGwRDXsDQU6EeLY5sJOs8DbLEFArPT4fNQ0qNTPDiaRqClBUuNJMl10sF3V1IZurxiaWWs9NnvyAgUnib1Rgt6/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;display: -webkit-box;font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;-webkit-overflow-scrolling: touch;background: #282c34;border-radius: 5px;">git commit -m <span style="color: #98c379;">"解决合并冲突"</span><br/></code></pre>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>git rebase与git merge的区别是什么？</span></span></h3>
+<p style="text-align: left;"><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>merge</span></code><span>和</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>rebasea</span></code><span>都是合并历史记录的操作</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>merge：通过</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>merge</span></code><span>合并分支会新增一个</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>merge commit</span></code><span>，然后将两个分支的历史联系起来，其实是一种非破坏性的操作，对现有分支不会以任何方式被更改，但是会导致历史记录相对复杂。</span>
+</li>
+<li>
+<span>rebase：</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>rebase </span></code><span>会将整个分支移动到另一个分支上，有效地整合了所有分支上的提交，要的好处是历史记录更加清晰，是在原有提交的基础上将差异内容反映进去，消除了 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git merge</span></code><span>所需的不必要的合并提交。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>举一个例子，比如初始状态下是：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIVcdibrpo7V1HSpnxMHqE0nLGlQqU7dia9aIjoadBLZuBR3HIynLYdHJPOXXlbTsNDibAkFddMIzpOia/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIVcdibrpo7V1HSpnxMHqE0nLGlQqU7dia9aIjoadBLZuBR3HIynLYdHJPOXXlbTsNDibAkFddMIzpOia/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>A---B---C (main)</span><br/><span>  \</span><br/><span>   D---E (feature)</span><br/></code></pre>
+<p style="text-align: left;"><span>使用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git merge</span></code><strong><span>命令</span></strong></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIVcdibrpo7V1HSpnxMHqE0nLGlQqU7dia9aIjoadBLZuBR3HIynLYdHJPOXXlbTsNDibAkFddMIzpOia/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIVcdibrpo7V1HSpnxMHqE0nLGlQqU7dia9aIjoadBLZuBR3HIynLYdHJPOXXlbTsNDibAkFddMIzpOia/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>git checkout main</span><br/><span>git merge feature</span><br/></code></pre>
+<p style="text-align: left;"><strong><span>结果</span></strong><span>：生成一个合并提交（</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>F</span></code><span>），保留分支结构。</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIVcdibrpo7V1HSpnxMHqE0nLGlQqU7dia9aIjoadBLZuBR3HIynLYdHJPOXXlbTsNDibAkFddMIzpOia/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIVcdibrpo7V1HSpnxMHqE0nLGlQqU7dia9aIjoadBLZuBR3HIynLYdHJPOXXlbTsNDibAkFddMIzpOia/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>A---B---C---F (main)</span><br/><span>  \     /</span><br/><span>   D---E (feature)</span><br/></code></pre>
+<p style="text-align: left;"><span>使用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git rebase</span></code></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIVcdibrpo7V1HSpnxMHqE0nLGlQqU7dia9aIjoadBLZuBR3HIynLYdHJPOXXlbTsNDibAkFddMIzpOia/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIVcdibrpo7V1HSpnxMHqE0nLGlQqU7dia9aIjoadBLZuBR3HIynLYdHJPOXXlbTsNDibAkFddMIzpOia/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>git checkout feature</span><br/><span>git rebase main</span><br/><span>git checkout main</span><br/><span>git merge feature</span><br/></code></pre>
+<p style="text-align: left;"><strong><span>结果</span></strong><span>：</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>feature</span></code><span> 的提交被“嫁接”到 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>main</span></code><span> 的最新提交后，历史线性化。</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIVcdibrpo7V1HSpnxMHqE0nLGlQqU7dia9aIjoadBLZuBR3HIynLYdHJPOXXlbTsNDibAkFddMIzpOia/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIVcdibrpo7V1HSpnxMHqE0nLGlQqU7dia9aIjoadBLZuBR3HIynLYdHJPOXXlbTsNDibAkFddMIzpOia/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>A---B---C---D</span><span style="color: #98c379;"><span>'---E'</span></span><span> (main)</span><br/></code></pre>
+<h3><span class="q1">git rebase和merge的区别</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+<strong>Rebase</strong>（变基）是将一个分支上的提交逐个地应用到另一个分支上，使得提交历史变得更加线性。当执行rebase时，Git会将目标分支与源分支的共同祖先以来的所有提交挪到目标分支的最新位置。这个过程可以看作是将源分支上的每个提交复制到目标分支上。简而言之，rebase可以将提交按照时间顺序线性排列。
+        </li>
+<li>
+<strong>Merge</strong>（合并）是将两个分支上的代码提交历史合并为一个新的提交。在执行merge时，Git会创建一个新的合并提交，将两个分支的提交历史连接在一起。这样，两个分支的修改都会包含在一个合并提交中。合并后的历史会保留每个分支的提交记录。
+        </li>
+</ul>
+<h3><span class="q1">讲一下Nginx的负载均衡策略</span></h3>
+<p>Nginx支持的负载均衡算法包括：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>轮询</strong>：按照顺序依次将请求分配给后端服务器。这种算法最简单，但是也无法处理某个节点变慢或者客户端操作有连续性的情况。
+        </li>
+<li>
+<strong>IP哈希</strong>：根据客户端IP地址的哈希值来确定分配请求的后端服务器。适用于需要保持同一客户端的请求始终发送到同一台后端服务器的场景，如会话保持。
+        </li>
+<li>
+<strong>URL哈希</strong>：按访问的URL的哈希结果来分配请求，使每个URL定向到一台后端服务器，可以进一步提高后端缓存服务器的效率。
+        </li>
+<li>
+<strong>最短响应时间</strong>：按照后端服务器的响应时间来分配请求，响应时间短的优先分配。适用于后端服务器性能不均的场景，能够将请求发送到响应时间快的服务器，实现负载均衡。
+        </li>
+<li>
+<strong>加权轮询</strong>：按照权重分配请求给后端服务器，权重越高的服务器获得更多的请求。适用于后端服务器性能不同的场景，可以根据服务器权重分配请求，提高高性能服务器的利用率。
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>6. dockerfile写过没，大概是什么样子的？</span></span></h3>
+<p style="text-align: left;"><span>Dockerfile 是用来构建 Docker 镜像的文本文件，包含一条条构建镜像所需的指令和说明。</span></p>
+<p style="text-align: left;"><span>以下是一个典型的 Dockerfile 示例，用于构建一个基于 Python 的 Web 应用镜像：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYmDib4klWtGyCf1hgHd9fm3a0lQTw2fC2CDBH8Ab6pSPOiaibn96SflkLvrSfPrENYUAIXoSZEbW7k/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYmDib4klWtGyCf1hgHd9fm3a0lQTw2fC2CDBH8Ab6pSPOiaibn96SflkLvrSfPrENYUAIXoSZEbW7k/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span># 使用官方Python作为基础镜像</span><br/><span>FROM python:</span><span style="color: #d19a66;"><span>3.9</span></span><span>-slim</span><br/><br/><span># 设置工作目录</span><br/><span>WORKDIR /app</span><br/><br/><span># 复制依赖文件并安装</span><br/><span>COPY requirements.txt .</span><br/><span>RUN pip install --no-cache-dir -r requirements.txt</span><br/><br/><span># 复制应用代码</span><br/><span>COPY . .</span><br/><br/><span># 暴露应用端口</span><br/><span>EXPOSE </span><span style="color: #d19a66;"><span>5000</span></span><br/><br/><span># 设置环境变量</span><br/><span>ENV FLASK_APP=app.py</span><br/><span>ENV FLASK_ENV=development</span><br/><br/><span># 定义容器启动时执行的命令</span><br/><span>CMD [</span><span style="color: #98c379;"><span>"flask"</span></span><span>, </span><span style="color: #98c379;"><span>"run"</span></span><span>, </span><span style="color: #98c379;"><span>"--host=0.0.0.0"</span></span><span>]</span><br/></code></pre>
+<p style="text-align: left;"><span>使用这个 Dockerfile 构建镜像的命令是：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYmDib4klWtGyCf1hgHd9fm3a0lQTw2fC2CDBH8Ab6pSPOiaibn96SflkLvrSfPrENYUAIXoSZEbW7k/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYmDib4klWtGyCf1hgHd9fm3a0lQTw2fC2CDBH8Ab6pSPOiaibn96SflkLvrSfPrENYUAIXoSZEbW7k/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>docker build -t my-flask-app .</span><br/></code></pre>
+<p style="text-align: left;"><span>运行容器的命令是：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYmDib4klWtGyCf1hgHd9fm3a0lQTw2fC2CDBH8Ab6pSPOiaibn96SflkLvrSfPrENYUAIXoSZEbW7k/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYmDib4klWtGyCf1hgHd9fm3a0lQTw2fC2CDBH8Ab6pSPOiaibn96SflkLvrSfPrENYUAIXoSZEbW7k/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>docker run -p </span><span style="color: #d19a66;"><span>5000</span></span><span>:</span><span style="color: #d19a66;"><span>5000</span></span><span> my-flask-app</span><br/></code></pre>
+<p style="text-align: left;"><span>通过 Dockerfile，可以将应用及其依赖打包成一个独立的容器镜像，确保应用在不同环境中一致运行。</span></p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>7. 到指定commit用什么git命令？</span></span></h3>
+<p style="text-align: left;"><span>要将当前分支重置到指定的 commit，可以使用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git reset</span></code><span> 命令。根据不同的需求，有三种常用模式：</span></p>
+<ol class="list-paddingleft-1" style="list-style-type: decimal;">
+<li>
+<span>软重置（保留工作目录和暂存区）</span>
+</li>
+</ol><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYmDib4klWtGyCf1hgHd9fm3a0lQTw2fC2CDBH8Ab6pSPOiaibn96SflkLvrSfPrENYUAIXoSZEbW7k/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYmDib4klWtGyCf1hgHd9fm3a0lQTw2fC2CDBH8Ab6pSPOiaibn96SflkLvrSfPrENYUAIXoSZEbW7k/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>git reset --soft &lt;commit-hash&gt;</span><br/></code></pre>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>移动分支指针到目标 commit，但保留所有修改在 暂存区（需重新提交）。</span>
+</li>
+<li>
+<span>适用场景修改提交历史，合并多个 commit。</span>
+</li>
+</ul>
+<ol class="list-paddingleft-1" style="list-style-type: decimal;">
+<li>
+<span>混合重置（默认，保留工作目录）</span>
+</li>
+</ol><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYmDib4klWtGyCf1hgHd9fm3a0lQTw2fC2CDBH8Ab6pSPOiaibn96SflkLvrSfPrENYUAIXoSZEbW7k/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYmDib4klWtGyCf1hgHd9fm3a0lQTw2fC2CDBH8Ab6pSPOiaibn96SflkLvrSfPrENYUAIXoSZEbW7k/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>git reset --mixed &lt;commit-hash&gt;</span><br/></code></pre>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>移动分支指针到目标 commit，并将所有修改保留在 </span><strong><span>工作目录</span></strong><span>（需重新 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git add</span></code><span>）。</span>
+</li>
+<li>
+<span>适合撤销提交但保留修改重新整理的场景</span>
+</li>
+</ul>
+<ol class="list-paddingleft-1" style="list-style-type: decimal;">
+<li>
+<span>硬重置（彻底丢弃修改）</span>
+</li>
+</ol><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYmDib4klWtGyCf1hgHd9fm3a0lQTw2fC2CDBH8Ab6pSPOiaibn96SflkLvrSfPrENYUAIXoSZEbW7k/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYmDib4klWtGyCf1hgHd9fm3a0lQTw2fC2CDBH8Ab6pSPOiaibn96SflkLvrSfPrENYUAIXoSZEbW7k/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>git reset --hard &lt;commit-hash&gt;</span><br/></code></pre>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>移动分支指针到目标 commit，</span><strong><span>丢弃所有后续修改</span></strong><span>（工作目录和暂存区均被重置）。</span>
+</li>
+<li>
+<span>此操作不可逆！未提交/未备份的修改将永久丢失。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>假设目标 commit 的哈希值为 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>a1b2c3d</span></code><span>：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYmDib4klWtGyCf1hgHd9fm3a0lQTw2fC2CDBH8Ab6pSPOiaibn96SflkLvrSfPrENYUAIXoSZEbW7k/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIYmDib4klWtGyCf1hgHd9fm3a0lQTw2fC2CDBH8Ab6pSPOiaibn96SflkLvrSfPrENYUAIXoSZEbW7k/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span># 软重置（修改进入暂存区）</span><br/><span>git reset --soft a1b2c3d</span><br/><br/><span># 混合重置（修改进入工作目录）</span><br/><span>git reset --mixed a1b2c3d</span><br/><br/><span># 硬重置（彻底丢弃修改）</span><br/><span>git reset --hard a1b2c3d</span><br/></code></pre>
+<h3 style="margin: 1.2em 0px 15px;padding: 0px;"><span style="color: rgb(65, 105, 225);text-align: left;"><span>12. 说一下你对 grpc的理解 ？</span></span></h3>
+<p style="text-align: left;"><span>gRPC 是由 Google 开发的</span><strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>高性能、开源的通用 RPC（远程过程调用）框架</span></strong><span>，核心目标是简化分布式系统中服务之间的通信。</span></p>
+<figure style="margin: 10px 0px;padding: 0px;display: flex;flex-direction: column;justify-content: center;align-items: center;"><span><img _width="552px" data-index="13" data-src="../img/tool_009_ad15bf92.png" data-w="552" src="../img/tool_009_ad15bf92.png" style=" margin: 0px auto 25px; max-width: 100%; border: 3px none rgba(0, 0, 0, 0.4);    height: auto !important;  width: 552px !important;"/></span></figure>
+<p style="text-align: left;"><span>grpc核心特性是：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>基于 HTTP/2 协议</span></strong><span>：相比传统 HTTP/1.1，HTTP/2 支持多路复用（一个连接并发处理多个请求）、头部压缩、服务器推送等特性，显著提升性能和效率。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>Protobuf</span></strong><span>：默认使用 Protobuf 作为接口定义语言（IDL）和序列化协议，通过</span><span> </span><code class="code2"><span>**.proto**</span></code><span> </span><span>文件定义服务和消息格式，生成的代码高效且跨语言兼容。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>强类型接口</span></strong><span>：服务接口在</span><span> </span><code class="code2"><span>**.proto**</span></code><span> </span><span>文件中明确定义，生成客户端和服务端代码，避免手动解析数据，减少错误。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>跨语言支持</span></strong><span>：支持多种编程语言（如 Go、Java、Python、C++、Node.js 等），适合多语言微服务架构。</span>
+</li>
+</ul>
+<h3><span class="q1">protobuf了解吗</span></h3>
+<p>答：不了解</p>
+<p><strong>补充：</strong></p>
+<p>Protobuf 是用于数据序列化和反序列化的格式，类似于 json。但它们有以下几点区别：</p>
+<ul class="list-paddingleft-1">
+<li>
+            数据大小：Protobuf是一种二进制格式，相对于JSON来说，数据大小更小，序列化和反序列化的效率更高，因此在网络传输和存储方面具有一定的优势。
+        </li>
+<li>
+            性能：由于Protobuf是二进制格式，相对于JSON来说，解析速度更快，占用的CPU和内存资源更少，因此在高并发场景下，性能更优。
+        </li>
+<li>
+            可读性：JSON是一种文本格式，可读性更好，易于调试和排查问题。而Protobuf是一种二进制格式，可读性较差。
+        </li>
+</ul>
+<p>Protobuf适用于高性能、大数据量、高并发等场景，而JSON适用于数据交换、易读性要求高的场景。</p>
+<h3><span class="q1">Docker为什么能环境隔离</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+<strong>基于 Namespace 的视图隔离：</strong>Docker利用Linux命名空间（Namespace）来实现不同容器之间的隔离。每个容器都运行在自己的一组命名空间中，包括PID（进程）、网络、挂载点、IPC（进程间通信）等。这样，容器中的进程只能看到自己所在命名空间内的进程，而不会影响其他容器中的进程。
+        </li>
+<li>
+<strong>基于 cgroups 的资源隔离：</strong>cgroups 是Linux内核的一个功能，允许在进程组之间分配、限制和优先处理系统资源，如CPU、内存和磁盘I/O。它们提供了一种机制，用于管理和隔离进程集合的资源使用，有助于资源限制、工作负载隔离以及在不同进程组之间进行资源优先处理。
+        </li>
+</ul>
+<h3><span class="q1">ElasticSearch如何进行全文检索的？</span></h3>
+<p>主要是利用了<strong>倒排索引</strong>的查询结构，倒排索引是一种用于快速搜索的数据结构，它将文档中的每个单词与包含该单词的文档进行关联。通常，倒排索引由单词（terms）和包含这些单词的文档（document）列表组成。</p>
+<p>如何理解倒排索引呢？假如现有三份数据文档，文档的内容如下分别是：</p>
+<figure class="img1"><img _width="532px" data-index="4" data-src="../img/tool_010_c5d610ac.png" data-w="532" src="../img/tool_010_c5d610ac.png" style="   border-radius: 4px;  height: auto !important;  width: 532px !important;"/></figure>
+<p>通过分词器将每个文档的内容域拆分成单独的「词词汇」：</p>
+<figure class="img1"><img _width="550px" data-index="5" data-src="../img/tool_011_ad1e1914.png" data-w="550" src="../img/tool_011_ad1e1914.png" style="   border-radius: 4px;  height: auto !important;  width: 550px !important;"/></figure>
+<p>然后再构建从词汇到文档ID的映射，就形成了倒排索引。</p>
+<figure class="img1"><img _width="416px" data-index="6" data-src="../img/tool_012_e9318f21.png" data-w="416" src="../img/tool_012_e9318f21.png" style="   border-radius: 4px;  height: auto !important;  width: 416px !important;"/></figure>
+<p>当进行搜索时，系统只需查找倒排索引中包含搜索关键词的文档列表，比如用户输入"秋水"，通过倒排索引，可以快速的找到含有"秋水"的文档是id为 1,2 的文档，从而达到快速的全文检索的目的。</p>
+<h3><span class="q1">了解过 es 分词器有哪些？</span></h3>
+<p>常见的分词器如下：</p>
+<ul class="list-paddingleft-1">
+<li>
+<p>standard 默认分词器，对单个字符进行切分，查全率高，准确度较低</p>
+</li>
+<li>
+<p>IK 分词器 ik_max_word：查全率与准确度较高，性能也高，是业务中普遍采用的中文分词器</p>
+</li>
+<li>
+<p>IK 分词器 ik_smart：切分力度较大，准确度与查全率不高，但是查询性能较高</p>
+</li>
+<li>
+<p>Smart Chinese 分词器：查全率与准确率性能较高</p>
+</li>
+<li>
+<p>hanlp 中文分词器：切分力度较大，准确度与查全率不高，但是查询性能较高</p>
+</li>
+<li>
+<p>Pinyin 分词器：针对汉字拼音进行的分词器，与上面介绍的分词器稍有不同，在用拼音进行查询时查全率准确度较高</p>
+</li>
+</ul>
+<figure class="img1"><img _width="677px" data-index="7" data-src="../img/tool_013_3ed66d25.png" data-w="1020" src="../img/tool_013_3ed66d25.png" style="   border-radius: 4px;  height: auto !important;  width: 656.969px !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">分词器比较</figcaption>
+</figure>
+<h3><span class="q1">Kafka如何保证消息不丢失？</span></h3>
+<p>使用一个消息队列，其实就分为三大块：<strong>生产者、中间件、消费者</strong>，所以要保证消息就是保证三个环节都不能丢失数据。</p>
+<figure class="img1"><img _width="677px" data-index="8" data-src="../img/tool_014_4eb0b3dd.png" data-w="1080" src="../img/tool_014_4eb0b3dd.png" style="   border-radius: 4px;  height: auto !important;  width: 656.938px !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">图片</figcaption>
+</figure>
+<ul class="list-paddingleft-1">
+<li>
+<strong>消息生产阶段</strong>：生产者会不会丢消息，取决于生产者对于异常情况的处理是否合理。从消息被生产出来，然后提交给 MQ 的过程中，只要能正常收到 （ MQ 中间件） 的 ack 确认响应，就表示发送成功，所以只要处理好返回值和异常，如果返回异常则进行消息重发，那么这个阶段是不会出现消息丢失的。
+        </li>
+<li>
+<strong>消息存储阶段</strong>：Kafka 在使用时是部署一个集群，生产者在发布消息时，队列中间件通常会写「多个节点」，也就是有多个副本，这样一来，即便其中一个节点挂了，也能保证集群的数据不丢失。
+        </li>
+<li>
+<strong>消息消费阶段</strong>：消费者接收消息+消息处理之后，才回复 ack 的话，那么消息阶段的消息不会丢失。不能收到消息就回 ack，否则可能消息处理中途挂掉了，消息就丢失了。
+        </li>
+</ul>
+<h3><span class="q1">Kafka如何保证消息不重复消费？</span></h3>
+<p>导致重复消费的原因可能出现在生产者，也可能出现在 MQ 或 消费者。</p>
+<p>这里说的重复消费问题是指同一个数据被执行了两次，不单单指 MQ 中一条消息被消费了两次，也可能是 MQ 中存在两条一模一样的消费。</p>
+<ul class="list-paddingleft-1">
+<li>
+            生产者：生产者可能会重复推送一条数据到 MQ 中，为什么会出现这种情况呢？也许是一个 Controller 接口被重复调用了 2 次，没有做接口幂等性导致的；也可能是推送消息到 MQ 时响应比较慢，生产者的重试机制导致再次推送了一次消息。
+        </li>
+<li>
+            MQ：在消费者消费完一条数据响应 ack 信号消费成功时，MQ 突然挂了，导致 MQ 以为消费者还未消费该条数据，MQ 恢复后再次推送了该条消息，导致了重复消费。
+        </li>
+<li>
+            消费者：消费者已经消费完了一条消息，正准备但是还未给 MQ 发送 ack 信号时，此时消费者挂了，服务重启后 MQ 以为消费者还没有消费该消息，再次推送了该条消息。
+        </li>
+</ul>
+<p>消费者怎么解决重复消费问题呢？这里提供两种方法：</p>
+<ul class="list-paddingleft-1">
+<li>
+            状态判断法：消费者消费数据后把消费数据记录在 redis 中，下次消费时先到 redis 中查看是否存在该消息，存在则表示消息已经消费过，直接丢弃消息。
+        </li>
+<li>
+            业务判断法：通常数据消费后都需要插入到数据库中，使用数据库的唯一性约束防止重复消费。每次消费直接尝试插入数据，如果提示唯一性字段重复，则直接丢失消息。一般都是通过这个业务判断的方法就可以简单高效地避免消息的重复处理了。
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>3. kafka有一个partation，消息堆积了怎么办？</span></span></h3>
+<p style="text-align: left;"><span>首先先分析问题背景，当 Kafka 的某个分区（Partition）出现消息堆积时，意味着消费者处理消息的速度跟不上生产者生产消息的速度，解决方式：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>提升消费者处理能力：对消费者代码进行优化，去除不必要的计算和阻塞操作，提高消息处理的效率。例如，避免在消息处理过程中进行大量的磁盘 I/O 操作，也可以给消费者程序分配更多的 CPU、内存等资源，以提升其处理能力。</span>
+</li>
+<li>
+<span>增加消费者数量：在消费者组中添加更多的消费者实例，让它们共同分担消息处理任务。但要注意，消费者数量不能超过分区数，否则部分消费者将无法分配到分区。</span>
+</li>
+<li>
+<span>控制生产者生产速度：在生产者端实现限流机制，控制消息的发送速度，避免生产者生产消息过快。例如，使用令牌桶算法或漏桶算法进行限流。</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>4. kafka消费端如何做幂等？</span></span></h3>
+<p style="text-align: left;"><span>幂等性即使同一条消息被消费多次，最终结果应与消费一次相同，要实现幂等性主要有这些关键点：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>消息去重</span></strong><span>：识别重复消息并丢弃。</span>
+</li>
+<li>
+<strong><span>状态管理</span></strong><span>：记录已处理的消息，防止重复处理。</span>
+</li>
+<li>
+<strong><span>事务性操作</span></strong><span>：确保消费与业务操作原子性。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>消费端实现幂等的实现方案：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>方案一：</span><strong><span>利用数据库唯一键约束</span></strong><span>。利用业务自身的唯一标识，如订单号、交易 ID 等作为主键。在处理消息时，先检查该主键是否已经处理过，如果已经处理过则跳过该消息，否则进行处理并记录该主键，适用场景消费逻辑涉及数据库写入，且消息本身有唯一标识。</span>
+</li>
+<li>
+<span>方案三：</span><strong><span>使用 Redis 记录已处理消息。</span></strong><span>实现方式用 Redis 的 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>SETNX</span></code><span>（或 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>SET key value EX 3600 NX</span></code><span>）记录已处理消息的 ID，如果消费失败，需删除 Redis 键或引入重试机制。适合场景高频消费，需要快速去重，允许短暂数据不一致。</span>
+</li>
+</ul>
+<h3><span class="q1">kafka怎么做的吞吐量那么大</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+<strong>顺序写入优化：</strong>Kafka将消息顺序写入磁盘，减少了磁盘的寻道时间。这种方式比随机写入更高效，因为磁盘读写头在顺序写入时只需移动一次。
+        </li>
+<li>
+<strong>批量处理技术</strong>：Kafka支持批量发送消息，这意味着生产者在发送消息时可以等待直到有足够的数据积累到一定量，然后再发送。这种方法减少了网络开销和磁盘I/O操作的次数，从而提高了吞吐量。
+        </li>
+<li>
+<strong>零拷贝技术</strong>：Kafka使用零拷贝技术，可以直接将数据从磁盘发送到网络套接字，避免了在用户空间和内核空间之间的多次数据拷贝。这大幅降低了CPU和内存的负载，提高了数据传输效率。
+        </li>
+<li>
+<strong>压缩技术</strong>：Kafka支持对消息进行压缩，这不仅减少了网络传输的数据量，还提高了整体的吞吐量。
+        </li>
+</ul>
+<h3><span class="q1"><strong>docker底层是怎么实现的？？</strong></span></h3>
+<ul class="list-paddingleft-1">
+<li>
+<strong>基于 Namespace 的视图隔离：</strong>Docker利用Linux命名空间（Namespace）来实现不同容器之间的隔离。每个容器都运行在自己的一组命名空间中，包括PID（进程）、网络、挂载点、IPC（进程间通信）等。这样，容器中的进程只能看到自己所在命名空间内的进程，而不会影响其他容器中的进程。
+        </li>
+<li>
+<strong>基于 cgroups 的资源隔离：</strong>cgroups 是Linux内核的一个功能，允许在进程组之间分配、限制和优先处理系统资源，如CPU、内存和磁盘I/O。它们提供了一种机制，用于管理和隔离进程集合的资源使用，有助于资源限制、工作负载隔离以及在不同进程组之间进行资源优先处理。
+        </li>
+</ul>
+<h3><span class="q1">grpc底层的通信协议是什么？</span></h3>
+<p>gRPC底层的通信协议是HTTP/2。</p>
+<p>HTTP/2 相比 HTTP/1.1 性能上的改进：</p>
+<ul class="list-paddingleft-1">
+<li>
+            头部压缩
+        </li>
+<li>
+            二进制格式
+        </li>
+<li>
+            并发传输
+        </li>
+<li>
+            服务器主动推送资源
+        </li>
+</ul>
+<p><em>1. 头部压缩</em></p>
+<p>HTTP/2 会<strong>压缩头</strong>（Header）如果你同时发出多个请求，他们的头是一样的或是相似的，那么，协议会帮你<strong>消除重复的部分</strong>。</p>
+<p>这就是所谓的 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>HPACK</code> 算法：在客户端和服务器同时维护一张头信息表，所有字段都会存入这个表，生成一个索引号，以后就不发送同样字段了，只发送索引号，这样就<strong>提高速度</strong>了。</p>
+<p><em>2. 二进制格式</em></p>
+<p>HTTP/2 不再像 HTTP/1.1 里的纯文本形式的报文，而是全面采用了<strong>二进制格式</strong>，头信息和数据体都是二进制，并且统称为帧（frame）：<strong>头信息帧（Headers Frame）和数据帧（Data Frame）</strong>。</p>
+<figure class="img1"><img _width="677px" data-index="18" data-src="../img/tool_015_fd8a7b95.png" data-w="1080" src="../img/tool_015_fd8a7b95.png" style="   border-radius: 4px;  height: auto !important;  width: 656.984px !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">HTTP/1 与 HTTP/2</figcaption>
+</figure>
+<p>这样虽然对人不友好，但是对计算机非常友好，因为计算机只懂二进制，那么收到报文后，无需再将明文的报文转成二进制，而是直接解析二进制报文，这<strong>增加了数据传输的效率</strong>。</p>
+<p><em>3. 并发传输</em></p>
+<p>我们都知道 HTTP/1.1 的实现是基于请求-响应模型的。同一个连接中，HTTP 完成一个事务（请求与响应），才能处理下一个事务，也就是说在发出请求等待响应的过程中，是没办法做其他事情的，如果响应迟迟不来，那么后续的请求是无法发送的，也造成了<strong>队头阻塞</strong>的问题。</p>
+<p>而 HTTP/2 就很牛逼了，引出了 Stream 概念，多个 Stream 复用在一条 TCP 连接。</p>
+<figure class="img1"><img _width="464px" data-index="19" data-src="../img/tool_016_03eec1e3.png" data-w="464" src="../img/tool_016_03eec1e3.png" style="   border-radius: 4px;  height: auto !important;  width: 464px !important;"/></figure>
+<p>从上图可以看到，1 个 TCP 连接包含多个 Stream，Stream 里可以包含 1 个或多个 Message，Message 对应 HTTP/1 中的请求或响应，由 HTTP 头部和包体构成。Message 里包含一条或者多个 Frame，Frame 是 HTTP/2 最小单位，以二进制压缩格式存放 HTTP/1 中的内容（头部和包体）。</p>
+<p><strong>针对不同的 HTTP 请求用独一无二的 Stream ID 来区分，接收端可以通过 Stream ID 有序组装成 HTTP 消息，不同 Stream 的帧是可以乱序发送的，因此可以并发不同的 Stream ，也就是 HTTP/2 可以并行交错地发送请求和响应</strong>。</p>
+<p>比如下图，服务端<strong>并行交错地</strong>发送了两个响应：Stream 1 和 Stream 3，这两个 Stream 都是跑在一个 TCP 连接上，客户端收到后，会根据相同的 Stream ID 有序组装成 HTTP 消息。</p>
+<figure class="img1"><img _width="677px" data-index="20" data-src="../img/tool_017_e27b74f4.jpg" data-w="787" src="../img/tool_017_e27b74f4.jpg" style="   border-radius: 4px;  height: auto !important;  width: 656.953px !important;"/></figure>
+<p><em>4、服务器推送</em></p>
+<p>HTTP/2 还在一定程度上改善了传统的「请求 - 应答」工作模式，服务端不再是被动地响应，可以<strong>主动</strong>向客户端发送消息。</p>
+<p>客户端和服务器<strong>双方都可以建立 Stream</strong>， Stream ID 也是有区别的，客户端建立的 Stream 必须是奇数号，而服务器建立的 Stream 必须是偶数号。</p>
+<p>比如下图，Stream 1 是客户端向服务端请求的资源，属于客户端建立的 Stream，所以该 Stream 的 ID 是奇数（数字 1）；Stream 2 和 4 都是服务端主动向客户端推送的资源，属于服务端建立的 Stream，所以这两个 Stream 的 ID 是偶数（数字 2 和 4）。</p>
+<figure class="img1"><img _width="677px" data-index="21" data-src="../img/tool_018_24f6aabe.png" data-w="1080" src="../img/tool_018_24f6aabe.png" style="   border-radius: 4px;  height: auto !important;  width: 656.953px !important;"/></figure>
+<p>再比如，客户端通过 HTTP/1.1 请求从服务器那获取到了 HTML 文件，而 HTML 可能还需要依赖 CSS 来渲染页面，这时客户端还要再发起获取 CSS 文件的请求，需要两次消息往返，如下图左边部分：</p>
+<figure class="img1"><img _width="677px" data-index="22" data-src="../img/tool_019_4bd300ca.png" data-w="800" src="../img/tool_019_4bd300ca.png" style="   border-radius: 4px;  height: auto !important;  width: 656.984px !important;"/></figure>
+<p>如上图右边部分，在 HTTP/2 中，客户端在访问 HTML 时，服务器可以直接主动推送 CSS 文件，减少了消息传递的次数。</p>
+<h3><span class="q1">grpc相比于http优势在哪？</span></h3>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);">性能优势</p>
+</blockquote>
+<p>gRPC 消息使用 Protobuf进行序列化。Protobuf 在服务器和客户端上可以非常快速地序列化。Protobuf 序列化产生的有效负载较小，这在移动应用等带宽有限的方案中很重要。</p>
+<p>gRPC 专为 HTTP/2（HTTP 的主要版本）而设计，与 HTTP 1.x 相比，HTTP/2 具有巨大性能优势：</p>
+<ul class="list-paddingleft-1">
+<li>
+            二进制组帧和压缩。HTTP/2 协议在发送和接收方面均紧凑且高效。
+        </li>
+<li>
+            在单个 TCP 连接上多路复用多个 HTTP/2 调用。多路复用可消除队头阻塞。
+        </li>
+</ul>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);">代码生成</p>
+</blockquote>
+<p>所有 gRPC 框架都为代码生成提供一流支持。.proto 文件是 gRPC 开发的核心文件，它定义 gRPC 服务和消息的协定。通过此文件，gRPC 框架生成服务基类、消息和完整的客户端。</p>
+<p>通过在服务器和客户端之间共享 <code style='padding: 2px 4px;border-radius: 4px;background-color: rgba(27, 31, 35, 0.05);font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>.proto</code> 文件，可以端到端生成消息和客户端代码。客户端的代码生成消除了客户端和服务器上的消息重复，并为你创建强类型客户端。无需编写客户端可在具有许多服务的应用程序中节省大量开发时间。</p>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);">严格规范</p>
+</blockquote>
+<p>具有 JSON 的 HTTP API 没有正式规范。开发人员为 URL、HTTP 谓词和响应代码的最佳格式争论不休。</p>
+<p>gRPC 规范对 gRPC 服务必须遵循的格式进行了规定。gRPC 消除了争论并为开发人员节省了时间，因为 gRPC 在各个平台和实现中都是一致的。</p>
+<h3><span class="q1">平时一般用docker做什么？</span></h3>
+<p>Docker使用前后对比</p>
+<figure class="img1"><img _width="677px" data-index="23" data-src="../img/tool_020_add24fe9.jpg" data-type="jpeg" data-w="979" src="../img/tool_020_add24fe9.jpg" style="   border-radius: 4px;  height: auto !important;  width: 656.969px !important;"/></figure>
+<ul class="list-paddingleft-1">
+<li>
+<p>在没有使用Docker时，我们开发完毕一个项目，需要打成war包或jar包。然后，在服务器上进行各种环境的安装、配置以及应用程序维护，比如：JDK、Tomcat、数据库等。而且，上述的配置在开发环境、测试服务器、生产服务器（通常会有很多个），都需要进行一遍同样的操作，工作量相当繁重。</p>
+</li>
+<li>
+<p>在使用了Docker之后，我们可以自己创建一个空的镜像从头构建，也可以使用公共仓库中已经构建好的镜像，直接使用。当需要在不同环境中进行部署时，直接使用构建好的镜像即可，一次构建，多环境多次使用，方便快捷。</p>
+</li>
+</ul>
+<h3 style="margin: 1.2em 0px 15px;padding: 0px;"><span style="color: rgb(65, 105, 225);text-align: left;"><span>7. docker是如何实现隔离性的？</span></span></h3>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>基于 Namespace 的视图隔离</span></strong><span>：Docker利用Linux命名空间（Namespace）来实现不同容器之间的隔离。每个容器都运行在自己的一组命名空间中，包括PID（进程）、网络、挂载点、IPC（进程间通信）等。这样，容器中的进程只能看到自己所在命名空间内的进程，而不会影响其他容器中的进程。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>基于 cgroups 的资源隔离</span></strong><span>：cgroups 是Linux内核的一个功能，允许在进程组之间分配、限制和优先处理系统资源，如CPU、内存和磁盘I/O。它们提供了一种机制，用于管理和隔离进程集合的资源使用，有助于资源限制、工作负载隔离以及在不同进程组之间进行资源优先处理。</span>
+</li>
+</ul>
+<h3 style="margin: 1.2em 0px 15px;padding: 0px;"><span style="color: rgb(65, 105, 225);text-align: left;"><span>8. docker的brige和host的区别？</span></span></h3>
+<p style="text-align: left;"><code class="code2"><span>bridge</span></code><span>和</span><code class="code2"><span>host</span></code><span>是两种常用的网络模式，它们的主要区别如下：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<span>在Bridge模式下，Docker会为每个容器创建一个虚拟网络接口，并分配一个独立的IP地址。容器之间可以通过桥接网络进行通信，也可以通过宿主机进行网络访问。</span><code class="code2"><span>bridge</span></code><span>模式的优点是容器之间互相隔离、每个容器都有自己独立的IP地址、安全性较好。此外，</span><code class="code2"><span>bridge</span></code><span>模式允许我们通过网络连接容器、方便容器之间的通信。缺点是相对于Host模式，</span><code class="code2"><span>bridge</span></code><span>模式的网络性能要稍差一些，因为容器之间的网络通信需要经过额外的网络转发和封装。</span>
+</li>
+<li>
+<span>在Host模式下、容器与宿主机共享网络命名空间，容器直接使用宿主机的网络资源。这意味着容器可以绑定宿主机的IP地址和端口，使得容器中运行的应用程序可以直接访问宿主机网络上的服务。Host模式的优点是网络性能较好，因为容器直接使用宿主机的网络资源，避免了额外的网络转发和封装。但是，Host模式下容器与宿主机共享网络命名空间，容器的网络隔离性较差，容器中的应用程序可能会直接访问到宿主机上的服务，增加了安全风险。</span>
+</li>
+</ul>
+<h3><span class="q1">讲一个中间件吧，讲讲他的作用？</span></h3>
+<p>我还熟悉消息队列，消息队列的三大作用是：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>解耦</strong>：可以在多个系统之间进行解耦，将原本通过网络之间的调用的方式改为使用MQ进行消息的异步通讯，只要该操作不是需要同步的，就可以改为使用MQ进行不同系统之间的联系，这样项目之间不会存在耦合，系统之间不会产生太大的影响，就算一个系统挂了，也只是消息挤压在MQ里面没人进行消费而已，不会对其他的系统产生影响。
+        </li>
+<li>
+<strong>异步</strong>：加入一个操作设计到好几个步骤，这些步骤之间不需要同步完成，比如客户去创建了一个订单，还要去客户轨迹系统添加一条轨迹、去库存系统更新库存、去客户系统修改客户的状态等等。这样如果这个系统都直接进行调用，那么将会产生大量的时间，这样对于客户是无法接收的；并且像添加客户轨迹这种操作是不需要去同步操作的，如果使用MQ将客户创建订单时，将后面的轨迹、库存、状态等信息的更新全都放到MQ里面然后去异步操作，这样就可加快系统的访问速度，提供更好的客户体验。
+        </li>
+<li>
+<strong>削峰</strong>：一个系统访问流量有高峰时期，也有低峰时期，比如说，中午整点有一个抢购活动等等。比如系统平时流量并不高，一秒钟只有100多个并发请求，系统处理没有任何压力，一切风平浪静，到了某个抢购活动时间，系统并发访问了剧增，比如达到了每秒5000个并发请求，而我们的系统每秒只能处理2000个请求，那么由于流量太大，我们的系统、数据库可能就会崩溃。这时如果使用MQ进行流量削峰，将用户的大量消息直接放到MQ里面，然后我们的系统去按自己的最大消费能力去消费这些消息，就可以保证系统的稳定，只是可能要跟进业务逻辑，给用户返回特定页面或者稍后通过其他方式通知其结果。
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>K8s和docker 平时用什么操作？</span></span></h3>
+<p style="text-align: left;"><span>docker常见操作：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>拉取镜像：</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>docker pull nginx:latest</span></code>
+</li>
+<li>
+<span>构建镜像：</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>docker build -t my-image:1.0 .</span></code>
+</li>
+<li>
+<span>删除镜像：</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>docker rmi my-image:1.0</span></code>
+</li>
+<li>
+<span>运行容器：</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>docker run -d -p 80:80 nginx:latest</span></code>
+</li>
+<li>
+<span>查看运行中的容器：</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>docker ps</span></code>
+</li>
+<li>
+<span>进入容器终端：</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>docker exec -it my-container /bin/bash</span></code>
+</li>
+</ul>
+<p style="text-align: left;"><span>k8s常见的操作：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>创建 Pod</span></strong><span>：根据 YAML 文件创建一个 Pod：</span>
+</li>
+</ul><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIUUAJnBQKqrKxTmPOydYpZ4ERZOwX7ltQqmgLrSxWkK5S8NsSus9SjpfNLGppyS7VsicqAZtoYgEK/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIUUAJnBQKqrKxTmPOydYpZ4ERZOwX7ltQqmgLrSxWkK5S8NsSus9SjpfNLGppyS7VsicqAZtoYgEK/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>kubectl apply -f pod - example.yaml</span><br/></code></pre>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>查看资源状态</span></strong><span>：</span>
+</li>
+</ul><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIUUAJnBQKqrKxTmPOydYpZ4ERZOwX7ltQqmgLrSxWkK5S8NsSus9SjpfNLGppyS7VsicqAZtoYgEK/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIUUAJnBQKqrKxTmPOydYpZ4ERZOwX7ltQqmgLrSxWkK5S8NsSus9SjpfNLGppyS7VsicqAZtoYgEK/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>kubectl get pods          # 查看 Pod</span><br/><span>kubectl get deployments   # 查看 Deployment</span><br/><span>kubectl get services      # 查看 Service</span><br/><span>kubectl get nodes         # 查看集群节点</span><br/></code></pre>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>删除资源</span></strong><span>：</span>
+</li>
+</ul><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIUUAJnBQKqrKxTmPOydYpZ4ERZOwX7ltQqmgLrSxWkK5S8NsSus9SjpfNLGppyS7VsicqAZtoYgEK/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIUUAJnBQKqrKxTmPOydYpZ4ERZOwX7ltQqmgLrSxWkK5S8NsSus9SjpfNLGppyS7VsicqAZtoYgEK/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>kubectl delete pod my-pod</span><br/></code></pre>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>进入 Pod 终端</span></strong><span>：</span>
+</li>
+</ul><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIUUAJnBQKqrKxTmPOydYpZ4ERZOwX7ltQqmgLrSxWkK5S8NsSus9SjpfNLGppyS7VsicqAZtoYgEK/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIUUAJnBQKqrKxTmPOydYpZ4ERZOwX7ltQqmgLrSxWkK5S8NsSus9SjpfNLGppyS7VsicqAZtoYgEK/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>kubectl exec -it my-pod -- /bin/bash</span><br/></code></pre>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>手动扩缩容</span></strong><span>：</span>
+</li>
+</ul><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIUUAJnBQKqrKxTmPOydYpZ4ERZOwX7ltQqmgLrSxWkK5S8NsSus9SjpfNLGppyS7VsicqAZtoYgEK/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIUUAJnBQKqrKxTmPOydYpZ4ERZOwX7ltQqmgLrSxWkK5S8NsSus9SjpfNLGppyS7VsicqAZtoYgEK/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>kubectl scale deployment my-deployment --replicas=</span><span style="color: #d19a66;"><span>3</span></span><br/></code></pre>
+<p style="text-align: left;"><span>docker和k8s常见操作表格整理的如下：</span></p>
+<table style="display: table;text-align: left;">
+<thead>
+<tr>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>场景</span></strong></th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>Docker 命令</span></strong></th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>Kubernetes 命令</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>运行容器/Pod</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><code><span>docker run</span></code></td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><code><span>kubectl create -f pod.yaml</span></code></td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>查看运行状态</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><code><span>docker ps</span></code></td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><code><span>kubectl get pods</span></code></td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>查看日志</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><code><span>docker logs</span></code></td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><code><span>kubectl logs</span></code></td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>进入容器/Pod 终端</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><code><span>docker exec -it</span></code></td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><code><span>kubectl exec -it</span></code></td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>停止资源</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><code><span>docker stop</span></code></td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><code><span>kubectl delete</span></code></td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>扩缩容</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>无（单容器）</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;"><code><span>kubectl scale</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>git常用的命令？</span></span></h3>
+<p style="text-align: left;"><span>git 的工作原理如下图：</span></p>
+<figure class="img1"><span><img _width="677px" data-index="5" data-src="../img/tool_021_d27fb31d.png" data-w="1080" src="../img/tool_021_d27fb31d.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<p style="text-align: left;"><span>几个专用名词的译名如下：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>Workspace：工作区</span>
+</li>
+<li>
+<span>Index / Stage：暂存区</span>
+</li>
+<li>
+<span>Repository：仓库区（或本地仓库）</span>
+</li>
+<li>
+<span>Remote：远程仓库</span>
+</li>
+</ul>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>工作流程</span></p>
+</blockquote>
+<p style="text-align: left;"><span>最基础的工作流程，首先执行 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git pull</span></code><span> 获取远程仓库的最新代码，进行代码的编写。</span></p>
+<p style="text-align: left;"><span>完成相应功能的开发后执行 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git add .</span></code><span> 将工作区代码的修改添加到暂存区，再执行 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git commit -m 完成xx功能</span></code><span> 将暂存区代码提交到本地仓库并添加相应的注释，最后执行 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git push</span></code><span> 命令推送到远程仓库。</span></p>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>撤回 git commit 操作</span></p>
+</blockquote>
+<p style="text-align: left;"><span>当执行了 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git commit -m 注释内容</span></code><span> 命令想要撤回，可以使用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git reset --soft HEAD^</span></code><span> 把本地仓库回退到当前版本的上一个版本，也就是刚刚还没提交的时候，代码的改动会保留在暂存区和工作区。</span></p>
+<p style="text-align: left;"><span>也可以使用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git reset --mixed HEAD^</span></code><span>，这样不止回退了刚刚的 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git commit</span></code><span> 操作，还回退了 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git add</span></code><span> 操作，代码的改动只会保留在工作区。因为 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>--mixed</span></code><span> 参数是 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git reset</span></code><span> 命令的默认选项，也就是可以写为 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git reset HEAD^</span></code><span>。</span></p>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>撤回 git push 操作</span></p>
+</blockquote>
+<p style="text-align: left;"><span>当执行了 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git push</span></code><span> 命令想要撤回，可以使用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git reset HEAD^</span></code><span> 将本地仓库回退到当前版本的上一个版本，代码的修改会保留在工作区，然后使用 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>git push origin xxx --force</span></code><span> 将本地仓库当前版本的代码强制推送到远程仓库。</span></p>
+</html>
+            </article>
+        </div>
+        
+        <div class="content" id="article-toc">
+            <nav class="toc">
+                <div class="toc-inner"><ul><ul><ul><li>
+                    <a href="#" aria-label="Git 使用熟练吗？">Git 使用熟练吗？</a></li><li>
+                    <a href="#" aria-label="Docker 有了解吗？">Docker 有了解吗？</a></li><li>
+                    <a href="#" aria-label="Jenkins 有了解吗？讲讲什么是持续集成和持续部署？">Jenkins 有了解吗？讲讲什么是持续集成和持续部署？</a></li><li>
+                    <a href="#" aria-label="RabbitMQ的特性你知道哪些？">RabbitMQ的特性你知道哪些？</a></li><li>
+                    <a href="#" aria-label="RPC的概念是什么？">RPC的概念是什么？</a></li><li>
+                    <a href="#" aria-label="zookeeper的ZAB和RAFT有什么区别">zookeeper的ZAB和RAFT有什么区别</a></li><li>
+                    <a href="#" aria-label="zookeeper实现了cap理论的哪一种">zookeeper实现了cap理论的哪一种</a></li><li>
+                    <a href="#" aria-label="Kafka 如何保证顺序读取消息？">Kafka 如何保证顺序读取消息？</a></li><li>
+                    <a href="#" aria-label="如何保证幂等写？">如何保证幂等写？</a></li><li>
+                    <a href="#" aria-label="Kafka 为什么这么快？">Kafka 为什么这么快？</a></li><li>
+                    <a href="#" aria-label="Redis有哪些客户端，有什么区别？">Redis有哪些客户端，有什么区别？</a></li><li>
+                    <a href="#" aria-label="ElasticSearch如何进行全文检索的？">ElasticSearch如何进行全文检索的？</a></li><li>
+                    <a href="#" aria-label="了解过 es 分词器有哪些？">了解过 es 分词器有哪些？</a></li><li>
+                    <a href="#" aria-label="mafka和kafka有什么区别？">mafka和kafka有什么区别？</a></li><li>
+                    <a href="#" aria-label="zookeeper拿来做什么？核心的原理是什么？">zookeeper拿来做什么？核心的原理是什么？</a></li><li>
+                    <a href="#" aria-label="7. git了解哪些命令？cherry-pick、rebase了解吗？">7. git了解哪些命令？cherry-pick、rebase了解吗？</a></li><li>
+                    <a href="#" aria-label="9. docker底层实现了解吗？怎么做的容器隔离？">9. docker底层实现了解吗？怎么做的容器隔离？</a></li><li>
+                    <a href="#" aria-label="6. kafka了解嘛？es？常见的开源组件？">6. kafka了解嘛？es？常见的开源组件？</a></li><li>
+                    <a href="#" aria-label="你使用过Docker吗？">你使用过Docker吗？</a></li><li>
+                    <a href="#" aria-label="6. 你知道devops的开发流程吗？">6. 你知道devops的开发流程吗？</a></li><li>
+                    <a href="#" aria-label="docker底层依托于linux怎么实现资源隔离的？">docker底层依托于linux怎么实现资源隔离的？</a></li><li>
+                    <a href="#" aria-label="讲讲cgroup v2.0">讲讲cgroup v2.0</a></li><li>
+                    <a href="#" aria-label="如何使用 git 命令合并两个分支，发生冲突如何解决">如何使用 git 命令合并两个分支，发生冲突如何解决</a></li><li>
+                    <a href="#" aria-label="git rebase与git merge的区别是什么？">git rebase与git merge的区别是什么？</a></li><li>
+                    <a href="#" aria-label="git rebase和merge的区别">git rebase和merge的区别</a></li><li>
+                    <a href="#" aria-label="讲一下Nginx的负载均衡策略">讲一下Nginx的负载均衡策略</a></li><li>
+                    <a href="#" aria-label="6. dockerfile写过没，大概是什么样子的？">6. dockerfile写过没，大概是什么样子的？</a></li><li>
+                    <a href="#" aria-label="7. 到指定commit用什么git命令？">7. 到指定commit用什么git命令？</a></li><li>
+                    <a href="#" aria-label="12. 说一下你对 grpc的理解 ？">12. 说一下你对 grpc的理解 ？</a></li><li>
+                    <a href="#" aria-label="protobuf了解吗">protobuf了解吗</a></li><li>
+                    <a href="#" aria-label="Docker为什么能环境隔离">Docker为什么能环境隔离</a></li><li>
+                    <a href="#" aria-label="ElasticSearch如何进行全文检索的？">ElasticSearch如何进行全文检索的？</a></li><li>
+                    <a href="#" aria-label="了解过 es 分词器有哪些？">了解过 es 分词器有哪些？</a></li><li>
+                    <a href="#" aria-label="Kafka如何保证消息不丢失？">Kafka如何保证消息不丢失？</a></li><li>
+                    <a href="#" aria-label="Kafka如何保证消息不重复消费？">Kafka如何保证消息不重复消费？</a></li><li>
+                    <a href="#" aria-label="3. kafka有一个partation，消息堆积了怎么办？">3. kafka有一个partation，消息堆积了怎么办？</a></li><li>
+                    <a href="#" aria-label="4. kafka消费端如何做幂等？">4. kafka消费端如何做幂等？</a></li><li>
+                    <a href="#" aria-label="kafka怎么做的吞吐量那么大">kafka怎么做的吞吐量那么大</a></li><li>
+                    <a href="#" aria-label="docker底层是怎么实现的？？">docker底层是怎么实现的？？</a></li><li>
+                    <a href="#" aria-label="grpc底层的通信协议是什么？">grpc底层的通信协议是什么？</a></li><li>
+                    <a href="#" aria-label="grpc相比于http优势在哪？">grpc相比于http优势在哪？</a></li><li>
+                    <a href="#" aria-label="平时一般用docker做什么？">平时一般用docker做什么？</a></li><li>
+                    <a href="#" aria-label="7. docker是如何实现隔离性的？">7. docker是如何实现隔离性的？</a></li><li>
+                    <a href="#" aria-label="8. docker的brige和host的区别？">8. docker的brige和host的区别？</a></li><li>
+                    <a href="#" aria-label="讲一个中间件吧，讲讲他的作用？">讲一个中间件吧，讲讲他的作用？</a></li><li>
+                    <a href="#" aria-label="K8s和docker 平时用什么操作？">K8s和docker 平时用什么操作？</a></li><li>
+                    <a href="#" aria-label="git常用的命令？">git常用的命令？</a></ul></ul></ul>
+                </div>
+            </nav>
+        </div>
+    </main>
+    <div class="splitter-indicator" id="splitterIndicator"></div>
+    <div class="drop-indicator" id="dropIndicator"></div>
+    <footer class="footer">
+        <div class="footer-left">
+            <a class="item" href="/x/about/" target="_blank" rel="noopener noreferrer me" title="Info"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></a>
+            <a class="item" href="https://music.163.com/#/user/home?id=270121274" target="_blank" rel="noopener noreferrer me" title="NeteaseCloudMusic"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.98,23.65c-2.69,0-5.26-1.05-7.24-2.95C1.59,18.63,.35,15.72,.35,12.73,.35,8.21,3.21,4.11,7.46,2.52c.15-.05,.3-.08,.45-.08,.42,0,.78,.21,.93,.55,.12,.26,.13,.51,.03,.75-.12,.28-.38,.52-.7,.64-3.48,1.3-5.82,4.66-5.82,8.36,0,2.46,1.02,4.84,2.79,6.54,1.6,1.54,3.68,2.39,5.85,2.39,.1,0,.2,0,.29,0,3.49-.12,6.22-1.91,7.47-4.89,.08-.2,2.01-4.93-2.59-7.9-.41-.27-.89-.46-1.42-.58l-.6-.14,.18,.58c.21,.68,.78,2.52,.84,2.93,.07,.46,.07,.51,.1,.92v.18c0,2.3-1.89,4.19-4.22,4.19-2.2,0-3.97-1.73-4.23-4.1-.25-2.35,.74-4.4,2.73-5.61,.53-.32,1.11-.57,1.73-.75l.33-.1-.48-1.74c-.16-.54-.53-2.38,1.5-3.72,.57-.38,1.22-.57,1.91-.57,1.38,0,2.62,.74,3.12,1.23,.22,.22,.36,.56,.36,.9,0,.26-.08,.48-.23,.63-.15,.15-.37,.23-.63,.23-.33,0-.67-.13-.89-.35-.06-.05-.85-.66-1.7-.66-.31,0-.59,.08-.82,.24-.04,.03-.08,.05-.12,.08-.23,.19-.71,.73-.47,1.82l.09,.34,.02,.07h0s.35,1.29,.35,1.29h.25c1.24,.08,2.39,.42,3.32,1.01l.05,.03c4.82,3.12,4.29,8.12,3.34,10.33-1.54,3.67-4.99,5.95-9.23,6.1-.12,0-.25,0-.37,0Zm.82-15.26c-.43,.13-.84,.31-1.2,.53-.94,.57-2.01,1.68-1.79,3.71,.12,1.12,.87,2.33,2.24,2.33,1.23,0,2.24-1,2.24-2.22h0s.03-.21-.05-.71c-.07-.46-.91-3.1-1-3.4l-.1-.33-.33,.1Z" /></svg></a>
+            <a class="item" href="https://neodb.social/users/Lordash/" target="_blank" rel="noopener noreferrer me" title="NeoDB"><svg version="1.1" xmlns="https://www.w3.org/2000/svg" width="90" height="108" viewBox="0 0 90 108" fill="currentColor"><path d="M0 0 C4.26615504 2.04066983 6.73398524 4.58553002 10 8 C10.474375 7.195625 10.94875 6.39125 11.4375 5.5625 C13 3 13 3 14 2 C20.16698656 1.54318618 20.16698656 1.54318618 22.9375 3.0625 C24.6815774 6.24287644 24.55944728 8.4568339 24 12 C21 14.4375 21 14.4375 18 16 C20.97 18.97 23.94 21.94 27 25 C25.193388 28.61322401 24.33581029 29.83748791 21.375 32.25 C20.74335937 32.77078125 20.11171875 33.2915625 19.4609375 33.828125 C18.97882813 34.21484375 18.49671875 34.6015625 18 35 C17.566875 34.0409375 17.566875 34.0409375 17.125 33.0625 C16.17176549 30.84793921 16.17176549 30.84793921 14 30 C10.5 29.75 10.5 29.75 7 30 C4.59331253 31.99114614 4.59331253 31.99114614 4.5625 35.875 C4.62092586 39.4454694 4.80377743 39.80377743 7.5 42.5 C8.325 42.995 9.15 43.49 10 44 C7.36 46.64 4.72 49.28 2 52 C-1.49353838 50.25323081 -3.13945763 49.08594785 -5.75 46.375 C-6.36359375 45.74335937 -6.9771875 45.11171875 -7.609375 44.4609375 C-8.06828125 43.97882812 -8.5271875 43.49671875 -9 43 C-9.515625 43.99 -10.03125 44.98 -10.5625 46 C-13 49 -13 49 -16.625 49.5 C-20 49 -20 49 -22 47 C-22.56321839 40.8045977 -22.56321839 40.8045977 -20.6875 38.125 C-19 37 -19 37 -16 36 C-18.97 33.03 -21.94 30.06 -25 27 C-23.03838569 23.07677137 -20.84267796 20.58307142 -17.7734375 17.578125 C-17.26575836 17.07327576 -16.75807922 16.56842651 -16.23501587 16.04827881 C-14.61966158 14.44407904 -12.99747791 12.84699144 -11.375 11.25 C-10.27558302 10.16061893 -9.17661941 9.0707801 -8.078125 7.98046875 C-5.3906398 5.31498115 -2.69700979 2.65584857 0 0 Z"transform="translate(53,1)" /><path d="M0 0 C2.31 1.98 4.62 3.96 7 6 C6.34 6.86625 5.68 7.7325 5 8.625 C2.82375259 12.29741751 2.2907405 13.83310042 3 18 C4.34115399 21.00979883 4.34115399 21.00979883 7 23 C10.97807953 23.86409105 14.00632895 23.59620263 17.5 21.5 C17.995 21.005 18.49 20.51 19 20 C21.84383123 21.2748209 24.13754018 22.45137078 26 25 C25.57914771 28.29893891 24.42094066 29.966522 22.0625 32.25 C21.53785156 32.77078125 21.01320312 33.2915625 20.47265625 33.828125 C19 35 19 35 17 35 C17 35.66 17 36.32 17 37 C17.763125 36.938125 18.52625 36.87625 19.3125 36.8125 C22 37 22 37 23.875 38.0625 C25.69848531 41.20294693 24.8658284 43.5985313 24 47 C21 49 21 49 17.9375 48.75 C15 48 15 48 13 46 C12.505 44.02 12.505 44.02 12 42 C9.03 44.97 6.06 47.94 3 51 C-0.92322863 49.03838569 -3.41692858 46.84267796 -6.421875 43.7734375 C-6.92672424 43.26575836 -7.43157349 42.75807922 -7.95172119 42.23501587 C-9.55592096 40.61966158 -11.15300856 38.99747791 -12.75 37.375 C-13.83938107 36.27558302 -14.9292199 35.17661941 -16.01953125 34.078125 C-18.68501885 31.3906398 -21.34415143 28.69700979 -24 26 C-22.4152642 22.13671373 -19.94043113 19.71123077 -16.9921875 16.796875 C-16.50670441 16.3142218 -16.02122131 15.8315686 -15.52102661 15.33428955 C-13.97700134 13.80141438 -12.42615176 12.27565996 -10.875 10.75 C-9.82375991 9.70879639 -8.77297343 8.66713459 -7.72265625 7.625 C-5.15366996 5.07800536 -2.57851839 2.53734823 0 0 Z"transform="translate(25,29)" /><path d="M0 0 C3.81684226 1.55500981 6.19195732 4.03595495 9 7 C9.45375 6.195625 9.9075 5.39125 10.375 4.5625 C12 2 12 2 14 1 C16.9375 0.6875 16.9375 0.6875 20 1 C21.9375 2.625 21.9375 2.625 23 5 C23 8 23 8 22 11 C19.4375 13.375 19.4375 13.375 17 15 C19.97 17.97 22.94 20.94 26 24 C20.375 30.875 20.375 30.875 17 32 C16.649375 31.175 16.29875 30.35 15.9375 29.5 C14.16088977 26.60879362 14.16088977 26.60879362 10.5 26.5 C7.14672303 26.77692733 7.14672303 26.77692733 5 28.0625 C3.32384137 31.31005735 4.03723329 33.57014358 5 37 C7.4158995 39.45198044 7.4158995 39.45198044 10 41 C8.76600937 42.36877116 7.51219377 43.71969166 6.25 45.0625 C5.55390625 45.81660156 4.8578125 46.57070312 4.140625 47.34765625 C2 49 2 49 0.09619141 48.81054688 C-2.43507746 47.831766 -3.76735676 46.6052517 -5.6796875 44.68359375 C-6.36160156 44.00103516 -7.04351562 43.31847656 -7.74609375 42.61523438 C-8.79990234 41.53725586 -8.79990234 41.53725586 -9.875 40.4375 C-10.91720703 39.40012695 -10.91720703 39.40012695 -11.98046875 38.34179688 C-16.44375955 33.83227613 -20.30080588 29.1545197 -24 24 C-21.69 22.02 -19.38 20.04 -17 18 C-15.948125 18.99 -15.948125 18.99 -14.875 20 C-12.15610238 22.18293783 -12.15610238 22.18293783 -9 22.5625 C-4.86392446 21.78698584 -3.45000447 20.38677089 -1 17 C-0.44852315 13.07072743 -0.40688385 10.96381375 -2.5 7.5625 C-2.995 7.046875 -3.49 6.53125 -4 6 C-2.84826645 3.53199953 -1.95216435 1.95216435 0 0 Z"transform="translate(53,58)" /></svg></a>
+            <a class="item" href="https://github.com/GH1656409967" target="_blank" rel="noopener noreferrer me" title="GitHub"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a class="item" href="/" target="_blank" rel="noopener noreferrer me" title="BuyMeACoffee"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 884 1279" fill="none" stroke="currentColor" stroke-width="2"><path d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518Z"fill="currentColor"></path><path d="M803.896 388.891L802.916 389.166L803.896 388.891Z" fill="currentColor"></path><path d="M791.484 297.377C791.359 297.361 791.237 297.332 791.118 297.29C791.111 297.371 791.111 297.453 791.118 297.534C791.252 297.516 791.379 297.462 791.484 297.377Z"fill="currentColor"></path><path d="M791.113 297.529H791.244V297.447L791.113 297.529Z" fill="currentColor"></path><path d="M803.111 388.726L804.591 387.883L805.142 387.573L805.641 387.04C804.702 387.444 803.846 388.016 803.111 388.726Z"fill="currentColor"></path><path d="M793.669 299.515L792.223 298.138L791.243 297.605C791.77 298.535 792.641 299.221 793.669 299.515Z"fill="currentColor"></path><path d="M430.019 1186.18C428.864 1186.68 427.852 1187.46 427.076 1188.45L427.988 1187.87C428.608 1187.3 429.485 1186.63 430.019 1186.18Z"fill="currentColor"></path><path d="M641.187 1144.63C641.187 1143.33 640.551 1143.57 640.705 1148.21C640.705 1147.84 640.86 1147.46 640.929 1147.1C641.015 1146.27 641.084 1145.46 641.187 1144.63Z"fill="currentColor"></path><path d="M619.284 1186.18C618.129 1186.68 617.118 1187.46 616.342 1188.45L617.254 1187.87C617.873 1187.3 618.751 1186.63 619.284 1186.18Z"fill="currentColor"></path><path d="M281.304 1196.06C280.427 1195.3 279.354 1194.8 278.207 1194.61C279.136 1195.06 280.065 1195.51 280.684 1195.85L281.304 1196.06Z"fill="currentColor"></path><path d="M247.841 1164.01C247.704 1162.66 247.288 1161.35 246.619 1160.16C247.093 1161.39 247.489 1162.66 247.806 1163.94L247.841 1164.01Z"fill="currentColor"></path><path d="M472.623 590.836C426.682 610.503 374.546 632.802 306.976 632.802C278.71 632.746 250.58 628.868 223.353 621.274L270.086 1101.08C271.74 1121.13 280.876 1139.83 295.679 1153.46C310.482 1167.09 329.87 1174.65 349.992 1174.65C349.992 1174.65 416.254 1178.09 438.365 1178.09C462.161 1178.09 533.516 1174.65 533.516 1174.65C553.636 1174.65 573.019 1167.08 587.819 1153.45C602.619 1139.82 611.752 1121.13 613.406 1101.08L663.459 570.876C641.091 563.237 618.516 558.161 593.068 558.161C549.054 558.144 513.591 573.303 472.623 590.836Z"fill="currentColor"></path><path d="M78.6885 386.132L79.4799 386.872L79.9962 387.182C79.5987 386.787 79.1603 386.435 78.6885 386.132Z"fill="currentColor"></path><path d="M879.567 341.849L872.53 306.352C866.215 274.503 851.882 244.409 819.19 232.898C808.711 229.215 796.821 227.633 788.786 220.01C780.751 212.388 778.376 200.55 776.518 189.572C773.076 169.423 769.842 149.257 766.314 129.143C763.269 111.85 760.86 92.4243 752.928 76.56C742.604 55.2584 721.182 42.8009 699.88 34.559C688.965 30.4844 677.826 27.0375 666.517 24.2352C613.297 10.1947 557.342 5.03277 502.591 2.09047C436.875 -1.53577 370.983 -0.443234 305.422 5.35968C256.625 9.79894 205.229 15.1674 158.858 32.0469C141.91 38.224 124.445 45.6399 111.558 58.7341C95.7448 74.8221 90.5829 99.7026 102.128 119.765C110.336 134.012 124.239 144.078 138.985 150.737C158.192 159.317 178.251 165.846 198.829 170.215C256.126 182.879 315.471 187.851 374.007 189.968C438.887 192.586 503.87 190.464 568.44 183.618C584.408 181.863 600.347 179.758 616.257 177.304C634.995 174.43 647.022 149.928 641.499 132.859C634.891 112.453 617.134 104.538 597.055 107.618C594.095 108.082 591.153 108.512 588.193 108.942L586.06 109.252C579.257 110.113 572.455 110.915 565.653 111.661C551.601 113.175 537.515 114.414 523.394 115.378C491.768 117.58 460.057 118.595 428.363 118.647C397.219 118.647 366.058 117.769 334.983 115.722C320.805 114.793 306.661 113.611 292.552 112.177C286.134 111.506 279.733 110.801 273.333 110.009L267.241 109.235L265.917 109.046L259.602 108.134C246.697 106.189 233.792 103.953 221.025 101.251C219.737 100.965 218.584 100.249 217.758 99.2193C216.932 98.1901 216.482 96.9099 216.482 95.5903C216.482 94.2706 216.932 92.9904 217.758 91.9612C218.584 90.9319 219.737 90.2152 221.025 89.9293H221.266C232.33 87.5721 243.479 85.5589 254.663 83.8038C258.392 83.2188 262.131 82.6453 265.882 82.0832H265.985C272.988 81.6186 280.026 80.3625 286.994 79.5366C347.624 73.2301 408.614 71.0801 469.538 73.1014C499.115 73.9618 528.676 75.6996 558.116 78.6935C564.448 79.3474 570.746 80.0357 577.043 80.8099C579.452 81.1025 581.878 81.4465 584.305 81.7391L589.191 82.4445C603.438 84.5667 617.61 87.1419 631.708 90.1703C652.597 94.7128 679.422 96.1925 688.713 119.077C691.673 126.338 693.015 134.408 694.649 142.03L696.732 151.752C696.786 151.926 696.826 152.105 696.852 152.285C701.773 175.227 706.7 198.169 711.632 221.111C711.994 222.806 712.002 224.557 711.657 226.255C711.312 227.954 710.621 229.562 709.626 230.982C708.632 232.401 707.355 233.6 705.877 234.504C704.398 235.408 702.75 235.997 701.033 236.236H700.895L697.884 236.649L694.908 237.044C685.478 238.272 676.038 239.419 666.586 240.486C647.968 242.608 629.322 244.443 610.648 245.992C573.539 249.077 536.356 251.102 499.098 252.066C480.114 252.57 461.135 252.806 442.162 252.771C366.643 252.712 291.189 248.322 216.173 239.625C208.051 238.662 199.93 237.629 191.808 236.58C198.106 237.389 187.231 235.96 185.029 235.651C179.867 234.928 174.705 234.177 169.543 233.397C152.216 230.798 134.993 227.598 117.7 224.793C96.7944 221.352 76.8005 223.073 57.8906 233.397C42.3685 241.891 29.8055 254.916 21.8776 270.735C13.7217 287.597 11.2956 305.956 7.64786 324.075C4.00009 342.193 -1.67805 361.688 0.472751 380.288C5.10128 420.431 33.165 453.054 73.5313 460.35C111.506 467.232 149.687 472.807 187.971 477.556C338.361 495.975 490.294 498.178 641.155 484.129C653.44 482.982 665.708 481.732 677.959 480.378C681.786 479.958 685.658 480.398 689.292 481.668C692.926 482.938 696.23 485.005 698.962 487.717C701.694 490.429 703.784 493.718 705.08 497.342C706.377 500.967 706.846 504.836 706.453 508.665L702.633 545.797C694.936 620.828 687.239 695.854 679.542 770.874C671.513 849.657 663.431 928.434 655.298 1007.2C653.004 1029.39 650.71 1051.57 648.416 1073.74C646.213 1095.58 645.904 1118.1 641.757 1139.68C635.218 1173.61 612.248 1194.45 578.73 1202.07C548.022 1209.06 516.652 1212.73 485.161 1213.01C450.249 1213.2 415.355 1211.65 380.443 1211.84C343.173 1212.05 297.525 1208.61 268.756 1180.87C243.479 1156.51 239.986 1118.36 236.545 1085.37C231.957 1041.7 227.409 998.039 222.9 954.381L197.607 711.615L181.244 554.538C180.968 551.94 180.693 549.376 180.435 546.76C178.473 528.023 165.207 509.681 144.301 510.627C126.407 511.418 106.069 526.629 108.168 546.76L120.298 663.214L145.385 904.104C152.532 972.528 159.661 1040.96 166.773 1109.41C168.15 1122.52 169.44 1135.67 170.885 1148.78C178.749 1220.43 233.465 1259.04 301.224 1269.91C340.799 1276.28 381.337 1277.59 421.497 1278.24C472.979 1279.07 524.977 1281.05 575.615 1271.72C650.653 1257.95 706.952 1207.85 714.987 1130.13C717.282 1107.69 719.576 1085.25 721.87 1062.8C729.498 988.559 737.115 914.313 744.72 840.061L769.601 597.451L781.009 486.263C781.577 480.749 783.905 475.565 787.649 471.478C791.392 467.391 796.352 464.617 801.794 463.567C823.25 459.386 843.761 452.245 859.023 435.916C883.318 409.918 888.153 376.021 879.567 341.849ZM72.4301 365.835C72.757 365.68 72.1548 368.484 71.8967 369.792C71.8451 367.813 71.9483 366.058 72.4301 365.835ZM74.5121 381.94C74.6842 381.819 75.2003 382.508 75.7337 383.334C74.925 382.576 74.4089 382.009 74.4949 381.94H74.5121ZM76.5597 384.641C77.2996 385.897 77.6953 386.689 76.5597 384.641V384.641ZM80.672 387.979H80.7752C80.7752 388.1 80.9645 388.22 81.0333 388.341C80.9192 388.208 80.7925 388.087 80.6548 387.979H80.672ZM800.796 382.989C793.088 390.319 781.473 393.726 769.996 395.43C641.292 414.529 510.713 424.199 380.597 419.932C287.476 416.749 195.336 406.407 103.144 393.382C94.1102 392.109 84.3197 390.457 78.1082 383.798C66.4078 371.237 72.1548 345.944 75.2003 330.768C77.9878 316.865 83.3218 298.334 99.8572 296.355C125.667 293.327 155.64 304.218 181.175 308.09C211.917 312.781 242.774 316.538 273.745 319.36C405.925 331.405 540.325 329.529 671.92 311.91C695.906 308.686 719.805 304.941 743.619 300.674C764.835 296.871 788.356 289.731 801.175 311.703C809.967 326.673 811.137 346.701 809.778 363.615C809.359 370.984 806.139 377.915 800.779 382.989H800.796Z"fill="currentColor"></path></svg></a>
+        </div>
+
+        <div class="footer-middle">
+        </div>
+
+        <div class="footer-right">
+            <span class="item">21226(words)</span>
+            <a class="item" accesskey="g" href="#top" id="top-link" title="Go to Top (Alt + G)">⬆</a>
+        </div>
+    </footer>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                packages: { "[+]": ["ams"] }, 
+                tags: "ams", 
+            },
+            options: {
+                enableSpeech: false,        
+                enableExplorer: false,      
+                enableMenu: false,          
+                ignoreHtmlClass: "tex2jax_ignore",
+                processHtmlClass: "tex2jax_process"
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/mathjax/4.0.0/tex-chtml.min.js"></script>
+    <script type="text/javascript" defer async src="https://s4.zstatic.net/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+    <script type="text/javascript" src="/js/particle-clock.js"></script>
+    <script type="text/javascript" src="/js/index.min.62af824fc9f8f20406aebaf20c60d6fbd42ffe3d23aae53d90dddd32415f13d9.js" integrity="sha256-Yq&#43;CT8n48gQGrrryDGDW&#43;9Qv/j0jquU9kN3dMkFfE9k="></script>
+</body>
+
+</html>

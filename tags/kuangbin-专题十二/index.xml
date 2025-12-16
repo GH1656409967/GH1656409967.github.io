@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kuangbin 专题十二 on 似水</title>
+    <link>http://localhost:1313/tags/kuangbin-%E4%B8%93%E9%A2%98%E5%8D%81%E4%BA%8C/</link>
+    <description>Recent content in Kuangbin 专题十二 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 22 Apr 2018 10:39:02 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/kuangbin-%E4%B8%93%E9%A2%98%E5%8D%81%E4%BA%8C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU-1069 Monkey and Banana</title>
+      <link>http://localhost:1313/z/solution/3e77307198edd961/</link>
+      <pubDate>Sun, 22 Apr 2018 10:39:02 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3e77307198edd961/</guid>
+      <description>&lt;h1 id=&#34;monkey-and-banana-hdu---1069&#34;&gt;Monkey and Banana (&lt;a href=&#34;https://vjudge.net/problem/HDU-1069&#34;&gt;HDU - 1069&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A group of researchers are designing an experiment to test the IQ of a  monkey. They will hang a banana at the roof of a building, and at the  mean time, provide the monkey with some blocks. If the monkey is clever  enough, it shall be able to reach the banana by placing one block on the top another to build a tower and climb up to get its favorite food.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1029 Ignatius and the Princess IV</title>
+      <link>http://localhost:1313/z/solution/208fcd86a174a67a/</link>
+      <pubDate>Sun, 22 Apr 2018 10:24:06 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/208fcd86a174a67a/</guid>
+      <description>&lt;h1 id=&#34;ignatius-and-the-princess-iv-hdu---1029&#34;&gt;Ignatius and the Princess IV (&lt;a href=&#34;https://vjudge.net/problem/HDU-1029&#34;&gt;HDU - 1029&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;OK, you are not too bad, em&amp;hellip; But you can never pass the next test.&amp;rdquo; feng5166 says.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;I will tell you an odd number N, and then N integers. There will  be a special integer among them, you have to tell me which integer is  the special one after I tell you all the integers.&amp;rdquo; feng5166 says.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;But what is the characteristic of the special integer?&amp;rdquo; Ignatius asks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-1160 FatMouse&#39;s Speed</title>
+      <link>http://localhost:1313/z/solution/3e77307198edd961/</link>
+      <pubDate>Fri, 30 Mar 2018 19:28:50 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3e77307198edd961/</guid>
+      <description>&lt;h1 id=&#34;fatmouses-speed-hdu---1160&#34;&gt;FatMouse’s Speed (&lt;a href=&#34;https://vjudge.net/problem/HDU-1160&#34;&gt;HDU - 1160&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;FatMouse believes that the fatter a mouse is, the faster it runs. To  disprove this, you want to take the data on a collection of mice and put as large a subset of this data as possible into a sequence so that the  weights are increasing, but the speeds are decreasing.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Input contains data for a bunch of mice, one mouse per line, terminated by end of file.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-1458 Common Subsequence</title>
+      <link>http://localhost:1313/z/solution/d75915ae48ff6105/</link>
+      <pubDate>Fri, 30 Mar 2018 10:49:03 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/d75915ae48ff6105/</guid>
+      <description>&lt;h1 id=&#34;common-subsequence-poj-1458hdu---1159&#34;&gt;Common Subsequence (&lt;a href=&#34;https://vjudge.net/problem/POJ-1458&#34;&gt;POJ-1458&lt;/a&gt;、&lt;a href=&#34;https://vjudge.net/problem/HDU-1159&#34;&gt;HDU - 1159&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A subsequence of a given sequence is the given sequence with some  elements (possible none) left out. Given a sequence X = &amp;lt; x1, x2,  &amp;hellip;, xm &amp;gt; another sequence Z = &amp;lt; z1, z2, &amp;hellip;, zk &amp;gt; is a  subsequence of X if there exists a strictly increasing sequence &amp;lt; i1, i2, &amp;hellip;, ik &amp;gt; of indices of X such that for all j = 1,2,&amp;hellip;,k, x       ij = zj. For example, Z = &amp;lt; a, b, f, c  &amp;gt; is a subsequence of X = &amp;lt; a, b, c, f, b, c &amp;gt; with index  sequence &amp;lt; 1, 2, 4, 6 &amp;gt;. Given two sequences X and Y the problem  is to find the length of the maximum-length common subsequence of X and  Y.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-2533 Longest Ordered Subsequence</title>
+      <link>http://localhost:1313/z/solution/1f76fc9f9b518d48/</link>
+      <pubDate>Fri, 30 Mar 2018 09:58:35 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/1f76fc9f9b518d48/</guid>
+      <description>&lt;h1 id=&#34;longest-ordered-subsequence-poj---2533&#34;&gt;Longest Ordered Subsequence (&lt;a href=&#34;https://vjudge.net/problem/POJ-2533&#34;&gt;POJ - 2533&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A numeric sequence of        &lt;em&gt;ai&lt;/em&gt; is ordered if        &lt;em&gt;a1&lt;/em&gt; &amp;lt;        &lt;em&gt;a2&lt;/em&gt; &amp;lt; &amp;hellip; &amp;lt;        &lt;em&gt;aN&lt;/em&gt;. Let the subsequence of the given numeric sequence (       &lt;em&gt;a1&lt;/em&gt;,        &lt;em&gt;a2&lt;/em&gt;, &amp;hellip;,        &lt;em&gt;aN&lt;/em&gt;) be any sequence (       &lt;em&gt;ai1&lt;/em&gt;,        &lt;em&gt;ai2&lt;/em&gt;, &amp;hellip;,        &lt;em&gt;aiK&lt;/em&gt;), where 1 &amp;lt;=        &lt;em&gt;i1&lt;/em&gt; &amp;lt;        &lt;em&gt;i2&lt;/em&gt; &amp;lt; &amp;hellip; &amp;lt;        &lt;em&gt;iK&lt;/em&gt; &amp;lt;=        &lt;em&gt;N&lt;/em&gt;. For example, sequence (1, 7, 3, 5, 9, 4, 8) has ordered subsequences, e. g., (1, 7), (3, 4, 8) and many others. All longest  ordered subsequences are of length 4, e. g., (1, 3, 5, 8).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

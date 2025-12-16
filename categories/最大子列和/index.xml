@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>最大子列和 on 似水</title>
+    <link>http://localhost:1313/categories/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/</link>
+    <description>Recent content in 最大子列和 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 28 Aug 2020 13:59:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PATA-1007 Maximum Subsequence Sum</title>
+      <link>http://localhost:1313/z/solution/e552f8a8e1d42eba/</link>
+      <pubDate>Fri, 28 Aug 2020 13:59:18 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/e552f8a8e1d42eba/</guid>
+      <description>&lt;h1 id=&#34;maximum-subsequence-sumpata-1007&#34;&gt;Maximum Subsequence Sum(&lt;a href=&#34;https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805514284679168&#34;&gt;PATA-1007&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Given a sequence of K integers { N1, N2, &amp;hellip;, NK }. A continuous subsequence is defined to be { Ni, Ni+1, &amp;hellip;, Nj } where 1≤i≤j≤K. The Maximum Subsequence is the continuous subsequence which has the  largest sum of its elements. For example, given sequence { -2, 11, -4,  13, -5, -2 }, its maximum subsequence is { 11, -4, 13 } with the largest sum being 20.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

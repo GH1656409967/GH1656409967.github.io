@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anaconda on 似水</title>
+    <link>http://localhost:1313/tags/anaconda/</link>
+    <description>Recent content in Anaconda on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/anaconda/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>anaconda</title>
+      <link>http://localhost:1313/z/tool/anaconda/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/tool/anaconda/</guid>
+      <description>&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;&#xA;&lt;p&gt;25/2/22 忘了干啥装的了，应该是维护py版本，方便安装一些库。&lt;/p&gt;&#xA;&lt;p&gt;Anaconda 是一个“全功能”数据科学平台，适合快速开始，不需要担心环境配置。&#xA;Miniconda 是一个精简的起点，适合那些需要高度定制化的环境并且已经熟悉 Python 环境管理的开发者。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

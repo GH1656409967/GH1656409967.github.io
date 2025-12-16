@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据结构/树 on 似水</title>
+    <link>http://localhost:1313/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/</link>
+    <description>Recent content in 数据结构/树 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 25 Apr 2021 09:07:11 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>红黑树</title>
+      <link>http://localhost:1313/z/algo/rbtree/</link>
+      <pubDate>Sun, 25 Apr 2021 09:07:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/rbtree/</guid>
+      <description>&lt;h1 id=&#34;定义&#34;&gt;定义&lt;/h1&gt;&#xA;&lt;p&gt;红黑树是一种自平衡&lt;a href=&#34;../%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&#34;&gt;二叉搜索树(BST)&lt;/a&gt;，通过节点颜色约束保持近似平衡。&lt;/p&gt;&#xA;&lt;h2 id=&#34;为什么需要红黑树&#34;&gt;为什么需要红黑树&lt;/h2&gt;&#xA;&lt;p&gt;我们需要一种动态维护有序数据的结构，能高效地：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;插入、删除、查找（O(log n)）&lt;/li&gt;&#xA;&lt;li&gt;保持有序性（方便范围查询、前驱/后继操作）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;但普通的数据结构各有缺陷：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

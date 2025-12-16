@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tcp on 似水</title>
+    <link>http://localhost:1313/tags/tcp/</link>
+    <description>Recent content in Tcp on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 05 Jan 2025 17:26:10 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tcp</title>
+      <link>http://localhost:1313/z/net/tcp/</link>
+      <pubDate>Sun, 05 Jan 2025 17:26:10 +0800</pubDate>
+      <guid>http://localhost:1313/z/net/tcp/</guid>
+      <description>&lt;h1 id=&#34;tcp协议&#34;&gt;TCP协议&lt;/h1&gt;&#xA;&lt;h2 id=&#34;基本定义&#34;&gt;基本定义&lt;/h2&gt;&#xA;&lt;p&gt;传输控制协议（Transmission Control Protocol）&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;OSI模型第四层(传输层)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;面向连接的可靠字节流服务&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;面向连接（连接建立与释放，只能一对一，不能像UDP一对多）&lt;/li&gt;&#xA;&lt;li&gt;可靠传输（确认应答 + 超时重传 + 校验 + 有序传输 + 流量控制 + 拥塞控制）&lt;/li&gt;&#xA;&lt;li&gt;面向字节流（数据以字节流方式发送，不保留消息边界。且有序的，当「前一个」TCP 报文没有收到的时候，即使它先收到了后面的 TCP 报文，那么也不能扔给应用层去处理，同时对「重复」的 TCP 报文会自动丢弃）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;全双工通信模式（双方可以同时发送和接收）&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>找工作</title>
+      <link>http://localhost:1313/z/job/</link>
+      <pubDate>Sun, 05 Jan 2025 17:26:10 +0800</pubDate>
+      <guid>http://localhost:1313/z/job/</guid>
+      <description>&lt;h1 id=&#34;找工作&#34;&gt;找工作&lt;/h1&gt;&#xA;&lt;h2 id=&#34;步骤&#34;&gt;步骤&lt;/h2&gt;&#xA;&lt;h3 id=&#34;工作城市&#34;&gt;工作城市&lt;/h3&gt;&#xA;&lt;p&gt;离家近：只选福建周边，出发时间08:00之后 到达时间17:00之前 早晚-票价-时长 软卧/二等座&lt;br&gt;&#xA;岗位多：计算机相关，非制造业等&lt;br&gt;&#xA;攒钱多：收入（高） - 消费（住房，饮食，出行） = 存下来的钱&lt;br&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

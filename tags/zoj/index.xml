@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ZOJ on 似水</title>
+    <link>http://localhost:1313/tags/zoj/</link>
+    <description>Recent content in ZOJ on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 16 Jul 2020 16:00:12 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/zoj/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ZOJ-3057 Beans Game</title>
+      <link>http://localhost:1313/z/solution/59becec5b38f9314/</link>
+      <pubDate>Thu, 16 Jul 2020 16:00:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/59becec5b38f9314/</guid>
+      <description>&lt;h1 id=&#34;beans-gamezoj-3057&#34;&gt;Beans Game(&lt;a href=&#34;https://vjudge.net/problem/ZOJ-3057&#34;&gt;ZOJ-3057&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;There are three piles of beans. TT and DD pick any number of beans from  any pile or the same number from any two piles by turns. Who get the  last bean will win. TT and DD are very clever.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Each test case contains of a single line containing 3 integers &lt;em&gt;a&lt;/em&gt; &lt;em&gt;b&lt;/em&gt; &lt;em&gt;c&lt;/em&gt;, indicating the numbers of beans of these piles. It is assumed that 0 &amp;lt;= &lt;em&gt;a&lt;/em&gt;,&lt;em&gt;b&lt;/em&gt;,&lt;em&gt;c&lt;/em&gt; &amp;lt;= 300 and &lt;em&gt;a&lt;/em&gt; + &lt;em&gt;b&lt;/em&gt; + &lt;em&gt;c&lt;/em&gt; &amp;gt; 0.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ZOJ-1195 Blowing Fuses</title>
+      <link>http://localhost:1313/z/solution/83396bcae8650f1c/</link>
+      <pubDate>Sun, 22 Apr 2018 10:14:54 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/83396bcae8650f1c/</guid>
+      <description>&lt;h1 id=&#34;blowing-fuses-zoj---1195&#34;&gt;Blowing Fuses (&lt;a href=&#34;https://vjudge.net/problem/ZOJ-1195&#34;&gt;ZOJ - 1195&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Maybe you are familiar with the following situation. You have plugged in a lot of electrical devices, such as toasters, refrigerators, microwave ovens, computers, stereos, etc, and have them all running. But at the  moment when you turn on the TV, the fuse blows, since the power drawn  from all the machines is greater than the capacity of the fuse. Of  course this is a great safety feature, avoiding that houses burn down  too often due to fires ignited by overheating wires. But it is also  annoying to walk down to the basement (or some other inconvenient place) to replace to fuse or switch it back on.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ZOJ-1168 Function Run Fun</title>
+      <link>http://localhost:1313/z/solution/330e311cbbbe0b3b/</link>
+      <pubDate>Sun, 22 Apr 2018 10:06:31 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/330e311cbbbe0b3b/</guid>
+      <description>&lt;h1 id=&#34;function-run-fun-zoj---1168&#34;&gt;Function Run Fun (&lt;a href=&#34;https://vjudge.net/problem/ZOJ-1168&#34;&gt;ZOJ - 1168&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;We all love recursion! Don&amp;rsquo;t we?&lt;/p&gt;&#xA;&lt;p&gt;Consider a three-parameter recursive function w(a, b, c):&lt;/p&gt;&#xA;&lt;p&gt;if a &amp;lt;= 0 or b &amp;lt;= 0 or c &amp;lt;= 0, then w(a, b, c) returns:&#xA;1&lt;/p&gt;&#xA;&lt;p&gt;if a &amp;gt; 20 or b &amp;gt; 20 or c &amp;gt; 20, then w(a, b, c) returns:&#xA;w(20, 20, 20)&lt;/p&gt;&#xA;&lt;p&gt;if a &amp;lt; b and b &amp;lt; c, then w(a, b, c) returns:&#xA;w(a, b, c-1) + w(a, b-1, c-1) - w(a, b-1, c)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ZOJ-1164 Software CRC</title>
+      <link>http://localhost:1313/z/solution/e20129d6f8a0dcdf/</link>
+      <pubDate>Sun, 22 Apr 2018 09:56:43 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/e20129d6f8a0dcdf/</guid>
+      <description>&lt;h1 id=&#34;software-crc-zoj---1164&#34;&gt;Software CRC (&lt;a href=&#34;https://vjudge.net/problem/ZOJ-1164&#34;&gt;ZOJ - 1164&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;You work for a company which uses lots of personal computers. Your  boss, Dr Penny Pincher, has wanted to link the computers together for  some time but has been unwilling to spend any money on the Ethernet  boards you have recommended. You, unwittingly, have pointed out that  each of the PCs has come from the vendor with an asynchronous serial  port at no extra cost. Dr Pincher, of course, recognizes her opportunity and assigns you the task of writing the software necessary to allow  communication between PCs.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

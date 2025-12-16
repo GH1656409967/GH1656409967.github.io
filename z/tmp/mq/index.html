@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" data-theme="light">
+<head>
+    <script>
+        (function () {
+            const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = localStorage.getItem('n8rain-theme') || (prefers ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | 似水</title>
+    <link rel="stylesheet" href="/css/index.min.dec23d3721889f6543816a1c07a479a53dbcf86a9b0d6a9f6e8a31b397487b97.css" integrity="sha256-3sI9NyGIn2VDgWocB6R5pT28&#43;GqbDWqfbooxs5dIe5c=" />
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" id="chroma-light" href="/css/chroma-light.css">
+    <link rel="stylesheet" id="chroma-dark"  href="/css/chroma-dark.css">
+    <script>
+        (function () {
+            const isDark = document.documentElement.dataset.theme === 'dark';
+            document.getElementById('chroma-light').disabled = isDark;
+            document.getElementById('chroma-dark').disabled = !isDark;
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a class="item" href="/" target="_blank">「似水」</a>
+        </div>
+
+        <div class="header-middle">
+            
+        </div>
+
+        <div class="header-right">
+            <a id="reset-layout" class="item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 80V240h96V80H48zM0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V240c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80zM304 272V432h96V272H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V272zM144 368H48v64h96V368zM48 320h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48zM304 80v64h96V80H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V80z"></path></svg></a>
+            <a id="toggle-theme" class="item">◐</a>
+        </div>
+    </header>
+    <main class="container" id="container">
+        <div class="content" id="nav">
+            <nav class="menu">
+                <ul>
+                    <li><i class='fa fa-tags'>&nbsp;</i><a>网站导航</a></li>
+                    <li><i class='fa fa-thumbs-up'>&nbsp;</i><a href="/x/share/">好物分享</a></li>
+                    <li><i class='fa fa-wrench'>&nbsp;</i><a href="/x/tools/">游戏工具</a></li>
+                    <li><i class='fa fa-film'>&nbsp;</i><a href="/x/movies/">影视鉴赏</a></li>
+                    <li><i class='fa fa-book'>&nbsp;</i><a href="/x/books/">书籍阅读</a></li>
+                    <li><i class='fa fa-camera'>&nbsp;</i><a href="/x/gallery/">生活留影</a></li>
+                    <li><i class='fa fa-link'>&nbsp;</i><a href="/x/links/">友情链接</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="overview" id="overview" style="display: none;">
+            <div class="overview-container">
+                <div class="author-block">
+                    <img class="author-avatar" src="/img/avatar.png" alt="夜雨微澜" />
+                    
+                    <a class="author-name" href="/x/personal">夜雨微澜</a><p class="author-slogan">学而不思则罔，思而不学则殆</p>
+                </div>
+
+                <div class="site-state">
+                    <div class="item">
+                        <a href="/archives/">
+                            <span class="count">660</span>
+                            <span class="name">日志</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/series/">
+                            <span class="count">8</span>
+                            <span class="name">系列</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/categories/">
+                            <span class="count">93</span>
+                            <span class="name">分类</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/tags/">
+                            <span class="count">171</span>
+                            <span class="name">标签</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="diy-block">
+                    <canvas id="canvasDiyBlock" style="width:180px;">您的浏览器不支持 Canvas, 请更换浏览器!</canvas>
+                </div>
+
+                <div class="diy-block">
+                    <div id="typed-strings" style="display: none;">
+                        <p>We burn faster than light</p>
+                        <p>Shine across in the night sky</p>
+                    </div>
+                    <span id="typed" style="white-space: pre;line-height: 14px;font-size: 12px;"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="article-content">
+            <article class="main" id="top">
+                <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time>
+                <html>
+<head>
+<meta charset="utf-8"/>
+<link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<style>
+            body {
+                font-family: 'Ubuntu Mono', 'LXGW WenKai Screen', sans-serif;
+            }
+
+            strong {
+                color: rgb(48, 79, 254);
+            }
+
+            .code1 {
+                background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(27, 31, 35, 0.05);
+                padding: 2px 4px;
+                border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                font-family: Consolas;
+                word-break: break-all;
+                color: rgb(100, 149, 237);
+            }
+
+            .code2 {
+                background-color: rgba(27, 31, 35, 0.05);
+                margin: 0px 2px;
+                padding: 2px 4px;
+                border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                overflow-wrap: break-word;
+                font-family: Consolas;
+                word-break: break-all;
+                color: rgb(100, 149, 237);
+                background-position: left top;
+            }
+
+            .pre1 {
+                border-radius: 5px;
+                box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;
+            }
+
+            .q1 {
+                color: rgb(65, 105, 225);
+            }
+
+            .img1 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bq1 {
+                border-top: 3px none rgba(0, 0, 0, 0.4);
+                border-bottom: 3px none rgba(0, 0, 0, 0.4);
+                border-right: 3px none rgba(0, 0, 0, 0.4);
+                background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(227, 242, 253);
+                overflow: auto;
+                padding: 15px 20px;
+                border-left-color: rgb(100, 149, 237);
+            }
+
+        </style>
+</head>
+<h3><span class="q1">Kafka怎么保证数据不丢失？</span></h3>
+<p>使用一个消息队列，其实就分为三大块：<strong>生产者、中间件、消费者</strong>，所以要保证消息就是保证三个环节都不能丢失数据。<img _width="677px" data-index="16" data-src="../img/mq_001_ad58ee95.jpg" data-type="other" data-w="1080" src="../img/mq_001_ad58ee95.jpg" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/></p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>消息生产阶段</strong>：生产者会不会丢消息，取决于生产者对于异常情况的处理是否合理。从消息被生产出来，然后提交给 MQ 的过程中，只要能正常收到 （ MQ 中间件） 的 ack 确认响应，就表示发送成功，所以只要处理好返回值和异常，如果返回异常则进行消息重发，那么这个阶段是不会出现消息丢失的。
+        </li>
+<li>
+<strong>消息存储阶段</strong>：Kafka 在使用时是部署一个集群，生产者在发布消息时，队列中间件通常会写「多个节点」，也就是有多个副本，这样一来，即便其中一个节点挂了，也能保证集群的数据不丢失。
+        </li>
+<li>
+<strong>消息消费阶段</strong>：消费者接收消息+消息处理之后，才回复 ack 的话，那么消息阶段的消息不会丢失。不能收到消息就回 ack，否则可能消息处理中途挂掉了，消息就丢失了。
+        </li>
+</ul>
+<h3><span class="q1">Kafka为什么一个分区只能由消费者组的一个消费者消费？这样设计的意义是什么？</span></h3>
+<p>同一时刻，一条消息只能被组中的一个消费者实例消费<img _width="474px" data-index="17" data-src="../img/mq_002_c6e98f28.png" data-w="474" src="../img/mq_002_c6e98f28.png" style="   border-radius: 4px;  height: auto !important;  width: 474px !important;"/>如果两个消费者负责同一个分区，那么就意味着两个消费者同时读取分区的消息，由于消费者自己可以控制读取消息的offset，就有可能C1才读到2，而C1读到1，C1还没处理完，C2已经读到3了，则会造成很多浪费，因为这就相当于多线程读取同一个消息，会造成消息处理的重复，且不能保证消息的顺序。</p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>4. Kafka 分区和消费者的关系是怎样的？</span></span></h3>
+<p style="text-align: left;"><span>Kafka 的主题（Topic）可以被划分为多个分区（Partition），分区是物理上的概念，每个分区是一个有序的、不可变的消息序列。分区分布在不同的 broker 上，以此实现数据的分布式存储。</span></p>
+<p style="text-align: left;"><span>消费者从 Kafka 的主题中读取消息，消费者可以组成消费者组（Consumer Group），每个消费者组内有多个消费者实例。</span></p>
+<figure class="img1"><span><img _width="474px" data-index="7" data-src="../img/mq_003_e8a24f23.png" data-w="474" src="../img/mq_003_e8a24f23.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 474px !important;"/></span></figure>
+<p style="text-align: left;"><strong><span>在一个消费者组内，一个分区只能被一个消费者实例消费</span></strong><span>。这种设计保证了分区内消息消费的顺序性，因为一个分区的消息只能由一个消费者按顺序处理。比如，一个主题有 3 个分区，一个消费者组中有 3 个消费者，那么这 3 个消费者会分别对应一个分区进行消息消费。</span></p>
+<p style="text-align: left;"><span>如果两个消费者负责同一个分区，那么就意味着两个消费者同时读取分区的消息，由于消费者自己可以控制读取消息的偏移量，就有可能C1才读到2，而C1读到1，C1还没处理完，C2已经读到3了，则会造成很多浪费，因为这就相当于多线程读取同一个消息，会造成消息处理的重复，且不能保证消息的顺序。</span></p>
+<p style="text-align: left;"><span>如果消费者数量 &gt; 分区数，多余消费者闲置，比如主题 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>orders</span></code><span> 有 3 个分区（P0、P1、P2），消费者组 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>group-1</span></code><span> 有 3 个消费者（C1、C2、C3）：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIUo7LXreIIIjjhtKwM0Yp5FGia0z7ngFxXlQJuWJ16RpSXca2euvrZgtQbCzT4PeepboLXk32PnJK/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIUo7LXreIIIjjhtKwM0Yp5FGia0z7ngFxXlQJuWJ16RpSXca2euvrZgtQbCzT4PeepboLXk32PnJK/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>P0 → C1  </span><br/><span>P1 → C2  </span><br/><span>P2 → C3  </span><br/></code></pre>
+<p style="text-align: left;"><span>如果消费者组扩容到 4 个消费者，第 4 个消费者（C4）将无法分配到分区，处于空闲状态。</span></p>
+<h3><span class="q1">限流算法有哪些？</span></h3>
+<p>限流是当高并发或者瞬时高并发时，为了保证系统的稳定性、可用性，对超出服务处理能力之外的请求进行拦截，对访问服务的流量进行限制。</p>
+<p>常见的限流算法有四种：固定窗口限流算法、滑动窗口限流算法、漏桶限流算法和令牌桶限流算法。</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>固定窗口限流算法</strong>实现简单，容易理解，但是流量曲线可能不够平滑，有“突刺现象”，在窗口切换时可能会产生两倍于阈值流量的请求。
+        </li>
+<li>
+<strong>滑动窗口限流算法</strong>是对固定窗口限流算法的改进，有效解决了窗口切换时可能会产生两倍于阈值流量请求的问题。
+        </li>
+<li>
+            漏桶限流算法能够对流量起到整流的作用，让随机不稳定的流量以固定的速率流出，但是不能解决<strong>流量突发</strong>的问题。
+        </li>
+<li>
+<strong>令牌桶算法</strong>作为漏斗算法的一种改进，除了能够起到平滑流量的作用，还允许一定程度的流量突发。
+        </li>
+</ul>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">固定窗口限流算法</p>
+</blockquote>
+<p>固定窗口限流算法就是对一段固定时间窗口内的请求进行计数，如果请求数超过了阈值，则舍弃该请求；如果没有达到设定的阈值，则接受该请求，且计数加1。当时间窗口结束时，重置计数器为0。</p>
+<figure class="img1"><img _width="677px" data-index="18" data-src="../img/mq_004_d47c9646.png" data-w="1080" src="../img/mq_004_d47c9646.png" style="height: auto !important;  width: 656.953px !important;"/></figure>
+<p>固定窗口限流优点是实现简单，但是会有“流量吐刺”的问题，假设窗口大小为1s，限流大小为100，然后恰好在某个窗口的第999ms来了100个请求，窗口前期没有请求，所以这100个请求都会通过。</p>
+<p>再恰好，下一个窗口的第1ms有来了100个请求，也全部通过了，那也就是在2ms之内通过了200个请求，而我们设定的阈值是100，通过的请求达到了阈值的两倍，这样可能会给系统造成巨大的负载压力。</p>
+<figure class="img1"><img _width="677px" data-index="19" data-src="../img/mq_005_7771468c.png" data-w="1080" src="../img/mq_005_7771468c.png" style="height: auto !important;  width: 656.984px !important;"/></figure>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">滑动窗口限流算法</p>
+</blockquote>
+<p>改进固定窗口缺陷的方法是采用滑动窗口限流算法，滑动窗口就是将限流窗口内部切分成一些更小的时间片，然后在时间轴上滑动，每次滑动，滑过一个小时间片，就形成一个新的限流窗口，即滑动窗口。然后在这个滑动窗口内执行固定窗口算法即可。</p>
+<p>滑动窗口可以避免固定窗口出现的放过两倍请求的问题，因为一个短时间内出现的所有请求必然在一个滑动窗口内，所以一定会被滑动窗口限流。</p>
+<figure class="img1"><img _width="677px" data-index="20" data-src="../img/mq_006_b49a2156.png" data-w="1080" src="../img/mq_006_b49a2156.png" style="height: auto !important;  width: 656.984px !important;"/></figure>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">漏桶限流算法</p>
+</blockquote>
+<p>漏桶限流算法是模拟水流过一个有漏洞的桶进而限流的思路，如图。</p>
+<figure class="img1"><img _width="442px" data-index="21" data-src="../img/mq_007_ad663090.png" data-w="442" src="../img/mq_007_ad663090.png" style="height: auto !important;  width: 442px !important;"/></figure>
+<p>水龙头的水先流入漏桶，再通过漏桶底部的孔流出。如果流入的水量太大，底部的孔来不及流出，就会导致水桶太满溢出去。从系统的角度来看，我们不知道什么时候会有请求来，也不知道请求会以多大的速率来，这就给系统的安全性埋下了隐患。但是如果加了一层漏斗算法限流之后，就能够保证请求以恒定的速率流出。</p>
+<p>在系统看来，请求永远是以平滑的传输速率过来，从而起到了保护系统的作用。使用漏桶限流算法，缺点有两个：</p>
+<ul class="list-paddingleft-1">
+<li>
+            即使系统资源很空闲，多个请求同时到达时，漏桶也是慢慢地一个接一个地去处理请求，这其实并不符合人们的期望，因为这样就是在浪费计算资源。
+        </li>
+<li>
+            不能解决流量突发的问题，假设漏斗速率是2个/秒，然后突然来了10个请求，受限于漏斗的容量，只有5个请求被接受，另外5个被拒绝。你可能会说，漏斗速率是2个/秒，然后瞬间接受了5个请求，这不就解决了流量突发的问题吗？不，这5个请求只是被接受了，但是没有马上被处理，处理的速度仍然是我们设定的2个/秒，所以没有解决流量突发的问题
+        </li>
+</ul>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">令牌桶限流算法</p>
+</blockquote>
+<p>令牌桶是另一种桶限流算法，模拟一个特定大小的桶，然后向桶中以特定的速度放入令牌（token），请求到达后，必须从桶中取出一个令牌才能继续处理。如果桶中已经没有令牌了，那么当前请求就被限流。如果桶中的令牌放满了，令牌桶也会溢出。</p>
+<p>放令牌的动作是持续不断进行的，如果桶中令牌数达到上限，则丢弃令牌，因此桶中可能一直持有大量的可用令牌。此时请求进来可以直接拿到令牌执行。比如设置 qps 为 100，那么限流器初始化完成 1 秒后，桶中就已经有 100 个令牌了，如果此前还没有请求过来，这时突然来了 100 个请求，该限流器可以抵挡瞬时的 100 个请求。</p>
+<p>由此可见，只有桶中没有令牌时，请求才会进行等待，最终表现的效果即为以一定的速率执行。</p>
+<p>令牌桶的示意图如下：</p>
+<figure style="display: flex;flex-direction: column;justify-content: center;align-items: center;padding: 0px 0.5em;"><img _width="245px" data-index="22" data-src="../img/mq_008_6302e909.png" data-w="1080" src="../img/mq_008_6302e909.png" style="         box-shadow: rgb(210, 210, 210) 0em 0em 0.5em 0px; width: 245px !important; height: auto !important;  "/></figure>
+<p>令牌桶限流算法综合效果比较好，能在最大程度利用系统资源处理请求的基础上，实现限流的目标，建议通常场景中优先使用该算法。</p>
+<h3><span class="q1">谈谈对rocketmq的理解？</span></h3>
+<p>消息队列主要有三大作用：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>解耦</strong>：可以在多个系统之间进行解耦，将原本通过网络之间的调用的方式改为使用MQ进行消息的异步通讯，只要该操作不是需要同步的，就可以改为使用MQ进行不同系统之间的联系，这样项目之间不会存在耦合，系统之间不会产生太大的影响，就算一个系统挂了，也只是消息挤压在MQ里面没人进行消费而已，不会对其他的系统产生影响。
+        </li>
+<li>
+<strong>异步</strong>：加入一个操作设计到好几个步骤，这些步骤之间不需要同步完成，比如客户去创建了一个订单，还要去客户轨迹系统添加一条轨迹、去库存系统更新库存、去客户系统修改客户的状态等等。这样如果这个系统都直接进行调用，那么将会产生大量的时间，这样对于客户是无法接收的；并且像添加客户轨迹这种操作是不需要去同步操作的，如果使用MQ将客户创建订单时，将后面的轨迹、库存、状态等信息的更新全都放到MQ里面然后去异步操作，这样就可加快系统的访问速度，提供更好的客户体验。
+    </li>
+<li>
+<strong>削峰</strong>：一个系统访问流量有高峰时期，也有低峰时期，比如说，中午整点有一个抢购活动等等。比如系统平时流量并不高，一秒钟只有100多个并发请求，系统处理没有任何压力，一切风平浪静，到了某个抢购活动时间，系统并发访问了剧增，比如达到了每秒5000个并发请求，而我们的系统每秒只能处理2000个请求，那么由于流量太大，我们的系统、数据库可能就会崩溃。这时如果使用MQ进行流量削峰，将用户的大量消息直接放到MQ里面，然后我们的系统去按自己的最大消费能力去消费这些消息，就可以保证系统的稳定，只是可能要跟进业务逻辑，给用户返回特定页面或者稍后通过其他方式通知其结果
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>10. 为什么使用rocketmq？</span></span></h3>
+<p style="text-align: left;"><span>消息队列的三大作用：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>解耦</span></strong><span>：可以在多个系统之间进行解耦，将原本通过网络之间的调用的方式改为使用MQ进行消息的异步通讯，只要该操作不是需要同步的，就可以改为使用MQ进行不同系统之间的联系，这样项目之间不会存在耦合，系统之间不会产生太大的影响，就算一个系统挂了，也只是消息挤压在MQ里面没人进行消费而已，不会对其他的系统产生影响。</span>
+</li>
+<li>
+<strong><span>异步</span></strong><span>：加入一个操作设计到好几个步骤，这些步骤之间不需要同步完成，比如客户去创建了一个订单，还要去客户轨迹系统添加一条轨迹、去库存系统更新库存、去客户系统修改客户的状态等等。这样如果这个系统都直接进行调用，那么将会产生大量的时间，这样对于客户是无法接收的；并且像添加客户轨迹这种操作是不需要去同步操作的，如果使用MQ将客户创建订单时，将后面的轨迹、库存、状态等信息的更新全都放到MQ里面然后去异步操作，这样就可加快系统的访问速度，提供更好的客户体验。</span>
+</li>
+<li>
+<strong><span>削峰</span></strong><span>：一个系统访问流量有高峰时期，也有低峰时期，比如说，中午整点有一个抢购活动等等。比如系统平时流量并不高，一秒钟只有100多个并发请求，系统处理没有任何压力，一切风平浪静，到了某个抢购活动时间，系统并发访问了剧增，比如达到了每秒5000个并发请求，而我们的系统每秒只能处理2000个请求，那么由于流量太大，我们的系统、数据库可能就会崩溃。这时如果使用MQ进行流量削峰，将用户的大量消息直接放到MQ里面，然后我们的系统去按自己的最大消费能力去消费这些消息，就可以保证系统的稳定，只是可能要跟进业务逻辑，给用户返回特定页面或者稍后通过其他方式通知其结果</span>
+</li>
+</ul>
+<h3><span class="q1">kafka副本了解吗，聊聊ISR</span></h3>
+<p>在Kafka中是有主题概念的，而每个主题又进一步划分成若干个分区。副本的概念实际上是在分区层级下定义的，每个分区配置有若干个副本。<strong>所谓副本（Replica），本质就是一个只能追加写消息的提交日志</strong>。根据Kafka副本机制的定义，同一个分区下的所有副本保存有相同的消息序列，这些副本分散保存在不同的Broker上，从而能够对抗部分Broker宕机带来的数据不可用。<img _width="677px" data-index="4" data-src="../img/mq_009_9126497b.png" data-w="1080" src="../img/mq_009_9126497b.png" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>在kafka中采用<strong>基于领导者（Leader-based）的副本机制来</strong>确保副本中所有的数据的一致性。基于领导者的副本机制的工作原理如下图所示：<img _width="677px" data-index="5" data-src="../img/mq_010_3b05eb71.jpg" data-type="jpeg" data-w="1080" src="../img/mq_010_3b05eb71.jpg" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>第一，在Kafka中，副本分成两类：领导者副本（Leader Replica）和追随者副本（Follower Replica）。每个分区在创建时都要选举一个副本，称为领导者副本，其余的副本自动称为追随者副本。</p>
+<p>第二，Kafka的副本机制比其他分布式系统要更严格一些。在Kafka中，追随者副本是不对外提供服务的。这就是说，任何一个追随者副本都不能响应消费者和生产者的读写请求。所有的请求都必须由领导者副本来处理，或者说，所有的读写请求都必须发往领导者副本所在的Broker，由该Broker负责处理。追随者副本不处理客户端请求，它唯一的任务就是从领导者副本<strong>异步拉取</strong>消息，并写入到自己的提交日志中，从而实现与领导者副本的同步。</p>
+<p>第三，当领导者副本挂掉了，或者说领导者副本所在的Broker宕机时，Kafka依托于ZooKeeper提供的监控功能能够实时感知到，并立即开启新一轮的领导者选举，从追随者副本中选一个作为新的领导者。老Leader副本重启回来后，只能作为追随者副本加入到集群中。</p>
+<p>一定要特别注意上面的第二点，即<strong>追随者副本是不对外提供服务的</strong>。还记得刚刚我们谈到副本机制的好处时，说过Kafka没能提供读操作横向扩展以及改善局部性吗？具体的原因就在于此。</p>
+<p>对于客户端用户而言，Kafka的追随者副本没有任何作用，它既不能像MySQL那样帮助领导者副本“扛读”，也不能实现将某些副本放到离客户端近的地方来改善数据局部性。</p>
+<p>既然如此，Kafka为什么要这样设计呢？其实这种副本机制有两个方面的好处。</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>方便实现“Read-your-writes”</strong>：所谓Read-your-writes，顾名思义就是，当你使用生产者API向Kafka成功写入消息后，马上使用消费者API去读取刚才生产的消息。举个例子，比如你平时发微博时，你发完一条微博，肯定是希望能立即看到的，这就是典型的Read-your-writes场景。如果允许追随者副本对外提供服务，由于副本同步是异步的，因此有可能出现追随者副本还没有从领导者副本那里拉取到最新的消息，从而使得客户端看不到最新写入的消息。
+    </li>
+<li>
+<strong>方便实现单调读（Monotonic Reads）</strong>：什么是单调读呢？就是对于一个消费者用户而言，在多次消费消息时，它不会看到某条消息一会儿存在一会儿不存在。如果允许追随者副本提供读服务，那么假设当前有2个追随者副本F1和F2，它们异步地拉取领导者副本数据。倘若F1拉取了Leader的最新消息而F2还未及时拉取，那么，此时如果有一个消费者先从F1读取消息之后又从F2拉取消息，它可能会看到这样的现象：第一次消费时看到的最新消息在第二次消费时不见了，这就不是单调读一致性。但是，如果所有的读请求都是由Leader来处理，那么Kafka就很容易实现单调读一致性。
+        </li>
+</ul>
+<p>在kafka中，追随者副本不提供服务，只是定期地异步拉取领导者副本中的数据而已。既然是异步的，就存在着不可能与Leader实时同步的风险。在探讨如何正确应对这种风险之前，我们必须要精确地知道同步的含义是什么。或者说，Kafka要明确地告诉我们，追随者副本到底在什么条件下才算与Leader同步。</p>
+<p>基于这个想法，Kafka引入了In-sync Replicas，也就是所谓的ISR副本集合。ISR中的副本都是与Leader同步的副本，相反，不在ISR中的追随者副本就被认为是与Leader不同步的。</p>
+<p>那么，到底什么副本能够进入到ISR中呢？</p>
+<p>我们首先要明确的是，Leader副本天然就在ISR中。也就是说，<strong>ISR不只是追随者副本集合，它必然包括Leader副本。甚至在某些情况下，ISR只有Leader这一个副本</strong>。</p>
+<p>另外，能够进入到ISR的追随者副本要满足一定的条件。<img _width="677px" data-index="6" data-src="../img/mq_011_146815bc.jpg" data-type="jpeg" data-w="1080" src="../img/mq_011_146815bc.jpg" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>图中有3个副本：1个领导者副本和2个追随者副本。Leader副本当前写入了10条消息，Follower1副本同步了其中的6条消息，而Follower2副本只同步了其中的3条消息。那么问题来了，对于这2个追随者副本，你觉得哪个追随者副本与Leader不同步？</p>
+<p>答案是，要根据具体情况来定。换成英文，就是那句著名的“It depends”。看上去好像Follower2的消息数比Leader少了很多，它是最有可能与Leader不同步的。的确是这样的，但仅仅是可能。</p>
+<p>事实上，这张图中的2个Follower副本都有可能与Leader不同步，但也都有可能与Leader同步。也就是说，Kafka判断Follower是否与Leader同步的标准，不是看相差的消息数，而是另有“玄机”。</p>
+<p><strong>这个标准就是Broker端参数replica.lag.time.max.ms参数值</strong>。这个参数的含义是Follower副本能够落后Leader副本的最长时间间隔，当前默认值是10秒。这就是说，只要一个Follower副本落后Leader副本的时间不连续超过10秒，那么Kafka就认为该Follower副本与Leader是同步的，即使此时Follower副本中保存的消息明显少于Leader副本中的消息。</p>
+<p>我们都知道，Follower副本唯一的工作就是不断地从Leader副本拉取消息，然后写入到自己的提交日志中。<strong>如果这个同步过程的速度持续慢于Leader副本的消息写入速度，那么在replica.lag.time.max.ms时间后，此Follower副本就会被认为是与Leader副本不同步的，因此不能再放入ISR中</strong>。此时，Kafka会自动收缩ISR集合，将该副本“踢出”ISR。</p>
+<p>值得注意的是，倘若该副本后面慢慢地追上了Leader的进度，那么它是能够重新被加回ISR的。这也表明，ISR是一个动态调整的集合，而非静态不变的。</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">Unclean领导者选举（Unclean Leader Election）</p>
+</blockquote>
+<p>既然ISR是可以动态调整的，那么自然就可以出现这样的情形：ISR为空。</p>
+<p>因为Leader副本天然就在ISR中，如果ISR为空了，就说明Leader副本也“挂掉”了，Kafka需要重新选举一个新的Leader。可是ISR是空，此时该怎么选举新Leader呢？</p>
+<p><strong>Kafka把所有不在ISR中的存活副本都称为非同步副本</strong>。通常来说，非同步副本落后Leader太多，因此，如果选择这些副本作为新Leader，就可能出现数据的丢失。</p>
+<p>毕竟，这些副本中保存的消息远远落后于老Leader中的消息。在Kafka中，选举这种副本的过程称为Unclean领导者选举。<strong>Broker端参数unclean.leader.election.enable控制是否允许Unclean领导者选举</strong>。</p>
+<p>开启Unclean领导者选举可能会造成数据丢失，但好处是，它使得分区Leader副本一直存在，不至于停止对外提供服务，因此提升了高可用性。反之，禁止Unclean领导者选举的好处在于维护了数据的一致性，避免了消息丢失，但牺牲了高可用性。</p>
+<h3><span class="q1">Kafka 和 RocketMQ 的区别是什么？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+<strong>架构设计</strong>：
+        </li>
+<ul class="list-paddingleft-1" style="list-style-type: square;">
+<li>
+                Kafka：分布式发布-订阅系统，由生产者、消费者、Broker、Topic、Partition 和 ZooKeeper 构成。
+            </li>
+<li>
+                RocketMQ：由 NameServer、Broker、生产者和消费者构成，支持多种消息模式。
+            </li>
+</ul>
+<li>
+<strong>高可用设计</strong>：
+        </li>
+<ul class="list-paddingleft-1" style="list-style-type: square;">
+<li>
+                Kafka：通过副本机制、领导者和追随者模式、控制器和 ZooKeeper 协调实现高可用。
+            </li>
+<li>
+                RocketMQ：采用主从架构，NameServer 无状态设计，支持同步和异步复制。
+            </li>
+</ul>
+<li>
+<strong>延迟消息</strong>：Kafka 不支持，RocketMQ 提供多个预定义级别延迟。
+        </li>
+<li>
+<strong>集群扩展</strong>：
+        </li>
+<ul class="list-paddingleft-1" style="list-style-type: square;">
+<li>
+                Kafka：通过增加 Broker 扩展，依赖 Zookeeper，分区重新平衡负载。
+            </li>
+<li>
+                RocketMQ：区分 Broker 和 NameServer 角色，扩展时可增加 Broker 和 NameServer。
+            </li>
+</ul>
+<li>
+<strong>使用场景</strong>：
+        </li>
+<ul class="list-paddingleft-1" style="list-style-type: square;">
+<li>
+                RocketMQ：适合事务消息、顺序消息、广播消息、定时延迟消息等场景，如电商、金融等对可靠性要求高的行业。
+            </li>
+<li>
+                Kafka：适用于日志聚合、流式处理、事件驱动架构、数据集成和分布式系统冗余备份等场景。
+            </li>
+</ul>
+</ul>
+<h3><span class="q1">Kafka 为什么性能高？</span></h3>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">1）页缓存技术</p>
+</blockquote>
+<p>Kafka是基于操作系统的页缓存来实现写入的，操作系统本身有一层缓存，叫做page cache，是在内存里的缓存，我们也可以称之为 os cache，意思就是操作系统自己管理的缓存。</p>
+<p>Kafka在写入磁盘文件的时候，可以直接写入到这个os cache里，也就是仅仅写入到内存中，接下来由操作系统自己决定什么时候把os cache里的数据真的刷入磁盘文件中。这样可以很大提升写性能</p>
+<p><br><img _width="612px" data-index="13" data-src="../img/mq_012_9e98c1a6.png" data-w="612" src="../img/mq_012_9e98c1a6.png" style="   border-radius: 4px;  height: auto !important;  width: 612px !important;"/></br></p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">2）磁盘顺序写</p>
+</blockquote>
+<p>Kafka写数据的时候，Kafka的消息是不断追加到文件末尾的，而不是在文件的随机位置写入数据，这个特性使Kafka可以充分利用磁盘的顺序读写性能。顺序读写不需要磁盘磁头的寻道时间，避免了随机磁盘寻址的浪费，只需很少的扇区旋转时间，所以速度远快于随机读写。</p>
+<p>Kafka中每个分区是一个有序的，不可变的消息序列，新的消息不断追加到Partition的末尾，在Kafka中Partition只是一个逻辑概念，Kafka将Partition划分为多个Segment，每个Segment对应一个物理文件，Kafka对segment文件追加写，这就是顺序读写。</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">2）零拷贝</p>
+</blockquote>
+<p>在消费数据的时候，实际上要从kafka的磁盘文件里读取某条数据然后发送给下游的消费者。</p>
+<p>Kafka在读数据的时候为了避免多余的数据拷贝，使用了零拷贝技术。也就是说直接让os cache里的数据发送到网卡后然后传输给下游的消费者，跳过中间从os cache拷贝到kafka 进程缓存和再拷贝到socket缓存中的两次缓存，同时也减少了上下文切换。</p>
+<p>在Linux Kernel2.2之后出现了一种叫做“零拷贝（zero-copy）”系统调用机制，就是跳过“用户缓冲区”的拷贝，建立一个磁盘空间和内存的直接映射，数据不再复制到“用户缓冲区”。</p>
+<p>Kafka 使用到了 mmap+write（持久化数据） 和 sendfile（发送数据） 的方式来实现零拷贝。分别对应 Java 的 MappedByteBuffer 和 FileChannel.transferTo。</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">3）分区并发</p>
+</blockquote>
+<p>kafka中的topic中的内容可以分在多个分区（partition）存储，每个partition又分为多个段segment，所以每次操作都是针对一小部分做操作，很轻便，并且增加并行操作的能力</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">4）批量发送</p>
+</blockquote>
+<p>Kafka允许进行批量发送消息，Productor发送消息的时候，可以将消息缓存在本地，等到了固定条件发送到kafka，可减少IO延迟
+        （1）：等消息条数到固定条数
+        （2）：一段时间发送一次</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">5）数据压缩</p>
+</blockquote>
+<p>Kafka还支持对消息集合进行压缩，Producer可以通过GZIP或Snappy格式对消息集合进行压缩，压缩的好处就是减少传输的数据量，减轻对网络传输的压力。</p>
+<p>批量发送和数据压缩一起使用，单条做数据压缩的话，效果不太明显。消息发送时默认不会压缩，可使用compression.type来指定压缩方式，可选的值为snappy、gzip和lz4</p>
+<h3><span style=" color: rgb(65, 105, 225); ">1. 项目问题：rabbitmq进行了异步解耦，说说看？</span></h3>
+<p>回答：用作消息通知类似的</p>
+<p>面试官：那你没必要用消息队列，异步任务就行了，感觉是为了学做的这个需求，感觉你喜欢把简单的东西复杂化（心凉一半）</p>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);">小林补充</p>
+</blockquote>
+<p>可以说一下为什么要用到mq，比如同样是挂了的情况，消息队列有什么异常处理机制，确保消息不丢失这方面提到，当然也是要看你的业务是否需要确保任务不丢失。</p>
+<h3 style="margin: 1.2em 0px 15px;padding: 0px;"><span style="color: rgb(65, 105, 225);text-align: left;"><span>6. MQ在大型系统中的几种典型使用场景？</span></span></h3>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>解耦</span></strong><span>：可以在多个系统之间进行解耦，将原本通过网络之间的调用的方式改为使用MQ进行消息的异步通讯，只要该操作不是需要同步的，就可以改为使用MQ进行不同系统之间的联系，这样项目之间不会存在耦合，系统之间不会产生太大的影响，就算一个系统挂了，也只是消息挤压在MQ里面没人进行消费而已，不会对其他的系统产生影响。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>异步</span></strong><span>：加入一个操作设计到好几个步骤，这些步骤之间不需要同步完成，比如客户去创建了一个订单，还要去客户轨迹系统添加一条轨迹、去库存系统更新库存、去客户系统修改客户的状态等等。这样如果这个系统都直接进行调用，那么将会产生大量的时间，这样对于客户是无法接收的；并且像添加客户轨迹这种操作是不需要去同步操作的，如果使用MQ将客户创建订单时，将后面的轨迹、库存、状态等信息的更新全都放到MQ里面然后去异步操作，这样就可加快系统的访问速度，提供更好的客户体验。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>削峰</span></strong><span>：一个系统访问流量有高峰时期，也有低峰时期，比如说，中午整点有一个抢购活动等等。比如系统平时流量并不高，一秒钟只有100多个并发请求，系统处理没有任何压力，一切风平浪静，到了某个抢购活动时间，系统并发访问了剧增，比如达到了每秒5000个并发请求，而我们的系统每秒只能处理2000个请求，那么由于流量太大，我们的系统、数据库可能就会崩溃。这时如果使用MQ进行流量削峰，将用户的大量消息直接放到MQ里面，然后我们的系统去按自己的最大消费能力去消费这些消息，就可以保证系统的稳定，只是可能要跟进业务逻辑，给用户返回特定页面或者稍后通过其他方式通知其结果</span>
+</li>
+</ul>
+<h3 style="margin: 1.2em 0px 15px;padding: 0px;"><span style="color: rgb(65, 105, 225);text-align: left;"><span>7. 解释push/pull两种消息推送模式的差异？</span></span></h3>
+<p style="text-align: left;"><span>push 模式消息生产者主动将消息推送给消费者，消费者被动接收消息，push 模式的优点是时性强，适合对响应速度要求高的场景，消费者无需主动轮询，减少无效请求，缺点是长连接维护成本高，网络波动时重连逻辑复杂。</span></p>
+<p style="text-align: left;"><span>push 模式常见的应用场景比如手机 APP（如微信、新闻客户端）通过 Push 模式将新消息、新闻推送给用户，无需用户主动打开 APP，以及监控系统发现服务器异常时，立即通过 Push 模式向运维人员发送短信或邮件告警。</span></p>
+<figure style="margin: 10px 0px;padding: 0px;display: flex;flex-direction: column;justify-content: center;align-items: center;"><span><img _width="677px" data-index="7" data-src="../img/mq_013_d54472ce.png" data-w="1802" src="../img/mq_013_d54472ce.png" style=" margin: 0px auto 25px; max-width: 100%; border: 3px none rgba(0, 0, 0, 0.4);    height: auto !important;  width: 657px !important;"/></span></figure>
+<p style="text-align: left;"><span>pull模式消费者主动从消息中间件（如队列、主题）拉取消息，生产者仅负责发送消息到中间存储，优点是消费者可自主控制拉取节奏，适配不同负载（如流量削峰），还可以中间件缓冲消息，解耦生产者与消费者，系统稳定性更高。缺点是实时性依赖拉取频率（如轮询间隔过长会导致消息延迟），还有若拉取不及时，可能导致中间件消息积压。</span></p>
+<p style="text-align: left;"><span>pull 模式常见的应用场景日志收集系统从各服务器拉取日志数据，存入中间件后由分析组件按需拉取处理，以及订单系统将订单数据存入消息队列，支付模块、物流模块主动拉取订单信息进行处理，避免高并发时的流量冲击。</span></p>
+<h3 style="margin: 1.2em 0px 15px;padding: 0px;"><span style="color: rgb(65, 105, 225);text-align: left;"><span>8. 什么时候适合用pull模式？为什么？</span></span></h3>
+<p style="text-align: left;"><span>基于 push 模式消费消息，实时性好，只要消息进入消息中间件就可以即时被消费者感知并进行消费；缺点在于“推”模式需要消息中间件进行额外的计算和消费者的维护工作，因此可能引起消息中间件服务端的机器CPU负载升高；</span></p>
+<p style="text-align: left;"><span>而 pull 模式消费消息，消费者能够自主控制拉取的频率，拉取的数量，因此对消息中间件的机器而言，负载较低；但是“拉”模式由于是定时发起的消息拉取请求，因此实时性较弱。而且“拉”模式下还需要消费者自行维护消费进度，相比而言“推”模式的消息消费方式则不需要客户端主动维护消费进度（广播消费模式除外）。</span></p>
+<p style="text-align: left;"><span>因此对推（push）/拉（pull）模式的使用建议如下：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<span>（1）如果追求消息消费的实时性，则推荐使用“推”模式消费消息，但是要注意尽量提高消息中间件服务器的配置，并添加必要的监控以感知服务器的性能指标变化；</span>
+</li>
+<li>
+<span>（2）如果想要灵活控制消费频率，消息拉取数量，则推荐使用“拉”模式消费消息。</span>
+</li>
+</ul>
+<h3><span class="q1">RocketMQ延时消息的底层原理</span></h3>
+<p>总体的原理示意图，如下所示：<img _width="677px" data-index="9" data-src="../img/mq_014_21f0f0f4.png" data-w="1080" src="../img/mq_014_21f0f0f4.png" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>broker 在接收到延时消息的时候，会将延时消息存入到延时Topic的队列中，然后ScheduleMessageService中，每个 queue 对应的定时任务会不停地被执行，检查 queue 中哪些消息已到设定时间，然后转发到消息的原始Topic，这些消息就会被各自的 producer 消费了。</p>
+<h3><span class="q1">RocketMQ怎么保证消息有序性？</span></h3>
+<p>RocketMQ在默认的情况下消息发送会采取Round Robin轮询方式把消息发送到不同的queue(分区队列)；RocketMQ在消费消息的时候从多个queue上拉取消息，这种情况发送和消费是不能保证顺序。</p>
+<p>但是如果控制发送的顺序消息只依次发送到同一个queue中，消费的时候只从这个queue上依次拉取，则就保证了顺序。RocketMQ能严格保证消息的有序性，将顺序消息分为全局顺序消息与分区顺序消息。</p>
+<ul class="list-paddingleft-1">
+<li>
+            全局顺序：对于指定的一个 Topic，所有消息按照严格的先入先出（FIFO）的顺序进行发布和消费。
+        </li>
+<li>
+            分区顺序：对于指定的一个 Topic，所有消息根据hashKey进行区块分区。同一个分区内的消息按照严格的 FIFO 顺序进行发布和消费。
+        </li>
+</ul>
+<p>RocketMQ实现消息的有序性，需要从三个方面一起保证消息的有序性：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>生产者生产顺序消息</strong>：多线程发送的消息无法保证有序性，因此，需要业务方在发送时，针对同一个业务编号(如同一笔订单)的消息需要保证在一个线程内顺序发送，在上一个消息发送成功后，在进行下一个消息的发送。对应到mq中，消息发送方法就得使用同步发送，异步发送无法保证顺序性
+</li>
+<li>
+<strong>Broker保存顺序消息</strong>：mq的topic下会存在多个queue，要保证消息的顺序存储，同一个业务编号的消息需要被发送到一个queue中。对应到mq中，需要使用MessageQueueSelector来选择要发送的queue，即对业务编号进行hash，然后根据队列数量对hash值取余，将消息发送到一个queue中
+        </li>
+<li>
+<strong>消费者顺序消费消息</strong>：RocketMQ消费端默认消费逻辑：1、负载均衡，指定消费者负责某些队列；2、当前消费者开启多个线程开始同时消费这个队列，远程拉取消息。从上面消费逻辑可以看到，如果要保证消息有序消费，就要解决这两个问题，需要用到锁来保证一个队列同时只有一个消费者线程进行消费，在broker端，rocketmq是通过锁定MessageQueue的方式，来保证同一时刻，只能有一个消费者进行消费，而在消费端，rocketmq是通过synchronized锁定ConsumeRequest中的run方法，来保证一个消费者同时只能有一个线程进行消费
+        </li>
+</ul>
+<h3><span class="q1">RocketMQ怎么保证消息不被重复消费</span></h3>
+<p>在业务逻辑中实现<strong>幂等性</strong>，确保即使消息被重复消费，也不会影响业务状态。</p>
+<p>例如，对于支付或转账类操作，可以使用唯一订单号或事务ID作为幂等性的标识符，确保同样的操作只会被执行一次。</p>
+<h3><span class="q1">RocketMQ和Kafka的区别是什么？如何做技术选型？</span></h3>
+<p>Kafka的优缺点：</p>
+<ul class="list-paddingleft-1">
+<li>
+            优点：首先，Kafka的最大优势就在于它的高吞吐量，在普通机器4CPU8G的配置下，一台机器可以抗住十几万的QPS，这一点还是相当优越的。Kafka支持集群部署，如果部分机器宕机不可用，则不影响Kafka的正常使用。
+        </li>
+<li>
+            缺点：Kafka有可能会造成数据丢失，因为它在收到消息的时候，并不是直接写到物理磁盘的，而是先写入到磁盘缓冲区里面的。Kafka功能比较的单一 主要的就是支持收发消息，高级功能基本没有，就会造成适用场景受限。
+        </li>
+</ul>
+<p>RocketMQ是阿里巴巴开源的消息中间件，优缺点：</p>
+<ul class="list-paddingleft-1">
+<li>
+            优点：支持功能比较多，比如延迟队列、消息事务等等，吞吐量也高，单机吞吐量达到 10 万级，支持大规模集群部署，线性扩展方便，Java语言开发，满足了国内绝大部分公司技术栈
+    </li>
+<li>
+            缺点：性能相比 kafka 是弱一点，因为 kafka 用到了 sendfile 的零拷贝技术，而 RocketMQ 主要是用 mmap+write 来实现零拷贝。
+        </li>
+</ul>
+<p>该怎么选择呢？</p>
+<ul class="list-paddingleft-1">
+<li>
+            如果我们业务只是收发消息这种单一类型的需求，而且可以允许小部分数据丢失的可能性，但是又要求极高的吞吐量和高性能的话，就直接选Kafka就行了，就好比我们公司想要收集和传输用户行为日志以及其他相关日志的处理，就选用的Kafka中间件。
+        </li>
+<li>
+        如果公司的需要通过 mq 来实现一些业务需求，比如延迟队列、消息事务等，公司技术栈主要是Java语言的话，就直接一步到位选择RocketMQ，这样会省很多事情。
+        </li>
+</ul>
+<h3><span style=" color: rgb(65, 105, 225); ">使用消息中间件降低消息持久化的压力是怎么做的，为什么可以降低？</span></h3>
+<p>读者答：在突发大量消息的情况下可以做到流量削峰，在消费者消费能力达不到生产者产生消息的速度时也能够正常运行。</p>
+<h3><span style=" color: rgb(65, 105, 225); ">怎么解决消息队列上的消息堆压？</span></h3>
+<p>读者答：</p>
+<ul class="list-paddingleft-1">
+<li>
+            （1）自身场景下，消息堆压是暂时的，消息堆压只是突发状况，就算不额外处理，随着时间流逝也可消费完毕。
+        </li>
+<li>
+            （2）假如存在持续性消息堆压，可以考虑临时增加消费者的数量，提升消费者的消费能力。
+        </li>
+</ul>
+<p><strong>小林补充：</strong></p>
+<p>如果是线上突发问题，要临时扩容，增加消费端的数量，与此同时，降级一些非核心的业务。通过扩容和降级承担流量，这是为了表明你对应急问题的处理能力。其次，才是排查解决异常问题，如通过监控，日志等手段分析是否消费端的业务逻辑代码出现了问题，优化消费端的业务处理逻辑。</p>
+<h3><span class="q1">Kafka和RocketMQ的区别？</span></h3>
+<p>Kafka的优缺点：</p>
+<ul class="list-paddingleft-1">
+<li>
+            优点：首先，Kafka的最大优势就在于它的高吞吐量，在普通机器4CPU8G的配置下，一台机器可以抗住十几万的QPS，这一点还是相当优越的。Kafka支持集群部署，如果部分机器宕机不可用，则不影响Kafka的正常使用。
+        </li>
+<li>
+            缺点：Kafka有可能会造成数据丢失，因为它在收到消息的时候，并不是直接写到物理磁盘的，而是先写入到磁盘缓冲区里面的。Kafka功能比较的单一主要的就是支持收发消息，高级功能基本没有，就会造成适用场景受限。
+        </li>
+</ul>
+<p>RocketMQ是阿里巴巴开源的消息中间件，优缺点：</p>
+<ul class="list-paddingleft-1">
+<li>
+            优点：支持功能比较多，比如延迟队列、消息事务等等，吞吐量也高，单机吞吐量达到 10 万级，支持大规模集群部署，线性扩展方便，Java语言开发，满足了国内绝大部分公司技术栈
+        </li>
+<li>
+            缺点：性能相比 kafka 是弱一点，因为 kafka 用到了 sendfile 的零拷贝技术，而 RocketMQ 主要是用 mmap+write 来实现零拷贝。
+        </li>
+</ul>
+<p>该怎么选择呢？</p>
+<ul class="list-paddingleft-1">
+<li>
+            如果我们业务只是收发消息这种单一类型的需求，而且可以允许小部分数据丢失的可能性，但是又要求极高的吞吐量和高性能的话，就直接选Kafka就行了，就好比我们公司想要收集和传输用户行为日志以及其他相关日志的处理，就选用的Kafka中间件。
+        </li>
+<li>
+            如果公司的需要通过 mq 来实现一些业务需求，比如延迟队列、消息事务等，公司技术栈主要是Java语言的话，就直接一步到位选择RocketMQ，这样会省很多事情。
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>5. Kafka你一般选几个消费者为什么？</span></span></h3>
+<p style="text-align: left;"><span>核心原则是</span><strong><span>消费者数量 ≤ 分区数量。****Kafka 的并行度由分区数决定</span></strong><span>的，因为每个分区只能被</span><strong><span>同一个消费者组（Consumer Group）中的一个消费者</span></strong><span>消费。</span></p>
+<p style="text-align: left;"><span>比如，如果 Topic 有 </span><strong><span>6 个分区</span></strong><span>，消费者组最多可以启动 </span><strong><span>6 个消费者</span></strong><span>（1:1 绑定），如果启动 </span><strong><span>8 个消费者</span></strong><span>，其中 2 个会闲置（无分区可消费）。</span></p>
+<p style="text-align: left;"><span>如果要确定消费者数量，可以根据吞吐量需求来计算，公式如下：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIbUypD6Egvbetwl1BbOXxREx02CzPZEP3aqCQ197Q5mkCibbr957biaotLJuANpLpAibU6mUvKm9wmp/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIbUypD6Egvbetwl1BbOXxREx02CzPZEP3aqCQ197Q5mkCibbr957biaotLJuANpLpAibU6mUvKm9wmp/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>消费者数量 = min(分区数, 预期吞吐量 / 单个消费者处理能力)</span><br/></code></pre>
+<p style="text-align: left;"><span>比如，Topic 有 </span><strong><span>12 个分区</span></strong><span>，单个消费者每秒处理 </span><strong><span>1000 条消息</span></strong><span>，生产者写入速率 </span><strong><span>8000 条/秒</span></strong><span>，至少需要 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>8000 / 1000 = 8</span></code><span> 个消费者（不超过 12）。</span></p>
+<p style="text-align: left;"><span>所以，我们通常根据分区数量和吞吐需求决定消费者数量。例如，一个 12 分区的 Topic，如果单消费者处理能力为 1000 QPS，而生产者写入速率为 8000 QPS，则会部署 8 个消费者（不超过分区数），同时会预留 20% 分区余量应对突发流量。</span></p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>6. Kafka怎么做到最多消费一次？</span></span></h3>
+<p style="text-align: left;"><span>在 Kafka 中要实现 “最多消费一次”（At Most Once）的语义，也就是确保每条消息最多被消费一次，即便出现异常也不会重复消费。</span></p>
+<p style="text-align: left;"><span>可从生产者、消费者以及 Kafka 集群配置等方面来操作：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>生产端：生产者方面主要是保证消息不会重复发送，因为重复发送会造成消费者重复消费，可以采用幂等性生产者，幂等性生产者能够保证在消息发送失败并重试时，相同的消息不会被重复写入 Kafka。</span>
+</li>
+<li>
+<span>消费端：在消费者端达成 “最多消费一次” 语义，核心在于保证消费消息和提交偏移量这两个操作具有原子性，也就是要保证消息在被消费之后才会提交偏移量。要是在消费消息时出现异常，就不提交偏移量，如此一来，下次消费时就不会重复消费该消息，具体实现方式关闭自动提交偏移量功能，在消息消费成功之后手动提交偏移量，在消费消息时捕获可能出现的异常，若出现异常就不提交偏移量。</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>为什么选择RabbitMQ，kafka了解过吗，使用场景？</span></span></h3>
+<p style="text-align: left;"><span>Kafka、ActiveMQ、RabbitMQ、RocketMQ来进行不同维度对比。</span></p>
+<table style="display: table;text-align: left;">
+<thead>
+<tr>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>特性</span></strong></th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>ActiveMQ</span></strong></th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>RabbitMQ</span></strong></th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>RocketMQ</span></strong></th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>Kafka</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>单机吞吐量</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>万级</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>万级</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>10 万级</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>10 万级</span>
+</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>时效性</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>毫秒级</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>微秒级</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>毫秒级</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>毫秒级</span>
+</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>可用性</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>高（主从）</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>高（主从）</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>非常高（分布式）</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>非常高（分布式）</span>
+</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>消息重复</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>至少一次</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>至少一次</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>至少一次 最多一次</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>至少一次最多一次</span>
+</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>消息顺序性</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>有序</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>有序</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>有序</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>分区有序</span>
+</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>支持主题数</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>千级</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>百万级</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>千级</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>百级，多了性能严重下滑</span>
+</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>消息回溯</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>不支持</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>不支持</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>支持（按时间回溯）</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>支持（按offset回溯）</span>
+</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>管理界面</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>普通</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>普通</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>完善</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>普通</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: left;"><span>选型的时候，我们需要根据业务场景，结合上述特性来进行选型。</span></p>
+<p style="text-align: left;"><span>比如你要支持天猫双十一类超大型的秒杀活动，这种一锤子买卖，那管理界面、消息回溯啥的不重要。</span></p>
+<p style="text-align: left;"><span>我们需要看什么？看吞吐量！所以优先选Kafka和RocketMQ这种更高吞吐的。</span></p>
+<p style="text-align: left;"><span>比如做一个公司的中台，对外提供能力，那可能会有很多主题接入，这时候主题个数又是很重要的考量，像Kafka这样百级的，就不太符合要求，可以根据情况考虑千级的RocketMQ，甚至百万级的RabbitMQ。</span></p>
+<p style="text-align: left;"><span>又比如是一个金融类业务，那么重点考虑的就是稳定性、安全性，分布式部署的Kafka和Rocket就更有优势。</span></p>
+<p style="text-align: left;"><span>特别说一下时效性，RabbitMQ以微秒的时效作为招牌，但实际上毫秒和微秒，在绝大多数情况下，都没有感知的区别，加上网络带来的波动，这一点在生产过程中，反而不会作为重要的考量。</span></p>
+<p style="text-align: left;"><span>其它的特性，如消息确认、消息回溯，也经常作为考量的场景，管理界面的话试公司而定了，反正我呆过的地方，都不看重这个，毕竟都有自己的运维体系。</span></p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>如何避免消费端重复消费？</span></span></h3>
+<p style="text-align: left;"><span>避免消费端重复消费的方法有：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>给每个消息添加唯一的标识，例如一个全局唯一的 ID。消费端在处理消息时，先检查该消息的 ID 是否已经被处理过。可以使用数据库表、缓存等存储已经处理过的消息 ID，当收到新消息时，查询存储中是否存在该 ID，若存在则直接丢弃，若不存在则处理消息并将 ID 存入存储。</span>
+</li>
+<li>
+<span>让消费端的业务处理具有幂等性，即多次执行相同的操作结果与执行一次相同。例如，对于数据库插入操作，可以使用唯一索引来避免重复插入相同的数据；对于更新操作，确保更新的条件是基于唯一标识而不是其他易变的条件，这样即使多次执行更新，也不会出现数据不一致的情况。</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>什么情况下会出现重复收到消息？</span></span></h3>
+<p style="text-align: left;"><span>当消费端与消息队列之间的网络出现故障，如网络中断、延迟过高或数据包丢失等情况，可能导致消息的确认信息未能及时发送到消息队列。消息队列在未收到确认信息时，会认为消息没有被成功消费，从而重新发送消息，导致消费端重复收到消息。</span></p>
+<h3><span></span><span style="color: rgb(65, 105, 225);">Kafka如何保证消息不丢失？</span></h3>
+<p>使用一个消息队列，其实就分为三大块：<strong>生产者、中间件、消费者</strong>，所以要保证消息就是保证三个环节都不能丢失数据。</p>
+<figure style="display: flex;flex-direction: column;justify-content: center;align-items: center;"><img _width="656.969px" data-index="12" data-src="../img/mq_015_779d2149.png" data-w="1080" src="../img/mq_015_779d2149.png" style="      border-radius: 4px;  width: 656.969px !important; height: auto !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">图片</figcaption>
+</figure>
+<ul class="list-paddingleft-1">
+<li>
+<strong>消息生产阶段</strong>：生产者会不会丢消息，取决于生产者对于异常情况的处理是否合理。从消息被生产出来，然后提交给 MQ 的过程中，只要能正常收到 （ MQ 中间件） 的 ack 确认响应，就表示发送成功，所以只要处理好返回值和异常，如果返回异常则进行消息重发，那么这个阶段是不会出现消息丢失的。
+        </li>
+<li>
+<strong>消息存储阶段</strong>：Kafka 在使用时是部署一个集群，生产者在发布消息时，队列中间件通常会写「多个节点」，也就是有多个副本，这样一来，即便其中一个节点挂了，也能保证集群的数据不丢失。
+        </li>
+<li>
+<strong>消息消费阶段</strong>：消费者接收消息+消息处理之后，才回复 ack 的话，那么消息阶段的消息不会丢失。不能收到消息就回 ack，否则可能消息处理中途挂掉了，消息就丢失了。
+        </li>
+</ul>
+<h3><span></span><span style="color: rgb(65, 105, 225);">Kafka如何保证消息不重复消费？</span></h3>
+<p>导致重复消费的原因可能出现在生产者，也可能出现在 MQ 或 消费者。</p>
+<p>这里说的重复消费问题是指同一个数据被执行了两次，不单单指 MQ 中一条消息被消费了两次，也可能是 MQ 中存在两条一模一样的消费。</p>
+<ul class="list-paddingleft-1">
+<li>
+            生产者：生产者可能会重复推送一条数据到 MQ 中，为什么会出现这种情况呢？也许是一个 Controller 接口被重复调用了 2 次，没有做接口幂等性导致的；也可能是推送消息到 MQ 时响应比较慢，生产者的重试机制导致再次推送了一次消息。
+        </li>
+<li>
+            MQ：在消费者消费完一条数据响应 ack 信号消费成功时，MQ 突然挂了，导致 MQ 以为消费者还未消费该条数据，MQ 恢复后再次推送了该条消息，导致了重复消费。
+        </li>
+<li>
+            消费者：消费者已经消费完了一条消息，正准备但是还未给 MQ 发送 ack 信号时，此时消费者挂了，服务重启后 MQ 以为消费者还没有消费该消息，再次推送了该条消息。
+        </li>
+</ul>
+<p>消费者怎么解决重复消费问题呢？这里提供两种方法：</p>
+<ul class="list-paddingleft-1">
+<li>
+            状态判断法：消费者消费数据后把消费数据记录在 redis 中，下次消费时先到 redis 中查看是否存在该消息，存在则表示消息已经消费过，直接丢弃消息。
+        </li>
+<li>
+            业务判断法：通常数据消费后都需要插入到数据库中，使用数据库的唯一性约束防止重复消费。每次消费直接尝试插入数据，如果提示唯一性字段重复，则直接丢失消息。一般都是通过这个业务判断的方法就可以简单高效地避免消息的重复处理了。
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>RabbitMQ是什么?还有其他什么消息队列？</span></span></h3>
+<p style="text-align: left;"><span>RabbitMQ是消息队列，RabbitMQ底层架构如下图：</span></p>
+<figure class="img1"><span><img _width="677px" data-index="8" data-src="../img/mq_016_d4bdebd1.png" data-w="1080" src="../img/mq_016_d4bdebd1.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<p style="text-align: left;"><span>以下是 RabbitMQ 的一些核心架构组件和特性：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>核心组件</span></strong><span>：生产者负责发送消息到 RabbitMQ、消费者负责从 RabbitMQ 接收并处理消息、RabbitMQ 本身负责存储和转发消息。</span>
+</li>
+<li>
+<strong><span>交换机</span></strong><span>：交换机接收来自生产者的消息，并根据 routing key 和绑定规则将消息路由到一个或多个队列。</span>
+</li>
+<li>
+<strong><span>持久化</span></strong><span>：RabbitMQ 支持消息的持久化，可以将消息保存在磁盘上，以确保在 RabbitMQ 重启后消息不丢失，队列也可以设置为持久化，以保证其结构在重启后不会丢失。</span>
+</li>
+<li>
+<strong><span>确认机制</span></strong><span>：为了确保消息可靠送达，RabbitMQ 使用确认机制，费者在处理完消息后发送确认给 RabbitMQ，未确认的消息会重新入队。</span>
+</li>
+<li>
+<strong><span>高可用性</span></strong><span>：RabbitMQ 提供了集群模式，可以将多个 RabbitMQ 实例组成一个集群，以提高可用性和负载均衡。通过镜像队列，可以在多个节点上复制同一队列的内容，以防止单点故障。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>除了 RabbitMQ 消息队列，常见的消息队列还有Kafka、ActiveMQ、RocketMQ。</span></p>
+<figure class="img1"><span><img _width="677px" data-index="9" data-src="../img/mq_017_63d76bfe.png" data-w="1080" src="../img/mq_017_63d76bfe.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>1. kafka的ack机制说一下？</span></span></h3>
+<p style="text-align: left;"><span>Kafka 有三种主要的 ACK 级别，每种级别都有不同的可靠性保证哦，它们分别是：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>acks=0</span></code><span>：</span><strong><span>无确认</span></strong><span>。生产者不会等待任何确认就认为消息已发送成功。这种方式最快，但可靠性最低。如果在发送过程中消息丢失了，生产者不会知道哦。</span>
+</li>
+<li>
+<code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>acks=1</span></code><span>：</span><strong><span>单节点确认</span></strong><span>。生产者会等待消息被领导者副本（leader replica）写入成功后才认为消息已发送成功。这种方式在保证一定可靠性的同时还能保持较高的吞吐量。如果领导者副本失败，可能会丢失消息。</span>
+</li>
+<li>
+<code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>acks=all</span></code><span>（或 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>acks=-1</span></code><span>）： </span><strong><span>所有副本确认</span></strong><span>。生产者会等待消息被所有同步副本（ISR：In-Sync Replicas）写入成功后才认为消息已发送成功。这种方式最可靠，但延迟也最高。即使领导者副本失败，消息也不会丢失哦。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>如果要设置 ACK 级别可以在生产者配置中设置 </span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>acks</span></code><span> 参数来指定 ACK 级别。例如：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIdSXC7MqINxcHl4YvgzUnzk5uTPjUPqd1GGngTdctQlPv5yyxm2EqbqweqlTbvtB3SHDtzBQZHk8/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIdSXC7MqINxcHl4YvgzUnzk5uTPjUPqd1GGngTdctQlPv5yyxm2EqbqweqlTbvtB3SHDtzBQZHk8/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>Properties props = </span><span style="color: #c678dd;"><span>new</span></span><span> Properties();</span><br/><span>props.put(</span><span style="color: #98c379;"><span>"bootstrap.servers"</span></span><span>, </span><span style="color: #98c379;"><span>"localhost:9092"</span></span><span>);</span><br/><span>props.put(</span><span style="color: #98c379;"><span>"key.serializer"</span></span><span>, </span><span style="color: #98c379;"><span>"org.apache.kafka.common.serialization.StringSerializer"</span></span><span>);</span><br/><span>props.put(</span><span style="color: #98c379;"><span>"value.serializer"</span></span><span>, </span><span style="color: #98c379;"><span>"org.apache.kafka.common.serialization.StringSerializer"</span></span><span>);</span><br/><br/><span style="color: #5c6370;font-style: italic;"><span>// 设置ACK级别</span></span><br/><span>props.put(</span><span style="color: #98c379;"><span>"acks"</span></span><span>, </span><span style="color: #98c379;"><span>"all"</span></span><span>); </span><span style="color: #5c6370;font-style: italic;"><span>// 或 "1" 或 "0"</span></span><br/></code></pre>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>2. kafka怎么防止积压？</span></span></h3>
+<p style="text-align: left;"><span>防止 Kafka 消息积压可从提升处理能力和优化处理逻辑入手。</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>首先可进行硬件扩容，增加 Broker、分区和消费者数量，需注意消费者数不超过分区数，避免资源闲置，若明确瓶颈在消费者，仅扩容消费者即可。</span>
+</li>
+<li>
+<span>其次实现消费者并行化，通过线程池处理 poll 拉取的消息，合理配置 max.poll.records 参数，搭配异步提交偏移量减少阻塞，提升吞吐量。</span>
+</li>
+<li>
+<span>另外，针对处理逻辑中的瓶颈专项优化，比如数据库操作频繁导致负载高时，可优化 SQL 慢查询、增加从库或缓存减轻读压力，通过分库分表优化写操作；若涉及下游服务调用，需推动下游优化以避免阻塞。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>这些方式结合可有效预防消息积压。</span></p>
+<h3><span class="q1">kafka的模型介绍一下，kafka是推送还是拉取？</span></h3>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);">消费者模型</p>
+</blockquote>
+<p>消息由生产者发送到kafka集群后，会被消费者消费。一般来说我们的消费模型有两种：推送模型(psuh)和拉取模型(pull)。</p>
+<p><strong>推送模型（push）</strong></p>
+<ul class="list-paddingleft-1">
+<li>
+            基于推送模型（push）的消息系统，有消息代理记录消费者的消费状态。
+        </li>
+<li>
+            消息代理在将消息推送到消费者后，标记这条消息已经消费，但这种方式无法很好地保证消费被处理。
+        </li>
+<li>
+            如果要保证消息被处理，消息代理发送完消息后，要设置状态为“已发送”，只要收到消费者的确认请求后才更新为“已消费”，这就需要代理中记录所有的消费状态，但显然这种方式不可取。
+        </li>
+</ul>
+<p>缺点：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>push模式很难适应消费速率不同的消费者</strong>
+</li>
+<li>
+            因为消息发送速率是由broker决定的，push模式的目标是尽可能以最快速度传递消息，但是这样很容易造成consumer来不及处理消息，典型的表现就是拒绝服务以及网络拥塞。
+        </li>
+</ul>
+<p><strong>拉取模型(pull)</strong></p>
+<p>kafka采用拉取模型，由消费者自己记录消费状态，每个消费者互相独立地顺序拉取每个分区的消息。</p>
+<figure class="img1"><img _width="677px" data-index="20" data-src="../img/mq_018_bffa0127.png" data-w="813" src="../img/mq_018_bffa0127.png" style="   border-radius: 4px;  height: auto !important;  width: 656.984px !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">image.png</figcaption>
+</figure>
+<p>说明：</p>
+<ul class="list-paddingleft-1">
+<li>
+            有两个消费者（不同消费者组）拉取同一个主题的消息，消费者A的消费进度是3，消费者B的消费进度是6。
+        </li>
+<li>
+            消费者拉取的最大上限通过最高水位（watermark）控制，生产者最新写入的消息如果还没有达到备份数量，对消费者是不可见的。
+        </li>
+<li>
+            这种由消费者控制偏移量的优点是：<strong>消费者可以按照任意的顺序消费消息</strong>。比如，消费者可以重置到旧的偏移量，重新处理之前已经消费过的消息；或者直接跳到最近的位置，从当前的时刻开始消费。
+        </li>
+</ul>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);">消费者组</p>
+</blockquote>
+<p>kafka 消费者是以consumer group消费者组的方式工作，由一个或者多个消费者组成一个组，共同消费一个topic。每个分区在同一时间只能由group中的一个消费者读取，但是多个group可以同时消费这个partition。</p>
+<figure class="img1"><img _width="559px" data-index="21" data-src="../img/mq_019_0d305d8c.png" data-w="559" src="../img/mq_019_0d305d8c.png" style="   border-radius: 4px;  height: auto !important;  width: 559px !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">image.png</figcaption>
+</figure>
+<p>上图中，有一个由三个消费者组成的group，有一个消费者读取主题中的两个分区，另外两个分别读取一个分区。某个消费者读取某个分区，也可以叫做某个消费者是某个分区的拥有者。优点在于：</p>
+<ul class="list-paddingleft-1">
+<li>
+            消费者可以通过水平扩展的方式同时读取大量的消息。
+        </li>
+<li>
+            如果一个消费者失败了，那么其他的group成员会自动负载均衡读取之前失败的消费者读取的分区。
+        </li>
+</ul>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);">消费方式</p>
+</blockquote>
+<p>kafka 消费者采用 pull（拉）模式从 broker中读取数据。pull 的优点：</p>
+<ul class="list-paddingleft-1">
+<li>
+            pull 模式可以根据 consumer 的消费能力以适当的速率消费消息
+        </li>
+</ul>
+<p>缺点：</p>
+<ul class="list-paddingleft-1">
+<li>
+            如果 kafka 没有数据，消费者可能会陷入循环中，一直返回空数据。针对这一点，Kafka 的消费者在消费数据时会传入一个时长参数 timeout，如果当前没有数据可供消费，consumer 会等待一段时间之后再返回，这段时长即为 timeout。
+        </li>
+</ul>
+<h3><span class="q1">kafka 消息积压怎么办？</span></h3>
+<p>导致消息积压突然增加，最粗粒度的原因，只有两种：要么是发送变快了，要么是消费变慢了。</p>
+<p>要解决积压的问题，可以通过<strong>扩容消费端的实例数来提升总体的消费能力</strong>。</p>
+<ul class="list-paddingleft-1">
+<li>
+            如果短时间内没有足够的服务器资源进行扩容，没办法的办法是，将<strong>系统降级</strong>，通过关闭一些不重要的业务，减少发送方发送的数据量，最低限度让系统还能正常运转，服务一些重要业务。
+        </li>
+<li>
+            如果要扩容消费端，需要注意的是，<strong>部署多台消费者实例是不能加快消费原有分区的消息的。</strong>最多增加到和partition数量一致，超过的组员只会占用资源，而不起作用，所以扩容消费端的时候，除了增加增加 Consumer 消费者之外，还需要同步对 partition 扩容增加 partition 数量。
+        </li>
+</ul>
+<h3><span class="q1">用的什么消息队列，消息队列怎么选型的？</span></h3>
+<p>项目用的是 RocketMQ 消息队列。选择RocketMQ的原因是：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>开发语言优势</strong>。RocketMQ 使用 Java 语言开发，比起使用 Erlang 开发的 RabbitMQ 来说，有着更容易上手的阅读体验和受众。在遇到 RocketMQ 较为底层的问题时，大部分熟悉 Java 的同学都可以深入阅读其源码，分析、排查问题。
+        </li>
+<li>
+<strong>社区氛围活跃</strong>。RocketMQ 是阿里巴巴开源且内部在大量使用的消息队列，说明 RocketMQ 是的确经得起残酷的生产环境考验的，并且能够针对线上环境复杂的需求场景提供相应的解决方案。
+        </li>
+<li>
+<strong>特性丰富</strong>。根据 RocketMQ 官方文档的列举，其高级特性达到了 <code style='background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(27, 31, 35, 0.05);padding: 2px 4px;border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);border-radius: 4px;font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>12 种</code>，例如顺序消息、事务消息、消息过滤、定时消息等。顺序消息、事务消息、消息过滤、定时消息。RocketMQ 丰富的特性，能够为我们在复杂的业务场景下尽可能多地提供思路及解决方案。
+        </li>
+</ul>
+<h3><span class="q1">有没有消息积压的问题</span></h3>
+<p>导致消息积压突然增加，最粗粒度的原因，只有两种：要么是发送变快了，要么是消费变慢了。</p>
+<p>要解决积压的问题，可以通过<strong>扩容消费端的实例数来提升总体的消费能力</strong>。</p>
+<p>如果短时间内没有足够的服务器资源进行扩容，没办法的办法是，将<strong>系统降级</strong>，通过关闭一些不重要的业务，减少发送方发送的数据量，最低限度让系统还能正常运转，服务一些重要业务。</p>
+<h3><span class="q1">RocketMQ 消息可靠性怎么保证？</span></h3>
+<p>使用一个消息队列，其实就分为三大块：<strong>生产者、中间件、消费者</strong>，所以要保证消息就是保证三个环节都不能丢失数据。</p>
+<figure class="img1"><img _width="677px" data-index="12" data-src="../img/mq_020_4eb0b3dd.png" data-w="1080" src="../img/mq_020_4eb0b3dd.png" style="height: auto !important;  width: 656.938px !important;"/></figure>
+<ul class="list-paddingleft-1">
+<li>
+<strong>消息生产阶段</strong>：生产者会不会丢消息，取决于生产者对于异常情况的处理是否合理。从消息被生产出来，然后提交给 MQ 的过程中，只要能正常收到 （ MQ 中间件） 的 ack 确认响应，就表示发送成功，所以只要处理好返回值和异常，如果返回异常则进行消息重发，那么这个阶段是不会出现消息丢失的。
+        </li>
+<li>
+<strong>消息存储阶段</strong>：RabbitMQ 或 Kafka 这类专业的队列中间件，在使用时是部署一个集群，生产者在发布消息时，队列中间件通常会写「多个节点」，也就是有多个副本，这样一来，即便其中一个节点挂了，也能保证集群的数据不丢失。
+        </li>
+<li>
+<strong>消息消费阶段</strong>：消费者接收消息+消息处理之后，才回复 ack 的话，那么消息阶段的消息不会丢失。不能收到消息就回 ack，否则可能消息处理中途挂掉了，消息就丢失了。
+        </li>
+</ul>
+<h3><span class="q1">Kafka 和 RocketMQ 消息确认机制有什么不同？</span></h3>
+<p>Kafka的消息确认机制有三种：0，1，-1：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>ACK=0</strong>：这是最不可靠的模式。生产者在发送消息后不会等待来自服务器的确认。这意味着消息可能会在发送之后丢失，而生产者将无法知道它是否成功到达服务器。
+        </li>
+<li>
+<strong>ACK=1</strong>：这是默认模式，也是一种折衷方式。在这种模式下，生产者会在消息发送后等待来自分区领导者（leader）的确认，但不会等待所有副本（replicas）的确认。这意味着只要消息被写入分区领导者，生产者就会收到确认。如果分区领导者成功写入消息，但在同步到所有副本之前宕机，消息可能会丢失。
+        </li>
+<li>
+<strong>ACK=-1</strong>：这是最可靠的模式。在这种模式下，生产者会在消息发送后等待所有副本的确认。只有在所有副本都成功写入消息后，生产者才会收到确认。这确保了消息的可靠性，但会导致更长的延迟。
+        </li>
+</ul>
+<p>RocketMQ 提供了三种消息发送方式：同步发送、异步发送和单向发送：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>同步发送</strong>：是指消息发送方发出一条消息后，会在收到服务端同步响应之后才发下一条消息的通讯方式。应用场景非常广泛，例如重要通知邮件、报名短信通知、营销短信系统等。
+        </li>
+<li>
+<strong>异步发送</strong>：是指发送方发出一条消息后，不等服务端返回响应，接着发送下一条消息的通讯方式，但是需要实现异步发送回调接口（SendCallback）。消息发送方在发送了一条消息后，不需要等待服务端响应即可发送第二条消息。发送方通过回调接口接收服务端响应，并处理响应结果。适用于链路耗时较长，对响应时间较为敏感的业务场景，例如，视频上传后通知启动转码服务，转码完成后通知推送转码结果等。
+        </li>
+<li>
+<strong>单向发送</strong>：发送方只负责发送消息，不等待服务端返回响应且没有回调函数触发，即只发送请求不等待应答。此方式发送消息的过程耗时非常短，一般在微秒级别。适用于某些耗时非常短，但对可靠性要求并不高的场景，例如日志收集。
+        </li>
+</ul>
+<h3><span class="q1">Kafka 和 RocketMQ 的 broker 架构有什么区别</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+            Kafka 的 broker 架构：Kafka 的 broker 架构采用了分布式的设计，<strong>每个 Kafka broker 是一个独立的服务实例</strong>，负责存储和处理一部分消息数据。Kafka 的 topic 被分区存储在不同的 broker 上，实现了水平扩展和高可用性。
+        </li>
+<li>
+            RocketMQ 的 broker 架构：RocketMQ 的 broker 架构也是分布式的，但是<strong>每个 RocketMQ broker 有主从之分</strong>，一个主节点和多个从节点组成一个 broker 集群。主节点负责消息的写入和消费者的拉取，从节点负责消息的复制和消费者的负载均衡，提高了消息的可靠性和可用性。
+        </li>
+</ul>
+<h3><span class="q1">项目中哪些地方使用到了消息队列？</span></h3>
+<p>主要是利用了消息队列的异步的作用，将某个任务比较耗时，如发邮件、生成报告、数据处理等，可以使用消息队列实现异步处理，提升系统响应速度。</p>
+<p>消息队列三大作用：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>解耦</strong>：可以在多个系统之间进行解耦，将原本通过网络之间的调用的方式改为使用MQ进行消息的异步通讯，只要该操作不是需要同步的，就可以改为使用MQ进行不同系统之间的联系，这样项目之间不会存在耦合，系统之间不会产生太大的影响，就算一个系统挂了，也只是消息挤压在MQ里面没人进行消费而已，不会对其他的系统产生影响。
+        </li>
+<li>
+<strong>异步</strong>：加入一个操作设计到好几个步骤，这些步骤之间不需要同步完成，比如客户去创建了一个订单，还要去客户轨迹系统添加一条轨迹、去库存系统更新库存、去客户系统修改客户的状态等等。这样如果这个系统都直接进行调用，那么将会产生大量的时间，这样对于客户是无法接收的；并且像添加客户轨迹这种操作是不需要去同步操作的，如果使用MQ将客户创建订单时，将后面的轨迹、库存、状态等信息的更新全都放到MQ里面然后去异步操作，这样就可加快系统的访问速度，提供更好的客户体验。
+        </li>
+<li>
+<strong>削峰</strong>：一个系统访问流量有高峰时期，也有低峰时期，比如说，中午整点有一个抢购活动等等。比如系统平时流量并不高，一秒钟只有100多个并发请求，系统处理没有任何压力，一切风平浪静，到了某个抢购活动时间，系统并发访问了剧增，比如达到了每秒5000个并发请求，而我们的系统每秒只能处理2000个请求，那么由于流量太大，我们的系统、数据库可能就会崩溃。这时如果使用MQ进行流量削峰，将用户的大量消息直接放到MQ里面，然后我们的系统去按自己的最大消费能力去消费这些消息，就可以保证系统的稳定，只是可能要跟进业务逻辑，给用户返回特定页面或者稍后通过其他方式通知其结果。
+        </li>
+</ul>
+<h3><span class="q1">为什么要用rabbitmq? 其他消息队列有什么特点？</span></h3>
+<p>Kafka、ActiveMQ、RabbitMQ、RocketMQ来进行不同维度对比。</p>
+<table>
+<thead>
+<tr style="border-width: 1px 0px 0px;border-right-style: initial;border-bottom-style: initial;border-left-style: initial;border-right-color: initial;border-bottom-color: initial;border-left-color: initial;border-top-style: solid;border-top-color: rgb(204, 204, 204);background-color: white;">
+<th style="border-top-width: 1px;border-color: rgb(204, 204, 204);text-align: left;background-color: rgb(240, 240, 240);min-width: 85px;"><strong>特性</strong></th>
+<th style="border-top-width: 1px;border-color: rgb(204, 204, 204);text-align: left;background-color: rgb(240, 240, 240);min-width: 85px;"><strong>ActiveMQ</strong></th>
+<th style="border-top-width: 1px;border-color: rgb(204, 204, 204);text-align: left;background-color: rgb(240, 240, 240);min-width: 85px;"><strong>RabbitMQ</strong></th>
+<th style="border-top-width: 1px;border-color: rgb(204, 204, 204);text-align: left;background-color: rgb(240, 240, 240);min-width: 85px;"><strong>RocketMQ</strong></th>
+<th style="border-top-width: 1px;border-color: rgb(204, 204, 204);text-align: left;background-color: rgb(240, 240, 240);min-width: 85px;"><strong>Kafka</strong></th>
+</tr>
+</thead>
+<tbody style="border-width: 0px;border-style: initial;border-color: initial;">
+<tr style="border-width: 1px 0px 0px;border-right-style: initial;border-bottom-style: initial;border-left-style: initial;border-right-color: initial;border-bottom-color: initial;border-left-color: initial;border-top-style: solid;border-top-color: rgb(204, 204, 204);background-color: white;">
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">单机吞吐量</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">万级</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">万级</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">10 万级</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">10 万级</td>
+</tr>
+<tr style="border-width: 1px 0px 0px;border-right-style: initial;border-bottom-style: initial;border-left-style: initial;border-right-color: initial;border-bottom-color: initial;border-left-color: initial;border-top-style: solid;border-top-color: rgb(204, 204, 204);background-color: rgb(248, 248, 248);">
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">时效性</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">毫秒级</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">微秒级</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">毫秒级</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">毫秒级</td>
+</tr>
+<tr style="border-width: 1px 0px 0px;border-right-style: initial;border-bottom-style: initial;border-left-style: initial;border-right-color: initial;border-bottom-color: initial;border-left-color: initial;border-top-style: solid;border-top-color: rgb(204, 204, 204);background-color: white;">
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">可用性</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">高（主从）</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">高（主从）</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">非常高（分布式）</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">非常高（分布式）</td>
+</tr>
+<tr style="border-width: 1px 0px 0px;border-right-style: initial;border-bottom-style: initial;border-left-style: initial;border-right-color: initial;border-bottom-color: initial;border-left-color: initial;border-top-style: solid;border-top-color: rgb(204, 204, 204);background-color: rgb(248, 248, 248);">
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">消息重复</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">至少一次</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">至少一次</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">至少一次 最多一次</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">至少一次最多一次</td>
+</tr>
+<tr style="border-width: 1px 0px 0px;border-right-style: initial;border-bottom-style: initial;border-left-style: initial;border-right-color: initial;border-bottom-color: initial;border-left-color: initial;border-top-style: solid;border-top-color: rgb(204, 204, 204);background-color: white;">
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">消息顺序性</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">有序</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">有序</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">有序</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">分区有序</td>
+</tr>
+<tr style="border-width: 1px 0px 0px;border-right-style: initial;border-bottom-style: initial;border-left-style: initial;border-right-color: initial;border-bottom-color: initial;border-left-color: initial;border-top-style: solid;border-top-color: rgb(204, 204, 204);background-color: rgb(248, 248, 248);">
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">支持主题数</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">千级</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">百万级</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">千级</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">百级，多了性能严重下滑</td>
+</tr>
+<tr style="border-width: 1px 0px 0px;border-right-style: initial;border-bottom-style: initial;border-left-style: initial;border-right-color: initial;border-bottom-color: initial;border-left-color: initial;border-top-style: solid;border-top-color: rgb(204, 204, 204);background-color: white;">
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">消息回溯</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">不支持</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">不支持</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">支持（按时间回溯）</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">支持（按offset回溯）</td>
+</tr>
+<tr style="border-width: 1px 0px 0px;border-right-style: initial;border-bottom-style: initial;border-left-style: initial;border-right-color: initial;border-bottom-color: initial;border-left-color: initial;border-top-style: solid;border-top-color: rgb(204, 204, 204);background-color: rgb(248, 248, 248);">
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">管理界面</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">普通</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">普通</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">完善</td>
+<td style="border-color: rgb(204, 204, 204);min-width: 85px;">普通</td>
+</tr>
+</tbody>
+</table>
+<p>选型的时候，我们需要根据业务场景，结合上述特性来进行选型。</p>
+<p>比如你要支持天猫双十一类超大型的秒杀活动，这种一锤子买卖，那管理界面、消息回溯啥的不重要。我们需要看什么？看吞吐量！</p>
+<p>所以优先选Kafka和RocketMQ这种更高吞吐的。</p>
+<p>比如做一个公司的中台，对外提供能力，那可能会有很多主题接入，这时候主题个数又是很重要的考量，像Kafka这样百级的，就不太符合要求，可以根据情况考虑千级的RocketMQ，甚至百万级的RabbitMQ。</p>
+<p>又比如是一个金融类业务，那么重点考虑的就是稳定性、安全性，分布式部署的Kafka和Rocket就更有优势。</p>
+<p>特别说一下时效性，RabbitMQ以微秒的时效作为招牌，但实际上毫秒和微秒，在绝大多数情况下，都没有感知的区别，加上网络带来的波动，这一点在生产过程中，反而不会作为重要的考量。</p>
+<p>其它的特性，如消息确认、消息回溯，也经常作为考量的场景，管理界面的话试公司而定了，反正我呆过的地方，都不看重这个，毕竟都有自己的运维体系。</p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>16. 介绍一个你熟悉的消息队列？</span></span></h3>
+<p style="text-align: left;"><span>我比较熟悉 kafka 消息队列，在项目中也有实践过程。</span></p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>17. kafka的选举机制是怎样的？</span></span></h3>
+<p style="text-align: left;"><span>Kafka的”选举”包括: Kafka Controller的选举, Partition Leader的选举, Consumer Group Coordinator(消费组协调者)的选举。</span></p>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>Kafka Controller的选举过程 ：</span></p>
+</blockquote>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>启动竞争</span></strong><span>：集群启动时，各个 Broker 节点会尝试在 ZooKeeper 中创建一个临时节点</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>/controller</span></code><span>。ZooKeeper 是一个分布式协调服务，可保障只有一个节点能成功创建该节点。</span>
+</li>
+<li>
+<strong><span>确定控制器</span></strong><span>：成功创建</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>/controller</span></code><span>节点的 Broker 会成为控制器，并在该节点中记录自身的 Broker ID 等信息。</span>
+</li>
+<li>
+<strong><span>故障处理</span></strong><span>：若控制器所在节点发生故障，其创建的临时节点会自动消失。其他 Broker 监听到这一变化后，会重新竞争创建</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>/controller</span></code><span>节点，从而选出新的控制器。</span>
+</li>
+</ul>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>Partition Leader的选举：</span></p>
+</blockquote>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>控制器主导</span></strong><span>：分区首领选举由控制器负责。控制器会维护分区的状态信息，当检测到首领副本不可用时，会触发选举流程。</span>
+</li>
+<li>
+<strong><span>优先副本选择</span></strong><span>：Kafka 优先选择分区的优先副本作为首领。优先副本是在分区创建时指定的第一个副本。</span>
+</li>
+<li>
+<strong><span>存活副本选举</span></strong><span>：若优先副本不可用，控制器会从同步副本集合（ISR）中选择一个副本作为新的首领。同步副本是指与首领副本保持同步的副本。</span>
+</li>
+<li>
+<strong><span>元数据更新</span></strong><span>：选举出新首领后，控制器会更新集群元数据，通知其他 Broker 新的首领信息。</span>
+</li>
+</ul>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>Consumer Group Coordinator(消费组协调者)的选举：</span></p>
+</blockquote>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>协调器确定</span></strong><span>：消费者组中的消费者在启动时，会向 Kafka 集群发送请求，Kafka 根据消费者组 ID 的哈希值选择一个 Broker 作为协调器。</span>
+</li>
+<li>
+<strong><span>注册与通知</span></strong><span>：消费者向选定的协调器注册自己，协调器会维护消费者组的成员信息，并将分区分配方案通知给各个消费者。</span>
+</li>
+<li>
+<strong><span>故障处理</span></strong><span>：若协调器所在 Broker 故障，消费者会收到通知，重新发起协调器选举。</span>
+</li>
+</ul>
+<h3><span class="q1">对Kafka有什么了解吗？</span></h3>
+<p>Kafka特点如下：</p>
+<ul class="list-paddingleft-1">
+<li>
+            高吞吐量、低延迟：kafka每秒可以处理几十万条消息，它的延迟最低只有几毫秒，每个topic可以分多个partition, consumer group 对partition进行consume操作。
+        </li>
+<li>
+            可扩展性：kafka集群支持热扩展
+        </li>
+<li>
+            持久性、可靠性：消息被持久化到本地磁盘，并且支持数据备份防止数据丢失
+        </li>
+<li>
+            容错性：允许集群中节点失败（若副本数量为n,则允许n-1个节点失败）
+        </li>
+<li>
+            高并发：支持数千个客户端同时读写
+        </li>
+</ul>
+<h3><span class="q1">如果有一个消费主题topic，有一个消费组group，topic有10个分区，消费线程数和分区数的关系是怎么样的？</span></h3>
+<p>topic下的一个分区只能被同一个consumer group下的一个consumer线程来消费，但反之并不成立，即一个consumer线程可以消费多个分区的数据，比如Kafka提供的ConsoleConsumer，默认就只是一个线程来消费所有分区的数据。</p>
+<figure class="img1"><img _width="516px" data-index="17" data-src="../img/mq_021_deb71544.jpg" data-type="other" data-w="516" src="../img/mq_021_deb71544.jpg" style="   border-radius: 4px;  height: auto !important;  width: 516px !important;"/></figure>
+<p>所以，<strong>分区数决定了同组消费者个数的上限</strong>。</p>
+<p>如果你的分区数是N，那么最好线程数也保持为N，这样通常能够达到最大的吞吐量。超过N的配置只是浪费系统资源，因为多出的线程不会被分配到任何分区。</p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>1. kafka怎么能防止重复消费？</span></span></h3>
+<p style="text-align: left;"><span>生产端为了保证消息发送成功，可能会重复推送(直到收到成功ACK)，会产生重复消息。但是一个成熟的MQ Server框架一般会想办法解决，避免存储重复消息(比如：空间换时间，存储已处理过的message_id)，给生产端提供一个幂等性的发送消息接口。</span></p>
+<p style="text-align: left;"><span>但是消费端却无法根本解决这个问题，在高并发标准要求下，拉取消息+业务处理+提交消费位移需要做事务处理，另外消费端服务可能宕机，很可能会拉取到重复消息。</span></p>
+<p style="text-align: left;"><span>所以，只能业务端自己做控制，</span><strong><span>对于已经消费成功的消息，本地数据库表或Redis缓存业务标识，每次处理前先进行校验，保证幂等。</span></strong></p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>2. kafka消息丢失怎么办？</span></span></h3>
+<p style="text-align: left;"><span>使用一个消息队列，其实就分为三大块：</span><strong><span>生产者、中间件、消费者</span></strong><span>，所以要保证消息就是保证三个环节都不能丢失数据。</span></p>
+<figure class="img1"><span><img _width="677px" data-index="5" data-src="../img/mq_022_5d92b775.jpg" data-type="other" data-w="1080" src="../img/mq_022_5d92b775.jpg" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>消息生产阶段</span></strong><span>：生产者会不会丢消息，取决于生产者对于异常情况的处理是否合理。从消息被生产出来，然后提交给 MQ 的过程中，只要能正常收到 （ MQ 中间件） 的 ack 确认响应，就表示发送成功，所以只要处理好返回值和异常，如果返回异常则进行消息重发，那么这个阶段是不会出现消息丢失的。</span>
+</li>
+<li>
+<strong><span>消息存储阶段</span></strong><span>：Kafka 在使用时是部署一个集群，生产者在发布消息时，队列中间件通常会写「多个节点」，也就是有多个副本，这样一来，即便其中一个节点挂了，也能保证集群的数据不丢失。</span>
+</li>
+<li>
+<strong><span>消息消费阶段</span></strong><span>：消费者接收消息+消息处理之后，才回复 ack 的话，那么消息阶段的消息不会丢失。不能收到消息就回 ack，否则可能消息处理中途挂掉了，消息就丢失了。</span>
+</li>
+</ul>
+<h3><span class="q1">RocektMQ怎么处理分布式事务？</span></h3>
+<p><strong>RocketMQ是一种最终一致性的分布式事务</strong>，就是说它保证的是消息最终一致性，而不是像2PC、3PC、TCC那样强一致分布式事务</p>
+<p>假设 <strong>A</strong> 给 <strong>B</strong> 转 <strong>100块钱</strong>，同时它们不是同一个服务上，现在目标是就是 <strong>A</strong> 减100块钱，<strong>B</strong> 加100块钱。实际情况可能有四种：</p>
+<ul class="list-paddingleft-1">
+<li>
+            1）就是A账户减100 （成功），B账户加100 （成功）
+        </li>
+<li>
+            2）就是A账户减100（失败），B账户加100 （失败）
+        </li>
+<li>
+            3）就是A账户减100（成功），B账户加100 （失败）
+        </li>
+<li>
+            4）就是A账户减100 （失败），B账户加100 （成功）
+        </li>
+</ul>
+<p>这里 <strong>第1和第2</strong> 种情况是能够保证事务的一致性的，但是 <strong>第3和第4</strong> 是无法保证事务的一致性的。那我们来看下RocketMQ是如何来保证事务的一致性的。</p>
+<p><img _width="677px" data-index="20" data-src="../img/mq_023_aef5d69b.png" data-w="1080" src="../img/mq_023_aef5d69b.png" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>分布式事务的流程如上图：</p>
+<ul class="list-paddingleft-1">
+<li>
+            1、A服务先发送个Half Message（**<em>是指暂不能被Consumer消费的消息</em>**_。Producer 已经把消息成功发送到了Broker 端，但此消息被标记为暂不能投递状态，处于该种状态下的消息称为半消息。需要 Producer对消息的二次确认后，Consumer才能去消费它_）给Brock端，消息中携带 B服务 即将要+100元的信息。
+        </li>
+<li>
+            2、当A服务知道Half Message发送成功后，那么开始第3步执行本地事务。
+        </li>
+<li>
+            3、执行本地事务(会有三种情况1、执行成功。2、执行失败。3、网络等原因导致没有响应)
+        </li>
+<li>
+            4.1)、如果本地事务成功，那么Product像Brock服务器发送Commit,这样B服务就可以消费该message。
+        </li>
+<li>
+            4.2)、如果本地事务失败，那么Product像Brock服务器发送Rollback,那么就会直接删除上面这条半消息。
+        </li>
+<li>
+            4.3)、如果因为网络等原因迟迟没有返回失败还是成功，那么会执行RocketMQ的回调接口，来进行事务的回查。
+        </li>
+</ul>
+<p>从上面流程可以得知 只有A服务本地事务执行成功 ，B服务才能消费该message。</p>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);"><strong>那么</strong> <strong>A账户减100 （成功），B账户加100 （失败），这时候B服务失败怎么办？</strong></p>
+</blockquote>
+<p>如果B最终执行失败，几乎可以断定就是代码有问题所以才引起的异常，因为消费端RocketMQ有重试机制，如果不是代码问题一般重试几次就能成功。如果是代码的原因引起多次重试失败后，也没有关系，将该异常记录下来，由人工处理，人工兜底处理后，就可以让事务达到最终的一致性。</p>
+<h3><span class="q1">RocketMQ消息顺序怎么保证？</span></h3>
+<p>消息的有序性是指消息的消费顺序能够严格保存与消息的发送顺序一致。例如，一个订单产生了3条消息，分别是订单创建、订单付款和订单完成。在消息消费时，同一条订单要严格按照这个顺序进行消费，否则业务会发生混乱。同时，不同订单之间的消息又是可以并发消费的，比如可以先执行第三个订单的付款，再执行第二个订单的创建。</p>
+<p>RocketMQ采用了局部顺序一致性的机制，实现了单个队列中的消息严格有序。也就是说，如果想要保证顺序消费，必须将一组消息发送到同一个队列中，然后再由消费者进行注意消费。</p>
+<p>RocketMQ推荐的顺序消费解决方案是：安装业务划分不同的队列，然后将需要顺序消费的消息发往同一队列中即可，不同业务之间的消息仍采用并发消费。这种方式在满足顺序消费的同时提高了消息的处理速度，在一定程度上避免了消息堆积问题</p>
+<p>RocketMQ 顺序消息的原理是：</p>
+<ul class="list-paddingleft-1">
+<li>
+            在 Producer（生产者） 把一批需要保证顺序的消息发送到同一个 MessageQueue
+        </li>
+<li>
+            Consumer（消费者） 则通过加锁的机制来保证消息消费的顺序性，Broker 端通过对 MessageQueue 进行加锁，保证同一个 MessageQueue 只能被同一个 Consumer 进行消费。
+        </li>
+</ul>
+<h3><span class="q1">RocketMQ消息积压了，怎么办？</span></h3>
+<p>导致消息积压突然增加，最粗粒度的原因，只有两种：要么是发送变快了，要么是消费变慢了。</p>
+<p>要解决积压的问题，可以通过<strong>扩容消费端的实例数来提升总体的消费能力</strong>。</p>
+<p>如果短时间内没有足够的服务器资源进行扩容，没办法的办法是，将<strong>系统降级</strong>，通过关闭一些不重要的业务，减少发送方发送的数据量，最低限度让系统还能正常运转，服务一些重要业务。</p>
+<h3><span class="q1">说说消息队列，如果我有两个consumer在消费Kafka的同一个partition，此时我增加一个consumer，会怎么样？</span></h3>
+<p><img _width="474px" data-index="5" data-src="../img/mq_024_e715b749.png" data-w="474" src="../img/mq_024_e715b749.png" style="   border-radius: 4px;  height: auto !important;  width: 474px !important;"/><br/></p>
+<p>同一时刻，<strong>一条消息只能被组中的一个消费者实例消费</strong>。消费者组订阅一个主题，意味着主题下的所有分区都会被组中的消费者消费到，并且主题下的每个分区只从属于组中的一个消费者，<strong>不可能出现组中的两个消费者负责同一个分区</strong>。 </p>
+<p>如果分区数大于或者等于组中的消费者实例数，那么一个消费者会负责多个分区；如果消费者实例的数量大于分区数，有一些消费者是多余的，一直接不到消息而处于空闲状态。即：</p>
+<ul class="list-paddingleft-1">
+<li>
+            若consumer数量大于partition数量，会造成限制的consumer，产生浪费。
+        </li>
+<li>
+            若consumer数量小于partition数量，会导致均衡失效，其中的某个或某些consumer会消费更多的任务。
+        </li>
+</ul>
+<p>为什么一个消费者可以消费多个分区，但是一个分区不能被多个消费者消费呢？就是要<strong>保证一个分区下的消息顺序性</strong>。</p>
+<p>倘若，两个消费者负责同一个分区，那么就意味着两个消费者同时读取分区的消息，由于消费者自己可以控制读取消息的offset，就有可能C1才读到2，而C1读到1，C1还没处理完，C2已经读到3了，则会造成很多浪费，因为这就相当于多线程读取同一个消息，会造成消息处理的重复，且不能保证消息的顺序，这就跟主动推送（push）无异。</p>
+<p><strong>所以说消息积压的时候，部署多台消费者实例是不能加快消费原有分区的消息的。</strong>最多增加到和partition数量一致，超过的组员只会占用资源，而不起作用。</p>
+<h3><span class="q1">消息队列是参考哪种设计模式？</span></h3>
+<p>是参考了观察者模式和发布订阅模式，两种设计模式思路是一样的，举个生活例子：</p>
+<ul class="list-paddingleft-1">
+<li>
+            观察者模式：某公司给自己员工发月饼发粽子，是由公司的行政部门发送的，这件事不适合交给第三方，原因是“公司”和“员工”是一个整体
+        </li>
+<li>
+            发布-订阅模式：某公司要给其他人发各种快递，因为“公司”和“其他人”是独立的，其唯一的桥梁是“快递”，所以这件事适合交给第三方快递公司解决
+        </li>
+</ul>
+<p>上述过程中，如果公司自己去管理快递的配送，那公司就会变成一个快递公司，业务繁杂难以管理，影响公司自身的主营业务，因此使用何种模式需要考虑什么情况两者是需要耦合的</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">观察者模式</p>
+</blockquote>
+<p>观察者模式实际上就是一个一对多的关系，在观察者模式中存在一个主题和多个观察者，主题也是被观察者，当我们主题发布消息时，会通知各个观察者，观察者将会收到最新消息，图解如下：每个观察者首先订阅主题，订阅成功后当主题发送消息时会循环整个观察者列表，逐一发送消息通知。<img _width="677px" data-index="6" data-src="../img/mq_025_ca2353b4.jpg" data-type="other" data-w="1080" src="../img/mq_025_ca2353b4.jpg" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/></p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">发布订阅模式</p>
+</blockquote>
+<p>发布订阅模式和观察者模式的区别就是发布者和订阅者完全解耦，通过中间的发布订阅中心进行消息通知，发布者并不知道自己发布的消息会通知给谁，因此发布订阅模式有三个重要角色，发布者-&gt;发布订阅中心-&gt;订阅者。</p>
+<p>图解如下：当发布者发布消息到发布订阅中心后，发布订阅中心会将消息通知给所有订阅该发布者的订阅者<img _width="677px" data-index="7" data-src="../img/mq_026_5c662428.jpg" data-type="other" data-w="1080" src="../img/mq_026_5c662428.jpg" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/></p>
+<h3><span class="q1">如何避免mq重复消费？</span></h3>
+<p>导致重复消费的原因可能出现在生产者，也可能出现在 MQ 或 消费者。</p>
+<p>这里说的重复消费问题是指同一个数据被执行了两次，不单单指 MQ 中一条消息被消费了两次，也可能是 MQ 中存在两条一模一样的消费。</p>
+<ul class="list-paddingleft-1">
+<li>
+            生产者：生产者可能会重复推送一条数据到 MQ 中，为什么会出现这种情况呢？也许是一个 Controller 接口被重复调用了 2 次，没有做接口幂等性导致的；也可能是推送消息到 MQ 时响应比较慢，生产者的重试机制导致再次推送了一次消息。
+        </li>
+<li>
+            MQ：在消费者消费完一条数据响应 ack 信号消费成功时，MQ 突然挂了，导致 MQ 以为消费者还未消费该条数据，MQ 恢复后再次推送了该条消息，导致了重复消费。
+        </li>
+<li>
+            消费者：消费者已经消费完了一条消息，正准备但是还未给 MQ 发送 ack 信号时，此时消费者挂了，服务重启后 MQ 以为消费者还没有消费该消息，再次推送了该条消息。
+        </li>
+</ul>
+<p>消费者怎么解决重复消费问题呢？这里提供两种方法：</p>
+<ul class="list-paddingleft-1">
+<li>
+            状态判断法：消费者消费数据后把消费数据记录在 redis 中，下次消费时先到 redis 中查看是否存在该消息，存在则表示消息已经消费过，直接丢弃消息。
+        </li>
+<li>
+            业务判断法：通常数据消费后都需要插入到数据库中，使用数据库的唯一性约束防止重复消费。每次消费直接尝试插入数据，如果提示唯一性字段重复，则直接丢失消息。一般都是通过这个业务判断的方法就可以简单高效地避免消息的重复处理了。
+        </li>
+</ul>
+<h3><span class="q1">如何避免mq重复消费？</span></h3>
+<p>导致重复消费的原因可能出现在生产者，也可能出现在 MQ 或 消费者。</p>
+<p>这里说的重复消费问题是指同一个数据被执行了两次，不单单指 MQ 中一条消息被消费了两次，也可能是 MQ 中存在两条一模一样的消费。</p>
+<ul class="list-paddingleft-1">
+<li>
+            生产者：生产者可能会重复推送一条数据到 MQ 中，为什么会出现这种情况呢？也许是一个 Controller 接口被重复调用了 2 次，没有做接口幂等性导致的；也可能是推送消息到 MQ 时响应比较慢，生产者的重试机制导致再次推送了一次消息。
+        </li>
+<li>
+            MQ：在消费者消费完一条数据响应 ack 信号消费成功时，MQ 突然挂了，导致 MQ 以为消费者还未消费该条数据，MQ 恢复后再次推送了该条消息，导致了重复消费。
+        </li>
+<li>
+            消费者：消费者已经消费完了一条消息，正准备但是还未给 MQ 发送 ack 信号时，此时消费者挂了，服务重启后 MQ 以为消费者还没有消费该消息，再次推送了该条消息。
+        </li>
+</ul>
+<p>消费者怎么解决重复消费问题呢？这里提供两种方法：</p>
+<ul class="list-paddingleft-1">
+<li>
+            状态判断法：消费者消费数据后把消费数据记录在 redis 中，下次消费时先到 redis 中查看是否存在该消息，存在则表示消息已经消费过，直接丢弃消息。
+        </li>
+<li>
+            业务判断法：通常数据消费后都需要插入到数据库中，使用数据库的唯一性约束防止重复消费。每次消费直接尝试插入数据，如果提示唯一性字段重复，则直接丢失消息。一般都是通过这个业务判断的方法就可以简单高效地避免消息的重复处理了。
+        </li>
+</ul>
+<h3><span class="q1">MQ保证消息可靠性方案是什么？</span></h3>
+<p>使用一个消息队列，其实就分为三大块：<strong>生产者、中间件、消费者</strong>，所以要保证消息就是保证三个环节都不能丢失数据。</p>
+<figure class="img1"><img _width="677px" data-index="12" data-src="../img/mq_027_5eb67136.png" data-w="1080" src="../img/mq_027_5eb67136.png" style="height: auto !important;  width: 656.938px !important;"/></figure>
+<ul class="list-paddingleft-1">
+<li>
+<strong>消息生产阶段</strong>：生产者会不会丢消息，取决于生产者对于异常情况的处理是否合理。从消息被生产出来，然后提交给 MQ 的过程中，只要能正常收到 （ MQ 中间件） 的 ack 确认响应，就表示发送成功，所以只要处理好返回值和异常，如果返回异常则进行消息重发，那么这个阶段是不会出现消息丢失的。
+        </li>
+<li>
+<strong>消息存储阶段</strong>：Kafka 在使用时是部署一个集群，生产者在发布消息时，队列中间件通常会写「多个节点」，也就是有多个副本，这样一来，即便其中一个节点挂了，也能保证集群的数据不丢失。
+        </li>
+<li>
+<strong>消息消费阶段</strong>：消费者接收消息+消息处理之后，才回复 ack 的话，那么消息阶段的消息不会丢失。不能收到消息就回 ack，否则可能消息处理中途挂掉了，消息就丢失了。
+        </li>
+</ul>
+<h3><span class="q1">MQ的选型你是怎么做的？</span></h3>
+<p>Kafka、ActiveMQ、RabbitMQ、RocketMQ来进行不同维度对比。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-color: rgba(204, 204, 204, 0.4);min-width: 85px;"><strong style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(0, 0, 0, 0);">特性</strong></th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-color: rgba(204, 204, 204, 0.4);min-width: 85px;"><strong style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(0, 0, 0, 0);">ActiveMQ</strong></th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-color: rgba(204, 204, 204, 0.4);min-width: 85px;"><strong style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(0, 0, 0, 0);">RabbitMQ</strong></th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-color: rgba(204, 204, 204, 0.4);min-width: 85px;"><strong style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(0, 0, 0, 0);">RocketMQ</strong></th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-color: rgba(204, 204, 204, 0.4);min-width: 85px;"><strong style="background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(0, 0, 0, 0);">Kafka</strong></th>
+</tr>
+</thead>
+<tbody style="border-width: 0px;border-style: initial;border-color: initial;">
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">单机吞吐量</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">万级</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">万级</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">10 万级</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">10 万级</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">时效性</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">毫秒级</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">微秒级</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">毫秒级</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">毫秒级</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">可用性</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">高（主从）</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">高（主从）</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">非常高（分布式）</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">非常高（分布式）</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">消息重复</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">至少一次</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">至少一次</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">至少一次 最多一次</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">至少一次最多一次</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">消息顺序性</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">有序</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">有序</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">有序</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">分区有序</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">支持主题数</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">千级</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">百万级</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">千级</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">百级，多了性能严重下滑</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">消息回溯</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">不支持</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">不支持</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">支持（按时间回溯）</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">支持（按offset回溯）</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">管理界面</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">普通</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">普通</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完善</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">普通</td>
+</tr>
+</tbody>
+</table>
+<p>选型的时候，我们需要根据业务场景，结合上述特性来进行选型。</p>
+<p>比如你要支持天猫双十一类超大型的秒杀活动，这种一锤子买卖，那管理界面、消息回溯啥的不重要。</p>
+<p>我们需要看什么？看吞吐量！</p>
+<p>所以优先选Kafka和RocketMQ这种更高吞吐的。</p>
+<p>比如做一个公司的中台，对外提供能力，那可能会有很多主题接入，这时候主题个数又是很重要的考量，像Kafka这样百级的，就不太符合要求，可以根据情况考虑千级的RocketMQ，甚至百万级的RabbitMQ。</p>
+<p>又比如是一个金融类业务，那么重点考虑的就是稳定性、安全性，分布式部署的Kafka和Rocket就更有优势。</p>
+<p>特别说一下时效性，RabbitMQ以微秒的时效作为招牌，但实际上毫秒和微秒，在绝大多数情况下，都没有感知的区别，加上网络带来的波动，这一点在生产过程中，反而不会作为重要的考量。</p>
+<p>其它的特性，如消息确认、消息回溯，也经常作为考量的场景，管理界面的话试公司而定了，反正我呆过的地方，都不看重这个，毕竟都有自己的运维体系。</p>
+<h3><span class="q1">为啥要用MQ延迟双删保证mysql和redis一致性？</span></h3>
+<p>这个是我项目用的方案，就解释了原因。</p>
+<p>在正常的数据读取流程中，如果先查询 Redis 缓存，没有命中再去查询 MySQL 数据库，然后将查询结果写入 Redis。但如果有大量针对不存在数据的查询请求，这些请求会直接穿透 Redis 去查询 MySQL，给 MySQL 带来巨大压力。</p>
+<p>采用 MQ 延迟双删策略，在更新 MySQL 数据时，先删除 Redis 缓存，然后通过 MQ 发送一条延迟消息，在延迟一段时间后再次删除 Redis 缓存，确保再次删除缓存后，后续的读操作能从数据库中获取到最新数据并正确更新 Redis 缓存，而且这样可以确保在数据更新期间，即使有缓存穿透的请求，也不会因为旧数据存在于 Redis 中而导致数据不一致，同时也能减轻 MySQL 的压力。</p>
+<h3 style="margin: 1.2em 0px 15px;padding: 0px;"><span style="color: rgb(65, 105, 225);text-align: left;"><span>10. 谈一下你对 raft算法的理解</span></span></h3>
+<p style="text-align: left;"><span>Raft算法由leader节点来处理一致性问题。leader节点接收来自客户端的请求日志数据，然后同步到集群中其它节点进行复制，当日志已经同步到超过半数以上节点的时候，leader节点再通知集群中其它节点哪些日志已经被复制成功，可以提交到raft状态机中执行。</span></p>
+<p style="text-align: left;"><span>通过以上方式，Raft算法将要解决的一致性问题分为了以下几个子问题。</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<span>leader选举：集群中必须存在一个leader节点。</span>
+</li>
+<li>
+<span>日志复制：leader节点接收来自客户端的请求然后将这些请求序列化成日志数据再同步到集群中其它节点。</span>
+</li>
+<li>
+<span>安全性：如果某个节点已经将一条提交过的数据输入raft状态机执行了，那么其它节点不可能再将相同索引 的另一条日志数据输入到raft状态机中执行。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>Raft算法需要有两个比较重要的机制：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>角色转换与选举机制</span></strong><span>：Raft 将系统中的节点分为三种角色：领导者（Leader）、跟随者（Follower）和候选人（Candidate）。系统启动时，所有节点都是跟随者。跟随者会定期从领导者处接收心跳信息以确认领导者的存活。如果跟随者在一段时间内（选举超时时间）没有收到领导者的心跳，它会转变为候选人，发起新一轮的选举。候选人向其他节点发送请求投票消息。其他节点根据收到的请求投票消息，决定是否为该候选人投票。当候选人获得超过半数节点的投票时，它就成为新的领导者。领导者会周期性地向所有跟随者发送心跳消息，以维持自己的领导地位。每个领导者的领导周期称为一个任期（Term），任期号是单调递增的。</span>
+</li>
+</ul>
+<figure style="margin: 10px 0px;padding: 0px;display: flex;flex-direction: column;justify-content: center;align-items: center;"><span><img _width="677px" data-index="10" data-src="../img/mq_028_93c29fd8.png" data-w="1080" src="../img/mq_028_93c29fd8.png" style=" margin: 0px auto 25px; max-width: 100%; border: 3px none rgba(0, 0, 0, 0.4);    height: auto !important;  width: 657px !important;"/></span></figure>
+<ul class="list-paddingleft-1" style="list-style-type: disc;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>日志复制机制：</span></strong><span>客户端的请求会被领导者作为日志条目添加到自己的日志中。领导者将新的日志条目复制到其他跟随者节点。它会通过附加日志消息将日志条目发送给跟随者，跟随者收到消息后会将日志条目追加到自己的日志中，并向领导者发送确认消息。当领导者得知某个日志条目已经被大多数节点复制时，它会将该日志条目标记为已提交，并将其应用到状态机中。然后，领导者会通知其他节点该日志条目已提交，跟随者也会将已提交的日志条目应用到自己的状态机中。</span>
+</li>
+</ul>
+<figure style="margin: 10px 0px;padding: 0px;display: flex;flex-direction: column;justify-content: center;align-items: center;"><span><img _width="677px" data-index="11" data-src="../img/mq_029_ead77b88.png" data-w="772" src="../img/mq_029_ead77b88.png" style=" margin: 0px auto 25px; max-width: 100%; border: 3px none rgba(0, 0, 0, 0.4);    height: auto !important;  width: 657px !important;"/></span></figure>
+<h3 style="margin: 1.2em 0px 15px;padding: 0px;"><span style="color: rgb(65, 105, 225);text-align: left;"><span>11. raft 算法的选举的流程是怎样的？</span></span></h3>
+<p style="text-align: left;"><span>Raft 中有三种角色：Leader、Follower 和 Candidate。正常情况下，只有 Leader 处理客户端请求，Follower 被动接收日志并响应请求。当 Follower 在一定时间内没有收到 Leader 的心跳（即超时），就会转为 Candidate，开始发起选举。</span></p>
+<figure style="margin: 10px 0px;padding: 0px;display: flex;flex-direction: column;justify-content: center;align-items: center;"><span><img _width="635px" data-index="12" data-src="../img/mq_030_09c07f92.png" data-w="635" src="../img/mq_030_09c07f92.png" style=" margin: 0px auto 25px; max-width: 100%; border: 3px none rgba(0, 0, 0, 0.4);    height: auto !important;  width: 635px !important;"/></span></figure>
+<p style="text-align: left;"><span>接下来，选举流程的步骤大致如下：</span></p>
+<ol class="list-paddingleft-1" style="list-style-type: decimal;margin: 8px 0px;padding: 0px 0px 0px 25px;">
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>转为 Candidate 状态</span></strong><span>：Follower 超时后，增加自己的任期号（Term），并转换为 Candidate，开始竞选。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>发送 RequestVote 请求</span></strong><span>：Candidate 首先给自己投一票，然后 Candidate 向所有其他节点发送请求投票的 RPC。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>处理投票请求</span></strong><span>：其他节点（Follower 或 Candidate）在收到请求后，会检查是否已经投过票给当前任期的某个 Candidate。如果没有投票，并且 Candidate 的日志至少和自己一样新，就会投票给该 Candidate。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>赢得选举</span></strong><span>：Candidate 需要获得超过半数节点的投票才能成为新的 Leader。如果赢得选举，Candidate 就会转为 Leader，并开始发送心跳来维持自己的领导地位。</span>
+</li>
+<li>
+<strong style="background-color: rgba(0, 0, 0, 0);padding: 0px;border: 3px none rgba(0, 0, 0, 0.4);background-position: left top;"><span>选举冲突</span></strong><span>：如果多个 Candidate 同时竞选，可能导致没有任何一个获得多数票，这时会触发新的选举，每个 Candidate 随机延长超时时间，以减少冲突的可能性。</span>
+</li>
+</ol>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>9. 为什么要用RabbitMq？</span></span></h3>
+<p style="text-align: left;"><span>RabbitMq消息队列的三大用途：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>解耦</span></strong><span>：可以在多个系统之间进行解耦，将原本通过网络之间的调用的方式改为使用MQ进行消息的异步通讯，只要该操作不是需要同步的，就可以改为使用MQ进行不同系统之间的联系，这样项目之间不会存在耦合，系统之间不会产生太大的影响，就算一个系统挂了，也只是消息挤压在MQ里面没人进行消费而已，不会对其他的系统产生影响。</span>
+</li>
+<li>
+<strong><span>异步</span></strong><span>：加入一个操作设计到好几个步骤，这些步骤之间不需要同步完成，比如客户去创建了一个订单，还要去客户轨迹系统添加一条轨迹、去库存系统更新库存、去客户系统修改客户的状态等等。这样如果这个系统都直接进行调用，那么将会产生大量的时间，这样对于客户是无法接收的；并且像添加客户轨迹这种操作是不需要去同步操作的，如果使用MQ将客户创建订单时，将后面的轨迹、库存、状态等信息的更新全都放到MQ里面然后去异步操作，这样就可加快系统的访问速度，提供更好的客户体验。</span>
+</li>
+<li>
+<strong><span>削峰</span></strong><span>：一个系统访问流量有高峰时期，也有低峰时期，比如说，中午整点有一个抢购活动等等。比如系统平时流量并不高，一秒钟只有100多个并发请求，系统处理没有任何压力，一切风平浪静，到了某个抢购活动时间，系统并发访问了剧增，比如达到了每秒5000个并发请求，而我们的系统每秒只能处理2000个请求，那么由于流量太大，我们的系统、数据库可能就会崩溃。这时如果使用MQ进行流量削峰，将用户的大量消息直接放到MQ里面，然后我们的系统去按自己的最大消费能力去消费这些消息，就可以保证系统的稳定，只是可能要跟进业务逻辑，给用户返回特定页面或者稍后通过其他方式通知其结果</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);">用的什么消息队列，消息队列怎么选型的？</span></h3>
+<p>项目用的是 RocketMQ 消息队列。选择RocketMQ的原因是：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>开发语言优势</strong>。RocketMQ 使用 Java 语言开发，比起使用 Erlang 开发的 RabbitMQ 来说，有着更容易上手的阅读体验和受众。在遇到 RocketMQ 较为底层的问题时，大部分熟悉 Java 的同学都可以深入阅读其源码，分析、排查问题。
+        </li>
+<li>
+<strong>社区氛围活跃</strong>。RocketMQ 是阿里巴巴开源且内部在大量使用的消息队列，说明 RocketMQ 是的确经得起残酷的生产环境考验的，并且能够针对线上环境复杂的需求场景提供相应的解决方案。
+        </li>
+<li>
+<strong>特性丰富</strong>。根据 RocketMQ 官方文档的列举，其高级特性达到了 <code style='padding: 2px 4px;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(27, 31, 35, 0.05);border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);border-radius: 4px;font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;word-break: break-all;color: rgb(100, 149, 237);'>12 种</code>，例如顺序消息、事务消息、消息过滤、定时消息等。顺序消息、事务消息、消息过滤、定时消息。RocketMQ 丰富的特性，能够为我们在复杂的业务场景下尽可能多地提供思路及解决方案。
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);">有没有消息积压的问题</span></h3>
+<p>导致消息积压突然增加，最粗粒度的原因，只有两种：要么是发送变快了，要么是消费变慢了。</p>
+<p>要解决积压的问题，可以通过<strong>扩容消费端的实例数来提升总体的消费能力</strong>。</p>
+<p>如果短时间内没有足够的服务器资源进行扩容，没办法的办法是，将<strong>系统降级</strong>，通过关闭一些不重要的业务，减少发送方发送的数据量，最低限度让系统还能正常运转，服务一些重要业务。</p>
+<h3><span style="color: rgb(65, 105, 225);">RocketMQ 消息可靠性怎么保证？</span></h3>
+<p>使用一个消息队列，其实就分为三大块：<strong>生产者、中间件、消费者</strong>，所以要保证消息就是保证三个环节都不能丢失数据。</p>
+<figure style="letter-spacing: 0.544px;text-align: left;background-display: flex;flex-direction: column;justify-content: center;align-items: center;"><img _width="656.969px" data-index="15" data-src="../img/mq_031_779d2149.png" data-w="1080" src="../img/mq_031_779d2149.png" style="             width: 656.969px !important; height: auto !important;"/></figure>
+<ul class="list-paddingleft-1">
+<li>
+<strong>消息生产阶段</strong>：生产者会不会丢消息，取决于生产者对于异常情况的处理是否合理。从消息被生产出来，然后提交给 MQ 的过程中，只要能正常收到 （ MQ 中间件） 的 ack 确认响应，就表示发送成功，所以只要处理好返回值和异常，如果返回异常则进行消息重发，那么这个阶段是不会出现消息丢失的。
+        </li>
+<li>
+<strong>消息存储阶段</strong>：RabbitMQ 或 Kafka 这类专业的队列中间件，在使用时是部署一个集群，生产者在发布消息时，队列中间件通常会写「多个节点」，也就是有多个副本，这样一来，即便其中一个节点挂了，也能保证集群的数据不丢失。
+        </li>
+<li>
+<strong>消息消费阶段</strong>：消费者接收消息+消息处理之后，才回复 ack 的话，那么消息阶段的消息不会丢失。不能收到消息就回 ack，否则可能消息处理中途挂掉了，消息就丢失了。
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);">Kafka 和 RocketMQ 消息确认机制有什么不同？</span></h3>
+<p>Kafka的消息确认机制有三种：0，1，-1：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>ACK=0</strong>：这是最不可靠的模式。生产者在发送消息后不会等待来自服务器的确认。这意味着消息可能会在发送之后丢失，而生产者将无法知道它是否成功到达服务器。
+        </li>
+<li>
+<strong>ACK=1</strong>：这是默认模式，也是一种折衷方式。在这种模式下，生产者会在消息发送后等待来自分区领导者（leader）的确认，但不会等待所有副本（replicas）的确认。这意味着只要消息被写入分区领导者，生产者就会收到确认。如果分区领导者成功写入消息，但在同步到所有副本之前宕机，消息可能会丢失。
+        </li>
+<li>
+<strong>ACK=-1</strong>：这是最可靠的模式。在这种模式下，生产者会在消息发送后等待所有副本的确认。只有在所有副本都成功写入消息后，生产者才会收到确认。这确保了消息的可靠性，但会导致更长的延迟。
+        </li>
+</ul>
+<p>RocketMQ 提供了三种消息发送方式：同步发送、异步发送和单向发送：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>同步发送</strong>：是指消息发送方发出一条消息后，会在收到服务端同步响应之后才发下一条消息的通讯方式。应用场景非常广泛，例如重要通知邮件、报名短信通知、营销短信系统等。
+        </li>
+<li>
+<strong>异步发送</strong>：是指发送方发出一条消息后，不等服务端返回响应，接着发送下一条消息的通讯方式，但是需要实现异步发送回调接口（SendCallback）。消息发送方在发送了一条消息后，不需要等待服务端响应即可发送第二条消息。发送方通过回调接口接收服务端响应，并处理响应结果。适用于链路耗时较长，对响应时间较为敏感的业务场景，例如，视频上传后通知启动转码服务，转码完成后通知推送转码结果等。
+        </li>
+<li>
+<strong>单向发送</strong>：发送方只负责发送消息，不等待服务端返回响应且没有回调函数触发，即只发送请求不等待应答。此方式发送消息的过程耗时非常短，一般在微秒级别。适用于某些耗时非常短，但对可靠性要求并不高的场景，例如日志收集。
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);">Kafka 和 RocketMQ 的 broker 架构有什么区别</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+            Kafka 的 broker 架构：Kafka 的 broker 架构采用了分布式的设计，<strong>每个 Kafka broker 是一个独立的服务实例</strong>，负责存储和处理一部分消息数据。Kafka 的 topic 被分区存储在不同的 broker 上，实现了水平扩展和高可用性。
+        </li>
+<li>
+            RocketMQ 的 broker 架构：RocketMQ 的 broker 架构也是分布式的，但是<strong>每个 RocketMQ broker 有主从之分</strong>，一个主节点和多个从节点组成一个 broker 集群。主节点负责消息的写入和消费者的拉取，从节点负责消息的复制和消费者的负载均衡，提高了消息的可靠性和可用性。
+        </li>
+</ul>
+<h3><span></span><span style="color: rgb(65, 105, 225);">RocektMQ怎么处理分布式事务？</span></h3>
+<p><strong>RocketMQ是一种最终一致性的分布式事务</strong>，就是说它保证的是消息最终一致性，而不是像2PC、3PC、TCC那样强一致分布式事务</p>
+<p>假设 <strong>A</strong> 给 <strong>B</strong> 转 <strong>100块钱</strong>，同时它们不是同一个服务上，现在目标是就是 <strong>A</strong> 减100块钱，<strong>B</strong> 加100块钱。实际情况可能有四种：</p>
+<ul class="list-paddingleft-1">
+<li>
+            1）就是A账户减100 （成功），B账户加100 （成功）
+        </li>
+<li>
+            2）就是A账户减100（失败），B账户加100 （失败）
+        </li>
+<li>
+            3）就是A账户减100（成功），B账户加100 （失败）
+        </li>
+<li>
+            4）就是A账户减100 （失败），B账户加100 （成功）
+        </li>
+</ul>
+<p>这里 <strong>第1和第2</strong> 种情况是能够保证事务的一致性的，但是 <strong>第3和第4</strong> 是无法保证事务的一致性的。那我们来看下RocketMQ是如何来保证事务的一致性的。</p>
+<p><img _width="657px" data-index="21" data-src="../img/mq_032_aef5802f.png" data-w="1080" src="../img/mq_032_aef5802f.png" style="      border-radius: 4px;  width: 637px !important; height: auto !important;"/>分布式事务的流程如上图：</p>
+<ul class="list-paddingleft-1">
+<li>
+            1、A服务先发送个Half Message（<em>是指暂不能被Consumer消费的消息</em>。Producer 已经把消息成功发送到了Broker 端，但此消息被标记为暂不能投递状态，处于该种状态下的消息称为半消息。需要 Producer对消息的二次确认后，Consumer才能去消费它_）给Brock端，消息中携带 B服务 即将要+100元的信息。
+        </li>
+<li>
+            2、当A服务知道Half Message发送成功后，那么开始第3步执行本地事务。
+        </li>
+<li>
+            3、执行本地事务(会有三种情况1、执行成功。2、执行失败。3、网络等原因导致没有响应)
+        </li>
+<ul class="list-paddingleft-1" style="list-style-type: square;">
+<li>
+                4.1)、如果本地事务成功，那么Product像Brock服务器发送Commit,这样B服务就可以消费该message。
+            </li>
+<li>
+                4.2)、如果本地事务失败，那么Product像Brock服务器发送Rollback,那么就会直接删除上面这条半消息。
+            </li>
+<li>
+                4.3)、如果因为网络等原因迟迟没有返回失败还是成功，那么会执行RocketMQ的回调接口，来进行事务的回查。
+            </li>
+</ul>
+</ul>
+<p>从上面流程可以得知 只有A服务本地事务执行成功 ，B服务才能消费该message。</p>
+<blockquote style="padding: 15px 20px;border-left-color: rgb(100, 149, 237);color: rgb(106, 115, 125);font-size: 0.9em;border-top: none;border-right: none;border-bottom: none;overflow: auto;background: rgb(227, 242, 253);">
+<p style="color: rgb(89, 89, 89);"><strong>那么</strong> <strong>A账户减100 （成功），B账户加100 （失败），这时候B服务失败怎么办？</strong></p>
+</blockquote>
+<p>如果B最终执行失败，几乎可以断定就是代码有问题所以才引起的异常，因为消费端RocketMQ有重试机制，如果不是代码问题一般重试几次就能成功。</p>
+<p>如果是代码的原因引起多次重试失败后，也没有关系，将该异常记录下来，由人工处理，人工兜底处理后，就可以让事务达到最终的一致性。</p>
+<h3><span></span><span style="color: rgb(65, 105, 225);">RocketMQ消息顺序怎么保证？</span></h3>
+<p>消息的有序性是指消息的消费顺序能够严格保存与消息的发送顺序一致。例如，一个订单产生了3条消息，分别是订单创建、订单付款和订单完成。在消息消费时，同一条订单要严格按照这个顺序进行消费，否则业务会发生混乱。同时，不同订单之间的消息又是可以并发消费的，比如可以先执行第三个订单的付款，再执行第二个订单的创建。</p>
+<p>RocketMQ采用了局部顺序一致性的机制，实现了单个队列中的消息严格有序。也就是说，如果想要保证顺序消费，必须将一组消息发送到同一个队列中，然后再由消费者进行注意消费。</p>
+<p>RocketMQ推荐的顺序消费解决方案是：安装业务划分不同的队列，然后将需要顺序消费的消息发往同一队列中即可，不同业务之间的消息仍采用并发消费。这种方式在满足顺序消费的同时提高了消息的处理速度，在一定程度上避免了消息堆积问题</p>
+<p>RocketMQ 顺序消息的原理是：</p>
+<ul class="list-paddingleft-1">
+<li>
+            在 Producer（生产者） 把一批需要保证顺序的消息发送到同一个 MessageQueue
+        </li>
+<li>
+            Consumer（消费者） 则通过加锁的机制来保证消息消费的顺序性，Broker 端通过对 MessageQueue 进行加锁，保证同一个 MessageQueue 只能被同一个 Consumer 进行消费。
+        </li>
+</ul>
+<h3><span></span><span style="color: rgb(65, 105, 225);">RocketMQ消息积压了，怎么办？</span></h3>
+<p>导致消息积压突然增加，最粗粒度的原因，只有两种：要么是发送变快了，要么是消费变慢了。</p>
+<p>要解决积压的问题，可以通过<strong>扩容消费端的实例数来提升总体的消费能力</strong>。</p>
+<p>如果短时间内没有足够的服务器资源进行扩容，没办法的办法是，将<strong>系统降级</strong>，通过关闭一些不重要的业务，减少发送方发送的数据量，最低限度让系统还能正常运转，服务一些重要业务。</p>
+<h2><span style="display: inline-block;background: rgb(65, 105, 225);padding: 3px 10px 1px;border-top-right-radius: 3px;border-top-left-radius: 3px;">RabbitMQ</span><span style="display: inline-block;vertical-align: bottom;border-bottom-width: 36px;border-bottom-style: solid;border-bottom-color: rgb(239, 235, 233);border-right-width: 20px;border-right-style: solid;border-right-color: transparent;"> </span></h2>
+<h3><span class="q1">为什么不用别的消息队列</span></h3>
+<p>因为我们的项目比较轻量级，所以在选择消息队列的时候，首先考虑的是简单、易上手，所以选择了RabbitMQ。</p>
+<p>而且 RabbitMQ 支持多种客户端，如Python、Java、.NET、C、Ruby等，在易用性、扩展性、高可用性等方面表现都不错，并且可以与SpringAMQP完美整合，API丰富易用。</p>
+<h3><span class="q1">重复消费怎么解决？</span></h3>
+<p>生产端为了保证消息发送成功，可能会重复推送(直到收到成功ACK)，会产生重复消息。但是一个成熟的MQ Server框架一般会想办法解决，避免存储重复消息(比如：空间换时间，存储已处理过的message_id)，给生产端提供一个幂等性的发送消息接口。</p>
+<p>但是消费端却无法根本解决这个问题，在高并发标准要求下，拉取消息+业务处理+提交消费位移需要做事务处理，另外消费端服务可能宕机，很可能会拉取到重复消息。</p>
+<p>所以，只能业务端自己做控制，<strong>对于已经消费成功的消息，本地数据库表或Redis缓存业务标识，每次处理前先进行校验，保证幂等。</strong></p>
+<h3><span class="q1">消息丢失怎么解决的？</span></h3>
+<p>使用一个消息队列，其实就分为三大块：<strong>生产者、中间件、消费者</strong>，所以要保证消息就是保证三个环节都不能丢失数据。<img _width="677px" data-index="19" data-src="../img/mq_033_cde095f2.jpg" data-type="other" data-w="1080" src="../img/mq_033_cde095f2.jpg" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/></p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>消息生产阶段</strong>：生产者会不会丢消息，取决于生产者对于异常情况的处理是否合理。从消息被生产出来，然后提交给 MQ 的过程中，只要能正常收到 （ MQ 中间件） 的 ack 确认响应，就表示发送成功，所以只要处理好返回值和异常，如果返回异常则进行消息重发，那么这个阶段是不会出现消息丢失的。
+        </li>
+<li>
+<strong>消息存储阶段</strong>：Kafka 在使用时是部署一个集群，生产者在发布消息时，队列中间件通常会写「多个节点」，也就是有多个副本，这样一来，即便其中一个节点挂了，也能保证集群的数据不丢失。
+        </li>
+<li>
+<strong>消息消费阶段</strong>：消费者接收消息+消息处理之后，才回复 ack 的话，那么消息阶段的消息不会丢失。不能收到消息就回 ack，否则可能消息处理中途挂掉了，消息就丢失了。
+        </li>
+</ul>
+<h3><span class="q1">常用的消息队列是哪个？</span></h3>
+<p>项目里主要用了了RabbitMQ</p>
+<h3><span class="q1">总结一下什么场景下会使用到消息队列？有什么好处？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+<strong>解耦：</strong>可以在多个系统之间进行解耦，将原本通过网络之间的调用的方式改为使用MQ进行消息的异步通讯，只要该操作不是需要同步的，就可以改为使用MQ进行不同系统之间的联系，这样项目之间不会存在耦合，系统之间不会产生太大的影响，就算一个系统挂了，也只是消息挤压在MQ里面没人进行消费而已，不会对其他的系统产生影响。
+        </li>
+<li>
+<strong>异步：</strong>加入一个操作设计到好几个步骤，这些步骤之间不需要同步完成，比如客户去创建了一个订单，还要去客户轨迹系统添加一条轨迹、去库存系统更新库存、去客户系统修改客户的状态等等。这样如果这个系统都直接进行调用，那么将会产生大量的时间，这样对于客户是无法接收的；并且像添加客户轨迹这种操作是不需要去同步操作的，如果使用MQ将客户创建订单时，将后面的轨迹、库存、状态等信息的更新全都放到MQ里面然后去异步操作，这样就可加快系统的访问速度，提供更好的客户体验。
+        </li>
+<li>
+<strong>削峰：</strong>一个系统访问流量有高峰时期，也有低峰时期，比如说，中午整点有一个抢购活动等等。比如系统平时流量并不高，一秒钟只有100多个并发请求，系统处理没有任何压力，一切风平浪静，到了某个抢购活动时间，系统并发访问了剧增，比如达到了每秒5000个并发请求，而我们的系统每秒只能处理2000个请求，那么由于流量太大，我们的系统、数据库可能就会崩溃。这时如果使用MQ进行流量削峰，将用户的大量消息直接放到MQ里面，然后我们的系统去按自己的最大消费能力去消费这些消息，就可以保证系统的稳定，只是可能要跟进业务逻辑，给用户返回特定页面或者稍后通过其他方式通知其结果
+        </li>
+</ul>
+<h3><span class="q1">RabbitMQ的底层架构是什么？</span></h3>
+<figure class="img1"><img _width="677px" data-index="13" data-src="../img/mq_034_c5ef8cb6.png" data-w="1080" src="../img/mq_034_c5ef8cb6.png" style="height: auto !important;  width: 636.984px !important;"/>
+<figcaption style="font-family: PingFangSC-Light;color: rgb(136, 136, 136);text-align: center;">img</figcaption>
+</figure>
+<p>以下是 RabbitMQ 的一些核心架构组件和特性：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>核心组件：</strong>生产者负责发送消息到 RabbitMQ、消费者负责从 RabbitMQ 接收并处理消息、RabbitMQ 本身负责存储和转发消息。
+        </li>
+<li>
+<strong>交换机：</strong>交换机接收来自生产者的消息，并根据 routing key 和绑定规则将消息路由到一个或多个队列。
+        </li>
+<li>
+<strong>持久化：R</strong>abbitMQ 支持消息的持久化，可以将消息保存在磁盘上，以确保在 RabbitMQ 重启后消息不丢失，队列也可以设置为持久化，以保证其结构在重启后不会丢失。
+        </li>
+<li>
+<strong>确认机制：</strong>为了确保消息可靠送达，RabbitMQ 使用确认机制，费者在处理完消息后发送确认给 RabbitMQ，未确认的消息会重新入队。
+        </li>
+<li>
+<strong>高可用性：</strong>RabbitMQ 提供了集群模式，可以将多个 RabbitMQ 实例组成一个集群，以提高可用性和负载均衡。通过镜像队列，可以在多个节点上复制同一队列的内容，以防止单点故障。
+        </li>
+</ul>
+<h3><span class="q1">是否了解消息队列呢？</span></h3>
+<p>了解过，常见的消息队列有<strong>RabbitMQ、Kafka、RocketMQ。</strong>消息队列三大作用：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>解耦</strong>：可以在多个系统之间进行解耦，将原本通过网络之间的调用的方式改为使用MQ进行消息的异步通讯，只要该操作不是需要同步的，就可以改为使用MQ进行不同系统之间的联系，这样项目之间不会存在耦合，系统之间不会产生太大的影响，就算一个系统挂了，也只是消息挤压在MQ里面没人进行消费而已，不会对其他的系统产生影响。
+        </li>
+<li>
+<strong>异步</strong>：加入一个操作设计到好几个步骤，这些步骤之间不需要同步完成，比如客户去创建了一个订单，还要去客户轨迹系统添加一条轨迹、去库存系统更新库存、去客户系统修改客户的状态等等。这样如果这个系统都直接进行调用，那么将会产生大量的时间，这样对于客户是无法接收的；并且像添加客户轨迹这种操作是不需要去同步操作的，如果使用MQ将客户创建订单时，将后面的轨迹、库存、状态等信息的更新全都放到MQ里面然后去异步操作，这样就可加快系统的访问速度，提供更好的客户体验。
+        </li>
+<li>
+<strong>削峰</strong>：一个系统访问流量有高峰时期，也有低峰时期，比如说，中午整点有一个抢购活动等等。比如系统平时流量并不高，一秒钟只有100多个并发请求，系统处理没有任何压力，一切风平浪静，到了某个抢购活动时间，系统并发访问了剧增，比如达到了每秒5000个并发请求，而我们的系统每秒只能处理2000个请求，那么由于流量太大，我们的系统、数据库可能就会崩溃。这时如果使用MQ进行流量削峰，将用户的大量消息直接放到MQ里面，然后我们的系统去按自己的最大消费能力去消费这些消息，就可以保证系统的稳定，只是可能要跟进业务逻辑，给用户返回特定页面或者稍后通过其他方式通知其结果。
+        </li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>7. MQ如何保证不重复消费？</span></span></h3>
+<p style="text-align: left;"><span>MQ 保证不重复消费的核心是实现</span><strong><span>幂等性消费</span></strong><span>，即确保同一条消息被多次消费时，结果与消费一次完全一致。主要通过以下机制实现：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<p style="text-align: left;"><span>首先是生产端去重，通过消息唯一标识（如业务 ID + 时间戳），结合 MQ 的消息去重机制（如 Kafka 的 Producer ID + 序列号，RabbitMQ 的消息 ID），避免重复发送。</span></p>
+</li>
+<li>
+<p style="text-align: left;"><span>消费端是关键，需为每条消息生成唯一 ID（如消息 ID 或业务唯一键），消费前先查询存储系统（如 Redis、数据库）判断是否已处理：若未处理，执行业务逻辑并记录 ID；若已处理，直接返回成功。</span></p>
+</li>
+</ul>
+<p style="text-align: left;"><span>此外，MQ 自身可通过确认机制（如 RabbitMQ 的 ACK、Kafka 的 offset 提交）确保消息被正确处理后再标记为已消费，避免因消费端异常导致的重复投递。结合业务场景设计幂等逻辑（如数据库唯一约束、乐观锁），可彻底解决重复消费问题。</span></p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>8. MQ的ACK确认机制工作原理是什么？</span></span></h3>
+<p style="text-align: left;"><span>MQ 的 ACK制是保障消息可靠传递的核心机制，其核心原理是：</span><strong><span>消费端处理完消息后，向 MQ 服务器发送 “确认信号”，MQ 收到信号后才将消息标记为 “已消费” 并移除，否则会重新投递消息</span></strong><span>，避免因消费端异常（如崩溃、网络中断）导致消息丢失。</span></p>
+<figure class="img1"><span><img _width="677px" data-index="12" data-src="../img/mq_035_03e7f6c1.png" data-w="1896" src="../img/mq_035_03e7f6c1.png" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 657px !important;"/></span></figure>
+<p style="text-align: left;"><span>不同 MQ 的 ACK 机制实现细节略有差异，但核心逻辑一致：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>消息投递与暂存</span></strong><span>：MQ 服务器将消息投递给消费端后，不会立即删除消息，而是暂存在队列中（标记为 “未确认” 状态），等待消费端的 ACK 信号。此时消息仍会被监控，若长时间未收到 ACK，会触发重试逻辑。</span>
+</li>
+<li>
+<strong><span>消费端处理与确认</span></strong><span>：消费端接收到消息后，根据配置的 ACK 模式（自动 / 手动）处理：</span>
+</li>
+<li>
+<strong><span>自动 ACK</span></strong><span>：消费端接收到消息即自动发送 ACK（如 RabbitMQ 的 autoAck=true），适用于无需复杂处理的场景，但可能因 “未实际处理完成就确认” 导致消息丢失。</span>
+</li>
+<li>
+<strong><span>手动 ACK</span></strong><span>：消费端处理完业务逻辑（如数据库操作成功、缓存更新完成）后，主动调用 API 发送 ACK（如 RabbitMQ 的 channel.basicAck ()、Kafka 的 commitSync ()），确保业务处理成功后再确认，更安全但需手动控制。</span>
+</li>
+<li>
+<strong><span>未确认消息的重试</span></strong><span>：若消费端未发送 ACK（如崩溃、网络中断），MQ 服务器会在超时后将消息重新放入队列，再次投递给其他消费端（或原消费端恢复后），直到收到 ACK 或达到最大重试次数（可配置，超过后可能进入死信队列）。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>以 RabbitMQ 为例，其 ACK 机制通过 channel传递：消费端注册消费者时指定 autoAck 参数，手动模式下需调用 basicAck，其中 deliveryTag 是消息唯一标识，multiple 表示是否确认该标识之前的所有消息；若处理失败，可调用 basicNack () 拒绝并指定是否重新投递。</span></p>
+<p style="text-align: left;"><span>Kafka 则通过 offset 实现类似逻辑：消费端处理完消息后提交 offset，MQ 记录最新 offset，下次从该位置开始消费；若未提交，重启后会从上次提交的 offset 重新消费，本质是通过 offset 提交实现 “确认已消费” 的标记。</span></p>
+<p style="text-align: left;"><br/></p>
+</html>
+            </article>
+        </div>
+        
+        <div class="content" id="article-toc">
+            <nav class="toc">
+                <div class="toc-inner"><ul><ul><ul><li>
+                    <a href="#" aria-label="Kafka怎么保证数据不丢失？">Kafka怎么保证数据不丢失？</a></li><li>
+                    <a href="#" aria-label="Kafka为什么一个分区只能由消费者组的一个消费者消费？这样设计的意义是什么？">Kafka为什么一个分区只能由消费者组的一个消费者消费？这样设计的意义是什么？</a></li><li>
+                    <a href="#" aria-label="4. Kafka 分区和消费者的关系是怎样的？">4. Kafka 分区和消费者的关系是怎样的？</a></li><li>
+                    <a href="#" aria-label="限流算法有哪些？">限流算法有哪些？</a></li><li>
+                    <a href="#" aria-label="谈谈对rocketmq的理解？">谈谈对rocketmq的理解？</a></li><li>
+                    <a href="#" aria-label="10. 为什么使用rocketmq？">10. 为什么使用rocketmq？</a></li><li>
+                    <a href="#" aria-label="kafka副本了解吗，聊聊ISR">kafka副本了解吗，聊聊ISR</a></li><li>
+                    <a href="#" aria-label="Kafka 和 RocketMQ 的区别是什么？">Kafka 和 RocketMQ 的区别是什么？</a></li><li>
+                    <a href="#" aria-label="Kafka 为什么性能高？">Kafka 为什么性能高？</a></li><li>
+                    <a href="#" aria-label="1. 项目问题：rabbitmq进行了异步解耦，说说看？">1. 项目问题：rabbitmq进行了异步解耦，说说看？</a></li><li>
+                    <a href="#" aria-label="6. MQ在大型系统中的几种典型使用场景？">6. MQ在大型系统中的几种典型使用场景？</a></li><li>
+                    <a href="#" aria-label="7. 解释push/pull两种消息推送模式的差异？">7. 解释push/pull两种消息推送模式的差异？</a></li><li>
+                    <a href="#" aria-label="8. 什么时候适合用pull模式？为什么？">8. 什么时候适合用pull模式？为什么？</a></li><li>
+                    <a href="#" aria-label="RocketMQ延时消息的底层原理">RocketMQ延时消息的底层原理</a></li><li>
+                    <a href="#" aria-label="RocketMQ怎么保证消息有序性？">RocketMQ怎么保证消息有序性？</a></li><li>
+                    <a href="#" aria-label="RocketMQ怎么保证消息不被重复消费">RocketMQ怎么保证消息不被重复消费</a></li><li>
+                    <a href="#" aria-label="RocketMQ和Kafka的区别是什么？如何做技术选型？">RocketMQ和Kafka的区别是什么？如何做技术选型？</a></li><li>
+                    <a href="#" aria-label="使用消息中间件降低消息持久化的压力是怎么做的，为什么可以降低？">使用消息中间件降低消息持久化的压力是怎么做的，为什么可以降低？</a></li><li>
+                    <a href="#" aria-label="怎么解决消息队列上的消息堆压？">怎么解决消息队列上的消息堆压？</a></li><li>
+                    <a href="#" aria-label="Kafka和RocketMQ的区别？">Kafka和RocketMQ的区别？</a></li><li>
+                    <a href="#" aria-label="5. Kafka你一般选几个消费者为什么？">5. Kafka你一般选几个消费者为什么？</a></li><li>
+                    <a href="#" aria-label="6. Kafka怎么做到最多消费一次？">6. Kafka怎么做到最多消费一次？</a></li><li>
+                    <a href="#" aria-label="为什么选择RabbitMQ，kafka了解过吗，使用场景？">为什么选择RabbitMQ，kafka了解过吗，使用场景？</a></li><li>
+                    <a href="#" aria-label="如何避免消费端重复消费？">如何避免消费端重复消费？</a></li><li>
+                    <a href="#" aria-label="什么情况下会出现重复收到消息？">什么情况下会出现重复收到消息？</a></li><li>
+                    <a href="#" aria-label="Kafka如何保证消息不丢失？">Kafka如何保证消息不丢失？</a></li><li>
+                    <a href="#" aria-label="Kafka如何保证消息不重复消费？">Kafka如何保证消息不重复消费？</a></li><li>
+                    <a href="#" aria-label="RabbitMQ是什么?还有其他什么消息队列？">RabbitMQ是什么?还有其他什么消息队列？</a></li><li>
+                    <a href="#" aria-label="1. kafka的ack机制说一下？">1. kafka的ack机制说一下？</a></li><li>
+                    <a href="#" aria-label="2. kafka怎么防止积压？">2. kafka怎么防止积压？</a></li><li>
+                    <a href="#" aria-label="kafka的模型介绍一下，kafka是推送还是拉取？">kafka的模型介绍一下，kafka是推送还是拉取？</a></li><li>
+                    <a href="#" aria-label="kafka 消息积压怎么办？">kafka 消息积压怎么办？</a></li><li>
+                    <a href="#" aria-label="用的什么消息队列，消息队列怎么选型的？">用的什么消息队列，消息队列怎么选型的？</a></li><li>
+                    <a href="#" aria-label="有没有消息积压的问题">有没有消息积压的问题</a></li><li>
+                    <a href="#" aria-label="RocketMQ 消息可靠性怎么保证？">RocketMQ 消息可靠性怎么保证？</a></li><li>
+                    <a href="#" aria-label="Kafka 和 RocketMQ 消息确认机制有什么不同？">Kafka 和 RocketMQ 消息确认机制有什么不同？</a></li><li>
+                    <a href="#" aria-label="Kafka 和 RocketMQ 的 broker 架构有什么区别">Kafka 和 RocketMQ 的 broker 架构有什么区别</a></li><li>
+                    <a href="#" aria-label="项目中哪些地方使用到了消息队列？">项目中哪些地方使用到了消息队列？</a></li><li>
+                    <a href="#" aria-label="为什么要用rabbitmq? 其他消息队列有什么特点？">为什么要用rabbitmq? 其他消息队列有什么特点？</a></li><li>
+                    <a href="#" aria-label="16. 介绍一个你熟悉的消息队列？">16. 介绍一个你熟悉的消息队列？</a></li><li>
+                    <a href="#" aria-label="17. kafka的选举机制是怎样的？">17. kafka的选举机制是怎样的？</a></li><li>
+                    <a href="#" aria-label="对Kafka有什么了解吗？">对Kafka有什么了解吗？</a></li><li>
+                    <a href="#" aria-label="如果有一个消费主题topic，有一个消费组group，topic有10个分区，消费线程数和分区数的关系是怎么样的？">如果有一个消费主题topic，有一个消费组group，topic有10个分区，消费线程数和分区数的关系是怎么样的？</a></li><li>
+                    <a href="#" aria-label="1. kafka怎么能防止重复消费？">1. kafka怎么能防止重复消费？</a></li><li>
+                    <a href="#" aria-label="2. kafka消息丢失怎么办？">2. kafka消息丢失怎么办？</a></li><li>
+                    <a href="#" aria-label="RocektMQ怎么处理分布式事务？">RocektMQ怎么处理分布式事务？</a></li><li>
+                    <a href="#" aria-label="RocketMQ消息顺序怎么保证？">RocketMQ消息顺序怎么保证？</a></li><li>
+                    <a href="#" aria-label="RocketMQ消息积压了，怎么办？">RocketMQ消息积压了，怎么办？</a></li><li>
+                    <a href="#" aria-label="说说消息队列，如果我有两个consumer在消费Kafka的同一个partition，此时我增加一个consumer，会怎么样？">说说消息队列，如果我有两个consumer在消费Kafka的同一个partition，此时我增加一个consumer，会怎么样？</a></li><li>
+                    <a href="#" aria-label="消息队列是参考哪种设计模式？">消息队列是参考哪种设计模式？</a></li><li>
+                    <a href="#" aria-label="如何避免mq重复消费？">如何避免mq重复消费？</a></li><li>
+                    <a href="#" aria-label="如何避免mq重复消费？">如何避免mq重复消费？</a></li><li>
+                    <a href="#" aria-label="MQ保证消息可靠性方案是什么？">MQ保证消息可靠性方案是什么？</a></li><li>
+                    <a href="#" aria-label="MQ的选型你是怎么做的？">MQ的选型你是怎么做的？</a></li><li>
+                    <a href="#" aria-label="为啥要用MQ延迟双删保证mysql和redis一致性？">为啥要用MQ延迟双删保证mysql和redis一致性？</a></li><li>
+                    <a href="#" aria-label="10. 谈一下你对 raft算法的理解">10. 谈一下你对 raft算法的理解</a></li><li>
+                    <a href="#" aria-label="11. raft 算法的选举的流程是怎样的？">11. raft 算法的选举的流程是怎样的？</a></li><li>
+                    <a href="#" aria-label="9. 为什么要用RabbitMq？">9. 为什么要用RabbitMq？</a></li><li>
+                    <a href="#" aria-label="用的什么消息队列，消息队列怎么选型的？">用的什么消息队列，消息队列怎么选型的？</a></li><li>
+                    <a href="#" aria-label="有没有消息积压的问题">有没有消息积压的问题</a></li><li>
+                    <a href="#" aria-label="RocketMQ 消息可靠性怎么保证？">RocketMQ 消息可靠性怎么保证？</a></li><li>
+                    <a href="#" aria-label="Kafka 和 RocketMQ 消息确认机制有什么不同？">Kafka 和 RocketMQ 消息确认机制有什么不同？</a></li><li>
+                    <a href="#" aria-label="Kafka 和 RocketMQ 的 broker 架构有什么区别">Kafka 和 RocketMQ 的 broker 架构有什么区别</a></li><li>
+                    <a href="#" aria-label="RocektMQ怎么处理分布式事务？">RocektMQ怎么处理分布式事务？</a></li><li>
+                    <a href="#" aria-label="RocketMQ消息顺序怎么保证？">RocketMQ消息顺序怎么保证？</a></li><li>
+                    <a href="#" aria-label="RocketMQ消息积压了，怎么办？">RocketMQ消息积压了，怎么办？</a></li></ul><li>
+                    <a href="#" aria-label="RabbitMQ ">RabbitMQ </a></li><ul><li>
+                    <a href="#" aria-label="为什么不用别的消息队列">为什么不用别的消息队列</a></li><li>
+                    <a href="#" aria-label="重复消费怎么解决？">重复消费怎么解决？</a></li><li>
+                    <a href="#" aria-label="消息丢失怎么解决的？">消息丢失怎么解决的？</a></li><li>
+                    <a href="#" aria-label="常用的消息队列是哪个？">常用的消息队列是哪个？</a></li><li>
+                    <a href="#" aria-label="总结一下什么场景下会使用到消息队列？有什么好处？">总结一下什么场景下会使用到消息队列？有什么好处？</a></li><li>
+                    <a href="#" aria-label="RabbitMQ的底层架构是什么？">RabbitMQ的底层架构是什么？</a></li><li>
+                    <a href="#" aria-label="是否了解消息队列呢？">是否了解消息队列呢？</a></li><li>
+                    <a href="#" aria-label="7. MQ如何保证不重复消费？">7. MQ如何保证不重复消费？</a></li><li>
+                    <a href="#" aria-label="8. MQ的ACK确认机制工作原理是什么？">8. MQ的ACK确认机制工作原理是什么？</a></ul></ul></ul>
+                </div>
+            </nav>
+        </div>
+    </main>
+    <div class="splitter-indicator" id="splitterIndicator"></div>
+    <div class="drop-indicator" id="dropIndicator"></div>
+    <footer class="footer">
+        <div class="footer-left">
+            <a class="item" href="/x/about/" target="_blank" rel="noopener noreferrer me" title="Info"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></a>
+            <a class="item" href="https://music.163.com/#/user/home?id=270121274" target="_blank" rel="noopener noreferrer me" title="NeteaseCloudMusic"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.98,23.65c-2.69,0-5.26-1.05-7.24-2.95C1.59,18.63,.35,15.72,.35,12.73,.35,8.21,3.21,4.11,7.46,2.52c.15-.05,.3-.08,.45-.08,.42,0,.78,.21,.93,.55,.12,.26,.13,.51,.03,.75-.12,.28-.38,.52-.7,.64-3.48,1.3-5.82,4.66-5.82,8.36,0,2.46,1.02,4.84,2.79,6.54,1.6,1.54,3.68,2.39,5.85,2.39,.1,0,.2,0,.29,0,3.49-.12,6.22-1.91,7.47-4.89,.08-.2,2.01-4.93-2.59-7.9-.41-.27-.89-.46-1.42-.58l-.6-.14,.18,.58c.21,.68,.78,2.52,.84,2.93,.07,.46,.07,.51,.1,.92v.18c0,2.3-1.89,4.19-4.22,4.19-2.2,0-3.97-1.73-4.23-4.1-.25-2.35,.74-4.4,2.73-5.61,.53-.32,1.11-.57,1.73-.75l.33-.1-.48-1.74c-.16-.54-.53-2.38,1.5-3.72,.57-.38,1.22-.57,1.91-.57,1.38,0,2.62,.74,3.12,1.23,.22,.22,.36,.56,.36,.9,0,.26-.08,.48-.23,.63-.15,.15-.37,.23-.63,.23-.33,0-.67-.13-.89-.35-.06-.05-.85-.66-1.7-.66-.31,0-.59,.08-.82,.24-.04,.03-.08,.05-.12,.08-.23,.19-.71,.73-.47,1.82l.09,.34,.02,.07h0s.35,1.29,.35,1.29h.25c1.24,.08,2.39,.42,3.32,1.01l.05,.03c4.82,3.12,4.29,8.12,3.34,10.33-1.54,3.67-4.99,5.95-9.23,6.1-.12,0-.25,0-.37,0Zm.82-15.26c-.43,.13-.84,.31-1.2,.53-.94,.57-2.01,1.68-1.79,3.71,.12,1.12,.87,2.33,2.24,2.33,1.23,0,2.24-1,2.24-2.22h0s.03-.21-.05-.71c-.07-.46-.91-3.1-1-3.4l-.1-.33-.33,.1Z" /></svg></a>
+            <a class="item" href="https://neodb.social/users/Lordash/" target="_blank" rel="noopener noreferrer me" title="NeoDB"><svg version="1.1" xmlns="https://www.w3.org/2000/svg" width="90" height="108" viewBox="0 0 90 108" fill="currentColor"><path d="M0 0 C4.26615504 2.04066983 6.73398524 4.58553002 10 8 C10.474375 7.195625 10.94875 6.39125 11.4375 5.5625 C13 3 13 3 14 2 C20.16698656 1.54318618 20.16698656 1.54318618 22.9375 3.0625 C24.6815774 6.24287644 24.55944728 8.4568339 24 12 C21 14.4375 21 14.4375 18 16 C20.97 18.97 23.94 21.94 27 25 C25.193388 28.61322401 24.33581029 29.83748791 21.375 32.25 C20.74335937 32.77078125 20.11171875 33.2915625 19.4609375 33.828125 C18.97882813 34.21484375 18.49671875 34.6015625 18 35 C17.566875 34.0409375 17.566875 34.0409375 17.125 33.0625 C16.17176549 30.84793921 16.17176549 30.84793921 14 30 C10.5 29.75 10.5 29.75 7 30 C4.59331253 31.99114614 4.59331253 31.99114614 4.5625 35.875 C4.62092586 39.4454694 4.80377743 39.80377743 7.5 42.5 C8.325 42.995 9.15 43.49 10 44 C7.36 46.64 4.72 49.28 2 52 C-1.49353838 50.25323081 -3.13945763 49.08594785 -5.75 46.375 C-6.36359375 45.74335937 -6.9771875 45.11171875 -7.609375 44.4609375 C-8.06828125 43.97882812 -8.5271875 43.49671875 -9 43 C-9.515625 43.99 -10.03125 44.98 -10.5625 46 C-13 49 -13 49 -16.625 49.5 C-20 49 -20 49 -22 47 C-22.56321839 40.8045977 -22.56321839 40.8045977 -20.6875 38.125 C-19 37 -19 37 -16 36 C-18.97 33.03 -21.94 30.06 -25 27 C-23.03838569 23.07677137 -20.84267796 20.58307142 -17.7734375 17.578125 C-17.26575836 17.07327576 -16.75807922 16.56842651 -16.23501587 16.04827881 C-14.61966158 14.44407904 -12.99747791 12.84699144 -11.375 11.25 C-10.27558302 10.16061893 -9.17661941 9.0707801 -8.078125 7.98046875 C-5.3906398 5.31498115 -2.69700979 2.65584857 0 0 Z"transform="translate(53,1)" /><path d="M0 0 C2.31 1.98 4.62 3.96 7 6 C6.34 6.86625 5.68 7.7325 5 8.625 C2.82375259 12.29741751 2.2907405 13.83310042 3 18 C4.34115399 21.00979883 4.34115399 21.00979883 7 23 C10.97807953 23.86409105 14.00632895 23.59620263 17.5 21.5 C17.995 21.005 18.49 20.51 19 20 C21.84383123 21.2748209 24.13754018 22.45137078 26 25 C25.57914771 28.29893891 24.42094066 29.966522 22.0625 32.25 C21.53785156 32.77078125 21.01320312 33.2915625 20.47265625 33.828125 C19 35 19 35 17 35 C17 35.66 17 36.32 17 37 C17.763125 36.938125 18.52625 36.87625 19.3125 36.8125 C22 37 22 37 23.875 38.0625 C25.69848531 41.20294693 24.8658284 43.5985313 24 47 C21 49 21 49 17.9375 48.75 C15 48 15 48 13 46 C12.505 44.02 12.505 44.02 12 42 C9.03 44.97 6.06 47.94 3 51 C-0.92322863 49.03838569 -3.41692858 46.84267796 -6.421875 43.7734375 C-6.92672424 43.26575836 -7.43157349 42.75807922 -7.95172119 42.23501587 C-9.55592096 40.61966158 -11.15300856 38.99747791 -12.75 37.375 C-13.83938107 36.27558302 -14.9292199 35.17661941 -16.01953125 34.078125 C-18.68501885 31.3906398 -21.34415143 28.69700979 -24 26 C-22.4152642 22.13671373 -19.94043113 19.71123077 -16.9921875 16.796875 C-16.50670441 16.3142218 -16.02122131 15.8315686 -15.52102661 15.33428955 C-13.97700134 13.80141438 -12.42615176 12.27565996 -10.875 10.75 C-9.82375991 9.70879639 -8.77297343 8.66713459 -7.72265625 7.625 C-5.15366996 5.07800536 -2.57851839 2.53734823 0 0 Z"transform="translate(25,29)" /><path d="M0 0 C3.81684226 1.55500981 6.19195732 4.03595495 9 7 C9.45375 6.195625 9.9075 5.39125 10.375 4.5625 C12 2 12 2 14 1 C16.9375 0.6875 16.9375 0.6875 20 1 C21.9375 2.625 21.9375 2.625 23 5 C23 8 23 8 22 11 C19.4375 13.375 19.4375 13.375 17 15 C19.97 17.97 22.94 20.94 26 24 C20.375 30.875 20.375 30.875 17 32 C16.649375 31.175 16.29875 30.35 15.9375 29.5 C14.16088977 26.60879362 14.16088977 26.60879362 10.5 26.5 C7.14672303 26.77692733 7.14672303 26.77692733 5 28.0625 C3.32384137 31.31005735 4.03723329 33.57014358 5 37 C7.4158995 39.45198044 7.4158995 39.45198044 10 41 C8.76600937 42.36877116 7.51219377 43.71969166 6.25 45.0625 C5.55390625 45.81660156 4.8578125 46.57070312 4.140625 47.34765625 C2 49 2 49 0.09619141 48.81054688 C-2.43507746 47.831766 -3.76735676 46.6052517 -5.6796875 44.68359375 C-6.36160156 44.00103516 -7.04351562 43.31847656 -7.74609375 42.61523438 C-8.79990234 41.53725586 -8.79990234 41.53725586 -9.875 40.4375 C-10.91720703 39.40012695 -10.91720703 39.40012695 -11.98046875 38.34179688 C-16.44375955 33.83227613 -20.30080588 29.1545197 -24 24 C-21.69 22.02 -19.38 20.04 -17 18 C-15.948125 18.99 -15.948125 18.99 -14.875 20 C-12.15610238 22.18293783 -12.15610238 22.18293783 -9 22.5625 C-4.86392446 21.78698584 -3.45000447 20.38677089 -1 17 C-0.44852315 13.07072743 -0.40688385 10.96381375 -2.5 7.5625 C-2.995 7.046875 -3.49 6.53125 -4 6 C-2.84826645 3.53199953 -1.95216435 1.95216435 0 0 Z"transform="translate(53,58)" /></svg></a>
+            <a class="item" href="https://github.com/GH1656409967" target="_blank" rel="noopener noreferrer me" title="GitHub"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a class="item" href="/" target="_blank" rel="noopener noreferrer me" title="BuyMeACoffee"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 884 1279" fill="none" stroke="currentColor" stroke-width="2"><path d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518Z"fill="currentColor"></path><path d="M803.896 388.891L802.916 389.166L803.896 388.891Z" fill="currentColor"></path><path d="M791.484 297.377C791.359 297.361 791.237 297.332 791.118 297.29C791.111 297.371 791.111 297.453 791.118 297.534C791.252 297.516 791.379 297.462 791.484 297.377Z"fill="currentColor"></path><path d="M791.113 297.529H791.244V297.447L791.113 297.529Z" fill="currentColor"></path><path d="M803.111 388.726L804.591 387.883L805.142 387.573L805.641 387.04C804.702 387.444 803.846 388.016 803.111 388.726Z"fill="currentColor"></path><path d="M793.669 299.515L792.223 298.138L791.243 297.605C791.77 298.535 792.641 299.221 793.669 299.515Z"fill="currentColor"></path><path d="M430.019 1186.18C428.864 1186.68 427.852 1187.46 427.076 1188.45L427.988 1187.87C428.608 1187.3 429.485 1186.63 430.019 1186.18Z"fill="currentColor"></path><path d="M641.187 1144.63C641.187 1143.33 640.551 1143.57 640.705 1148.21C640.705 1147.84 640.86 1147.46 640.929 1147.1C641.015 1146.27 641.084 1145.46 641.187 1144.63Z"fill="currentColor"></path><path d="M619.284 1186.18C618.129 1186.68 617.118 1187.46 616.342 1188.45L617.254 1187.87C617.873 1187.3 618.751 1186.63 619.284 1186.18Z"fill="currentColor"></path><path d="M281.304 1196.06C280.427 1195.3 279.354 1194.8 278.207 1194.61C279.136 1195.06 280.065 1195.51 280.684 1195.85L281.304 1196.06Z"fill="currentColor"></path><path d="M247.841 1164.01C247.704 1162.66 247.288 1161.35 246.619 1160.16C247.093 1161.39 247.489 1162.66 247.806 1163.94L247.841 1164.01Z"fill="currentColor"></path><path d="M472.623 590.836C426.682 610.503 374.546 632.802 306.976 632.802C278.71 632.746 250.58 628.868 223.353 621.274L270.086 1101.08C271.74 1121.13 280.876 1139.83 295.679 1153.46C310.482 1167.09 329.87 1174.65 349.992 1174.65C349.992 1174.65 416.254 1178.09 438.365 1178.09C462.161 1178.09 533.516 1174.65 533.516 1174.65C553.636 1174.65 573.019 1167.08 587.819 1153.45C602.619 1139.82 611.752 1121.13 613.406 1101.08L663.459 570.876C641.091 563.237 618.516 558.161 593.068 558.161C549.054 558.144 513.591 573.303 472.623 590.836Z"fill="currentColor"></path><path d="M78.6885 386.132L79.4799 386.872L79.9962 387.182C79.5987 386.787 79.1603 386.435 78.6885 386.132Z"fill="currentColor"></path><path d="M879.567 341.849L872.53 306.352C866.215 274.503 851.882 244.409 819.19 232.898C808.711 229.215 796.821 227.633 788.786 220.01C780.751 212.388 778.376 200.55 776.518 189.572C773.076 169.423 769.842 149.257 766.314 129.143C763.269 111.85 760.86 92.4243 752.928 76.56C742.604 55.2584 721.182 42.8009 699.88 34.559C688.965 30.4844 677.826 27.0375 666.517 24.2352C613.297 10.1947 557.342 5.03277 502.591 2.09047C436.875 -1.53577 370.983 -0.443234 305.422 5.35968C256.625 9.79894 205.229 15.1674 158.858 32.0469C141.91 38.224 124.445 45.6399 111.558 58.7341C95.7448 74.8221 90.5829 99.7026 102.128 119.765C110.336 134.012 124.239 144.078 138.985 150.737C158.192 159.317 178.251 165.846 198.829 170.215C256.126 182.879 315.471 187.851 374.007 189.968C438.887 192.586 503.87 190.464 568.44 183.618C584.408 181.863 600.347 179.758 616.257 177.304C634.995 174.43 647.022 149.928 641.499 132.859C634.891 112.453 617.134 104.538 597.055 107.618C594.095 108.082 591.153 108.512 588.193 108.942L586.06 109.252C579.257 110.113 572.455 110.915 565.653 111.661C551.601 113.175 537.515 114.414 523.394 115.378C491.768 117.58 460.057 118.595 428.363 118.647C397.219 118.647 366.058 117.769 334.983 115.722C320.805 114.793 306.661 113.611 292.552 112.177C286.134 111.506 279.733 110.801 273.333 110.009L267.241 109.235L265.917 109.046L259.602 108.134C246.697 106.189 233.792 103.953 221.025 101.251C219.737 100.965 218.584 100.249 217.758 99.2193C216.932 98.1901 216.482 96.9099 216.482 95.5903C216.482 94.2706 216.932 92.9904 217.758 91.9612C218.584 90.9319 219.737 90.2152 221.025 89.9293H221.266C232.33 87.5721 243.479 85.5589 254.663 83.8038C258.392 83.2188 262.131 82.6453 265.882 82.0832H265.985C272.988 81.6186 280.026 80.3625 286.994 79.5366C347.624 73.2301 408.614 71.0801 469.538 73.1014C499.115 73.9618 528.676 75.6996 558.116 78.6935C564.448 79.3474 570.746 80.0357 577.043 80.8099C579.452 81.1025 581.878 81.4465 584.305 81.7391L589.191 82.4445C603.438 84.5667 617.61 87.1419 631.708 90.1703C652.597 94.7128 679.422 96.1925 688.713 119.077C691.673 126.338 693.015 134.408 694.649 142.03L696.732 151.752C696.786 151.926 696.826 152.105 696.852 152.285C701.773 175.227 706.7 198.169 711.632 221.111C711.994 222.806 712.002 224.557 711.657 226.255C711.312 227.954 710.621 229.562 709.626 230.982C708.632 232.401 707.355 233.6 705.877 234.504C704.398 235.408 702.75 235.997 701.033 236.236H700.895L697.884 236.649L694.908 237.044C685.478 238.272 676.038 239.419 666.586 240.486C647.968 242.608 629.322 244.443 610.648 245.992C573.539 249.077 536.356 251.102 499.098 252.066C480.114 252.57 461.135 252.806 442.162 252.771C366.643 252.712 291.189 248.322 216.173 239.625C208.051 238.662 199.93 237.629 191.808 236.58C198.106 237.389 187.231 235.96 185.029 235.651C179.867 234.928 174.705 234.177 169.543 233.397C152.216 230.798 134.993 227.598 117.7 224.793C96.7944 221.352 76.8005 223.073 57.8906 233.397C42.3685 241.891 29.8055 254.916 21.8776 270.735C13.7217 287.597 11.2956 305.956 7.64786 324.075C4.00009 342.193 -1.67805 361.688 0.472751 380.288C5.10128 420.431 33.165 453.054 73.5313 460.35C111.506 467.232 149.687 472.807 187.971 477.556C338.361 495.975 490.294 498.178 641.155 484.129C653.44 482.982 665.708 481.732 677.959 480.378C681.786 479.958 685.658 480.398 689.292 481.668C692.926 482.938 696.23 485.005 698.962 487.717C701.694 490.429 703.784 493.718 705.08 497.342C706.377 500.967 706.846 504.836 706.453 508.665L702.633 545.797C694.936 620.828 687.239 695.854 679.542 770.874C671.513 849.657 663.431 928.434 655.298 1007.2C653.004 1029.39 650.71 1051.57 648.416 1073.74C646.213 1095.58 645.904 1118.1 641.757 1139.68C635.218 1173.61 612.248 1194.45 578.73 1202.07C548.022 1209.06 516.652 1212.73 485.161 1213.01C450.249 1213.2 415.355 1211.65 380.443 1211.84C343.173 1212.05 297.525 1208.61 268.756 1180.87C243.479 1156.51 239.986 1118.36 236.545 1085.37C231.957 1041.7 227.409 998.039 222.9 954.381L197.607 711.615L181.244 554.538C180.968 551.94 180.693 549.376 180.435 546.76C178.473 528.023 165.207 509.681 144.301 510.627C126.407 511.418 106.069 526.629 108.168 546.76L120.298 663.214L145.385 904.104C152.532 972.528 159.661 1040.96 166.773 1109.41C168.15 1122.52 169.44 1135.67 170.885 1148.78C178.749 1220.43 233.465 1259.04 301.224 1269.91C340.799 1276.28 381.337 1277.59 421.497 1278.24C472.979 1279.07 524.977 1281.05 575.615 1271.72C650.653 1257.95 706.952 1207.85 714.987 1130.13C717.282 1107.69 719.576 1085.25 721.87 1062.8C729.498 988.559 737.115 914.313 744.72 840.061L769.601 597.451L781.009 486.263C781.577 480.749 783.905 475.565 787.649 471.478C791.392 467.391 796.352 464.617 801.794 463.567C823.25 459.386 843.761 452.245 859.023 435.916C883.318 409.918 888.153 376.021 879.567 341.849ZM72.4301 365.835C72.757 365.68 72.1548 368.484 71.8967 369.792C71.8451 367.813 71.9483 366.058 72.4301 365.835ZM74.5121 381.94C74.6842 381.819 75.2003 382.508 75.7337 383.334C74.925 382.576 74.4089 382.009 74.4949 381.94H74.5121ZM76.5597 384.641C77.2996 385.897 77.6953 386.689 76.5597 384.641V384.641ZM80.672 387.979H80.7752C80.7752 388.1 80.9645 388.22 81.0333 388.341C80.9192 388.208 80.7925 388.087 80.6548 387.979H80.672ZM800.796 382.989C793.088 390.319 781.473 393.726 769.996 395.43C641.292 414.529 510.713 424.199 380.597 419.932C287.476 416.749 195.336 406.407 103.144 393.382C94.1102 392.109 84.3197 390.457 78.1082 383.798C66.4078 371.237 72.1548 345.944 75.2003 330.768C77.9878 316.865 83.3218 298.334 99.8572 296.355C125.667 293.327 155.64 304.218 181.175 308.09C211.917 312.781 242.774 316.538 273.745 319.36C405.925 331.405 540.325 329.529 671.92 311.91C695.906 308.686 719.805 304.941 743.619 300.674C764.835 296.871 788.356 289.731 801.175 311.703C809.967 326.673 811.137 346.701 809.778 363.615C809.359 370.984 806.139 377.915 800.779 382.989H800.796Z"fill="currentColor"></path></svg></a>
+        </div>
+
+        <div class="footer-middle">
+        </div>
+
+        <div class="footer-right">
+            <span class="item">37790(words)</span>
+            <a class="item" accesskey="g" href="#top" id="top-link" title="Go to Top (Alt + G)">⬆</a>
+        </div>
+    </footer>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                packages: { "[+]": ["ams"] }, 
+                tags: "ams", 
+            },
+            options: {
+                enableSpeech: false,        
+                enableExplorer: false,      
+                enableMenu: false,          
+                ignoreHtmlClass: "tex2jax_ignore",
+                processHtmlClass: "tex2jax_process"
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/mathjax/4.0.0/tex-chtml.min.js"></script>
+    <script type="text/javascript" defer async src="https://s4.zstatic.net/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+    <script type="text/javascript" src="/js/particle-clock.js"></script>
+    <script type="text/javascript" src="/js/index.min.62af824fc9f8f20406aebaf20c60d6fbd42ffe3d23aae53d90dddd32415f13d9.js" integrity="sha256-Yq&#43;CT8n48gQGrrryDGDW&#43;9Qv/j0jquU9kN3dMkFfE9k="></script>
+</body>
+
+</html>

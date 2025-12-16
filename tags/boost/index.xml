@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Boost on 似水</title>
+    <link>http://localhost:1313/tags/boost/</link>
+    <description>Recent content in Boost on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jan 2017 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/boost/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>boost</title>
+      <link>http://localhost:1313/z/lang/cpp/boost/</link>
+      <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z/lang/cpp/boost/</guid>
+      <description>&lt;h1 id=&#34;下载&#34;&gt;下载&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.boost.org/users/download/&#34;&gt;https://www.boost.org/users/download/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

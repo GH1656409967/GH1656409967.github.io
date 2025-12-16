@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PAT on 似水</title>
+    <link>http://localhost:1313/categories/pat/</link>
+    <description>Recent content in PAT on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 25 Apr 2021 09:07:11 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/pat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PAT</title>
+      <link>http://localhost:1313/z/algo/pat/</link>
+      <pubDate>Sun, 25 Apr 2021 09:07:11 +0000</pubDate>
+      <guid>http://localhost:1313/z/algo/pat/</guid>
+      <description>&lt;p&gt;甲级（Advanced Level）：在达到乙级要求的基础上，还要求：&#xA;1· 具有充分的英文阅读理解能力；&#xA;2· 理解并掌握基础数据结构，包括：线性表、树、图；&#xA;3· 理解并熟练编程实现经典高级算法，包括哈希映射、并查集、最短路径、拓扑排序、关键路径、贪心、深度优先搜索、广度优先搜索、回溯剪枝等；&#xA;————————————————&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

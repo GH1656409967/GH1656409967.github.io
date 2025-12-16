@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>枚举 on 似水</title>
+    <link>http://localhost:1313/tags/%E6%9E%9A%E4%B8%BE/</link>
+    <description>Recent content in 枚举 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 05 Aug 2020 16:52:38 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E6%9E%9A%E4%B8%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>POJ-3746 Teacher YYF</title>
+      <link>http://localhost:1313/z/solution/9858b6d336a6f5c8/</link>
+      <pubDate>Wed, 05 Aug 2020 16:52:38 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/9858b6d336a6f5c8/</guid>
+      <description>&lt;h1 id=&#34;teacher-yyfpoj-3746&#34;&gt;Teacher YYF(&lt;a href=&#34;https://vjudge.net/problem/POJ-3746&#34;&gt;POJ-3746&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;As we all know, grammar is  very important when learning English. Now, YYF become a teacher of a  primary school. The students are good at memory so they can tell the  meaning and the function (noun, verb …) of the words in the textbook.  But, they cannot use these words properly.&lt;/p&gt;&#xA;&lt;p&gt;In YYF’s mind, writing  sentences is a good way to learn grammar. So he tells the student to  write 20 sentences a day, using the word learned in the class. As YYF  has a lot of student, he will receive many sentences from his student.  What a horrible work to check all the sentences. You are one of YYF’s  friends, so he asks you for help. You task is to write a program to  check the sentences.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ-3279 Fliptile</title>
+      <link>http://localhost:1313/z/solution/dcf6b703cda0cff6/</link>
+      <pubDate>Fri, 23 Mar 2018 08:50:51 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/dcf6b703cda0cff6/</guid>
+      <description>&lt;h1 id=&#34;fliptile-poj---3279&#34;&gt;Fliptile (&lt;a href=&#34;https://vjudge.net/problem/POJ-3279&#34;&gt;POJ - 3279&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Farmer John knows that an intellectually satisfied cow is a  happy cow who will give more milk. He has arranged a brainy activity for cows in which they manipulate an &lt;em&gt;M&lt;/em&gt; × &lt;em&gt;N&lt;/em&gt; grid (1 ≤ &lt;em&gt;M&lt;/em&gt; ≤ 15; 1 ≤ &lt;em&gt;N&lt;/em&gt; ≤ 15) of square tiles, each of which is colored black on one side and white on the other side.&lt;/p&gt;&#xA;&lt;p&gt;As one would guess, when a single white tile is flipped, it  changes to black; when a single black tile is flipped, it changes to  white. The cows are rewarded when they flip the tiles so that each tile  has the white side face up. However, the cows have rather large hooves  and when they try to flip a certain tile, they also flip all the  adjacent tiles (tiles that share a full edge with the flipped tile).  Since the flips are tiring, the cows want to minimize the number of  flips they have to make.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

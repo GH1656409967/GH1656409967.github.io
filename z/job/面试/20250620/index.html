@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" data-theme="light">
+<head>
+    <script>
+        (function () {
+            const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = localStorage.getItem('n8rain-theme') || (prefers ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面试 | 似水</title>
+    <link rel="stylesheet" href="/css/index.min.dec23d3721889f6543816a1c07a479a53dbcf86a9b0d6a9f6e8a31b397487b97.css" integrity="sha256-3sI9NyGIn2VDgWocB6R5pT28&#43;GqbDWqfbooxs5dIe5c=" />
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" id="chroma-light" href="/css/chroma-light.css">
+    <link rel="stylesheet" id="chroma-dark"  href="/css/chroma-dark.css">
+    <script>
+        (function () {
+            const isDark = document.documentElement.dataset.theme === 'dark';
+            document.getElementById('chroma-light').disabled = isDark;
+            document.getElementById('chroma-dark').disabled = !isDark;
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a class="item" href="/" target="_blank">「似水」</a>
+        </div>
+
+        <div class="header-middle">
+            面试
+        </div>
+
+        <div class="header-right">
+            <a id="reset-layout" class="item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 80V240h96V80H48zM0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V240c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80zM304 272V432h96V272H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V272zM144 368H48v64h96V368zM48 320h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48zM304 80v64h96V80H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V80z"></path></svg></a>
+            <a id="toggle-theme" class="item">◐</a>
+        </div>
+    </header>
+    <main class="container" id="container">
+        <div class="content" id="nav">
+            <nav class="menu">
+                <ul>
+                    <li><i class='fa fa-tags'>&nbsp;</i><a>网站导航</a></li>
+                    <li><i class='fa fa-thumbs-up'>&nbsp;</i><a href="/x/share/">好物分享</a></li>
+                    <li><i class='fa fa-wrench'>&nbsp;</i><a href="/x/tools/">游戏工具</a></li>
+                    <li><i class='fa fa-film'>&nbsp;</i><a href="/x/movies/">影视鉴赏</a></li>
+                    <li><i class='fa fa-book'>&nbsp;</i><a href="/x/books/">书籍阅读</a></li>
+                    <li><i class='fa fa-camera'>&nbsp;</i><a href="/x/gallery/">生活留影</a></li>
+                    <li><i class='fa fa-link'>&nbsp;</i><a href="/x/links/">友情链接</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="overview" id="overview" style="display: none;">
+            <div class="overview-container">
+                <div class="author-block">
+                    <img class="author-avatar" src="/img/avatar.png" alt="夜雨微澜" />
+                    
+                    <a class="author-name" href="/x/personal">夜雨微澜</a><p class="author-slogan">学而不思则罔，思而不学则殆</p>
+                </div>
+
+                <div class="site-state">
+                    <div class="item">
+                        <a href="/archives/">
+                            <span class="count">660</span>
+                            <span class="name">日志</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/series/">
+                            <span class="count">8</span>
+                            <span class="name">系列</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/categories/">
+                            <span class="count">93</span>
+                            <span class="name">分类</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/tags/">
+                            <span class="count">171</span>
+                            <span class="name">标签</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="diy-block">
+                    <canvas id="canvasDiyBlock" style="width:180px;">您的浏览器不支持 Canvas, 请更换浏览器!</canvas>
+                </div>
+
+                <div class="diy-block">
+                    <div id="typed-strings" style="display: none;">
+                        <p>We burn faster than light</p>
+                        <p>Shine across in the night sky</p>
+                    </div>
+                    <span id="typed" style="white-space: pre;line-height: 14px;font-size: 12px;"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="article-content">
+            <article class="main" id="top">
+                <time datetime="2017-01-01T12:00:00&#43;00:00">January 1, 2017</time>
+                <p>首先，我只找非Qt非后端的C++，所以要求降低，只需要</p>
+<p>计算机网络 tcp  操作系统            cpp
+socket          多线程 内存管理     面向对象 设计模式 stl</p>
+<p>工具
+gdb cmake git</p>
+<p>收集到了很多面试题，也进行了简单的分类，接下来需要全部吸收，整理成自己的文档</p>
+<p>首先需要把知识串联，先理一个大纲，逐步添加知识点，此文档记录所有面试问题，以及对应的口语化回答，所以重点在于得分关键词</p>
+<h1 id="招聘软件">招聘软件</h1>
+<h2 id="打招呼">打招呼</h2>
+<p>想了解下，现在方便聊聊吗？😊</p>
+<p>💡提示：先确认候选人是否积极、沟通意愿强，这会影响是否推进面试。</p>
+<h2 id="gap">GAP</h2>
+<p>我注意到你上一份工作是在2024年4月离职的，想了解一下，这段时间主要在做什么呢？</p>
+<p>💡提示：核心目的是判断 GAP 期是否合理，以及候选人是否保持技术状态、是否有自我驱动。
+回答时最好体现“持续学习”“项目实践”“个人成长”或“客观原因但仍有技术积累”。</p>
+<p>离职后，前期主要调整了一下生活节奏（做饭，减肥），之后系统性的学习了些新东西。</p>
+<p>我先看了 Golang，想了解它在并发和协程模型上的设计；也学了 Rust，对 RAII 和资源管理机制有了更深的认识，对我写 C++ 帮助挺大。</p>
+<p>接触过开发后端和微服务的 golang（ goroutine + channel），跨平台UI框架 flutter，主打 内存安全和高性能的 Rust （所有权机制），然后又回到C++，看过一些库的源码，不过很吃力（Redis Zset）。</p>
+<p>同时我完善了自己的笔记系统，也在补充 C++ 的构建和测试，比如 CMake 和 GTest；还读过 Redis 源码，印象最深的是跳表结构——它通过多层索引让查找更快，结构比平衡树简单很多，适合范围查询。</p>
+<p>后面和大学室友一起做了半年多的 AIGC 项目，用 Whisper 做视频转文字，还做了 AI 聚合网站和小游戏套壳。
+项目结束后我重新回到 C++，发现自己最喜欢的还是底层系统开发这块。
+现在希望找一个稳定的 C++ 开发岗位，在杭州长期发展、把技术做深。</p>
+<p>然后我大学室友 一起打比赛的 在自己创业，有和他一起做了很多尝试，后面主要是AIGC，套壳网站，视频翻译，视频创作。主要针对海外用户群体，他运营账号，打通一条 AI 全流程工具链。算是分红的方式吧，不多，变现方式也是在探索中，主要还是流量带来的广告收入。近半年他家里出了变动，前两月回老家了，暂时不搞了。</p>
+<p>这段经历让我接触并实践了多种技术栈，对软件开发的不同方向有了更全面的认识。但也正是在横向探索中，我意识到自己真正热衷并愿意长期投入的还是 C++ 及底层系统开发，因此更加坚定了未来在这一方向深耕的选择。</p>
+<p>涵盖了 大模型调用 到 多模态生成 并使用 comfyUI 等技术搭建过实际的工作流，同时也关注了 模型上下文协议 等新兴方向。</p>
+<p>大语言模型  transformer Chatgpt Claude Gemini
+扩散模型    diffusion   视频gg veo3  wan2.2 图像Nano Banana GPT
+python库    openai
+工作流      comfyUI
+后端        FastAPI
+提取字幕    whisper
+语音生成    TTS B站index-tts
+图像编辑    qwen-image
+上下文协议  MCP   Context Engineering</p>
+<h2 id="离职原因">离职原因</h2>
+<p>当时从天迈离职的主要原因是什么呢？是项目周期结束、个人规划，还是公司调整？</p>
+<p>💡提示：想了解离职动机是否健康，是否存在“人际冲突”“被动离职”等风险。
+理想回答要体现理性、职业规划意识，比如“想寻求更大技术挑战”“原岗位成长空间有限”。</p>
+<p>主要是想找更有技术深度的环境，原公司那边偏稳定业务，晋升也按年限走，我想趁现在继续提升。</p>
+<p>主要还是因为薪资和成长方向不太匹配。当时公司在做制度调整，薪资和晋升更看重年限，而我的实际工作能力也得到主管和同时的认可，但受限于年限评定，薪资提升空间有限。</p>
+<p>再加上当时合同快到期，我评估过后，觉得想换一个能提供更大成长空间的环境，所以就选择不续约。离职前公司也有挽留，但我还是希望往技术深度更高的方向发展。</p>
+<p>天迈那边项目偏公交行业，系统更注重稳定性，所以整体技术栈偏保守，很多优化点会因成本评估被压下。</p>
+<h2 id="求职状态">求职状态</h2>
+<p>方便问下你目前的求职状态吗？比如有没有面试其他公司？什么时候方便入职？</p>
+<p>💡提示：确认求职积极度和时间安排，评估“入职确定性”。</p>
+<h2 id="最大的收获">最大的收获</h2>
+<p>虽然项目偏业务，但我积累了很多系统性思维，比如模块化设计、通信稳定性优化、日志体系建设。这些经历让我在工程落地上更稳，也为之后做更复杂系统打下了基础</p>
+<h2 id="技术退步">技术退步</h2>
+<p>这段时间虽然没在职，但我一直在学习和写代码，C++手感没丢，还补了不少工程工具和底层机制的知识，现在可以快速进入项目开发。</p>
+<p>我觉得这段时间虽然没有在职，但技术并没有生疏。
+我一直在学习新的语言和工具，比如Golang、Rust、CMake、GTest，也看了一些优秀项目的源码。
+虽然没有在具体业务中迭代，但我保持了编程习惯和工程思维。</p>
+<p>所以整体来说，我的C++水平和工程经验是稳中有进的，尤其在理解底层机制和代码质量方面比之前更系统。
+现在状态也调整得很好，可以快速进入工作节奏。</p>
+<h2 id="找工作的考虑因素">找工作的考虑因素</h2>
+<p>主要看团队氛围和业务方向吧，希望是技术氛围好的团队，做C++系统或通信类项目，这块我比较熟也最感兴趣。</p>
+<p>我主要看两点：
+一是团队氛围，希望是那种技术讨论开放、愿意分享和做代码审查的环境，这样能持续成长；
+二是业务方向，我希望做和系统稳定性、网络通信或底层优化相关的C++项目，技术挑战更高，也更能发挥我的经验。</p>
+<p>总体来说，我希望找到一个能长期投入、一起打磨产品和技术的团队。</p>
+<p>你提到熟悉C++11/14和Linux环境，那这两年中有没有持续学习或做过一些个人项目？比如自己搭建过通信框架、学习新标准之类？</p>
+<p>💡提示：检验技术是否“生锈”。即使没在职，也希望看到技术延续或学习动力。</p>
+<p>我们这边目前在用 C++17 / C++20，并有部分性能敏感模块在Linux下开发。你这边对于新标准、异步编程、多线程这块目前状态怎么样？</p>
+<p>💡提示：探测“技术深度+适应力”。想判断是否能快速上手新环境。</p>
+<h1 id="面试">面试</h1>
+<h2 id="自我介绍">自我介绍</h2>
+<p>您好，我叫董业伟，本科 软件工程专业，有三年 Linux平台的 C++ 开发经验。主要做 公交车载智能终端的 调度子系统，了解C++应用的 开发和调试流程，有网络编程 和多线程开发的 经验，还可以编写 简单的脚本 辅助开发。工作里 我负责过 协议框架设计 和 系统优化。</p>
+<h2 id="八股">八股</h2>
+<h3 id="操作系统">操作系统</h3>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="ln"> 1</span><span class="cl">进程间通信：管道, 消息队列, 共享内存, 信号, 信号量, 套接字
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">进程间同步：互斥锁, 读写锁, 条件变量, 信号量, 屏障, 记录锁
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">线程间同步：互斥锁, 读写锁, 条件变量, 信号量, 屏障, 自旋锁
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">P 申请资源 可能阻塞 V 释放资源 唤醒等待线程
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">进程和线程的区别：
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    进程是资源分配的单位，线程是调度的单位
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    资源：进程拥有独立的地址空间，文件描述符，多个线程共享一个进程的资源
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    切换：进程 内核调度，上下文切换，内核态和用户态的切换，开销大
+</span></span><span class="line"><span class="ln">11</span><span class="cl">          线程 栈 寄存器 程序计数器
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    通信：进程 IPC 数据共享和通信 慢，线程 共享资源 同步 快
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl">内核态 系统调用(软中断) 异常(文件损坏 缺页异常 内中断) 硬件设备(信号线通知CPU 硬中断)
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl">进程调度
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    先来先服务
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    最短作业优先
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    高响应比优先
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    时间片轮转
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    最高优先级
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    多级反馈队列
+</span></span><span class="line"><span class="ln">23</span><span class="cl">
+</span></span><span class="line"><span class="ln">24</span><span class="cl">页面置换
+</span></span><span class="line"><span class="ln">25</span><span class="cl">    最佳页面（OPT）
+</span></span><span class="line"><span class="ln">26</span><span class="cl">    先进先出（FIFO）
+</span></span><span class="line"><span class="ln">27</span><span class="cl">    最近最久未使用（LRU）
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    时钟页面（Lock）
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    最不常用（LFU）
+</span></span><span class="line"><span class="ln">30</span><span class="cl">
+</span></span><span class="line"><span class="ln">31</span><span class="cl">系统调用
+</span></span><span class="line"><span class="ln">32</span><span class="cl">    fork
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    socket bind listen accept select poll epoll
+</span></span><span class="line"><span class="ln">34</span><span class="cl">    open read write close
+</span></span><span class="line"><span class="ln">35</span><span class="cl">
+</span></span><span class="line"><span class="ln">36</span><span class="cl">命令
+</span></span><span class="line"><span class="ln">37</span><span class="cl">    文件目录 ls cd mkdir pwd cp mv rm
+</span></span><span class="line"><span class="ln">38</span><span class="cl">    查看编辑 cat tail less more head vi
+</span></span><span class="line"><span class="ln">39</span><span class="cl">    权限     chmod
+</span></span><span class="line"><span class="ln">40</span><span class="cl">    网络     ip ifconfig ping netstat tcpdump
+</span></span><span class="line"><span class="ln">41</span><span class="cl">    传输文件 ftp sftp scp wget curl
+</span></span><span class="line"><span class="ln">42</span><span class="cl">    文本处理 awk sed cut sort wc
+</span></span><span class="line"><span class="ln">43</span><span class="cl">    日志     dmesg journalctl
+</span></span><span class="line"><span class="ln">44</span><span class="cl">    系统信息 ps top free env printenv uname uptime
+</span></span><span class="line"><span class="ln">45</span><span class="cl">    进程     kill jobs fg bg
+</span></span><span class="line"><span class="ln">46</span><span class="cl">    文件系统 mount umount df du
+</span></span><span class="line"><span class="ln">47</span><span class="cl">    服务状态 systemctl status service</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h3 id="计算机网络">计算机网络</h3>
+<p>网络分层</p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">应用层          http https ftp smtp dns dhcp telnet ssh mqtt
+</span></span><span class="line"><span class="ln">2</span><span class="cl">传输层          tcp udp quic
+</span></span><span class="line"><span class="ln">3</span><span class="cl">                nat(网络地址转换)
+</span></span><span class="line"><span class="ln">4</span><span class="cl">网络层          ip icmp(网络诊断ping) arp(ip到mac) ospf bgp
+</span></span><span class="line"><span class="ln">5</span><span class="cl">                vpn(封装加密ip包)
+</span></span><span class="line"><span class="ln">6</span><span class="cl">数据链路层      ethernet ppp vlan wifi mac
+</span></span><span class="line"><span class="ln">7</span><span class="cl">物理层          网线 光纤 无线电信号</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p>TCP三次握手</p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">- 客户端发    SYN，       请求连接                    CLOSED → SYN_SENT
+</span></span><span class="line"><span class="ln">2</span><span class="cl">- 服务端回    SYN+ACK，   确认并同步                  LISTEN → SYN_RCVD
+</span></span><span class="line"><span class="ln">3</span><span class="cl">- 客户端再回  ACK，       双方确认收发能力，连接建立  SYN_SENT/SYN_RCVD → ESTABLISHED</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p>TCP四次挥手</p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">客户端发    FIN，         ESTABLISHED → FIN_WAIT_1
+</span></span><span class="line"><span class="ln">2</span><span class="cl">服务端回    ACK；         ESTABLISHED → CLOSE_WAIT；客户端进入 FIN_WAIT_2
+</span></span><span class="line"><span class="ln">3</span><span class="cl">服务端再发  FIN，         CLOSE_WAIT → LAST_ACK
+</span></span><span class="line"><span class="ln">4</span><span class="cl">客户端回    ACK，连接关闭 FIN_WAIT_2 → TIME_WAIT，等待 2MSL 后进入 CLOSED；服务端收到 ACK 后 LAST_ACK → CLOSED</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h3 id="cpp">cpp</h3>
+<p>RAII 把“资源申请”和“资源释放”都放进对象的生命周期里，用构造函数获取资源，用析构函数释放资源，这样就能避免忘记释放、异常中断导致泄露等问题</p>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>类别</th>
+                                        <th>关键字 / 语法</th>
+                                        <th>考点说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>变量与常量</td>
+                                        <td>auto, const, constexpr, static, mutable</td>
+                                        <td>类型推导、常量定义、静态变量作用域、可变成员</td>
+                                    </tr>
+                                    <tr>
+                                        <td>控制流</td>
+                                        <td>if, switch, for, while, do, break, continue, goto</td>
+                                        <td>条件判断、循环、跳转</td>
+                                    </tr>
+                                    <tr>
+                                        <td>函数</td>
+                                        <td>inline, virtual, override, final, friend, explicit</td>
+                                        <td>内联函数、虚函数重写、友元函数、构造函数防隐式转换</td>
+                                    </tr>
+                                    <tr>
+                                        <td>内存管理</td>
+                                        <td>new, delete, delete[]</td>
+                                        <td>堆分配与释放、数组与单对象区别</td>
+                                    </tr>
+                                    <tr>
+                                        <td>类型</td>
+                                        <td>typedef, using, enum, enum class, typeid, decltype</td>
+                                        <td>类型别名、枚举、RTTI、类型推导</td>
+                                    </tr>
+                                    <tr>
+                                        <td>类与对象</td>
+                                        <td>class, struct, union, private, protected, public</td>
+                                        <td>封装、访问控制、内存布局</td>
+                                    </tr>
+                                    <tr>
+                                        <td>模板</td>
+                                        <td>template, typename, class</td>
+                                        <td>泛型编程、模板类型参数、非类型模板参数</td>
+                                    </tr>
+                                    <tr>
+                                        <td>异常</td>
+                                        <td>try, catch, throw, noexcept</td>
+                                        <td>异常处理、异常规范</td>
+                                    </tr>
+                                    <tr>
+                                        <td>其他关键字</td>
+                                        <td>namespace, using namespace, extern, volatile, register</td>
+                                        <td>命名空间、外部变量、内存可见性</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div><h3 id="设计模式">设计模式</h3>
+<h3 id="工具">工具</h3>
+<h4 id="调试工具-gdb">调试工具 gdb</h4>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>分类</th>
+                                        <th>命令</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>启动调试</td>
+                                        <td><code>gdb ./a.out</code></td>
+                                        <td>调试可执行文件</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>gdb ./a.out core</code></td>
+                                        <td>调试 core dump</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>gdb ./a.out &lt;pid&gt;</code></td>
+                                        <td>附加到进程</td>
+                                    </tr>
+                                    <tr>
+                                        <td>运行控制</td>
+                                        <td><code>run [args]</code></td>
+                                        <td>运行程序并传参</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>start</code></td>
+                                        <td>运行到 <code>main</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>continue / c</code></td>
+                                        <td>继续运行</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>next / n</code></td>
+                                        <td>单步（不进函数）</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>step / s</code></td>
+                                        <td>单步（进入函数）</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>finish</code></td>
+                                        <td>运行到函数返回</td>
+                                    </tr>
+                                    <tr>
+                                        <td>断点</td>
+                                        <td><code>break main</code></td>
+                                        <td>在 <code>main()</code> 设置断点</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>break file.cpp:42</code></td>
+                                        <td>在文件某行断点</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>condition 1 x&gt;5</code></td>
+                                        <td>给断点加条件</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>delete 1</code></td>
+                                        <td>删除断点</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>info breakpoints / b</code></td>
+                                        <td>查看断点</td>
+                                    </tr>
+                                    <tr>
+                                        <td>栈与线程</td>
+                                        <td><code>backtrace / bt</code></td>
+                                        <td>查看调用栈</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>frame n</code></td>
+                                        <td>切换栈帧</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>info threads</code></td>
+                                        <td>查看线程</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>thread 3</code></td>
+                                        <td>切换到线程 3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>变量与寄存器</td>
+                                        <td><code>print x</code></td>
+                                        <td>打印变量</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>display x</code></td>
+                                        <td>每次停下打印</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>watch x</code></td>
+                                        <td>监视变量变化</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>set var x=10</code></td>
+                                        <td>修改变量</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>info registers</code></td>
+                                        <td>查看寄存器</td>
+                                    </tr>
+                                    <tr>
+                                        <td>查看源码</td>
+                                        <td><code>list</code></td>
+                                        <td>查看源代码</td>
+                                    </tr>
+                                    <tr>
+                                        <td>退出</td>
+                                        <td><code>quit</code></td>
+                                        <td>退出 gdb</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="o">(</span>gdb<span class="o">)</span> <span class="nb">set</span> follow-fork-mode parent   <span class="c1"># 默认：跟踪父进程</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="o">(</span>gdb<span class="o">)</span> <span class="nb">set</span> follow-fork-mode child    <span class="c1"># 改成跟踪子进程</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="o">(</span>gdb<span class="o">)</span> <span class="nb">set</span> detach-on-fork on         <span class="c1"># 默认：只跟踪一个，另一个继续运行</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="o">(</span>gdb<span class="o">)</span> <span class="nb">set</span> detach-on-fork off        <span class="c1"># 父子都调试（GDB 会同时管理多个进程）</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="o">(</span>gdb<span class="o">)</span> info inferiors    <span class="c1"># 列出所有进程</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="o">(</span>gdb<span class="o">)</span> inferior <span class="m">2</span>        <span class="c1"># 切换到子进程</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="o">(</span>gdb<span class="o">)</span> <span class="nb">set</span> follow-exec-mode new      <span class="c1"># 跟踪 exec 之后的新程序</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl">gdb -p &lt;child_pid&gt;      <span class="c1"># 手动 attach</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="o">(</span>gdb<span class="o">)</span> attach &lt;child_pid&gt;</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><h4 id="调试工具-strace">调试工具 strace</h4>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>分类</th>
+                                        <th>命令</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>基本运行</td>
+                                        <td><code>strace ./a.out</code></td>
+                                        <td>跟踪系统调用</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>strace -p &lt;pid&gt;</code></td>
+                                        <td>跟踪运行中的进程</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>strace -o log.txt ./a.out</code></td>
+                                        <td>输出到文件</td>
+                                    </tr>
+                                    <tr>
+                                        <td>系统调用过滤</td>
+                                        <td><code>strace -e openat ./a.out</code></td>
+                                        <td>只跟踪 <code>openat</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>strace -e read,write ./a.out</code></td>
+                                        <td>跟踪读写调用</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>strace -e trace=network ./a.out</code></td>
+                                        <td>跟踪网络调用</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>strace -e trace=file ./a.out</code></td>
+                                        <td>跟踪文件调用</td>
+                                    </tr>
+                                    <tr>
+                                        <td>性能分析</td>
+                                        <td><code>strace -c ./a.out</code></td>
+                                        <td>统计调用次数/耗时</td>
+                                    </tr>
+                                    <tr>
+                                        <td>输出控制</td>
+                                        <td><code>strace -s 100 ./a.out</code></td>
+                                        <td>设置字符串长度</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><code>strace -f ./a.out</code></td>
+                                        <td>跟踪子进程</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div><h4 id="版本控制-git">版本控制 Git</h4>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>命令</th>
+                                        <th>功能</th>
+                                        <th>示例</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>git init</code></td>
+                                        <td>初始化本地仓库</td>
+                                        <td><code>git init myproject</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git clone</code></td>
+                                        <td>克隆远程仓库</td>
+                                        <td><code>git clone https://github.com/user/repo.git</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git status</code></td>
+                                        <td>查看当前状态（未提交、暂存等）</td>
+                                        <td><code>git status</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git add</code></td>
+                                        <td>将文件加入暂存区</td>
+                                        <td><code>git add file.txt</code> / <code>git add .</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git commit</code></td>
+                                        <td>提交到本地仓库</td>
+                                        <td><code>git commit -m &quot;message&quot;</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git push</code></td>
+                                        <td>推送到远程仓库</td>
+                                        <td><code>git push origin main</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git pull</code></td>
+                                        <td>拉取远程更新并合并</td>
+                                        <td><code>git pull origin main</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git branch</code></td>
+                                        <td>查看/创建分支</td>
+                                        <td><code>git branch</code> / <code>git branch feature</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git checkout</code></td>
+                                        <td>切换分支或恢复文件</td>
+                                        <td><code>git checkout dev</code> / <code>git checkout file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git merge</code></td>
+                                        <td>合并分支</td>
+                                        <td><code>git merge feature</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git log</code></td>
+                                        <td>查看提交历史</td>
+                                        <td><code>git log</code> / <code>git log --oneline --graph --all</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git diff</code></td>
+                                        <td>查看差异</td>
+                                        <td><code>git diff</code> / <code>git diff HEAD~1</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git reset</code></td>
+                                        <td>回退提交或重置文件</td>
+                                        <td><code>git reset --hard HEAD~1</code> / <code>git reset file.txt</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>git stash</code></td>
+                                        <td>暂存当前改动</td>
+                                        <td><code>git stash</code> / <code>git stash pop</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div><h4 id="tcpdump">tcpdump</h4>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>命令</th>
+                                        <th>功能</th>
+                                        <th>示例</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>tcpdump</code></td>
+                                        <td>默认抓所有接口的数据包</td>
+                                        <td><code>tcpdump</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tcpdump -i eth0</code></td>
+                                        <td>指定抓取网卡</td>
+                                        <td><code>tcpdump -i eth0</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tcpdump -nn</code></td>
+                                        <td>不解析主机名和端口名</td>
+                                        <td><code>tcpdump -i eth0 -nn</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tcpdump -v / -vv / -vvv</code></td>
+                                        <td>输出详细信息</td>
+                                        <td><code>tcpdump -i eth0 -vv</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tcpdump -c 10</code></td>
+                                        <td>抓指定数量包</td>
+                                        <td><code>tcpdump -c 10 -i eth0</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tcpdump -w file.pcap</code></td>
+                                        <td>抓包保存到文件</td>
+                                        <td><code>tcpdump -i eth0 -w capture.pcap</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tcpdump -r file.pcap</code></td>
+                                        <td>读取抓包文件</td>
+                                        <td><code>tcpdump -r capture.pcap</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div><p>BPF</p>
+<h2 id="项目">项目</h2>
+    
+                <div class="fold-container folded" data-previewHeight="300px">
+                    <div class="fold-inner">
+                        <div class="fold-button-layer">
+                            <button class="line-break-button" type="button"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                            <button class="code-copy-button" type="button"><i class="fa-regular fa-copy"></i></button>
+                            <button class="fold-toggle-button" type="button"><i class="fa-solid fa-angle-down"></i></button>
+                        </div>
+                        <div class="fold-content">
+                            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="ln">  1</span><span class="cl"><span class="gu">### 国标协议适配与设备平台对接
+</span></span></span><span class="line"><span class="ln">  2</span><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="ln">  3</span><span class="cl">这个项目是 公交车载智能终端的 国标化 通信协议 开发，我作为主要开发 负责 实现国标协议的整个通信流程，解耦原有的业务与协议，然后新增业务。同时参与了 需求分析和 任务拆分等 项目相关的工作。
+</span></span><span class="line"><span class="ln">  4</span><span class="cl">
+</span></span><span class="line"><span class="ln">  5</span><span class="cl">连接管理 / 协议层 / 适配层 / 业务层
+</span></span><span class="line"><span class="ln">  6</span><span class="cl">socket管理 I/O多路复用 拆包组包 消息队列（生产者消费者） 业务分发（协议层 继承多态） 注册回调的事件
+</span></span><span class="line"><span class="ln">  7</span><span class="cl">
+</span></span><span class="line"><span class="ln">  8</span><span class="cl"><span class="gu">#### socket管理
+</span></span></span><span class="line"><span class="ln">  9</span><span class="cl"><span class="gu"></span>    socket连接管理 TCP长连接 I/O多路复用
+</span></span><span class="line"><span class="ln"> 10</span><span class="cl">    拆包组包（单元测试）状态机 断线重连 指数退避策略 消息持久化
+</span></span><span class="line"><span class="ln"> 11</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 12</span><span class="cl"><span class="gu">#### 多线程消息处理
+</span></span></span><span class="line"><span class="ln"> 13</span><span class="cl"><span class="gu"></span>    生产者-消费者模型 消息队列 队列满时阻塞等待 结合TCP流控 互斥锁+条件变量
+</span></span><span class="line"><span class="ln"> 14</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 15</span><span class="cl">    Q: 为什么用多线程 + 消息队列？
+</span></span><span class="line"><span class="ln"> 16</span><span class="cl">    A: 为了避免业务处理阻塞网络收发，采用生产者-消费者模式。确保实时性，和可拓展性
+</span></span><span class="line"><span class="ln"> 17</span><span class="cl">    加分点: 这实际上是 Reactor 模式 的一个实现，常见于高并发网络编程。
+</span></span><span class="line"><span class="ln"> 18</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 19</span><span class="cl">    Q: 为什么用多线程消息队列，而不是单线程？
+</span></span><span class="line"><span class="ln"> 20</span><span class="cl">    A: 单线程也能跑，但业务处理可能阻塞接收。多线程分工，保证网络收发不被业务影响。
+</span></span><span class="line"><span class="ln"> 21</span><span class="cl">    展开: 这是 生产者-消费者模型，用接收线程+发送线程，队列作为缓冲，避免阻塞。
+</span></span><span class="line"><span class="ln"> 22</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 23</span><span class="cl">    Q: 消息队列满了怎么处理？
+</span></span><span class="line"><span class="ln"> 24</span><span class="cl">    A: 采用阻塞等待，不丢弃消息。TCP 本身有流量控制，阻塞比丢弃更安全。
+</span></span><span class="line"><span class="ln"> 25</span><span class="cl">    展开: 用 条件变量 + 环形队列，线程唤醒等待，避免忙等。
+</span></span><span class="line"><span class="ln"> 26</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 27</span><span class="cl">    Q: 线程安全怎么保证？
+</span></span><span class="line"><span class="ln"> 28</span><span class="cl">    A: 用互斥锁和条件变量，接收队列和发送队列分开锁，减少竞争。
+</span></span><span class="line"><span class="ln"> 29</span><span class="cl">    展开: 可以说成 细粒度加锁，比全局锁更高效。
+</span></span><span class="line"><span class="ln"> 30</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 31</span><span class="cl"><span class="gu">#### 协议层
+</span></span></span><span class="line"><span class="ln"> 32</span><span class="cl"><span class="gu"></span>    单纯的继承
+</span></span><span class="line"><span class="ln"> 33</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 34</span><span class="cl">    Q: 协议状态机是怎么优化的？
+</span></span><span class="line"><span class="ln"> 35</span><span class="cl">    A：重写了 TCP 状态管理，采用有限状态机（FSM）。
+</span></span><span class="line"><span class="ln"> 36</span><span class="cl">    展开：之前实现逻辑分散、易出错，我改为使用 FSM，每个状态（连接、鉴权、心跳、业务处理）有明确的事件驱动与迁移条件。
+</span></span><span class="line"><span class="ln"> 37</span><span class="cl">    加分点：FSM 能提升代码可维护性，并减少异常情况下的分支错误。
+</span></span><span class="line"><span class="ln"> 38</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 39</span><span class="cl">    Q: TCP 本来可靠，为什么还要做心跳？
+</span></span><span class="line"><span class="ln"> 40</span><span class="cl">    A: TCP 只保证字节流可靠，但检测断开可能延迟。心跳能更快发现异常。
+</span></span><span class="line"><span class="ln"> 41</span><span class="cl">    展开: 同时实现 TCP KeepAlive + 应用层心跳，兼顾 OS 层和业务层需求。
+</span></span><span class="line"><span class="ln"> 42</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 43</span><span class="cl">    Q: 非法报文怎么处理？
+</span></span><span class="line"><span class="ln"> 44</span><span class="cl">    A: 先校验校验字节，不合法就丢弃并发异常报文提醒平台。
+</span></span><span class="line"><span class="ln"> 45</span><span class="cl">    展开: 保证客户端健壮性，不因平台错误报文影响终端运行。
+</span></span><span class="line"><span class="ln"> 46</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 47</span><span class="cl">    Q: 断线重连怎么做的？
+</span></span><span class="line"><span class="ln"> 48</span><span class="cl">    A: 根据心跳超时，自动重连，带退避策略，避免频繁重连。
+</span></span><span class="line"><span class="ln"> 49</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 50</span><span class="cl"><span class="gu">## 适配层
+</span></span></span><span class="line"><span class="ln"> 51</span><span class="cl"><span class="gu"></span>    适配器模式 接口与私有协议业务兼容 不影响原功能
+</span></span><span class="line"><span class="ln"> 52</span><span class="cl">    耦合是指私有协议的业务 从socket接收到数据之后直接就开始业务处理，然后调用发送接口直接发送了。
+</span></span><span class="line"><span class="ln"> 53</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 54</span><span class="cl">    Q: 为什么要加适配层？
+</span></span><span class="line"><span class="ln"> 55</span><span class="cl">    A: 避免协议层直接调用业务逻辑，保证原有业务不用改动。
+</span></span><span class="line"><span class="ln"> 56</span><span class="cl">    展开: 协议解析和业务接口解耦，未来增加协议时，只需新增适配器。
+</span></span><span class="line"><span class="ln"> 57</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 58</span><span class="cl">    Q: 为什么要做协议层和业务层解耦？
+</span></span><span class="line"><span class="ln"> 59</span><span class="cl">    A: 原有协议和业务耦合严重，改协议需要大改业务，风险大。解耦后，协议变化只影响协议层，业务逻辑独立。
+</span></span><span class="line"><span class="ln"> 60</span><span class="cl">    展开: 根据协议基础版本制定基类，不同地市通过继承扩展，适配层则用适配器模式屏蔽协议差异。
+</span></span><span class="line"><span class="ln"> 61</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 62</span><span class="cl">    Q: 协议层和业务层的解耦是怎么做的？
+</span></span><span class="line"><span class="ln"> 63</span><span class="cl">    A: 通过适配层实现解耦。
+</span></span><span class="line"><span class="ln"> 64</span><span class="cl">    展开: 原私有协议与业务紧耦合（全局变量、单例静态依赖），我改为 显式传参，并抽象出适配层，使业务接口独立于协议层。这一思路接近 Adapter 模式 和 依赖倒置原则（DIP）。
+</span></span><span class="line"><span class="ln"> 65</span><span class="cl">    加分点: 这样后续更换协议或新增业务接口时，只需扩展适配层，不必修改核心业务。
+</span></span><span class="line"><span class="ln"> 66</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 67</span><span class="cl"><span class="gu">## 业务开发
+</span></span></span><span class="line"><span class="ln"> 68</span><span class="cl"><span class="gu"></span>    考勤 设备校时 车辆三检
+</span></span><span class="line"><span class="ln"> 69</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 70</span><span class="cl"><span class="gu">## 运维工具 Json转换
+</span></span></span><span class="line"><span class="ln"> 71</span><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="ln"> 72</span><span class="cl">    Q: 运维工具是怎么用的？
+</span></span><span class="line"><span class="ln"> 73</span><span class="cl">    A: 支持把旧私有协议配置快速转换成国标配置，减少人工操作错误。
+</span></span><span class="line"><span class="ln"> 74</span><span class="cl">    展开: 避免大量重构，降低了项目延期风险。
+</span></span><span class="line"><span class="ln"> 75</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 76</span><span class="cl">    Q: 为什么要把二进制配置转成 JSON？
+</span></span><span class="line"><span class="ln"> 77</span><span class="cl">    A: JSON 更可读，方便调试和扩展。
+</span></span><span class="line"><span class="ln"> 78</span><span class="cl">    展开: 我还设计了 key 映射规则，保证配置项有统一命名。
+</span></span><span class="line"><span class="ln"> 79</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 80</span><span class="cl"><span class="gu">## 日志优化 基于zlog 调整日志格式 快速定位
+</span></span></span><span class="line"><span class="ln"> 81</span><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="ln"> 82</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 83</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 84</span><span class="cl"><span class="gu">## 质量和优化
+</span></span></span><span class="line"><span class="ln"> 85</span><span class="cl"><span class="gu"></span>    Q: 没有单元测试，怎么保证质量？
+</span></span><span class="line"><span class="ln"> 86</span><span class="cl">    A: 协议层内置校验字节，保证报文合法性；同时日志优化，黑盒测试覆盖主要功能。
+</span></span><span class="line"><span class="ln"> 87</span><span class="cl">    展开: 这是客观限制，但我通过 日志可追溯 + 协议校验 保证稳定性。
+</span></span><span class="line"><span class="ln"> 88</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 89</span><span class="cl">    Q: 性能优化有哪些？
+</span></span><span class="line"><span class="ln"> 90</span><span class="cl">    A: 队列多线程解耦避免阻塞，细粒度加锁减少竞争，协议状态机重构提升逻辑可靠性。
+</span></span><span class="line"><span class="ln"> 91</span><span class="cl">    展开: 客户端流量不大，但架构上已为未来扩展做准备。
+</span></span><span class="line"><span class="ln"> 92</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 93</span><span class="cl">    Q: 性能或稳定性挑战有吗？
+</span></span><span class="line"><span class="ln"> 94</span><span class="cl">    A：主要是保障消息实时性与异常恢复。
+</span></span><span class="line"><span class="ln"> 95</span><span class="cl">    展开：
+</span></span><span class="line"><span class="ln"> 96</span><span class="cl">        采用 锁 + 有界队列 控制内存占用，避免消息积压。
+</span></span><span class="line"><span class="ln"> 97</span><span class="cl">        在心跳机制和重连逻辑中，做了退避重试，确保网络波动下的稳定性。
+</span></span><span class="line"><span class="ln"> 98</span><span class="cl">        压测结果显示，在常见车载场景下，延迟与丢包都在国标允许范围内。
+</span></span><span class="line"><span class="ln"> 99</span><span class="cl">
+</span></span><span class="line"><span class="ln">100</span><span class="cl"><span class="gu">## 项目价值
+</span></span></span><span class="line"><span class="ln">101</span><span class="cl"><span class="gu"></span>保证稳定性的前提下 快速完成协议对接 缩短交付时间
+</span></span><span class="line"><span class="ln">102</span><span class="cl">架构清晰 扩展性强 统一了所有国标类协议代码 泰国定制
+</span></span><span class="line"><span class="ln">103</span><span class="cl">
+</span></span><span class="line"><span class="ln">104</span><span class="cl"><span class="gu">## 项目经理职责 需求分析 风险评估 工时拆分
+</span></span></span><span class="line"><span class="ln">105</span><span class="cl"><span class="gu"></span>虽然我不是正式项目经理，但在这个项目里，我除了开发，还参与了需求澄清、架构设计、任务拆解和风险评估，做了一部分项目管理的工作。
+</span></span><span class="line"><span class="ln">106</span><span class="cl">
+</span></span><span class="line"><span class="ln">107</span><span class="cl">在需求阶段，梳理了国标协议和私有协议的差异，明确了需要新增的业务，比如新的考勤、车辆三检等。
+</span></span><span class="line"><span class="ln">108</span><span class="cl">
+</span></span><span class="line"><span class="ln">109</span><span class="cl">在架构设计上，我提出分层方案：通信协议层只负责 TCP 连接、状态机和报文解析；适配层负责把国标报文转换为统一接口；业务层保持原有逻辑，方便维护。这样减少了耦合，也方便后续扩展。
+</span></span><span class="line"><span class="ln">110</span><span class="cl">
+</span></span><span class="line"><span class="ln">111</span><span class="cl">在开发阶段，我承担了超过 70% 的编码工作，包括 TCP 长连接、心跳与重连机制、收发分离的消息队列，以及协议状态机的重构。比如在收发处理上，我采用了生产者-消费者模型，把消息缓存到队列，避免业务处理阻塞网络收发。
+</span></span><span class="line"><span class="ln">112</span><span class="cl">
+</span></span><span class="line"><span class="ln">113</span><span class="cl">在风险控制方面，我设计了断线恢复和报文校验机制，并提前做了配置文件的转换工具，减少了上线风险。
+</span></span><span class="line"><span class="ln">114</span><span class="cl">
+</span></span><span class="line"><span class="ln">115</span><span class="cl">测试和上线环节，模拟平台，验证了掉线重连、异常报文丢弃、批量上报等场景，确保客户端在高并发和异常情况下稳定运行。
+</span></span><span class="line"><span class="ln">116</span><span class="cl">
+</span></span><span class="line"><span class="ln">117</span><span class="cl">    Q: 你提到承担了项目经理部分工作，具体包括哪些？
+</span></span><span class="line"><span class="ln">118</span><span class="cl">    A: 我做过需求分析、架构设计、任务拆解和风险评估，并和平台方沟通技术问题。
+</span></span><span class="line"><span class="ln">119</span><span class="cl">
+</span></span><span class="line"><span class="ln">120</span><span class="cl">    Q: 你写了 70% 的代码，哪些是核心模块？
+</span></span><span class="line"><span class="ln">121</span><span class="cl">    A: 协议层（TCP连接、协议解析/组包）、消息队列（收发线程）、适配层、新增业务接口。
+</span></span><span class="line"><span class="ln">122</span><span class="cl">
+</span></span><span class="line"><span class="ln">123</span><span class="cl"><span class="gu">### 需求分析阶段        强调差异梳理 &amp; 新增业务
+</span></span></span><span class="line"><span class="ln">124</span><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="ln">125</span><span class="cl">工作内容：
+</span></span><span class="line"><span class="ln">126</span><span class="cl">    阅读国标协议文档（GB/T xxxx），与平台方确认业务范围。
+</span></span><span class="line"><span class="ln">127</span><span class="cl">    梳理现有私有协议与国标差异，列出新增业务（如远程调度、配置下发、心跳机制）。
+</span></span><span class="line"><span class="ln">128</span><span class="cl">    输出需求清单和优先级。
+</span></span><span class="line"><span class="ln">129</span><span class="cl">示例：
+</span></span><span class="line"><span class="ln">130</span><span class="cl">    平台要求终端支持“线路配置下发”，原系统未实现 → 我设计了 JSON 格式的线路配置，支持热更新。
+</span></span><span class="line"><span class="ln">131</span><span class="cl">
+</span></span><span class="line"><span class="ln">132</span><span class="cl"><span class="gu">### 架构设计阶段        强调分层解耦 &amp; 接口文档
+</span></span></span><span class="line"><span class="ln">133</span><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="ln">134</span><span class="cl">工作内容：
+</span></span><span class="line"><span class="ln">135</span><span class="cl">    设计整体通信架构（TCP + 多线程消息队列）。
+</span></span><span class="line"><span class="ln">136</span><span class="cl">    拆分为 连接管理层 / 协议层 / 适配层 / 业务层 四层，明确接口边界。
+</span></span><span class="line"><span class="ln">137</span><span class="cl">    制定模块接口文档。
+</span></span><span class="line"><span class="ln">138</span><span class="cl">示例：
+</span></span><span class="line"><span class="ln">139</span><span class="cl">    协议层只负责收发与解析；适配层将国标报文转为业务 API 调用；业务层保持原有逻辑。
+</span></span><span class="line"><span class="ln">140</span><span class="cl">    举例：校时请求 → 协议层解析字段 → 适配层封装 → 业务层调用调度接口。
+</span></span><span class="line"><span class="ln">141</span><span class="cl">
+</span></span><span class="line"><span class="ln">142</span><span class="cl"><span class="gu">### 任务拆解与开发阶段  强调工时预估 &amp; 核心开发
+</span></span></span><span class="line"><span class="ln">143</span><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="ln">144</span><span class="cl">工作内容：
+</span></span><span class="line"><span class="ln">145</span><span class="cl">    根据模块拆分任务，进行工时预估。
+</span></span><span class="line"><span class="ln">146</span><span class="cl">    分配任务：协议收发、状态机、配置解析、业务对接等。
+</span></span><span class="line"><span class="ln">147</span><span class="cl">    自己承担核心开发（超过 70% 代码）。
+</span></span><span class="line"><span class="ln">148</span><span class="cl">示例：
+</span></span><span class="line"><span class="ln">149</span><span class="cl">    另一同事写了 TCP 连接模块，我发现状态机不健壮，重写为 FSM（有限状态机）。
+</span></span><span class="line"><span class="ln">150</span><span class="cl">    开发中同步维护工时记录。
+</span></span><span class="line"><span class="ln">151</span><span class="cl">
+</span></span><span class="line"><span class="ln">152</span><span class="cl"><span class="gu">### 风险评估与进度控制  强调预案 &amp; 调整计划
+</span></span></span><span class="line"><span class="ln">153</span><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="ln">154</span><span class="cl">工作内容：
+</span></span><span class="line"><span class="ln">155</span><span class="cl">    分析潜在风险：网络不稳定、协议实现歧义、平台兼容性。
+</span></span><span class="line"><span class="ln">156</span><span class="cl">    提前制定预案：心跳重连、字段兼容、日志调试工具。
+</span></span><span class="line"><span class="ln">157</span><span class="cl">    每周汇报进度，调整开发优先级。
+</span></span><span class="line"><span class="ln">158</span><span class="cl">示例：
+</span></span><span class="line"><span class="ln">159</span><span class="cl">    国标字段与私有协议字段对不上 → 我提出增加 字段映射表，避免硬编码，提升兼容性。
+</span></span><span class="line"><span class="ln">160</span><span class="cl">
+</span></span><span class="line"><span class="ln">161</span><span class="cl"><span class="gu">### 测试与上线          强调端到端验证 &amp; 异常场景
+</span></span></span><span class="line"><span class="ln">162</span><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="ln">163</span><span class="cl">工作内容：
+</span></span><span class="line"><span class="ln">164</span><span class="cl">    编写单元测试（解析模块、状态机）。
+</span></span><span class="line"><span class="ln">165</span><span class="cl">    搭建模拟平台，进行端对端联调。
+</span></span><span class="line"><span class="ln">166</span><span class="cl">    协助 测试 制定测试场景：掉线重连、异常报文、批量位置上报。
+</span></span><span class="line"><span class="ln">167</span><span class="cl">示例：
+</span></span><span class="line"><span class="ln">168</span><span class="cl">    模拟 1000 条位置上报，验证消息队列不丢包。
+</span></span><span class="line"><span class="ln">169</span><span class="cl">    在掉线场景下，确认 FSM 自动进入重连状态。
+</span></span><span class="line"><span class="ln">170</span><span class="cl">
+</span></span><span class="line"><span class="ln">171</span><span class="cl"><span class="gu">### 维护与交付          强调文档 &amp; 客户支持
+</span></span></span><span class="line"><span class="ln">172</span><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="ln">173</span><span class="cl">工作内容：
+</span></span><span class="line"><span class="ln">174</span><span class="cl">    编写技术文档（协议对接说明、配置文件格式）。
+</span></span><span class="line"><span class="ln">175</span><span class="cl">    支持后续 bug 修复与客户反馈处理。
+</span></span><span class="line"><span class="ln">176</span><span class="cl">示例：
+</span></span><span class="line"><span class="ln">177</span><span class="cl">    平台反馈部分配置解析失败 → 通过日志定位到 UTF-8 编码问题 → 修复文件解析器。
+</span></span><span class="line"><span class="ln">178</span><span class="cl">
+</span></span><span class="line"><span class="ln">179</span><span class="cl"><span class="gh"># 设备状态自检模块开发
+</span></span></span><span class="line"><span class="ln">180</span><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="ln">181</span><span class="cl">没什么技术，作为部门项目，主要是推动了这个子系统的代码结构更新，对原系统的一个优化，是排查日志库的封装，解决了一个长期困扰的bug，然后重构了定时器。
+</span></span><span class="line"><span class="ln">182</span><span class="cl">
+</span></span><span class="line"><span class="ln">183</span><span class="cl">线程 最小时间间隔轮询
+</span></span><span class="line"><span class="ln">184</span><span class="cl">最小堆 / 红黑树 + 系统接口
+</span></span><span class="line"><span class="ln">185</span><span class="cl">时间轮
+</span></span><span class="line"><span class="ln">186</span><span class="cl">
+</span></span><span class="line"><span class="ln">187</span><span class="cl"><span class="gh"># 笔试 
+</span></span></span><span class="line"><span class="ln">188</span><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="ln">189</span><span class="cl"><span class="gu">## 算法题
+</span></span></span><span class="line"><span class="ln">190</span><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="ln">191</span><span class="cl">快速排序
+</span></span><span class="line"><span class="ln">192</span><span class="cl">``<span class="sb">`c++
+</span></span></span><span class="line"><span class="ln">193</span><span class="cl"><span class="sb">// 对左闭右开区间a[l, r)，单路快排，前后双指针法
+</span></span></span><span class="line"><span class="ln">194</span><span class="cl"><span class="sb">void quickSort(int *a, int l, int r){
+</span></span></span><span class="line"><span class="ln">195</span><span class="cl"><span class="sb">    if(l&gt;=r) return;
+</span></span></span><span class="line"><span class="ln">196</span><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="ln">197</span><span class="cl"><span class="sb">    int pivot = a[l];
+</span></span></span><span class="line"><span class="ln">198</span><span class="cl"><span class="sb">    int j = l;
+</span></span></span><span class="line"><span class="ln">199</span><span class="cl"><span class="sb">    for(int i=l+1; i&lt;r; i++){
+</span></span></span><span class="line"><span class="ln">200</span><span class="cl"><span class="sb">        if(a[i] &lt; pivot)
+</span></span></span><span class="line"><span class="ln">201</span><span class="cl"><span class="sb">            swap(a[++j], a[i]);
+</span></span></span><span class="line"><span class="ln">202</span><span class="cl"><span class="sb">    }
+</span></span></span><span class="line"><span class="ln">203</span><span class="cl"><span class="sb">    swap(a[l], a[j]);
+</span></span></span><span class="line"><span class="ln">204</span><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="ln">205</span><span class="cl"><span class="sb">    quickSort(a, l, j);
+</span></span></span><span class="line"><span class="ln">206</span><span class="cl"><span class="sb">    quickSort(a, j+1, r);
+</span></span></span><span class="line"><span class="ln">207</span><span class="cl"><span class="sb">}
+</span></span></span><span class="line"><span class="ln">208</span><span class="cl"><span class="sb">归并排序
+</span></span></span><span class="line"><span class="ln">209</span><span class="cl"><span class="sb">`</span>``cpp
+</span></span><span class="line"><span class="ln">210</span><span class="cl">class Solution {
+</span></span><span class="line"><span class="ln">211</span><span class="cl">public:
+</span></span><span class="line"><span class="ln">212</span><span class="cl">    int merge(vector&lt;int&gt; &amp;a, vector&lt;int&gt; &amp;t, int l, int m, int r)
+</span></span><span class="line"><span class="ln">213</span><span class="cl">    {
+</span></span><span class="line"><span class="ln">214</span><span class="cl">        for (int i = l; i &lt;= r; ++i)
+</span></span><span class="line"><span class="ln">215</span><span class="cl">            t[i] = a[i];
+</span></span><span class="line"><span class="ln">216</span><span class="cl">
+</span></span><span class="line"><span class="ln">217</span><span class="cl">        int inv = 0, i = l, j = m + 1;
+</span></span><span class="line"><span class="ln">218</span><span class="cl">        for (int k = l; k &lt;= r; ++k) {
+</span></span><span class="line"><span class="ln">219</span><span class="cl">            if (i &gt; m)
+</span></span><span class="line"><span class="ln">220</span><span class="cl">                a[k] = t[j++];
+</span></span><span class="line"><span class="ln">221</span><span class="cl">            else if (j &gt; r)
+</span></span><span class="line"><span class="ln">222</span><span class="cl">                a[k] = t[i++];
+</span></span><span class="line"><span class="ln">223</span><span class="cl">            else if (t[i] &lt;= t[j])
+</span></span><span class="line"><span class="ln">224</span><span class="cl">                a[k] = t[i++];
+</span></span><span class="line"><span class="ln">225</span><span class="cl">            else {
+</span></span><span class="line"><span class="ln">226</span><span class="cl">                a[k] = t[j++];
+</span></span><span class="line"><span class="ln">227</span><span class="cl">                inv += m - i + 1;  // 左边有序，i~m 都大于 j
+</span></span><span class="line"><span class="ln">228</span><span class="cl">            }
+</span></span><span class="line"><span class="ln">229</span><span class="cl">        }
+</span></span><span class="line"><span class="ln">230</span><span class="cl">        return inv;
+</span></span><span class="line"><span class="ln">231</span><span class="cl">    }
+</span></span><span class="line"><span class="ln">232</span><span class="cl">
+</span></span><span class="line"><span class="ln">233</span><span class="cl">    int msort(vector&lt;int&gt; &amp;a, vector&lt;int&gt; &amp;t, int l, int r)
+</span></span><span class="line"><span class="ln">234</span><span class="cl">    {
+</span></span><span class="line"><span class="ln">235</span><span class="cl">        if (l &gt;= r) return 0;
+</span></span><span class="line"><span class="ln">236</span><span class="cl">        int inv = 0, m = l + (r - l) / 2;
+</span></span><span class="line"><span class="ln">237</span><span class="cl">        inv += msort(a, t, l, m);
+</span></span><span class="line"><span class="ln">238</span><span class="cl">        inv += msort(a, t, m + 1, r);
+</span></span><span class="line"><span class="ln">239</span><span class="cl">        inv += merge(a, t, l, m, r);
+</span></span><span class="line"><span class="ln">240</span><span class="cl">        return inv;
+</span></span><span class="line"><span class="ln">241</span><span class="cl">    }
+</span></span><span class="line"><span class="ln">242</span><span class="cl">
+</span></span><span class="line"><span class="ln">243</span><span class="cl">    int reversePairs(vector&lt;int&gt; &amp;record)
+</span></span><span class="line"><span class="ln">244</span><span class="cl">    {
+</span></span><span class="line"><span class="ln">245</span><span class="cl">        vector&lt;int&gt; tmp(record.size());
+</span></span><span class="line"><span class="ln">246</span><span class="cl">        return msort(record, tmp, 0, record.size() - 1);
+</span></span><span class="line"><span class="ln">247</span><span class="cl">    }
+</span></span><span class="line"><span class="ln">248</span><span class="cl">};</span></span></code></pre></div>
+                        </div>
+                    </div>
+                </div><p>选择排序 不断选择未排序部分的最小（或最大）元素
+插入排序 将待排序元素逐个插入到已排序序列的合适位置
+冒泡排序 通过相邻元素的比较和交换</p>
+<p>红黑树</p>
+<ul>
+<li>红黑树是二叉排序树                                        左根右</li>
+<li>每个节点不是红色就是黑色                                  根叶黑
+<ul>
+<li>根节点一定是黑色</li>
+<li>叶子结点(null)一定是黑色</li>
+</ul>
+</li>
+<li>不允许存在两个相邻的红色节点                              不红红</li>
+<li>从任意节点到达任一叶子结点的路径上黑色节点的数量相同      黑路同</li>
+</ul>
+<p>节点到叶子节点的最长路径不会超过最短路径的2倍</p>
+<h2 id="场景题">场景题</h2>
+<h2 id="话术">话术</h2>
+<p>我写个最小化 demo，展示下 xxx 怎么用，实际项目中是要封装成 RAII 类来管理的</p>
+
+            </article>
+        </div>
+        
+        <div class="content" id="article-toc">
+            <nav class="toc">
+                <div class="toc-inner"><ul><li>
+                    <a href="#%e6%8b%9b%e8%81%98%e8%bd%af%e4%bb%b6" aria-label="招聘软件">招聘软件</a></li><ul><li>
+                    <a href="#%e6%89%93%e6%8b%9b%e5%91%bc" aria-label="打招呼">打招呼</a></li><li>
+                    <a href="#gap" aria-label="GAP">GAP</a></li><li>
+                    <a href="#%e7%a6%bb%e8%81%8c%e5%8e%9f%e5%9b%a0" aria-label="离职原因">离职原因</a></li><li>
+                    <a href="#%e6%b1%82%e8%81%8c%e7%8a%b6%e6%80%81" aria-label="求职状态">求职状态</a></li><li>
+                    <a href="#%e6%9c%80%e5%a4%a7%e7%9a%84%e6%94%b6%e8%8e%b7" aria-label="最大的收获">最大的收获</a></li><li>
+                    <a href="#%e6%8a%80%e6%9c%af%e9%80%80%e6%ad%a5" aria-label="技术退步">技术退步</a></li><li>
+                    <a href="#%e6%89%be%e5%b7%a5%e4%bd%9c%e7%9a%84%e8%80%83%e8%99%91%e5%9b%a0%e7%b4%a0" aria-label="找工作的考虑因素">找工作的考虑因素</a></li></ul><li>
+                    <a href="#%e9%9d%a2%e8%af%95" aria-label="面试">面试</a></li><ul><li>
+                    <a href="#%e8%87%aa%e6%88%91%e4%bb%8b%e7%bb%8d" aria-label="自我介绍">自我介绍</a></li><li>
+                    <a href="#%e5%85%ab%e8%82%a1" aria-label="八股">八股</a></li><ul><li>
+                    <a href="#%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f" aria-label="操作系统">操作系统</a></li><li>
+                    <a href="#%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c" aria-label="计算机网络">计算机网络</a></li><li>
+                    <a href="#cpp" aria-label="cpp">cpp</a></li><li>
+                    <a href="#%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f" aria-label="设计模式">设计模式</a></li><li>
+                    <a href="#%e5%b7%a5%e5%85%b7" aria-label="工具">工具</a></li><ul><li>
+                    <a href="#%e8%b0%83%e8%af%95%e5%b7%a5%e5%85%b7-gdb" aria-label="调试工具 gdb">调试工具 gdb</a></li><li>
+                    <a href="#%e8%b0%83%e8%af%95%e5%b7%a5%e5%85%b7-strace" aria-label="调试工具 strace">调试工具 strace</a></li><li>
+                    <a href="#%e7%89%88%e6%9c%ac%e6%8e%a7%e5%88%b6-git" aria-label="版本控制 Git">版本控制 Git</a></li><li>
+                    <a href="#tcpdump" aria-label="tcpdump">tcpdump</a></li></ul></ul><li>
+                    <a href="#%e9%a1%b9%e7%9b%ae" aria-label="项目">项目</a></li><li>
+                    <a href="#%e5%9c%ba%e6%99%af%e9%a2%98" aria-label="场景题">场景题</a></li><li>
+                    <a href="#%e8%af%9d%e6%9c%af" aria-label="话术">话术</a></ul></ul>
+                </div>
+            </nav>
+        </div>
+    </main>
+    <div class="splitter-indicator" id="splitterIndicator"></div>
+    <div class="drop-indicator" id="dropIndicator"></div>
+    <footer class="footer">
+        <div class="footer-left">
+            <a class="item" href="/x/about/" target="_blank" rel="noopener noreferrer me" title="Info"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></a>
+            <a class="item" href="https://music.163.com/#/user/home?id=270121274" target="_blank" rel="noopener noreferrer me" title="NeteaseCloudMusic"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.98,23.65c-2.69,0-5.26-1.05-7.24-2.95C1.59,18.63,.35,15.72,.35,12.73,.35,8.21,3.21,4.11,7.46,2.52c.15-.05,.3-.08,.45-.08,.42,0,.78,.21,.93,.55,.12,.26,.13,.51,.03,.75-.12,.28-.38,.52-.7,.64-3.48,1.3-5.82,4.66-5.82,8.36,0,2.46,1.02,4.84,2.79,6.54,1.6,1.54,3.68,2.39,5.85,2.39,.1,0,.2,0,.29,0,3.49-.12,6.22-1.91,7.47-4.89,.08-.2,2.01-4.93-2.59-7.9-.41-.27-.89-.46-1.42-.58l-.6-.14,.18,.58c.21,.68,.78,2.52,.84,2.93,.07,.46,.07,.51,.1,.92v.18c0,2.3-1.89,4.19-4.22,4.19-2.2,0-3.97-1.73-4.23-4.1-.25-2.35,.74-4.4,2.73-5.61,.53-.32,1.11-.57,1.73-.75l.33-.1-.48-1.74c-.16-.54-.53-2.38,1.5-3.72,.57-.38,1.22-.57,1.91-.57,1.38,0,2.62,.74,3.12,1.23,.22,.22,.36,.56,.36,.9,0,.26-.08,.48-.23,.63-.15,.15-.37,.23-.63,.23-.33,0-.67-.13-.89-.35-.06-.05-.85-.66-1.7-.66-.31,0-.59,.08-.82,.24-.04,.03-.08,.05-.12,.08-.23,.19-.71,.73-.47,1.82l.09,.34,.02,.07h0s.35,1.29,.35,1.29h.25c1.24,.08,2.39,.42,3.32,1.01l.05,.03c4.82,3.12,4.29,8.12,3.34,10.33-1.54,3.67-4.99,5.95-9.23,6.1-.12,0-.25,0-.37,0Zm.82-15.26c-.43,.13-.84,.31-1.2,.53-.94,.57-2.01,1.68-1.79,3.71,.12,1.12,.87,2.33,2.24,2.33,1.23,0,2.24-1,2.24-2.22h0s.03-.21-.05-.71c-.07-.46-.91-3.1-1-3.4l-.1-.33-.33,.1Z" /></svg></a>
+            <a class="item" href="https://neodb.social/users/Lordash/" target="_blank" rel="noopener noreferrer me" title="NeoDB"><svg version="1.1" xmlns="https://www.w3.org/2000/svg" width="90" height="108" viewBox="0 0 90 108" fill="currentColor"><path d="M0 0 C4.26615504 2.04066983 6.73398524 4.58553002 10 8 C10.474375 7.195625 10.94875 6.39125 11.4375 5.5625 C13 3 13 3 14 2 C20.16698656 1.54318618 20.16698656 1.54318618 22.9375 3.0625 C24.6815774 6.24287644 24.55944728 8.4568339 24 12 C21 14.4375 21 14.4375 18 16 C20.97 18.97 23.94 21.94 27 25 C25.193388 28.61322401 24.33581029 29.83748791 21.375 32.25 C20.74335937 32.77078125 20.11171875 33.2915625 19.4609375 33.828125 C18.97882813 34.21484375 18.49671875 34.6015625 18 35 C17.566875 34.0409375 17.566875 34.0409375 17.125 33.0625 C16.17176549 30.84793921 16.17176549 30.84793921 14 30 C10.5 29.75 10.5 29.75 7 30 C4.59331253 31.99114614 4.59331253 31.99114614 4.5625 35.875 C4.62092586 39.4454694 4.80377743 39.80377743 7.5 42.5 C8.325 42.995 9.15 43.49 10 44 C7.36 46.64 4.72 49.28 2 52 C-1.49353838 50.25323081 -3.13945763 49.08594785 -5.75 46.375 C-6.36359375 45.74335937 -6.9771875 45.11171875 -7.609375 44.4609375 C-8.06828125 43.97882812 -8.5271875 43.49671875 -9 43 C-9.515625 43.99 -10.03125 44.98 -10.5625 46 C-13 49 -13 49 -16.625 49.5 C-20 49 -20 49 -22 47 C-22.56321839 40.8045977 -22.56321839 40.8045977 -20.6875 38.125 C-19 37 -19 37 -16 36 C-18.97 33.03 -21.94 30.06 -25 27 C-23.03838569 23.07677137 -20.84267796 20.58307142 -17.7734375 17.578125 C-17.26575836 17.07327576 -16.75807922 16.56842651 -16.23501587 16.04827881 C-14.61966158 14.44407904 -12.99747791 12.84699144 -11.375 11.25 C-10.27558302 10.16061893 -9.17661941 9.0707801 -8.078125 7.98046875 C-5.3906398 5.31498115 -2.69700979 2.65584857 0 0 Z"transform="translate(53,1)" /><path d="M0 0 C2.31 1.98 4.62 3.96 7 6 C6.34 6.86625 5.68 7.7325 5 8.625 C2.82375259 12.29741751 2.2907405 13.83310042 3 18 C4.34115399 21.00979883 4.34115399 21.00979883 7 23 C10.97807953 23.86409105 14.00632895 23.59620263 17.5 21.5 C17.995 21.005 18.49 20.51 19 20 C21.84383123 21.2748209 24.13754018 22.45137078 26 25 C25.57914771 28.29893891 24.42094066 29.966522 22.0625 32.25 C21.53785156 32.77078125 21.01320312 33.2915625 20.47265625 33.828125 C19 35 19 35 17 35 C17 35.66 17 36.32 17 37 C17.763125 36.938125 18.52625 36.87625 19.3125 36.8125 C22 37 22 37 23.875 38.0625 C25.69848531 41.20294693 24.8658284 43.5985313 24 47 C21 49 21 49 17.9375 48.75 C15 48 15 48 13 46 C12.505 44.02 12.505 44.02 12 42 C9.03 44.97 6.06 47.94 3 51 C-0.92322863 49.03838569 -3.41692858 46.84267796 -6.421875 43.7734375 C-6.92672424 43.26575836 -7.43157349 42.75807922 -7.95172119 42.23501587 C-9.55592096 40.61966158 -11.15300856 38.99747791 -12.75 37.375 C-13.83938107 36.27558302 -14.9292199 35.17661941 -16.01953125 34.078125 C-18.68501885 31.3906398 -21.34415143 28.69700979 -24 26 C-22.4152642 22.13671373 -19.94043113 19.71123077 -16.9921875 16.796875 C-16.50670441 16.3142218 -16.02122131 15.8315686 -15.52102661 15.33428955 C-13.97700134 13.80141438 -12.42615176 12.27565996 -10.875 10.75 C-9.82375991 9.70879639 -8.77297343 8.66713459 -7.72265625 7.625 C-5.15366996 5.07800536 -2.57851839 2.53734823 0 0 Z"transform="translate(25,29)" /><path d="M0 0 C3.81684226 1.55500981 6.19195732 4.03595495 9 7 C9.45375 6.195625 9.9075 5.39125 10.375 4.5625 C12 2 12 2 14 1 C16.9375 0.6875 16.9375 0.6875 20 1 C21.9375 2.625 21.9375 2.625 23 5 C23 8 23 8 22 11 C19.4375 13.375 19.4375 13.375 17 15 C19.97 17.97 22.94 20.94 26 24 C20.375 30.875 20.375 30.875 17 32 C16.649375 31.175 16.29875 30.35 15.9375 29.5 C14.16088977 26.60879362 14.16088977 26.60879362 10.5 26.5 C7.14672303 26.77692733 7.14672303 26.77692733 5 28.0625 C3.32384137 31.31005735 4.03723329 33.57014358 5 37 C7.4158995 39.45198044 7.4158995 39.45198044 10 41 C8.76600937 42.36877116 7.51219377 43.71969166 6.25 45.0625 C5.55390625 45.81660156 4.8578125 46.57070312 4.140625 47.34765625 C2 49 2 49 0.09619141 48.81054688 C-2.43507746 47.831766 -3.76735676 46.6052517 -5.6796875 44.68359375 C-6.36160156 44.00103516 -7.04351562 43.31847656 -7.74609375 42.61523438 C-8.79990234 41.53725586 -8.79990234 41.53725586 -9.875 40.4375 C-10.91720703 39.40012695 -10.91720703 39.40012695 -11.98046875 38.34179688 C-16.44375955 33.83227613 -20.30080588 29.1545197 -24 24 C-21.69 22.02 -19.38 20.04 -17 18 C-15.948125 18.99 -15.948125 18.99 -14.875 20 C-12.15610238 22.18293783 -12.15610238 22.18293783 -9 22.5625 C-4.86392446 21.78698584 -3.45000447 20.38677089 -1 17 C-0.44852315 13.07072743 -0.40688385 10.96381375 -2.5 7.5625 C-2.995 7.046875 -3.49 6.53125 -4 6 C-2.84826645 3.53199953 -1.95216435 1.95216435 0 0 Z"transform="translate(53,58)" /></svg></a>
+            <a class="item" href="https://github.com/GH1656409967" target="_blank" rel="noopener noreferrer me" title="GitHub"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a class="item" href="/" target="_blank" rel="noopener noreferrer me" title="BuyMeACoffee"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 884 1279" fill="none" stroke="currentColor" stroke-width="2"><path d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518Z"fill="currentColor"></path><path d="M803.896 388.891L802.916 389.166L803.896 388.891Z" fill="currentColor"></path><path d="M791.484 297.377C791.359 297.361 791.237 297.332 791.118 297.29C791.111 297.371 791.111 297.453 791.118 297.534C791.252 297.516 791.379 297.462 791.484 297.377Z"fill="currentColor"></path><path d="M791.113 297.529H791.244V297.447L791.113 297.529Z" fill="currentColor"></path><path d="M803.111 388.726L804.591 387.883L805.142 387.573L805.641 387.04C804.702 387.444 803.846 388.016 803.111 388.726Z"fill="currentColor"></path><path d="M793.669 299.515L792.223 298.138L791.243 297.605C791.77 298.535 792.641 299.221 793.669 299.515Z"fill="currentColor"></path><path d="M430.019 1186.18C428.864 1186.68 427.852 1187.46 427.076 1188.45L427.988 1187.87C428.608 1187.3 429.485 1186.63 430.019 1186.18Z"fill="currentColor"></path><path d="M641.187 1144.63C641.187 1143.33 640.551 1143.57 640.705 1148.21C640.705 1147.84 640.86 1147.46 640.929 1147.1C641.015 1146.27 641.084 1145.46 641.187 1144.63Z"fill="currentColor"></path><path d="M619.284 1186.18C618.129 1186.68 617.118 1187.46 616.342 1188.45L617.254 1187.87C617.873 1187.3 618.751 1186.63 619.284 1186.18Z"fill="currentColor"></path><path d="M281.304 1196.06C280.427 1195.3 279.354 1194.8 278.207 1194.61C279.136 1195.06 280.065 1195.51 280.684 1195.85L281.304 1196.06Z"fill="currentColor"></path><path d="M247.841 1164.01C247.704 1162.66 247.288 1161.35 246.619 1160.16C247.093 1161.39 247.489 1162.66 247.806 1163.94L247.841 1164.01Z"fill="currentColor"></path><path d="M472.623 590.836C426.682 610.503 374.546 632.802 306.976 632.802C278.71 632.746 250.58 628.868 223.353 621.274L270.086 1101.08C271.74 1121.13 280.876 1139.83 295.679 1153.46C310.482 1167.09 329.87 1174.65 349.992 1174.65C349.992 1174.65 416.254 1178.09 438.365 1178.09C462.161 1178.09 533.516 1174.65 533.516 1174.65C553.636 1174.65 573.019 1167.08 587.819 1153.45C602.619 1139.82 611.752 1121.13 613.406 1101.08L663.459 570.876C641.091 563.237 618.516 558.161 593.068 558.161C549.054 558.144 513.591 573.303 472.623 590.836Z"fill="currentColor"></path><path d="M78.6885 386.132L79.4799 386.872L79.9962 387.182C79.5987 386.787 79.1603 386.435 78.6885 386.132Z"fill="currentColor"></path><path d="M879.567 341.849L872.53 306.352C866.215 274.503 851.882 244.409 819.19 232.898C808.711 229.215 796.821 227.633 788.786 220.01C780.751 212.388 778.376 200.55 776.518 189.572C773.076 169.423 769.842 149.257 766.314 129.143C763.269 111.85 760.86 92.4243 752.928 76.56C742.604 55.2584 721.182 42.8009 699.88 34.559C688.965 30.4844 677.826 27.0375 666.517 24.2352C613.297 10.1947 557.342 5.03277 502.591 2.09047C436.875 -1.53577 370.983 -0.443234 305.422 5.35968C256.625 9.79894 205.229 15.1674 158.858 32.0469C141.91 38.224 124.445 45.6399 111.558 58.7341C95.7448 74.8221 90.5829 99.7026 102.128 119.765C110.336 134.012 124.239 144.078 138.985 150.737C158.192 159.317 178.251 165.846 198.829 170.215C256.126 182.879 315.471 187.851 374.007 189.968C438.887 192.586 503.87 190.464 568.44 183.618C584.408 181.863 600.347 179.758 616.257 177.304C634.995 174.43 647.022 149.928 641.499 132.859C634.891 112.453 617.134 104.538 597.055 107.618C594.095 108.082 591.153 108.512 588.193 108.942L586.06 109.252C579.257 110.113 572.455 110.915 565.653 111.661C551.601 113.175 537.515 114.414 523.394 115.378C491.768 117.58 460.057 118.595 428.363 118.647C397.219 118.647 366.058 117.769 334.983 115.722C320.805 114.793 306.661 113.611 292.552 112.177C286.134 111.506 279.733 110.801 273.333 110.009L267.241 109.235L265.917 109.046L259.602 108.134C246.697 106.189 233.792 103.953 221.025 101.251C219.737 100.965 218.584 100.249 217.758 99.2193C216.932 98.1901 216.482 96.9099 216.482 95.5903C216.482 94.2706 216.932 92.9904 217.758 91.9612C218.584 90.9319 219.737 90.2152 221.025 89.9293H221.266C232.33 87.5721 243.479 85.5589 254.663 83.8038C258.392 83.2188 262.131 82.6453 265.882 82.0832H265.985C272.988 81.6186 280.026 80.3625 286.994 79.5366C347.624 73.2301 408.614 71.0801 469.538 73.1014C499.115 73.9618 528.676 75.6996 558.116 78.6935C564.448 79.3474 570.746 80.0357 577.043 80.8099C579.452 81.1025 581.878 81.4465 584.305 81.7391L589.191 82.4445C603.438 84.5667 617.61 87.1419 631.708 90.1703C652.597 94.7128 679.422 96.1925 688.713 119.077C691.673 126.338 693.015 134.408 694.649 142.03L696.732 151.752C696.786 151.926 696.826 152.105 696.852 152.285C701.773 175.227 706.7 198.169 711.632 221.111C711.994 222.806 712.002 224.557 711.657 226.255C711.312 227.954 710.621 229.562 709.626 230.982C708.632 232.401 707.355 233.6 705.877 234.504C704.398 235.408 702.75 235.997 701.033 236.236H700.895L697.884 236.649L694.908 237.044C685.478 238.272 676.038 239.419 666.586 240.486C647.968 242.608 629.322 244.443 610.648 245.992C573.539 249.077 536.356 251.102 499.098 252.066C480.114 252.57 461.135 252.806 442.162 252.771C366.643 252.712 291.189 248.322 216.173 239.625C208.051 238.662 199.93 237.629 191.808 236.58C198.106 237.389 187.231 235.96 185.029 235.651C179.867 234.928 174.705 234.177 169.543 233.397C152.216 230.798 134.993 227.598 117.7 224.793C96.7944 221.352 76.8005 223.073 57.8906 233.397C42.3685 241.891 29.8055 254.916 21.8776 270.735C13.7217 287.597 11.2956 305.956 7.64786 324.075C4.00009 342.193 -1.67805 361.688 0.472751 380.288C5.10128 420.431 33.165 453.054 73.5313 460.35C111.506 467.232 149.687 472.807 187.971 477.556C338.361 495.975 490.294 498.178 641.155 484.129C653.44 482.982 665.708 481.732 677.959 480.378C681.786 479.958 685.658 480.398 689.292 481.668C692.926 482.938 696.23 485.005 698.962 487.717C701.694 490.429 703.784 493.718 705.08 497.342C706.377 500.967 706.846 504.836 706.453 508.665L702.633 545.797C694.936 620.828 687.239 695.854 679.542 770.874C671.513 849.657 663.431 928.434 655.298 1007.2C653.004 1029.39 650.71 1051.57 648.416 1073.74C646.213 1095.58 645.904 1118.1 641.757 1139.68C635.218 1173.61 612.248 1194.45 578.73 1202.07C548.022 1209.06 516.652 1212.73 485.161 1213.01C450.249 1213.2 415.355 1211.65 380.443 1211.84C343.173 1212.05 297.525 1208.61 268.756 1180.87C243.479 1156.51 239.986 1118.36 236.545 1085.37C231.957 1041.7 227.409 998.039 222.9 954.381L197.607 711.615L181.244 554.538C180.968 551.94 180.693 549.376 180.435 546.76C178.473 528.023 165.207 509.681 144.301 510.627C126.407 511.418 106.069 526.629 108.168 546.76L120.298 663.214L145.385 904.104C152.532 972.528 159.661 1040.96 166.773 1109.41C168.15 1122.52 169.44 1135.67 170.885 1148.78C178.749 1220.43 233.465 1259.04 301.224 1269.91C340.799 1276.28 381.337 1277.59 421.497 1278.24C472.979 1279.07 524.977 1281.05 575.615 1271.72C650.653 1257.95 706.952 1207.85 714.987 1130.13C717.282 1107.69 719.576 1085.25 721.87 1062.8C729.498 988.559 737.115 914.313 744.72 840.061L769.601 597.451L781.009 486.263C781.577 480.749 783.905 475.565 787.649 471.478C791.392 467.391 796.352 464.617 801.794 463.567C823.25 459.386 843.761 452.245 859.023 435.916C883.318 409.918 888.153 376.021 879.567 341.849ZM72.4301 365.835C72.757 365.68 72.1548 368.484 71.8967 369.792C71.8451 367.813 71.9483 366.058 72.4301 365.835ZM74.5121 381.94C74.6842 381.819 75.2003 382.508 75.7337 383.334C74.925 382.576 74.4089 382.009 74.4949 381.94H74.5121ZM76.5597 384.641C77.2996 385.897 77.6953 386.689 76.5597 384.641V384.641ZM80.672 387.979H80.7752C80.7752 388.1 80.9645 388.22 81.0333 388.341C80.9192 388.208 80.7925 388.087 80.6548 387.979H80.672ZM800.796 382.989C793.088 390.319 781.473 393.726 769.996 395.43C641.292 414.529 510.713 424.199 380.597 419.932C287.476 416.749 195.336 406.407 103.144 393.382C94.1102 392.109 84.3197 390.457 78.1082 383.798C66.4078 371.237 72.1548 345.944 75.2003 330.768C77.9878 316.865 83.3218 298.334 99.8572 296.355C125.667 293.327 155.64 304.218 181.175 308.09C211.917 312.781 242.774 316.538 273.745 319.36C405.925 331.405 540.325 329.529 671.92 311.91C695.906 308.686 719.805 304.941 743.619 300.674C764.835 296.871 788.356 289.731 801.175 311.703C809.967 326.673 811.137 346.701 809.778 363.615C809.359 370.984 806.139 377.915 800.779 382.989H800.796Z"fill="currentColor"></path></svg></a>
+        </div>
+
+        <div class="footer-middle">
+            <a href="/tags/%E9%9D%A2%E8%AF%95/" class="item">#面试</a>
+        </div>
+
+        <div class="footer-right">
+            <span class="item">8232(words)</span>
+            <a class="item" accesskey="g" href="#top" id="top-link" title="Go to Top (Alt + G)">⬆</a>
+        </div>
+    </footer>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                packages: { "[+]": ["ams"] }, 
+                tags: "ams", 
+            },
+            options: {
+                enableSpeech: false,        
+                enableExplorer: false,      
+                enableMenu: false,          
+                ignoreHtmlClass: "tex2jax_ignore",
+                processHtmlClass: "tex2jax_process"
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/mathjax/4.0.0/tex-chtml.min.js"></script>
+    <script type="text/javascript" defer async src="https://s4.zstatic.net/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+    <script type="text/javascript" src="/js/particle-clock.js"></script>
+    <script type="text/javascript" src="/js/index.min.62af824fc9f8f20406aebaf20c60d6fbd42ffe3d23aae53d90dddd32415f13d9.js" integrity="sha256-Yq&#43;CT8n48gQGrrryDGDW&#43;9Qv/j0jquU9kN3dMkFfE9k="></script>
+</body>
+
+</html>

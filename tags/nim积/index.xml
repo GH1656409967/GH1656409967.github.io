@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nim积 on 似水</title>
+    <link>http://localhost:1313/tags/nim%E7%A7%AF/</link>
+    <description>Recent content in Nim积 on 似水</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 15 Jul 2020 11:58:12 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nim%E7%A7%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>POJ-3533 Light Switching Game</title>
+      <link>http://localhost:1313/z/solution/3f8607271fa47184/</link>
+      <pubDate>Wed, 15 Jul 2020 11:58:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/3f8607271fa47184/</guid>
+      <description>&lt;h1 id=&#34;light-switching-gamepoj-3533&#34;&gt;Light Switching Game(&lt;a href=&#34;https://vjudge.net/problem/POJ-3533&#34;&gt;POJ-3533&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The Light Switching Game is played  on a 1000 × 1000 × 1000 cube of cells with a light in each cell, as  Figure.1 shows. Initially, most of the lights are off while exactly &lt;em&gt;N&lt;/em&gt; lights are on. Two players take moves alternately. A move consists of switching the lights at the corners of a cuboid, i.e. (&lt;em&gt;x&lt;/em&gt;1,&lt;em&gt;y&lt;/em&gt;1,&lt;em&gt;z&lt;/em&gt;1), (&lt;em&gt;x&lt;/em&gt;1,&lt;em&gt;y&lt;/em&gt;1,&lt;em&gt;z&lt;/em&gt;2), (&lt;em&gt;x&lt;/em&gt;1,&lt;em&gt;y&lt;/em&gt;2,&lt;em&gt;z&lt;/em&gt;1), (&lt;em&gt;x&lt;/em&gt;1,&lt;em&gt;y&lt;/em&gt;2,&lt;em&gt;z&lt;/em&gt;2), (&lt;em&gt;x&lt;/em&gt;2,&lt;em&gt;y&lt;/em&gt;1,&lt;em&gt;z&lt;/em&gt;1), (&lt;em&gt;x&lt;/em&gt;2,&lt;em&gt;y&lt;/em&gt;1,&lt;em&gt;z&lt;/em&gt;2), (&lt;em&gt;x&lt;/em&gt;2,&lt;em&gt;y&lt;/em&gt;2,&lt;em&gt;z&lt;/em&gt;1), (&lt;em&gt;x&lt;/em&gt;2,&lt;em&gt;y&lt;/em&gt;2,&lt;em&gt;z&lt;/em&gt;2) where 1 ≤ &lt;em&gt;x&lt;/em&gt;1 ≤ &lt;em&gt;x&lt;/em&gt;2 ≤ 1000, 1 ≤&lt;em&gt;y&lt;/em&gt;1 ≤ &lt;em&gt;y&lt;/em&gt;2 ≤ 1000, 1 ≤&lt;em&gt;z&lt;/em&gt;1 ≤ &lt;em&gt;z&lt;/em&gt;2 ≤ 1000 and the light at the corner (&lt;em&gt;x&lt;/em&gt;2,&lt;em&gt;y&lt;/em&gt;2,&lt;em&gt;z&lt;/em&gt;2) must be on (and turned off after the move). Notice the cuboid is  possibly degenerated to a rectangle, a line or even a single cell so  that the player may also switching four, two or one besides eight lights in a move. The player loses the game when he can not take a move.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU-3404 Switch lights</title>
+      <link>http://localhost:1313/z/solution/30b31979099adc88/</link>
+      <pubDate>Wed, 15 Jul 2020 11:38:12 +0000</pubDate>
+      <guid>http://localhost:1313/z/solution/30b31979099adc88/</guid>
+      <description>&lt;h1 id=&#34;switch-lightshdu-3404&#34;&gt;Switch lights(&lt;a href=&#34;https://vjudge.net/problem/HDU-3404&#34;&gt;HDU-3404&lt;/a&gt;)&lt;/h1&gt;&#xA;&lt;h2 id=&#34;题面&#34;&gt;题面&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;lxhgww is playing a game with his computer Deep Blue.&#xA;The game is played on a matrix containing lights. At first, some  lights are on, while others are off. lxhgww and Deep Blue take turns to  switch the lights. For each step, the player should choose a rectangle  in the matrix: (x1 , y1) , (x1 , y2) , (x2 , y1) , (x2 , y2) ,  (x1&amp;lt;=x2,y1&amp;lt;=y2, the light at (x2, y2) should be on) and change the lights’ status on the four vertex of the rectangle, namely on to off,  and off to on. The player turns all the lights off wins the game. Notice the rectangle is possibly degenerated to line or even a single cell so  that the player may also switch two or one besides four lights in a  move.&#xA;Deep Blue&amp;rsquo;s strategy is perfect, if it has a chance to win, never  will it lose. Does lxhgww have a chance to win if he takes the first  step?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

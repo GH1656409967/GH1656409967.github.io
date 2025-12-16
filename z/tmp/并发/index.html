@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" data-theme="light">
+<head>
+    <script>
+        (function () {
+            const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = localStorage.getItem('n8rain-theme') || (prefers ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | 似水</title>
+    <link rel="stylesheet" href="/css/index.min.dec23d3721889f6543816a1c07a479a53dbcf86a9b0d6a9f6e8a31b397487b97.css" integrity="sha256-3sI9NyGIn2VDgWocB6R5pT28&#43;GqbDWqfbooxs5dIe5c=" />
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" id="chroma-light" href="/css/chroma-light.css">
+    <link rel="stylesheet" id="chroma-dark"  href="/css/chroma-dark.css">
+    <script>
+        (function () {
+            const isDark = document.documentElement.dataset.theme === 'dark';
+            document.getElementById('chroma-light').disabled = isDark;
+            document.getElementById('chroma-dark').disabled = !isDark;
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a class="item" href="/" target="_blank">「似水」</a>
+        </div>
+
+        <div class="header-middle">
+            
+        </div>
+
+        <div class="header-right">
+            <a id="reset-layout" class="item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 80V240h96V80H48zM0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V240c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80zM304 272V432h96V272H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V272zM144 368H48v64h96V368zM48 320h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48zM304 80v64h96V80H304zm-48 0c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V80z"></path></svg></a>
+            <a id="toggle-theme" class="item">◐</a>
+        </div>
+    </header>
+    <main class="container" id="container">
+        <div class="content" id="nav">
+            <nav class="menu">
+                <ul>
+                    <li><i class='fa fa-tags'>&nbsp;</i><a>网站导航</a></li>
+                    <li><i class='fa fa-thumbs-up'>&nbsp;</i><a href="/x/share/">好物分享</a></li>
+                    <li><i class='fa fa-wrench'>&nbsp;</i><a href="/x/tools/">游戏工具</a></li>
+                    <li><i class='fa fa-film'>&nbsp;</i><a href="/x/movies/">影视鉴赏</a></li>
+                    <li><i class='fa fa-book'>&nbsp;</i><a href="/x/books/">书籍阅读</a></li>
+                    <li><i class='fa fa-camera'>&nbsp;</i><a href="/x/gallery/">生活留影</a></li>
+                    <li><i class='fa fa-link'>&nbsp;</i><a href="/x/links/">友情链接</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="overview" id="overview" style="display: none;">
+            <div class="overview-container">
+                <div class="author-block">
+                    <img class="author-avatar" src="/img/avatar.png" alt="夜雨微澜" />
+                    
+                    <a class="author-name" href="/x/personal">夜雨微澜</a><p class="author-slogan">学而不思则罔，思而不学则殆</p>
+                </div>
+
+                <div class="site-state">
+                    <div class="item">
+                        <a href="/archives/">
+                            <span class="count">660</span>
+                            <span class="name">日志</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/series/">
+                            <span class="count">8</span>
+                            <span class="name">系列</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/categories/">
+                            <span class="count">93</span>
+                            <span class="name">分类</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/tags/">
+                            <span class="count">171</span>
+                            <span class="name">标签</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="diy-block">
+                    <canvas id="canvasDiyBlock" style="width:180px;">您的浏览器不支持 Canvas, 请更换浏览器!</canvas>
+                </div>
+
+                <div class="diy-block">
+                    <div id="typed-strings" style="display: none;">
+                        <p>We burn faster than light</p>
+                        <p>Shine across in the night sky</p>
+                    </div>
+                    <span id="typed" style="white-space: pre;line-height: 14px;font-size: 12px;"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="article-content">
+            <article class="main" id="top">
+                <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time>
+                <html>
+<head>
+<meta charset="utf-8"/>
+<link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<style>
+            body {
+                font-family: 'Ubuntu Mono', 'LXGW WenKai Screen', sans-serif;
+            }
+
+            strong {
+                color: rgb(48, 79, 254);
+            }
+
+            .code1 {
+                background: none 0% 0% / auto no-repeat scroll padding-box border-box rgba(27, 31, 35, 0.05);
+                padding: 2px 4px;
+                border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                font-family: Consolas;
+                word-break: break-all;
+                color: rgb(100, 149, 237);
+            }
+
+            .code2 {
+                background-color: rgba(27, 31, 35, 0.05);
+                margin: 0px 2px;
+                padding: 2px 4px;
+                border-color: rgb(0, 0, 0) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                overflow-wrap: break-word;
+                font-family: Consolas;
+                word-break: break-all;
+                color: rgb(100, 149, 237);
+                background-position: left top;
+            }
+
+            .pre1 {
+                border-radius: 5px;
+                box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;
+            }
+
+            .q1 {
+                color: rgb(65, 105, 225);
+            }
+
+            .img1 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bq1 {
+                border-top: 3px none rgba(0, 0, 0, 0.4);
+                border-bottom: 3px none rgba(0, 0, 0, 0.4);
+                border-right: 3px none rgba(0, 0, 0, 0.4);
+                background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(227, 242, 253);
+                overflow: auto;
+                padding: 15px 20px;
+                border-left-color: rgb(100, 149, 237);
+            }
+
+        </style>
+</head>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>7. 什么叫服务的并行？</span></span></h3>
+<p style="text-align: left;"><span>服务的并行指的是多个服务或任务能够同时运行、互不阻塞地处理请求，服务并行的优势主要有：</span></p>
+<ol class="list-paddingleft-1" style="list-style-type: decimal;">
+<li>
+<strong><span>应对高并发</span></strong><span>：例如电商秒杀、社交平台热点事件时，用户请求激增，单一服务实例无法处理。</span>
+</li>
+<li>
+<strong><span>提升吞吐量</span></strong><span>：通过并行处理，单位时间完成更多任务（如批量数据处理、视频转码）。</span>
+</li>
+<li>
+<strong><span>增强容错性</span></strong><span>：避免单点故障，部分实例宕机不影响整体服务。</span>
+</li>
+<li>
+<strong><span>资源利用最大化</span></strong><span>：利用多核CPU、多节点集群的计算能力。</span>
+</li>
+</ol>
+<p style="text-align: left;"><span>实现服务并行的常见的方式有：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>单机并行：在同一台服务器上启动多个线程或进程，比如Web服务器（如Nginx）用多进程处理HTTP请求</span>
+</li>
+<li>
+<span>分布式并行：在多台机器上部署多个服务实例，比如云计算平台通过弹性伸缩组自动增减实例。</span>
+</li>
+<li>
+<span>任务拆分：将大任务拆分为子任务，分配给不同服务并行处理，比如MapReduce中将数据分片，多个节点并行计算后汇总结果。</span>
+</li>
+<li>
+<span>异步通信：通过Kafka、RabbitMQ等传递任务，多个消费者并行处理，比如订单系统生成消息，库存服务和支付服务并行消费并处理。</span>
+</li>
+</ul>
+<h3><span class="q1">在并发编程时，在需要加锁时，不加锁会有什么问题？</span></h3>
+<p>读者答：两个线程使用同一个全局变量会有不一致的问题，比如a线程把全局变量加1，b线程读的时候，如果还是从缓存中读的，那么会没有发现这个更新，就会产生不一致的问题。</p>
+<h3><span class="q1">多线程锁是什么</span></h3>
+<p>多线程锁是一种用来保护共享资源的机制。在多线程编程中，如果多个线程同时访问同一个共享资源，可能会发生竞态条件（Race Condition），导致程序的行为出现未定义的情况。为了避免这种情况的发生，可以使用多线程锁来保护共享资源。</p>
+<p>多线程锁的基本思想是，在访问共享资源之前先获取锁，访问完成之后再释放锁。这样可以保证同一时刻只有一个线程可以访问共享资源，从而避免竞态条件的发生。</p>
+<p>常见的多线程锁包括互斥锁、读写锁、条件变量等。其中，互斥锁用于保护共享资源的访问，读写锁用于在读多写少的情况下提高并发性能，条件变量用于线程之间的同步和通信。</p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>10. 多线程有使用过吗？</span></span></h3>
+<p style="text-align: left;"><span>用过，使用多线程的时候要保证多线程的允许是安全，不要出现数据竞争造成的数据混乱的问题。</span></p>
+<p style="text-align: left;"><span>Java的线程安全在三个方面体现：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>原子性</span></strong><span>：提供互斥访问，同一时刻只能有一个线程对数据进行操作，在Java中使用了atomic和synchronized这关键字来确保原子性；</span>
+</li>
+<li>
+<strong><span>可见性</span></strong><span>：一个线程对主内存的修改可以及时地被其他线程看到，在Java中使用了synchronized和volatile这两个关键字确保可见性；</span>
+</li>
+<li>
+<strong><span>有序性</span></strong><span>：一个线程观察其他线程中的指令执行顺序，由于指令重排序，该观察结果一般杂乱无序，在Java中使用了happens-before原则来确保有序性。</span>
+</li>
+</ul>
+<h3><span class="q1">怎么理解并发问题？</span></h3>
+<p>并发是指在同一时间段内，多个任务交替执行。在单处理器系统中，实际上这些任务是通过快速切换轮流使用处理器资源，看起来像是同时执行。而在多处理器系统中，多个任务可以真正地同时在不同的处理器核心上执行。</p>
+<p>当多个线程同时访问和修改共享资源时，由于线程执行的顺序是不确定的，可能会导致最终的结果依赖于线程执行的顺序，这种情况就称为竞争条件。例如，在一个简单的计数器程序中，如果多个线程同时对计数器进行自增操作，由于线程切换的不确定性，可能会出现某些自增操作丢失的情况，导致最终的计数值与预期不符。</p>
+<p>要保证多线程的允许是安全，不要出现数据竞争造成的数据混乱的问题。</p>
+<p>Java的线程安全在三个方面体现：</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>原子性</strong>：提供互斥访问，同一时刻只能有一个线程对数据进行操作，在Java中使用了atomic和synchronized关键字来确保原子性；
+        </li>
+<li>
+<strong>可见性</strong>：一个线程对主内存的修改可以及时地被其他线程看到，在Java中使用了synchronized和volatile这两个关键字确保可见性；
+        </li>
+<li>
+<strong>有序性</strong>：一个线程观察其他线程中的指令执行顺序，由于指令重排序，该观察结果一般杂乱无序，在Java中使用了happens-before原则来确保有序性。
+        </li>
+</ul>
+<h3><span class="q1">悲观锁和乐观锁的区别是什么？</span></h3>
+<ul class="list-paddingleft-1">
+<li>
+            乐观锁：就像它的名字一样，对于并发间操作产生的线程安全问题持乐观状态，乐观锁认为竞争不总 是会发生，因此它不需要持有锁，将比较-替换这两个动作作为一个原子操作尝试去修改内存中的变量，如果失败则表示发生冲突，那么就应该有相应的重试逻辑。
+        </li>
+<li>
+            悲观锁：还是像它的名字一样，对于并发间操作产生的线程安全问题持悲观状态，悲观锁认为竞争总 是会发生，因此每次对某资源进行操作时，都会持有一个独占的锁，就像 synchronized，不管三七二十一，直接上了锁就操作资源了。
+        </li>
+</ul>
+<h3><span class="q1">乐观锁是怎样实现的？</span></h3>
+<p>乐观锁假设多个事务之间很少发生冲突，因此在读取数据时不会加锁，而是在更新数据时检查数据的版本（如使用版本号或时间戳），如果版本匹配则执行更新操作，否则认为发生了冲突。</p>
+<p>乐观锁适用于读多写少的场景，可以减少锁的竞争，提高并发性能。例如，数据库中的乐观锁机制可以用于处理并发更新同一行数据的情况。</p>
+<p>乐观锁实现方式可以通过 CAS 来实现。</p>
+<p>CAS叫做CompareAndSwap，比较并交换，主要是通过处理器的指令来保证操作的原子性，它包含三个操作数：</p>
+<ol class="list-paddingleft-1">
+<li>
+            变量内存地址，V表示
+        </li>
+<li>
+            旧的预期值，A表示
+        </li>
+<li>
+            准备设置的新值，B表示
+        </li>
+</ol>
+<p>当执行CAS指令时，只有当V等于A时，才会用B去更新V的值，否则就不会执行更新操作。</p>
+<h3><span class="q1">乐观锁和悲观锁有什么区别？</span></h3>
+<p>乐观锁：</p>
+<ul class="list-paddingleft-1">
+<li>
+            基本思想：乐观锁假设多个事务之间很少发生冲突，因此在读取数据时不会加锁，而是在更新数据时检查数据的版本（如使用版本号或时间戳），如果版本匹配则执行更新操作，否则认为发生了冲突。
+        </li>
+<li>
+            使用场景：乐观锁适用于读多写少的场景，可以减少锁的竞争，提高并发性能。例如，数据库中的乐观锁机制可以用于处理并发更新同一行数据的情况。
+        </li>
+</ul>
+<p>悲观锁：</p>
+<ul class="list-paddingleft-1">
+<li>
+            基本思想：悲观锁假设多个事务之间会频繁发生冲突，因此在读取数据时会加锁，防止其他事务对数据进行修改，直到当前事务完成操作后才释放锁。
+        </li>
+<li>
+            使用场景：悲观锁适用于写多的场景，通过加锁保证数据的一致性。例如，数据库中的行级锁机制可以用于处理并发更新同一行数据的情况。
+        </li>
+</ul>
+<p>乐观锁适用于读多写少的场景，通过版本控制来处理冲突；而悲观锁适用于写多的场景，通过加锁来避免冲突。</p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>1. 乐观锁悲观锁区别是什么？</span></span></h3>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>乐观锁： 就像它的名字一样，对于并发间操作产生的线程安全问题持乐观状态，乐观锁认为竞争不总 是会发生，因此它不需要持有锁，将比较-替换这两个动作作为一个原子操作尝试去修改内存中的变量，如果失败则表示发生冲突，那么就应该有相应的重试逻辑。</span>
+</li>
+<li>
+<span>悲观锁： 还是像它的名字一样，对于并发间操作产生的线程安全问题持悲观状态，悲观锁认为竞争总 是会发生，因此每次对某资源进行操作时，都会持有一个独占的锁，就像 synchronized，不管三七二十一，直接上了锁就操作资源了。</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>2. 乐观锁运用场景说一下？</span></span></h3>
+<p style="text-align: left;"><span>乐观锁比较适合并发冲突少的场景，比如电商里的商品库存更新，平时用户下单改库存的时候，同一时间抢同一商品的情况不算太多，这时候用乐观锁就很合适。</span></p>
+<p style="text-align: left;"><span>给库存表加个版本号，每次更新前查一下版本，更新时带着版本号去改，版本对得上就成功，不用一直把数据锁着，不影响其他操作。</span></p>
+<p style="text-align: left;"><span>还有用户信息修改的场景，一般同一时间改同一个用户资料的人很少，用乐观锁比悲观锁灵活，用户改资料时不用等别人操作完，就算偶尔冲突了，重试一下就行，对用户体验影响不大。</span></p>
+<p style="text-align: left;"><span>另外像订单状态更新也常用，订单从待支付到已支付，大多时候状态变更不冲突，用乐观锁加个状态版本，能避免多个人同时操作同一订单导致的状态混乱，还能减少锁竞争，让系统处理效率更高。</span></p>
+<p style="text-align: left;"><span>总的来说，就是并发不高、冲突少，或者冲突了重试成本低的场景，用乐观锁既高效又能保证数据一致。</span></p>
+<h3><span class="q1">乐观锁如何实现，有哪些缺点？</span></h3>
+<p>观锁通过在更新数据时先检查数据版本号（或时间戳等），若版本号匹配则更新数据，否则拒绝更新，实现并发控制。实现方式包括：</p>
+<ol class="list-paddingleft-1">
+<li>
+            添加版本字段：在数据表中增加一个版本字段，每次更新数据时增加版本号。
+        </li>
+<li>
+            检查版本号：在更新数据时，先查询当前版本号，然后在更新时检查版本号是否匹配。
+        </li>
+</ol>
+<p>乐观锁的缺点是在高并发场景下，冲突较多，可能导致大量的重试操作。所以，在数据竞争非常激烈的环境中，乐观锁可能不太适用。</p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>乐观锁是什么？</span></span></h3>
+<p style="text-align: left;"><span>乐观锁 就像它的名字一样，对于并发间操作产生的线程安全问题持乐观状态，乐观锁认为竞争不总是会发生，因此它不需要持有锁，将比较-替换这两个动作作为一个原子操作尝试去修改内存中的变量，如果失败则表示发生冲突，那么就应该有相应的重试逻辑。</span></p>
+<p style="text-align: left;"><span>实现乐观锁的方式：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>CAS（Compare and Swap）操作：</span></strong><span> CAS 是乐观锁的基础。Java 提供了 java.util.concurrent.atomic 包，包含各种原子变量类（如 AtomicInteger、AtomicLong），这些类使用 CAS 操作实现了线程安全的原子操作，可以用来实现乐观锁。</span>
+</li>
+<li>
+<strong><span>版本号控制</span></strong><span>：增加一个版本号字段记录数据更新时候的版本，每次更新时递增版本号。在更新数据时，同时比较版本号，若当前版本号和更新前获取的版本号一致，则更新成功，否则失败。</span>
+</li>
+<li>
+<strong><span>时间戳</span></strong><span>：使用时间戳记录数据的更新时间，在更新数据时，在比较时间戳。如果当前时间戳小于数据的时间戳，则说明数据已经被其他线程更新，更新失败。</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>11. 乐观锁、悲观锁定义与适用场景是什么？</span></span></h3>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>乐观锁</span></p>
+</blockquote>
+<p style="text-align: left;"><span>乐观锁假定在大多数情况下，数据在操作期间不会被其他事务修改，所以在操作数据时不会对数据加锁。只有在更新数据时，才会去检查数据在自己操作期间是否被其他事务修改过，如果没有被修改，就执行更新操作；如果被修改了，则根据不同的实现方式进行相应处理，比如重试或者抛出异常。</span></p>
+<p style="text-align: left;"><span>实现乐观锁的方式：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>版本号机制</span></strong><span>：在表中增加一个版本号字段，每次更新数据时，版本号加 1。在更新数据前，先读取数据的版本号，在更新时将版本号作为条件进行判断，如果版本号与之前读取的一致，就更新数据并将版本号加 1；如果不一致，说明数据已被其他事务修改，更新失败。</span>
+</li>
+<li>
+<strong><span>时间戳机制</span></strong><span>：与版本号机制类似，只是使用时间戳来记录数据的修改时间。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>乐观锁适合的场景：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>读多写少</span></strong><span>：在这种场景下，数据被其他事务修改的概率较低，使用乐观锁可以减少加锁和解锁的开销，提高系统的并发性能。例如，商品信息的展示页面，大部分操作是读取商品信息，只有很少的操作是修改商品信息，就可以使用乐观锁。</span>
+</li>
+<li>
+<strong><span>冲突较少</span></strong><span>：当多个事务同时修改同一数据的情况很少发生时，乐观锁可以避免悲观锁带来的性能问题。比如，用户个人信息的修改，不同用户修改自己信息的冲突概率较低，适合使用乐观锁。</span>
+</li>
+</ul>
+<blockquote style="border-top-style: none;border-bottom-style: none;border-left-style: solid;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-top-color: rgba(0, 0, 0, 0.4);border-bottom-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;background-position-x: 0%;background-position-y: 0%;overflow-x: auto;overflow-y: auto;background-color: rgb(227, 242, 253);border-left-color: rgb(100, 149, 237);">
+<p><span>悲观锁</span></p>
+</blockquote>
+<p style="text-align: left;"><span>悲观锁认为数据在操作期间很可能会被其他事务修改，所以在操作数据前就对数据加锁，防止其他事务对数据进行修改。只有当持有锁的事务操作完成并释放锁后，其他事务才能对数据进行操作。</span></p>
+<p style="text-align: left;"><span>悲观锁的实现方式：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>数据库层面</span></strong><span>：在数据库中，可以使用</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>SELECT ... FOR UPDATE</span></code><span>语句对查询的数据加排他锁，这样在事务提交之前，其他事务无法对这些数据进行修改。</span>
+</li>
+<li>
+<strong><span>编程语言层面</span></strong><span>：在 Java 中，可以使用</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>synchronized</span></code><span>关键字或者</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>ReentrantLock</span></code><span>类来实现悲观锁。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>悲观锁适用的场景：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>写多读少</span></strong><span>：在这种场景下，数据被多个事务同时修改的概率较高，使用悲观锁可以保证数据的一致性，避免数据冲突。例如，银行账户的资金操作，涉及到大量的资金转入和转出操作，需要使用悲观锁来保证数据的准确性。</span>
+</li>
+<li>
+<strong><span>冲突较多</span></strong><span>：当多个事务频繁修改同一数据时，悲观锁可以避免乐观锁因冲突导致的重试操作，减少系统的开销。比如，库存管理系统中，多个订单同时减少库存的情况，使用悲观锁可以确保库存数据的一致性。</span>
+</li>
+</ul>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>12. 乐观锁里版本号校验流程是怎样的？</span></span></h3>
+<p style="text-align: left;"><span>在数据库表中添加一个版本号字段（通常为整数类型），用于记录数据的版本信息。例如，有一个</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>products</span></code><span>表，存储商品信息，可添加一个</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>version</span></code><span>字段：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrISruz6uHUF536wo9MxicwuNNbDj4yQ7Ng6L8glSNiceGBdjVK6N2bhKiaQv0Sn7nn2sHj9t93qUbibsA/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrISruz6uHUF536wo9MxicwuNNbDj4yQ7Ng6L8glSNiceGBdjVK6N2bhKiaQv0Sn7nn2sHj9t93qUbibsA/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span><span>CREATE TABLE </span><span style="color: #61aeee;"><span>products</span></span><span> </span><span><span>(</span><br/><span>    id INT PRIMARY KEY,</span><br/><span>    name VARCHAR(</span><span style="color: #d19a66;"><span>255</span></span><span>)</span></span><span>,</span><br/><span>    price </span><span style="color: #61aeee;"><span>DECIMAL</span></span><span><span>(</span><span style="color: #d19a66;"><span>10</span></span><span>, </span><span style="color: #d19a66;"><span>2</span></span><span>)</span></span><span>,</span><br/><span>    version INT DEFAULT 0</span><br/><span>)</span></span><span>;</span><br/></code></pre>
+<p style="text-align: left;"><span>当要对数据进行更新操作时，首先需要从数据库中查询出要操作的数据及其当前版本号。例如，要更新</span><code style="background-color: rgba(27, 31, 35, 0.05);background-position-x: 0%;background-position-y: 0%;border-top-style: none;border-bottom-style: none;border-left-style: none;border-right-style: none;border-top-width: 3px;border-bottom-width: 3px;border-left-width: 3px;border-right-width: 3px;border-left-color: rgba(0, 0, 0, 0.4);border-right-color: rgba(0, 0, 0, 0.4);border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;overflow-wrap: break-word;font-family: Consolas;word-break: break-all;color: rgb(100, 149, 237);"><span>id</span></code><span>为 1 的商品信息：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrISruz6uHUF536wo9MxicwuNNbDj4yQ7Ng6L8glSNiceGBdjVK6N2bhKiaQv0Sn7nn2sHj9t93qUbibsA/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrISruz6uHUF536wo9MxicwuNNbDj4yQ7Ng6L8glSNiceGBdjVK6N2bhKiaQv0Sn7nn2sHj9t93qUbibsA/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>SELECT id, name, price, version</span><br/><span>FROM products</span><br/><span>WHERE id = </span><span style="color: #d19a66;"><span>1</span></span><span>;</span><br/></code></pre>
+<p style="text-align: left;"><span>假设查询结果为：</span></p>
+<table style="display: table;text-align: left;">
+<thead>
+<tr>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>id</span></strong></th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>name</span></strong></th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>price</span></strong></th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-style: solid;border-width: 1px;border-color: rgba(204, 204, 204, 0.4);padding: 5px 10px;min-width: 85px;"><strong><span>version</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>1</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>手机</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>5000</span>
+</td>
+<td style="min-width: 85px;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-right-width: 1px;border-top-color: rgba(204, 204, 204, 0.4);border-bottom-color: rgba(204, 204, 204, 0.4);border-left-color: rgba(204, 204, 204, 0.4);border-right-color: rgba(204, 204, 204, 0.4);border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+<span>0</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: left;"><span>在应用程序中对查询到的数据进行业务处理。例如，将商品价格从 5000 元调整为 5500 元。</span></p>
+<p style="text-align: left;"><span>在更新数据时，将版本号作为条件进行判断。如果版本号与之前查询时的版本号一致，说明数据在操作期间没有被其他事务修改，更新数据并将版本号加 1；如果版本号不一致，说明数据已被其他事务修改，更新失败。更新语句如下：</span></p><pre style="border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;text-align: left;"><span data-lazy-bgimg="https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrISruz6uHUF536wo9MxicwuNNbDj4yQ7Ng6L8glSNiceGBdjVK6N2bhKiaQv0Sn7nn2sHj9t93qUbibsA/640?wx_fmt=svg&amp;from=appmsg" data-remoteid="" style=' background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrISruz6uHUF536wo9MxicwuNNbDj4yQ7Ng6L8glSNiceGBdjVK6N2bhKiaQv0Sn7nn2sHj9t93qUbibsA/640?wx_fmt=svg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=15&amp;wx_lazy=1") 10px 10px / 40px no-repeat rgb(40, 44, 52); height: 30px; width: 100%; margin-bottom: -7px; border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span>UPDATE products</span><br/><span>SET name = </span><span style="color: #98c379;"><span>'手机'</span></span><span>, price = </span><span style="color: #d19a66;"><span>5500</span></span><span>, version = version + </span><span style="color: #d19a66;"><span>1</span></span><br/><span>WHERE id = </span><span style="color: #d19a66;"><span>1</span></span><span> AND version = </span><span style="color: #d19a66;"><span>0</span></span><span>;</span><br/></code></pre>
+<p style="text-align: left;"><span>执行更新语句后，需要检查更新操作影响的行数。如果影响的行数为 1，说明更新成功；如果影响的行数为 0，说明版本号校验失败，数据在操作期间已被其他事务修改。</span></p>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>乐观锁悲观锁区别？</span></span></h3>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<strong><span>乐观锁</span></strong><span>：从乐观的角度出发，它假定在大多数情况下，数据在被访问期间不会被其他线程修改。所以，在进行数据操作时，它不会先对数据加锁，而是在更新数据时检查数据是否被其他线程修改过。若未被修改，就执行更新操作；若已被修改，则采取相应的处理措施，例如重试或者抛出异常。适用于读多写少的场景，例如电商系统中的商品库存查询和更新。在这种场景下，大多数操作是查询商品库存，只有少数操作是更新库存，使用乐观锁可以提高系统的并发性能。</span>
+</li>
+<li>
+<strong><span>悲观锁</span></strong><span>：秉持悲观的态度，它认为数据在被访问过程中极有可能被其他线程修改。因此，在进行数据操作前，它会先对数据加锁，防止其他线程对数据进行访问和修改，直到操作完成并释放锁。适用于写多的场景，例如银行系统中的账户转账操作。在这种场景下，数据的一致性非常重要，使用悲观锁可以确保在转账过程中，账户数据不会被其他线程修改。</span>
+</li>
+</ul>
+<h3><span class="q1">乐观锁和悲观锁及使用场景？</span></h3>
+<p>乐观锁：</p>
+<ul class="list-paddingleft-1">
+<li>
+            基本思想：乐观锁假设多个事务之间很少发生冲突，因此在读取数据时不会加锁，而是在更新数据时检查数据的版本（如使用版本号或时间戳），如果版本匹配则执行更新操作，否则认为发生了冲突。
+        </li>
+<li>
+            使用场景：乐观锁适用于读多写少的场景，可以减少锁的竞争，提高并发性能。例如，数据库中的乐观锁机制可以用于处理并发更新同一行数据的情况。
+        </li>
+</ul>
+<p>悲观锁：</p>
+<ul class="list-paddingleft-1">
+<li>
+            基本思想：悲观锁假设多个事务之间会频繁发生冲突，因此在读取数据时会加锁，防止其他事务对数据进行修改，直到当前事务完成操作后才释放锁。
+        </li>
+<li>
+            使用场景：悲观锁适用于写多的场景，通过加锁保证数据的一致性。例如，数据库中的行级锁机制可以用于处理并发更新同一行数据的情况。
+        </li>
+</ul>
+<p>乐观锁适用于读多写少的场景，通过版本控制来处理冲突；而悲观锁适用于写多的场景，通过加锁来避免冲突。</p>
+<h3><span class="q1">乐观锁和悲观锁及使用场景？</span></h3>
+<p>乐观锁：</p>
+<ul class="list-paddingleft-1">
+<li>
+            基本思想：乐观锁假设多个事务之间很少发生冲突，因此在读取数据时不会加锁，而是在更新数据时检查数据的版本（如使用版本号或时间戳），如果版本匹配则执行更新操作，否则认为发生了冲突。
+        </li>
+<li>
+            使用场景：乐观锁适用于读多写少的场景，可以减少锁的竞争，提高并发性能。例如，数据库中的乐观锁机制可以用于处理并发更新同一行数据的情况。
+        </li>
+</ul>
+<p>悲观锁：</p>
+<ul class="list-paddingleft-1">
+<li>
+            基本思想：悲观锁假设多个事务之间会频繁发生冲突，因此在读取数据时会加锁，防止其他事务对数据进行修改，直到当前事务完成操作后才释放锁。
+        </li>
+<li>
+            使用场景：悲观锁适用于写多的场景，通过加锁保证数据的一致性。例如，数据库中的行级锁机制可以用于处理并发更新同一行数据的情况。
+        </li>
+</ul>
+<p>乐观锁适用于读多写少的场景，通过版本控制来处理冲突；而悲观锁适用于写多的场景，通过加锁来避免冲突。</p>
+<h3><span class="q1">死锁条件是什么？</span></h3>
+<p>死锁只有<strong>同时满足</strong>以下四个条件才会发生：</p>
+<ul class="list-paddingleft-1">
+<li>
+            互斥条件：是指<strong>多个线程不能同时使用同一个资源</strong>。
+        </li>
+<li>
+            持有并等待条件：指当线程 A 已经持有了资源 1，又想申请资源 2，而资源 2 已经被线程 C 持有了，所以线程 A 就会处于等待状态，但是<strong>线程 A 在等待资源 2 的同时并不会释放自己已经持有的资源 1</strong>。
+        </li>
+<li>
+            不可剥夺条件：指当线程已经持有了资源 ，<strong>在自己使用完之前不能被其他线程获取</strong>，线程 B 如果也想使用此资源，则只能在线程 A 使用完并释放后才能获取。
+        </li>
+<li>
+            环路等待条件：指的是在死锁发生的时候，<strong>两个线程获取资源的顺序构成了环形链</strong>。
+    </li>
+</ul>
+<h3><span class="q1">12. 死锁是怎么发生的？</span></h3>
+<p>回答：四个必要条件和银行家算法（上课学过）</p>
+<blockquote style="border-top: none;border-right: none;border-bottom: none;font-size: 0.9em;overflow: auto;background: rgb(227, 242, 253);color: rgb(106, 115, 125);padding: 15px 20px;border-left-color: rgb(100, 149, 237);">
+<p style="color: rgb(89, 89, 89);">小林补充</p>
+</blockquote>
+<p>死锁问题的产生是由两个或者以上线程并行执行的时候，争夺资源而互相等待造成的。</p>
+<p>死锁只有同时满足互斥、持有并等待、不可剥夺、环路等待这四个条件的时候才会发生。</p>
+<h4>互斥条件</h4>
+<p>互斥条件是指<strong>多个线程不能同时使用同一个资源</strong>。</p>
+<p>比如下图，如果线程 A 已经持有的资源，不能再同时被线程 B 持有，如果线程 B 请求获取线程 A 已经占用的资源，那线程 B 只能等待，直到线程 A 释放了资源。</p>
+<figure class="img1"><img _width="551px" data-index="2" data-src="../img/___001_69a68cde.png" data-w="551" src="../img/___001_69a68cde.png" style="   border-radius: 4px;  height: auto !important;  width: 551px !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">img</figcaption>
+</figure>
+<h4>持有并等待条件</h4>
+<p>持有并等待条件是指，当线程 A 已经持有了资源 1，又想申请资源 2，而资源 2 已经被线程 C 持有了，所以线程 A 就会处于等待状态，但是<strong>线程 A 在等待资源 2 的同时并不会释放自己已经持有的资源 1</strong>。</p>
+<figure class="img1"><img _width="561px" data-index="3" data-src="../img/___002_db7eea6b.png" data-w="561" src="../img/___002_db7eea6b.png" style="   border-radius: 4px;  height: auto !important;  width: 561px !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">img</figcaption>
+</figure>
+<h4>不可剥夺条件</h4>
+<p>不可剥夺条件是指，当线程已经持有了资源 ，<strong>在自己使用完之前不能被其他线程获取</strong>，线程 B 如果也想使用此资源，则只能在线程 A 使用完并释放后才能获取。</p>
+<figure class="img1"><img _width="551px" data-index="4" data-src="../img/___003_f54b5492.png" data-w="551" src="../img/___003_f54b5492.png" style="   border-radius: 4px;  height: auto !important;  width: 551px !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">img</figcaption>
+</figure>
+<h4>环路等待条件</h4>
+<p>环路等待条件指的是，在死锁发生的时候，<strong>两个线程获取资源的顺序构成了环形链</strong>。</p>
+<p>比如，线程 A 已经持有资源 2，而想请求资源 1， 线程 B 已经获取了资源 1，而想请求资源 2，这就形成资源请求等待的环形图。</p>
+<figure class="img1"><img _width="421px" data-index="5" data-src="../img/___004_03907151.png" data-w="421" src="../img/___004_03907151.png" style="   border-radius: 4px;  height: auto !important;  width: 421px !important;"/>
+<figcaption style="text-align: center;color: rgb(136, 136, 136);font-family: PingFangSC-Light;">img</figcaption>
+</figure>
+<p>所以要避免死锁问题，就是要破坏其中一个条件即可，最常用的方法就是使用资源有序分配法来破坏环路等待条件。</p>
+<h3><span class="q1">什么情况会产生死锁问题？如何解决？</span></h3>
+<p>死锁只有<strong>同时满足</strong>以下四个条件才会发生：</p>
+<ul class="list-paddingleft-1">
+<li>
+            互斥条件：互斥条件是指<strong>多个线程不能同时使用同一个资源</strong>。
+        </li>
+<li>
+            持有并等待条件：持有并等待条件是指，当线程 A 已经持有了资源 1，又想申请资源 2，而资源 2 已经被线程 C 持有了，所以线程 A 就会处于等待状态，但是<strong>线程 A 在等待资源 2 的同时并不会释放自己已经持有的资源 1</strong>。
+        </li>
+<li>
+            不可剥夺条件：不可剥夺条件是指，当线程已经持有了资源 ，<strong>在自己使用完之前不能被其他线程获取</strong>，线程 B 如果也想使用此资源，则只能在线程 A 使用完并释放后才能获取。
+        </li>
+<li>
+            环路等待条件：环路等待条件指的是，在死锁发生的时候，<strong>两个线程获取资源的顺序构成了环形链</strong>。
+        </li>
+</ul>
+<p>例如，线程 A 持有资源 R1 并试图获取资源 R2，而线程 B 持有资源 R2 并试图获取资源 R1，此时两个线程相互等待对方释放资源，从而导致死锁。</p><pre class="pre1"><span style='background: url("https://mmbiz.qpic.cn/mmbiz_svg/AYfn0IKjIIPeUdeDNaSrIUF4QpwAibBhChFRlnSV2cXibc5X3Eeib4z2WCiaKeiaMvdwJjYhxEILdc0kg3kNaVtlibqmqaNEGpHrcD/640?wx_fmt=svg&amp;from=appmsg") 10px 10px / 40px no-repeat rgb(40, 44, 52);height: 30px;width: 100%;margin-bottom: -7px;border-radius: 5px;'></span><code style="overflow-x: auto;padding: 16px;color: #abb2bf;background: #282c34;border-radius: 5px;display: -webkit-box;font-family: Consolas;"><span style="color: #c678dd;">public</span> <span><span style="color: #c678dd;">class</span> <span style="color: #e6c07b;">DeadlockExample</span> </span>{<br>    <span style="color: #c678dd;">private</span> <span style="color: #c678dd;">static</span> <span style="color: #c678dd;">final</span> Object resource1 = <span style="color: #c678dd;">new</span> Object();<br>    <span style="color: #c678dd;">private</span> <span style="color: #c678dd;">static</span> <span style="color: #c678dd;">final</span> Object resource2 = <span style="color: #c678dd;">new</span> Object();<br><br>    <span><span style="color: #c678dd;">public</span> <span style="color: #c678dd;">static</span> <span style="color: #c678dd;">void</span> <span style="color: #61aeee;">main</span><span>(String[] args)</span> </span>{<br>        Thread threadA = <span style="color: #c678dd;">new</span> Thread(() -&gt; {<br>            <span style="color: #c678dd;">synchronized</span> (resource1) {<br>                System.out.println(<span style="color: #98c379;">"Thread A acquired resource1"</span>);<br>                <span style="color: #c678dd;">try</span> {<br>                    Thread.sleep(<span style="color: #d19a66;">100</span>);<br>                } <span style="color: #c678dd;">catch</span> (InterruptedException e) {<br>                    e.printStackTrace();<br>                }<br/>                <span style="color: #c678dd;">synchronized</span> (resource2) {<br/>                    System.out.println(<span style="color: #98c379;">"Thread A acquired resource2"</span>);<br/>                }<br/>            }<br/>        });<br/><br/>        Thread threadB = <span style="color: #c678dd;">new</span> Thread(() -&gt; {<br/>            <span style="color: #c678dd;">synchronized</span> (resource2) {<br/>                System.out.println(<span style="color: #98c379;">"Thread B acquired resource2"</span>);<br/>                <span style="color: #c678dd;">try</span> {<br/>                    Thread.sleep(<span style="color: #d19a66;">100</span>);<br/>                } <span style="color: #c678dd;">catch</span> (InterruptedException e) {<br/>                    e.printStackTrace();<br/>                }<br/>                <span style="color: #c678dd;">synchronized</span> (resource1) {<br/>                    System.out.println(<span style="color: #98c379;">"Thread B acquired resource1"</span>);<br/>                }<br/>            }<br/>        });<br/><br/>        threadA.start();<br/>        threadB.start();<br/>    }<br/>}<br/></br></br></br></br></br></br></br></br></br></br></br></br></code></pre>
+<p>避免死锁问题就只需要破环其中一个条件就可以，最常见的并且可行的就是<strong>使用资源有序分配法，来破环环路等待条件</strong>。</p>
+<p>那什么是资源有序分配法呢？线程 A 和 线程 B 获取资源的顺序要一样，当线程 A 是先尝试获取资源 A，然后尝试获取资源 B 的时候，线程 B 同样也是先尝试获取资源 A，然后尝试获取资源 B。也就是说，线程 A 和 线程 B 总是以相同的顺序申请自己想要的资源。</p>
+<figure class="img1"><img _width="511px" data-index="4" data-src="../img/___005_a1a798c8.png" data-w="511" src="../img/___005_a1a798c8.png" style="height: auto !important;  width: 511px !important;"/></figure>
+<h3><span class="q1">如何避免出现死锁？</span></h3>
+<p>读者答：在使用之前，考虑死锁产生的条件：互斥访问、占有并保持、循环等待。</p>
+<p>针对以上几点，可以：资源一次性分配、占有时可被打断、考虑资源分配顺序。</p>
+<h3><span class="q1">死锁是什么，如何避免?</span></h3>
+<p>死锁只有<strong>同时满足</strong>以下四个条件才会发生：</p>
+<ul class="list-paddingleft-1">
+<li>
+            互斥条件：互斥条件是指<strong>多个线程不能同时使用同一个资源</strong>。
+        </li>
+<li>
+            持有并等待条件：持有并等待条件是指，当线程 A 已经持有了资源 1，又想申请资源 2，而资源 2 已经被线程 C 持有了，所以线程 A 就会处于等待状态，但是<strong>线程 A 在等待资源 2 的同时并不会释放自己已经持有的资源 1</strong>。
+        </li>
+<li>
+            不可剥夺条件：不可剥夺条件是指，当线程已经持有了资源 ，<strong>在自己使用完之前不能被其他线程获取</strong>，线程 B 如果也想使用此资源，则只能在线程 A 使用完并释放后才能获取。
+        </li>
+<li>
+            环路等待条件：环路等待条件指的是，在死锁发生的时候，<strong>两个线程获取资源的顺序构成了环形链</strong>。
+        </li>
+</ul>
+<p>避免死锁问题就只需要破环其中一个条件就可以，最常见的并且可行的就是<strong>使用资源有序分配法，来破环环路等待条件</strong>。</p>
+<p>那什么是资源有序分配法呢？线程 A 和 线程 B 获取资源的顺序要一样，当线程 A 是先尝试获取资源 A，然后尝试获取资源 B 的时候，线程 B 同样也是先尝试获取资源 A，然后尝试获取资源 B。也就是说，线程 A 和 线程 B 总是以相同的顺序申请自己想要的资源。</p>
+<figure class="img1"><img _width="511px" data-index="24" data-src="../img/___006_d2cbbebb.png" data-w="511" src="../img/___006_d2cbbebb.png" style="   border-radius: 4px;  height: auto !important;  width: 511px !important;"/></figure>
+<h3><span style="color: rgb(65, 105, 225);text-align: left;"><span>死锁问题怎么解决？</span></span></h3>
+<p style="text-align: left;"><span>死锁只有</span><strong><span>同时满足</span></strong><span>以下四个条件才会发生：</span></p>
+<ul class="list-paddingleft-1" style="list-style-type: disc;">
+<li>
+<span>互斥条件：互斥条件是指</span><strong><span>多个线程不能同时使用同一个资源</span></strong><span>。</span>
+</li>
+<li>
+<span>持有并等待条件：持有并等待条件是指，当线程 A 已经持有了资源 1，又想申请资源 2，而资源 2 已经被线程 C 持有了，所以线程 A 就会处于等待状态，但是</span><strong><span>线程 A 在等待资源 2 的同时并不会释放自己已经持有的资源 1</span></strong><span>。</span>
+</li>
+<li>
+<span>不可剥夺条件：不可剥夺条件是指，当线程已经持有了资源 ，</span><strong><span>在自己使用完之前不能被其他线程获取</span></strong><span>，线程 B 如果也想使用此资源，则只能在线程 A 使用完并释放后才能获取。</span>
+</li>
+<li>
+<span>环路等待条件：环路等待条件指的是，在死锁发生的时候，</span><strong><span>两个线程获取资源的顺序构成了环形链</span></strong><span>。</span>
+</li>
+</ul>
+<p style="text-align: left;"><span>避免死锁问题就只需要破环其中一个条件就可以，最常见的并且可行的就是</span><strong><span>使用资源有序分配法，来破环环路等待条件</span></strong><span>。</span></p>
+<p style="text-align: left;"><span>那什么是资源有序分配法呢？线程 A 和 线程 B 获取资源的顺序要一样，当线程 A 是先尝试获取资源 A，然后尝试获取资源 B 的时候，线程 B 同样也是先尝试获取资源 A，然后尝试获取资源 B。也就是说，线程 A 和 线程 B 总是以相同的顺序申请自己想要的资源。</span></p>
+<figure class="img1"><span><img _width="511px" data-index="3" data-src="../img/___007_6aed687e.jpg" data-type="other" data-w="511" src="../img/___007_6aed687e.jpg" style=" margin: 0px auto 25px; max-width: 100%;       height: auto !important;  width: 511px !important;"/></span></figure>
+<h3><span class="q1">死锁的具体原因，怎么解决？</span></h3>
+<p>死锁只有同时满足以下四个条件才会发生：</p>
+<ul class="list-paddingleft-1">
+<li>
+            互斥条件：互斥条件是指<strong>多个线程不能同时使用同一个资源</strong>。
+        </li>
+<li>
+            持有并等待条件：持有并等待条件是指，当线程 A 已经持有了资源 1，又想申请资源 2，而资源 2 已经被线程 C 持有了，所以线程 A 就会处于等待状态，但是<strong>线程 A 在等待资源 2 的同时并不会释放自己已经持有的资源 1</strong>。
+        </li>
+<li>
+            不可剥夺条件：不可剥夺条件是指，当线程已经持有了资源 ，<strong>在自己使用完之前不能被其他线程获取</strong>，线程 B 如果也想使用此资源，则只能在线程 A 使用完并释放后才能获取。
+        </li>
+<li>
+            环路等待条件：环路等待条件指的是，在死锁发生的时候，<strong>两个线程获取资源的顺序构成了环形链</strong>。
+        </li>
+</ul>
+<p>避免死锁问题就只需要破环其中一个条件就可以，最常见的并且可行的就是<strong>使用资源有序分配法，来破环环路等待条件</strong>。</p>
+<p>那什么是资源有序分配法呢？线程 A 和 线程 B 获取资源的顺序要一样，当线程 A 是先尝试获取资源 A，然后尝试获取资源 B 的时候，线程 B 同样也是先尝试获取资源 A，然后尝试获取资源 B。也就是说，线程 A 和 线程 B 总是以相同的顺序申请自己想要的资源。</p>
+<p style="text-align: center;"><img _width="511px" data-index="6" data-original-="" data-s="300,640" data-src="../img/___008_e25ef262.jpg" data-w="511" src="../img/___008_e25ef262.jpg" style="height: auto !important;  width: 511px !important;"/></p>
+<figure class="img1"><br/></figure>
+<h3><span class="q1">死锁的解决方法是什么？</span></h3>
+<p>产生死锁的四个必要条件是：互斥条件、持有并等待条件、不可剥夺条件、环路等待条件。</p>
+<p>那么避免死锁问题就只需要破环其中一个条件就可以，最常见的并且可行的就是<strong>使用资源有序分配法，来破环环路等待条件</strong>。</p>
+<p>那什么是资源有序分配法呢？</p>
+<p>线程 A 和 线程 B 获取资源的顺序要一样，当线程 A 是先尝试获取资源 A，然后尝试获取资源 B 的时候，线程 B 同样也是先尝试获取资源 A，然后尝试获取资源 B。也就是说，线程 A 和 线程 B 总是以相同的顺序申请自己想要的资源。</p>
+<p>我们使用资源有序分配法的方式来修改前面发生死锁的代码，我们可以不改动线程 A 的代码。</p>
+<p>我们先要清楚线程 A 获取资源的顺序，它是先获取互斥锁 A，然后获取互斥锁 B。</p>
+<p>所以我们只需将线程 B 改成以相同顺序的获取资源，就可以打破死锁了。</p>
+<figure class="img1"><img _width="511px" data-index="6" data-src="../img/___009_e6a1376f.png" data-w="511" src="../img/___009_e6a1376f.png" style="   border-radius: 4px;  height: auto !important;  width: 511px !important;"/></figure>
+<h3><span class="q1">怎么排查死锁?</span></h3>
+<p>产生<strong>死锁需要满足以下 4 个条件</strong>：</p>
+<ol class="list-paddingleft-1">
+<li>
+<strong>互斥条件</strong>：指运算单元（进程、线程或协程）对所分配到的资源具有排它性，也就是说在一段时间内某个锁资源只能被一个运算单元所占用。
+        </li>
+<li>
+<strong>请求和保持条件</strong>：指运算单元已经保持至少一个资源，但又提出了新的资源请求，而该资源已被其它运算单元占有，此时请求运算单元阻塞，但又对自己已获得的其它资源保持不放。
+        </li>
+<li>
+<strong>不可剥夺条件</strong>：指运算单元已获得的资源，在未使用完之前，不能被剥夺。
+        </li>
+<li>
+<strong>环路等待条件</strong>：指在发生死锁时，必然存在运算单元和资源的环形链，即运算单元正在等待另一个运算单元占用的资源，而对方又在等待自己占用的资源，从而造成环路等待的情况。
+    </li>
+</ol>
+<p>只有以上 4 个条件同时满足，才会造成死锁问题。</p>
+<p>排查死锁的方式：</p>
+<ul class="list-paddingleft-1">
+<li>
+            使用 jsp 可以查看正在运行的 java 进程，找到发生死锁的进程 id 号
+        </li>
+<li>
+            根据进程 id 号，适用 jstack 查看进程的堆栈信息，从中可以找到死锁在代码中出现的位置。
+        </li>
+</ul>
+<h3><span class="q1">什么是死锁？</span></h3>
+<p>读者答：两个或多个进程之间他们都在等待一些资源，然后没有办法完全释放现在已经占有的资源，但是他们需要的资源的话又被其他的进程所占有着，同时这一整个过程中你又没有办法去抢占，造成了一个循环等待的情况（请求保持，互斥，不可剥夺，循环等待）</p>
+<h3><span class="q1">如何避免出现死锁，怎么排查？</span></h3>
+<p>读者答：加锁或者channel，打断点，加日志信息。</p>
+<p><strong>小林补充：</strong></p>
+<p>避免死锁：</p>
+<ul class="list-paddingleft-1">
+<li>
+            按照固定的顺序获取锁：按照固定的顺序获取锁可以避免死锁的发生。例如，如果A线程先获取了锁1，再获取锁2，那么B线程就应该先获取锁2，再获取锁1。
+        </li>
+<li>
+            设置超时时间：在获取锁的过程中，可以设置超时时间，如果超过一定时间还没有获取到锁，就放弃获取锁，避免因等待锁而导致的死锁。
+        </li>
+</ul>
+<p>排查方式：</p>
+<ul class="list-paddingleft-1">
+<li>
+            使用工具：可以使用一些工具来帮助检测和定位死锁问题，例如jstack和jconsole等。
+        </li>
+<li>
+            分析日志：可以分析系统日志和线程日志，查看是否有线程在等待某个锁，从而找出可能导致死锁的原因。
+        </li>
+<li>
+            代码检查：可以检查代码中是否存在多个线程竞争同一个锁的情况，是否存在锁的嵌套等问题，从而找出可能导致死锁的原因。
+        </li>
+</ul>
+<h3><span class="q1">死锁是什么？怎么产生的？</span></h3>
+<p>死锁只有<strong>同时满足</strong>以下四个条件才会发生：</p>
+<ul class="list-paddingleft-1">
+<li>
+            互斥条件：互斥条件是指<strong>多个线程不能同时使用同一个资源</strong>。
+        </li>
+<li>
+            持有并等待条件：持有并等待条件是指，当线程 A 已经持有了资源 1，又想申请资源 2，而资源 2 已经被线程 C 持有了，所以线程 A 就会处于等待状态，但是<strong>线程 A 在等待资源 2 的同时并不会释放自己已经持有的资源 1</strong>。
+        </li>
+<li>
+            不可剥夺条件：不可剥夺条件是指，当线程已经持有了资源 ，<strong>在自己使用完之前不能被其他线程获取</strong>，线程 B 如果也想使用此资源，则只能在线程 A 使用完并释放后才能获取。
+        </li>
+<li>
+            环路等待条件：环路等待条件指的是，在死锁发生的时候，<strong>两个线程获取资源的顺序构成了环形链</strong>。
+        </li>
+</ul>
+<h3><span class="q1">如何避免死锁？</span></h3>
+<p>避免死锁问题就只需要破环其中一个条件就可以，最常见的并且可行的就是<strong>使用资源有序分配法，来破环环路等待条件</strong>。</p>
+<p>那什么是资源有序分配法呢？线程 A 和 线程 B 获取资源的顺序要一样，当线程 A 是先尝试获取资源 A，然后尝试获取资源 B 的时候，线程 B 同样也是先尝试获取资源 A，然后尝试获取资源 B。也就是说，线程 A 和 线程 B 总是以相同的顺序申请自己想要的资源。</p>
+<figure class="img1"><img _width="511px" data-index="7" data-src="../img/___010_9c1878e5.jpg" data-type="other" data-w="511" src="../img/___010_9c1878e5.jpg" style="height: auto !important;  width: 511px !important;"/></figure>
+<h3></h3>
+<h3><span class="q1">操作系统-死锁怎么产生的</span></h3>
+<p>读者答：死锁会产生的话一般会出现就是嗯资源就是互相占用，但是没有办法解锁，形成循环这样的情况，比如说 a 线程有一部分 b 线程需要的资源， b 线程有一部分 a 需要的资源，那他两个人互相的互斥等待形成了死锁，两个线程都没有办法完成任务。</p>
+<p><strong>小林补充：</strong></p>
+<p>死锁问题的产生是由两个或者以上线程并行执行的时候，争夺资源而互相等待造成的。</p>
+<p>死锁只有同时满足互斥、持有并等待、不可剥夺、环路等待这四个条件的时候才会发生。</p>
+<p>所以要避免死锁问题，就是要破坏其中一个条件即可，最常用的方法就是使用资源有序分配法来破坏环路等待条件。</p>
+<h3><span class="q1">操作系统-怎么避免死锁</span></h3>
+<p>读者答：</p>
+<ul class="list-paddingleft-1">
+<li>
+            避免死锁的话可以手动的 kill 掉某一个进程来结束当前的死锁状态。
+        </li>
+<li>
+            也可以说设置一些抢占的规则。如果这个进程占用的时间非常长的话，通过上下文切换给另外一个进程运行的机会，
+        </li>
+<li>
+            也可以在分配资源的时候进行预先的设计，就是有一个银行家算法来进行一个不会发生死锁的进程运行的调度
+        </li>
+</ul>
+<h3><span class="q1">死锁的条件有哪些？</span></h3>
+<p>死锁只有<strong>同时满足</strong>以下四个条件才会发生：</p>
+<ul class="list-paddingleft-1">
+<li>
+            互斥条件：互斥条件是指<strong>多个线程不能同时使用同一个资源</strong>。
+        </li>
+<li>
+            持有并等待条件：持有并等待条件是指，当线程 A 已经持有了资源 1，又想申请资源 2，而资源 2 已经被线程 C 持有了，所以线程 A 就会处于等待状态，但是<strong>线程 A 在等待资源 2 的同时并不会释放自己已经持有的资源 1</strong>。
+        </li>
+<li>
+            不可剥夺条件：不可剥夺条件是指，当线程已经持有了资源 ，<strong>在自己使用完之前不能被其他线程获取</strong>，线程 B 如果也想使用此资源，则只能在线程 A 使用完并释放后才能获取。
+        </li>
+<li>
+            环路等待条件：环路等待条件指的是，在死锁发生的时候，<strong>两个线程获取资源的顺序构成了环形链</strong>。
+        </li>
+</ul>
+<p>避免死锁问题就只需要破环其中一个条件就可以，最常见的并且可行的就是<strong>使用资源有序分配法，来破环环路等待条件</strong>。</p>
+<p>那什么是资源有序分配法呢？线程 A 和 线程 B 获取资源的顺序要一样，当线程 A 是先尝试获取资源 A，然后尝试获取资源 B 的时候，线程 B 同样也是先尝试获取资源 A，然后尝试获取资源 B。也就是说，线程 A 和 线程 B 总是以相同的顺序申请自己想要的资源。</p>
+<figure class="img1"><img _width="511px" data-index="3" data-src="../img/___011_d2cbbebb.png" data-w="511" src="../img/___011_d2cbbebb.png" style="   border-radius: 4px;  height: auto !important;  width: 511px !important;"/></figure>
+<h3><span class="q1">死锁的条件有哪些？</span></h3>
+<p>死锁只有<strong>同时满足</strong>以下四个条件才会发生：</p>
+<ul class="list-paddingleft-1">
+<li>
+            互斥条件：互斥条件是指<strong>多个线程不能同时使用同一个资源</strong>。
+        </li>
+<li>
+            持有并等待条件：持有并等待条件是指，当线程 A 已经持有了资源 1，又想申请资源 2，而资源 2 已经被线程 C 持有了，所以线程 A 就会处于等待状态，但是<strong>线程 A 在等待资源 2 的同时并不会释放自己已经持有的资源 1</strong>。
+        </li>
+<li>
+            不可剥夺条件：不可剥夺条件是指，当线程已经持有了资源 ，<strong>在自己使用完之前不能被其他线程获取</strong>，线程 B 如果也想使用此资源，则只能在线程 A 使用完并释放后才能获取。
+        </li>
+<li>
+            环路等待条件：环路等待条件指的是，在死锁发生的时候，<strong>两个线程获取资源的顺序构成了环形链</strong>。
+        </li>
+</ul>
+<p>避免死锁问题就只需要破环其中一个条件就可以，最常见的并且可行的就是<strong>使用资源有序分配法，来破环环路等待条件</strong>。</p>
+<p>那什么是资源有序分配法呢？线程 A 和 线程 B 获取资源的顺序要一样，当线程 A 是先尝试获取资源 A，然后尝试获取资源 B 的时候，线程 B 同样也是先尝试获取资源 A，然后尝试获取资源 B。也就是说，线程 A 和 线程 B 总是以相同的顺序申请自己想要的资源。</p>
+<figure class="img1"><img _width="511px" data-index="3" data-src="../img/___012_2bca4d63.png" data-w="511" src="../img/___012_2bca4d63.png" style="   border-radius: 4px;  height: auto !important;  width: 511px !important;"/></figure>
+<h3><span class="q1">死锁发生条件是什么？</span></h3>
+<p>死锁只有<strong>同时满足</strong>以下四个条件才会发生：</p>
+<ul class="list-paddingleft-1">
+<li>
+            互斥条件：互斥条件是指<strong>多个线程不能同时使用同一个资源</strong>。
+        </li>
+<li>
+            持有并等待条件：持有并等待条件是指，当线程 A 已经持有了资源 1，又想申请资源 2，而资源 2 已经被线程 C 持有了，所以线程 A 就会处于等待状态，但是<strong>线程 A 在等待资源 2 的同时并不会释放自己已经持有的资源 1</strong>。
+        </li>
+<li>
+            不可剥夺条件：不可剥夺条件是指，当线程已经持有了资源 ，<strong>在自己使用完之前不能被其他线程获取</strong>，线程 B 如果也想使用此资源，则只能在线程 A 使用完并释放后才能获取。
+        </li>
+<li>
+            环路等待条件：环路等待条件指的是，在死锁发生的时候，<strong>两个线程获取资源的顺序构成了环形链</strong>。
+        </li>
+</ul>
+<h3><span class="q1">如何避免死锁？</span></h3>
+<p>避免死锁问题就只需要破环其中一个条件就可以，最常见的并且可行的就是<strong>使用资源有序分配法，来破环环路等待条件</strong>。那什么是资源有序分配法呢？线程 A 和 线程 B 获取资源的顺序要一样，当线程 A 是先尝试获取资源 A，然后尝试获取资源 B 的时候，线程 B 同样也是先尝试获取资源 A，然后尝试获取资源 B。也就是说，线程 A 和 线程 B 总是以相同的顺序申请自己想要的资源。<img _width="511px" data-index="3" data-src="../img/___013_304836ba.jpg" data-type="other" data-w="511" src="../img/___013_304836ba.jpg" style="   border-radius: 4px;  height: auto !important;  width: 511px !important;"/></p>
+<h3><span class="q1">了解过死锁吗？怎么避免</span></h3>
+<p>产生死锁的四个必要条件是：互斥条件、持有并等待条件、不可剥夺条件、环路等待条件。那么避免死锁问题就只需要破环其中一个条件就可以，最常见的并且可行的就是<strong>使用资源有序分配法，来破环环路等待条件</strong>。</p>
+<p>那什么是资源有序分配法呢？</p>
+<p>线程 A 和 线程 B 获取资源的顺序要一样，当线程 A 是先尝试获取资源 A，然后尝试获取资源 B 的时候，线程 B 同样也是先尝试获取资源 A，然后尝试获取资源 B。也就是说，线程 A 和 线程 B 总是以相同的顺序申请自己想要的资源。</p>
+<p>我们使用资源有序分配法的方式来修改前面发生死锁的代码，我们可以不改动线程 A 的代码。</p>
+<p>我们先要清楚线程 A 获取资源的顺序，它是先获取互斥锁 A，然后获取互斥锁 B。</p>
+<p>所以我们只需将线程 B 改成以相同顺序的获取资源，就可以打破死锁了。</p>
+<figure class="img1"><img _width="511px" data-index="6" data-src="../img/___014_d40522cd.png" data-w="511" src="../img/___014_d40522cd.png" style="   border-radius: 4px;  height: auto !important;  width: 511px !important;"/></figure>
+<h3><span class="q1">什么是死锁？如何处理死锁问题？</span></h3>
+<p>死锁是指两个或两个以上的进程在执行过程中，由于竞争资源或者由于彼此通信而造成的一种阻塞的现象，若无外力作用，它们都将无法推进下去。此时称系统处于死锁状态或系统产生了死锁，这些永远在互相等待的进程称为死锁进程。例如，进程 A 占用了资源 R1 并等待资源 R2，而进程 B 占用了资源 R2 并等待资源 R1，这样两个进程就会相互等待，形成死锁。</p>
+<p>死锁只有<strong>同时满足</strong>以下四个条件才会发生：</p>
+<ul class="list-paddingleft-1">
+<li>
+            互斥条件：互斥条件是指<strong>多个线程不能同时使用同一个资源</strong>。
+        </li>
+<li>
+            持有并等待条件：持有并等待条件是指，当线程 A 已经持有了资源 1，又想申请资源 2，而资源 2 已经被线程 C 持有了，所以线程 A 就会处于等待状态，但是<strong>线程 A 在等待资源 2 的同时并不会释放自己已经持有的资源 1</strong>。
+        </li>
+<li>
+            不可剥夺条件：不可剥夺条件是指，当线程已经持有了资源 ，<strong>在自己使用完之前不能被其他线程获取</strong>，线程 B 如果也想使用此资源，则只能在线程 A 使用完并释放后才能获取。
+        </li>
+<li>
+            环路等待条件：环路等待条件指的是，在死锁发生的时候，<strong>两个线程获取资源的顺序构成了环形链</strong>。
+        </li>
+</ul>
+<p>避免死锁问题就只需要破环其中一个条件就可以，最常见的并且可行的就是<strong>使用资源有序分配法，来破环环路等待条件</strong>。</p>
+<p>那什么是资源有序分配法呢？线程 A 和 线程 B 获取资源的顺序要一样，当线程 A 是先尝试获取资源 A，然后尝试获取资源 B 的时候，线程 B 同样也是先尝试获取资源 A，然后尝试获取资源 B。也就是说，线程 A 和 线程 B 总是以相同的顺序申请自己想要的资源。</p>
+<figure class="img1"><img _width="511px" data-index="14" data-src="../img/___015_2f2b22a1.png" data-w="511" src="../img/___015_2f2b22a1.png" style="height: auto !important;  width: 511px !important;"/></figure>
+<h3><span class="q1">讲一下银行家算法</span></h3>
+<p>系统发生死锁是很正常的，我们需要主动去预防死锁，即进行有序的资源分配，使用<strong>银行家算法</strong>。<strong>银行家算法是最有代表性的避免死锁的算法</strong>。
+        为什么叫银行家算法呢？就是这个算法的逻辑<strong>很像银行放贷的逻辑，也就是尽可能避免坏账的出现</strong>。
+        银行家算法的业务逻辑如下。</p>
+<ul class="list-paddingleft-1">
+<li>
+<strong>不负荷执行</strong>：一个进程的最大需求量不超过系统拥有的总资源数，才会被接纳执行。
+        </li>
+<li>
+<strong>可分期</strong>：一个进程可以分期请求资源，但总请求书不可超过最大需求量。
+        </li>
+<li>
+<strong>推迟分配</strong>：当系统现有资源数小于进程需求时，对进程的需求可以延迟分配，但总让进程在有限时间内获取资源。
+        </li>
+</ul>
+<p>听起来有点绕，我们还是举个例子来说明。
+        假如系统中有三类互斥资源 R1、R2、R3，可用资源数分别是 9、8、5，在指定时刻有 P1、P2、P3、P4 和 P5 这五个进程，这些进程的对三类互斥资源的最大需求量和已分配资源数如下表所示，那么系统如何先后运行这五个进程，不会发生死锁问题？</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">进程</th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">最大需求量（分别为R1 R2 R3）</th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">已分配资源数（分别为R1 R2 R3）</th>
+</tr>
+</thead>
+<tbody style="border-width: 0px;border-style: initial;border-color: initial;">
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">6 5 2</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 2 1</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P2</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">2 2 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">2 1 1</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P3</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">8 1 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">2 1 0</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P4</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 2 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 2 0</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P5</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">3 4 4</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 1 3</td>
+</tr>
+</tbody>
+</table>
+<hr style="background-image: linear-gradient(to right, rgba(93, 186, 133, 0), rgb(100, 149, 237), rgba(93, 186, 133, 0));height: 1px;border-width: initial;border-color: initial;text-align: center;"/>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">第一步：分析</p>
+</blockquote>
+<p>首先分析首次需求的资源，<strong>系统剩余可用资源数分别是 2、1、0</strong>，各进程需要的资源数如下表所示。
+        资源 R1 的剩余可用资源数 = 9 - 1 - 2 - 2 - 1 - 1 = 2。
+        资源 R2 的剩余可用资源数 = 8 - 2 - 1 - 1 - 2 - 1 = 1。
+        资源 R3 的剩余可用资源数 = 5 - 1 - 1 - 0 - 0 - 3 = 0。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">进程</th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">最大需求量</th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">已分配资源数</th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">首次分配需要的资源数</th>
+</tr>
+</thead>
+<tbody style="border-width: 0px;border-style: initial;border-color: initial;">
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">6 5 2</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 2 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">5 3 1</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P2</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">2 2 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">2 1 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">0 1 0</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P3</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">8 1 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">2 1 0</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">6 0 1</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P4</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 2 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 2 0</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">0 0 1</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P5</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">3 4 4</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 1 3</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">2 3 1</td>
+</tr>
+</tbody>
+</table>
+<p>根据银行家算法<strong>不负荷</strong>原则【一个进程的最大需求量不超过系统拥有的总资源数，才会被接纳执行】，优先给进程 P2 执行，因为剩余的 0 1 0 资源够让 P2 执行。</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">第二步：执行 P2</p>
+</blockquote>
+<p>P2 执行之后，释放了刚刚放入的 2 1 0 资源，而且可以释放已分配的 2 1 1 资源，所以此时的资源剩余量。
+        资源 R1 的剩余可用资源数 = 原资源数 - 执行 P2 消耗数 + P2 执行完释放的资源数 = 2 - 0 +（2 + 0） = 4。
+        资源 R2 的剩余可用资源数 = 原资源数 - 执行 P2 消耗数 + P2 执行完释放的资源数 = 1 - 1 + （1 + 1） = 2。
+        资源 R3 的剩余可用资源数 = 原资源数 - 执行 P2 消耗数 + P2 执行完释放的资源数 = 0 - 0 +（0 + 1） = 1。<strong>执行完成 P2 后，操作系统剩余可用资源数为 4 2 1</strong>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">进程</th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">最大需求量</th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">已分配资源数</th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">第二次分配需要的资源数</th>
+</tr>
+</thead>
+<tbody style="border-width: 0px;border-style: initial;border-color: initial;">
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">6 5 2</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 2 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">5 3 1</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P2</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P3</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">8 1 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">2 1 0</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">6 0 1</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P4</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 2 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 2 0</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">0 0 1</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P5</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">3 4 4</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 1 3</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">2 3 1</td>
+</tr>
+</tbody>
+</table>
+<hr style="background-image: linear-gradient(to right, rgba(93, 186, 133, 0), rgb(100, 149, 237), rgba(93, 186, 133, 0));height: 1px;border-width: initial;border-color: initial;text-align: center;"/>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">第三步：执行 P4</p>
+</blockquote>
+<p>此时操作系统剩余可用资源数为 4 2 1，只能执行进程 P4，因为其他进程资源不够。
+        P4 执行之后，释放了刚刚放入的 0 0 1 资源，而且可以释放已分配的 1 2 1 资源，所以此时的资源剩余量。
+        资源 R1 的剩余可用资源数 = 原资源数 - 执行 P4 消耗数 + P4 执行完释放的资源数 = 4 - 0 +（1 + 0） = 5。
+        资源 R2 的剩余可用资源数 = 原资源数 - 执行 P4 消耗数 + P4 执行完释放的资源数 = 2 - 0 + （2 + 0） = 4。
+        资源 R3 的剩余可用资源数 = 原资源数 - 执行 P4 消耗数 + P4 执行完释放的资源数 = 1 - 1 +（1 + 1） = 2。<strong>执行完成 P4 后，操作系统剩余可用资源数为 5 4 2</strong>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">进程</th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">最大需求量</th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">已分配资源数</th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">第三次分配需要的资源数</th>
+</tr>
+</thead>
+<tbody style="border-width: 0px;border-style: initial;border-color: initial;">
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">6 5 2</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 2 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">5 3 1</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P2</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P3</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">8 1 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">2 1 0</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">6 0 1</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P4</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P5</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">3 4 4</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 1 3</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">2 3 1</td>
+</tr>
+</tbody>
+</table>
+<hr style="background-image: linear-gradient(to right, rgba(93, 186, 133, 0), rgb(100, 149, 237), rgba(93, 186, 133, 0));height: 1px;border-width: initial;border-color: initial;text-align: center;"/>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">第四步：执行 P5</p>
+</blockquote>
+<p>此时操作系统剩余可用资源数为 5 4 2，只能执行进程 P5，因为其他进程资源不够。
+        P5 执行之后，释放了刚刚放入的 2 3 1 资源，而且可以释放已分配的 1 1 3 资源，所以此时的资源剩余量。
+        资源 R1 的剩余可用资源数 = 原资源数 - 执行 P5 消耗数 + P5 执行完释放的资源数 = 5 - 2 +（1 + 2） = 6。
+        资源 R2 的剩余可用资源数 = 原资源数 - 执行 P5 消耗数 + P5 执行完释放的资源数 = 4 - 3 + （1 + 3） = 5。
+        资源 R3 的剩余可用资源数 = 原资源数 - 执行 P5 消耗数 + P5 执行完释放的资源数 = 2 - 1 +（3 + 1） = 5。<strong>执行完成 P5 后，操作系统剩余可用资源数为 6 5 5</strong>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">进程</th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">最大需求量</th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">已分配资源数</th>
+<th style="text-align: left;background: none 0% 0% / auto no-repeat scroll padding-box border-box rgb(240, 240, 240);border-top-width: 1px;border-color: rgba(204, 204, 204, 0.4);min-width: 85px;">第三次分配需要的资源数</th>
+</tr>
+</thead>
+<tbody style="border-width: 0px;border-style: initial;border-color: initial;">
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">6 5 2</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">1 2 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">5 3 1</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P2</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P3</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">8 1 1</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">2 1 0</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">6 0 1</td>
+</tr>
+<tr style="background-color: rgb(248, 248, 248);background-position-x: 0%;background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P4</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+</tr>
+<tr style="background-position-y: 0%;">
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">P5</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+<td style="min-width: 85px;border-color: rgba(204, 204, 204, 0.4);">完成</td>
+</tr>
+</tbody>
+</table>
+<hr style="background-image: linear-gradient(to right, rgba(93, 186, 133, 0), rgb(100, 149, 237), rgba(93, 186, 133, 0));height: 1px;border-width: initial;border-color: initial;text-align: center;"/>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">第五步：执行 P1 或者 P3</p>
+</blockquote>
+<p>此时操作系统剩余可用资源数为 6 5 5，可以执行 P1 或 P3。
+        所以安全执行顺序为 <strong>p2 =&gt; p4 =&gt; p5 =&gt; p1 =&gt; p3</strong> 或 <strong>p2 =&gt; p4 =&gt; p5 =&gt; p3 =&gt; p1</strong>。<img _width="677px" data-index="21" data-src="../img/___016_e95305ac.png" data-w="1080" src="../img/___016_e95305ac.png" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>在这里插入图片描述
+        或<img _width="677px" data-index="22" data-src="../img/___017_af8eef32.png" data-w="1080" src="../img/___017_af8eef32.png" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>在这里插入图片描述</p>
+<blockquote class="bq1">
+<p style="color: rgb(89, 89, 89);">银行家算法总结</p>
+</blockquote>
+<p>银行家算法的核心思想，就是在<strong>分配给进程资源前，首先判断这个进程的安全性</strong>，也就是预执行，判断分配后是否产生死锁现象。如果系统当前资源能满足其执行，则尝试分配，如果不满足则让该进程等待。<strong>通过不断检查剩余可用资源是否满足某个进程的最大需求，如果可以则加入安全序列，并把该进程当前持有的资源回收；不断重复这个过程，看最后能否实现让所有进程都加入安全序列。</strong>安全序列一定不会发生死锁，但没有死锁不一定是安全序列。</p>
+<h3><span class="q1">讲一下页表</span></h3>
+<p><strong>分页是把整个虚拟和物理内存空间切成一段段固定尺寸的大小</strong>。这样一个连续并且尺寸固定的内存空间，我们叫<strong>页</strong>（_Page_）。在 Linux 下，每一页的大小为 4KB。
+        虚拟地址与物理地址之间通过<strong>页表</strong>来映射，如下图：<img _width="677px" data-index="23" data-src="../img/___018_7ef8ead0.png" data-w="935" src="../img/___018_7ef8ead0.png" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>页表是存储在内存里的，<strong>内存管理单元</strong> （_MMU_）就做将虚拟内存地址转换成物理地址的工作。</p>
+<p>而当进程访问的虚拟地址在页表中查不到时，系统会产生一个<strong>缺页异常</strong>，进入系统内核空间分配物理内存、更新进程页表，最后再返回用户空间，恢复进程的运行。</p>
+<p>内存分页由于内存空间都是预先划分好的，也就不会像内存分段一样，在段与段之间会产生间隙非常小的内存，这正是分段会产生外部内存碎片的原因。而<strong>采用了分页，页与页之间是紧密排列的，所以不会有外部碎片。</strong></p>
+<p>但是，因为内存分页机制分配内存的最小单位是一页，即使程序不足一页大小，我们最少只能分配一个页，所以页内会出现内存浪费，所以针对<strong>内存分页机制会有内部内存碎片</strong>的现象。</p>
+<p>在分页机制下，虚拟地址分为两部分，<strong>页号</strong>和<strong>页内偏移</strong>。页号作为页表的索引，<strong>页表</strong>包含物理页每页所在<strong>物理内存的基地址</strong>，这个基地址与页内偏移的组合就形成了物理内存地址，见下图。<img _width="677px" data-index="24" data-src="../img/___019_085c6f81.png" data-w="1067" src="../img/___019_085c6f81.png" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/>总结一下，对于一个内存地址转换，其实就是这样三个步骤：</p>
+<ul class="list-paddingleft-1">
+<li>
+            把虚拟内存地址，切分成页号和偏移量；
+        </li>
+<li>
+            根据页号，从页表里面，查询对应的物理页号；
+        </li>
+<li>
+            直接拿物理页号，加上前面的偏移量，就得到了物理内存地址。
+        </li>
+</ul>
+<p>下面举个例子，虚拟内存中的页通过页表映射为了物理内存中的页，如下图：<img _width="677px" data-index="25" data-src="../img/___020_370fc0ad.png" data-w="954" src="../img/___020_370fc0ad.png" style="   border-radius: 4px;  height: auto !important;  width: 657px !important;"/></p>
+<h3><span class="q1">线程死锁的条件？</span></h3>
+<p>死锁问题的产生是由两个或者以上线程并行执行的时候，争夺资源而互相等待造成的。</p>
+<p>死锁只有同时满足互斥、持有并等待、不可剥夺、环路等待这四个条件的时候才会发生。</p>
+<p>所以要避免死锁问题，就是要破坏其中一个条件即可，最常用的方法就是使用资源有序分配法来破坏环路等待条件。</p>
+</html>
+            </article>
+        </div>
+        
+        <div class="content" id="article-toc">
+            <nav class="toc">
+                <div class="toc-inner"><ul><ul><ul><li>
+                    <a href="#" aria-label="7. 什么叫服务的并行？">7. 什么叫服务的并行？</a></li><li>
+                    <a href="#" aria-label="在并发编程时，在需要加锁时，不加锁会有什么问题？">在并发编程时，在需要加锁时，不加锁会有什么问题？</a></li><li>
+                    <a href="#" aria-label="多线程锁是什么">多线程锁是什么</a></li><li>
+                    <a href="#" aria-label="10. 多线程有使用过吗？">10. 多线程有使用过吗？</a></li><li>
+                    <a href="#" aria-label="怎么理解并发问题？">怎么理解并发问题？</a></li><li>
+                    <a href="#" aria-label="悲观锁和乐观锁的区别是什么？">悲观锁和乐观锁的区别是什么？</a></li><li>
+                    <a href="#" aria-label="乐观锁是怎样实现的？">乐观锁是怎样实现的？</a></li><li>
+                    <a href="#" aria-label="乐观锁和悲观锁有什么区别？">乐观锁和悲观锁有什么区别？</a></li><li>
+                    <a href="#" aria-label="1. 乐观锁悲观锁区别是什么？">1. 乐观锁悲观锁区别是什么？</a></li><li>
+                    <a href="#" aria-label="2. 乐观锁运用场景说一下？">2. 乐观锁运用场景说一下？</a></li><li>
+                    <a href="#" aria-label="乐观锁如何实现，有哪些缺点？">乐观锁如何实现，有哪些缺点？</a></li><li>
+                    <a href="#" aria-label="乐观锁是什么？">乐观锁是什么？</a></li><li>
+                    <a href="#" aria-label="11. 乐观锁、悲观锁定义与适用场景是什么？">11. 乐观锁、悲观锁定义与适用场景是什么？</a></li><li>
+                    <a href="#" aria-label="12. 乐观锁里版本号校验流程是怎样的？">12. 乐观锁里版本号校验流程是怎样的？</a></li><li>
+                    <a href="#" aria-label="乐观锁悲观锁区别？">乐观锁悲观锁区别？</a></li><li>
+                    <a href="#" aria-label="乐观锁和悲观锁及使用场景？">乐观锁和悲观锁及使用场景？</a></li><li>
+                    <a href="#" aria-label="乐观锁和悲观锁及使用场景？">乐观锁和悲观锁及使用场景？</a></li><li>
+                    <a href="#" aria-label="死锁条件是什么？">死锁条件是什么？</a></li><li>
+                    <a href="#" aria-label="12. 死锁是怎么发生的？">12. 死锁是怎么发生的？</a></li><ul><li>
+                    <a href="#" aria-label="互斥条件">互斥条件</a></li><li>
+                    <a href="#" aria-label="持有并等待条件">持有并等待条件</a></li><li>
+                    <a href="#" aria-label="不可剥夺条件">不可剥夺条件</a></li><li>
+                    <a href="#" aria-label="环路等待条件">环路等待条件</a></li></ul><li>
+                    <a href="#" aria-label="什么情况会产生死锁问题？如何解决？">什么情况会产生死锁问题？如何解决？</a></li><li>
+                    <a href="#" aria-label="如何避免出现死锁？">如何避免出现死锁？</a></li><li>
+                    <a href="#" aria-label="死锁是什么，如何避免?">死锁是什么，如何避免?</a></li><li>
+                    <a href="#" aria-label="死锁问题怎么解决？">死锁问题怎么解决？</a></li><li>
+                    <a href="#" aria-label="死锁的具体原因，怎么解决？">死锁的具体原因，怎么解决？</a></li><li>
+                    <a href="#" aria-label="死锁的解决方法是什么？">死锁的解决方法是什么？</a></li><li>
+                    <a href="#" aria-label="怎么排查死锁?">怎么排查死锁?</a></li><li>
+                    <a href="#" aria-label="什么是死锁？">什么是死锁？</a></li><li>
+                    <a href="#" aria-label="如何避免出现死锁，怎么排查？">如何避免出现死锁，怎么排查？</a></li><li>
+                    <a href="#" aria-label="死锁是什么？怎么产生的？">死锁是什么？怎么产生的？</a></li><li>
+                    <a href="#" aria-label="如何避免死锁？">如何避免死锁？</a></li><li>
+                    <a href="#" aria-label=""></a></li><li>
+                    <a href="#" aria-label="操作系统-死锁怎么产生的">操作系统-死锁怎么产生的</a></li><li>
+                    <a href="#" aria-label="操作系统-怎么避免死锁">操作系统-怎么避免死锁</a></li><li>
+                    <a href="#" aria-label="死锁的条件有哪些？">死锁的条件有哪些？</a></li><li>
+                    <a href="#" aria-label="死锁的条件有哪些？">死锁的条件有哪些？</a></li><li>
+                    <a href="#" aria-label="死锁发生条件是什么？">死锁发生条件是什么？</a></li><li>
+                    <a href="#" aria-label="如何避免死锁？">如何避免死锁？</a></li><li>
+                    <a href="#" aria-label="了解过死锁吗？怎么避免">了解过死锁吗？怎么避免</a></li><li>
+                    <a href="#" aria-label="什么是死锁？如何处理死锁问题？">什么是死锁？如何处理死锁问题？</a></li><li>
+                    <a href="#" aria-label="讲一下银行家算法">讲一下银行家算法</a></li><li>
+                    <a href="#" aria-label="讲一下页表">讲一下页表</a></li><li>
+                    <a href="#" aria-label="线程死锁的条件？">线程死锁的条件？</a></ul></ul></ul>
+                </div>
+            </nav>
+        </div>
+    </main>
+    <div class="splitter-indicator" id="splitterIndicator"></div>
+    <div class="drop-indicator" id="dropIndicator"></div>
+    <footer class="footer">
+        <div class="footer-left">
+            <a class="item" href="/x/about/" target="_blank" rel="noopener noreferrer me" title="Info"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></a>
+            <a class="item" href="https://music.163.com/#/user/home?id=270121274" target="_blank" rel="noopener noreferrer me" title="NeteaseCloudMusic"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.98,23.65c-2.69,0-5.26-1.05-7.24-2.95C1.59,18.63,.35,15.72,.35,12.73,.35,8.21,3.21,4.11,7.46,2.52c.15-.05,.3-.08,.45-.08,.42,0,.78,.21,.93,.55,.12,.26,.13,.51,.03,.75-.12,.28-.38,.52-.7,.64-3.48,1.3-5.82,4.66-5.82,8.36,0,2.46,1.02,4.84,2.79,6.54,1.6,1.54,3.68,2.39,5.85,2.39,.1,0,.2,0,.29,0,3.49-.12,6.22-1.91,7.47-4.89,.08-.2,2.01-4.93-2.59-7.9-.41-.27-.89-.46-1.42-.58l-.6-.14,.18,.58c.21,.68,.78,2.52,.84,2.93,.07,.46,.07,.51,.1,.92v.18c0,2.3-1.89,4.19-4.22,4.19-2.2,0-3.97-1.73-4.23-4.1-.25-2.35,.74-4.4,2.73-5.61,.53-.32,1.11-.57,1.73-.75l.33-.1-.48-1.74c-.16-.54-.53-2.38,1.5-3.72,.57-.38,1.22-.57,1.91-.57,1.38,0,2.62,.74,3.12,1.23,.22,.22,.36,.56,.36,.9,0,.26-.08,.48-.23,.63-.15,.15-.37,.23-.63,.23-.33,0-.67-.13-.89-.35-.06-.05-.85-.66-1.7-.66-.31,0-.59,.08-.82,.24-.04,.03-.08,.05-.12,.08-.23,.19-.71,.73-.47,1.82l.09,.34,.02,.07h0s.35,1.29,.35,1.29h.25c1.24,.08,2.39,.42,3.32,1.01l.05,.03c4.82,3.12,4.29,8.12,3.34,10.33-1.54,3.67-4.99,5.95-9.23,6.1-.12,0-.25,0-.37,0Zm.82-15.26c-.43,.13-.84,.31-1.2,.53-.94,.57-2.01,1.68-1.79,3.71,.12,1.12,.87,2.33,2.24,2.33,1.23,0,2.24-1,2.24-2.22h0s.03-.21-.05-.71c-.07-.46-.91-3.1-1-3.4l-.1-.33-.33,.1Z" /></svg></a>
+            <a class="item" href="https://neodb.social/users/Lordash/" target="_blank" rel="noopener noreferrer me" title="NeoDB"><svg version="1.1" xmlns="https://www.w3.org/2000/svg" width="90" height="108" viewBox="0 0 90 108" fill="currentColor"><path d="M0 0 C4.26615504 2.04066983 6.73398524 4.58553002 10 8 C10.474375 7.195625 10.94875 6.39125 11.4375 5.5625 C13 3 13 3 14 2 C20.16698656 1.54318618 20.16698656 1.54318618 22.9375 3.0625 C24.6815774 6.24287644 24.55944728 8.4568339 24 12 C21 14.4375 21 14.4375 18 16 C20.97 18.97 23.94 21.94 27 25 C25.193388 28.61322401 24.33581029 29.83748791 21.375 32.25 C20.74335937 32.77078125 20.11171875 33.2915625 19.4609375 33.828125 C18.97882813 34.21484375 18.49671875 34.6015625 18 35 C17.566875 34.0409375 17.566875 34.0409375 17.125 33.0625 C16.17176549 30.84793921 16.17176549 30.84793921 14 30 C10.5 29.75 10.5 29.75 7 30 C4.59331253 31.99114614 4.59331253 31.99114614 4.5625 35.875 C4.62092586 39.4454694 4.80377743 39.80377743 7.5 42.5 C8.325 42.995 9.15 43.49 10 44 C7.36 46.64 4.72 49.28 2 52 C-1.49353838 50.25323081 -3.13945763 49.08594785 -5.75 46.375 C-6.36359375 45.74335937 -6.9771875 45.11171875 -7.609375 44.4609375 C-8.06828125 43.97882812 -8.5271875 43.49671875 -9 43 C-9.515625 43.99 -10.03125 44.98 -10.5625 46 C-13 49 -13 49 -16.625 49.5 C-20 49 -20 49 -22 47 C-22.56321839 40.8045977 -22.56321839 40.8045977 -20.6875 38.125 C-19 37 -19 37 -16 36 C-18.97 33.03 -21.94 30.06 -25 27 C-23.03838569 23.07677137 -20.84267796 20.58307142 -17.7734375 17.578125 C-17.26575836 17.07327576 -16.75807922 16.56842651 -16.23501587 16.04827881 C-14.61966158 14.44407904 -12.99747791 12.84699144 -11.375 11.25 C-10.27558302 10.16061893 -9.17661941 9.0707801 -8.078125 7.98046875 C-5.3906398 5.31498115 -2.69700979 2.65584857 0 0 Z"transform="translate(53,1)" /><path d="M0 0 C2.31 1.98 4.62 3.96 7 6 C6.34 6.86625 5.68 7.7325 5 8.625 C2.82375259 12.29741751 2.2907405 13.83310042 3 18 C4.34115399 21.00979883 4.34115399 21.00979883 7 23 C10.97807953 23.86409105 14.00632895 23.59620263 17.5 21.5 C17.995 21.005 18.49 20.51 19 20 C21.84383123 21.2748209 24.13754018 22.45137078 26 25 C25.57914771 28.29893891 24.42094066 29.966522 22.0625 32.25 C21.53785156 32.77078125 21.01320312 33.2915625 20.47265625 33.828125 C19 35 19 35 17 35 C17 35.66 17 36.32 17 37 C17.763125 36.938125 18.52625 36.87625 19.3125 36.8125 C22 37 22 37 23.875 38.0625 C25.69848531 41.20294693 24.8658284 43.5985313 24 47 C21 49 21 49 17.9375 48.75 C15 48 15 48 13 46 C12.505 44.02 12.505 44.02 12 42 C9.03 44.97 6.06 47.94 3 51 C-0.92322863 49.03838569 -3.41692858 46.84267796 -6.421875 43.7734375 C-6.92672424 43.26575836 -7.43157349 42.75807922 -7.95172119 42.23501587 C-9.55592096 40.61966158 -11.15300856 38.99747791 -12.75 37.375 C-13.83938107 36.27558302 -14.9292199 35.17661941 -16.01953125 34.078125 C-18.68501885 31.3906398 -21.34415143 28.69700979 -24 26 C-22.4152642 22.13671373 -19.94043113 19.71123077 -16.9921875 16.796875 C-16.50670441 16.3142218 -16.02122131 15.8315686 -15.52102661 15.33428955 C-13.97700134 13.80141438 -12.42615176 12.27565996 -10.875 10.75 C-9.82375991 9.70879639 -8.77297343 8.66713459 -7.72265625 7.625 C-5.15366996 5.07800536 -2.57851839 2.53734823 0 0 Z"transform="translate(25,29)" /><path d="M0 0 C3.81684226 1.55500981 6.19195732 4.03595495 9 7 C9.45375 6.195625 9.9075 5.39125 10.375 4.5625 C12 2 12 2 14 1 C16.9375 0.6875 16.9375 0.6875 20 1 C21.9375 2.625 21.9375 2.625 23 5 C23 8 23 8 22 11 C19.4375 13.375 19.4375 13.375 17 15 C19.97 17.97 22.94 20.94 26 24 C20.375 30.875 20.375 30.875 17 32 C16.649375 31.175 16.29875 30.35 15.9375 29.5 C14.16088977 26.60879362 14.16088977 26.60879362 10.5 26.5 C7.14672303 26.77692733 7.14672303 26.77692733 5 28.0625 C3.32384137 31.31005735 4.03723329 33.57014358 5 37 C7.4158995 39.45198044 7.4158995 39.45198044 10 41 C8.76600937 42.36877116 7.51219377 43.71969166 6.25 45.0625 C5.55390625 45.81660156 4.8578125 46.57070312 4.140625 47.34765625 C2 49 2 49 0.09619141 48.81054688 C-2.43507746 47.831766 -3.76735676 46.6052517 -5.6796875 44.68359375 C-6.36160156 44.00103516 -7.04351562 43.31847656 -7.74609375 42.61523438 C-8.79990234 41.53725586 -8.79990234 41.53725586 -9.875 40.4375 C-10.91720703 39.40012695 -10.91720703 39.40012695 -11.98046875 38.34179688 C-16.44375955 33.83227613 -20.30080588 29.1545197 -24 24 C-21.69 22.02 -19.38 20.04 -17 18 C-15.948125 18.99 -15.948125 18.99 -14.875 20 C-12.15610238 22.18293783 -12.15610238 22.18293783 -9 22.5625 C-4.86392446 21.78698584 -3.45000447 20.38677089 -1 17 C-0.44852315 13.07072743 -0.40688385 10.96381375 -2.5 7.5625 C-2.995 7.046875 -3.49 6.53125 -4 6 C-2.84826645 3.53199953 -1.95216435 1.95216435 0 0 Z"transform="translate(53,58)" /></svg></a>
+            <a class="item" href="https://github.com/GH1656409967" target="_blank" rel="noopener noreferrer me" title="GitHub"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a class="item" href="/" target="_blank" rel="noopener noreferrer me" title="BuyMeACoffee"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 884 1279" fill="none" stroke="currentColor" stroke-width="2"><path d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518Z"fill="currentColor"></path><path d="M803.896 388.891L802.916 389.166L803.896 388.891Z" fill="currentColor"></path><path d="M791.484 297.377C791.359 297.361 791.237 297.332 791.118 297.29C791.111 297.371 791.111 297.453 791.118 297.534C791.252 297.516 791.379 297.462 791.484 297.377Z"fill="currentColor"></path><path d="M791.113 297.529H791.244V297.447L791.113 297.529Z" fill="currentColor"></path><path d="M803.111 388.726L804.591 387.883L805.142 387.573L805.641 387.04C804.702 387.444 803.846 388.016 803.111 388.726Z"fill="currentColor"></path><path d="M793.669 299.515L792.223 298.138L791.243 297.605C791.77 298.535 792.641 299.221 793.669 299.515Z"fill="currentColor"></path><path d="M430.019 1186.18C428.864 1186.68 427.852 1187.46 427.076 1188.45L427.988 1187.87C428.608 1187.3 429.485 1186.63 430.019 1186.18Z"fill="currentColor"></path><path d="M641.187 1144.63C641.187 1143.33 640.551 1143.57 640.705 1148.21C640.705 1147.84 640.86 1147.46 640.929 1147.1C641.015 1146.27 641.084 1145.46 641.187 1144.63Z"fill="currentColor"></path><path d="M619.284 1186.18C618.129 1186.68 617.118 1187.46 616.342 1188.45L617.254 1187.87C617.873 1187.3 618.751 1186.63 619.284 1186.18Z"fill="currentColor"></path><path d="M281.304 1196.06C280.427 1195.3 279.354 1194.8 278.207 1194.61C279.136 1195.06 280.065 1195.51 280.684 1195.85L281.304 1196.06Z"fill="currentColor"></path><path d="M247.841 1164.01C247.704 1162.66 247.288 1161.35 246.619 1160.16C247.093 1161.39 247.489 1162.66 247.806 1163.94L247.841 1164.01Z"fill="currentColor"></path><path d="M472.623 590.836C426.682 610.503 374.546 632.802 306.976 632.802C278.71 632.746 250.58 628.868 223.353 621.274L270.086 1101.08C271.74 1121.13 280.876 1139.83 295.679 1153.46C310.482 1167.09 329.87 1174.65 349.992 1174.65C349.992 1174.65 416.254 1178.09 438.365 1178.09C462.161 1178.09 533.516 1174.65 533.516 1174.65C553.636 1174.65 573.019 1167.08 587.819 1153.45C602.619 1139.82 611.752 1121.13 613.406 1101.08L663.459 570.876C641.091 563.237 618.516 558.161 593.068 558.161C549.054 558.144 513.591 573.303 472.623 590.836Z"fill="currentColor"></path><path d="M78.6885 386.132L79.4799 386.872L79.9962 387.182C79.5987 386.787 79.1603 386.435 78.6885 386.132Z"fill="currentColor"></path><path d="M879.567 341.849L872.53 306.352C866.215 274.503 851.882 244.409 819.19 232.898C808.711 229.215 796.821 227.633 788.786 220.01C780.751 212.388 778.376 200.55 776.518 189.572C773.076 169.423 769.842 149.257 766.314 129.143C763.269 111.85 760.86 92.4243 752.928 76.56C742.604 55.2584 721.182 42.8009 699.88 34.559C688.965 30.4844 677.826 27.0375 666.517 24.2352C613.297 10.1947 557.342 5.03277 502.591 2.09047C436.875 -1.53577 370.983 -0.443234 305.422 5.35968C256.625 9.79894 205.229 15.1674 158.858 32.0469C141.91 38.224 124.445 45.6399 111.558 58.7341C95.7448 74.8221 90.5829 99.7026 102.128 119.765C110.336 134.012 124.239 144.078 138.985 150.737C158.192 159.317 178.251 165.846 198.829 170.215C256.126 182.879 315.471 187.851 374.007 189.968C438.887 192.586 503.87 190.464 568.44 183.618C584.408 181.863 600.347 179.758 616.257 177.304C634.995 174.43 647.022 149.928 641.499 132.859C634.891 112.453 617.134 104.538 597.055 107.618C594.095 108.082 591.153 108.512 588.193 108.942L586.06 109.252C579.257 110.113 572.455 110.915 565.653 111.661C551.601 113.175 537.515 114.414 523.394 115.378C491.768 117.58 460.057 118.595 428.363 118.647C397.219 118.647 366.058 117.769 334.983 115.722C320.805 114.793 306.661 113.611 292.552 112.177C286.134 111.506 279.733 110.801 273.333 110.009L267.241 109.235L265.917 109.046L259.602 108.134C246.697 106.189 233.792 103.953 221.025 101.251C219.737 100.965 218.584 100.249 217.758 99.2193C216.932 98.1901 216.482 96.9099 216.482 95.5903C216.482 94.2706 216.932 92.9904 217.758 91.9612C218.584 90.9319 219.737 90.2152 221.025 89.9293H221.266C232.33 87.5721 243.479 85.5589 254.663 83.8038C258.392 83.2188 262.131 82.6453 265.882 82.0832H265.985C272.988 81.6186 280.026 80.3625 286.994 79.5366C347.624 73.2301 408.614 71.0801 469.538 73.1014C499.115 73.9618 528.676 75.6996 558.116 78.6935C564.448 79.3474 570.746 80.0357 577.043 80.8099C579.452 81.1025 581.878 81.4465 584.305 81.7391L589.191 82.4445C603.438 84.5667 617.61 87.1419 631.708 90.1703C652.597 94.7128 679.422 96.1925 688.713 119.077C691.673 126.338 693.015 134.408 694.649 142.03L696.732 151.752C696.786 151.926 696.826 152.105 696.852 152.285C701.773 175.227 706.7 198.169 711.632 221.111C711.994 222.806 712.002 224.557 711.657 226.255C711.312 227.954 710.621 229.562 709.626 230.982C708.632 232.401 707.355 233.6 705.877 234.504C704.398 235.408 702.75 235.997 701.033 236.236H700.895L697.884 236.649L694.908 237.044C685.478 238.272 676.038 239.419 666.586 240.486C647.968 242.608 629.322 244.443 610.648 245.992C573.539 249.077 536.356 251.102 499.098 252.066C480.114 252.57 461.135 252.806 442.162 252.771C366.643 252.712 291.189 248.322 216.173 239.625C208.051 238.662 199.93 237.629 191.808 236.58C198.106 237.389 187.231 235.96 185.029 235.651C179.867 234.928 174.705 234.177 169.543 233.397C152.216 230.798 134.993 227.598 117.7 224.793C96.7944 221.352 76.8005 223.073 57.8906 233.397C42.3685 241.891 29.8055 254.916 21.8776 270.735C13.7217 287.597 11.2956 305.956 7.64786 324.075C4.00009 342.193 -1.67805 361.688 0.472751 380.288C5.10128 420.431 33.165 453.054 73.5313 460.35C111.506 467.232 149.687 472.807 187.971 477.556C338.361 495.975 490.294 498.178 641.155 484.129C653.44 482.982 665.708 481.732 677.959 480.378C681.786 479.958 685.658 480.398 689.292 481.668C692.926 482.938 696.23 485.005 698.962 487.717C701.694 490.429 703.784 493.718 705.08 497.342C706.377 500.967 706.846 504.836 706.453 508.665L702.633 545.797C694.936 620.828 687.239 695.854 679.542 770.874C671.513 849.657 663.431 928.434 655.298 1007.2C653.004 1029.39 650.71 1051.57 648.416 1073.74C646.213 1095.58 645.904 1118.1 641.757 1139.68C635.218 1173.61 612.248 1194.45 578.73 1202.07C548.022 1209.06 516.652 1212.73 485.161 1213.01C450.249 1213.2 415.355 1211.65 380.443 1211.84C343.173 1212.05 297.525 1208.61 268.756 1180.87C243.479 1156.51 239.986 1118.36 236.545 1085.37C231.957 1041.7 227.409 998.039 222.9 954.381L197.607 711.615L181.244 554.538C180.968 551.94 180.693 549.376 180.435 546.76C178.473 528.023 165.207 509.681 144.301 510.627C126.407 511.418 106.069 526.629 108.168 546.76L120.298 663.214L145.385 904.104C152.532 972.528 159.661 1040.96 166.773 1109.41C168.15 1122.52 169.44 1135.67 170.885 1148.78C178.749 1220.43 233.465 1259.04 301.224 1269.91C340.799 1276.28 381.337 1277.59 421.497 1278.24C472.979 1279.07 524.977 1281.05 575.615 1271.72C650.653 1257.95 706.952 1207.85 714.987 1130.13C717.282 1107.69 719.576 1085.25 721.87 1062.8C729.498 988.559 737.115 914.313 744.72 840.061L769.601 597.451L781.009 486.263C781.577 480.749 783.905 475.565 787.649 471.478C791.392 467.391 796.352 464.617 801.794 463.567C823.25 459.386 843.761 452.245 859.023 435.916C883.318 409.918 888.153 376.021 879.567 341.849ZM72.4301 365.835C72.757 365.68 72.1548 368.484 71.8967 369.792C71.8451 367.813 71.9483 366.058 72.4301 365.835ZM74.5121 381.94C74.6842 381.819 75.2003 382.508 75.7337 383.334C74.925 382.576 74.4089 382.009 74.4949 381.94H74.5121ZM76.5597 384.641C77.2996 385.897 77.6953 386.689 76.5597 384.641V384.641ZM80.672 387.979H80.7752C80.7752 388.1 80.9645 388.22 81.0333 388.341C80.9192 388.208 80.7925 388.087 80.6548 387.979H80.672ZM800.796 382.989C793.088 390.319 781.473 393.726 769.996 395.43C641.292 414.529 510.713 424.199 380.597 419.932C287.476 416.749 195.336 406.407 103.144 393.382C94.1102 392.109 84.3197 390.457 78.1082 383.798C66.4078 371.237 72.1548 345.944 75.2003 330.768C77.9878 316.865 83.3218 298.334 99.8572 296.355C125.667 293.327 155.64 304.218 181.175 308.09C211.917 312.781 242.774 316.538 273.745 319.36C405.925 331.405 540.325 329.529 671.92 311.91C695.906 308.686 719.805 304.941 743.619 300.674C764.835 296.871 788.356 289.731 801.175 311.703C809.967 326.673 811.137 346.701 809.778 363.615C809.359 370.984 806.139 377.915 800.779 382.989H800.796Z"fill="currentColor"></path></svg></a>
+        </div>
+
+        <div class="footer-middle">
+        </div>
+
+        <div class="footer-right">
+            <span class="item">15869(words)</span>
+            <a class="item" accesskey="g" href="#top" id="top-link" title="Go to Top (Alt + G)">⬆</a>
+        </div>
+    </footer>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                packages: { "[+]": ["ams"] }, 
+                tags: "ams", 
+            },
+            options: {
+                enableSpeech: false,        
+                enableExplorer: false,      
+                enableMenu: false,          
+                ignoreHtmlClass: "tex2jax_ignore",
+                processHtmlClass: "tex2jax_process"
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://s4.zstatic.net/ajax/libs/mathjax/4.0.0/tex-chtml.min.js"></script>
+    <script type="text/javascript" defer async src="https://s4.zstatic.net/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+    <script type="text/javascript" src="/js/particle-clock.js"></script>
+    <script type="text/javascript" src="/js/index.min.62af824fc9f8f20406aebaf20c60d6fbd42ffe3d23aae53d90dddd32415f13d9.js" integrity="sha256-Yq&#43;CT8n48gQGrrryDGDW&#43;9Qv/j0jquU9kN3dMkFfE9k="></script>
+</body>
+
+</html>
